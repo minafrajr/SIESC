@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ObterEnderecoPorLogradouro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logradouro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCidade" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="uf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorLogradouroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterEnderecoPorLogradouroResult" type="tns:ArrayOfEndereco" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEndereco">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Endereco" nillable="true" type="tns:Endereco" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Endereco">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GrandeUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Paridade" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroInicial" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroFinal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Uf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeUF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CepUnico" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistritoDe" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChaveLocalidade" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObterEnderecoPorLogradouroString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logradouro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCidade" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="uf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorLogradouroStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterEnderecoPorLogradouroStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorCEP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorCEPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterEnderecoPorCEPResult" type="tns:ArrayOfEndereco" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorCEPString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorCEPStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterEnderecoPorCEPStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorGrandeUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterEnderecoPorGrandeUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterEnderecoPorGrandeUsuarioResult" type="tns:ArrayOfEndereco" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterCidadesPorEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterCidadesPorEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterCidadesPorEstadoResult" type="tns:ArrayOfEndereco" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterUFs">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObterUFsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterUFsResult" type="tns:ArrayOfEndereco" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfEndereco" nillable="true" type="tns:ArrayOfEndereco" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObterEnderecoPorLogradouroSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorLogradouro" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorLogradouroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorLogradouroString" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorLogradouroStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorCEP" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorCEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorCEPString" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorCEPStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorGrandeUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterEnderecoPorGrandeUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterCidadesPorEstado" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterCidadesPorEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterUFsSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterUFs" />
+  </wsdl:message>
+  <wsdl:message name="ObterUFsSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterUFsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroHttpGetIn">
+    <wsdl:part name="logradouro" type="s:string" />
+    <wsdl:part name="idCidade" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringHttpGetIn">
+    <wsdl:part name="logradouro" type="s:string" />
+    <wsdl:part name="idCidade" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPHttpGetIn">
+    <wsdl:part name="cep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringHttpGetIn">
+    <wsdl:part name="cep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioHttpGetIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoHttpGetIn">
+    <wsdl:part name="uf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterUFsHttpGetIn" />
+  <wsdl:message name="ObterUFsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroHttpPostIn">
+    <wsdl:part name="logradouro" type="s:string" />
+    <wsdl:part name="idCidade" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringHttpPostIn">
+    <wsdl:part name="logradouro" type="s:string" />
+    <wsdl:part name="idCidade" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorLogradouroStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPHttpPostIn">
+    <wsdl:part name="cep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringHttpPostIn">
+    <wsdl:part name="cep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorCEPStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioHttpPostIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="uf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterEnderecoPorGrandeUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoHttpPostIn">
+    <wsdl:part name="uf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterCidadesPorEstadoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:message name="ObterUFsHttpPostIn" />
+  <wsdl:message name="ObterUFsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEndereco" />
+  </wsdl:message>
+  <wsdl:portType name="ServicoCEPSoap">
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroSoapIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroStringSoapIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <wsdl:input message="tns:ObterEnderecoPorCEPSoapIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <wsdl:input message="tns:ObterEnderecoPorCEPStringSoapIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <wsdl:input message="tns:ObterEnderecoPorGrandeUsuarioSoapIn" />
+      <wsdl:output message="tns:ObterEnderecoPorGrandeUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <wsdl:input message="tns:ObterCidadesPorEstadoSoapIn" />
+      <wsdl:output message="tns:ObterCidadesPorEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <wsdl:input message="tns:ObterUFsSoapIn" />
+      <wsdl:output message="tns:ObterUFsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServicoCEPHttpGet">
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroHttpGetIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroStringHttpGetIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <wsdl:input message="tns:ObterEnderecoPorCEPHttpGetIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <wsdl:input message="tns:ObterEnderecoPorCEPStringHttpGetIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <wsdl:input message="tns:ObterEnderecoPorGrandeUsuarioHttpGetIn" />
+      <wsdl:output message="tns:ObterEnderecoPorGrandeUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <wsdl:input message="tns:ObterCidadesPorEstadoHttpGetIn" />
+      <wsdl:output message="tns:ObterCidadesPorEstadoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <wsdl:input message="tns:ObterUFsHttpGetIn" />
+      <wsdl:output message="tns:ObterUFsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServicoCEPHttpPost">
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroHttpPostIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <wsdl:input message="tns:ObterEnderecoPorLogradouroStringHttpPostIn" />
+      <wsdl:output message="tns:ObterEnderecoPorLogradouroStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <wsdl:input message="tns:ObterEnderecoPorCEPHttpPostIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <wsdl:input message="tns:ObterEnderecoPorCEPStringHttpPostIn" />
+      <wsdl:output message="tns:ObterEnderecoPorCEPStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <wsdl:input message="tns:ObterEnderecoPorGrandeUsuarioHttpPostIn" />
+      <wsdl:output message="tns:ObterEnderecoPorGrandeUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <wsdl:input message="tns:ObterCidadesPorEstadoHttpPostIn" />
+      <wsdl:output message="tns:ObterCidadesPorEstadoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <wsdl:input message="tns:ObterUFsHttpPostIn" />
+      <wsdl:output message="tns:ObterUFsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoCEPSoap" type="tns:ServicoCEPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <soap:operation soapAction="http://tempuri.org/ObterEnderecoPorLogradouro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <soap:operation soapAction="http://tempuri.org/ObterEnderecoPorLogradouroString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <soap:operation soapAction="http://tempuri.org/ObterEnderecoPorCEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <soap:operation soapAction="http://tempuri.org/ObterEnderecoPorCEPString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <soap:operation soapAction="http://tempuri.org/ObterEnderecoPorGrandeUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <soap:operation soapAction="http://tempuri.org/ObterCidadesPorEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <soap:operation soapAction="http://tempuri.org/ObterUFs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicoCEPSoap12" type="tns:ServicoCEPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <soap12:operation soapAction="http://tempuri.org/ObterEnderecoPorLogradouro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <soap12:operation soapAction="http://tempuri.org/ObterEnderecoPorLogradouroString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <soap12:operation soapAction="http://tempuri.org/ObterEnderecoPorCEP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <soap12:operation soapAction="http://tempuri.org/ObterEnderecoPorCEPString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ObterEnderecoPorGrandeUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <soap12:operation soapAction="http://tempuri.org/ObterCidadesPorEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <soap12:operation soapAction="http://tempuri.org/ObterUFs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicoCEPHttpGet" type="tns:ServicoCEPHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <http:operation location="/ObterEnderecoPorLogradouro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <http:operation location="/ObterEnderecoPorLogradouroString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <http:operation location="/ObterEnderecoPorCEP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <http:operation location="/ObterEnderecoPorCEPString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <http:operation location="/ObterEnderecoPorGrandeUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <http:operation location="/ObterCidadesPorEstado" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <http:operation location="/ObterUFs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicoCEPHttpPost" type="tns:ServicoCEPHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ObterEnderecoPorLogradouro">
+      <http:operation location="/ObterEnderecoPorLogradouro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorLogradouroString">
+      <http:operation location="/ObterEnderecoPorLogradouroString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEP">
+      <http:operation location="/ObterEnderecoPorCEP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorCEPString">
+      <http:operation location="/ObterEnderecoPorCEPString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterEnderecoPorGrandeUsuario">
+      <http:operation location="/ObterEnderecoPorGrandeUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCidadesPorEstado">
+      <http:operation location="/ObterCidadesPorEstado" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterUFs">
+      <http:operation location="/ObterUFs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicoCEP">
+    <wsdl:port name="ServicoCEPSoap" binding="tns:ServicoCEPSoap">
+      <soap:address location="http://tecnologia/servicocep/ServicoCep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicoCEPSoap12" binding="tns:ServicoCEPSoap12">
+      <soap12:address location="http://tecnologia/servicocep/ServicoCep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicoCEPHttpGet" binding="tns:ServicoCEPHttpGet">
+      <http:address location="http://tecnologia/servicocep/ServicoCep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicoCEPHttpPost" binding="tns:ServicoCEPHttpPost">
+      <http:address location="http://tecnologia/servicocep/ServicoCep.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

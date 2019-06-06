@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD311CC0-D516-4AE9-9840-AA8FA42FB1D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIESC_UI</RootNamespace>
+    <AssemblyName>SIESC_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\ursa\ESCRITURACAO%24\ESCRITURAÇÃO\SIESC\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>pt-BR</TargetCulture>
+    <ProductName>Sistema de Escrituração</ProductName>
+    <PublisherName>SIESC</PublisherName>
+    <MinimumRequiredVersion>1.3.0.70</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>154</ApplicationRevision>
+    <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SIESC_UI.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SIESC_UI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C1BC3479BC8919D07A41CB1EC1241D1375C5041A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SIESC_UI_ChaveTemporária.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\Pencil-and-Ruler.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.7.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.7.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Fabric.6.9.12\lib\net45\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsultaWeb\BuscaCep.cs" />
+    <Compile Include="Controles\MyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyComboBox.designer.cs">
+      <DependentUpon>MyComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Crypto.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="siescDataSet.cs">
+      <DependentUpon>siescDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="siescDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siescDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UI\Alunos\GerenciarAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Alunos\GerenciarAlunos.Designer.cs">
+      <DependentUpon>GerenciarAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Autorizacoes\AutorizacaoExpressa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Autorizacoes\AutorizacaoExpressa.Designer.cs">
+      <DependentUpon>AutorizacaoExpressa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Autorizacoes\GerenciarAutorizacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Autorizacoes\GerenciarAutorizacoes.Designer.cs">
+      <DependentUpon>GerenciarAutorizacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Autorizacoes\SolicitarAutorizacao.cs" />
+    <Compile Include="UI\Autorizacoes\SolicitarAutorizacao.Designer.cs">
+      <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\base_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\base_UI.Designer.cs">
+      <DependentUpon>base_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyMaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyMaskedTextBox.Designer.cs">
+      <DependentUpon>MyMaskedTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyTextBox.Designer.cs">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Alunos\CadastrarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Alunos\CadastrarAluno.Designer.cs">
+      <DependentUpon>CadastrarAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CEP\frm_buscaCEP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CEP\frm_buscaCEP.Designer.cs">
+      <DependentUpon>frm_buscaCEP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CEP\frm_buscaEndereço.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CEP\frm_buscaEndereço.Designer.cs">
+      <DependentUpon>frm_buscaEndereço.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configurações\GerenciarMantenedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configurações\GerenciarMantenedor.Designer.cs">
+      <DependentUpon>GerenciarMantenedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Instituicoes\CadastrarEscola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Instituicoes\CadastrarEscola.Designer.cs">
+      <DependentUpon>CadastrarEscola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Instituicoes\ConsultasEscola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Instituicoes\ConsultasEscola.Designer.cs">
+      <DependentUpon>ConsultasEscola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Instituicoes\GerenciaEscolas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Instituicoes\GerenciaEscolas.Designer.cs">
+      <DependentUpon>GerenciaEscolas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Funcionarios\CadastroFuncionario.cs" />
+    <Compile Include="UI\Funcionarios\CadastroFuncionario.Designer.cs">
+      <DependentUpon>CadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Funcionarios\frm_listar_emails_funcionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Funcionarios\frm_listar_emails_funcionarios.Designer.cs">
+      <DependentUpon>frm_listar_emails_funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Funcionarios\GerenciaFuncionario.cs" />
+    <Compile Include="UI\Funcionarios\GerenciaFuncionario.Designer.cs">
+      <DependentUpon>GerenciaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Listas\frm_listaEmails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Listas\frm_listaEmails.Designer.cs">
+      <DependentUpon>frm_listaEmails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login\AlteraSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\AlteraSenha.Designer.cs">
+      <DependentUpon>AlteraSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login\RecuperaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\RecuperaSenha.Designer.cs">
+      <DependentUpon>RecuperaSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Mensageiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Motivos\GerenciarMotivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Motivos\GerenciarMotivo.Designer.cs">
+      <DependentUpon>GerenciarMotivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Listas\Listas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Listas\Listas.Designer.cs">
+      <DependentUpon>Listas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Progresso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Progresso.Designer.cs">
+      <DependentUpon>Progresso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_encaminhamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_encaminhamento.Designer.cs">
+      <DependentUpon>frm_ficha_encaminhamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_solicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_solicitacao.Designer.cs">
+      <DependentUpon>frm_ficha_solicitacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_carteirinha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_carteirinha.Designer.cs">
+      <DependentUpon>frm_carteirinha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_instituicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_instituicoes.Designer.cs">
+      <DependentUpon>frm_relatorio_instituicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_solicitacoes_dia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_solicitacoes_dia.Designer.cs">
+      <DependentUpon>frm_solicitacoes_dia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunos_motivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunos_motivos.Designer.cs">
+      <DependentUpon>frm_alunos_motivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunos_pendentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunos_pendentes.Designer.cs">
+      <DependentUpon>frm_alunos_pendentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_fundamental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_fundamental.Designer.cs">
+      <DependentUpon>frm_relatorio_fundamental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_infantil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_infantil.Designer.cs">
+      <DependentUpon>frm_relatorio_infantil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
+      <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.Designer.cs">
+      <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal_UI.Designer.cs">
+      <DependentUpon>Principal_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Relatorios\frm_relatorio_geral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_relatorio_geral.Designer.cs">
+      <DependentUpon>frm_relatorio_geral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sobre\Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sobre\Sobre.Designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\SolicitaVaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\SolicitaVaga.Designer.cs">
+      <DependentUpon>SolicitaVaga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunosporescola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_alunosporescola.Designer.cs">
+      <DependentUpon>frm_alunosporescola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Zoneamento\ZoneamentoEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Zoneamento\ZoneamentoEndereco.Designer.cs">
+      <DependentUpon>ZoneamentoEndereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Zoneamento\ZoneamentoAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Zoneamento\ZoneamentoAluno.Designer.cs">
+      <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tecnologia1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Alunos\GerenciarAlunos.resx">
+      <DependentUpon>GerenciarAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Autorizacoes\AutorizacaoExpressa.resx">
+      <DependentUpon>AutorizacaoExpressa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Autorizacoes\GerenciarAutorizacoes.resx">
+      <DependentUpon>GerenciarAutorizacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Autorizacoes\SolicitarAutorizacao.resx">
+      <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\base_UI.resx">
+      <DependentUpon>base_UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Alunos\CadastrarAluno.resx">
+      <DependentUpon>CadastrarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CEP\frm_buscaCEP.resx">
+      <DependentUpon>frm_buscaCEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CEP\frm_buscaEndereço.resx">
+      <DependentUpon>frm_buscaEndereço.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configurações\GerenciarMantenedor.resx">
+      <DependentUpon>GerenciarMantenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Instituicoes\CadastrarEscola.resx">
+      <DependentUpon>CadastrarEscola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Instituicoes\ConsultasEscola.resx">
+      <DependentUpon>ConsultasEscola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Instituicoes\GerenciaEscolas.resx">
+      <DependentUpon>GerenciaEscolas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Funcionarios\CadastroFuncionario.resx">
+      <DependentUpon>CadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Funcionarios\frm_listar_emails_funcionarios.resx">
+      <DependentUpon>frm_listar_emails_funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Funcionarios\GerenciaFuncionario.resx">
+      <DependentUpon>GerenciaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Listas\frm_listaEmails.resx">
+      <DependentUpon>frm_listaEmails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\AlteraSenha.resx">
+      <DependentUpon>AlteraSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\RecuperaSenha.resx">
+      <DependentUpon>RecuperaSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Mensageiro.resx">
+      <DependentUpon>Mensageiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Motivos\GerenciarMotivo.resx">
+      <DependentUpon>GerenciarMotivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Listas\Listas.resx">
+      <DependentUpon>Listas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Progresso.resx">
+      <DependentUpon>Progresso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_ficha_encaminhamento.resx">
+      <DependentUpon>frm_ficha_encaminhamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_ficha_solicitacao.resx">
+      <DependentUpon>frm_ficha_solicitacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_carteirinha.resx">
+      <DependentUpon>frm_carteirinha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_relatorio_instituicoes.resx">
+      <DependentUpon>frm_relatorio_instituicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_solicitacoes_dia.resx">
+      <DependentUpon>frm_solicitacoes_dia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_alunos_motivos.resx">
+      <DependentUpon>frm_alunos_motivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_alunos_pendentes.resx">
+      <DependentUpon>frm_alunos_pendentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_relatorio_fundamental.resx">
+      <DependentUpon>frm_relatorio_fundamental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_relatorio_infantil.resx">
+      <DependentUpon>frm_relatorio_infantil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
+      <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
+      <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal_UI.resx">
+      <DependentUpon>Principal_UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_relatorio_geral.resx">
+      <DependentUpon>frm_relatorio_geral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sobre\Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\SolicitaVaga.resx">
+      <DependentUpon>SolicitaVaga.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_alunosporescola.resx">
+      <DependentUpon>frm_alunosporescola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Zoneamento\ZoneamentoEndereco.resx">
+      <DependentUpon>ZoneamentoEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Zoneamento\ZoneamentoAluno.resx">
+      <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Diagramas\DiagramaClasses.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="siescDataSet.xsc">
+      <DependentUpon>siescDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="siescDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>siescDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="siescDataSet.xss">
+      <DependentUpon>siescDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SIESC_UI_ChaveTemporária.pfx" />
+    <None Include="Web References\tecnologia1\Endereco.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tecnologia1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\tecnologia1\ServicoCep.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIESC\SIESC.csproj">
+      <Project>{74b0fd10-dbb5-40b3-84b2-5a332a93cba7}</Project>
+      <Name>SIESC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_BD\SIESC_BD.csproj">
+      <Project>{519bb1cf-216a-4467-aa80-dbf095e1bde2}</Project>
+      <Name>SIESC_BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_WEB\SIESC_WEB.csproj">
+      <Project>{e398aec5-d722-4f0c-8171-1a782dbc3412}</Project>
+      <Name>SIESC_WEB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Aluno.ico" />
+    <Content Include="Icons\Autorizacao.ico" />
+    <Content Include="Icons\AutorizaFuncionario.ico" />
+    <Content Include="Icons\Escola.ico" />
+    <Content Include="Icons\Funcionarios.ico" />
+    <Content Include="Icons\Pencil-and-Ruler.ico" />
+    <Content Include="Icons\Relatorios.ico" />
+    <Content Include="Icons\Solicitacao.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\stampdocument_101087.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\pngkit_send-icon-png_1882555.png" />
+    <None Include="Resources\user_32-32.png" />
+    <None Include="Resources\circle_blue1.png" />
+    <None Include="Resources\circle_blue.png" />
+    <None Include="Resources\circle_red.png" />
+    <None Include="Resources\10693_323x32.png" />
+    <None Include="Resources\box_full_products_14639_48.png" />
+    <None Include="Resources\doc-math_97139_48.png" />
+    <None Include="Resources\kid-icon_31185_32.png" />
+    <None Include="Resources\baby-icon_31207_32.png" />
+    <None Include="Resources\circle_red_x.png" />
+    <None Include="Resources\rocket-icon.png" />
+    <None Include="Resources\if_compass_15195.png" />
+    <None Include="Resources\if_location_718953.png" />
+    <None Include="Resources\geofence_321.png" />
+    <None Include="Resources\geofence_32.png" />
+    <None Include="Resources\map-marker.png" />
+    <None Include="Resources\coordinates32x32.png" />
+    <None Include="Resources\carregando.gif" />
+    <None Include="Resources\Cracha321.png" />
+    <None Include="Resources\Cracha32.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\mapmarker.png" />
+    <None Include="Resources\correios_128x96.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\bullet_delete.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\delete.bmp" />
+    <None Include="Resources\desk-chair %282%29.png" />
+    <None Include="Web References\tecnologia1\ServicoCep.disco" />
+    <None Include="Resources\1431655685_text-x-csharp.png" />
+    <None Include="Resources\1431655160_kservices.png" />
+    <None Include="Resources\1431669200_eraser.png" />
+    <None Include="Resources\1431676741_How-to.png" />
+    <None Include="Resources\1431675996_mypc_ok.png" />
+    <None Include="Resources\1431671337_user_info.png" />
+    <None Include="Resources\1431672026_check_box.png" />
+    <None Include="Resources\1431668763_list-alt-32.png" />
+    <None Include="Resources\1431665945_27-Edit Text.png" />
+    <None Include="Resources\1431666478_app_48.png" />
+    <None Include="Resources\Tools.png" />
+    <None Include="Resources\1431655462_document.png" />
+    <None Include="Resources\1431654912_graduated.png" />
+    <None Include="Resources\1431654656_people.png" />
+    <None Include="Resources\ID2.png" />
+    <None Include="Resources\escrita.jpg" />
+    <None Include="Resources\14.png" />
+    <None Include="Resources\9854_128x128.png" />
+    <None Include="Resources\Home-128.png" />
+    <None Include="Resources\graficos_5238_5.gif" />
+    <None Include="Resources\2960_16x16.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\ID.png" />
+    <None Include="Resources\19.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\Pin.png" />
+    <None Include="Resources\editor_0308_replace.png" />
+    <None Include="Resources\prohibit-icon.png" />
+    <None Include="Resources\278_128x128.png" />
+    <None Include="Resources\Tick.png" />
+    <None Include="Resources\Trash.png" />
+    <None Include="Resources\media-drive.png" />
+    <None Include="Resources\830_128x128.png" />
+    <None Include="Resources\diagnostics_pass.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\127.png" />
+    <None Include="Resources\114.png" />
+    <None Include="Resources\run_script.png" />
+    <None Include="Resources\change_options.png" />
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Newtonsoft.Json">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://tecnologia/servicocep/ServicoCep.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tecnologia1\</RelPath>
+      <UpdateFromURL>http://tecnologia/servicocep/ServicoCep.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SIESC_UI_tecnologia1_ServicoCEP</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
