@@ -8,6 +8,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+Zoneador.cs
+Metrics.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
