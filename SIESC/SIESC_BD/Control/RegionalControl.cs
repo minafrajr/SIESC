@@ -2,9 +2,10 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/06/2015
 
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using SIESC.Classes;
+using SIESC;
 
 namespace SIESC_BD.Control
 {

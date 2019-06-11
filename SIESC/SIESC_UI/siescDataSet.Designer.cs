@@ -9080,10 +9080,8 @@ namespace SIESC_UI.siescDataSetTableAdapters {
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT       INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro
-FROM            instituicoes
-WHERE        (mantenedor <> 2)
-ORDER BY mantenedor, nome";
+            this._commandCollection[6].CommandText = "SELECT        idInstituicoes, nome\r\nFROM            instituicoes\r\nWHERE        (m" +
+                "antenedor <> 2) AND (mantenedor <> 5)\r\nORDER BY mantenedor, nome";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
@@ -9123,7 +9121,7 @@ ORDER BY instituicoes.nome";
             this._commandCollection[9].CommandText = @"SELECT        instituicoes.idInstituicoes, instituicoes.nome, instituicoes.regionalInstituicao, regionais.nomeRegional
 FROM            instituicoes INNER JOIN
                          regionais ON instituicoes.regionalInstituicao = regionais.idRegionais
-WHERE        (regionais.nomeRegional LIKE @nomeRegional) AND (instituicoes.mantenedor = 4 OR
+WHERE        (regionais.nomeRegional LIKE @nomeRegional) AND (instituicoes.mantenedor = 3 OR
                          instituicoes.mantenedor = 4)
 ORDER BY instituicoes.nome";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;

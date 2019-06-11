@@ -4,7 +4,11 @@
 // Criado em: 05/04/2015
 #endregion
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Deployment.Application;
+using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 

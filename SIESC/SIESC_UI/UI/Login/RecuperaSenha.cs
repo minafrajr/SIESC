@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using System.Text.RegularExpressions;
 using SIESC.Classes;
 using SIESC_BD.Control;
 using SIESC_WEB;
-
+using SIESC;
 
 namespace SIESC_UI.UI.Login
 {

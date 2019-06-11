@@ -2,6 +2,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 02/02/2015
 using MySql.Data.MySqlClient;
+using SIESC;
 using SIESC.Classes;
 using SIESC_UI.UI;
 using SIESC_UI.UI.Alunos;
@@ -98,7 +99,7 @@ namespace SIESC_UI
                 frmLogin.ShowDialog();
 
                 user = new Usuario();
-                user = frmLogin.Usuario;
+                user = frmLogin.usuario;
 
                 lbl_statusStrip.Text += $@" {user.nomeusuario.ToUpper()}";
 

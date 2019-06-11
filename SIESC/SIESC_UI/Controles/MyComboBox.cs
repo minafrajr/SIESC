@@ -4,8 +4,14 @@
 // Criado em: 22/03/2015
 #endregion
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Net;
 
 namespace SIESC_UI
 {

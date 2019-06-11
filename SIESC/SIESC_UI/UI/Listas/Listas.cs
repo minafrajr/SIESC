@@ -5,6 +5,7 @@
 #endregion
 
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing.Printing;
 using System.Windows.Forms;

@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Drawing.Printing;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using SIESC_BD.Control;
+using SIESC_BD.DataSets;
 using SIESC_UI.Properties;
 
 namespace SIESC_UI.UI.Relatorios

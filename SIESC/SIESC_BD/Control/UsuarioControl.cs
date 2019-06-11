@@ -4,9 +4,12 @@
 // Criado em: 15/05/2015
 #endregion
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Text;
-using SIESC.Classes;
+using SIESC;
 using SIESC_BD.DataSets.ds_siescTableAdapters;
 using SIESC_WEB;
 

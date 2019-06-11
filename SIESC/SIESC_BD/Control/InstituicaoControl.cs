@@ -7,7 +7,9 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Policy;
 using SIESC.Classes;
+using SIESC_BD.DataSets;
 using SIESC_BD.DataSets.ds_siescTableAdapters;
 using SIESC_BD.DataSets.dsRelatoriosTableAdapters;
 
@@ -70,8 +72,8 @@ namespace SIESC_BD.Control
                                 instituicao.TipoLogradouro, instituicao.Logradouro, instituicao.NumeroEdificio,
                                 instituicao.Complemento, instituicao.Bairro, instituicao.Telefone1,
                                 instituicao.Telefone2, instituicao.Telefone3, instituicao.Status, instituicao.Inep,
-                                instituicao.Email, instituicao.Regional, instituicao.Cep, instituicao.Latitude,
-                                instituicao.Longitude) > 0);
+                                instituicao.Email, instituicao.Regional, instituicao.cep, instituicao.latitude,
+                                instituicao.longitude) > 0);
 
                 }
 
@@ -79,7 +81,7 @@ namespace SIESC_BD.Control
                             instituicao.TipoLogradouro, instituicao.Logradouro, instituicao.NumeroEdificio,
                             instituicao.Complemento, instituicao.Bairro, instituicao.Telefone1, instituicao.Telefone2,
                             instituicao.Telefone3, true, instituicao.Inep, instituicao.Email, instituicao.Regional,
-                            instituicao.Cep, instituicao.Latitude, instituicao.Longitude, instituicao.Codigo) > 0);
+                            instituicao.cep, instituicao.latitude, instituicao.longitude, instituicao.Codigo) > 0);
             }
             catch (SqlException exception)
             {
@@ -171,9 +173,9 @@ namespace SIESC_BD.Control
             inst.Telefone2 = dt.Rows[0]["telefone2"].ToString();
             inst.Telefone3 = dt.Rows[0]["telefone3"].ToString();
             inst.TipoLogradouro = dt.Rows[0]["tipologradouro"].ToString();
-            inst.Cep = dt.Rows[0]["Cep"].ToString();
-            inst.Latitude = dt.Rows[0]["latitude"].ToString();
-            inst.Longitude = dt.Rows[0]["longitude"].ToString();
+            inst.cep = dt.Rows[0]["Cep"].ToString();
+            inst.latitude = dt.Rows[0]["latitude"].ToString();
+            inst.longitude = dt.Rows[0]["longitude"].ToString();
 
 
             return inst;

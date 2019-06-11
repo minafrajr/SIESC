@@ -3,13 +3,12 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-
+using SIESC;
 using SIESC_BD.Control;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using SIESC.Classes;
 
 namespace SIESC_UI.UI
 {

@@ -5,7 +5,7 @@
 #endregion
 using System;
 
-namespace SIESC.Classes
+namespace SIESC
 {
     /// <summary>
     /// 

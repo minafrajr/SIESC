@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
-using SIESC.Classes;
+using SIESC;
 using SIESC_BD.Control;
+using SIESC_UI.Security;
 
 namespace SIESC_UI.UI.Login
 {

@@ -6,23 +6,31 @@
 
 namespace SIESC.Classes
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Motivo
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public int Codigo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Descricao { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Status { get; set; }
+        private int codigo;
+
+        public int Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
+
+        private string descricao;
+
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+
+        private bool status;
+
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
     }
 }

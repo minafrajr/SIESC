@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using SIESC.Classes;
 using SIESC_BD.DataSets.dsListasTableAdapters;
 using SIESC_BD.DataSets.ds_siescTableAdapters;

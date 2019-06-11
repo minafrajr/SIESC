@@ -2,6 +2,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 11/06/2015
 
+using SIESC;
 using SIESC_BD.Control;
 using System;
 using System.Data;

@@ -173,9 +173,9 @@ namespace SIESC_UI.UI
 			this.msk_inep.Text = inst.Inep;
 			lbl_codigo.Text = inst.Codigo.ToString();
 			cbo_tipo_Logradouro.Text = inst.TipoLogradouro;
-			msk_cep.Text = inst.Cep;
-			msk_latitude.Text = inst.Latitude;
-			msk_longitude.Text = inst.Longitude;
+			msk_cep.Text = inst.cep;
+			msk_latitude.Text = inst.latitude;
+			msk_longitude.Text = inst.longitude;
 		}
 
 		#region Botões
@@ -279,9 +279,9 @@ namespace SIESC_UI.UI
 					Inep = msk_inep.Text,
 					Status = true,
 					TipoLogradouro = cbo_tipo_Logradouro.Text,
-					Cep = msk_cep.Text,
-					Latitude = msk_latitude.Text,
-					Longitude = msk_longitude.Text
+					cep = msk_cep.Text,
+					latitude = msk_latitude.Text,
+					longitude = msk_longitude.Text
 				};
 			}
 			catch (Exception ex)

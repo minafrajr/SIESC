@@ -4,11 +4,13 @@
 // Criado em: 02/02/2015
 #endregion
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
-using SIESC.Classes;
+using SIESC;
 using SIESC_BD.DataSets.ds_siescTableAdapters;
+using SIESC_WEB;
 
 namespace SIESC_BD.Control
 {

@@ -2,6 +2,7 @@
 using SIESC_BD.Control;
 using System;
 using System.Collections.Generic;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace SIESC_UI.UI.Autorizacoes
@@ -23,7 +24,7 @@ namespace SIESC_UI.UI.Autorizacoes
 		/// <summary>
 		/// Tpo de autorização
 		/// </summary>
-		private Tipoautorizacao TipoAutoriz;
+		private tipoautorizacao TipoAutoriz;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -131,7 +132,7 @@ namespace SIESC_UI.UI.Autorizacoes
 
 				if (salvou)
 				{
-					Mensageiro.MensagemAviso($"Salvo com sucesso!!!{Environment.NewLine}O número da autorização é: {autorizar.Numeroautorizacao}");
+					Mensageiro.MensagemAviso($"Salvo com sucesso!!!{Environment.NewLine}O número da autorização é: {autorizar.numeroautorizacao}");
 					LimpaCampos();
 					lbl_ultimaautoriz.Text = $"0{controle_autorizacao.RetornaUltimaAutorizacao()}/{DateTime.Now.Year}";
 					
@@ -170,7 +171,7 @@ namespace SIESC_UI.UI.Autorizacoes
 
 				if (cbo_disciplina.SelectedValue != null)
 				{
-					autoriz.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
+					autoriz.disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
 				}
 
 				autoriz.dataexpedicao = DateTime.Now;
@@ -180,7 +181,7 @@ namespace SIESC_UI.UI.Autorizacoes
 				string num = controle_autorizacao.RetornaUltimaAutorizacao();
 				var data = DateTime.Now.Year.ToString();//get ano atual
 				
-				autoriz.Numeroautorizacao = $"0{num}/{data}"; //acrescenta o zero na frente do número da autorização
+				autoriz.numeroautorizacao = $"0{num}/{data}"; //acrescenta o zero na frente do número da autorização
 
 				return autoriz;
 			}
@@ -203,13 +204,13 @@ namespace SIESC_UI.UI.Autorizacoes
 			switch (cbo_tipoautoriz.Text)
 			{
 				case "DIRIGIR":
-					this.TipoAutoriz = Tipoautorizacao.Dirigir;
+					this.TipoAutoriz = tipoautorizacao.dirigir;
 					break;
 				case "LECIONAR":
-					TipoAutoriz = Tipoautorizacao.Lecionar;
+					TipoAutoriz = tipoautorizacao.lecionar;
 					break;
 				case "SECRETARIAR":
-					TipoAutoriz = Tipoautorizacao.Secretariar;
+					TipoAutoriz = tipoautorizacao.secretariar;
 					break;
 			}
 		}
@@ -230,17 +231,17 @@ namespace SIESC_UI.UI.Autorizacoes
 
 			if (!cbo_cargoOrigem.Equals(null))
 			{
-				func.CargoOrigem = (int)cbo_cargoOrigem.SelectedValue;
+				func.cargoOrigem = (int)cbo_cargoOrigem.SelectedValue;
 			}
 
 			if (!cbo_cargoAtual.Equals(null))
 			{
-				func.CargoAtual = (int)cbo_cargoAtual.SelectedValue;
+				func.cargoAtual = (int)cbo_cargoAtual.SelectedValue;
 			}
 
 			if (!string.IsNullOrEmpty(cbo_instituicao.SelectedValue.ToString()))
 			{
-				func.Instituicao = (int)cbo_instituicao.SelectedValue;
+				func.instituicao = (int)cbo_instituicao.SelectedValue;
 			}
 
 			return func;

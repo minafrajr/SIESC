@@ -2,6 +2,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/06/2015
 
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
@@ -48,9 +49,9 @@ namespace SIESC_BD.Control
 				mantenedor_TA = new mantenedorTableAdapter();
 
 				if (salvar)
-					return (mantenedor_TA.Inserir(mantenedor.Tipo) > 0);
+					return (mantenedor_TA.Inserir(mantenedor.tipo) > 0);
 
-				return (mantenedor_TA.Atualizar(mantenedor.Tipo, mantenedor.Codigo) > 0);
+				return (mantenedor_TA.Atualizar(mantenedor.tipo, mantenedor.codigo) > 0);
 			}
 			catch (SqlException e)
 			{

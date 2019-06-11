@@ -3,27 +3,31 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
+using SIESC.Classes;
 
-namespace SIESC.Classes
-{/// <summary>
-/// 
-/// </summary>
+namespace SIESC
+{
     public class Aluno : Pessoa
     {
         #region Atributos
         /// <summary>
         /// Código do aluno
         /// </summary>
-        private int _id;
+        private int id;
 
         /// <summary>
         /// Deficiencia do aluno
         /// </summary>
-        private int? _deficiencia;
+        private int? deficiencia;
 
         #endregion
 
         #region construtoras
+
+        /// <summary>
+        /// Construtora da Classe
+        /// </summary>
+        public Aluno() { }
 
         #endregion
 
@@ -34,8 +38,8 @@ namespace SIESC.Classes
         /// </summary>
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         /// <summary>
@@ -43,8 +47,8 @@ namespace SIESC.Classes
         /// </summary>
         public int? Deficiencia
         {
-            get { return _deficiencia; }
-            set { _deficiencia = value; }
+            get { return deficiencia; }
+            set { deficiencia = value; }
         }
 
         /// <summary>

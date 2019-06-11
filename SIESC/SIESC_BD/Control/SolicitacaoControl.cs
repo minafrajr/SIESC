@@ -3,7 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 28/05/2015
 #endregion
-
+using SIESC;
 using SIESC.Classes;
 using SIESC_BD.DataSets.ds_siescTableAdapters;
 using System;

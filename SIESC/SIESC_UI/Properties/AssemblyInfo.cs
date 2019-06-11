@@ -3,7 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
-
+using System.Deployment.Application;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Resources;

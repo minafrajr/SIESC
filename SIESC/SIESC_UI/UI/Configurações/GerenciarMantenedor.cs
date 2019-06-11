@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
 using SIESC.Classes;
 using SIESC_BD.Control;
 
@@ -80,8 +86,8 @@ namespace SIESC_UI.UI.Configurações
 
 				mantenedor = new Mantenedor()
 				             {
-					             Tipo = txt_nomemotivo.Text,
-					             Codigo = Convert.ToInt16(txt_codigo.Text)
+					             tipo = txt_nomemotivo.Text,
+					             codigo = Convert.ToInt16(txt_codigo.Text)
 				             };
 
 				if (string.IsNullOrEmpty(txt_codigo.Text))

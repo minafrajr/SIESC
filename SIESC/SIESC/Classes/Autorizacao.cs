@@ -4,36 +4,20 @@
 // Criado em: 22/03/2015
 #endregion
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 
 namespace SIESC.Classes
 {
-	
-	/// <summary>
-	/// 
-	/// </summary>
-	public enum Tipoautorizacao { 
-		/// <summary>
-        /// 
-        /// </summary>
-		Dirigir, 
-		/// <summary>
-        /// 
-        /// </summary>
-		Secretariar, 
-		/// <summary>
-        /// 
-        /// </summary>
-		Lecionar }
-	/// <summary>
-    /// 
-    /// </summary>
+	public enum tipoautorizacao { dirigir, secretariar, lecionar }
+
 	public class Autorizacao
 	{
 		/// <summary>
 		/// codigo da autorização
 		/// </summary>
-		public int IdAutorizacao { get; set; }
+		public int idAutorizacao { get; set; }
 		/// <summary>
 		/// codigo da instituição
 		/// </summary>
@@ -57,15 +41,15 @@ namespace SIESC.Classes
 		/// <summary>
 		/// Numero de autorização
 		/// </summary>
-		public string Numeroautorizacao;
+		public string numeroautorizacao;
 		/// <summary>
 		/// tipo de autorização
 		/// </summary>
-		public Tipoautorizacao Tipoautorizacao;
+		public tipoautorizacao Tipoautorizacao;
 		/// <summary>
-		/// Codigo da disciplina
+		/// Codigo da disciplian
 		/// </summary>
-		public int? Disciplina;
+		public int? disciplina;
 		/// <summary>
 		/// Documentos apresentados pelo funcionario para autorização
 		/// </summary>
@@ -97,15 +81,15 @@ namespace SIESC.Classes
 		/// </summary>
 		public Autorizacao() { }
 
-
-        /// <summary>
-        /// Construtora da classe
-        /// </summary>
-        /// <param name="idinstituicao">código da instituição</param>
-        /// <param name="codigorequerente">código do funcionário requerente</param>
-        /// <param name="data_expedicao">Data oficial da máquina servidora do banco</param>
-        /// <param name="tipo_autoriz"></param>
-        public Autorizacao(int idinstituicao, int codigorequerente, DateTime data_expedicao, Tipoautorizacao tipo_autoriz)
+	
+		/// <summary>
+		/// Construtora da classe
+		/// </summary>
+		/// <param name="idinstituicao">código da instituição</param>
+		/// <param name="codigorequerente">código do funcionário requerente</param>
+		/// <param name="data_expedicao">Data oficial da máquina servidora do banco</param>
+		/// <param name="tipoautorizacao">Tipo de autorização</param>
+		public Autorizacao(int idinstituicao, int codigorequerente, DateTime data_expedicao, tipoautorizacao tipo_autoriz)
 		{
 			idInstituicao = idinstituicao;
 			idfuncionario = codigorequerente;
@@ -118,13 +102,13 @@ namespace SIESC.Classes
 		/// Adiciona o prazo de validade da autorização de acordo com o cargoOrigem
 		/// </summary>
 		/// <returns>A data em que a autorização irá expirar</returns>
-		private DateTime GerardataValidade(Tipoautorizacao autoriz_tipo)
+		private DateTime GerardataValidade(tipoautorizacao autoriz_tipo)
 		{
-			if (autoriz_tipo == Tipoautorizacao.Secretariar)
+			if (autoriz_tipo == tipoautorizacao.secretariar)
 			{
 				return datavalidade = dataexpedicao.AddYears(2);//secretariar 3 anos a partir da data de expedição
 			}
-			else if (autoriz_tipo == Tipoautorizacao.Dirigir)//dirigir 2 anos a partir da data de expedição
+			else if (autoriz_tipo == tipoautorizacao.dirigir)//dirigir 2 anos a partir da data de expedição
 			{
 				return datavalidade = dataexpedicao.AddYears(1);//dirigir
 			}

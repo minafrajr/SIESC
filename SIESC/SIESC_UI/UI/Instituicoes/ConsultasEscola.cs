@@ -7,6 +7,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using SIESC_BD.Control;
+using SIESC_UI.siescDataSetTableAdapters;
 
 namespace SIESC_UI.UI
 {

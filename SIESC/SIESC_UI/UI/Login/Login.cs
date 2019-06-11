@@ -3,6 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
+using SIESC;
 using SIESC.Classes;
 using SIESC_BD.Control;
 using System;
@@ -14,15 +15,12 @@ using System.Xml;
 
 namespace SIESC_UI.UI.Login
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public partial class Login : SIESC_UI.base_UI
     {
         /// <summary>
         /// 
         /// </summary>
-        public Usuario Usuario { get; private set; }
+        public Usuario usuario { get; private set; }
         /// <summary>
         /// 
         /// </summary>
@@ -42,7 +40,7 @@ namespace SIESC_UI.UI.Login
         {
             InitializeComponent();
 
-            Usuario = _usuario;
+            usuario = _usuario;
         }
 
 
@@ -51,13 +49,13 @@ namespace SIESC_UI.UI.Login
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Btn_ok_Click(object sender, EventArgs e)
+        private void btn_ok_Click(object sender, EventArgs e)
         {
             try
             {
                 //string novaconexao = string.Empty;
 
-                Usuario = new Usuario()
+                usuario = new Usuario()
                 {
                     nomeusuario = txt_usuario.Text,
                     senhausuario = txt_senha.Text
@@ -66,7 +64,7 @@ namespace SIESC_UI.UI.Login
                 usuarioControl = new UsuarioControl();
 
 
-                if (usuarioControl.ValidateUser(Usuario))
+                if (usuarioControl.ValidateUser(usuario))
                 {
                     //novaconexao = SelecionaUsuarioBanco(usuario);
                     //AtualizarXMLConectionString(novaconexao);
@@ -80,49 +78,78 @@ namespace SIESC_UI.UI.Login
         }
 
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="user"></param>
-        ///// <returns></returns>
-        //private string SelecionaUsuarioBanco(Usuario user)
-        //{
-        //    try
-        //    {
-        //        StringBuilder strbd = new StringBuilder();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        private string SelecionaUsuarioBanco(Usuario user)
+        {
+            try
+            {
+                StringBuilder strbd = new StringBuilder();
 
-        //        strbd.Append("user id=");
-        //        strbd.Append(user.nomeusuario);
-        //        strbd.Append(";password=");
-        //        strbd.Append(user.senhausuario);
-        //        strbd.Append(";persistsecurityinfo=True;database=siesc;server=localhost");
+                strbd.Append("user id=");
+                strbd.Append(user.nomeusuario);
+                strbd.Append(";password=");
+                strbd.Append(user.senhausuario);
+                strbd.Append(";persistsecurityinfo=True;database=siesc;server=localhost");
 
-        //        string con = strbd.ToString();
+                string con = strbd.ToString();
 
-        //        SqlConnection dbConnection = new SqlConnection();
+                SqlConnection dbConnection = new SqlConnection();
 
-        //        ConfigurationManager.RefreshSection("connectiosStrings");
+                ConfigurationManager.RefreshSection("connectiosStrings");
 
-        //        dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings[3].ToString();
+                dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings[3].ToString();
 
-        //        return con;
-        //    }
-        //    catch (ConfigurationException exception)
-        //    {
-        //        throw exception;
-        //    }
-        //    catch (SqlException exception)
-        //    {
-        //        throw exception;
-        //    }
-        //}
+                return con;
+            }
+            catch (ConfigurationException exception)
+            {
+                throw exception;
+            }
+            catch (SqlException exception)
+            {
+                throw exception;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="con"></param>
+        private void AtualizarXMLConectionString(string con)
+        {
+            try
+            {
+                XmlDocument documentoXML = new XmlDocument();
+
+                documentoXML.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+
+                foreach (XmlElement element in documentoXML.DocumentElement)
+                {
+                    if (element.Name == "connectionString")
+                    {
+                        element.FirstChild.Attributes[0].Value = con;
+                    }
+                }
+
+                documentoXML.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+            }
+            catch (XmlException exception)
+            {
+                throw exception;
+            }
+
+        }
 
         /// <summary>
         /// Evento do botão cancelar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
             Application.Exit(); //finaliza o sistema
@@ -133,7 +160,7 @@ namespace SIESC_UI.UI.Login
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Llb_mudarsenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llb_mudarsenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RecuperaSenha frm_RecuperaSenha = new RecuperaSenha();
 
@@ -148,7 +175,7 @@ namespace SIESC_UI.UI.Login
         {
             if (e.KeyCode.Equals(Keys.Enter))
             {
-                this.Btn_ok_Click(sender, e);
+                this.btn_ok_Click(sender, e);
             }
         }
     }

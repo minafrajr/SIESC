@@ -3,7 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-
+using SIESC;
 using SIESC.Classes;
 using SIESC_BD.Control;
 using SIESC_UI.UI.Relatorios;

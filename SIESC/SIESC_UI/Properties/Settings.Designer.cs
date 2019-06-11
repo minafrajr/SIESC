@@ -12,7 +12,7 @@ namespace SIESC_UI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -54,8 +54,8 @@ namespace SIESC_UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=minafra;password=escrita;persistsecurityinfo=True;databa" +
-            "se=siesc;sslmode=None")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;database=" +
+            "siesc;sslmode=None")]
         public string siescConnectionString {
             get {
                 return ((string)(this["siescConnectionString"]));

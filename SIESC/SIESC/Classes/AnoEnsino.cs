@@ -1,4 +1,9 @@
-﻿namespace SIESC.Classes
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SIESC.Classes
 {
 	/// <summary>
 	/// Classe para informar o ano de ensino

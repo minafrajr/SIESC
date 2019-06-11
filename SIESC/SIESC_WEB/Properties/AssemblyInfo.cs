@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Informações gerais sobre um assembly são controladas através do seguinte 

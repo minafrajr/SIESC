@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using MySql.Data.MySqlClient;
 
 namespace SIESC_BD.Control
@@ -26,6 +28,10 @@ namespace SIESC_BD.Control
 		/// banco de dados a ser consultado
 		/// </summary>
 		private string bancodedados;
+		/// <summary>
+		/// Construtor da classe
+		/// </summary>
+		public AnosAnterioresControl() { }
 
 		/// <summary>
 		/// Seleciona o tipo de consulta e determina o parãmetro de consulta

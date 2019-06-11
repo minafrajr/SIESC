@@ -5,7 +5,21 @@
 #endregion
 
 using System;
+using System.Configuration;
+using System.Data;
+using System.Data.Odbc;
 using System.Windows.Forms;
+using SIESC;
+using SIESC_BD.Control;
+using SIESC_UI.UI;
+using SIESC_UI.UI.Autorizacoes;
+using SIESC_UI.UI.CEP;
+using SIESC_UI.UI.Escolas;
+using SIESC_UI.UI.Login;
+using SIESC_UI.UI.Relatorios;
+using SIESC_UI.UI.Sobre;
+using SIESC_UI.UI.Zoneamento;
+using SIESC_WEB;
 
 namespace SIESC_UI
 {

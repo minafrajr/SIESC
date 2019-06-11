@@ -121,9 +121,7 @@ namespace SIESC.Classes
 			get; set;
 		}
 
-        /// <summary>
-        /// 
-        /// </summary>
+
 		public string Telefone3
 		{
 			get; set;
@@ -131,14 +129,14 @@ namespace SIESC.Classes
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Cep { get; set; }
+		public string cep { get; set; }
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Latitude { get; set; }
+		public string latitude { get; set; }
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Longitude { get; set; }
+		public string longitude { get; set; }
 	}
 }

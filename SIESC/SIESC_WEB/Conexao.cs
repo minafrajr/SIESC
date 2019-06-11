@@ -1,4 +1,9 @@
-﻿namespace SIESC_WEB
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SIESC_WEB
 {
 	public static class Conexao
 	{

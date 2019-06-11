@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 using SIESC_UI.tecnologia1;
 
 namespace SIESC_UI.UI.CEP
