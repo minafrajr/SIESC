@@ -10,6 +10,7 @@
 *.sln.docstates
 Zoneador.cs
 Metrics.cs
+App.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
