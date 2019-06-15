@@ -11,6 +11,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Web;
 using Newtonsoft.Json;
+using SIESC_WEB.Properties;
 
 namespace SIESC_WEB
 {
@@ -59,7 +60,7 @@ namespace SIESC_WEB
 
 				string[] coordenades = new string[2];
 
-				leitor = new XmlTextReader("https://maps.googleapis.com/maps/api/geocode/xml?address=@endereco&sensor=false&key=AIzaSyBM9ETUuya2WEeUapukzPET4Y4z4gX_ivY".Replace("@endereco", endereco));
+				leitor = new XmlTextReader("https://maps.googleapis.com/maps/api/geocode/xml?address=@endereco&sensor=false&key="+Settings.Default.geoCode.Replace("@endereco", endereco));
 
 
 				#region Estrutura do XML de retorno do GOOGLE
@@ -139,8 +140,7 @@ namespace SIESC_WEB
 			{
 				WebRequest request = WebRequest
 					.Create(
-						"https://maps.googleapis.com/maps/api/geocode/xml?address=@endereco&sensor=false&key=AIzaSyBM9ETUuya2WEeUapukzPET4Y4z4gX_ivY"
-							.Replace("@endereco", endereco));
+						"https://maps.googleapis.com/maps/api/geocode/xml?address=@endereco&sensor=false&key="+Settings.Default.geoCode.Replace("@endereco", endereco));
 
 				using (WebResponse response = request.GetResponse())
 				{
@@ -209,7 +209,7 @@ namespace SIESC_WEB
 				{
 
 					string json =
-						wc.DownloadString("http://www.betim.mg.gov.br/api/geocode/geocode?epsg=4326&key=ED25C1414AE44848931E357D85658460&cep=@cep&number=@numlograd"
+						wc.DownloadString("http://www.betim.mg.gov.br/api/geocode/geocode?epsg=4326&key="+Settings.Default.pmbKey+"&cep=@cep&number=@numlograd"
 								.Replace("@cep", cep).Replace("@numlograd", numLogradouro));
 					
 					//exmplo retorno json
