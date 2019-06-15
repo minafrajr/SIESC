@@ -8,7 +8,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-App.config
+app.config
 Settings.Designer.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
