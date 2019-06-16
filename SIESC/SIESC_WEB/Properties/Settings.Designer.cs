@@ -20,7 +20,7 @@ namespace SIESC_WEB.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
+            } 
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
