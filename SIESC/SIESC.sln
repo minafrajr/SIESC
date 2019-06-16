@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIESC", "SIESC\SIESC.csproj", "{74B0FD10-DBB5-40B3-84B2-5A332A93CBA7}"
 EndProject
@@ -17,6 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4744C
 	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalacao", "Instalacao\Instalacao.vdproj", "{A0A276B0-D300-45C5-9358-0A3399C3641D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DCF74559-F193-4741-92E4-7FD4A7CA43A2}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,26 +71,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1A25D63-FC08-4407-B990-18CE2BB3CAE5}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://minafrajr.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SIESC\\SIESC.csproj
-		SccProjectName1 = SIESC
-		SccLocalPath1 = SIESC
-		SccProjectUniqueName2 = SIESC_BD\\SIESC_BD.csproj
-		SccProjectName2 = SIESC_BD
-		SccLocalPath2 = SIESC_BD
-		SccProjectUniqueName3 = SIESC_UI\\SIESC_UI.csproj
-		SccProjectName3 = SIESC_UI
-		SccLocalPath3 = SIESC_UI
-		SccProjectUniqueName4 = SIESC_WEB\\SIESC_WEB.csproj
-		SccProjectName4 = SIESC_WEB
-		SccLocalPath4 = SIESC_WEB
-		SccProjectUniqueName5 = Instalacao\\Instalacao.vdproj
-		SccProjectName5 = Instalacao
-		SccLocalPath5 = Instalacao
 	EndGlobalSection
 EndGlobal
