@@ -2,8 +2,8 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 02/02/2015
 using MySql.Data.MySqlClient;
+using MySql.Data;
 using SIESC;
-using SIESC.Classes;
 using SIESC_UI.UI;
 using SIESC_UI.UI.Alunos;
 using SIESC_UI.UI.Autorizacoes;
@@ -27,6 +27,9 @@ using ThreadState = System.Threading.ThreadState;
 
 namespace SIESC_UI
 {
+    /// <summary>
+    /// Formulário Principal
+    /// </summary>
     public partial class Principal_UI : Form
     {
         /// <summary>
@@ -349,8 +352,6 @@ namespace SIESC_UI
             frm_cadastraraluno.MdiParent = this;
             frm_cadastraraluno.Show();
         }
-
-
         /// <summary>
         /// Carrega form com gif enquenao é aberto o relatório 
         /// </summary>

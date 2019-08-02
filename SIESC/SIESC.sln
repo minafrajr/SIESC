@@ -16,8 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4744C
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalacao", "Instalacao\Instalacao.vdproj", "{A0A276B0-D300-45C5-9358-0A3399C3641D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DCF74559-F193-4741-92E4-7FD4A7CA43A2}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
@@ -61,10 +59,6 @@ Global
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|x86.ActiveCfg = Release|Any CPU
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Debug|Any CPU.ActiveCfg = Debug
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Debug|x86.ActiveCfg = Debug
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Release|Any CPU.ActiveCfg = Release
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -116,38 +116,46 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.8.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.8.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.8.0.12\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MySql.Fabric.6.9.12\lib\net45\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data" />
@@ -382,6 +390,12 @@
     <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Solicitacoes\LocalizaSolicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\LocalizaSolicitacao.Designer.cs">
+      <DependentUpon>LocalizaSolicitacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -541,6 +555,9 @@
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\LocalizaSolicitacao.resx">
+      <DependentUpon>LocalizaSolicitacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
       <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -610,20 +627,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SIESC\SIESC.csproj">
-      <Project>{74b0fd10-dbb5-40b3-84b2-5a332a93cba7}</Project>
-      <Name>SIESC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SIESC_BD\SIESC_BD.csproj">
-      <Project>{519bb1cf-216a-4467-aa80-dbf095e1bde2}</Project>
-      <Name>SIESC_BD</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SIESC_WEB\SIESC_WEB.csproj">
-      <Project>{e398aec5-d722-4f0c-8171-1a782dbc3412}</Project>
-      <Name>SIESC_WEB</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Icons\Aluno.ico" />
     <Content Include="Icons\Autorizacao.ico" />
     <Content Include="Icons\AutorizaFuncionario.ico" />
@@ -632,9 +635,6 @@
     <Content Include="Icons\Pencil-and-Ruler.ico" />
     <Content Include="Icons\Relatorios.ico" />
     <Content Include="Icons\Solicitacao.ico" />
-    <None Include="Resources\stampdocument_101087.png" />
-    <None Include="Resources\target.png" />
-    <None Include="Resources\pngkit_send-icon-png_1882555.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -648,6 +648,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\stampdocument_101087.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\pngkit_send-icon-png_1882555.png" />
     <None Include="Resources\user_32-32.png" />
     <None Include="Resources\circle_blue1.png" />
     <None Include="Resources\circle_blue.png" />
@@ -740,16 +743,18 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="Newtonsoft.Json">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
+    <ProjectReference Include="..\SIESC\SIESC.csproj">
+      <Project>{74b0fd10-dbb5-40b3-84b2-5a332a93cba7}</Project>
+      <Name>SIESC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_BD\SIESC_BD.csproj">
+      <Project>{519bb1cf-216a-4467-aa80-dbf095e1bde2}</Project>
+      <Name>SIESC_BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_WEB\SIESC_WEB.csproj">
+      <Project>{e398aec5-d722-4f0c-8171-1a782dbc3412}</Project>
+      <Name>SIESC_WEB</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
