@@ -34,7 +34,9 @@ namespace SIESC_UI
         {
             try
             {
-                //alternativo http://cep.republicavirtual.com.br/web_cep.php?cep=@cep&formato=xml
+                //alternativo http://cep.republicavirtual.com.br/web_cep.php?cep=32604170cep&formato=xml
+                //ourtro alternativo https://api.postmon.com.br/v1/cep/32605100?format=xml
+                //https://viacep.com.br/ws/32605100/json/
 
                 WebRequest request = WebRequest.Create("https://viacep.com.br/ws/@cep/xml/".Replace("@cep", cep));
 
@@ -98,11 +100,11 @@ namespace SIESC_UI
                         XElement xElementbairro = document.Descendants("bairro").First();
 
                         saida[0] = xElementbairro.Value;
-                        saida[1] = String.Empty;
+                        saida[1] = string.Empty;
                         saida[2] = xElementlogradouro.Value;
-                        saida[3] = String.Empty;
-                        saida[4] = String.Empty;
-                        saida[5] = String.Empty;
+                        saida[3] = string.Empty;
+                        saida[4] = string.Empty;
+                        saida[5] = string.Empty;
                     }
                     catch (Exception)
                     {
@@ -117,34 +119,34 @@ namespace SIESC_UI
         /// Consulta de logradouro através do CEP no WebService da PMB
         /// </summary>
         /// <param name="cep">O cep para consulta</param>
-        /// <param name="bairro">ComboBox do bairro</param>
-        /// <param name="logradouro">TextBox do logradouro</param>
-        /// <param name="tipologradouro">ComboBox do tipo de logradouro</param>
-        public void buscadorCEP(string cep, MyComboBox cbo_bairro, MyTextBox txt_logradouro, MyComboBox cbo_tipologradouro)
+        /// <param name="cboBairro"></param>
+        /// <param name="txtLogradouro"></param>
+        /// <param name="cboTipologradouro"></param>
+        public void buscadorCEP(string cep, MyComboBox cboBairro, MyTextBox txtLogradouro, MyComboBox cboTipologradouro)
         {
             ServicoCEP srv = new ServicoCEP();
 
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
-            txt_logradouro.ResetText();
-            cbo_tipologradouro.ResetText();
+            txtLogradouro.ResetText();
+            cboTipologradouro.ResetText();
             
             
             if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
             {
-                cbo_bairro.SelectedIndex = -1;
+                cboBairro.SelectedIndex = -1;
                 throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
             }
 
             //localiza o item bairro na combo
-            foreach (DataRowView item in cbo_bairro.Items)
+            foreach (DataRowView item in cboBairro.Items)
             {
                 if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
-                    cbo_bairro.SelectedIndex = cbo_bairro.Items.IndexOf(item);
+                    cboBairro.SelectedIndex = cboBairro.Items.IndexOf(item);
             }
             
-            txt_logradouro.Text = enderecos[0].Logradouro;
-            cbo_tipologradouro.Text = enderecos[0].TipoLogradouro;
+            txtLogradouro.Text = enderecos[0].Logradouro;
+            cboTipologradouro.Text = enderecos[0].TipoLogradouro;
         }
 
         /// <summary>

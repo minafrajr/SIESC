@@ -11,51 +11,64 @@ namespace SIESC_UI.UI.Relatorios
     public partial class frm_ficha_encaminhamento : SIESC_UI.base_UI
     {
         /// <summary>
-        /// 
+        /// Settings para as margens do relatório
         /// </summary>
         private Margins margins = new Margins(5, 1, 1, 1); //Configurando as margens
         /// <summary>
-        /// 
+        /// Configura se paisagem ou retrato
         /// </summary>
         private PageSettings pg = new PageSettings(); //Configurando para paisagem
 
-        /// 
+        /// <summary>
+        /// A fonte de dados do relatório
         /// </summary>
         private ReportDataSource datasource;
-
+        /// <summary>
+        /// Objeto de acesso ao banco de Solicitações de vagas
+        /// </summary>
         SolicitacaoControl controleSolicitacao;
-
-        private int idSolicitacao;
+        /// <summary>
+        /// Código da solicitação
+        /// </summary>
+        private readonly int _idSolicitacao;
 
         /// <summary>
-        /// 
+        /// DataTable da Solicitação de dados
         /// </summary>
         private DataTable dtSolicitacao;
-
+        /// <summary>
+        /// Construtor da Classe
+        /// </summary>
+        /// <param name="_idSolicitacao">O Código da solicitação de vaga</param>
         public frm_ficha_encaminhamento(int _idSolicitacao)
         {
             InitializeComponent();
-            idSolicitacao = _idSolicitacao;
+            this._idSolicitacao = _idSolicitacao;
             ConfiguraRelatorio();
             SelecionaEncaminhamento();
         }
-
+        /// <summary>
+        /// Evento Load do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frm_ficha_encaminhamento_Load(object sender, EventArgs e)
         {
             this.rpt_viewer.RefreshReport();
         }
-
+        /// <summary>
+        /// Gera o Encaminhamento do aluno
+        /// </summary>
         private void SelecionaEncaminhamento()
         {
             try
             {
                 datasource = new ReportDataSource("dsRelatorios");
-                
+
                 controleSolicitacao = new SolicitacaoControl();
-                dtSolicitacao = controleSolicitacao.EncaminhamentoAluno(idSolicitacao);
+                dtSolicitacao = controleSolicitacao.EncaminhamentoAluno(_idSolicitacao);
 
                 datasource.Value = dtSolicitacao;
-                
 
                 rpt_viewer.LocalReport.DataSources.Add(datasource);
                 rpt_viewer.RefreshReport();
@@ -66,10 +79,9 @@ namespace SIESC_UI.UI.Relatorios
                 throw;
             }
         }
-
-
+        
         /// <summary>
-        /// 
+        /// Configura o relatório
         /// </summary>
         private void ConfiguraRelatorio()
         {

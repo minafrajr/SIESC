@@ -86,7 +86,7 @@ namespace SIESC_BD.Control
 	    /// Deletar um aluno do Banco de dados
 	    /// </summary>
 	    /// <param name="Id">O Id do aluno a ser deletado</param>
-	    /// <param name="_idAluno"></param>
+	    /// <param name="idAluno">O codigo do aluno</param>
 	    /// <returns>true - para a operação feita corretamente</returns>
 	    public bool Deletar(int idAluno)
 		{
@@ -104,7 +104,7 @@ namespace SIESC_BD.Control
 		/// <summary>
 		/// Altera os dados dos alunos
 		/// </summary>
-		/// <param name="tipo"></param>
+		/// <param name="aluno"></param>
 		/// <returns></returns>
 		public bool Alterar(Aluno aluno)
 		{
@@ -124,7 +124,7 @@ namespace SIESC_BD.Control
 		/// <summary>
 		/// Localiza o aluno pelo ID
 		/// </summary>
-		/// <param name="Aluno">O objeto Aluno</param>
+		/// <param name="aluno">O objeto Aluno</param>
 		/// <returns>Retorna o ID do aluno</returns>
 		public int PesquisaID(Aluno aluno)
 		{
@@ -143,7 +143,7 @@ namespace SIESC_BD.Control
 		/// <summary>
 		/// Localiza o aluno pelo nome
 		/// </summary>
-		/// <param name="termo"></param>
+		/// <param name="aluno"></param>
 		/// <returns></returns>
 		public string PesquisaNome(Aluno aluno)
 		{
@@ -165,7 +165,7 @@ namespace SIESC_BD.Control
 		/// <param name="nomealuno"></param>
 		/// <param name="dtanasc"></param>
 		/// <param name="nomemae"></param>
-		/// <returns></returns>
+		/// <returns>True ou false</returns>
 		public bool ContemAluno(string nomealuno, DateTime dtanasc, string nomemae)
 		{
 			try
@@ -204,7 +204,7 @@ namespace SIESC_BD.Control
 			}
 			catch (SqlException exception)
 			{
-				throw exception;
+				throw;
 			}
 		}
 		/// <summary>
@@ -212,26 +212,19 @@ namespace SIESC_BD.Control
 		/// </summary>
 		/// <param name="dt"></param>
 		/// <returns></returns>
-		private Aluno RetornaAluno(DataTable dt)
+		private static Aluno RetornaAluno(DataTable dt)
 		{
-			try
-			{
-				Aluno aluno = new Aluno();
-				aluno.Nome = dt.Rows[0]["nomeAluno"].ToString();
-				aluno.Sexo = dt.Rows[0]["sexo"].ToString();
-				aluno.NomeMae = dt.Rows[0]["nomeMaeAluno"].ToString();
-				aluno.Nomepai = dt.Rows[0]["nomePaiAluno"].ToString();
-				aluno.Tel1 = dt.Rows[0]["telefone1Aluno"].ToString();
-				aluno.Tel2 = dt.Rows[0]["telefone2Aluno"].ToString();
-				aluno.Tel3 = dt.Rows[0]["telefone3Aluno"].ToString();
-				aluno.DataNascimento = (DateTime)dt.Rows[0]["dataNascimentoAluno"];
-				aluno.Deficiencia = dt.Rows[0]["deficiencia"] as int?;
-				return aluno;
-			}
-			catch (Exception exception)
-			{
-				throw exception;
-			}
+		    Aluno aluno = new Aluno();
+		    aluno.Nome = dt.Rows[0]["nomeAluno"].ToString();
+		    aluno.Sexo = dt.Rows[0]["sexo"].ToString();
+		    aluno.NomeMae = dt.Rows[0]["nomeMaeAluno"].ToString();
+		    aluno.Nomepai = dt.Rows[0]["nomePaiAluno"].ToString();
+		    aluno.Tel1 = dt.Rows[0]["telefone1Aluno"].ToString();
+		    aluno.Tel2 = dt.Rows[0]["telefone2Aluno"].ToString();
+		    aluno.Tel3 = dt.Rows[0]["telefone3Aluno"].ToString();
+		    aluno.DataNascimento = (DateTime)dt.Rows[0]["dataNascimentoAluno"];
+		    aluno.Deficiencia = dt.Rows[0]["deficiencia"] as int?;
+		    return aluno;
 		}
 
 		

@@ -119,7 +119,7 @@ namespace SIESC_UI.UI.Relatorios
 			{
 				foreach (DataRow row in dtZoneamento.Rows)
 				{
-					row["DistanciaCaminhando"] = Metrics.DistanciaInstituicao(latitude, longitude, row["latitude"].ToString(), row["longitude"].ToString());
+					row["DistanciaCaminhando"] = Metrics.CalculaDistanciaCaminhando(latitude, longitude, row["latitude"].ToString(), row["longitude"].ToString());
 				} 
 			}
 			else

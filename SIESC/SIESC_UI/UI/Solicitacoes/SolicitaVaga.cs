@@ -2,10 +2,10 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 
-using SIESC;
 using SIESC.Classes;
 using SIESC_BD.Control;
 using SIESC_UI.UI.CEP;
+using SIESC_UI;
 using SIESC_UI.UI.Relatorios;
 using SIESC_WEB;
 using System;
@@ -14,10 +14,11 @@ using System.Data;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC;
 
-namespace SIESC_UI.UI
+namespace SIESC_UI.UI.Solicitacoes
 {
-    public partial class SolicitaVaga : SIESC_UI.base_UI
+    public partial class SolicitaVaga
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -117,7 +118,8 @@ namespace SIESC_UI.UI
         {
             InitializeComponent();
 
-            statusNavegacao = Navegacao.editando;
+
+            statusNavegacao = solicitacao == null ? Navegacao.salvando : Navegacao.editando;
 
             AddListaControles();
 
@@ -819,6 +821,7 @@ namespace SIESC_UI.UI
                     NumResidencia = txt_mumresidencia.Text,
                     TipoLogradouro = cbo_tipologradouro.Text,
                     origemSolicitacao = (int)cbo_origem_solicitacao.SelectedValue
+
                 };
 
                 if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou)// já existe e houve alteração no encaminhamento
@@ -829,7 +832,6 @@ namespace SIESC_UI.UI
 
                 if (statusNavegacao == Navegacao.salvando)
                 {
-                    //solicitacao.Usuario = WindowsIdentity.GetCurrent().Name;
                     _solicitacao.Usuario = PrincipalUI.user.nomeusuario.ToUpper();
                 }
 
@@ -1455,8 +1457,8 @@ namespace SIESC_UI.UI
                     case "TIO(A)":
                     case "OUTROS":
                     case "PRIMO(A)":
-                    case "MADRASTRA":
-                    case "PADRASTRO":
+                    case "MADRASTA":
+                    case "PADRASTO":
                     case "IRMÃO(Ã)":
                         txt_solicitante.Visible = true;
                         break;
@@ -1586,7 +1588,7 @@ namespace SIESC_UI.UI
 
                     coordEscola = controleInstituicao.RetornaCoordenasInstituicao((int)solicitacao.InstituicaoEncaminhada);
 
-                    int distancia = Metrics.DistanciaInstituicao(solicitacao.Coordenadas[0],
+                    int distancia = Metrics.CalculaDistanciaCaminhando(solicitacao.Coordenadas[0],
                         solicitacao.Coordenadas[1], coordEscola[0], coordEscola[1]);
 
                     controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id,

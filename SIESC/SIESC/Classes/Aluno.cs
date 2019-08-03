@@ -7,6 +7,10 @@ using SIESC.Classes;
 
 namespace SIESC
 {
+    /// <summary>
+    /// Classe Aluno
+    /// Herança: Classe Pessoa
+    /// </summary>
     public class Aluno : Pessoa
     {
         #region Atributos

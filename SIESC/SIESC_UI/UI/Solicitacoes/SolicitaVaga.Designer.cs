@@ -1,33 +1,34 @@
-﻿namespace SIESC_UI.UI
+﻿namespace SIESC_UI.UI.Solicitacoes
 {
-	partial class SolicitaVaga
-	{
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class SolicitaVaga :base_UI
+    {
+        /// <summary>
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Limpar os recursos que estão sendo usados.
-		/// </summary>
-		/// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+                
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Código gerado pelo Windows Form Designer
+        #region Código gerado pelo Windows Form Designer
 
-		/// <summary>
-		/// Método necessário para suporte do Designer - não modifique
-		/// o conteúdo deste método com o editor de código.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Método necessário para suporte do Designer - não modifique
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolicitaVaga));
             this.lbl_codigo = new System.Windows.Forms.Label();
@@ -1390,133 +1391,133 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.Button btn_cancelar;
-		private System.Windows.Forms.Button btn_novo;
-		private System.Windows.Forms.Button btn_salvar;
-		private System.Windows.Forms.Label lbl_codigo;
-		private System.Windows.Forms.TextBox txt_codigoAluno;
-		private System.Windows.Forms.GroupBox gpb_dadospessoais;
-		private System.Windows.Forms.GroupBox gpb_sexo;
-		private System.Windows.Forms.RadioButton rdb_feminino;
-		private System.Windows.Forms.RadioButton rdb_masculino;
-		private System.Windows.Forms.Label lbl_tipologradouro;
-		private MyTextBox txt_pai;
-		private MyTextBox txt_mae;
-		private System.Windows.Forms.Label lbl_pai;
-		private System.Windows.Forms.Label lbl_mae;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
-		private System.Windows.Forms.Label lbl_datanasc;
-		private MyTextBox txt_nomealuno;
-		private System.Windows.Forms.Label lbl_nome;
-		private System.Windows.Forms.GroupBox gpb_endereço;
-		private System.Windows.Forms.Button btn_buscarcep;
-		private System.Windows.Forms.Label lbl_logradouro;
-		private MyComboBox cbo_tipologradouro;
-		private MyMaskedTextBox msk_cep;
-		private System.Windows.Forms.Label lbl_cep;
-		private MyMaskedTextBox msk_telefone3;
-		private MyMaskedTextBox msk_telefone2;
-		private MyMaskedTextBox msk_telefone1;
-		private System.Windows.Forms.Label label3;
-		private MyTextBox txt_complemento;
-		private System.Windows.Forms.Label lbl_complemento;
-		private MyComboBox cbo_bairro;
-		private System.Windows.Forms.Label _bairro;
-		private MyTextBox txt_mumresidencia;
-		private System.Windows.Forms.Label lbl_num;
-		private MyTextBox txt_logradouro;
-		private System.Windows.Forms.GroupBox gpb_solicitacao;
-		private System.Windows.Forms.Label lbl_estado;
-		private System.Windows.Forms.Label lbl_cidadeorigem;
-		private MyComboBox cbo_instituicao_solicitada;
-		private System.Windows.Forms.Label lbl_escolaorigem;
-		private MyComboBox cbo_instituicao_origem;
-		private System.Windows.Forms.Label lbl_instituicaosolicitada;
-		private System.Windows.Forms.Button btn_limpar;
-		private MyComboBox cbo_estado;
-		private MyComboBox cbo_motivo;
-		private System.Windows.Forms.Label lbl_motivo;
-		private System.Windows.Forms.GroupBox gpb_observacoes;
-		private MyTextBox txt_observacoes;
-		private MyComboBox cbo_anosolicitado;
-		private System.Windows.Forms.Label lbl_anosolicitado;
-		private System.Windows.Forms.Button btn_encaminhar;
-		private siescDataSet siescDataSet;
-		private System.Windows.Forms.BindingSource anoBindingSource;
-		private siescDataSetTableAdapters.anoTableAdapter anoTableAdapter;
-		private System.Windows.Forms.BindingSource bairrosBindingSource;
-		private siescDataSetTableAdapters.bairrosTableAdapter bairrosTableAdapter;
-		private System.Windows.Forms.BindingSource siescDataSetBindingSource;
-		private System.Windows.Forms.BindingSource instituicoesBindingSource;
-		private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
-		private MyComboBox cbo_instituicao_encaminhada;
-		private System.Windows.Forms.Label lbl_escola;
-		private System.Windows.Forms.BindingSource motivosBindingSource;
-		private siescDataSetTableAdapters.motivosTableAdapter motivosTableAdapter;
-		private System.Windows.Forms.Button btn_cancelaEnc;
-		private System.Windows.Forms.Button btn_limpaEnder;
-		private System.Windows.Forms.Label lbl_tituloform;
-		private System.Windows.Forms.BindingSource instituicoes1BindingSource;
-		private siescDataSetTableAdapters.instituicoes1TableAdapter instituicoes1TableAdapter;
-		private System.Windows.Forms.TextBox txt_codigoSolicitacao;
-		private System.Windows.Forms.Label lbl_codigoSolicitacao;
-		private System.Windows.Forms.Label label1;
-		private MyMaskedTextBox msk_codexpint;
-		private System.Windows.Forms.Button btn_gravar_codigoEI;
-		private MyTextBox txt_solicitante;
-		private MyComboBox cbo_solicitante;
-		private System.Windows.Forms.Label label2;
-		private siescDataSetTableAdapters.instorigemTableAdapter instorigemTableAdapter;
-		private System.Windows.Forms.BindingSource instorigemBindingSource;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label lbl_idade;
-		private System.Windows.Forms.Button btn_saberCep;
-		private MyComboBox cbo_cidades;
-		private siescDataSetTableAdapters.deficienciasTableAdapter deficienciasTableAdapter1;
-		private System.Windows.Forms.Label label5;
-		private MyComboBox cbo_deficiencia;
-		private System.Windows.Forms.BindingSource deficienciasBindingSource;
-		private System.Windows.Forms.Button btn_limpacombo;
-		private System.Windows.Forms.GroupBox gpb_comprovantes;
-		private System.Windows.Forms.Panel pnl_comprovantes;
-		private System.Windows.Forms.RadioButton rdb_contratoaluguel;
-		private System.Windows.Forms.RadioButton rdb_declarcemig;
-		private System.Windows.Forms.RadioButton rdb_copasa;
-		private System.Windows.Forms.RadioButton rdb_cemig;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.RadioButton rdb_comprovanteresponsavel_sim;
-		private System.Windows.Forms.RadioButton rdb_comprovanteresponsavel_nao;
-		private System.Windows.Forms.RadioButton rdb_outroscomprov;
-		private MyTextBox txt_comprovante;
-		private MyComboBox cbo_origem_solicitacao;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.BindingSource origemsolicitacaoBindingSource;
-		private siescDataSetTableAdapters.origemsolicitacaoTableAdapter origemsolicitacaoTableAdapter1;
-		private System.Windows.Forms.RadioButton rdb_telefone_fixo;
-		private System.Windows.Forms.RadioButton rdb_contabancaria;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btn_salvar;
+        private System.Windows.Forms.Label lbl_codigo;
+        private System.Windows.Forms.TextBox txt_codigoAluno;
+        private System.Windows.Forms.GroupBox gpb_dadospessoais;
+        private System.Windows.Forms.GroupBox gpb_sexo;
+        private System.Windows.Forms.RadioButton rdb_feminino;
+        private System.Windows.Forms.RadioButton rdb_masculino;
+        private System.Windows.Forms.Label lbl_tipologradouro;
+        private MyTextBox txt_pai;
+        private MyTextBox txt_mae;
+        private System.Windows.Forms.Label lbl_pai;
+        private System.Windows.Forms.Label lbl_mae;
+        private System.Windows.Forms.DateTimePicker dtp_datanasc;
+        private System.Windows.Forms.Label lbl_datanasc;
+        private MyTextBox txt_nomealuno;
+        private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.GroupBox gpb_endereço;
+        private System.Windows.Forms.Button btn_buscarcep;
+        private System.Windows.Forms.Label lbl_logradouro;
+        private MyComboBox cbo_tipologradouro;
+        private MyMaskedTextBox msk_cep;
+        private System.Windows.Forms.Label lbl_cep;
+        private MyMaskedTextBox msk_telefone3;
+        private MyMaskedTextBox msk_telefone2;
+        private MyMaskedTextBox msk_telefone1;
+        private System.Windows.Forms.Label label3;
+        private MyTextBox txt_complemento;
+        private System.Windows.Forms.Label lbl_complemento;
+        private MyComboBox cbo_bairro;
+        private System.Windows.Forms.Label _bairro;
+        private MyTextBox txt_mumresidencia;
+        private System.Windows.Forms.Label lbl_num;
+        private MyTextBox txt_logradouro;
+        private System.Windows.Forms.GroupBox gpb_solicitacao;
+        private System.Windows.Forms.Label lbl_estado;
+        private System.Windows.Forms.Label lbl_cidadeorigem;
+        private MyComboBox cbo_instituicao_solicitada;
+        private System.Windows.Forms.Label lbl_escolaorigem;
+        private MyComboBox cbo_instituicao_origem;
+        private System.Windows.Forms.Label lbl_instituicaosolicitada;
+        private System.Windows.Forms.Button btn_limpar;
+        private MyComboBox cbo_estado;
+        private MyComboBox cbo_motivo;
+        private System.Windows.Forms.Label lbl_motivo;
+        private System.Windows.Forms.GroupBox gpb_observacoes;
+        private MyTextBox txt_observacoes;
+        private MyComboBox cbo_anosolicitado;
+        private System.Windows.Forms.Label lbl_anosolicitado;
+        private System.Windows.Forms.Button btn_encaminhar;
+        private siescDataSet siescDataSet;
+        private System.Windows.Forms.BindingSource anoBindingSource;
+        private siescDataSetTableAdapters.anoTableAdapter anoTableAdapter;
+        private System.Windows.Forms.BindingSource bairrosBindingSource;
+        private siescDataSetTableAdapters.bairrosTableAdapter bairrosTableAdapter;
+        private System.Windows.Forms.BindingSource siescDataSetBindingSource;
+        private System.Windows.Forms.BindingSource instituicoesBindingSource;
+        private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
+        private MyComboBox cbo_instituicao_encaminhada;
+        private System.Windows.Forms.Label lbl_escola;
+        private System.Windows.Forms.BindingSource motivosBindingSource;
+        private siescDataSetTableAdapters.motivosTableAdapter motivosTableAdapter;
+        private System.Windows.Forms.Button btn_cancelaEnc;
+        private System.Windows.Forms.Button btn_limpaEnder;
+        private System.Windows.Forms.Label lbl_tituloform;
+        private System.Windows.Forms.BindingSource instituicoes1BindingSource;
+        private siescDataSetTableAdapters.instituicoes1TableAdapter instituicoes1TableAdapter;
+        private System.Windows.Forms.TextBox txt_codigoSolicitacao;
+        private System.Windows.Forms.Label lbl_codigoSolicitacao;
+        private System.Windows.Forms.Label label1;
+        private MyMaskedTextBox msk_codexpint;
+        private System.Windows.Forms.Button btn_gravar_codigoEI;
+        private MyTextBox txt_solicitante;
+        private MyComboBox cbo_solicitante;
+        private System.Windows.Forms.Label label2;
+        private siescDataSetTableAdapters.instorigemTableAdapter instorigemTableAdapter;
+        private System.Windows.Forms.BindingSource instorigemBindingSource;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_idade;
+        private System.Windows.Forms.Button btn_saberCep;
+        private MyComboBox cbo_cidades;
+        private siescDataSetTableAdapters.deficienciasTableAdapter deficienciasTableAdapter1;
+        private System.Windows.Forms.Label label5;
+        private MyComboBox cbo_deficiencia;
+        private System.Windows.Forms.BindingSource deficienciasBindingSource;
+        private System.Windows.Forms.Button btn_limpacombo;
+        private System.Windows.Forms.GroupBox gpb_comprovantes;
+        private System.Windows.Forms.Panel pnl_comprovantes;
+        private System.Windows.Forms.RadioButton rdb_contratoaluguel;
+        private System.Windows.Forms.RadioButton rdb_declarcemig;
+        private System.Windows.Forms.RadioButton rdb_copasa;
+        private System.Windows.Forms.RadioButton rdb_cemig;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rdb_comprovanteresponsavel_sim;
+        private System.Windows.Forms.RadioButton rdb_comprovanteresponsavel_nao;
+        private System.Windows.Forms.RadioButton rdb_outroscomprov;
+        private MyTextBox txt_comprovante;
+        private MyComboBox cbo_origem_solicitacao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource origemsolicitacaoBindingSource;
+        private siescDataSetTableAdapters.origemsolicitacaoTableAdapter origemsolicitacaoTableAdapter1;
+        private System.Windows.Forms.RadioButton rdb_telefone_fixo;
+        private System.Windows.Forms.RadioButton rdb_contabancaria;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga
         /// </summary>
         public enum Navegacao
-		{
-			/// <summary>
-			/// Aguardando 
-			/// </summary>
-			aguardando,
-			/// <summary>
-			/// Editando uma solicitação
-			/// </summary>
-			editando,
-			/// <summary>
-			/// Salvando uma solicitação
-			/// </summary>
-			salvando
-		}
-		
-	}
+        {
+            /// <summary>
+            /// Aguardando 
+            /// </summary>
+            aguardando,
+            /// <summary>
+            /// Editando uma solicitação
+            /// </summary>
+            editando,
+            /// <summary>
+            /// Salvando uma solicitação
+            /// </summary>
+            salvando
+        }
+
+    }
 }

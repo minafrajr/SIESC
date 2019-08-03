@@ -11,7 +11,7 @@
         /// Limpar os recursos que estão sendo usados.
         /// </summary>
         /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-        protected void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {

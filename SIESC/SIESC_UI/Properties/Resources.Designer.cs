@@ -93,6 +93,16 @@ namespace SIESC_UI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1211805003 {
+            get {
+                object obj = ResourceManager.GetObject("1211805003", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _127 {
             get {
                 object obj = ResourceManager.GetObject("127", resourceCulture);
@@ -413,6 +423,16 @@ namespace SIESC_UI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap desk_chair_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("desk-chair 24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap diagnostics_pass {
             get {
                 object obj = ResourceManager.GetObject("diagnostics_pass", resourceCulture);
@@ -646,6 +666,16 @@ namespace SIESC_UI.Properties {
         internal static System.Drawing.Bitmap user_32_32 {
             get {
                 object obj = ResourceManager.GetObject("user_32-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap walking_icon_7402 {
+            get {
+                object obj = ResourceManager.GetObject("walking-icon-7402", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

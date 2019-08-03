@@ -35,7 +35,8 @@ namespace SIESC_UI.UI.Relatorios
 		/// 
 		/// </summary>
 		private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem		/// <summary>
-		/// Construtor da classe
+		///<summary>
+	    /// Construtor da classe
 		/// </summary>
 		public frm_alunos_pendentes()
 		{

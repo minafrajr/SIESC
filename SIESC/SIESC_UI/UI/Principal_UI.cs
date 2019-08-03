@@ -2,8 +2,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 02/02/2015
 using MySql.Data.MySqlClient;
-using MySql.Data;
-using SIESC;
+using SIESC.Classes;
 using SIESC_UI.UI;
 using SIESC_UI.UI.Alunos;
 using SIESC_UI.UI.Autorizacoes;
@@ -23,13 +22,11 @@ using System.Drawing;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC_UI.UI.Solicitacoes;
 using ThreadState = System.Threading.ThreadState;
 
 namespace SIESC_UI
 {
-    /// <summary>
-    /// Formulário Principal
-    /// </summary>
     public partial class Principal_UI : Form
     {
         /// <summary>
@@ -352,6 +349,8 @@ namespace SIESC_UI
             frm_cadastraraluno.MdiParent = this;
             frm_cadastraraluno.Show();
         }
+
+
         /// <summary>
         /// Carrega form com gif enquenao é aberto o relatório 
         /// </summary>
@@ -2393,9 +2392,9 @@ namespace SIESC_UI
             var t = CarregaProgressoThread();
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(3);
-                frm.MdiParent = this;
-                frm.Show();
+                frm_relatorio_instituicoes frmRelatorioInstituicoes = new frm_relatorio_instituicoes(3);
+                frmRelatorioInstituicoes.MdiParent = this;
+                frmRelatorioInstituicoes.Show();
 
                 t.Abort();
             }
@@ -2411,10 +2410,11 @@ namespace SIESC_UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_localizarsolicitacao_Click(object sender, EventArgs e)
+        private void localizarSolicitaçãoToolStripMenuItem_Click(object sender,EventArgs e)
         {
+            LocalizarSolicitacao frm_localizar_solicitacao = new LocalizarSolicitacao(this) {MdiParent = this};
 
+            frm_localizar_solicitacao.Show();
         }
-
     }
 }

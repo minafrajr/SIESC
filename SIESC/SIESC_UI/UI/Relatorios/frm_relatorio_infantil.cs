@@ -10,59 +10,62 @@ namespace SIESC_UI.UI.Relatorios
 	public partial class frm_relatorio_infantil : Form
 	{
 
-		// <summary>
-		/// 
+		/// <summary>
+		/// O código do relatório
 		/// </summary>
-		private int codigorelatorio;
+		private readonly int codigorelatorio;
+		/// <summary>
+		/// Configura as margens do relatório
+		/// </summary>
+		private readonly Margins margins = new Margins(2, 2, 2, 2); //Configurando as margens
+		/// <summary>
+		/// Configura o se retrato ou paisagem
+		/// </summary>
+		private readonly PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
 		
+		/// <inheritdoc />
 		/// <summary>
-		/// 
 		/// </summary>
-		private Margins margins = new Margins(2, 2, 2, 2); //Configurando as margens
-		/// <summary>
-		/// 
-		/// </summary>
-		private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
-		
-		/// <summary>
-        /// 
-        /// </summary>
 		public frm_relatorio_infantil()
 		{
 			InitializeComponent();
 		}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigo_relatorio"></param>
-        /// <param name="diretoria"></param>
+		/// <inheritdoc />
+		/// <summary>
+		/// </summary>
+		/// <param name="codigo_relatorio"></param>
+		/// <param name="diretoria"></param>
 		public frm_relatorio_infantil(int codigo_relatorio, string diretoria)
 		{
 			InitializeComponent();
 			throw new NotImplementedException();
 		}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="principalUi"></param>
-        /// <param name="codigo_relatorio"></param>
-        /// <param name="escola_solicitada"></param>
+		/// <inheritdoc />
+		/// <summary>
+		/// </summary>
+		/// <param name="principalUi"></param>
+		/// <param name="codigo_relatorio"></param>
+		/// <param name="escola_solicitada"></param>
 		public frm_relatorio_infantil(Principal_UI principalUi, int codigo_relatorio, string escola_solicitada)
 		{
 			InitializeComponent();
 			throw new NotImplementedException();
 		}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoRelatorio"></param>
+		/// <inheritdoc />
+		/// <summary>
+		/// </summary>
+		/// <param name="codigoRelatorio"></param>
 		public frm_relatorio_infantil(int codigoRelatorio)
 		{
 			InitializeComponent();
 			codigorelatorio = codigoRelatorio;
 			ConfiguraRelatorio();
 		}
-
+		/// <summary>
+		/// Evento load do formulário
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Relatorio_infantil_Load(object sender, EventArgs e)
 		{
 
@@ -90,13 +93,7 @@ namespace SIESC_UI.UI.Relatorios
 
 			DataTable dt = new DataTable();
 
-			ReportDataSource datasource = new ReportDataSource {Name = "dsInfantil"};
-
-
-			//tem q ser o mesmo dataset informado no rdlc
-
-
-
+			ReportDataSource datasource = new ReportDataSource {Name = "dsInfantil"}; //tem q ser o mesmo dataset informado no rdlc
 			switch (codigorelatorio)
 			{
 				case 1:
@@ -122,7 +119,7 @@ namespace SIESC_UI.UI.Relatorios
 					break;
 				case 6:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_solicitaco_origem_infantil.rdlc";
-				    dt = this.vw_origem_solicitacaoTableAdapter1.GetDatainfantil();
+					dt = this.vw_origem_solicitacaoTableAdapter1.GetDatainfantil();
 					break;
 			}
 
@@ -133,9 +130,9 @@ namespace SIESC_UI.UI.Relatorios
 		
 			rpt_viewer.RefreshReport();
 		}
-        /// <summary>
-        /// 
-        /// </summary>
+		/// <summary>
+		/// configura a folha do relatório para paisagem
+		/// </summary>
 		private void FolhaPaisagem()
 		{
 			rpt_viewer.SetPageSettings(pg); //configura a folha do relatório para paisagem

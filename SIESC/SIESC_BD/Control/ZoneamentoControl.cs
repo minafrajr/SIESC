@@ -116,5 +116,27 @@ namespace SIESC_BD.Control
             }
         }
 
+        /// <summary>
+        /// Retorna as solicitações a partir de uma latitude, longitude, distancia e ano de ensino
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <param name="distancia"></param>
+        /// <param name="anoensino"></param>
+        /// <returns></returns>
+        public DataTable RetornaCoordSolicitacoesInstituicoes(string latitude,string longitude,int distancia,int anoensino)
+        {
+            try
+            {
+                zoneamento_TA = new ZoneamentoTableAdapter();
+                return zoneamento_TA.RetornaCoordSolicitacoes(latitude, longitude, distancia, anoensino);
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+        }
+
     }
 }

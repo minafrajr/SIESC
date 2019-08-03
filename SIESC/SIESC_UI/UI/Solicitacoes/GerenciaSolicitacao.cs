@@ -10,10 +10,12 @@ using SIESC_UI.UI.Relatorios;
 using System;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC_UI.UI.Solicitacoes;
 
 namespace SIESC_UI.UI
+
 {
-    public partial class GerenciaSolicitacao : SIESC_UI.base_UI
+    public partial class GerenciaSolicitacao
     {
         /// <summary>
         /// Enumeração de estaod de busca
@@ -154,7 +156,7 @@ namespace SIESC_UI.UI
                                 throw new Exception("valor do código não digitado!");
                             }
 
-                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIdSolicitacao(Convert.ToInt32(txt_codigo.Text));
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                             break;
                         case Localizar.mae:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text);

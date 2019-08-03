@@ -10,8 +10,13 @@ using System.Text;
 
 namespace SIESC.Classes
 {
+	/// <summary>
+	/// O tipo de autorização
+	/// </summary>
 	public enum tipoautorizacao { dirigir, secretariar, lecionar }
-
+	/// <summary>
+	/// Classe Autorização
+	/// </summary>
 	public class Autorizacao
 	{
 		/// <summary>
@@ -81,22 +86,22 @@ namespace SIESC.Classes
 		/// </summary>
 		public Autorizacao() { }
 
-	
-		/// <summary>
-		/// Construtora da classe
-		/// </summary>
-		/// <param name="idinstituicao">código da instituição</param>
-		/// <param name="codigorequerente">código do funcionário requerente</param>
-		/// <param name="data_expedicao">Data oficial da máquina servidora do banco</param>
-		/// <param name="tipoautorizacao">Tipo de autorização</param>
-		public Autorizacao(int idinstituicao, int codigorequerente, DateTime data_expedicao, tipoautorizacao tipo_autoriz)
+
+	    /// <summary>
+	    /// Construtora da classe
+	    /// </summary>
+	    /// <param name="idinstituicao">código da instituição</param>
+	    /// <param name="codigorequerente">código do funcionário requerente</param>
+	    /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
+	    /// <param name="tipoAutoriz">O tipo de autorização</param>
+	    public Autorizacao(int idinstituicao, int codigorequerente, DateTime dataExpedicao, tipoautorizacao tipoAutoriz)
 		{
 			idInstituicao = idinstituicao;
 			idfuncionario = codigorequerente;
-			dataexpedicao = data_expedicao;
+			dataexpedicao = dataExpedicao;
 			documentos = new StringBuilder();
 
-			GerardataValidade(tipo_autoriz);
+			GerardataValidade(tipoAutoriz);
 		}
 		/// <summary>
 		/// Adiciona o prazo de validade da autorização de acordo com o cargoOrigem

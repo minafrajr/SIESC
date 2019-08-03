@@ -98,10 +98,10 @@ namespace SIESC_BD.Control
         }
 
         /// <summary>
-        /// 
+        /// Pesquisa o código da solicitação a partir do código do aluno
         /// </summary>
         /// <param name="codigoAluno"></param>
-        /// <returns></returns>
+        /// <returns>O cdigo da solicitação</returns>
         public string PesquisaCodigoSolicitacao(int codigoAluno)
         {
             try
@@ -117,9 +117,9 @@ namespace SIESC_BD.Control
         }
 
         /// <summary>
-        /// 
+        /// Lista todas as solicitações
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable com todas as solicitações</returns>
         public DataTable ListarSolicitacoes()
         {
             try
@@ -264,12 +264,11 @@ namespace SIESC_BD.Control
         }
 
         /// <summary>
-        /// Retorna um DataTable com 
+        /// Retorna um DataTable contendo os dados da solicitaçõa
         /// </summary>
-
         /// <param name="idSolicitacao"></param>
-        /// <returns></returns>
-        public DataTable PesquisaIdSolicitacao(int idSolicitacao)
+        /// <returns>DataTable com os dados da solicitação</returns>
+        public DataTable RetornaSolicitacaoById(int idSolicitacao)
         {
             try
             {

@@ -35,7 +35,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>154</ApplicationRevision>
+    <ApplicationRevision>156</ApplicationRevision>
     <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -124,26 +124,33 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MySql.Fabric.6.9.12\lib\net45\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
-    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -291,6 +298,12 @@
     <Compile Include="UI\Funcionarios\GerenciaFuncionario.Designer.cs">
       <DependentUpon>GerenciaFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Listas\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Listas\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Listas\frm_listaEmails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,12 +403,6 @@
     <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Solicitacoes\LocalizaSolicitacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Solicitacoes\LocalizaSolicitacao.Designer.cs">
-      <DependentUpon>LocalizaSolicitacao.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +433,12 @@
     </Compile>
     <Compile Include="UI\Sobre\Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\LocalizarSolicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\LocalizarSolicitacao.Designer.cs">
+      <DependentUpon>LocalizarSolicitacao.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Solicitacoes\SolicitaVaga.cs">
       <SubType>Form</SubType>
@@ -555,9 +568,6 @@
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Solicitacoes\LocalizaSolicitacao.resx">
-      <DependentUpon>LocalizaSolicitacao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
       <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,6 +584,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sobre\Sobre.resx">
       <DependentUpon>Sobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\LocalizarSolicitacao.resx">
+      <DependentUpon>LocalizarSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\SolicitaVaga.resx">
       <DependentUpon>SolicitaVaga.cs</DependentUpon>
@@ -627,6 +640,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SIESC\SIESC.csproj">
+      <Project>{74b0fd10-dbb5-40b3-84b2-5a332a93cba7}</Project>
+      <Name>SIESC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_BD\SIESC_BD.csproj">
+      <Project>{519bb1cf-216a-4467-aa80-dbf095e1bde2}</Project>
+      <Name>SIESC_BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIESC_WEB\SIESC_WEB.csproj">
+      <Project>{e398aec5-d722-4f0c-8171-1a782dbc3412}</Project>
+      <Name>SIESC_WEB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Icons\Aluno.ico" />
     <Content Include="Icons\Autorizacao.ico" />
     <Content Include="Icons\AutorizaFuncionario.ico" />
@@ -635,6 +662,9 @@
     <Content Include="Icons\Pencil-and-Ruler.ico" />
     <Content Include="Icons\Relatorios.ico" />
     <Content Include="Icons\Solicitacao.ico" />
+    <None Include="Resources\desk-chair 24x24.png" />
+    <None Include="Resources\1211805003.png" />
+    <None Include="Resources\walking-icon-7402.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -743,18 +773,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SIESC\SIESC.csproj">
-      <Project>{74b0fd10-dbb5-40b3-84b2-5a332a93cba7}</Project>
-      <Name>SIESC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SIESC_BD\SIESC_BD.csproj">
-      <Project>{519bb1cf-216a-4467-aa80-dbf095e1bde2}</Project>
-      <Name>SIESC_BD</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SIESC_WEB\SIESC_WEB.csproj">
-      <Project>{e398aec5-d722-4f0c-8171-1a782dbc3412}</Project>
-      <Name>SIESC_WEB</Name>
-    </ProjectReference>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

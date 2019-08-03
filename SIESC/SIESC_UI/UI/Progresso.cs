@@ -12,7 +12,7 @@ namespace SIESC_UI.UI
 {
 	public partial class Progresso : Form
 	{
-		// <summary>
+		/// <summary>
 		/// Se o form foi iniciado
 		/// </summary>
 		public bool Started;
@@ -26,7 +26,7 @@ namespace SIESC_UI.UI
 		}
 
 
-		// <summary>
+		/// <summary>
 		/// Exibe o form como dialog
 		/// </summary>
 		public void ShowDiag()

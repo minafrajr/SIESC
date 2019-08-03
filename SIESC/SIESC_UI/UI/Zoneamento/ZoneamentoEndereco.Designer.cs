@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_imprimir = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nud_raioBusca = new System.Windows.Forms.NumericUpDown();
             this.gpb_endereço = new System.Windows.Forms.GroupBox();
+            this.btn_localizar_coord = new System.Windows.Forms.Button();
             this.cbo_bairro = new SIESC_UI.MyComboBox();
             this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC_UI.siescDataSet();
@@ -64,6 +65,7 @@
             this.dgv_zoneamento = new System.Windows.Forms.DataGridView();
             this.bairrosTableAdapter = new SIESC_UI.siescDataSetTableAdapters.bairrosTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.lbl_aviso_coordenadas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -301,6 +303,8 @@
             // 
             // gpb_endereço
             // 
+            this.gpb_endereço.Controls.Add(this.lbl_aviso_coordenadas);
+            this.gpb_endereço.Controls.Add(this.btn_localizar_coord);
             this.gpb_endereço.Controls.Add(this.cbo_bairro);
             this.gpb_endereço.Controls.Add(this._bairro);
             this.gpb_endereço.Controls.Add(this.txt_mumresidencia);
@@ -318,6 +322,17 @@
             this.gpb_endereço.TabIndex = 6;
             this.gpb_endereço.TabStop = false;
             this.gpb_endereço.Text = "Endereço";
+            // 
+            // btn_localizar_coord
+            // 
+            this.btn_localizar_coord.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_localizar_coord.Location = new System.Drawing.Point(274, 20);
+            this.btn_localizar_coord.Name = "btn_localizar_coord";
+            this.btn_localizar_coord.Size = new System.Drawing.Size(126, 22);
+            this.btn_localizar_coord.TabIndex = 19;
+            this.btn_localizar_coord.Text = "Localizar Lat/Long";
+            this.btn_localizar_coord.UseVisualStyleBackColor = false;
+            this.btn_localizar_coord.Click += new System.EventHandler(this.btn_localizar_coord_Click);
             // 
             // cbo_bairro
             // 
@@ -464,8 +479,8 @@
             this.dgv_zoneamento.AllowUserToDeleteRows = false;
             this.dgv_zoneamento.AllowUserToOrderColumns = true;
             this.dgv_zoneamento.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_zoneamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_zoneamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_zoneamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_zoneamento.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_zoneamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -491,6 +506,18 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // lbl_aviso_coordenadas
+            // 
+            this.lbl_aviso_coordenadas.AutoSize = true;
+            this.lbl_aviso_coordenadas.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aviso_coordenadas.ForeColor = System.Drawing.Color.Red;
+            this.lbl_aviso_coordenadas.Location = new System.Drawing.Point(407, 22);
+            this.lbl_aviso_coordenadas.Name = "lbl_aviso_coordenadas";
+            this.lbl_aviso_coordenadas.Size = new System.Drawing.Size(309, 19);
+            this.lbl_aviso_coordenadas.TabIndex = 20;
+            this.lbl_aviso_coordenadas.Text = "Coordenadas localizadas somente pelo CEP. ";
+            this.lbl_aviso_coordenadas.Visible = false;
             // 
             // ZoneamentoEndereco
             // 
@@ -555,5 +582,7 @@
 		private System.Windows.Forms.Button btn_maps;
 		private System.Windows.Forms.Button btn_imprimir;
 		private System.Drawing.Printing.PrintDocument printDocument1;
-	}
+        private System.Windows.Forms.Button btn_localizar_coord;
+        private System.Windows.Forms.Label lbl_aviso_coordenadas;
+    }
 }

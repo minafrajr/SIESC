@@ -163,7 +163,7 @@ namespace SIESC_UI.UI.Zoneamento
 					dgv_zoneamento.DataSource = zoneamentoControl.retornaCreches(IdSolicitacao, (int)nud_raioBusca.Value);
 
 				for (int i = 0; i < dgv_zoneamento.Rows.Count; i++)
-					dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.DistanciaInstituicao(latitude, longitude,dgv_zoneamento["latitude", i].Value.ToString(), dgv_zoneamento["longitude", i].Value.ToString());
+					dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(latitude, longitude,dgv_zoneamento["latitude", i].Value.ToString(), dgv_zoneamento["longitude", i].Value.ToString());
 
 				dgv_zoneamento.Sort(dgv_zoneamento.Columns[4], ListSortDirection.Ascending);
 				t.Abort();
@@ -284,7 +284,7 @@ namespace SIESC_UI.UI.Zoneamento
 				{
 					if (string.IsNullOrEmpty(txt_codigo.Text))
 						throw new Exception("Digite o CÓDIGO DA SOLICITAÇÃO do aluno para localizá-lo.");
-					return controleSolicitacao.PesquisaIdSolicitacao(Convert.ToInt32(txt_codigo.Text));
+					return controleSolicitacao.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
 				}
 				return null;
 			}
@@ -506,7 +506,7 @@ namespace SIESC_UI.UI.Zoneamento
 
 				coordInstituicao = controleInstituicao.RetornaCoordenasInstituicao(idinstituicao);
 
-				distancia = Metrics.DistanciaInstituicao(coordAluno[0], coordAluno[1], coordInstituicao[0], coordInstituicao[1]);
+				distancia = Metrics.CalculaDistanciaCaminhando(coordAluno[0], coordAluno[1], coordInstituicao[0], coordInstituicao[1]);
 
 				valores = idaluno + "," + idinstituicao + "," + idsolicitacao + "," + distancia;
 

@@ -5,7 +5,7 @@
 #endregion
 using System;
 
-namespace SIESC
+namespace SIESC.Classes
 {
     public class Solicitacao
     {

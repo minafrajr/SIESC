@@ -5,7 +5,7 @@
 #endregion
 using System;
 
-namespace SIESC
+namespace SIESC.Classes
 {
     /// <summary>
     /// 
@@ -58,7 +58,7 @@ namespace SIESC
         /// <summary>
         /// 
         /// </summary>
-        public string sBairro { get; set; }
+        public string SBairro { get; set; }
 
         #endregion
 

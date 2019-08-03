@@ -8,6 +8,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using SIESC.Classes;
+using SIESC_UI.UI.Solicitacoes;
 
 namespace SIESC_UI.UI.Alunos
 {

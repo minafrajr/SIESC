@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
-using SIESC;
+using SIESC.Classes;
 using SIESC_BD.DataSets.ds_siescTableAdapters;
 using SIESC_WEB;
 

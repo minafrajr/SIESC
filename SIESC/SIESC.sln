@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29009.5
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIESC", "SIESC\SIESC.csproj", "{74B0FD10-DBB5-40B3-84B2-5A332A93CBA7}"
 EndProject
@@ -14,11 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4744C68-380C-4732-80F3-B59A97F64005}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DCF74559-F193-4741-92E4-7FD4A7CA43A2}"
-	ProjectSection(SolutionItems) = preProject
-		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
 Global

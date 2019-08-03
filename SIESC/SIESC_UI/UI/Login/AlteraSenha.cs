@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Windows.Forms;
-using SIESC;
+using SIESC.Classes;
 using SIESC_BD.Control;
 using SIESC_UI.Security;
 

@@ -7,7 +7,6 @@ using System.Text;
 using System.Xml;
 using System.Web;
 using Newtonsoft.Json;
-using SIESC_WEB.Properties;
 
 namespace SIESC_WEB
 {
@@ -110,7 +109,7 @@ namespace SIESC_WEB
 		/// <param name="destinoLatitude">A latitude de destino</param>
 		/// <param name="destinoLongitude">A longitude de destino</param>
 		/// <returns>String contendo a distancia em kilômetros ou metros</returns>
-		public static int DistanciaInstituicao(string origemLatitude, string origemLongitude, string destinoLatitude,string destinoLongitude)
+		public static int CalculaDistanciaCaminhando(string origemLatitude, string origemLongitude, string destinoLatitude,string destinoLongitude)
 		{
 			try
 			{
@@ -121,7 +120,7 @@ namespace SIESC_WEB
 
 				using (WebClient wc = new WebClient())
 				{
-					json = wc.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origemLatitude + "," + origemLongitude + "&destinations=" + destinoLatitude + "," + destinoLongitude +"&mode=walking&key="+Settings.Default.distanciaMatrix);
+					json = wc.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origemLatitude + "," + origemLongitude + "&destinations=" + destinoLatitude + "," + destinoLongitude +"&mode=walking&key=AIzaSyCOYo-wA7g_MYM_8E5c0L-KRsndXJlUlbI");
 
 					parent = JsonConvert.DeserializeObject<Rootobject>(json);
 

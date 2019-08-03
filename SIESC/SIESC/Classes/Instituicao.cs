@@ -105,7 +105,7 @@ namespace SIESC.Classes
 		}
 
 		/// <summary>
-		/// 
+		/// Telefone
 		/// </summary>
 		public string Telefone1
 		{
@@ -113,7 +113,7 @@ namespace SIESC.Classes
 		}
 
 		/// <summary>
-		/// 
+		/// Telefone
 		/// </summary>
 
 		public string Telefone2
@@ -121,7 +121,9 @@ namespace SIESC.Classes
 			get; set;
 		}
 
-
+        /// <summary>
+        /// Telefone
+        /// </summary>
 		public string Telefone3
 		{
 			get; set;

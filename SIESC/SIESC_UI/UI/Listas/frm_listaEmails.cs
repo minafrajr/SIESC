@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using SIESC_UI.siescDataSetTableAdapters;
+using MySql.Data;
 
 namespace SIESC_UI.UI.Listas
 {

@@ -21,6 +21,7 @@ namespace SIESC_UI
 		public MyTextBox()
 		{
 			InitializeComponent();
+		    
 		}
 		/// <summary>
 		/// Evento ao receber foco

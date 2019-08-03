@@ -10,11 +10,6 @@ using System.Text;
 namespace SIESC.Classes
 {
 	/// <summary>
-	/// Enumeração para definir os cargos dos funicionários
-	/// </summary>
-	//public enum cargoOrigem { tecnico_secretaria, professorII, professorI ,pedagogo, tecnico_biblioteca, agente_servico, nulo  }
-
-	/// <summary>
 	/// Classe Funcionario
 	/// </summary>
 	public class Funcionario : Pessoa
@@ -24,11 +19,6 @@ namespace SIESC.Classes
 		/// </summary>
 		public int idFuncionario { get; set; }
 		
-		/// <summary>
-		/// Cargo do funcionário
-		/// </summary>
-		//public cargoOrigem Cargo { get; set; }
-
 		/// <summary>
 		/// Email do funcionário
 		/// </summary>

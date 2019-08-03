@@ -1,36 +1,41 @@
 ﻿namespace SIESC_UI.UI
 {
-	partial class GerenciaSolicitacao
-	{
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    /// <summary>
+    /// 
+    /// </summary>
+    partial class GerenciaSolicitacao : SIESC_UI.base_UI { 
+       
+    
+        ///<summary>
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Limpar os recursos que estão sendo usados.
-		/// </summary>
-		/// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Código gerado pelo Windows Form Designer
+        #region Código gerado pelo Windows Form Designer
 
-		/// <summary>
-		/// Método necessário para suporte do Designer - não modifique
-		/// o conteúdo deste método com o editor de código.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Método necessário para suporte do Designer - não modifique
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaSolicitacao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_ficha_encaminhamento = new System.Windows.Forms.Button();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_origem_solicitacao = new System.Windows.Forms.TextBox();
@@ -44,6 +49,7 @@
             this.txt_observacoes = new SIESC_UI.MyTextBox();
             this.lbl_motivo = new System.Windows.Forms.Label();
             this.txt_motivo = new SIESC_UI.MyTextBox();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             this.lbl_escolaencaminhada = new System.Windows.Forms.Label();
             this.txt_instituicao_encaminhada = new SIESC_UI.MyTextBox();
             this.lbl_escolasolicitada = new System.Windows.Forms.Label();
@@ -53,16 +59,22 @@
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigo = new SIESC_UI.MyTextBox();
+            this.btn_editaraluno = new System.Windows.Forms.Button();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.lbl_dataencaminha = new System.Windows.Forms.Label();
             this.lbl_datasolicitacao = new System.Windows.Forms.Label();
             this.lbl_data_nasc = new System.Windows.Forms.Label();
+            this.btn_excluir = new System.Windows.Forms.Button();
             this.lbl_mae = new System.Windows.Forms.Label();
+            this.btn_localizar = new System.Windows.Forms.Button();
             this.txt_nomealuno = new SIESC_UI.MyTextBox();
+            this.btn_novo = new System.Windows.Forms.Button();
             this.txt_dataencaminhamento = new SIESC_UI.MyTextBox();
             this.txt_datasolicitacao = new SIESC_UI.MyTextBox();
             this.txt_datanasc = new SIESC_UI.MyTextBox();
             this.txt_endereco = new SIESC_UI.MyTextBox();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_finaliza_solicitacao = new System.Windows.Forms.Button();
             this.txt_mae = new SIESC_UI.MyTextBox();
             this.lbl_aluno = new System.Windows.Forms.Label();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
@@ -72,14 +84,6 @@
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_codigo = new System.Windows.Forms.RadioButton();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
-            this.btn_ficha_encaminhamento = new System.Windows.Forms.Button();
-            this.btn_imprimir = new System.Windows.Forms.Button();
-            this.btn_editaraluno = new System.Windows.Forms.Button();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.btn_localizar = new System.Windows.Forms.Button();
-            this.btn_novo = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_finaliza_solicitacao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -148,6 +152,19 @@
             this.splitContainer1.SplitterDistance = 263;
             this.splitContainer1.TabIndex = 33;
             // 
+            // btn_ficha_encaminhamento
+            // 
+            this.btn_ficha_encaminhamento.Image = global::SIESC_UI.Properties.Resources.pngkit_send_icon_png_1882555;
+            this.btn_ficha_encaminhamento.Location = new System.Drawing.Point(807, 4);
+            this.btn_ficha_encaminhamento.Name = "btn_ficha_encaminhamento";
+            this.btn_ficha_encaminhamento.Size = new System.Drawing.Size(83, 59);
+            this.btn_ficha_encaminhamento.TabIndex = 56;
+            this.btn_ficha_encaminhamento.Text = "Gerar Encam.";
+            this.btn_ficha_encaminhamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_ficha_encaminhamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_ficha_encaminhamento.UseVisualStyleBackColor = true;
+            this.btn_ficha_encaminhamento.Click += new System.EventHandler(this.btn_ficha_encaminhamento_Click);
+            // 
             // txt_usuario
             // 
             this.txt_usuario.Enabled = false;
@@ -213,22 +230,22 @@
             // lbl_anoensino
             // 
             this.lbl_anoensino.AutoSize = true;
-            this.lbl_anoensino.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_anoensino.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_anoensino.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_anoensino.Location = new System.Drawing.Point(597, 51);
+            this.lbl_anoensino.Location = new System.Drawing.Point(591, 51);
             this.lbl_anoensino.Name = "lbl_anoensino";
-            this.lbl_anoensino.Size = new System.Drawing.Size(33, 18);
+            this.lbl_anoensino.Size = new System.Drawing.Size(29, 15);
             this.lbl_anoensino.TabIndex = 47;
             this.lbl_anoensino.Text = "Ano";
             // 
             // lbl_idade
             // 
             this.lbl_idade.AutoSize = true;
-            this.lbl_idade.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_idade.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_idade.ForeColor = System.Drawing.Color.Navy;
             this.lbl_idade.Location = new System.Drawing.Point(547, 51);
             this.lbl_idade.Name = "lbl_idade";
-            this.lbl_idade.Size = new System.Drawing.Size(43, 18);
+            this.lbl_idade.Size = new System.Drawing.Size(38, 15);
             this.lbl_idade.TabIndex = 46;
             this.lbl_idade.Text = "Idade";
             // 
@@ -279,6 +296,20 @@
             this.txt_motivo.Name = "txt_motivo";
             this.txt_motivo.Size = new System.Drawing.Size(493, 22);
             this.txt_motivo.TabIndex = 41;
+            // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_imprimir.Image = global::SIESC_UI.Properties.Resources._10693_323x32;
+            this.btn_imprimir.Location = new System.Drawing.Point(734, 4);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(72, 59);
+            this.btn_imprimir.TabIndex = 40;
+            this.btn_imprimir.Text = "Gerar Ficha";
+            this.btn_imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // lbl_escolaencaminhada
             // 
@@ -360,6 +391,21 @@
             this.txt_codigo.Size = new System.Drawing.Size(56, 22);
             this.txt_codigo.TabIndex = 23;
             // 
+            // btn_editaraluno
+            // 
+            this.btn_editaraluno.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editaraluno.Image = global::SIESC_UI.Properties.Resources._1431654912_graduated;
+            this.btn_editaraluno.Location = new System.Drawing.Point(996, 4);
+            this.btn_editaraluno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_editaraluno.Name = "btn_editaraluno";
+            this.btn_editaraluno.Size = new System.Drawing.Size(92, 59);
+            this.btn_editaraluno.TabIndex = 13;
+            this.btn_editaraluno.Text = "Editar Aluno";
+            this.btn_editaraluno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_editaraluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_editaraluno.UseVisualStyleBackColor = true;
+            this.btn_editaraluno.Click += new System.EventHandler(this.btn_editaraluno_Click);
+            // 
             // lbl_endereco
             // 
             this.lbl_endereco.AutoSize = true;
@@ -396,6 +442,20 @@
             this.lbl_data_nasc.TabIndex = 24;
             this.lbl_data_nasc.Text = "Data Nasc.:";
             // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Image = global::SIESC_UI.Properties.Resources.Trash;
+            this.btn_excluir.Location = new System.Drawing.Point(1224, 4);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(60, 59);
+            this.btn_excluir.TabIndex = 14;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            // 
             // lbl_mae
             // 
             this.lbl_mae.AutoSize = true;
@@ -405,6 +465,20 @@
             this.lbl_mae.TabIndex = 21;
             this.lbl_mae.Text = "Mãe:";
             // 
+            // btn_localizar
+            // 
+            this.btn_localizar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_localizar.Image = global::SIESC_UI.Properties.Resources._127;
+            this.btn_localizar.Location = new System.Drawing.Point(674, 4);
+            this.btn_localizar.Name = "btn_localizar";
+            this.btn_localizar.Size = new System.Drawing.Size(60, 59);
+            this.btn_localizar.TabIndex = 29;
+            this.btn_localizar.Text = "Localizar";
+            this.btn_localizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_localizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_localizar.UseVisualStyleBackColor = true;
+            this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
+            // 
             // txt_nomealuno
             // 
             this.txt_nomealuno.Enabled = false;
@@ -412,6 +486,20 @@
             this.txt_nomealuno.Name = "txt_nomealuno";
             this.txt_nomealuno.Size = new System.Drawing.Size(400, 22);
             this.txt_nomealuno.TabIndex = 25;
+            // 
+            // btn_novo
+            // 
+            this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_novo.Image = global::SIESC_UI.Properties.Resources._114;
+            this.btn_novo.Location = new System.Drawing.Point(1088, 4);
+            this.btn_novo.Name = "btn_novo";
+            this.btn_novo.Size = new System.Drawing.Size(60, 59);
+            this.btn_novo.TabIndex = 15;
+            this.btn_novo.Text = "Novo";
+            this.btn_novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_novo.UseVisualStyleBackColor = true;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
             // txt_dataencaminhamento
             // 
@@ -444,6 +532,35 @@
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(504, 22);
             this.txt_endereco.TabIndex = 28;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.Image = global::SIESC_UI.Properties.Resources.editor_0308_replace;
+            this.btn_editar.Location = new System.Drawing.Point(893, 4);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(103, 59);
+            this.btn_editar.TabIndex = 17;
+            this.btn_editar.Text = "Editar Solicitação";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // btn_finaliza_solicitacao
+            // 
+            this.btn_finaliza_solicitacao.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_finaliza_solicitacao.Image = global::SIESC_UI.Properties.Resources.circle_red_x;
+            this.btn_finaliza_solicitacao.Location = new System.Drawing.Point(1151, 4);
+            this.btn_finaliza_solicitacao.Name = "btn_finaliza_solicitacao";
+            this.btn_finaliza_solicitacao.Size = new System.Drawing.Size(72, 59);
+            this.btn_finaliza_solicitacao.TabIndex = 16;
+            this.btn_finaliza_solicitacao.Text = "Finalizar";
+            this.btn_finaliza_solicitacao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_finaliza_solicitacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_finaliza_solicitacao.UseVisualStyleBackColor = true;
+            this.btn_finaliza_solicitacao.Click += new System.EventHandler(this.btn_finaliza_solicitacao_Click);
             // 
             // txt_mae
             // 
@@ -565,119 +682,6 @@
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
             this.dgv_solicitacoes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseDoubleClick);
             // 
-            // btn_ficha_encaminhamento
-            // 
-            this.btn_ficha_encaminhamento.Image = global::SIESC_UI.Properties.Resources.pngkit_send_icon_png_1882555;
-            this.btn_ficha_encaminhamento.Location = new System.Drawing.Point(807, 4);
-            this.btn_ficha_encaminhamento.Name = "btn_ficha_encaminhamento";
-            this.btn_ficha_encaminhamento.Size = new System.Drawing.Size(78, 59);
-            this.btn_ficha_encaminhamento.TabIndex = 56;
-            this.btn_ficha_encaminhamento.Text = "Encaminhar";
-            this.btn_ficha_encaminhamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_ficha_encaminhamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_ficha_encaminhamento.UseVisualStyleBackColor = true;
-            this.btn_ficha_encaminhamento.Click += new System.EventHandler(this.btn_ficha_encaminhamento_Click);
-            // 
-            // btn_imprimir
-            // 
-            this.btn_imprimir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_imprimir.Image = global::SIESC_UI.Properties.Resources._10693_323x32;
-            this.btn_imprimir.Location = new System.Drawing.Point(734, 4);
-            this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(72, 59);
-            this.btn_imprimir.TabIndex = 40;
-            this.btn_imprimir.Text = "Gerar Ficha";
-            this.btn_imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_imprimir.UseVisualStyleBackColor = true;
-            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
-            // 
-            // btn_editaraluno
-            // 
-            this.btn_editaraluno.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editaraluno.Image = global::SIESC_UI.Properties.Resources._1431654912_graduated;
-            this.btn_editaraluno.Location = new System.Drawing.Point(990, 4);
-            this.btn_editaraluno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_editaraluno.Name = "btn_editaraluno";
-            this.btn_editaraluno.Size = new System.Drawing.Size(92, 59);
-            this.btn_editaraluno.TabIndex = 13;
-            this.btn_editaraluno.Text = "Editar Aluno";
-            this.btn_editaraluno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_editaraluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_editaraluno.UseVisualStyleBackColor = true;
-            this.btn_editaraluno.Click += new System.EventHandler(this.btn_editaraluno_Click);
-            // 
-            // btn_excluir
-            // 
-            this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excluir.Image = global::SIESC_UI.Properties.Resources.Trash;
-            this.btn_excluir.Location = new System.Drawing.Point(1224, 4);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(60, 59);
-            this.btn_excluir.TabIndex = 14;
-            this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
-            // 
-            // btn_localizar
-            // 
-            this.btn_localizar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_localizar.Image = global::SIESC_UI.Properties.Resources._127;
-            this.btn_localizar.Location = new System.Drawing.Point(674, 4);
-            this.btn_localizar.Name = "btn_localizar";
-            this.btn_localizar.Size = new System.Drawing.Size(60, 59);
-            this.btn_localizar.TabIndex = 29;
-            this.btn_localizar.Text = "Localizar";
-            this.btn_localizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_localizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_localizar.UseVisualStyleBackColor = true;
-            this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
-            // 
-            // btn_novo
-            // 
-            this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_novo.Image = global::SIESC_UI.Properties.Resources._114;
-            this.btn_novo.Location = new System.Drawing.Point(1082, 4);
-            this.btn_novo.Name = "btn_novo";
-            this.btn_novo.Size = new System.Drawing.Size(60, 59);
-            this.btn_novo.TabIndex = 15;
-            this.btn_novo.Text = "Novo";
-            this.btn_novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_novo.UseVisualStyleBackColor = true;
-            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editar.Image = global::SIESC_UI.Properties.Resources.editor_0308_replace;
-            this.btn_editar.Location = new System.Drawing.Point(887, 4);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(103, 59);
-            this.btn_editar.TabIndex = 17;
-            this.btn_editar.Text = "Editar Solicitação";
-            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_editar.UseVisualStyleBackColor = true;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
-            // 
-            // btn_finaliza_solicitacao
-            // 
-            this.btn_finaliza_solicitacao.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_finaliza_solicitacao.Image = global::SIESC_UI.Properties.Resources.circle_red_x;
-            this.btn_finaliza_solicitacao.Location = new System.Drawing.Point(1151, 4);
-            this.btn_finaliza_solicitacao.Name = "btn_finaliza_solicitacao";
-            this.btn_finaliza_solicitacao.Size = new System.Drawing.Size(72, 59);
-            this.btn_finaliza_solicitacao.TabIndex = 16;
-            this.btn_finaliza_solicitacao.Text = "Finalizar";
-            this.btn_finaliza_solicitacao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_finaliza_solicitacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_finaliza_solicitacao.UseVisualStyleBackColor = true;
-            this.btn_finaliza_solicitacao.Click += new System.EventHandler(this.btn_finaliza_solicitacao_Click);
-            // 
             // GerenciaSolicitacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -701,70 +705,70 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private MyTextBox txt_codigo;
-		private System.Windows.Forms.Label lbl_endereco;
-		private System.Windows.Forms.Label lbl_data_nasc;
-		private System.Windows.Forms.Label lbl_mae;
-		private MyTextBox txt_nomealuno;
-		private System.Windows.Forms.Label lbl_aluno;
-		private MyTextBox txt_datanasc;
-		private System.Windows.Forms.Button btn_editar;
-		private MyTextBox txt_mae;
-		private System.Windows.Forms.Button btn_finaliza_solicitacao;
-		private MyTextBox txt_endereco;
-		private System.Windows.Forms.Button btn_novo;
-		private System.Windows.Forms.Button btn_localizar;
-		private System.Windows.Forms.Button btn_excluir;
-		private System.Windows.Forms.Button btn_editaraluno;
-		private System.Windows.Forms.Label lbl_codigo;
-		private System.Windows.Forms.DataGridView dgv_solicitacoes;
-		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.Label lbl_titulo;
-		private System.Windows.Forms.GroupBox gpb_localizar;
-		private System.Windows.Forms.RadioButton rdb_mae;
-		private System.Windows.Forms.RadioButton rdb_nome;
-		private System.Windows.Forms.RadioButton rdb_codigo;
-		private MyTextBox txt_telefone;
-		private System.Windows.Forms.Label lbl_telefone;
-		private System.Windows.Forms.RadioButton rdb_codigoAluno;
-		private System.Windows.Forms.Label lbl_escolaencaminhada;
-		private MyTextBox txt_instituicao_encaminhada;
-		private System.Windows.Forms.Label lbl_escolasolicitada;
-		private MyTextBox txt_instituicao_solicitada;
-		private System.Windows.Forms.Label lbl_dataencaminha;
-		private System.Windows.Forms.Label lbl_datasolicitacao;
-		private MyTextBox txt_dataencaminhamento;
-		private MyTextBox txt_datasolicitacao;
-		private System.Windows.Forms.Button btn_imprimir;
-		private System.Windows.Forms.Label lbl_motivo;
-		private MyTextBox txt_motivo;
-		private MyTextBox txt_observacoes;
-		private System.Windows.Forms.RadioButton rdb_codigoEI;
-		private MyMaskedTextBox msk_codigoEI;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label lbl_idade;
-		private System.Windows.Forms.Label lbl_anoensino;
-		private MyComboBox cbo_anoreferencia;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox txt_usuario;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox txt_origem_solicitacao;
-		private System.Windows.Forms.Label label1;
+        private MyTextBox txt_codigo;
+        private System.Windows.Forms.Label lbl_endereco;
+        private System.Windows.Forms.Label lbl_data_nasc;
+        private System.Windows.Forms.Label lbl_mae;
+        private MyTextBox txt_nomealuno;
+        private System.Windows.Forms.Label lbl_aluno;
+        private MyTextBox txt_datanasc;
+        private System.Windows.Forms.Button btn_editar;
+        private MyTextBox txt_mae;
+        private System.Windows.Forms.Button btn_finaliza_solicitacao;
+        private MyTextBox txt_endereco;
+        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btn_localizar;
+        private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.Button btn_editaraluno;
+        private System.Windows.Forms.Label lbl_codigo;
+        private System.Windows.Forms.DataGridView dgv_solicitacoes;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.GroupBox gpb_localizar;
+        private System.Windows.Forms.RadioButton rdb_mae;
+        private System.Windows.Forms.RadioButton rdb_nome;
+        private System.Windows.Forms.RadioButton rdb_codigo;
+        private MyTextBox txt_telefone;
+        private System.Windows.Forms.Label lbl_telefone;
+        private System.Windows.Forms.RadioButton rdb_codigoAluno;
+        private System.Windows.Forms.Label lbl_escolaencaminhada;
+        private MyTextBox txt_instituicao_encaminhada;
+        private System.Windows.Forms.Label lbl_escolasolicitada;
+        private MyTextBox txt_instituicao_solicitada;
+        private System.Windows.Forms.Label lbl_dataencaminha;
+        private System.Windows.Forms.Label lbl_datasolicitacao;
+        private MyTextBox txt_dataencaminhamento;
+        private MyTextBox txt_datasolicitacao;
+        private System.Windows.Forms.Button btn_imprimir;
+        private System.Windows.Forms.Label lbl_motivo;
+        private MyTextBox txt_motivo;
+        private MyTextBox txt_observacoes;
+        private System.Windows.Forms.RadioButton rdb_codigoEI;
+        private MyMaskedTextBox msk_codigoEI;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_idade;
+        private System.Windows.Forms.Label lbl_anoensino;
+        private MyComboBox cbo_anoreferencia;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_origem_solicitacao;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ficha_encaminhamento;
 
         private enum Localizar
-		{
-			codigo,
-			nome,
-			mae,
-			aluno,
-			aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
-			expediente,
+        {
+            codigo,
+            nome,
+            mae,
+            aluno,
+            aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
+            expediente,
 
-		};
-	}
+        };
+    }
 }

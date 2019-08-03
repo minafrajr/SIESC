@@ -14,7 +14,7 @@ using SIESC_UI.Properties;
 
 namespace SIESC_UI.UI.Relatorios
 {
-	public partial class Listas : base_UI
+	public partial class Listas : Form
 	{
 
         /// <summary>

@@ -5,7 +5,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using SIESC;
+using SIESC.Classes;
 
 namespace SIESC_BD.Control
 {

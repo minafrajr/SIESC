@@ -37,25 +37,7 @@ namespace SIESC_BD.Control
         /// </summary>
         private vw_instituicoesTableAdapter vw_instituicoes;
 
-        /// <summary>
-        /// Lista todas as escolas
-        /// </summary>
-        /// <returns>DataTable com os dados de todas as escolas</returns>
-        //public DataTable Listar()
-        //{
-        //    try
-        //    {
-        //        vw_instituicoes = new vw_instituicoesTableAdapter();
-        //        return vw_instituicoes.GetData();
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw ex;
-        //    }
-
-        //}
-
-        /// <summary>
+       /// <summary>
         /// Salva a escola no banco de dados
         /// </summary>
         /// <param name="instituicao"></param>

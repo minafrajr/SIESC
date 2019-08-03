@@ -19,10 +19,7 @@ namespace SIESC_UI.UI
         /// 
         /// </summary>
         private int codigorelatorio;
-        /// <summary>
-        /// 
-        /// </summary>
-        //private int codigosolicitacao;
+       
         /// <summary>
         /// 
         /// </summary>
@@ -37,10 +34,9 @@ namespace SIESC_UI.UI
         /// 
         /// </summary>
         private string instituicaoSelecionada;
-        /// <summary>
-        /// 
-        /// </summary>
+        
         //private string diretoriaselecionada;
+        
         /// <summary>
         /// 
         /// </summary>

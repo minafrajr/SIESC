@@ -15,7 +15,7 @@ namespace SIESC_UI.UI.CEP
 		/// objeto do formulário principal
 		/// </summary>
 		private Principal_UI formPrincipalUi;
-		// <summary>
+		/// <summary>
 		/// Objto de acesso á consulta CEP
 		/// </summary>
 		private BuscaCep buscadorCep;
