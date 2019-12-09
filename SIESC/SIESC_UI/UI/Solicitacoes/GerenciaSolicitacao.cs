@@ -142,7 +142,7 @@ namespace SIESC_UI.UI
         {
             try
             {
-                if (!_localiza.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2019"))
+                if (!_localiza.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2020"))
                 {
                     controleSolicitacoes = new SolicitacaoControl();
 

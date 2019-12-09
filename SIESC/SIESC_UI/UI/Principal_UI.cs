@@ -892,6 +892,7 @@ namespace SIESC_UI
                 {
                     if (mdiChild.GetType() == typeof(ZoneamentoAluno))
                     {
+                        mdiChild.WindowState = FormWindowState.Maximized;
                         mdiChild.Focus();
                         return;
                     }
@@ -918,6 +919,7 @@ namespace SIESC_UI
                 {
                     if (mdiChild.GetType() == typeof(ZoneamentoEndereco))
                     {
+                        mdiChild.WindowState = FormWindowState.Maximized;
                         mdiChild.Focus();
                         return;
                     }
@@ -2412,9 +2414,26 @@ namespace SIESC_UI
         /// <param name="e"></param>
         private void localizarSolicitaçãoToolStripMenuItem_Click(object sender,EventArgs e)
         {
-            LocalizarSolicitacao frm_localizar_solicitacao = new LocalizarSolicitacao(this) {MdiParent = this};
+            try
+            {
+                foreach (Form mdiChild in MdiChildren)
+                {
+                    if (mdiChild.GetType() == typeof(LocalizarSolicitacao))
+                    {
+                        mdiChild.WindowState = FormWindowState.Maximized;
+                        mdiChild.Focus();
+                        return;
+                    }
+                }
+                
+                LocalizarSolicitacao frm_localizar_solicitacao = new LocalizarSolicitacao(this) { MdiParent = this };
 
-            frm_localizar_solicitacao.Show();
+                frm_localizar_solicitacao.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex);
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Xml;
 using System.Web;
 using Newtonsoft.Json;
+using SIESC_WEB.Properties;
 
 namespace SIESC_WEB
 {
@@ -120,7 +121,7 @@ namespace SIESC_WEB
 
 				using (WebClient wc = new WebClient())
 				{
-					json = wc.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origemLatitude + "," + origemLongitude + "&destinations=" + destinoLatitude + "," + destinoLongitude +"&mode=walking&key=AIzaSyCOYo-wA7g_MYM_8E5c0L-KRsndXJlUlbI");
+					json = wc.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origemLatitude + "," + origemLongitude + "&destinations=" + destinoLatitude + "," + destinoLongitude +"&mode=walking&key="+Settings.Default.distanceMatrixkey);
 
 					parent = JsonConvert.DeserializeObject<Rootobject>(json);
 

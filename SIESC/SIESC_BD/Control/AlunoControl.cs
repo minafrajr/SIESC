@@ -166,13 +166,13 @@ namespace SIESC_BD.Control
 		/// <param name="dtanasc"></param>
 		/// <param name="nomemae"></param>
 		/// <returns>True ou false</returns>
-		public bool ContemAluno(string nomealuno, DateTime dtanasc, string nomemae)
+		public int? ContemAluno(string nomealuno, DateTime dtanasc, string nomemae)
 		{
 			try
 			{
 				aluno_TA = new alunosTableAdapter();
 
-				return (int?)aluno_TA.PesquisaID(nomealuno, dtanasc, nomemae) > 0;
+				return (int?)aluno_TA.PesquisaID(nomealuno, dtanasc, nomemae) ;
 			}
 			catch (SqlException exception)
 			{
@@ -204,7 +204,7 @@ namespace SIESC_BD.Control
 			}
 			catch (SqlException exception)
 			{
-				throw;
+				throw exception;
 			}
 		}
 		/// <summary>

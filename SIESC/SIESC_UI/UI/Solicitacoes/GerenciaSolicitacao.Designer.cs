@@ -215,6 +215,7 @@
             this.cbo_anoreferencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_anoreferencia.FormattingEnabled = true;
             this.cbo_anoreferencia.Items.AddRange(new object[] {
+            "2020",
             "2019",
             "2018",
             "2017",

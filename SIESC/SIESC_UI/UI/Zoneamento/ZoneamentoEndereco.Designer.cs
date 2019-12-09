@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nud_raioBusca = new System.Windows.Forms.NumericUpDown();
             this.gpb_endereço = new System.Windows.Forms.GroupBox();
+            this.lbl_aviso_coordenadas = new System.Windows.Forms.Label();
             this.btn_localizar_coord = new System.Windows.Forms.Button();
             this.cbo_bairro = new SIESC_UI.MyComboBox();
             this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,7 +66,6 @@
             this.dgv_zoneamento = new System.Windows.Forms.DataGridView();
             this.bairrosTableAdapter = new SIESC_UI.siescDataSetTableAdapters.bairrosTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.lbl_aviso_coordenadas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -239,6 +239,7 @@
             this.rdb_ed_infantil.TabIndex = 1;
             this.rdb_ed_infantil.Text = "Ed. Infantil";
             this.rdb_ed_infantil.UseVisualStyleBackColor = true;
+            this.rdb_ed_infantil.CheckedChanged += new System.EventHandler(this.rdb_ed_infantil_CheckedChanged);
             // 
             // rdb_ens_fundamental
             // 
@@ -251,6 +252,7 @@
             this.rdb_ens_fundamental.TabStop = true;
             this.rdb_ens_fundamental.Text = "Ens. Fundamental";
             this.rdb_ens_fundamental.UseVisualStyleBackColor = true;
+            this.rdb_ens_fundamental.CheckedChanged += new System.EventHandler(this.rdb_ens_fundamental_CheckedChanged);
             // 
             // label2
             // 
@@ -322,6 +324,18 @@
             this.gpb_endereço.TabIndex = 6;
             this.gpb_endereço.TabStop = false;
             this.gpb_endereço.Text = "Endereço";
+            // 
+            // lbl_aviso_coordenadas
+            // 
+            this.lbl_aviso_coordenadas.AutoSize = true;
+            this.lbl_aviso_coordenadas.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aviso_coordenadas.ForeColor = System.Drawing.Color.Red;
+            this.lbl_aviso_coordenadas.Location = new System.Drawing.Point(407, 22);
+            this.lbl_aviso_coordenadas.Name = "lbl_aviso_coordenadas";
+            this.lbl_aviso_coordenadas.Size = new System.Drawing.Size(309, 19);
+            this.lbl_aviso_coordenadas.TabIndex = 20;
+            this.lbl_aviso_coordenadas.Text = "Coordenadas localizadas somente pelo CEP. ";
+            this.lbl_aviso_coordenadas.Visible = false;
             // 
             // btn_localizar_coord
             // 
@@ -506,18 +520,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // lbl_aviso_coordenadas
-            // 
-            this.lbl_aviso_coordenadas.AutoSize = true;
-            this.lbl_aviso_coordenadas.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aviso_coordenadas.ForeColor = System.Drawing.Color.Red;
-            this.lbl_aviso_coordenadas.Location = new System.Drawing.Point(407, 22);
-            this.lbl_aviso_coordenadas.Name = "lbl_aviso_coordenadas";
-            this.lbl_aviso_coordenadas.Size = new System.Drawing.Size(309, 19);
-            this.lbl_aviso_coordenadas.TabIndex = 20;
-            this.lbl_aviso_coordenadas.Text = "Coordenadas localizadas somente pelo CEP. ";
-            this.lbl_aviso_coordenadas.Visible = false;
             // 
             // ZoneamentoEndereco
             // 

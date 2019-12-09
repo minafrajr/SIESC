@@ -5,6 +5,7 @@
 #endregion
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC_BD.Control;
 using SIESC_UI.siescDataSetTableAdapters;
@@ -402,6 +403,19 @@ namespace SIESC_UI.UI
 			catch (Exception exception)
 			{
 				Mensageiro.MensagemErro(exception);
+			}
+		}
+
+		private void btn_mapa_Click(object sender,EventArgs e)
+		{
+			try
+			{
+				if (!string.IsNullOrEmpty(coordenadasInstituicao))
+					Process.Start("https://maps.google.com/?q=@" + coordenadasInstituicao);
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex);
 			}
 		}
 	}

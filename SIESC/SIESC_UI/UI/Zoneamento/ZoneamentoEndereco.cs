@@ -73,21 +73,34 @@ namespace SIESC_UI.UI.Zoneamento
 
             try
             {
+                LimpaGridView();
+                txt_logradouro.ResetText();
 
                 if (string.IsNullOrEmpty(msk_cep.Text))
                 {
                     throw new Exception("O CEP está vazio!");
                 }
 
+
+                lbl_aviso_coordenadas.Visible = false;
+                lbl_latitude.Text = string.Empty;
+                lbl_longitude.Text = string.Empty;
+                
                 coordenadas = new string[2];
 
                 coordenadas = Zoneador.Georrefencia(msk_cep.Text, "0");//Georreferencia o aluno pelo SISGEO
 
-                lbl_latitude.Text = coordenadas[0];
-                lbl_longitude.Text = coordenadas[1];
-                lbl_aviso_coordenadas.Visible = true;
+                
+                
+                if (!coordenadas[0].Equals(string.Empty) && !coordenadas[0].Equals("0"))
+                {
+                    lbl_aviso_coordenadas.Visible = true;
+                    lbl_latitude.Text = coordenadas[0];
+                    lbl_longitude.Text = coordenadas[1];
+                }
 
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
+
                 var cep = new BuscaCep();
 
                 cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
@@ -115,12 +128,14 @@ namespace SIESC_UI.UI.Zoneamento
 
             try
             {
+                LimpaGridView();
+
                 foreach (Control control in camposObrigatoriosList)
                 {
-                    if (string.IsNullOrEmpty(control.Text))
-                    {
-                        throw new Exception("Um dos campos de endereço está vazio");
-                    }
+                    //if (string.IsNullOrEmpty(control.Text))
+                    //{
+                    //    throw new Exception("Um dos campos de endereço está vazio");
+                    //}
                 }
 
 
@@ -282,6 +297,32 @@ namespace SIESC_UI.UI.Zoneamento
                 t.Abort();
                 Mensageiro.MensagemErro(exception);
             }
+        }
+
+        /// <summary>
+        /// Limpa a Gridview ao alterar o tipo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rdb_ed_infantil_CheckedChanged(object sender,EventArgs e)
+        {
+            LimpaGridView();
+        }
+
+        /// <summary>
+        /// Limpa a Gridview ao alterar o tipo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rdb_ens_fundamental_CheckedChanged(object sender,EventArgs e)
+        {
+            LimpaGridView();
+        }
+
+        private void LimpaGridView()
+        {
+            dgv_zoneamento.DataSource = null;
+            dgv_zoneamento.Refresh();
         }
     }
 }

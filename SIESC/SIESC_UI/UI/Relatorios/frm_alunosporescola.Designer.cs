@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            
+            base.Dispose(disposing);
         }
 
         #region Código gerado pelo Windows Form Designer
@@ -157,14 +157,13 @@
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.lbl_escola);
             this.Controls.Add(this.cbo_escola);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frm_alunosporescola";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frm_alunosporescola_Load);
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();

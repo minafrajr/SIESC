@@ -79,7 +79,10 @@ namespace SIESC_BD.Control
 		{
 			switch (anoconsulta)
 			{
-				case "2018":
+			    case "2019":
+			        bancodedados = "solicitavaga19";
+			        break;
+			    case "2018":
 					bancodedados = "solicitavaga18";
 					break;
 				case "2017":

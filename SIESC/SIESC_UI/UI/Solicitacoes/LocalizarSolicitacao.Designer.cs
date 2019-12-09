@@ -104,8 +104,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_solicitacoes);
-            this.splitContainer1.Size = new System.Drawing.Size(1074, 751);
-            this.splitContainer1.SplitterDistance = 206;
+            this.splitContainer1.Size = new System.Drawing.Size(1119, 588);
+            this.splitContainer1.SplitterDistance = 222;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox1
@@ -264,9 +264,9 @@
             // btn_caminhando
             // 
             this.btn_caminhando.Image = global::SIESC_UI.Properties.Resources.walking_icon_7402;
-            this.btn_caminhando.Location = new System.Drawing.Point(232, 1);
+            this.btn_caminhando.Location = new System.Drawing.Point(238, 3);
             this.btn_caminhando.Name = "btn_caminhando";
-            this.btn_caminhando.Size = new System.Drawing.Size(88, 59);
+            this.btn_caminhando.Size = new System.Drawing.Size(76, 57);
             this.btn_caminhando.TabIndex = 51;
             this.btn_caminhando.Text = "Dist. Caminh.";
             this.btn_caminhando.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -276,9 +276,9 @@
             // btn_solicitacao
             // 
             this.btn_solicitacao.Image = global::SIESC_UI.Properties.Resources.desk_chair_24x24;
-            this.btn_solicitacao.Location = new System.Drawing.Point(153, 1);
+            this.btn_solicitacao.Location = new System.Drawing.Point(159, 3);
             this.btn_solicitacao.Name = "btn_solicitacao";
-            this.btn_solicitacao.Size = new System.Drawing.Size(72, 59);
+            this.btn_solicitacao.Size = new System.Drawing.Size(73, 57);
             this.btn_solicitacao.TabIndex = 50;
             this.btn_solicitacao.Text = "Solicitação";
             this.btn_solicitacao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -291,9 +291,9 @@
             this.btn_maps.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_maps.FlatAppearance.BorderSize = 3;
             this.btn_maps.Image = global::SIESC_UI.Properties.Resources.geofence_32;
-            this.btn_maps.Location = new System.Drawing.Point(87, 1);
+            this.btn_maps.Location = new System.Drawing.Point(86, 3);
             this.btn_maps.Name = "btn_maps";
-            this.btn_maps.Size = new System.Drawing.Size(60, 59);
+            this.btn_maps.Size = new System.Drawing.Size(67, 57);
             this.btn_maps.TabIndex = 49;
             this.btn_maps.Text = "Mapa";
             this.btn_maps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -438,14 +438,14 @@
             this.dgv_solicitacoes.RowTemplate.ReadOnly = true;
             this.dgv_solicitacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_solicitacoes.ShowEditingIcon = false;
-            this.dgv_solicitacoes.Size = new System.Drawing.Size(1074, 541);
+            this.dgv_solicitacoes.Size = new System.Drawing.Size(1119, 362);
             this.dgv_solicitacoes.TabIndex = 0;
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
             // 
             // LocalizarSolicitacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1080, 757);
+            this.ClientSize = new System.Drawing.Size(1125, 594);
             this.Controls.Add(this.splitContainer1);
             this.Name = "LocalizarSolicitacao";
             this.Text = "Localizar Solicitações";

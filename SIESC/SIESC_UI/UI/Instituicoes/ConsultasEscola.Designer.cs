@@ -80,6 +80,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_editarescola = new System.Windows.Forms.Button();
             this.spct_main = new System.Windows.Forms.SplitContainer();
+            this.btn_mapa = new System.Windows.Forms.Button();
             this.rdb_infantil_particular = new System.Windows.Forms.RadioButton();
             this.rdb_crechemunicipal = new System.Windows.Forms.RadioButton();
             this.rdb_crechesconveniadas = new System.Windows.Forms.RadioButton();
@@ -385,6 +386,7 @@
             this.lstv_anosensino.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstv_anosensino.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstv_anosensino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstv_anosensino.HideSelection = false;
             this.lstv_anosensino.Location = new System.Drawing.Point(3, 18);
             this.lstv_anosensino.Name = "lstv_anosensino";
             this.lstv_anosensino.Size = new System.Drawing.Size(268, 306);
@@ -627,7 +629,7 @@
             // 
             this.btn_editarescola.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_editarescola.Image = global::SIESC_UI.Properties.Resources._1431665945_27_Edit_Text;
-            this.btn_editarescola.Location = new System.Drawing.Point(1055, 5);
+            this.btn_editarescola.Location = new System.Drawing.Point(798, 5);
             this.btn_editarescola.Name = "btn_editarescola";
             this.btn_editarescola.Size = new System.Drawing.Size(193, 36);
             this.btn_editarescola.TabIndex = 18;
@@ -646,6 +648,7 @@
             // 
             // spct_main.Panel1
             // 
+            this.spct_main.Panel1.Controls.Add(this.btn_mapa);
             this.spct_main.Panel1.Controls.Add(this.rdb_infantil_particular);
             this.spct_main.Panel1.Controls.Add(this.btn_editarescola);
             this.spct_main.Panel1.Controls.Add(this.rdb_crechemunicipal);
@@ -660,11 +663,25 @@
             this.spct_main.SplitterDistance = 44;
             this.spct_main.TabIndex = 5;
             // 
+            // btn_mapa
+            // 
+            this.btn_mapa.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_mapa.Image = global::SIESC_UI.Properties.Resources.geofence_32;
+            this.btn_mapa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_mapa.Location = new System.Drawing.Point(997, 5);
+            this.btn_mapa.Name = "btn_mapa";
+            this.btn_mapa.Size = new System.Drawing.Size(126, 36);
+            this.btn_mapa.TabIndex = 20;
+            this.btn_mapa.Text = "Exibir no Mapa";
+            this.btn_mapa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_mapa.UseVisualStyleBackColor = false;
+            this.btn_mapa.Click += new System.EventHandler(this.btn_mapa_Click);
+            // 
             // rdb_infantil_particular
             // 
             this.rdb_infantil_particular.AutoSize = true;
             this.rdb_infantil_particular.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_infantil_particular.Location = new System.Drawing.Point(633, 11);
+            this.rdb_infantil_particular.Location = new System.Drawing.Point(632, 11);
             this.rdb_infantil_particular.Name = "rdb_infantil_particular";
             this.rdb_infantil_particular.Size = new System.Drawing.Size(160, 22);
             this.rdb_infantil_particular.TabIndex = 19;
@@ -676,11 +693,11 @@
             // 
             this.rdb_crechemunicipal.AutoSize = true;
             this.rdb_crechemunicipal.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_crechemunicipal.Location = new System.Drawing.Point(466, 11);
+            this.rdb_crechemunicipal.Location = new System.Drawing.Point(444, 11);
             this.rdb_crechemunicipal.Name = "rdb_crechemunicipal";
-            this.rdb_crechemunicipal.Size = new System.Drawing.Size(162, 22);
+            this.rdb_crechemunicipal.Size = new System.Drawing.Size(192, 22);
             this.rdb_crechemunicipal.TabIndex = 5;
-            this.rdb_crechemunicipal.Text = "Inst. Infantil Municipal";
+            this.rdb_crechemunicipal.Text = "Centros Infantis Municipais";
             this.rdb_crechemunicipal.UseVisualStyleBackColor = true;
             this.rdb_crechemunicipal.CheckedChanged += new System.EventHandler(this.rdb_crechemunicipal_CheckedChanged);
             // 
@@ -690,9 +707,9 @@
             this.rdb_crechesconveniadas.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_crechesconveniadas.Location = new System.Drawing.Point(290, 11);
             this.rdb_crechesconveniadas.Name = "rdb_crechesconveniadas";
-            this.rdb_crechesconveniadas.Size = new System.Drawing.Size(174, 22);
+            this.rdb_crechesconveniadas.Size = new System.Drawing.Size(156, 22);
             this.rdb_crechesconveniadas.TabIndex = 5;
-            this.rdb_crechesconveniadas.Text = "Inst. Infantil Conveniada";
+            this.rdb_crechesconveniadas.Text = "Instituições Parceiras";
             this.rdb_crechesconveniadas.UseVisualStyleBackColor = true;
             this.rdb_crechesconveniadas.CheckedChanged += new System.EventHandler(this.rdb_crechesconveniadas_CheckedChanged);
             // 
@@ -735,7 +752,7 @@
             this.Name = "ConsultasEscola";
             this.ShowIcon = true;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Consulta dados Instituições";
+            this.Text = "Consulta Dados Instituições";
             this.Load += new System.EventHandler(this.ConsultasEscola_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
@@ -821,5 +838,6 @@
 		private System.Windows.Forms.ListView lstv_anosensino;
 		private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdb_infantil_particular;
+        private System.Windows.Forms.Button btn_mapa;
     }
 }

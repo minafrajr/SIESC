@@ -31,15 +31,20 @@ namespace SIESC_UI.UI
 		/// </summary>
 		public void ShowDiag()
 		{
-			try
-			{
-				Application.DoEvents();
-				ShowDialog();
-				
-			}
+		    try
+		    {
+		        Application.DoEvents();
+		        ShowDialog();
+
+		    }
+		    catch (ThreadInterruptedException)
+		    {
+		        this.Close();
+		        throw;
+		    }
 			catch (Exception)
 			{
-				
+			   this.Close();
 			}
 		}
 

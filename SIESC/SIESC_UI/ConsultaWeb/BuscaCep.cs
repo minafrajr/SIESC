@@ -126,6 +126,9 @@ namespace SIESC_UI
         {
             ServicoCEP srv = new ServicoCEP();
 
+            srv.Timeout = 5000;
+            
+            
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
             txtLogradouro.ResetText();

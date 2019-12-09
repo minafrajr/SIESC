@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SIESC_UI.exe" version="1.0.0.0" publicKeyToken="fb639581fa718624" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SIESC_UI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="SIESC_UI.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Opções de Manifesto do UAC
+            Se você deseja alterar o nível do Controle de Contas do Usuário (UAC) do Windows, substitua o 
+            nó requestedExecutionLevel por um dos seguintes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            A especificação do nó requestedExecutionLevel irá desabilitar a virtualização de registro e de arquivo.
+            Se você deseja utilizar Virtualização de Registro e de Arquivo para compatibilidade 
+            com versões anteriores, então exclua o nó requestedExecutionLevel.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="MySql.Data" version="6.9.4.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIESC.exe" size="15360">
+      <assemblyIdentity name="SIESC" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>BkB/AJf/X47fmSkYVgq4jMlRKpQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIESC_BD.exe" size="289792">
+      <assemblyIdentity name="SIESC_BD" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>VecJwSsbpQVw/7NEq6+4i1Y+KeQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIESC_UI.exe" size="107920">
+      <assemblyIdentity name="SIESC_UI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>nHJ0QhXQYPOhRvyIVMWrOxl1cJk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Icons\Pencil-and-Ruler.ico" size="9662">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tab6bV/Fp0/1Qk4xLxBj0cDQdww=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SIESC_UI.exe.config" size="157">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>60+p9NXC1fxypc5g3dMH4EOGocU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Uma lista de todas as janelas de versões com as quais este aplicativo é projetado para funcionar. 
+      Windows selecionará automaticamente o ambiente mais compatível.-->
+      <!-- Se o seu aplicativo foi projetado para funcionar com o Windows Vista, descomente o nó supportedOS a seguir-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- Se o seu aplicativo é projetado para trabalhar com Windows 7, remova o comentário no nó supportedOS a seguir-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- Se o seu aplicativo foi projetado para funcionar com o Windows 8, descomente o nó supportedOS a seguir-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- Se seu aplicativo foi projetado para funcionar com o Windows 8.1, remova o comentário do nó supportedOS a seguir-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DELL2\CarlosA" issuerKeyHash="320d6d4735192d8ab73fe379cb6c49d8f557ff21" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>NkR0vxhl3JwK/fzRbW7ozX/1OC4=</DigestValue></Reference></SignedInfo><SignatureValue>ZMZpslF8Ie203D3xEa6J9USnG3GJ8HdMdWHp1YNb/jPPZh1cv0nFDEZhv9L/q9usgjYyPfDftSOb2Uz3ubd4lJusF+DDmPMS1W4PZZu0xQrbhuLXuSwgMN4ueQVkzbWJBUQVPF05fEsaOGQfhSHvZSCUwncDdxyepjsoZm0EZAI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>4YcCfawPdhAMwxXu5X5WnoJ4DltDLGTyrPbn3P+YTjB9MBj8W79ZQxRU4d9gdjivOvrTBzQyeABx4nAenX5R/Ck358ij5t3YKsHft8vNcDXxr013PeXZ7zIrCuYBJWuU7qPC9cjzaJAf7fTMSg9GjUHPh9xjxzy/6OR2dc7AuuE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="2e38f57fcde86e6dd1fcfd0a9cdc6518bf744436" Description="" Url=""><as:assemblyIdentity name="SIESC_UI.exe" version="1.0.0.0" publicKeyToken="fb639581fa718624" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DELL2\CarlosA</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>NigTK+/iGNksX27ezE9a367/Pow=</DigestValue></Reference></SignedInfo><SignatureValue>so3LtkmlFbmaohhCUoSodHbY+T+fZ+83Q/qhOANV5/mKpiWdzSuN3BSbHyom9lc6Y/T6pUCcBpJ/wAWC8ZqDC5mxJyHPZ1UZ0df+peaTKZXIWAPNQ2YvTlfobXGQQ+VoO+4qyLBgIx8ROwgz2ekyNNMjWGCCS91LwltJXMK6nQI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>4YcCfawPdhAMwxXu5X5WnoJ4DltDLGTyrPbn3P+YTjB9MBj8W79ZQxRU4d9gdjivOvrTBzQyeABx4nAenX5R/Ck358ij5t3YKsHft8vNcDXxr013PeXZ7zIrCuYBJWuU7qPC9cjzaJAf7fTMSg9GjUHPh9xjxzy/6OR2dc7AuuE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQM/d065yX0KBP9m+F3e7lGjANBgkqhkiG9w0BAQUFADAlMSMwIQYDVQQDHhoARABFAEwATAAyAFwAQwBhAHIAbABvAHMAQTAeFw0xNTAxMjgxNjU5MTNaFw0xNjAxMjgyMjU5MTNaMCUxIzAhBgNVBAMeGgBEAEUATABMADIAXABDAGEAcgBsAG8AcwBBMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDhhwJ9rA92EAzDFe7lflaegngOW0MsZPKs9ufc/5hOMH0wGPxbv1lDFFTh32B2OK86+tMHNDJ4AHHicB6dflH8KTfnyKPm3dgqwd+3y81wNfGvTXc95dnvMisK5gEla5Tuo8L1yPNokB/t9MxKD0aNQc+H3GPHPL/o5HZ1zsC64QIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAJudhvT0UuMlzdY+qKSlzsKmkvPj250qapEVE8qBgghinIqnt6ge/rTik6tKusdbnFQmJDstwZ0BxxIGel6Qo0mc575ztJfbDWqmncJBer1tLnzEtIF6Gvdx1RAGM+HvpbHGb3TxiXm+gvUdnStsc+Hk8BY1HcAEohbosECJGCvg</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

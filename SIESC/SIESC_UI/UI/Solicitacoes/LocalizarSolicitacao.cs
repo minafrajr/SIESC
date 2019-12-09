@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Threading;
 using SIESC;
 using SIESC.Classes;
 using SIESC_WEB;
@@ -116,6 +117,8 @@ namespace SIESC_UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void btn_localizar_Click(object sender,EventArgs e)
         {
+            var t = CarregaProgressoThread();
+
             try
             {
                 if (cbo_instituicao.SelectedValue == null)
@@ -143,10 +146,12 @@ namespace SIESC_UI.UI.Solicitacoes
                 dgv_solicitacoes.Columns["DistanciaReta"].DisplayIndex = 3;
 
 
-                dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[4],ListSortDirection.Ascending);
+              //  dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[4],ListSortDirection.Ascending);
+                t.Abort();
             }
             catch (Exception exception)
             {
+                t.Abort();
                 Mensageiro.MensagemErro(exception);
             }
         }
@@ -246,19 +251,39 @@ namespace SIESC_UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void btn_caminhando_Click(object sender,EventArgs e)
         {
+            var t =  CarregaProgressoThread();
+
             try
             {
-                zoneamentoControl = new ZoneamentoControl();
+                for (int i = 0; i <= dgv_solicitacoes.Rows.Count - 1; i++)
+                {
+                    dgv_solicitacoes["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(coordenadasInstituicao[0], coordenadasInstituicao[1],dgv_solicitacoes["latitude", i].Value.ToString(),dgv_solicitacoes["longitude", i].Value.ToString());
 
-               for (int i = 0; i < dgv_solicitacoes.Rows.Count; i++)
-                   dgv_solicitacoes["DistanciaCaminhando",i].Value = Metrics.CalculaDistanciaCaminhando(coordenadasInstituicao[0],coordenadasInstituicao[1],dgv_solicitacoes["latitude",i].Value.ToString(),dgv_solicitacoes["longitude",i].Value.ToString());
 
-                dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[4],ListSortDirection.Ascending);
+                   }
+                
+                dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[3],ListSortDirection.Ascending);
+                
+                t.Abort();
             }
             catch (Exception exception)
             {
+                t.Abort();
                 Mensageiro.MensagemErro(exception);
             }
+        }
+
+
+        private static Thread CarregaProgressoThread()
+        {
+            var progress = new Progresso();
+            var t = new Thread(progress.ShowDiag);
+
+            t.Start();
+
+            while (progress.Started) { }
+
+            return t;
         }
     }
 }

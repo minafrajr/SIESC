@@ -11,6 +11,7 @@ using SIESC_WEB;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SIESC_UI.UI
@@ -800,6 +801,23 @@ namespace SIESC_UI.UI
 			catch (Exception exception)
 			{
 				Mensageiro.MensagemErro(exception);
+			}
+		}
+		/// <summary>
+		/// Exibe no mapa a localização da instituição
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btn_map_Click(object sender,EventArgs e)
+		{
+			try
+			{
+			    if(!string.IsNullOrEmpty(msk_latitude.Text)&& !string.IsNullOrEmpty(msk_longitude.Text))
+				    Process.Start("https://maps.google.com/?q=@" + msk_latitude.Text + "," + msk_longitude.Text);
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex);
 			}
 		}
 	}

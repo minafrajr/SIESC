@@ -13,7 +13,7 @@ namespace SIESC_WEB
 		/// <returns>True - existe conexão | False - não há conexão</returns>
 		public static bool IsConnected()
 		{
-			System.Uri Url = new System.Uri("http://www.google.com.br"); //é sempre bom por um site que costuma estar sempre on, para não haver problemas
+			Uri Url = new Uri("http://www.google.com.br"); //é sempre bom por um site que costuma estar sempre on, para não haver problemas
 
 			System.Net.WebRequest WebReq;
 			System.Net.WebResponse Resp;
@@ -23,14 +23,12 @@ namespace SIESC_WEB
 			{
 				Resp = WebReq.GetResponse();
 				Resp.Close();
-				if(!WebReq.Equals(null))
-				return true;
+				return WebReq.Equals(null);
 			}
 			catch
 			{
 				return false;
 			}
-			return false;
 		}
 	}
 }
