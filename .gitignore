@@ -10,12 +10,19 @@
 *.sln.docstates
 
 #bloquear as chaver
+SIESC/SIESC/SIESC_WEB/Properties/Settings.Designer.cs
+SIESC/SIESC/SIESC_WEB/Properties/Settings.settings
+SIESC/SIESC/SIESC_WEB/app.config
+SIESC/SIESC/SIESC_WEB/App.config
+SIESC/SIESC/SIESC_UI/app.config
+SIESC/SIESC/SIESC_UI/App.config
 SIESC/SIESC_WEB/Properties/Settings.Designer.cs
 SIESC/SIESC_WEB/Properties/Settings.settings
 SIESC/SIESC_WEB/app.config
 SIESC/SIESC_WEB/App.config
 SIESC/SIESC_UI/app.config
 SIESC/SIESC_UI/App.config
+
 *.App.config
 *.app.config
 
