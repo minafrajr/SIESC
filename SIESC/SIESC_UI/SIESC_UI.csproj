@@ -611,7 +611,6 @@
       <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Diagramas\DiagramaClasses.cd" />
-    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

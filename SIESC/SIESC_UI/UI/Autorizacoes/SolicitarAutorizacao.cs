@@ -20,7 +20,10 @@ namespace SIESC_UI.UI.Autorizacoes
 	/// Status da navegação da autorização
 	/// </summary>
 	internal enum navegando { editando, deletando, inserindo, consultando }
-
+	
+	/// <inheritdoc />
+	/// <summary>
+	/// </summary>
 	public partial class SolicitarAutorizacao : SIESC_UI.base_UI
 	{
 		/// <summary>
@@ -61,7 +64,7 @@ namespace SIESC_UI.UI.Autorizacoes
 		/// <summary>
 		/// Tpo de autorização
 		/// </summary>
-		private tipoautorizacao TipoAutoriz;
+		private Tipoautorizacao TipoAutoriz;
 
 		/// <summary>
 		/// Form principal
@@ -214,20 +217,20 @@ namespace SIESC_UI.UI.Autorizacoes
 		/// <param name="autorizacao1"></param>
 		private void RepassaAutorizacao(Autorizacao autorizacao1)
 		{
-			cbo_tipoautoriz.Text = autorizacao1.Tipoautorizacao.ToString().ToUpper();
+			cbo_tipoautoriz.Text = autorizacao1.tipoautorizacao.ToString().ToUpper();
 
 			cbo_nivelensino.Text = autorizacao1.nivelensino;
 			txt_outrosdocs.Text = autorizacao1.outrosdocs;
-			dtp_datapossecargo.Value = autorizacao1.datapossecargo;
-			dtp_data_expedicao.Value = autorizacao1.dataexpedicao;
+			dtp_datapossecargo.Value = autorizacao1.Datapossecargo;
+			dtp_data_expedicao.Value = autorizacao1.Dataexpedicao;
 			lbl_numautoriz.Text = autorizacao1.numeroautorizacao;
-			lbl_idsolicitacao.Text = autorizacao1.idAutorizacao.ToString();
+			lbl_idsolicitacao.Text = autorizacao1.IdAutorizacao.ToString();
 
-			if (!string.IsNullOrEmpty(autorizacao1.disciplina.ToString()))
+			if (!string.IsNullOrEmpty(autorizacao1.Disciplina.ToString()))
 			{
 				foreach (DataRowView item in cbo_disciplina.Items)
 				{
-					if (item["idDisciplinas"].ToString() == autorizacao1.disciplina.ToString())
+					if (item["idDisciplinas"].ToString() == autorizacao1.Disciplina.ToString())
 					{
 						cbo_disciplina.SelectedIndex = cbo_disciplina.Items.IndexOf(item);
 					}
@@ -248,9 +251,9 @@ namespace SIESC_UI.UI.Autorizacoes
 				chk_anosfinais.Checked = true;
 			}
 
-			autorizacao1.documentos.Replace(" ", string.Empty);//retira os espaços em branco
+			autorizacao1.Documentos.Replace(" ", string.Empty);//retira os espaços em branco
 
-			List<String> ListadeDocumentos = autorizacao1.documentos.ToString().Split(',').ToList();//cria uma lista de documentos
+			List<String> ListadeDocumentos = autorizacao1.Documentos.ToString().Split(',').ToList();//cria uma lista de documentos
 
 			foreach (string str in ListadeDocumentos)
 			{
@@ -265,7 +268,7 @@ namespace SIESC_UI.UI.Autorizacoes
 
 			foreach (DataRowView item in cbo_instituicao.Items)
 			{
-				if (item["idInstituicoes"].ToString() == autorizacao1.idInstituicao.ToString())
+				if (item["idInstituicoes"].ToString() == autorizacao1.IdInstituicao.ToString())
 				{
 					cbo_instituicao.SelectedItem = item;
 				}
@@ -374,7 +377,7 @@ namespace SIESC_UI.UI.Autorizacoes
 				funcionario.idFuncionario = (int)idfuncionario;//determina o id do funcionário se for recém salvo
 				autorizacao = CriaAutorizacao();
 
-				autorizacao.idfuncionario = (int)idfuncionario;
+				autorizacao.Idfuncionario = (int)idfuncionario;
 
 				if (!string.IsNullOrEmpty(tmp_numeroautoriz))
 				{
@@ -438,13 +441,13 @@ namespace SIESC_UI.UI.Autorizacoes
 			switch (cbo_tipoautoriz.Text)
 			{
 				case "DIRIGIR":
-					this.TipoAutoriz = tipoautorizacao.dirigir;
+					this.TipoAutoriz = Tipoautorizacao.Dirigir;
 					break;
 				case "LECIONAR":
-					TipoAutoriz = tipoautorizacao.lecionar;
+					TipoAutoriz = Tipoautorizacao.Lecionar;
 					break;
 				case "SECRETARIAR":
-					TipoAutoriz = tipoautorizacao.secretariar;
+					TipoAutoriz = Tipoautorizacao.Secretariar;
 					break;
 			}
 		}
@@ -520,13 +523,13 @@ namespace SIESC_UI.UI.Autorizacoes
 					break;
 			}
 
-			_autorizacao.Tipoautorizacao = this.TipoAutoriz;
+			_autorizacao.tipoautorizacao = this.TipoAutoriz;
 
 			_autorizacao.nivelensino = this.cbo_nivelensino.Text.ToUpper();
 
 			if (cbo_disciplina.SelectedValue != null)
 			{
-				_autorizacao.disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
+				_autorizacao.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
 			}
 
 			_autorizacao.outrosdocs = this.txt_outrosdocs.Text;
@@ -543,7 +546,7 @@ namespace SIESC_UI.UI.Autorizacoes
 				}
 			}
 
-			_autorizacao.documentos = new StringBuilder();
+			_autorizacao.Documentos = new StringBuilder();
 
 			foreach (Control control in listacheks)
 			{
@@ -551,20 +554,20 @@ namespace SIESC_UI.UI.Autorizacoes
 				{
 					if (((CheckBox)control).Checked)
 					{
-						_autorizacao.documentos.Append($"{control.Text}, ");
+						_autorizacao.Documentos.Append($"{control.Text}, ");
 					}
 				}
 			}
 
-			if (_autorizacao.documentos.Length > 0)
+			if (_autorizacao.Documentos.Length > 0)
 			{
-				_autorizacao.documentos.Remove(_autorizacao.documentos.Length - 1, 1);
+				_autorizacao.Documentos.Remove(_autorizacao.Documentos.Length - 1, 1);
 			}
 
 			_autorizacao.usuario = PrincipalUi.user.nomeusuario.ToUpper();//Get nome do usuario
 
-			_autorizacao.dataexpedicao = dtp_data_expedicao.Value;
-			_autorizacao.datapossecargo = dtp_datapossecargo.Value;
+			_autorizacao.Dataexpedicao = dtp_data_expedicao.Value;
+			_autorizacao.Datapossecargo = dtp_datapossecargo.Value;
 
 			string num = autorizacaoControl.RetornaUltimaAutorizacao();
 

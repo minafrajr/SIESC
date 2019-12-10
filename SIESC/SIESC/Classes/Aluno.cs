@@ -24,6 +24,8 @@ namespace SIESC
         /// </summary>
         private int? deficiencia;
 
+        
+
         #endregion
 
         #region construtoras
