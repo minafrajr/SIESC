@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIESC", "SIESC\SIESC.csproj", "{74B0FD10-DBB5-40B3-84B2-5A332A93CBA7}"
 EndProject
@@ -15,8 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4744C
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalacao", "Instalacao\Instalacao.vdproj", "{A0A276B0-D300-45C5-9358-0A3399C3641D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,36 +54,11 @@ Global
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E398AEC5-D722-4F0C-8171-1A782DBC3412}.Release|x86.ActiveCfg = Release|Any CPU
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Debug|Any CPU.ActiveCfg = Debug
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Debug|x86.ActiveCfg = Debug
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Release|Any CPU.ActiveCfg = Release
-		{A0A276B0-D300-45C5-9358-0A3399C3641D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1A25D63-FC08-4407-B990-18CE2BB3CAE5}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://minafrajr.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SIESC\\SIESC.csproj
-		SccProjectName1 = SIESC
-		SccLocalPath1 = SIESC
-		SccProjectUniqueName2 = SIESC_BD\\SIESC_BD.csproj
-		SccProjectName2 = SIESC_BD
-		SccLocalPath2 = SIESC_BD
-		SccProjectUniqueName3 = SIESC_UI\\SIESC_UI.csproj
-		SccProjectName3 = SIESC_UI
-		SccLocalPath3 = SIESC_UI
-		SccProjectUniqueName4 = SIESC_WEB\\SIESC_WEB.csproj
-		SccProjectName4 = SIESC_WEB
-		SccLocalPath4 = SIESC_WEB
-		SccProjectUniqueName5 = Instalacao\\Instalacao.vdproj
-		SccProjectName5 = Instalacao
-		SccLocalPath5 = Instalacao
 	EndGlobalSection
 EndGlobal
