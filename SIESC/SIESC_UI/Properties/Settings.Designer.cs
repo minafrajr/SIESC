@@ -25,7 +25,7 @@ namespace SIESC_UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\PUC\\TCCI\\SIESC\\SIESC\\SIESC_BD\\Reports")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\minaf\\Documents\\Visual Studio 2017\\Projects\\Git\\SIESC\\SIESC\\SIESC_BD\\Reports")]
         public string LocalReports {
             get {
                 return ((string)(this["LocalReports"]));

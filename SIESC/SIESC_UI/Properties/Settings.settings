@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="LocalReports" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\Reports</Value>
+      <Value Profile="(Default)">D:\minaf\Documents\Visual Studio 2017\Projects\Git\SIESC\SIESC\SIESC_BD\Reports</Value>
     </Setting>
     <Setting Name="RemoteReports" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\\ursa\ESCRITURACAO$\ESCRITURAÇÃO\SIESC\Reports</Value>
