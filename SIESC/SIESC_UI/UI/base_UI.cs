@@ -26,10 +26,9 @@ namespace SIESC_UI
 		/// <param name="msk"></param>
 		public void SetMask(MaskedTextBox msk)
 		{
-			if (msk.Text.Count() > 3)
-			{
-				msk.Mask = msk.Text[2].Equals('9') ? "(00)00000-0000" : "(00)0000-0000";
-			}
+			
+				msk.Mask = msk.Text.Length.Equals(11) ? "(00)00000-0000" : "(00)0000-0000";
+			
 		}
 		/// <summary>
 		/// 

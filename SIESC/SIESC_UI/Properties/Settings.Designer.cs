@@ -25,15 +25,6 @@ namespace SIESC_UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\minaf\\Documents\\Visual Studio 2017\\Projects\\Git\\SIESC\\SIESC\\SIESC_BD\\Reports")]
-        public string LocalReports {
-            get {
-                return ((string)(this["LocalReports"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("\\\\ursa\\ESCRITURACAO$\\ESCRITURAÇÃO\\SIESC\\Reports")]
         public string RemoteReports {
             get {
@@ -59,6 +50,15 @@ namespace SIESC_UI.Properties {
         public string siescConnectionString {
             get {
                 return ((string)(this["siescConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\minaf\\Documents\\Visual Studio 2017\\Projects\\Git\\SIESC\\SIESC\\SIESC_BD\\Reports")]
+        public string LocalReports {
+            get {
+                return ((string)(this["LocalReports"]));
             }
         }
     }
