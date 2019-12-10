@@ -12,7 +12,7 @@
 #bloquear as chaver
 SIESC/SIESC_WEB/Properties/Settings.Designer.cs
 SIESC/SIESC_WEB/Properties/Settings.settings
-SIESC/SIESC/SIESC_WEB/app.config
+SIESC/SIESC_WEB/app.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
