@@ -8,6 +8,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+ *.Settings.settings
+ *.Settings.Designer.cs
 
 #bloquear as chaver
 SIESC/SIESC/SIESC_WEB/Properties/Settings.Designer.cs
