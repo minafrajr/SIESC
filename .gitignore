@@ -8,25 +8,20 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.Settings.settings
-*.Settings.Designer.cs
-*.App.config
-*.app.config
 
-**\
 #bloquear as chaver
-SIESC/SIESC/SIESC_WEB/Properties/Settings.Designer.cs
-SIESC/SIESC/SIESC_WEB/Properties/Settings.settings
-SIESC/SIESC/SIESC_WEB/app.config
-SIESC/SIESC/SIESC_WEB/App.config
-SIESC/SIESC/SIESC_UI/app.config
-SIESC/SIESC/SIESC_UI/App.config
-SIESC/SIESC_WEB/Properties/Settings.Designer.cs
-SIESC/SIESC_WEB/Properties/Settings.settings
-SIESC/SIESC_WEB/app.config
-SIESC/SIESC_WEB/App.config
-SIESC/SIESC_UI/app.config
-SIESC/SIESC_UI/App.config
+SIESC/SIESC/SIESC.WEB/Properties/Settings.Designer.cs
+SIESC/SIESC/SIESC.WEB/Properties/Settings.settings
+SIESC/SIESC/SIESC.WEB/app.config
+SIESC/SIESC/SIESC.WEB/App.config
+SIESC/SIESC/SIESC.UI/app.config
+SIESC/SIESC/SIESC.UI/App.config
+SIESC/SIESC.WEB/Properties/Settings.Designer.cs
+SIESC/SIESC.WEB/Properties/Settings.settings
+SIESC/SIESC.WEB/app.config
+SIESC/SIESC.WEB/App.config
+SIESC/SIESC.UI/app.config
+SIESC/SIESC.UI/App.config
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -348,4 +343,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-/SIESC/SIESC_WEB/ign.gitignore
+/SIESC/SIESC.WEB/ign.gitignore
