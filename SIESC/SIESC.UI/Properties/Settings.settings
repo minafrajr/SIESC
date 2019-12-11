@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIESC_UI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LocalReports" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\Reports</Value>
+    </Setting>
+    <Setting Name="RemoteReports" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\ursa\ESCRITURACAO$\ESCRITURAÇÃO\SIESC\Reports</Value>
+    </Setting>
+    <Setting Name="SIESC_UI_tecnologia1_ServicoCEP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://tecnologia/servicocep/ServicoCep.asmx</Value>
+    </Setting>
+    <Setting Name="siescConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;user id=minafra;password=escrita;persistsecurityinfo=True;database=siesc;sslmode=None&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;user id=minafra;password=escrita;persistsecurityinfo=True;database=siesc;sslmode=None</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

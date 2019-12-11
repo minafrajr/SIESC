@@ -7,7 +7,8 @@ using System.Text;
 using System.Xml;
 using System.Web;
 using Newtonsoft.Json;
-using SIESC.WEB.Properties;
+using SIESC_WEB.Properties;
+
 
 namespace SIESC.WEB
 {
