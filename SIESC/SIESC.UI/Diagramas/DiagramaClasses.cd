@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SIESC.Aluno">
+    <Position X="1" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Autorizacao">
+    <Position X="0.5" Y="5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Funcionario">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Instituicao">
+    <Position X="9" Y="4.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.InstituicaoOrigem">
+    <Position X="9" Y="2.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Motivo">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Pessoa">
+    <Position X="3.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Solicitacao">
+    <Position X="6.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.Classes.Usuario">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.AlunoControl">
+    <Position X="11.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.AutorizacaoControl">
+    <Position X="13.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.BairroControl">
+    <Position X="15.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.FuncionarioControl">
+    <Position X="11.25" Y="3.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.InstiOrigemControl">
+    <Position X="13.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.InstituicaoControl">
+    <Position X="14" Y="3.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.MotivoControl">
+    <Position X="14" Y="5.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.SolicitacaoControl">
+    <Position X="11.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SIESC.BD.Control.UsuarioControl">
+    <Position X="16" Y="2" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="SIESC.Classes.tipoautorizacao">
+    <Position X="6.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="SIESC.Classes.cargo">
+    <Position X="3.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
