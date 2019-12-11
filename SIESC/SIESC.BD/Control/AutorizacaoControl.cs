@@ -59,9 +59,9 @@ namespace SIESC.BD.Control
 					return
 						(autorizacoes_TA.Inserir(autorizacao.Idfuncionario, autorizacao.IdInstituicao, autorizacao.numeroautorizacao,
 							autorizacao.Dataexpedicao, autorizacao.Datavalidade, autorizacao.Datapossecargo,
-							autorizacao.tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true) > 0);
+							autorizacao.Tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true) > 0);
 				return
-					(this.autorizacoes_TA.Atualizar(autorizacao.IdInstituicao, autorizacao.numeroautorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.numeroautorizacao, autorizacao.Idfuncionario) > 0);
+					(this.autorizacoes_TA.Atualizar(autorizacao.IdInstituicao, autorizacao.numeroautorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.Tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.numeroautorizacao, autorizacao.Idfuncionario) > 0);
 			}
 			catch (SqlException exception)
 			{
@@ -266,13 +266,13 @@ namespace SIESC.BD.Control
 				switch (dt.Rows[0]["tipoAutorizacao"].ToString())
 				{
 					case "dirigir":
-						autoriz.tipoautorizacao = Tipoautorizacao.Dirigir;
+						autoriz.Tipoautorizacao = Tipoautorizacao.Dirigir;
 						break;
 					case "lecionar":
-						autoriz.tipoautorizacao = Tipoautorizacao.Lecionar;
+						autoriz.Tipoautorizacao = Tipoautorizacao.Lecionar;
 						break;
 					case "secretariar":
-						autoriz.tipoautorizacao = Tipoautorizacao.Secretariar;
+						autoriz.Tipoautorizacao = Tipoautorizacao.Secretariar;
 						break;
 				}
 

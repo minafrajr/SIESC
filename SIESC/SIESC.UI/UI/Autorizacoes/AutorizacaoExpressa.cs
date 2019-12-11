@@ -162,7 +162,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				controle_funcionario = new FuncionarioControl();
 				controle_autorizacao = new AutorizacaoControl();
 
-				autoriz.tipoautorizacao = this.TipoAutoriz;
+				autoriz.Tipoautorizacao = this.TipoAutoriz;
 				autoriz.Idfuncionario = (int)controle_funcionario.PesquisaID(msk_cpf.Text);
 
 				autoriz.nivelensino = this.cbo_nivelensino.Text.ToUpper();

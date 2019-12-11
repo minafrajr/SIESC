@@ -66,7 +66,7 @@ namespace SIESC.MODELS.Classes
 		/// <summary>
 		/// tipo de autorização
 		/// </summary>
-		public Tipoautorizacao tipoautorizacao;
+		public Tipoautorizacao Tipoautorizacao;
 		/// <summary>
 		/// Codigo da disciplian
 		/// </summary>
