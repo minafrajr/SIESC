@@ -24,7 +24,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// <summary>
 		/// Tpo de autorização
 		/// </summary>
-		private tipoautorizacao TipoAutoriz;
+		private Tipoautorizacao TipoAutoriz;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -162,20 +162,20 @@ namespace SIESC.UI.UI.Autorizacoes
 				controle_funcionario = new FuncionarioControl();
 				controle_autorizacao = new AutorizacaoControl();
 
-				autoriz.Tipoautorizacao = this.TipoAutoriz;
-				autoriz.idfuncionario = (int)controle_funcionario.PesquisaID(msk_cpf.Text);
+				autoriz.tipoautorizacao = this.TipoAutoriz;
+				autoriz.Idfuncionario = (int)controle_funcionario.PesquisaID(msk_cpf.Text);
 
 				autoriz.nivelensino = this.cbo_nivelensino.Text.ToUpper();
 				autoriz.usuario = PrincipalUi.user.nomeusuario.ToUpper(); //Get nome do usuario
-				autoriz.idInstituicao = (int)cbo_instituicao.SelectedValue;
+				autoriz.IdInstituicao = (int)cbo_instituicao.SelectedValue;
 
 				if (cbo_disciplina.SelectedValue != null)
 				{
-					autoriz.disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
+					autoriz.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
 				}
 
-				autoriz.dataexpedicao = DateTime.Now;
-				autoriz.datapossecargo = DateTime.Now;
+				autoriz.Dataexpedicao = DateTime.Now;
+				autoriz.Datapossecargo = DateTime.Now;
 
 
 				string num = controle_autorizacao.RetornaUltimaAutorizacao();
@@ -204,13 +204,13 @@ namespace SIESC.UI.UI.Autorizacoes
 			switch (cbo_tipoautoriz.Text)
 			{
 				case "DIRIGIR":
-					this.TipoAutoriz = tipoautorizacao.dirigir;
+					this.TipoAutoriz = Tipoautorizacao.Dirigir;
 					break;
 				case "LECIONAR":
-					TipoAutoriz = tipoautorizacao.lecionar;
+					TipoAutoriz = Tipoautorizacao.Lecionar;
 					break;
 				case "SECRETARIAR":
-					TipoAutoriz = tipoautorizacao.secretariar;
+					TipoAutoriz = Tipoautorizacao.Secretariar;
 					break;
 			}
 		}

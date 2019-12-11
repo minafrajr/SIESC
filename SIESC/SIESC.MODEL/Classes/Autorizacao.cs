@@ -13,7 +13,22 @@ namespace SIESC.MODELS.Classes
 	/// <summary>
 	/// O tipo de autorização
 	/// </summary>
-	public enum tipoautorizacao { dirigir, secretariar, lecionar }
+	public enum Tipoautorizacao
+	{
+		/// <summary>
+		/// Direção escolar
+		/// </summary>
+		Dirigir,
+		/// <summary>
+		/// Secretário Escolar
+		/// </summary>
+		Secretariar,
+
+		/// <summary>
+		/// Professor
+		/// </summary>
+		Lecionar
+	}
 	/// <summary>
 	/// Classe Autorização
 	/// </summary>
@@ -22,27 +37,28 @@ namespace SIESC.MODELS.Classes
 		/// <summary>
 		/// codigo da autorização
 		/// </summary>
-		public int idAutorizacao { get; set; }
+		/// 
+		public int IdAutorizacao { get; set; }
 		/// <summary>
 		/// codigo da instituição
 		/// </summary>
-		public int idInstituicao { get; set; }
+		public int IdInstituicao { get; set; }
 		/// <summary>
 		/// data em que a autorização expedida
 		/// </summary>
-		public DateTime dataexpedicao { get; set; }
+		public DateTime Dataexpedicao { get; set; }
 		/// <summary>
 		/// Tempo de validade da autorização
 		/// </summary>
-		public DateTime datavalidade { get; set; }
+		public DateTime Datavalidade { get; set; }
 		/// <summary>
 		/// Data de posse do cargoOrigem
 		/// </summary>
-		public DateTime datapossecargo { get; set; }
+		public DateTime Datapossecargo { get; set; }
 		/// <summary>
 		/// codigo do funcionario
 		/// </summary>
-		public int idfuncionario { get; set; }
+		public int Idfuncionario { get; set; }
 		/// <summary>
 		/// Numero de autorização
 		/// </summary>
@@ -50,15 +66,15 @@ namespace SIESC.MODELS.Classes
 		/// <summary>
 		/// tipo de autorização
 		/// </summary>
-		public tipoautorizacao Tipoautorizacao;
+		public Tipoautorizacao tipoautorizacao;
 		/// <summary>
 		/// Codigo da disciplian
 		/// </summary>
-		public int? disciplina;
+		public int? Disciplina;
 		/// <summary>
 		/// Documentos apresentados pelo funcionario para autorização
 		/// </summary>
-		public StringBuilder documentos { get; set; }
+		public StringBuilder Documentos { get; set; }
 		/// <summary>
 		/// Nivel de ensino da autorização
 		/// </summary>
@@ -87,19 +103,19 @@ namespace SIESC.MODELS.Classes
 		public Autorizacao() { }
 
 
-	    /// <summary>
-	    /// Construtora da classe
-	    /// </summary>
-	    /// <param name="idinstituicao">código da instituição</param>
-	    /// <param name="codigorequerente">código do funcionário requerente</param>
-	    /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
-	    /// <param name="tipoAutoriz">O tipo de autorização</param>
-	    public Autorizacao(int idinstituicao, int codigorequerente, DateTime dataExpedicao, tipoautorizacao tipoAutoriz)
+		/// <summary>
+		/// Construtora da classe
+		/// </summary>
+		/// <param name="idinstituicao">código da instituição</param>
+		/// <param name="codigorequerente">código do funcionário requerente</param>
+		/// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
+		/// <param name="tipoAutoriz">O tipo de autorização</param>
+		public Autorizacao(int idinstituicao, int codigorequerente, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz)
 		{
-			idInstituicao = idinstituicao;
-			idfuncionario = codigorequerente;
-			dataexpedicao = dataExpedicao;
-			documentos = new StringBuilder();
+			IdInstituicao = idinstituicao;
+			Idfuncionario = codigorequerente;
+			Dataexpedicao = dataExpedicao;
+			Documentos = new StringBuilder();
 
 			GerardataValidade(tipoAutoriz);
 		}
@@ -107,21 +123,20 @@ namespace SIESC.MODELS.Classes
 		/// Adiciona o prazo de validade da autorização de acordo com o cargoOrigem
 		/// </summary>
 		/// <returns>A data em que a autorização irá expirar</returns>
-		private DateTime GerardataValidade(tipoautorizacao autoriz_tipo)
+		private DateTime GerardataValidade(Tipoautorizacao autoriz_tipo)
 		{
-			if (autoriz_tipo == tipoautorizacao.secretariar)
+			if (autoriz_tipo == Tipoautorizacao.Secretariar)
 			{
-				return datavalidade = dataexpedicao.AddYears(2);//secretariar 3 anos a partir da data de expedição
+				return Datavalidade = Dataexpedicao.AddYears(2);//secretariar 3 anos a partir da data de expedição
 			}
-			else if (autoriz_tipo == tipoautorizacao.dirigir)//dirigir 2 anos a partir da data de expedição
+			else if (autoriz_tipo == Tipoautorizacao.Dirigir)//dirigir 2 anos a partir da data de expedição
 			{
-				return datavalidade = dataexpedicao.AddYears(1);//dirigir
+				return Datavalidade = Dataexpedicao.AddYears(1);//dirigir
 			}
 			else //se for solicitação para lecionar
 			{
-				return datavalidade = new DateTime(dataexpedicao.Year, 12, 31);//lecionar até o final do ano a partir
+				return Datavalidade = new DateTime(Dataexpedicao.Year, 12, 31);//lecionar até o final do ano a partir
 			}
 		}
-		
 	}
 }

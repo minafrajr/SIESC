@@ -57,11 +57,11 @@ namespace SIESC.BD.Control
 
 				if (confirma)
 					return
-						(autorizacoes_TA.Inserir(autorizacao.idfuncionario, autorizacao.idInstituicao, autorizacao.numeroautorizacao,
-							autorizacao.dataexpedicao, autorizacao.datavalidade, autorizacao.datapossecargo,
-							autorizacao.Tipoautorizacao.ToString(), autorizacao.disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.documentos.ToString(), autorizacao.usuario, DateTime.Now, true) > 0);
+						(autorizacoes_TA.Inserir(autorizacao.Idfuncionario, autorizacao.IdInstituicao, autorizacao.numeroautorizacao,
+							autorizacao.Dataexpedicao, autorizacao.Datavalidade, autorizacao.Datapossecargo,
+							autorizacao.tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true) > 0);
 				return
-					(this.autorizacoes_TA.Atualizar(autorizacao.idInstituicao, autorizacao.numeroautorizacao, autorizacao.datavalidade, autorizacao.datapossecargo, autorizacao.Tipoautorizacao.ToString(), autorizacao.disciplina, autorizacao.documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.dataexpedicao, autorizacao.numeroautorizacao, autorizacao.idfuncionario) > 0);
+					(this.autorizacoes_TA.Atualizar(autorizacao.IdInstituicao, autorizacao.numeroautorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.numeroautorizacao, autorizacao.Idfuncionario) > 0);
 			}
 			catch (SqlException exception)
 			{
@@ -243,15 +243,15 @@ namespace SIESC.BD.Control
 			{
 				Autorizacao autoriz = new Autorizacao
 					   {
-						   idfuncionario = (int)dt.Rows[0]["idFuncionario"],
-						   idAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
-						   idInstituicao = (int)dt.Rows[0]["idInstituicao"],
+						   Idfuncionario = (int)dt.Rows[0]["idFuncionario"],
+						   IdAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
+						   IdInstituicao = (int)dt.Rows[0]["idInstituicao"],
 						   numeroautorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
-						   dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
-						   datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]),
+						   Dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
+						   Datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]),
 						   anosdeensino = dt.Rows[0]["anosdeensino"].ToString(),
-						   datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
-						   documentos = new StringBuilder(dt.Rows[0]["documentos"].ToString()),
+						   Datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
+						   Documentos = new StringBuilder(dt.Rows[0]["documentos"].ToString()),
 						   nivelensino = dt.Rows[0]["nivelensino"].ToString(),
 						   outrosdocs = dt.Rows[0]["outrosdocs"].ToString(),
 						   usuario = dt.Rows[0]["usuario"].ToString(),
@@ -260,19 +260,19 @@ namespace SIESC.BD.Control
 
 				if (dt.Rows[0]["disciplina"] != DBNull.Value)
 				{
-					autoriz.disciplina = Convert.ToInt16(dt.Rows[0]["disciplina"]);
+					autoriz.Disciplina = Convert.ToInt16(dt.Rows[0]["disciplina"]);
 				}
 
 				switch (dt.Rows[0]["tipoAutorizacao"].ToString())
 				{
 					case "dirigir":
-						autoriz.Tipoautorizacao = tipoautorizacao.dirigir;
+						autoriz.tipoautorizacao = Tipoautorizacao.Dirigir;
 						break;
 					case "lecionar":
-						autoriz.Tipoautorizacao = tipoautorizacao.lecionar;
+						autoriz.tipoautorizacao = Tipoautorizacao.Lecionar;
 						break;
 					case "secretariar":
-						autoriz.Tipoautorizacao = tipoautorizacao.secretariar;
+						autoriz.tipoautorizacao = Tipoautorizacao.Secretariar;
 						break;
 				}
 
