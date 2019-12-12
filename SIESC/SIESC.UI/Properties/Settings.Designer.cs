@@ -36,17 +36,17 @@ namespace SIESC.UI.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://tecnologia/servicocep/ServicoCep.asmx")]
-        public string SIESC_UI_tecnologia1_ServicoCEP {
+        public string tecnologia1ServicoCEP {
             get {
-                return ((string)(this["SIESC_UI_tecnologia1_ServicoCEP"]));
+                return ((string)(this["tecnologia1ServicoCEP"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=minafra;password=escrita;persistsecurityinfo=True;databa" +
-            "se=siesc;sslmode=None")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;database=" +
+            "siesc;sslmode=None")]
         public string siescConnectionString {
             get {
                 return ((string)(this["siescConnectionString"]));
@@ -55,10 +55,19 @@ namespace SIESC.UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\minaf\\Documents\\Visual Studio 2017\\Projects\\Git\\SIESC\\SIESC\\SIESC.BD\\Reports\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\PUC\\TCCI\\SIESC\\SIESC\\SIESC_BD\\Reports")]
         public string LocalReports {
             get {
                 return ((string)(this["LocalReports"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://tecnologia/servicocep/ServicoCep.asmx")]
+        public string SIESC_UI_tecnologia1_ServicoCEP {
+            get {
+                return ((string)(this["SIESC_UI_tecnologia1_ServicoCEP"]));
             }
         }
     }

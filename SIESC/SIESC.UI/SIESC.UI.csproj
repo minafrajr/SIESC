@@ -801,7 +801,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>SIESC_UI_tecnologia1_ServicoCEP</CachedSettingsPropName>
+      <CachedSettingsPropName>tecnologia1ServicoCEP</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup />

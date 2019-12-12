@@ -47,7 +47,7 @@ namespace SIESC.UI.tecnologia1 {
         
         /// <remarks/>
         public ServicoCEP() {
-            this.Url = global::SIESC.UI.Properties.Settings.Default.SIESC_UI_tecnologia1_ServicoCEP;
+            this.Url = global::SIESC.UI.Properties.Settings.Default.tecnologia1ServicoCEP;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
