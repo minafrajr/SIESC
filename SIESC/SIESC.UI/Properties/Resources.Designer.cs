@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace SIESC.UI.Properties {
-    
+    using System;
     
     
     /// <summary>
@@ -39,7 +39,7 @@ namespace SIESC.UI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SIESC_UI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SIESC.UI.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

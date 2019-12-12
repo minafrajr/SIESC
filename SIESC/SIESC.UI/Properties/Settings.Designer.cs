@@ -11,7 +11,6 @@
 namespace SIESC.UI.Properties {
     
     
-    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
@@ -21,15 +20,6 @@ namespace SIESC.UI.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\PUC\\TCCI\\SIESC\\SIESC\\SIESC_BD\\Reports")]
-        public string LocalReports {
-            get {
-                return ((string)(this["LocalReports"]));
             }
         }
         
@@ -60,6 +50,15 @@ namespace SIESC.UI.Properties {
         public string siescConnectionString {
             get {
                 return ((string)(this["siescConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\minaf\\Documents\\Visual Studio 2017\\Projects\\Git\\SIESC\\SIESC\\SIESC.BD\\Reports\\")]
+        public string LocalReports {
+            get {
+                return ((string)(this["LocalReports"]));
             }
         }
     }
