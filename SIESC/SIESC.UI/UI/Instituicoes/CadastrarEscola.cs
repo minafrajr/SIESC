@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI
 {

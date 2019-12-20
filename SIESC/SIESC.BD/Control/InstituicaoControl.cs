@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Security.Policy;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 
 namespace SIESC.BD.Control

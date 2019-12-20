@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Funcionarios

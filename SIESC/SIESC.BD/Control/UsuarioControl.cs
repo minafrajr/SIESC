@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.WEB;
 
 namespace SIESC.BD.Control

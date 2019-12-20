@@ -7,7 +7,7 @@ using SIESC.BD.Control;
 using System;
 using System.Data;
 using System.Windows.Forms;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI.Alunos

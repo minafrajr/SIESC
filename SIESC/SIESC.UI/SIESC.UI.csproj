@@ -35,7 +35,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>158</ApplicationRevision>
+    <ApplicationRevision>160</ApplicationRevision>
     <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -353,6 +353,12 @@
     <Compile Include="UI\Progresso.Designer.cs">
       <DependentUpon>Progresso.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Relatorios\frm_encaminhamento_transporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_encaminhamento_transporte.Designer.cs">
+      <DependentUpon>frm_encaminhamento_transporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Relatorios\frm_ficha_encaminhamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,6 +554,9 @@
     <EmbeddedResource Include="UI\Progresso.resx">
       <DependentUpon>Progresso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_encaminhamento_transporte.resx">
+      <DependentUpon>frm_encaminhamento_transporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_ficha_encaminhamento.resx">
       <DependentUpon>frm_ficha_encaminhamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -674,6 +683,8 @@
     <None Include="Resources\desk-chair 24x24.png" />
     <None Include="Resources\1211805003.png" />
     <None Include="Resources\walking-icon-7402.png" />
+    <None Include="Resources\bus.png" />
+    <None Include="Resources\school-bus.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

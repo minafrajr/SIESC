@@ -10,8 +10,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using SIESC.BD.Control;
-using SIESC.MODELS;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL;
+using SIESC.MODEL.Classes;
+// ReSharper disable All
 
 namespace SIESC.UI.UI
 {

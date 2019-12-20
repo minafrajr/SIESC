@@ -17,10 +17,7 @@
       <Value Profile="(Default)">server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;database=siesc;sslmode=None</Value>
     </Setting>
     <Setting Name="LocalReports" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\Reports</Value>
-    </Setting>
-    <Setting Name="SIESC_UI_tecnologia1_ServicoCEP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://tecnologia/servicocep/ServicoCep.asmx</Value>
+      <Value Profile="(Default)">D:\minaf\Documents\Visual Studio 2017\Projects\Git\SIESC\SIESC\SIESC.BD\Reports\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

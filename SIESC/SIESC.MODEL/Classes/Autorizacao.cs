@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
 	/// <summary>
 	/// O tipo de autorização

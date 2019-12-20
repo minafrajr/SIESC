@@ -6,9 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
 	/// <summary>
 	/// Classe Funcionario

@@ -10,8 +10,8 @@ using SIESC.UI.UI.Relatorios;
 using System;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.MODELS;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Autorizacoes
 {

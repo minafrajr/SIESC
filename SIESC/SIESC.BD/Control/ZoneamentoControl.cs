@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 
 namespace SIESC.BD.Control

@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 
 namespace SIESC.BD.Control
@@ -67,25 +67,18 @@ namespace SIESC.BD.Control
 		/// <returns></returns>
 		public DataTable Listar()
 		{
-			try
-			{
-				vw_aluno = new vw_alunosTableAdapter();
+		    vw_aluno = new vw_alunosTableAdapter();
 
-				vw_aluno = new vw_alunosTableAdapter();
+		    vw_aluno = new vw_alunosTableAdapter();
 
-				return this.vw_aluno.GetData();
-			}
-			catch (SqlException exception)
-			{
-				throw exception;
-			}
+		    return this.vw_aluno.GetData();
 		}
 
 	    /// <summary>
 	    /// Deletar um aluno do Banco de dados
 	    /// </summary>
-	    /// <param name="Id">O Id do aluno a ser deletado</param>
-	    /// <param name="idAluno">O codigo do aluno</param>
+	    /// <param name="Id">O <see cref="Id"/> do aluno a ser deletado</param>
+	    /// <param name="idAluno">O <see cref="idAluno"/> do aluno</param>
 	    /// <returns>true - para a operação feita corretamente</returns>
 	    public bool Deletar(int idAluno)
 		{

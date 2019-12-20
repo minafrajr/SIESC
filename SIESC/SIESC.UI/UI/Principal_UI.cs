@@ -21,7 +21,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.UI.UI.Solicitacoes;
 using ThreadState = System.Threading.ThreadState;
 

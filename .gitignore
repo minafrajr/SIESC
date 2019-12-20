@@ -8,6 +8,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.gitignore
+*.config
 
 #bloquear as chaver
 SIESC/SIESC/SIESC.WEB/Properties/Settings.Designer.cs
@@ -22,6 +24,7 @@ SIESC/SIESC.WEB/app.config
 SIESC/SIESC.WEB/App.config
 SIESC/SIESC.UI/app.config
 SIESC/SIESC.UI/App.config
+SIESC/SIESC/SIESC.MODEL/App.config
 
 
 

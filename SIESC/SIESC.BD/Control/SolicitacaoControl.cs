@@ -8,8 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
-using SIESC.MODELS;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.BD.Control
 {
@@ -51,7 +51,7 @@ namespace SIESC.BD.Control
                     (solicitacao_TA.Inserir(solicitacao.Aluno, solicitacao.InstituicaoSolicitada, solicitacao.DataSolicitacao,
                         solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem,
                         solicitacao.InstituicaoEncaminhada, solicitacao.DataEncaminhamento, solicitacao.Observacoes,
-                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.Ano, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.origemSolicitacao) > 0);
+                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.Ano, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte,solicitacao.JustificativaTransporte) > 0);
             }
             catch (Exception exception)
             {
@@ -158,18 +158,18 @@ namespace SIESC.BD.Control
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="idSolicitacao"></param>
         /// <returns></returns>
-        public Solicitacao RetornaSolicitacao(int id)
+        public Solicitacao RetornaSolicitacao(int idSolicitacao)
         {
             try
             {
                 solicitacao_TA = new solicitacoesvagasTableAdapter();
 
-                DataTable dt = solicitacao_TA.LocalizaSolicitacao(id);
+                DataTable dt = solicitacao_TA.LocalizaSolicitacao(idSolicitacao);
 
                 var solicita = CriaSolicitacao(dt);
-                solicita.Codigo = id;
+                solicita.Codigo = idSolicitacao;
 
                 return solicita;
             }
@@ -205,7 +205,7 @@ namespace SIESC.BD.Control
                 solicita.Solicitante = dt.Rows[0]["solicitante"].ToString();
                 solicita.TipoSolicitante = dt.Rows[0]["grauSolicitante"].ToString();
                 solicita.usuarioEncaminhou = dt.Rows[0]["usuarioEncaminhou"].ToString();
-                solicita.origemSolicitacao = Convert.ToInt16(dt.Rows[0]["origemSolicitacao"].ToString());
+                solicita.OrigemSolicitacao = Convert.ToInt16(dt.Rows[0]["origemSolicitacao"].ToString());
                 solicita.Bairro = Convert.ToInt32(dt.Rows[0]["idBairro"].ToString());
                 solicita.TipoLogradouro = dt.Rows[0]["tipoLogradouro"].ToString();
                 solicita.Logradouro = dt.Rows[0]["logradouro"].ToString();
@@ -217,6 +217,8 @@ namespace SIESC.BD.Control
                 solicita.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
                 solicita.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
                 solicita.Cep = dt.Rows[0]["cep"].ToString();
+                solicita.Transporte = Convert.ToBoolean(dt.Rows[0]["transporte"].ToString());
+                solicita.JustificativaTransporte = dt.Rows[0]["justificativaTransporte"].ToString();
 
                 return solicita;
             }
@@ -330,9 +332,9 @@ namespace SIESC.BD.Control
 
                 if (encaminhado)
                 {
-                    return solicitacao_TA.AtualizarSolicitacao(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.InstituicaoEncaminhada, solicita.Observacoes, solicita.Motivo, solicita.Ano, solicita.DataEncaminhamento, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.usuarioEncaminhou, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.origemSolicitacao, aluno.Id, solicita.Codigo) > 0;
+                    return solicitacao_TA.AtualizarSolicitacao(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.InstituicaoEncaminhada, solicita.Observacoes, solicita.Motivo, solicita.Ano, solicita.DataEncaminhamento, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.usuarioEncaminhou, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.OrigemSolicitacao, solicita.Transporte,solicita.JustificativaTransporte,aluno.Id, solicita.Codigo) > 0;
                 }
-                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.Observacoes, solicita.Motivo, solicita.Ano, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.origemSolicitacao, aluno.Id, solicita.Codigo) > 0;
+                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.Observacoes, solicita.Motivo, solicita.Ano, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.OrigemSolicitacao, aluno.Id, solicita.Codigo) > 0;
             }
             catch (SqlException exception)
             {
@@ -443,8 +445,8 @@ namespace SIESC.BD.Control
 
                 DataTable dt = solicitacao_TA.RetornaEndereco(idSolicitaco);
 
-                string endereco = string.Format("{0} {1}, {2} {3} - {4} {5} ", dt.Rows[0]["tipoLogradouro"], dt.Rows[0]["logradouro"],
-                    dt.Rows[0]["numResidencia"], dt.Rows[0]["complementoEndereco"], dt.Rows[0]["nomeBairro"], dt.Rows[0]["cep"]);
+                string endereco =
+                    $"{dt.Rows[0]["tipoLogradouro"]} {dt.Rows[0]["logradouro"]}, {dt.Rows[0]["numResidencia"]} {dt.Rows[0]["complementoEndereco"]} - {dt.Rows[0]["nomeBairro"]} {dt.Rows[0]["cep"]} ";
 
                 return endereco;
             }

@@ -25,26 +25,26 @@ namespace SIESC.UI.UI
 			InitializeComponent();
 		}
 
-
 		/// <summary>
 		/// Exibe o form como dialog
 		/// </summary>
 		public void ShowDiag()
 		{
-		    try
-		    {
-		        Application.DoEvents();
-		        ShowDialog();
+			try
+			{
+				Application.DoEvents();
+				ShowDialog();
 
-		    }
-		    catch (ThreadInterruptedException)
-		    {
-		        this.Close();
-		        throw;
-		    }
+			}
+			catch (ThreadInterruptedException)
+			{
+			   this.Close();
+			   
+			}
 			catch (Exception)
 			{
 			   this.Close();
+				throw;
 			}
 		}
 

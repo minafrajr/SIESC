@@ -1,4 +1,5 @@
 ﻿using SIESC.BD.Control;
+using SIESC.WEB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,6 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.WEB;
 
 namespace SIESC.UI.UI.Zoneamento
 {
@@ -85,13 +85,13 @@ namespace SIESC.UI.UI.Zoneamento
                 lbl_aviso_coordenadas.Visible = false;
                 lbl_latitude.Text = string.Empty;
                 lbl_longitude.Text = string.Empty;
-                
+
                 coordenadas = new string[2];
 
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text, "0");//Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georrefencia(msk_cep.Text, "0"); //Georreferencia o aluno pelo SISGEO
 
-                
-                
+
+
                 if (!coordenadas[0].Equals(string.Empty) && !coordenadas[0].Equals("0"))
                 {
                     lbl_aviso_coordenadas.Visible = true;
@@ -108,12 +108,16 @@ namespace SIESC.UI.UI.Zoneamento
                 txt_mumresidencia.ResetText();
                 txt_mumresidencia.Focus();
 
-                t.Abort();
+                //t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                //t.Abort();
                 Mensageiro.MensagemErro(exception);
+            }
+            finally
+            {
+                t.Abort();
             }
         }
 
@@ -133,21 +137,20 @@ namespace SIESC.UI.UI.Zoneamento
                 foreach (Control control in camposObrigatoriosList)
                 {
                     //if (string.IsNullOrEmpty(control.Text))
-                    //{
                     //    throw new Exception("Um dos campos de endereço está vazio");
-                    //}
                 }
 
 
                 coordenadas = new string[2];
 
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);//Georreferencia o aluno pelo SISGEO
+                coordenadas =
+                    Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
 
                 if (coordenadas[0] == null)
                 {
                     //Georreferencia o aluno pelo GOOGLE
                     coordenadas = Zoneador.Locate(string.Format("{0}+{1},+{2},+betim,+brasil", txt_mumresidencia.Text,
-                            txt_logradouro.Text.Replace(" ", "+"), cbo_bairro.Text.Replace(" ", "+")));
+                        txt_logradouro.Text.Replace(" ", "+"), cbo_bairro.Text.Replace(" ", "+")));
                 }
 
                 lbl_aviso_coordenadas.Visible = false;
@@ -159,27 +162,35 @@ namespace SIESC.UI.UI.Zoneamento
 
                 if (rdb_ens_fundamental.Checked)
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaEscolasEndereco(coordenadas[0], coordenadas[1], 1,
+                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaEscolasEndereco(coordenadas[0], coordenadas[1],
+                        1,
                         Convert.ToInt32(nud_raioBusca.Value));
                 }
                 else
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaCrechesEndereco(coordenadas[0], coordenadas[1], Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaCrechesEndereco(coordenadas[0], coordenadas[1],
+                        Convert.ToInt32(nud_raioBusca.Value));
                 }
 
                 for (int i = 0; i < dgv_zoneamento.Rows.Count; i++)
                 {
-                    dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(coordenadas[0], coordenadas[1], dgv_zoneamento["latitude", i].Value.ToString(), dgv_zoneamento["longitude", i].Value.ToString());
+                    dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(coordenadas[0],
+                        coordenadas[1], dgv_zoneamento["latitude", i].Value.ToString(),
+                        dgv_zoneamento["longitude", i].Value.ToString());
                 }
 
                 dgv_zoneamento.Sort(dgv_zoneamento.Columns[4], ListSortDirection.Ascending);
 
-                t.Abort();
+                //t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                //t.Abort();
                 Mensageiro.MensagemErro(exception);
+            }
+            finally
+            {
+                t.Abort();
             }
 
         }
@@ -197,7 +208,7 @@ namespace SIESC.UI.UI.Zoneamento
             return t;
         }
         /// <summary>
-        /// 
+        /// Abre o google maps na localização da latitude e longitude exibida na tela
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -213,7 +224,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
         }
         /// <summary>
-        /// 
+        /// Imprime o zoneamento que é exibido na tela
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -279,23 +290,28 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 if (string.IsNullOrEmpty(txt_mumresidencia.Text) || string.IsNullOrEmpty(msk_cep.Text))
                 {
-                    throw new Exception("O campo CEP ou número da resdiência está em branco");
+                    throw new Exception("O campo CEP ou número da residência está em branco");
                 }
 
                 lbl_aviso_coordenadas.Visible = false;
 
                 coordenadas = new string[2];
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);//Georreferencia o aluno pelo SISGEO
+                coordenadas =
+                    Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
 
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];
 
-                t.Abort();
+                //t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                // t.Abort();
                 Mensageiro.MensagemErro(exception);
+            }
+            finally
+            {
+                t.Abort();
             }
         }
 
@@ -304,7 +320,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_ed_infantil_CheckedChanged(object sender,EventArgs e)
+        private void rdb_ed_infantil_CheckedChanged(object sender, EventArgs e)
         {
             LimpaGridView();
         }
@@ -314,11 +330,13 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_ens_fundamental_CheckedChanged(object sender,EventArgs e)
+        private void rdb_ens_fundamental_CheckedChanged(object sender, EventArgs e)
         {
             LimpaGridView();
         }
-
+        /// <summary>
+        /// Limpa a Gridview
+        /// </summary>
         private void LimpaGridView()
         {
             dgv_zoneamento.DataSource = null;

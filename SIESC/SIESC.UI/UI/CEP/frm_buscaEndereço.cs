@@ -43,12 +43,10 @@ namespace SIESC.UI.UI.CEP
 		{
 			try
 			{
-				if (string.IsNullOrEmpty(msk_cep.Text))
-				{
-					throw new Exception("O campo CEP está vazio!");
-				}
+			    if (string.IsNullOrEmpty(msk_cep.Text))
+			        throw new Exception("O campo CEP está vazio!");
 
-				dgv_endereços.DataSource = null;
+			    dgv_endereços.DataSource = null;
 				buscadorCep = new BuscaCep();
 
 				ListofEnderecos = buscadorCep.buscadorCEP(msk_cep.Text).ToList();

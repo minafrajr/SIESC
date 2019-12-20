@@ -267,6 +267,7 @@
     <EmbeddedResource Include="Reports\rpt_Ficha_Solicitacao.rdlc" />
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_solicitacoes_dias_param.rdlc" />
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_Solicitacoes_Mes.rdlc" />
+    <EmbeddedResource Include="Reports\Transporte\rpt_encaminhamento_transporte.rdlc" />
     <None Include="DataSets\dsFundamental.xsc">
       <DependentUpon>dsFundamental.xsd</DependentUpon>
     </None>

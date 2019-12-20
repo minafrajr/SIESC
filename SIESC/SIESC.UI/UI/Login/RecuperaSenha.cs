@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Text.RegularExpressions;
 using SIESC.BD.Control;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.WEB;
 
 

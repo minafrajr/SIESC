@@ -127,8 +127,8 @@
   <data name="run_script" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\run_script.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="geofence_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\geofence_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stampdocument_101087" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stampdocument_101087.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1431668763_list-alt-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1431668763_list-alt-32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,29 +139,26 @@
   <data name="circle_red_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circle_red_x.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pngkit_send-icon-png_1882555" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngkit_send-icon-png_1882555.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="278_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\278_128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1211805003" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1211805003.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1431665945_27-Edit Text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1431665945_27-Edit Text.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stampdocument_101087" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stampdocument_101087.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1211805003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1211805003.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tools.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1431671337_user_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1431671337_user_info.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_compass_15195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_compass_15195.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1431672026_check_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1431672026_check_box.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,6 +180,9 @@
   </data>
   <data name="19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\19.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="walking-icon-7402" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\walking-icon-7402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="diagnostics_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagnostics_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +226,8 @@
   <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_compass_15195" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_compass_15195.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bullet_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet_delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,7 +301,10 @@
   <data name="media-drive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\media-drive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="walking-icon-7402" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\walking-icon-7402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="geofence_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\geofence_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="school-bus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\school-bus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

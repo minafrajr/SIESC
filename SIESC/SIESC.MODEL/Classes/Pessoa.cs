@@ -5,7 +5,7 @@
 #endregion
 using System;
 
-namespace SIESC.MODELS
+namespace SIESC.MODEL
 {
     /// <summary>
     /// Classe que representa uma pessoa no sistema

@@ -92,6 +92,8 @@
             this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
+            this.chk_transporte = new System.Windows.Forms.CheckBox();
+            this.btn_localizar_instituicao = new System.Windows.Forms.Button();
             this.cbo_origem_solicitacao = new SIESC.UI.MyComboBox();
             this.origemsolicitacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -135,7 +137,8 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
-            this.btn_localizar_instituicao = new System.Windows.Forms.Button();
+            this.txt_justificativa_transporte = new System.Windows.Forms.TextBox();
+            this.lbl_justificativa_transporte = new System.Windows.Forms.Label();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -470,7 +473,7 @@
             // txt_solicitante
             // 
             this.txt_solicitante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_solicitante.Location = new System.Drawing.Point(608, 14);
+            this.txt_solicitante.Location = new System.Drawing.Point(631, 20);
             this.txt_solicitante.MaxLength = 60;
             this.txt_solicitante.Name = "txt_solicitante";
             this.txt_solicitante.Size = new System.Drawing.Size(399, 22);
@@ -494,7 +497,7 @@
             "IRMÃO(Ã)",
             "PRIMO(A)",
             "OUTROS"});
-            this.cbo_solicitante.Location = new System.Drawing.Point(523, 14);
+            this.cbo_solicitante.Location = new System.Drawing.Point(546, 20);
             this.cbo_solicitante.Name = "cbo_solicitante";
             this.cbo_solicitante.Size = new System.Drawing.Size(84, 22);
             this.cbo_solicitante.TabIndex = 8;
@@ -505,7 +508,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(458, 18);
+            this.label2.Location = new System.Drawing.Point(481, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 14);
             this.label2.TabIndex = 22;
@@ -553,7 +556,7 @@
             this.gpb_comprovantes.Controls.Add(this.pnl_comprovantes);
             this.gpb_comprovantes.Location = new System.Drawing.Point(651, 9);
             this.gpb_comprovantes.Name = "gpb_comprovantes";
-            this.gpb_comprovantes.Size = new System.Drawing.Size(373, 124);
+            this.gpb_comprovantes.Size = new System.Drawing.Size(378, 124);
             this.gpb_comprovantes.TabIndex = 8;
             this.gpb_comprovantes.TabStop = false;
             this.gpb_comprovantes.Text = "Comprovante de endereço";
@@ -880,6 +883,9 @@
             // 
             // gpb_solicitacao
             // 
+            this.gpb_solicitacao.Controls.Add(this.lbl_justificativa_transporte);
+            this.gpb_solicitacao.Controls.Add(this.txt_justificativa_transporte);
+            this.gpb_solicitacao.Controls.Add(this.chk_transporte);
             this.gpb_solicitacao.Controls.Add(this.btn_localizar_instituicao);
             this.gpb_solicitacao.Controls.Add(this.cbo_origem_solicitacao);
             this.gpb_solicitacao.Controls.Add(this.label7);
@@ -904,12 +910,38 @@
             this.gpb_solicitacao.Controls.Add(this.cbo_instituicao_origem);
             this.gpb_solicitacao.Controls.Add(this.lbl_instituicaosolicitada);
             this.gpb_solicitacao.Controls.Add(this.lbl_escola);
-            this.gpb_solicitacao.Location = new System.Drawing.Point(1, 297);
+            this.gpb_solicitacao.Location = new System.Drawing.Point(0, 296);
             this.gpb_solicitacao.Name = "gpb_solicitacao";
-            this.gpb_solicitacao.Size = new System.Drawing.Size(1038, 148);
+            this.gpb_solicitacao.Size = new System.Drawing.Size(1038, 169);
             this.gpb_solicitacao.TabIndex = 3;
             this.gpb_solicitacao.TabStop = false;
             this.gpb_solicitacao.Text = "Solicitação";
+            // 
+            // chk_transporte
+            // 
+            this.chk_transporte.AutoSize = true;
+            this.chk_transporte.Location = new System.Drawing.Point(485, 137);
+            this.chk_transporte.Name = "chk_transporte";
+            this.chk_transporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chk_transporte.Size = new System.Drawing.Size(121, 18);
+            this.chk_transporte.TabIndex = 25;
+            this.chk_transporte.Tag = "Justificativa Transporte";
+            this.chk_transporte.Text = "Transporte Escolar";
+            this.chk_transporte.UseVisualStyleBackColor = true;
+            this.chk_transporte.Visible = false;
+            // 
+            // btn_localizar_instituicao
+            // 
+            this.btn_localizar_instituicao.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_localizar_instituicao.Enabled = false;
+            this.btn_localizar_instituicao.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_localizar_instituicao.Location = new System.Drawing.Point(444, 48);
+            this.btn_localizar_instituicao.Name = "btn_localizar_instituicao";
+            this.btn_localizar_instituicao.Size = new System.Drawing.Size(29, 22);
+            this.btn_localizar_instituicao.TabIndex = 24;
+            this.btn_localizar_instituicao.Text = "?";
+            this.btn_localizar_instituicao.UseVisualStyleBackColor = false;
+            this.btn_localizar_instituicao.Click += new System.EventHandler(this.btn_localizar_instituicao_Click);
             // 
             // cbo_origem_solicitacao
             // 
@@ -917,7 +949,7 @@
             this.cbo_origem_solicitacao.DisplayMember = "descricao";
             this.cbo_origem_solicitacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_origem_solicitacao.FormattingEnabled = true;
-            this.cbo_origem_solicitacao.Location = new System.Drawing.Point(593, 45);
+            this.cbo_origem_solicitacao.Location = new System.Drawing.Point(616, 47);
             this.cbo_origem_solicitacao.Name = "cbo_origem_solicitacao";
             this.cbo_origem_solicitacao.Size = new System.Drawing.Size(414, 22);
             this.cbo_origem_solicitacao.TabIndex = 10;
@@ -937,7 +969,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(491, 50);
+            this.label7.Location = new System.Drawing.Point(514, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 14);
             this.label7.TabIndex = 23;
@@ -948,7 +980,7 @@
             this.cbo_cidades.FormattingEnabled = true;
             this.cbo_cidades.Location = new System.Drawing.Point(222, 106);
             this.cbo_cidades.Name = "cbo_cidades";
-            this.cbo_cidades.Size = new System.Drawing.Size(224, 22);
+            this.cbo_cidades.Size = new System.Drawing.Size(250, 22);
             this.cbo_cidades.TabIndex = 7;
             this.cbo_cidades.Tag = "Cidade de origem";
             // 
@@ -957,7 +989,7 @@
             this.msk_codexpint.AllowPromptAsInput = false;
             this.msk_codexpint.BeepOnError = true;
             this.msk_codexpint.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_codexpint.Location = new System.Drawing.Point(415, 15);
+            this.msk_codexpint.Location = new System.Drawing.Point(412, 24);
             this.msk_codexpint.Mask = "0999";
             this.msk_codexpint.Name = "msk_codexpint";
             this.msk_codexpint.ShortcutsEnabled = false;
@@ -968,7 +1000,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 17);
+            this.label1.Location = new System.Drawing.Point(261, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 14);
             this.label1.TabIndex = 18;
@@ -977,7 +1009,7 @@
             // btn_cancelaEnc
             // 
             this.btn_cancelaEnc.BackColor = System.Drawing.Color.Tomato;
-            this.btn_cancelaEnc.Location = new System.Drawing.Point(944, 106);
+            this.btn_cancelaEnc.Location = new System.Drawing.Point(967, 106);
             this.btn_cancelaEnc.Name = "btn_cancelaEnc";
             this.btn_cancelaEnc.Size = new System.Drawing.Size(63, 22);
             this.btn_cancelaEnc.TabIndex = 14;
@@ -994,7 +1026,7 @@
             this.cbo_instituicao_encaminhada.DisplayMember = "nome";
             this.cbo_instituicao_encaminhada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao_encaminhada.FormattingEnabled = true;
-            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(593, 106);
+            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(616, 106);
             this.cbo_instituicao_encaminhada.Name = "cbo_instituicao_encaminhada";
             this.cbo_instituicao_encaminhada.Size = new System.Drawing.Size(349, 22);
             this.cbo_instituicao_encaminhada.TabIndex = 13;
@@ -1012,7 +1044,7 @@
             // 
             this.btn_encaminhar.BackColor = System.Drawing.Color.LightBlue;
             this.btn_encaminhar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btn_encaminhar.Location = new System.Drawing.Point(455, 105);
+            this.btn_encaminhar.Location = new System.Drawing.Point(478, 105);
             this.btn_encaminhar.Name = "btn_encaminhar";
             this.btn_encaminhar.Size = new System.Drawing.Size(78, 23);
             this.btn_encaminhar.TabIndex = 12;
@@ -1023,7 +1055,7 @@
             // lbl_anosolicitado
             // 
             this.lbl_anosolicitado.AutoSize = true;
-            this.lbl_anosolicitado.Location = new System.Drawing.Point(26, 17);
+            this.lbl_anosolicitado.Location = new System.Drawing.Point(2, 23);
             this.lbl_anosolicitado.Name = "lbl_anosolicitado";
             this.lbl_anosolicitado.Size = new System.Drawing.Size(85, 14);
             this.lbl_anosolicitado.TabIndex = 11;
@@ -1037,7 +1069,7 @@
             this.cbo_motivo.DisplayMember = "descricaoMotivo";
             this.cbo_motivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_motivo.FormattingEnabled = true;
-            this.cbo_motivo.Location = new System.Drawing.Point(593, 78);
+            this.cbo_motivo.Location = new System.Drawing.Point(616, 73);
             this.cbo_motivo.Name = "cbo_motivo";
             this.cbo_motivo.Size = new System.Drawing.Size(414, 22);
             this.cbo_motivo.TabIndex = 11;
@@ -1053,7 +1085,7 @@
             // lbl_motivo
             // 
             this.lbl_motivo.AutoSize = true;
-            this.lbl_motivo.Location = new System.Drawing.Point(549, 81);
+            this.lbl_motivo.Location = new System.Drawing.Point(572, 81);
             this.lbl_motivo.Name = "lbl_motivo";
             this.lbl_motivo.Size = new System.Drawing.Size(47, 14);
             this.lbl_motivo.TabIndex = 8;
@@ -1076,7 +1108,7 @@
             this.cbo_anosolicitado.DisplayMember = "AnoEF";
             this.cbo_anosolicitado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anosolicitado.FormattingEnabled = true;
-            this.cbo_anosolicitado.Location = new System.Drawing.Point(117, 14);
+            this.cbo_anosolicitado.Location = new System.Drawing.Point(121, 20);
             this.cbo_anosolicitado.Name = "cbo_anosolicitado";
             this.cbo_anosolicitado.Size = new System.Drawing.Size(121, 22);
             this.cbo_anosolicitado.TabIndex = 1;
@@ -1122,9 +1154,9 @@
             "SE",
             "SP",
             "TO"});
-            this.cbo_estado.Location = new System.Drawing.Point(65, 106);
+            this.cbo_estado.Location = new System.Drawing.Point(52, 106);
             this.cbo_estado.Name = "cbo_estado";
-            this.cbo_estado.Size = new System.Drawing.Size(49, 22);
+            this.cbo_estado.Size = new System.Drawing.Size(66, 22);
             this.cbo_estado.TabIndex = 4;
             this.cbo_estado.Tag = "Estado";
             this.cbo_estado.SelectedIndexChanged += new System.EventHandler(this.cbo_estado_SelectedIndexChanged);
@@ -1132,7 +1164,7 @@
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(14, 109);
+            this.lbl_estado.Location = new System.Drawing.Point(2, 109);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(45, 14);
             this.lbl_estado.TabIndex = 5;
@@ -1146,9 +1178,9 @@
             this.cbo_instituicao_solicitada.DisplayMember = "nome";
             this.cbo_instituicao_solicitada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao_solicitada.FormattingEnabled = true;
-            this.cbo_instituicao_solicitada.Location = new System.Drawing.Point(121, 45);
+            this.cbo_instituicao_solicitada.Location = new System.Drawing.Point(121, 47);
             this.cbo_instituicao_solicitada.Name = "cbo_instituicao_solicitada";
-            this.cbo_instituicao_solicitada.Size = new System.Drawing.Size(325, 22);
+            this.cbo_instituicao_solicitada.Size = new System.Drawing.Size(321, 22);
             this.cbo_instituicao_solicitada.TabIndex = 2;
             this.cbo_instituicao_solicitada.Tag = "Escola Solicitada";
             this.cbo_instituicao_solicitada.ValueMember = "idInstituicoes";
@@ -1162,7 +1194,7 @@
             // lbl_escolaorigem
             // 
             this.lbl_escolaorigem.AutoSize = true;
-            this.lbl_escolaorigem.Location = new System.Drawing.Point(2, 81);
+            this.lbl_escolaorigem.Location = new System.Drawing.Point(2, 76);
             this.lbl_escolaorigem.Name = "lbl_escolaorigem";
             this.lbl_escolaorigem.Size = new System.Drawing.Size(119, 14);
             this.lbl_escolaorigem.TabIndex = 2;
@@ -1175,9 +1207,9 @@
             this.cbo_instituicao_origem.DataSource = this.instorigemBindingSource;
             this.cbo_instituicao_origem.DisplayMember = "nomeInstOrigem";
             this.cbo_instituicao_origem.FormattingEnabled = true;
-            this.cbo_instituicao_origem.Location = new System.Drawing.Point(121, 78);
+            this.cbo_instituicao_origem.Location = new System.Drawing.Point(121, 73);
             this.cbo_instituicao_origem.Name = "cbo_instituicao_origem";
-            this.cbo_instituicao_origem.Size = new System.Drawing.Size(325, 22);
+            this.cbo_instituicao_origem.Size = new System.Drawing.Size(351, 22);
             this.cbo_instituicao_origem.TabIndex = 3;
             this.cbo_instituicao_origem.Tag = "Escola de origem";
             this.cbo_instituicao_origem.ValueMember = "idInstituicaoOrigem";
@@ -1192,7 +1224,7 @@
             // lbl_instituicaosolicitada
             // 
             this.lbl_instituicaosolicitada.AutoSize = true;
-            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(5, 50);
+            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(2, 55);
             this.lbl_instituicaosolicitada.Name = "lbl_instituicaosolicitada";
             this.lbl_instituicaosolicitada.Size = new System.Drawing.Size(116, 14);
             this.lbl_instituicaosolicitada.TabIndex = 0;
@@ -1201,7 +1233,7 @@
             // lbl_escola
             // 
             this.lbl_escola.AutoSize = true;
-            this.lbl_escola.Location = new System.Drawing.Point(533, 109);
+            this.lbl_escola.Location = new System.Drawing.Point(556, 109);
             this.lbl_escola.Name = "lbl_escola";
             this.lbl_escola.Size = new System.Drawing.Size(63, 14);
             this.lbl_escola.TabIndex = 15;
@@ -1212,9 +1244,9 @@
             // gpb_observacoes
             // 
             this.gpb_observacoes.Controls.Add(this.txt_observacoes);
-            this.gpb_observacoes.Location = new System.Drawing.Point(5, 438);
+            this.gpb_observacoes.Location = new System.Drawing.Point(6, 471);
             this.gpb_observacoes.Name = "gpb_observacoes";
-            this.gpb_observacoes.Size = new System.Drawing.Size(677, 89);
+            this.gpb_observacoes.Size = new System.Drawing.Size(682, 89);
             this.gpb_observacoes.TabIndex = 4;
             this.gpb_observacoes.TabStop = false;
             this.gpb_observacoes.Text = "Observações:";
@@ -1228,7 +1260,7 @@
             this.txt_observacoes.Multiline = true;
             this.txt_observacoes.Name = "txt_observacoes";
             this.txt_observacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_observacoes.Size = new System.Drawing.Size(671, 68);
+            this.txt_observacoes.Size = new System.Drawing.Size(676, 68);
             this.txt_observacoes.TabIndex = 0;
             this.txt_observacoes.Tag = "Observações";
             // 
@@ -1236,7 +1268,7 @@
             // 
             this.btn_limpar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Image = global::SIESC.UI.Properties.Resources._1431669200_eraser;
-            this.btn_limpar.Location = new System.Drawing.Point(895, 454);
+            this.btn_limpar.Location = new System.Drawing.Point(894, 498);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(60, 59);
             this.btn_limpar.TabIndex = 6;
@@ -1250,7 +1282,7 @@
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SIESC.UI.Properties.Resources.prohibit_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(967, 454);
+            this.btn_cancelar.Location = new System.Drawing.Point(966, 498);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(60, 59);
             this.btn_cancelar.TabIndex = 7;
@@ -1264,7 +1296,7 @@
             // 
             this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_novo.Image = global::SIESC.UI.Properties.Resources._114;
-            this.btn_novo.Location = new System.Drawing.Point(764, 454);
+            this.btn_novo.Location = new System.Drawing.Point(763, 498);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(60, 59);
             this.btn_novo.TabIndex = 9;
@@ -1278,7 +1310,7 @@
             // 
             this.btn_salvar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.Image = global::SIESC.UI.Properties.Resources.Tick;
-            this.btn_salvar.Location = new System.Drawing.Point(829, 454);
+            this.btn_salvar.Location = new System.Drawing.Point(828, 498);
             this.btn_salvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(60, 59);
@@ -1323,7 +1355,7 @@
             // 
             this.btn_gravar_codigoEI.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gravar_codigoEI.Image = global::SIESC.UI.Properties.Resources._11;
-            this.btn_gravar_codigoEI.Location = new System.Drawing.Point(693, 454);
+            this.btn_gravar_codigoEI.Location = new System.Drawing.Point(692, 498);
             this.btn_gravar_codigoEI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_gravar_codigoEI.Name = "btn_gravar_codigoEI";
             this.btn_gravar_codigoEI.Size = new System.Drawing.Size(60, 59);
@@ -1347,22 +1379,30 @@
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
             // 
-            // btn_localizar_instituicao
+            // txt_justificativa_transporte
             // 
-            this.btn_localizar_instituicao.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_localizar_instituicao.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_localizar_instituicao.Location = new System.Drawing.Point(452, 45);
-            this.btn_localizar_instituicao.Name = "btn_localizar_instituicao";
-            this.btn_localizar_instituicao.Size = new System.Drawing.Size(29, 22);
-            this.btn_localizar_instituicao.TabIndex = 24;
-            this.btn_localizar_instituicao.Text = "?";
-            this.btn_localizar_instituicao.UseVisualStyleBackColor = false;
-            this.btn_localizar_instituicao.Click += new System.EventHandler(this.btn_localizar_instituicao_Click);
+            this.txt_justificativa_transporte.Location = new System.Drawing.Point(692, 135);
+            this.txt_justificativa_transporte.MaxLength = 500;
+            this.txt_justificativa_transporte.Multiline = true;
+            this.txt_justificativa_transporte.Name = "txt_justificativa_transporte";
+            this.txt_justificativa_transporte.Size = new System.Drawing.Size(340, 28);
+            this.txt_justificativa_transporte.TabIndex = 26;
+            this.txt_justificativa_transporte.Visible = false;
+            // 
+            // lbl_justificativa_transporte
+            // 
+            this.lbl_justificativa_transporte.AutoSize = true;
+            this.lbl_justificativa_transporte.Location = new System.Drawing.Point(616, 141);
+            this.lbl_justificativa_transporte.Name = "lbl_justificativa_transporte";
+            this.lbl_justificativa_transporte.Size = new System.Drawing.Size(70, 14);
+            this.lbl_justificativa_transporte.TabIndex = 27;
+            this.lbl_justificativa_transporte.Text = "Justificativa:";
+            this.lbl_justificativa_transporte.Visible = false;
             // 
             // SolicitaVaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1044, 541);
+            this.ClientSize = new System.Drawing.Size(1044, 562);
             this.Controls.Add(this.btn_gravar_codigoEI);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_cancelar);
@@ -1514,6 +1554,9 @@
         private System.Windows.Forms.RadioButton rdb_telefone_fixo;
         private System.Windows.Forms.RadioButton rdb_contabancaria;
         private System.Windows.Forms.Button btn_localizar_instituicao;
+        private System.Windows.Forms.CheckBox chk_transporte;
+        private System.Windows.Forms.Label lbl_justificativa_transporte;
+        private System.Windows.Forms.TextBox txt_justificativa_transporte;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using SIESC.BD.Control;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.UI.Security;
 
 namespace SIESC.UI.UI.Login

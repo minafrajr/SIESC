@@ -8,7 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using SIESC.BD.Control;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI
 {

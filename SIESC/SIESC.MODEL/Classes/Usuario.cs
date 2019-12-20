@@ -3,7 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
 	public class Usuario
 	{

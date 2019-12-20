@@ -5,7 +5,7 @@
 #endregion
 
 
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
 	/// <summary>
 	/// 

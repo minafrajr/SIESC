@@ -79,10 +79,10 @@ namespace SIESC.BD.Control
 		{
 			switch (anoconsulta)
 			{
-			    case "2019":
-			        bancodedados = "solicitavaga19";
-			        break;
-			    case "2018":
+				case "2019":
+					bancodedados = "solicitavaga19";
+					break;
+				case "2018":
 					bancodedados = "solicitavaga18";
 					break;
 				case "2017":
@@ -103,17 +103,17 @@ namespace SIESC.BD.Control
 		/// <summary>
 		/// Carrega um DataTable de acordo com a consulta a ser executada
 		/// </summary>
-		/// <param name="anoconsulta"></param>
-		/// <param name="param"></param>
-		/// <param name="tipoconsulta"></param>
+		/// <param name="anoconsulta">O <see cref="anoconsulta"/></param>
+		/// <param name="parametrosConsulta">Os <see cref="parametrosConsulta"/></param>
+		/// <param name="tipoconsulta">O <see cref="tipoconsulta"/></param>
 		/// <returns></returns>
-		public DataTable carregaDados(string anoconsulta, string param, string tipoconsulta)
+		public DataTable carregaDados(string anoconsulta, string parametrosConsulta, string tipoconsulta)
 		{
 			try
 			{
 				GetAnoConsulta(anoconsulta);
 
-				GetTipoConsulta(param, tipoconsulta);
+				GetTipoConsulta(parametrosConsulta, tipoconsulta);
 
 				string comando;
 

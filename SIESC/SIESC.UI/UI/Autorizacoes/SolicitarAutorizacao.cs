@@ -12,8 +12,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SIESC.MODELS;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Autorizacoes
 {

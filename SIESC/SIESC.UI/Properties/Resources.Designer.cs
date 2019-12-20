@@ -623,6 +623,16 @@ namespace SIESC.UI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap school_bus {
+            get {
+                object obj = ResourceManager.GetObject("school-bus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stampdocument_101087 {
             get {
                 object obj = ResourceManager.GetObject("stampdocument_101087", resourceCulture);

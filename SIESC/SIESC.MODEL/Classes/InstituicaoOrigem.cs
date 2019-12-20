@@ -4,9 +4,9 @@
 // Criado em: 22/03/2015
 #endregion
 
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
     /// <summary>
     /// Classe Instituição de origem do solicitante

@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Net;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 
 namespace SIESC.BD.Control

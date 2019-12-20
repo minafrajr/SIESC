@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using SIESC.BD.Control;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Configurações
 {

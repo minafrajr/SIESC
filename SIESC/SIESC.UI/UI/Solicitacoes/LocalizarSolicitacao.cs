@@ -5,7 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Threading;
 using SIESC;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes

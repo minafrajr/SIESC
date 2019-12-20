@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using SIESC.MODELS.Classes;
+using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Login
 {

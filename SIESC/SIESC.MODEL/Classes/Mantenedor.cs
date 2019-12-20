@@ -1,7 +1,7 @@
 ﻿// Projeto:SIESC
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/06/2015
-namespace SIESC.MODELS.Classes
+namespace SIESC.MODEL.Classes
 {
 	/// <summary>
 	/// Classe mantenedor
