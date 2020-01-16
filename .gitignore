@@ -11,8 +11,9 @@
 *.config
 
 # bloquear as chaves
-Properties/Settings.Designer.cs
-Properties/Settings.settings
+SIESC/SIESC/SIESC.WEB/Properties/
+SIESC/SIESC/SIESC.UI/Properties/
+SIESC/SIESC/SIESC.BD/Properties/
 [Aa]pp.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
