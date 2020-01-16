@@ -11,9 +11,9 @@
 *.config
 
 # bloquear as chaves
-*/Settings.Designer.cs
-*/Settings.settings
-*/[Aa]pp.config
+Settings.Designer.cs
+Settings.settings
+[Aa]pp.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
