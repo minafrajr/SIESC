@@ -336,3 +336,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /SIESC/SIESC.WEB/ign.gitignore
+/SIESC/SIESC.WEB/Properties/Settings.settings
+/SIESC/SIESC.WEB/Properties/Settings.Designer.cs

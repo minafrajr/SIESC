@@ -56,6 +56,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Zoneador.cs" />
   </ItemGroup>
   <ItemGroup>
