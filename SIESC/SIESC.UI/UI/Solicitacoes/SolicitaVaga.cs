@@ -277,6 +277,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (solicitacao.InstituicaoEncaminhada != null)
                 {
                     Preenche_cbo_EscolaEncaminhada(solicitacao);
+                    chk_transporte.Visible = true;
                 }
                 else
                 {
@@ -285,6 +286,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (solicitacao.Transporte)
                 {
+                    txt_justificativa_transporte.Text = solicitacao.JustificativaTransporte;
                     chk_transporte.Checked = true;
                 }
             }
@@ -716,10 +718,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         {
                             if (!solicita.InstituicaoEncaminhada.Equals(null))//verifica se existe escola encaminhada
                             {
-                                if (!solicita.InstituicaoEncaminhada.Equals(null))
-                                {
-                                    GravadistanciaAlunoEscola(solicita, alunoCriado);//grava a distancia do aluno até escola encaminhada 
-                                }
+                                GravadistanciaAlunoEscola(solicita, alunoCriado);//grava a distancia do aluno até escola encaminhada 
                             }
                             else
                             {
@@ -828,10 +827,9 @@ namespace SIESC.UI.UI.Solicitacoes
                     Logradouro = txt_logradouro.Text,
                     NumResidencia = txt_mumresidencia.Text,
                     TipoLogradouro = cbo_tipologradouro.Text,
-                    OrigemSolicitacao = (int)cbo_origem_solicitacao.SelectedValue
-                    
-
-
+                    OrigemSolicitacao = (int)cbo_origem_solicitacao.SelectedValue,
+                    Transporte = chk_transporte.Checked,
+                    JustificativaTransporte = txt_justificativa_transporte.Text
                 };
 
                 if (cbo_instituicao_encaminhada.SelectedValue != null && _encaminhou)// já existe e houve alteração no encaminhamento
@@ -1048,8 +1046,7 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_instituicao_encaminhada.Visible = valor;
             btn_cancelaEnc.Visible = valor;
             chk_transporte.Visible = valor;
-            lbl_justificativa_transporte.Visible = valor;
-            txt_justificativa_transporte.Visible = valor;
+
         }
 
         /// <summary>
@@ -1182,6 +1179,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 cbo_instituicao_encaminhada.ResetText();
                 cbo_instituicao_encaminhada.SelectedValue = -1;
+                chk_transporte.Checked = false;
                 HabilitaEncaminhamento(false);
                 _encaminhou = true;
             }
@@ -1190,6 +1188,21 @@ namespace SIESC.UI.UI.Solicitacoes
                 MensagemErro(exception);
             }
         }
+        /// <summary>
+        /// Habilita os controles para o encaminhamento de transporte escolar
+        /// </summary>
+        /// <param name="habilita">indica se true - exibe os controles | false - não exibe os controles</param>
+        private void HabilitaTransporte(bool _habilita)
+        {
+            if (!_habilita)
+            {
+                txt_justificativa_transporte.ResetText();
+            }
+
+            lbl_justificativa_transporte.Visible = _habilita;
+            txt_justificativa_transporte.Visible = _habilita;
+        }
+
         /// <summary>
         /// Evento da combobox escola encaminhada
         /// </summary>
@@ -1674,14 +1687,14 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     dt = zoneamento.retornaUnidadeAnoEnsino(coordenadas[0], coordenadas[1], 2,
                         cbo_anosolicitado.SelectedIndex);
-                    
+
                 }
-                
+
                 cbo_escolasolicitada_DropDown(null, null);
 
                 foreach (DataRowView item in cbo_instituicao_solicitada.Items)
                 {
-                    if (item["idInstituicoes"].ToString() == dt.Rows[0]["CodigoEscola"].ToString() )
+                    if (item["idInstituicoes"].ToString() == dt.Rows[0]["CodigoEscola"].ToString())
                     {
                         cbo_instituicao_solicitada.SelectedItem = item;
                     }
@@ -1691,6 +1704,24 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (Exception ex)
             {
                 Mensageiro.MensagemErro(ex);
+            }
+        }
+        /// <summary>
+        /// Evento de alteração do check-box de transporte escolar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chk_transporte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_transporte.Checked)
+            {
+                HabilitaTransporte(true);
+                _listControlsObrigatorios.Add(txt_justificativa_transporte);
+            }
+            else
+            {
+                HabilitaTransporte(false);
+                _listControlsObrigatorios.Remove(txt_justificativa_transporte);
             }
         }
     }

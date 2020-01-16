@@ -26,8 +26,8 @@ namespace SIESC.BD.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;database=" +
-            "siesc;sslmode=None")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=minafra;password=escrita;persistsecurityinfo=True;databa" +
+            "se=siesc;sslmode=None")]
         public string siescConnectionString {
             get {
                 return ((string)(this["siescConnectionString"]));

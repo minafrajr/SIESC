@@ -666,12 +666,12 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void btn_encam_transp_Click(object sender, EventArgs e)
         {
-            if (!cbo_anoreferencia.Text.Equals("2019"))
-                throw new Exception("Não é permitido imprimir encaminhamentos de transporte de anos anteriores.");
-
             var t = CarregaProgressoThread();
             try
             {
+                if (!cbo_anoreferencia.Text.Equals("2020"))
+                    throw new Exception("Não é permitido imprimir encaminhamentos de transporte de anos anteriores.");
+
                 frm_encaminhamento_transporte frm_enca_transp =
                     new frm_encaminhamento_transporte((int) dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y]
                         .Value)

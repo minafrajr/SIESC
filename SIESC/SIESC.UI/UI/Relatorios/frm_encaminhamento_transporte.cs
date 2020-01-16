@@ -16,15 +16,15 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// 
         /// </summary>
-        private Margins margins = new Margins(10, 2, 2, 2); //Configurando as margens
+        private readonly Margins _margins = new Margins(10, 2, 2, 2); //Configurando as margens
         /// <summary>
         /// 
         /// </summary>
-        private PageSettings pg = new PageSettings(); //Configurando para paisagem
+        private readonly PageSettings _pg = new PageSettings(); //Configurando para paisagem
         /// <summary>
         /// 
         /// </summary>
-        private DataTable dtEncaminhaTransporte;
+        private readonly DataTable _dtEncaminhaTransporte;
         
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace SIESC.UI.UI.Relatorios
             InitializeComponent();
             ConfiguraRelatorio();
 
-            dtEncaminhaTransporte = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigoSolicitacao);
+            _dtEncaminhaTransporte = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigoSolicitacao);
 
             FinalizaRelatorio();
 
@@ -56,9 +56,9 @@ namespace SIESC.UI.UI.Relatorios
             rpt_viewer.SetDisplayMode(DisplayMode.PrintLayout);
             rpt_viewer.ZoomMode = ZoomMode.PageWidth;
             rpt_viewer.LocalReport.DataSources.Clear();
-            pg.Margins = margins;
-            rpt_viewer.SetPageSettings(pg);
-            pg.Margins = margins; //repassa as margens para o relatório
+            _pg.Margins = _margins;
+            rpt_viewer.SetPageSettings(_pg);
+            _pg.Margins = _margins; //repassa as margens para o relatório
             string PathRelatorio = Settings.Default.RemoteReports;
             //PODE ALTERAR local onde se encontram os arquivos RDLC para montagem dos relatórios LocalReports - na máquina local | RemoteReports - no servidor (deixar essa config ao publicar o executável)
 #if DEBUG
@@ -71,7 +71,7 @@ namespace SIESC.UI.UI.Relatorios
 
         private void FinalizaRelatorio()
         {
-            datasource = new ReportDataSource("dsRelatorios") {Value = dtEncaminhaTransporte};
+            datasource = new ReportDataSource("dsRelatorios") {Value = _dtEncaminhaTransporte};
             
             rpt_viewer.LocalReport.DataSources.Add(datasource);
             rpt_viewer.RefreshReport();

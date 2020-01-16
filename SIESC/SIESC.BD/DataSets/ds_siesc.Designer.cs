@@ -18792,7 +18792,7 @@ WHERE        (Aluno = @idAluno) AND (idSolicitacoesVagas = @idSolicitacao)";
 SET                instituicaoSolicitada = @instituicaoSolicitada, statusSolicitacao = @statusSolicitacao, escolaOrigem = @escolaOrigem, cidadeOrigem = @cidadeOrigem, estadoOrigem = @estadoOrigem, observacoes = @observacoes, 
                          motivoSolicitacao = @motivoSolicitacao, anoSolicitado = @anoSolicitado, codexpint = @codexpint, solicitante = @solicitante, grauSolicitante = @parentesco, tipoLogradouro = @tipoLogradouro, logradouro = @logradouro, 
                          numResidencia = @numResidencia, complementoEndereco = @complementoEndereco, idBairro = @idBairro, responsavelComprovante = @responsavelComprovante, tipoComprovante = @tipoComprovante, 
-                         latitude = @latitude, longitude = @longitude, cep = @cep, origemSolicitacao = @origemSolicitacao
+                         latitude = @latitude, longitude = @longitude, cep = @cep, origemSolicitacao = @origemSolicitacao, transporte = @transporte, justificativaTransporte = @justificativaTransporte
 WHERE        (Aluno = @idAluno) AND (idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -18963,6 +18963,22 @@ WHERE        (Aluno = @idAluno) AND (idSolicitacoesVagas = @idSolicitacao)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "origemSolicitacao";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@transporte";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "transporte";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@justificativaTransporte";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 500;
+            param.IsNullable = true;
+            param.SourceColumn = "justificativaTransporte";
             this._commandCollection[3].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idAluno";
@@ -19759,6 +19775,8 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idsol)";
                     string longitude, 
                     string cep, 
                     global::System.Nullable<int> origemSolicitacao, 
+                    object transporte, 
+                    string justificativaTransporte, 
                     int idAluno, 
                     int idSolicitacao) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
@@ -19879,8 +19897,20 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idsol)";
             else {
                 command.Parameters[21].Value = global::System.DBNull.Value;
             }
-            command.Parameters[22].Value = ((int)(idAluno));
-            command.Parameters[23].Value = ((int)(idSolicitacao));
+            if ((transporte == null)) {
+                command.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[22].Value = ((object)(transporte));
+            }
+            if ((justificativaTransporte == null)) {
+                command.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[23].Value = ((string)(justificativaTransporte));
+            }
+            command.Parameters[24].Value = ((int)(idAluno));
+            command.Parameters[25].Value = ((int)(idSolicitacao));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -92,6 +92,8 @@
             this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
+            this.lbl_justificativa_transporte = new System.Windows.Forms.Label();
+            this.txt_justificativa_transporte = new System.Windows.Forms.TextBox();
             this.chk_transporte = new System.Windows.Forms.CheckBox();
             this.btn_localizar_instituicao = new System.Windows.Forms.Button();
             this.cbo_origem_solicitacao = new SIESC.UI.MyComboBox();
@@ -137,8 +139,6 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
-            this.txt_justificativa_transporte = new System.Windows.Forms.TextBox();
-            this.lbl_justificativa_transporte = new System.Windows.Forms.Label();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -917,10 +917,31 @@
             this.gpb_solicitacao.TabStop = false;
             this.gpb_solicitacao.Text = "Solicitação";
             // 
+            // lbl_justificativa_transporte
+            // 
+            this.lbl_justificativa_transporte.AutoSize = true;
+            this.lbl_justificativa_transporte.Location = new System.Drawing.Point(616, 141);
+            this.lbl_justificativa_transporte.Name = "lbl_justificativa_transporte";
+            this.lbl_justificativa_transporte.Size = new System.Drawing.Size(70, 14);
+            this.lbl_justificativa_transporte.TabIndex = 27;
+            this.lbl_justificativa_transporte.Text = "Justificativa:";
+            this.lbl_justificativa_transporte.Visible = false;
+            // 
+            // txt_justificativa_transporte
+            // 
+            this.txt_justificativa_transporte.Location = new System.Drawing.Point(692, 135);
+            this.txt_justificativa_transporte.MaxLength = 500;
+            this.txt_justificativa_transporte.Multiline = true;
+            this.txt_justificativa_transporte.Name = "txt_justificativa_transporte";
+            this.txt_justificativa_transporte.Size = new System.Drawing.Size(340, 28);
+            this.txt_justificativa_transporte.TabIndex = 26;
+            this.txt_justificativa_transporte.Tag = "Justificativa para o transporte escolar";
+            this.txt_justificativa_transporte.Visible = false;
+            // 
             // chk_transporte
             // 
             this.chk_transporte.AutoSize = true;
-            this.chk_transporte.Location = new System.Drawing.Point(485, 137);
+            this.chk_transporte.Location = new System.Drawing.Point(485, 140);
             this.chk_transporte.Name = "chk_transporte";
             this.chk_transporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chk_transporte.Size = new System.Drawing.Size(121, 18);
@@ -929,6 +950,7 @@
             this.chk_transporte.Text = "Transporte Escolar";
             this.chk_transporte.UseVisualStyleBackColor = true;
             this.chk_transporte.Visible = false;
+            this.chk_transporte.CheckedChanged += new System.EventHandler(this.chk_transporte_CheckedChanged);
             // 
             // btn_localizar_instituicao
             // 
@@ -1378,26 +1400,6 @@
             // origemsolicitacaoTableAdapter1
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // txt_justificativa_transporte
-            // 
-            this.txt_justificativa_transporte.Location = new System.Drawing.Point(692, 135);
-            this.txt_justificativa_transporte.MaxLength = 500;
-            this.txt_justificativa_transporte.Multiline = true;
-            this.txt_justificativa_transporte.Name = "txt_justificativa_transporte";
-            this.txt_justificativa_transporte.Size = new System.Drawing.Size(340, 28);
-            this.txt_justificativa_transporte.TabIndex = 26;
-            this.txt_justificativa_transporte.Visible = false;
-            // 
-            // lbl_justificativa_transporte
-            // 
-            this.lbl_justificativa_transporte.AutoSize = true;
-            this.lbl_justificativa_transporte.Location = new System.Drawing.Point(616, 141);
-            this.lbl_justificativa_transporte.Name = "lbl_justificativa_transporte";
-            this.lbl_justificativa_transporte.Size = new System.Drawing.Size(70, 14);
-            this.lbl_justificativa_transporte.TabIndex = 27;
-            this.lbl_justificativa_transporte.Text = "Justificativa:";
-            this.lbl_justificativa_transporte.Visible = false;
             // 
             // SolicitaVaga
             // 
