@@ -10,13 +10,10 @@
 *.sln.docstates
 *.config
 
-#bloquear as chaver
+# bloquear as chaves
 */Settings.Designer.cs
 */Settings.settings
 */[Aa]pp.config
-
-
-
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

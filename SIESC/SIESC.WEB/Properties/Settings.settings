@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIESC_WEB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="geocodeKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AIzaSyBM9ETUuya2WEeUapukzPET4Y4z4gX_ivY</Value>
+    </Setting>
+    <Setting Name="georrefKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ED25C1414AE44848931E357D85658460</Value>
+    </Setting>
+    <Setting Name="distanceMatrixkey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AIzaSyCOYo-wA7g_MYM_8E5c0L-KRsndXJlUlbI</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

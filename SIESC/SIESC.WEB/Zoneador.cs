@@ -11,7 +11,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Web;
 using Newtonsoft.Json;
-using SIESC_WEB.Properties;
+using SIESC.WEB.Properties;
+
 
 namespace SIESC.WEB
 {
