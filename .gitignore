@@ -11,9 +11,9 @@
 *.config
 
 #bloquear as chaver
-**/Settings.Designer.cs
-**/Settings.settings
-**/[Aa]pp.config
+*/Settings.Designer.cs
+*/Settings.settings
+*/[Aa]pp.config
 
 
 
