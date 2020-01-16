@@ -11,9 +11,12 @@
 *.config
 
 # bloquear as chaves
-SIESC/SIESC/SIESC.WEB/Properties/
-SIESC/SIESC/SIESC.UI/Properties/
-SIESC/SIESC/SIESC.BD/Properties/
+/SIESC/SIESC.WEB/Properties/Settings.settings
+/SIESC/SIESC.WEB/Properties/Settings.Designer.cs
+/SIESC/SIESC.UI/Properties/Settings.settings
+/SIESC/SIESC.UI/Properties/Settings.Designer.cs
+/SIESC/SIESC.BD/Properties/Settings.settings
+/SIESC/SIESC.BD/Properties/Settings.Designer.cs
 [Aa]pp.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -336,5 +339,4 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /SIESC/SIESC.WEB/ign.gitignore
-/SIESC/SIESC.WEB/Properties/Settings.settings
-/SIESC/SIESC.WEB/Properties/Settings.Designer.cs
+
