@@ -69,7 +69,7 @@
             this.rdb_comprovanteresponsavel_nao = new System.Windows.Forms.RadioButton();
             this.pnl_comprovantes = new System.Windows.Forms.Panel();
             this.rdb_telefone_fixo = new System.Windows.Forms.RadioButton();
-            this.rdb_contabancaria = new System.Windows.Forms.RadioButton();
+            this.rdb_correspondenciabancaria = new System.Windows.Forms.RadioButton();
             this.txt_comprovante = new SIESC.UI.MyTextBox();
             this.rdb_outroscomprov = new System.Windows.Forms.RadioButton();
             this.rdb_contratoaluguel = new System.Windows.Forms.RadioButton();
@@ -473,10 +473,10 @@
             // txt_solicitante
             // 
             this.txt_solicitante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_solicitante.Location = new System.Drawing.Point(631, 20);
+            this.txt_solicitante.Location = new System.Drawing.Point(616, 20);
             this.txt_solicitante.MaxLength = 60;
             this.txt_solicitante.Name = "txt_solicitante";
-            this.txt_solicitante.Size = new System.Drawing.Size(399, 22);
+            this.txt_solicitante.Size = new System.Drawing.Size(414, 22);
             this.txt_solicitante.TabIndex = 9;
             this.txt_solicitante.Tag = "Solicitante da vaga";
             this.txt_solicitante.Visible = false;
@@ -497,18 +497,17 @@
             "IRMÃO(Ã)",
             "PRIMO(A)",
             "OUTROS"});
-            this.cbo_solicitante.Location = new System.Drawing.Point(546, 20);
+            this.cbo_solicitante.Location = new System.Drawing.Point(517, 20);
             this.cbo_solicitante.Name = "cbo_solicitante";
-            this.cbo_solicitante.Size = new System.Drawing.Size(84, 22);
+            this.cbo_solicitante.Size = new System.Drawing.Size(96, 22);
             this.cbo_solicitante.TabIndex = 8;
             this.cbo_solicitante.Tag = "Tipo Solicitante";
             this.cbo_solicitante.SelectionChangeCommitted += new System.EventHandler(this.cbo_solicitante_SelectionChangeCommitted);
-            this.cbo_solicitante.TextChanged += new System.EventHandler(this.cbo_solicitante_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(481, 24);
+            this.label2.Location = new System.Drawing.Point(450, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 14);
             this.label2.TabIndex = 22;
@@ -595,7 +594,7 @@
             // pnl_comprovantes
             // 
             this.pnl_comprovantes.Controls.Add(this.rdb_telefone_fixo);
-            this.pnl_comprovantes.Controls.Add(this.rdb_contabancaria);
+            this.pnl_comprovantes.Controls.Add(this.rdb_correspondenciabancaria);
             this.pnl_comprovantes.Controls.Add(this.txt_comprovante);
             this.pnl_comprovantes.Controls.Add(this.rdb_outroscomprov);
             this.pnl_comprovantes.Controls.Add(this.rdb_contratoaluguel);
@@ -619,17 +618,17 @@
             this.rdb_telefone_fixo.Text = "Telefone Fixo";
             this.rdb_telefone_fixo.UseVisualStyleBackColor = true;
             // 
-            // rdb_contabancaria
+            // rdb_correspondenciabancaria
             // 
-            this.rdb_contabancaria.AutoSize = true;
-            this.rdb_contabancaria.Location = new System.Drawing.Point(225, 4);
-            this.rdb_contabancaria.Name = "rdb_contabancaria";
-            this.rdb_contabancaria.Size = new System.Drawing.Size(115, 18);
-            this.rdb_contabancaria.TabIndex = 6;
-            this.rdb_contabancaria.TabStop = true;
-            this.rdb_contabancaria.Tag = "CORRESP. BANCÁRIA";
-            this.rdb_contabancaria.Text = "Corresp. Bancária";
-            this.rdb_contabancaria.UseVisualStyleBackColor = true;
+            this.rdb_correspondenciabancaria.AutoSize = true;
+            this.rdb_correspondenciabancaria.Location = new System.Drawing.Point(225, 4);
+            this.rdb_correspondenciabancaria.Name = "rdb_correspondenciabancaria";
+            this.rdb_correspondenciabancaria.Size = new System.Drawing.Size(115, 18);
+            this.rdb_correspondenciabancaria.TabIndex = 6;
+            this.rdb_correspondenciabancaria.TabStop = true;
+            this.rdb_correspondenciabancaria.Tag = "CORRESP. BANCÁRIA";
+            this.rdb_correspondenciabancaria.Text = "Corresp. Bancária";
+            this.rdb_correspondenciabancaria.UseVisualStyleBackColor = true;
             // 
             // txt_comprovante
             // 
@@ -686,11 +685,11 @@
             this.rdb_copasa.AutoSize = true;
             this.rdb_copasa.Location = new System.Drawing.Point(9, 28);
             this.rdb_copasa.Name = "rdb_copasa";
-            this.rdb_copasa.Size = new System.Drawing.Size(97, 18);
+            this.rdb_copasa.Size = new System.Drawing.Size(63, 18);
             this.rdb_copasa.TabIndex = 2;
             this.rdb_copasa.TabStop = true;
             this.rdb_copasa.Tag = "COPASA";
-            this.rdb_copasa.Text = "Conta Copasa";
+            this.rdb_copasa.Text = "Copasa";
             this.rdb_copasa.UseVisualStyleBackColor = true;
             // 
             // rdb_cemig
@@ -910,7 +909,7 @@
             this.gpb_solicitacao.Controls.Add(this.cbo_instituicao_origem);
             this.gpb_solicitacao.Controls.Add(this.lbl_instituicaosolicitada);
             this.gpb_solicitacao.Controls.Add(this.lbl_escola);
-            this.gpb_solicitacao.Location = new System.Drawing.Point(0, 296);
+            this.gpb_solicitacao.Location = new System.Drawing.Point(0, 295);
             this.gpb_solicitacao.Name = "gpb_solicitacao";
             this.gpb_solicitacao.Size = new System.Drawing.Size(1038, 169);
             this.gpb_solicitacao.TabIndex = 3;
@@ -955,7 +954,6 @@
             // btn_localizar_instituicao
             // 
             this.btn_localizar_instituicao.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_localizar_instituicao.Enabled = false;
             this.btn_localizar_instituicao.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_localizar_instituicao.Location = new System.Drawing.Point(444, 48);
             this.btn_localizar_instituicao.Name = "btn_localizar_instituicao";
@@ -1011,7 +1009,7 @@
             this.msk_codexpint.AllowPromptAsInput = false;
             this.msk_codexpint.BeepOnError = true;
             this.msk_codexpint.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_codexpint.Location = new System.Drawing.Point(412, 24);
+            this.msk_codexpint.Location = new System.Drawing.Point(412, 21);
             this.msk_codexpint.Mask = "0999";
             this.msk_codexpint.Name = "msk_codexpint";
             this.msk_codexpint.ShortcutsEnabled = false;
@@ -1554,7 +1552,7 @@
         private System.Windows.Forms.BindingSource origemsolicitacaoBindingSource;
         private siescDataSetTableAdapters.origemsolicitacaoTableAdapter origemsolicitacaoTableAdapter1;
         private System.Windows.Forms.RadioButton rdb_telefone_fixo;
-        private System.Windows.Forms.RadioButton rdb_contabancaria;
+        private System.Windows.Forms.RadioButton rdb_correspondenciabancaria;
         private System.Windows.Forms.Button btn_localizar_instituicao;
         private System.Windows.Forms.CheckBox chk_transporte;
         private System.Windows.Forms.Label lbl_justificativa_transporte;

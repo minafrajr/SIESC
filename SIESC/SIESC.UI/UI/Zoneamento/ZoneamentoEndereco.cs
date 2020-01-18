@@ -162,13 +162,13 @@ namespace SIESC.UI.UI.Zoneamento
 
                 if (rdb_ens_fundamental.Checked)
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaEscolasEndereco(coordenadas[0], coordenadas[1],
+                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaEscolasEndereco(coordenadas[0], coordenadas[1],
                         1,
                         Convert.ToInt32(nud_raioBusca.Value));
                 }
                 else
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.retornaCrechesEndereco(coordenadas[0], coordenadas[1],
+                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaCrechesEndereco(coordenadas[0], coordenadas[1],
                         Convert.ToInt32(nud_raioBusca.Value));
                 }
 

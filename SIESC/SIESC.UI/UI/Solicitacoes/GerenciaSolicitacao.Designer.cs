@@ -159,7 +159,7 @@
             this.btn_ficha_encaminhamento.Name = "btn_ficha_encaminhamento";
             this.btn_ficha_encaminhamento.Size = new System.Drawing.Size(83, 59);
             this.btn_ficha_encaminhamento.TabIndex = 56;
-            this.btn_ficha_encaminhamento.Text = "Gerar Encam.";
+            this.btn_ficha_encaminhamento.Text = "Encaminham";
             this.btn_ficha_encaminhamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ficha_encaminhamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_ficha_encaminhamento.UseVisualStyleBackColor = true;
@@ -306,7 +306,7 @@
             this.btn_imprimir.Name = "btn_imprimir";
             this.btn_imprimir.Size = new System.Drawing.Size(72, 59);
             this.btn_imprimir.TabIndex = 40;
-            this.btn_imprimir.Text = "Gerar Ficha";
+            this.btn_imprimir.Text = "Ficha";
             this.btn_imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_imprimir.UseVisualStyleBackColor = true;
@@ -447,6 +447,7 @@
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
+            this.btn_excluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_excluir.Location = new System.Drawing.Point(1218, 4);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(55, 59);
@@ -493,6 +494,7 @@
             this.btn_encam_transp.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_encam_transp.Image = global::SIESC.UI.Properties.Resources.school_bus;
             this.btn_encam_transp.Location = new System.Drawing.Point(1088, 4);
+            this.btn_encam_transp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_encam_transp.Name = "btn_encam_transp";
             this.btn_encam_transp.Size = new System.Drawing.Size(71, 59);
             this.btn_encam_transp.TabIndex = 15;
@@ -553,7 +555,9 @@
             // 
             this.btn_finaliza_solicitacao.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_finaliza_solicitacao.Image = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_finaliza_solicitacao.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_finaliza_solicitacao.Location = new System.Drawing.Point(1159, 4);
+            this.btn_finaliza_solicitacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_finaliza_solicitacao.Name = "btn_finaliza_solicitacao";
             this.btn_finaliza_solicitacao.Size = new System.Drawing.Size(58, 59);
             this.btn_finaliza_solicitacao.TabIndex = 16;

@@ -160,7 +160,7 @@ namespace SIESC.UI.UI.Zoneamento
 				if (rdb_ens_fundamental.Checked)
 					dgv_zoneamento.DataSource = zoneamentoControl.RetornaInstituicoes(IdSolicitacao, (int)nud_raioBusca.Value);
 				else
-					dgv_zoneamento.DataSource = zoneamentoControl.retornaCreches(IdSolicitacao, (int)nud_raioBusca.Value);
+					dgv_zoneamento.DataSource = zoneamentoControl.RetornaCreches(IdSolicitacao, (int)nud_raioBusca.Value);
 
 				for (int i = 0; i < dgv_zoneamento.Rows.Count; i++)
 					dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(latitude, longitude,dgv_zoneamento["latitude", i].Value.ToString(), dgv_zoneamento["longitude", i].Value.ToString());
@@ -177,7 +177,7 @@ namespace SIESC.UI.UI.Zoneamento
 		}
 
 		/// <summary>
-		/// Evnento do botão zonear
+		/// Evento do botão zonear
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>

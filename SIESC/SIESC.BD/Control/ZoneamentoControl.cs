@@ -42,7 +42,7 @@ namespace SIESC.BD.Control
         /// <param name="idaluno">O ID do aluno</param>
         /// <param name="raio">O raio de busca em metros</param>
         /// <returns></returns>
-        public DataTable retornaCreches(int idsolicitacao, int raio)
+        public DataTable RetornaCreches(int idsolicitacao, int raio)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace SIESC.BD.Control
         /// <param name="mantenedor">O código do mantenedor</param>
         /// <param name="raio">O raio de busca</param>
         /// <returns></returns>
-        public DataTable retornaEscolasEndereco(string latitude, string longitude, int mantenedor, int raio)
+        public DataTable RetornaEscolasEndereco(string latitude, string longitude, int mantenedor, int raio)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace SIESC.BD.Control
         /// <param name="longitude">A longitude do endereço</param>
         /// <param name="raio">o raio de busca </param>
         /// <returns></returns>
-        public DataTable retornaCrechesEndereco(string latitude, string longitude, int raio)
+        public DataTable RetornaCrechesEndereco(string latitude, string longitude, int raio)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace SIESC.BD.Control
         /// <param name="distancia"></param>
         /// <param name="anoensino"></param>
         /// <returns></returns>
-        public DataTable retornaUnidadeAnoEnsino(string latitude, string longitude, int distancia, int anoensino)
+        public DataTable RetornaUnidadeAnoEnsino(string latitude, string longitude, int distancia, int anoensino)
         {
             try
             {

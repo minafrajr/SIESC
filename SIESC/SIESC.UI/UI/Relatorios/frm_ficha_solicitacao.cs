@@ -115,17 +115,17 @@ namespace SIESC.UI.UI.Relatorios
 			
 			datasource2 = new ReportDataSource("ds_siesc");
 
-			if (Conexao.IsConnected())
-			{
+			//if (Conexao.IsConnected())
+			//{
 				foreach (DataRow row in dtZoneamento.Rows)
 				{
 					row["DistanciaCaminhando"] = Metrics.CalculaDistanciaCaminhando(latitude, longitude, row["latitude"].ToString(), row["longitude"].ToString());
-				} 
-			}
-			else
-			{
-				dtZoneamento.Clear();
-			}
+				}
+			//}
+			//else
+			//{
+			//	dtZoneamento.Clear();
+			//}
 
 			/*ORDENAÇÃO DO DATA TABLE*/
 			DataView dv = dtZoneamento.DefaultView;
@@ -133,8 +133,7 @@ namespace SIESC.UI.UI.Relatorios
 			dv.Sort = "DistanciaCaminhando";
 
 			dtZoneamento = dv.ToTable();
-
-
+			
 			//deixando somente 5 linhas para a tabela de zoneamento
 			if (dtZoneamento.Rows.Count > 5)
 			{
