@@ -4,15 +4,15 @@
 // Criado em: 22/03/2015
 #endregion
 
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SIESC.UI
-{/// <summary>
-/// 
-/// </summary>
-	public partial class base_UI : Form
 {
+	/// <summary>
+	/// Formulário base do sistema
+	/// </summary>
+	public partial class base_UI : Form
+	{
 		/// <summary>
 		/// Construtor
 		/// </summary>

@@ -1056,6 +1056,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 HabilitaEncaminhamento(true);
+                lbl_justificativa_transporte.Visible = true;
             }
             catch (Exception exception)
             {
@@ -1412,7 +1413,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 Mensageiro.MensagemErro(exception);
             }
         }
-
         /// <summary>
         /// Formata o numero do telefone de acordo com o terceiro dígito
         /// </summary>
@@ -1446,7 +1446,33 @@ namespace SIESC.UI.UI.Solicitacoes
                 Mensageiro.MensagemErro(exception);
             }
         }
-
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone1"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone1_Enter(object sender, EventArgs e)
+        {
+            msk_telefone1.Mask = @"(00)00000-0000";
+        }
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone2"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone2_Enter(object sender, EventArgs e)
+        {
+            msk_telefone2.Mask = @"(00)00000-0000";
+        }
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone3"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone3_Enter(object sender, EventArgs e)
+        {
+            msk_telefone3.Mask = @"(00)00000-0000";
+        }
         /// <summary>
         /// Grava o código do Expediente interno na solicitação já existente
         /// </summary>

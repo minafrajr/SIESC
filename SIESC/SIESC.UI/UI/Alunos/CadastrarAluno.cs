@@ -389,5 +389,18 @@ namespace SIESC.UI.UI
             CalculaIdade();
         }
 
+        private void msk_telefone1_Enter(object sender, EventArgs e)
+        {
+            msk_telefone1.Mask = @"(00)00000-0000";
+        }
+
+        private void msk_telefone2_Enter(object sender, EventArgs e)
+        {
+            msk_telefone2.Mask = @"(00)00000-0000";
+        }
+        private void msk_telefone3_Enter(object sender, EventArgs e)
+        {
+            msk_telefone3.Mask = @"(00)00000-0000";
+        }
     }
 }
