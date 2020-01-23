@@ -81,7 +81,7 @@ namespace SIESC.BD.Control
             try
             {
                 instituicoesTA = new instituicoesTableAdapter();
-                return instituicoesTA.PesquisaID(nome);
+                return (int?) instituicoesTA.PesquisaID(nome);
             }
             catch (SqlException exception)
             {
@@ -334,7 +334,7 @@ namespace SIESC.BD.Control
             {
                 instituicoesTA = new instituicoesTableAdapter();
 
-                return instituicoesTA.PesquisaID(nomeInstituicao);
+                return (int?) instituicoesTA.PesquisaID(nomeInstituicao);
             }
             catch (Exception ex)
             {

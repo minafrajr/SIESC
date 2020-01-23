@@ -86,7 +86,8 @@ namespace SIESC.UI.UI
             msk_telefone2.Text = _aluno.Tel2;
             msk_telefone3.Text = _aluno.Tel3;
 
-            dtp_datanasc.Value = _aluno.DataNascimento;
+
+            msk_data_nascimento.Text = _aluno.DataNascimento.ToString();
 
             if (_aluno.Sexo == "F")
             {
@@ -157,7 +158,7 @@ namespace SIESC.UI.UI
             cbo_deficiencia.SelectedIndex = -1;
             rdb_feminino.Checked = false;
             rdb_masculino.Checked = false;
-            dtp_datanasc.Text = DateTime.Now.ToShortDateString();
+            msk_data_nascimento.ResetText();
             msk_telefone1.ResetText();
             msk_telefone2.ResetText();
             msk_telefone3.ResetText();
@@ -202,7 +203,7 @@ namespace SIESC.UI.UI
                 Nome = txt_nomealuno.Text,
                 NomeMae = txt_mae.Text,
                 Nomepai = txt_pai.Text,
-                DataNascimento = dtp_datanasc.Value,
+                DataNascimento = DateTime.Parse(msk_data_nascimento.Text),
                 Sexo = rdb_feminino.Checked ? "F" : "M",
                 Tel1 = msk_telefone1.Text,
                 Tel2 = msk_telefone2.Text,
@@ -366,27 +367,17 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Calcula a idade do aluno
         /// </summary>
-        private void CalculaIdade()
+        private void CalculaIdade(DateTime data_nascimento)
         {
-            int anos = DateTime.Now.Year - dtp_datanasc.Value.Year;
+            int anos = DateTime.Now.Year - data_nascimento.Year;
 
-            if (DateTime.Now.Month < dtp_datanasc.Value.Month ||
-                (DateTime.Now.Month == dtp_datanasc.Value.Month && DateTime.Now.Day < dtp_datanasc.Value.Day))
+            if (DateTime.Now.Month < data_nascimento.Month ||
+                (DateTime.Now.Month == data_nascimento.Month && DateTime.Now.Day < data_nascimento.Day))
             {
                 anos--;
             }
 
             lbl_idade.Text = $"{anos} anos";
-        }
-
-        /// <summary>
-        /// Calcula a idade do aluno após nova data de nascimento
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dtp_datanasc_ValueChanged(object sender, EventArgs e)
-        {
-            CalculaIdade();
         }
 
         private void msk_telefone1_Enter(object sender, EventArgs e)
@@ -401,6 +392,22 @@ namespace SIESC.UI.UI
         private void msk_telefone3_Enter(object sender, EventArgs e)
         {
             msk_telefone3.Mask = @"(00)00000-0000";
+        }
+
+        private void msk_data_nascimento_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                CalculaIdade(DateTime.Parse(msk_data_nascimento.Text));
+            }
+            catch (FormatException)
+            {
+                MensagemErro(new Exception("A data de nascimento não está num formato correto!"));
+            }
+            catch (Exception ex)
+            {
+                MensagemErro(ex);
+            }
         }
     }
 }

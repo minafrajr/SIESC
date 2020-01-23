@@ -137,7 +137,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             _principalUi = principalUi;
 
-            CalculaIdade();
+            CalculaIdade(Convert.ToDateTime(msk_data_nascimento.Text));
             HabilitaControlesAluno(false);
             btn_gravar_codigoEI.Visible = true;
         }
@@ -169,7 +169,7 @@ namespace SIESC.UI.UI.Solicitacoes
             msk_telefone3.Enabled = valor;
             rdb_feminino.Enabled = valor;
             rdb_masculino.Enabled = valor;
-            dtp_datanasc.Enabled = valor;
+            msk_data_nascimento.Enabled = valor;
             cbo_deficiencia.Enabled = valor;
             btn_limpacombo.Enabled = valor;
 
@@ -188,7 +188,8 @@ namespace SIESC.UI.UI.Solicitacoes
             txt_mae.Text = aluno.NomeMae;
             txt_pai.Text = aluno.Nomepai;
 
-            dtp_datanasc.Value = aluno.DataNascimento;
+            msk_data_nascimento.Text = aluno.DataNascimento.ToString();
+            
             if (aluno.Sexo == "F")
             {
                 rdb_feminino.Checked = true;
@@ -251,13 +252,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     case "COPASA":
                         rdb_copasa.Checked = true;
                         break;
-                    case "CONTRATO ALUGUEL":
-                        rdb_contratoaluguel.Checked = true;
-                        break;
-                    case "DECLARAÇÃO CEMIG":
-                        rdb_declarcemig.Checked = true;
-                        break;
-                    case "CORRESP. BANCÁRIA":
+                   case "CORRESP. BANCÁRIA":
                         rdb_correspondenciabancaria.Checked = true;
                         break;
                     case "TELEFONE FIXO":
@@ -525,7 +520,7 @@ namespace SIESC.UI.UI.Solicitacoes
             _listControls.Add(cbo_cidades);
             _listControls.Add(cbo_estado);
             _listControls.Add(txt_observacoes);
-            _listControls.Add(dtp_datanasc);
+            _listControls.Add(msk_data_nascimento);
             _listControls.Add(rdb_feminino);
             _listControls.Add(rdb_masculino);
             _listControls.Add(cbo_instituicao_encaminhada);
@@ -535,9 +530,7 @@ namespace SIESC.UI.UI.Solicitacoes
             _listControls.Add(txt_solicitante);
             _listControls.Add(cbo_deficiencia);
             _listControls.Add(rdb_cemig);
-            _listControls.Add(rdb_contratoaluguel);
             _listControls.Add(rdb_copasa);
-            _listControls.Add(rdb_declarcemig);
             _listControls.Add(rdb_outroscomprov);
             _listControls.Add(rdb_comprovanteresponsavel_nao);
             _listControls.Add(rdb_comprovanteresponsavel_sim);
@@ -587,7 +580,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             LimpaControles();
             HabilitaControlesAluno(true);
-            dtp_datanasc.ResetImeMode();
+            msk_data_nascimento.ResetText();
         }
 
         /// <summary>
@@ -916,8 +909,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 Nome = txt_nomealuno.Text,
                 NomeMae = txt_mae.Text,
                 Nomepai = txt_pai.Text,
-                //DataNascimento = dtp_datanasc.Value,
-                DataNascimento = Convert.ToDateTime(msk_datanascimento.Text),
+                DataNascimento = Convert.ToDateTime(msk_data_nascimento.Text),
                 Sexo = rdb_feminino.Checked ? "F" : "M",
                 Tel1 = msk_telefone1.Text,
                 Tel2 = msk_telefone2.Text,
@@ -1325,26 +1317,16 @@ namespace SIESC.UI.UI.Solicitacoes
             VerificaExistencia();
         }
 
-        /// <summary>
-        /// evento ao deixar a data do aluno
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dtp_datanasc_Leave(object sender, EventArgs e)
-        {
-            VerificaExistencia();
-            CalculaIdade();
-        }
-
+      
         /// <summary>
         /// Calcula a idade do aluno
         /// </summary>
-        private void CalculaIdade()
+        private void CalculaIdade(DateTime data_nascimento)
         {
-            int anos = DateTime.Now.Year - dtp_datanasc.Value.Year;
+            int anos = DateTime.Now.Year - data_nascimento.Year;
 
-            if (DateTime.Now.Month < dtp_datanasc.Value.Month ||
-                (DateTime.Now.Month == dtp_datanasc.Value.Month && DateTime.Now.Day < dtp_datanasc.Value.Day))
+            if (DateTime.Now.Month < data_nascimento.Month ||
+                (DateTime.Now.Month == data_nascimento.Month && DateTime.Now.Day < data_nascimento.Day))
             {
                 anos--;
             }
@@ -1369,7 +1351,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     _controleAluno = new AlunoControl();
 
                     txt_codigoAluno.Text = _controleAluno
-                        .ContemAluno(txt_nomealuno.Text, dtp_datanasc.Value, txt_mae.Text).ToString();
+                        .ContemAluno(txt_nomealuno.Text, Convert.ToDateTime(msk_data_nascimento.Text), txt_mae.Text).ToString();
 
                     if (!string.IsNullOrEmpty(txt_codigoAluno.Text))
                     {
@@ -1773,6 +1755,27 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 HabilitaTransporte(false);
                 _listControlsObrigatorios.Remove(txt_justificativa_transporte);
+            }
+        }
+        /// <summary>
+        /// Evento quando sai do controle de data de nascimento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_data_nascimento_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                VerificaExistencia();
+                CalculaIdade(Convert.ToDateTime(msk_data_nascimento.Text));
+            }
+            catch (FormatException )
+            {
+                MensagemErro(new Exception("A data não está em um formato correto!"));
+            }
+            catch (Exception exception)
+            {
+                MensagemErro(exception);
             }
         }
     }

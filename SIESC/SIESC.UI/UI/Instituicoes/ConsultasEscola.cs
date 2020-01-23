@@ -384,7 +384,7 @@ namespace SIESC.UI.UI
 		{
 			try
 			{
-				int? id = this.instituicoesTableAdapter.PesquisarIDbyNome(lstb_escolas.SelectedValue.ToString());
+				int? id = (int?) this.instituicoesTableAdapter.PesquisarIDbyNome(lstb_escolas.SelectedValue.ToString());
 
 				if (id > 0 || id != null)
 				{
@@ -417,6 +417,19 @@ namespace SIESC.UI.UI
 			{
 				Mensageiro.MensagemErro(ex);
 			}
+		}
+
+		private void fillByToolStripButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				this.instituicoesTableAdapter.FillBy(this.siescDataSet.instituicoes);
+			}
+			catch (System.Exception ex)
+			{
+				System.Windows.Forms.MessageBox.Show(ex.Message);
+			}
+
 		}
 	}
 }

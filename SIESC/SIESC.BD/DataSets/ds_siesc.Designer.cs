@@ -2369,7 +2369,9 @@ namespace SIESC.BD.DataSets {
                 this.columnidInstituicoes.AutoIncrementStep = -1;
                 this.columnidInstituicoes.AllowDBNull = false;
                 this.columnidInstituicoes.Unique = true;
+                this.columnNome.AllowDBNull = false;
                 this.columnNome.MaxLength = 80;
+                this.columnMantenedor.AllowDBNull = false;
                 this.columnTipoLogradouro.MaxLength = 45;
                 this.columnLogradouro.MaxLength = 90;
                 this.columnNumeroEdificio.MaxLength = 45;
@@ -9448,12 +9450,7 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Nome {
                 get {
-                    try {
-                        return ((string)(this[this.tableinstituicoes.NomeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Nome\' na tabela \'instituicoes\' é DBNull.", e);
-                    }
+                    return ((string)(this[this.tableinstituicoes.NomeColumn]));
                 }
                 set {
                     this[this.tableinstituicoes.NomeColumn] = value;
@@ -9464,12 +9461,7 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Mantenedor {
                 get {
-                    try {
-                        return ((int)(this[this.tableinstituicoes.MantenedorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Mantenedor\' na tabela \'instituicoes\' é DBNull.", e);
-                    }
+                    return ((int)(this[this.tableinstituicoes.MantenedorColumn]));
                 }
                 set {
                     this[this.tableinstituicoes.MantenedorColumn] = value;
@@ -9736,30 +9728,6 @@ namespace SIESC.BD.DataSets {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_Instituicoes_Mantenedor1"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNomeNull() {
-                return this.IsNull(this.tableinstituicoes.NomeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNomeNull() {
-                this[this.tableinstituicoes.NomeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMantenedorNull() {
-                return this.IsNull(this.tableinstituicoes.MantenedorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMantenedorNull() {
-                this[this.tableinstituicoes.MantenedorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16852,9 +16820,10 @@ VALUES        (@nomeAluno, @sexo, @dataNascimentoAluno, @nomeMaeAluno, @nomePaiA
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[15];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idInstituicoes, nome, mantenedor, tipologradouro, logradouro, numeroEdific" +
-                "io, complemento, bairro, telefone1, telefone2, telefone3, status, INEP, email, r" +
-                "egionalInstituicao, cep, longitude, latitude FROM instituicoes ORDER BY nome";
+            this._commandCollection[0].CommandText = @"SELECT        idInstituicoes, nome, mantenedor, tipologradouro, logradouro, numeroEdificio, complemento, bairro, telefone1, telefone2, telefone3, status, INEP, email, regionalInstituicao, cep, longitude, latitude
+FROM            instituicoes
+WHERE        (status = 1)
+ORDER BY nome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -17048,15 +17017,15 @@ WHERE        (idInstituicoes = @idInstituicao)";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 4) ORDER BY nome";
+            this._commandCollection[4].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 4) AND (status = 1)ORDER BY nome";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 3) ORDER BY nome";
+            this._commandCollection[5].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 3) AND (status = 1) ORDER BY nome";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 5) ORDER BY nome";
+            this._commandCollection[6].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 5)  AND (status = 1) ORDER BY nome";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
@@ -17071,7 +17040,7 @@ WHERE        (idInstituicoes = @idInstituicao)";
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = @mantenedor)";
+            this._commandCollection[8].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = @mantenedor) AND (status = 1)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@mantenedor";
@@ -17082,22 +17051,19 @@ WHERE        (idInstituicoes = @idInstituicao)";
             this._commandCollection[8].Parameters.Add(param);
             this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradour" +
-                "o, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, tel" +
-                "efone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (nome LIKE " +
-                "@nomeescola)";
+            this._commandCollection[9].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (nome LIKE @nomeescola) AND (status = 1)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nomeescola";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
+            param.Size = 80;
             param.IsNullable = true;
             param.SourceColumn = "nome";
             this._commandCollection[9].Parameters.Add(param);
             this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (regionalInstituicao = @regional)";
+            this._commandCollection[10].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (regionalInstituicao = @regional) AND (status = 1)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -17112,7 +17078,7 @@ WHERE        (idInstituicoes = @idInstituicao)";
                          instituicoes.telefone2, instituicoes.telefone3, instituicoes.INEP, instituicoes.email, regionais.nomeRegional, instituicoes.cep, instituicoes.latitude, instituicoes.longitude
 FROM            instituicoes INNER JOIN
                          regionais ON instituicoes.regionalInstituicao = regionais.idRegionais
-WHERE        (instituicoes.nome = @NomeEscola)";
+WHERE        (instituicoes.nome = @NomeEscola) AND (status = 1)";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@NomeEscola";
@@ -17264,20 +17230,19 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
             this._commandCollection[12].Parameters.Add(param);
             this._commandCollection[13] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome)";
+            this._commandCollection[13].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome) AND (status = 1)";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nome";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
+            param.Size = 80;
             param.IsNullable = true;
             param.SourceColumn = "nome";
             this._commandCollection[13].Parameters.Add(param);
             this._commandCollection[14] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = "SELECT longitude, latitude, idInstituicoes FROM instituicoes WHERE (idInstituicoe" +
-                "s = @idInstituicao)";
+            this._commandCollection[14].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (idInstituicoes = @idInstituicao)";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idInstituicao";
@@ -17806,7 +17771,7 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> PesquisaID(string nome) {
+        public virtual object PesquisaID(string nome) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[13];
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
@@ -17830,10 +17795,10 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
     }

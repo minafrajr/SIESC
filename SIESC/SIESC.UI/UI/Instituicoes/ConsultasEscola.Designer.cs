@@ -194,7 +194,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(2, 124);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
+            this.label14.Size = new System.Drawing.Size(59, 16);
             this.label14.TabIndex = 11;
             this.label14.Text = "E-mail:";
             // 
@@ -214,7 +214,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(2, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Bairro:";
             // 
@@ -224,7 +224,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
+            this.label1.Size = new System.Drawing.Size(81, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Endereço:";
             // 
@@ -234,7 +234,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(2, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Telefones:";
             // 
@@ -254,7 +254,7 @@
             this.lbl_escola.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_escola.Location = new System.Drawing.Point(2, 7);
             this.lbl_escola.Name = "lbl_escola";
-            this.lbl_escola.Size = new System.Drawing.Size(82, 16);
+            this.lbl_escola.Size = new System.Drawing.Size(84, 16);
             this.lbl_escola.TabIndex = 4;
             this.lbl_escola.Text = "Instituição:";
             // 
@@ -264,7 +264,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(2, 76);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.Size = new System.Drawing.Size(77, 16);
             this.label8.TabIndex = 10;
             this.label8.Text = "Regional:";
             // 
@@ -325,7 +325,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Diretor(a):";
             // 
@@ -423,7 +423,7 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(4, 106);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 16);
+            this.label19.Size = new System.Drawing.Size(75, 16);
             this.label19.TabIndex = 20;
             this.label19.Text = "Telefone:";
             // 
@@ -453,7 +453,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 16);
+            this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 18;
             this.label4.Text = "Telefone:";
             // 
@@ -503,7 +503,7 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(4, 65);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 16);
+            this.label17.Size = new System.Drawing.Size(116, 16);
             this.label17.TabIndex = 12;
             this.label17.Text = "Data Validade:";
             // 
@@ -513,7 +513,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(4, 126);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 16);
+            this.label9.Size = new System.Drawing.Size(115, 16);
             this.label9.TabIndex = 12;
             this.label9.Text = "Autorização nº:";
             // 
@@ -523,7 +523,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(4, 146);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 16);
+            this.label15.Size = new System.Drawing.Size(116, 16);
             this.label15.TabIndex = 12;
             this.label15.Text = "Data Validade:";
             // 
@@ -533,7 +533,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(4, 45);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 16);
+            this.label13.Size = new System.Drawing.Size(115, 16);
             this.label13.TabIndex = 12;
             this.label13.Text = "Autorização nº:";
             // 
@@ -554,7 +554,7 @@
             this.lbl_secretario2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_secretario2.Location = new System.Drawing.Point(4, 88);
             this.lbl_secretario2.Name = "lbl_secretario2";
-            this.lbl_secretario2.Size = new System.Drawing.Size(103, 16);
+            this.lbl_secretario2.Size = new System.Drawing.Size(107, 16);
             this.lbl_secretario2.TabIndex = 13;
             this.lbl_secretario2.Text = "Secretario(a):";
             this.lbl_secretario2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

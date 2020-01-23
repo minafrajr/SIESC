@@ -53,7 +53,6 @@
             this.txt_mae = new SIESC.UI.MyTextBox();
             this.lbl_pai = new System.Windows.Forms.Label();
             this.lbl_mae = new System.Windows.Forms.Label();
-            this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
             this.lbl_datanasc = new System.Windows.Forms.Label();
             this.txt_nomealuno = new SIESC.UI.MyTextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
@@ -72,8 +71,6 @@
             this.rdb_correspondenciabancaria = new System.Windows.Forms.RadioButton();
             this.txt_comprovante = new SIESC.UI.MyTextBox();
             this.rdb_outroscomprov = new System.Windows.Forms.RadioButton();
-            this.rdb_contratoaluguel = new System.Windows.Forms.RadioButton();
-            this.rdb_declarcemig = new System.Windows.Forms.RadioButton();
             this.rdb_copasa = new System.Windows.Forms.RadioButton();
             this.rdb_cemig = new System.Windows.Forms.RadioButton();
             this.btn_saberCep = new System.Windows.Forms.Button();
@@ -139,7 +136,7 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
-            this.msk_datanascimento = new System.Windows.Forms.MaskedTextBox();
+            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -185,7 +182,7 @@
             // 
             // gpb_dadospessoais
             // 
-            this.gpb_dadospessoais.Controls.Add(this.msk_datanascimento);
+            this.gpb_dadospessoais.Controls.Add(this.msk_data_nascimento);
             this.gpb_dadospessoais.Controls.Add(this.btn_limpacombo);
             this.gpb_dadospessoais.Controls.Add(this.cbo_deficiencia);
             this.gpb_dadospessoais.Controls.Add(this.lbl_idade);
@@ -203,7 +200,6 @@
             this.gpb_dadospessoais.Controls.Add(this.txt_mae);
             this.gpb_dadospessoais.Controls.Add(this.lbl_pai);
             this.gpb_dadospessoais.Controls.Add(this.lbl_mae);
-            this.gpb_dadospessoais.Controls.Add(this.dtp_datanasc);
             this.gpb_dadospessoais.Controls.Add(this.lbl_datanasc);
             this.gpb_dadospessoais.Controls.Add(this.txt_nomealuno);
             this.gpb_dadospessoais.Controls.Add(this.lbl_nome);
@@ -258,7 +254,7 @@
             this.lbl_idade.AutoSize = true;
             this.lbl_idade.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_idade.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_idade.Location = new System.Drawing.Point(751, 12);
+            this.lbl_idade.Location = new System.Drawing.Point(730, 13);
             this.lbl_idade.Name = "lbl_idade";
             this.lbl_idade.Size = new System.Drawing.Size(0, 20);
             this.lbl_idade.TabIndex = 26;
@@ -279,7 +275,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(715, 18);
+            this.label4.Location = new System.Drawing.Point(694, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 14);
             this.label4.TabIndex = 25;
@@ -421,20 +417,6 @@
             this.lbl_mae.Size = new System.Drawing.Size(32, 14);
             this.lbl_mae.TabIndex = 10;
             this.lbl_mae.Text = "Mãe:";
-            // 
-            // dtp_datanasc
-            // 
-            this.dtp_datanasc.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_datanasc.Location = new System.Drawing.Point(613, 13);
-            this.dtp_datanasc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtp_datanasc.Name = "dtp_datanasc";
-            this.dtp_datanasc.Size = new System.Drawing.Size(102, 23);
-            this.dtp_datanasc.TabIndex = 1;
-            this.dtp_datanasc.Tag = "Data de Nascimento";
-            this.dtp_datanasc.Value = new System.DateTime(2012, 7, 1, 0, 0, 0, 0);
-            this.dtp_datanasc.Leave += new System.EventHandler(this.dtp_datanasc_Leave);
             // 
             // lbl_datanasc
             // 
@@ -602,8 +584,6 @@
             this.pnl_comprovantes.Controls.Add(this.rdb_correspondenciabancaria);
             this.pnl_comprovantes.Controls.Add(this.txt_comprovante);
             this.pnl_comprovantes.Controls.Add(this.rdb_outroscomprov);
-            this.pnl_comprovantes.Controls.Add(this.rdb_contratoaluguel);
-            this.pnl_comprovantes.Controls.Add(this.rdb_declarcemig);
             this.pnl_comprovantes.Controls.Add(this.rdb_copasa);
             this.pnl_comprovantes.Controls.Add(this.rdb_cemig);
             this.pnl_comprovantes.Location = new System.Drawing.Point(6, 37);
@@ -614,7 +594,7 @@
             // rdb_telefone_fixo
             // 
             this.rdb_telefone_fixo.AutoSize = true;
-            this.rdb_telefone_fixo.Location = new System.Drawing.Point(225, 28);
+            this.rdb_telefone_fixo.Location = new System.Drawing.Point(80, 30);
             this.rdb_telefone_fixo.Name = "rdb_telefone_fixo";
             this.rdb_telefone_fixo.Size = new System.Drawing.Size(94, 18);
             this.rdb_telefone_fixo.TabIndex = 7;
@@ -626,7 +606,7 @@
             // rdb_correspondenciabancaria
             // 
             this.rdb_correspondenciabancaria.AutoSize = true;
-            this.rdb_correspondenciabancaria.Location = new System.Drawing.Point(225, 4);
+            this.rdb_correspondenciabancaria.Location = new System.Drawing.Point(80, 6);
             this.rdb_correspondenciabancaria.Name = "rdb_correspondenciabancaria";
             this.rdb_correspondenciabancaria.Size = new System.Drawing.Size(115, 18);
             this.rdb_correspondenciabancaria.TabIndex = 6;
@@ -658,32 +638,6 @@
             this.rdb_outroscomprov.Text = "Outros:";
             this.rdb_outroscomprov.UseVisualStyleBackColor = true;
             this.rdb_outroscomprov.CheckedChanged += new System.EventHandler(this.rdb_outroscomprov_CheckedChanged);
-            // 
-            // rdb_contratoaluguel
-            // 
-            this.rdb_contratoaluguel.AutoSize = true;
-            this.rdb_contratoaluguel.Enabled = false;
-            this.rdb_contratoaluguel.Location = new System.Drawing.Point(106, 28);
-            this.rdb_contratoaluguel.Name = "rdb_contratoaluguel";
-            this.rdb_contratoaluguel.Size = new System.Drawing.Size(111, 18);
-            this.rdb_contratoaluguel.TabIndex = 3;
-            this.rdb_contratoaluguel.TabStop = true;
-            this.rdb_contratoaluguel.Tag = "CONTRATO ALUGUEL";
-            this.rdb_contratoaluguel.Text = "Contrato Aluguel";
-            this.rdb_contratoaluguel.UseVisualStyleBackColor = true;
-            // 
-            // rdb_declarcemig
-            // 
-            this.rdb_declarcemig.AutoSize = true;
-            this.rdb_declarcemig.Enabled = false;
-            this.rdb_declarcemig.Location = new System.Drawing.Point(106, 4);
-            this.rdb_declarcemig.Name = "rdb_declarcemig";
-            this.rdb_declarcemig.Size = new System.Drawing.Size(95, 18);
-            this.rdb_declarcemig.TabIndex = 1;
-            this.rdb_declarcemig.TabStop = true;
-            this.rdb_declarcemig.Tag = "DECLARAÇÃO CEMIG";
-            this.rdb_declarcemig.Text = "Declar. Cemig";
-            this.rdb_declarcemig.UseVisualStyleBackColor = true;
             // 
             // rdb_copasa
             // 
@@ -1404,15 +1358,15 @@
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
             // 
-            // msk_datanascimento
+            // msk_data_nascimento
             // 
-            this.msk_datanascimento.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_datanascimento.Location = new System.Drawing.Point(727, 43);
-            this.msk_datanascimento.Mask = "00/00/0000";
-            this.msk_datanascimento.Name = "msk_datanascimento";
-            this.msk_datanascimento.Size = new System.Drawing.Size(65, 22);
-            this.msk_datanascimento.TabIndex = 29;
-            this.msk_datanascimento.ValidatingType = typeof(System.DateTime);
+            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 16);
+            this.msk_data_nascimento.Mask = "00/00/0000";
+            this.msk_data_nascimento.Name = "msk_data_nascimento";
+            this.msk_data_nascimento.Size = new System.Drawing.Size(66, 22);
+            this.msk_data_nascimento.TabIndex = 29;
+            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
+            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
             // 
             // SolicitaVaga
             // 
@@ -1478,7 +1432,6 @@
         private MyTextBox txt_mae;
         private System.Windows.Forms.Label lbl_pai;
         private System.Windows.Forms.Label lbl_mae;
-        private System.Windows.Forms.DateTimePicker dtp_datanasc;
         private System.Windows.Forms.Label lbl_datanasc;
         private MyTextBox txt_nomealuno;
         private System.Windows.Forms.Label lbl_nome;
@@ -1553,8 +1506,6 @@
         private System.Windows.Forms.Button btn_limpacombo;
         private System.Windows.Forms.GroupBox gpb_comprovantes;
         private System.Windows.Forms.Panel pnl_comprovantes;
-        private System.Windows.Forms.RadioButton rdb_contratoaluguel;
-        private System.Windows.Forms.RadioButton rdb_declarcemig;
         private System.Windows.Forms.RadioButton rdb_copasa;
         private System.Windows.Forms.RadioButton rdb_cemig;
         private System.Windows.Forms.Label label6;
@@ -1572,7 +1523,7 @@
         private System.Windows.Forms.CheckBox chk_transporte;
         private System.Windows.Forms.Label lbl_justificativa_transporte;
         private System.Windows.Forms.TextBox txt_justificativa_transporte;
-        private System.Windows.Forms.MaskedTextBox msk_datanascimento;
+        private MyMaskedTextBox msk_data_nascimento;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga

@@ -48,7 +48,6 @@
             this.rdb_feminino = new System.Windows.Forms.RadioButton();
             this.rdb_masculino = new System.Windows.Forms.RadioButton();
             this.lbl_mae = new System.Windows.Forms.Label();
-            this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
             this.lbl_datanasc = new System.Windows.Forms.Label();
             this.txt_nomealuno = new SIESC.UI.MyTextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.msk_telefone2 = new SIESC.UI.MyMaskedTextBox();
             this.msk_telefone1 = new SIESC.UI.MyMaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -80,6 +80,7 @@
             // 
             // gpb_dadospessoais
             // 
+            this.gpb_dadospessoais.Controls.Add(this.msk_data_nascimento);
             this.gpb_dadospessoais.Controls.Add(this.lbl_idade);
             this.gpb_dadospessoais.Controls.Add(this.label4);
             this.gpb_dadospessoais.Controls.Add(this.btn_limpacombo);
@@ -92,7 +93,6 @@
             this.gpb_dadospessoais.Controls.Add(this.lbl_pai);
             this.gpb_dadospessoais.Controls.Add(this.gpb_sexo);
             this.gpb_dadospessoais.Controls.Add(this.lbl_mae);
-            this.gpb_dadospessoais.Controls.Add(this.dtp_datanasc);
             this.gpb_dadospessoais.Controls.Add(this.lbl_datanasc);
             this.gpb_dadospessoais.Controls.Add(this.txt_nomealuno);
             this.gpb_dadospessoais.Controls.Add(this.lbl_nome);
@@ -267,19 +267,6 @@
             this.lbl_mae.TabIndex = 10;
             this.lbl_mae.Text = "Mãe:";
             // 
-            // dtp_datanasc
-            // 
-            this.dtp_datanasc.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_datanasc.Location = new System.Drawing.Point(615, 19);
-            this.dtp_datanasc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtp_datanasc.Name = "dtp_datanasc";
-            this.dtp_datanasc.Size = new System.Drawing.Size(102, 23);
-            this.dtp_datanasc.TabIndex = 1;
-            this.dtp_datanasc.Value = new System.DateTime(2008, 7, 1, 0, 0, 0, 0);
-            this.dtp_datanasc.ValueChanged += new System.EventHandler(this.dtp_datanasc_ValueChanged);
-            // 
             // lbl_datanasc
             // 
             this.lbl_datanasc.AutoSize = true;
@@ -434,6 +421,16 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Telefones:";
             // 
+            // msk_data_nascimento
+            // 
+            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 20);
+            this.msk_data_nascimento.Mask = "00/00/0000";
+            this.msk_data_nascimento.Name = "msk_data_nascimento";
+            this.msk_data_nascimento.Size = new System.Drawing.Size(64, 22);
+            this.msk_data_nascimento.TabIndex = 33;
+            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
+            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
+            // 
             // CadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -477,7 +474,6 @@
 		private MyTextBox txt_mae;
 		private System.Windows.Forms.Label lbl_pai;
 		private System.Windows.Forms.Label lbl_mae;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
 		private System.Windows.Forms.Label lbl_datanasc;
 		private MyTextBox txt_nomealuno;
 		private System.Windows.Forms.Label lbl_nome;
@@ -498,5 +494,6 @@
 		private MyMaskedTextBox msk_telefone2;
 		private MyMaskedTextBox msk_telefone1;
 		private System.Windows.Forms.Label label3;
-	}
+        private MyMaskedTextBox msk_data_nascimento;
+    }
 }
