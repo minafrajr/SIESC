@@ -139,6 +139,7 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
+            this.msk_datanascimento = new System.Windows.Forms.MaskedTextBox();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -184,6 +185,7 @@
             // 
             // gpb_dadospessoais
             // 
+            this.gpb_dadospessoais.Controls.Add(this.msk_datanascimento);
             this.gpb_dadospessoais.Controls.Add(this.btn_limpacombo);
             this.gpb_dadospessoais.Controls.Add(this.cbo_deficiencia);
             this.gpb_dadospessoais.Controls.Add(this.lbl_idade);
@@ -1402,6 +1404,16 @@
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
             // 
+            // msk_datanascimento
+            // 
+            this.msk_datanascimento.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.msk_datanascimento.Location = new System.Drawing.Point(727, 43);
+            this.msk_datanascimento.Mask = "00/00/0000";
+            this.msk_datanascimento.Name = "msk_datanascimento";
+            this.msk_datanascimento.Size = new System.Drawing.Size(65, 22);
+            this.msk_datanascimento.TabIndex = 29;
+            this.msk_datanascimento.ValidatingType = typeof(System.DateTime);
+            // 
             // SolicitaVaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -1560,6 +1572,7 @@
         private System.Windows.Forms.CheckBox chk_transporte;
         private System.Windows.Forms.Label lbl_justificativa_transporte;
         private System.Windows.Forms.TextBox txt_justificativa_transporte;
+        private System.Windows.Forms.MaskedTextBox msk_datanascimento;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga
