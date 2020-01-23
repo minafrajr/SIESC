@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.BD.Control;
+using SIESC.UI.Properties;
 using SIESC.UI.siescDataSetTableAdapters;
 
 namespace SIESC.UI.UI
@@ -108,7 +109,7 @@ namespace SIESC.UI.UI
 					coordenadasInstituicao = dt_escola.Rows[0]["Latitude"].ToString() + "," + dt_escola.Rows[0]["Longitude"].ToString();
 					PreencheAnosOfertados(idescola);
 					
-					webBrowser1.Url = new Uri("https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:Ak%7C" + coordenadasInstituicao + "&key=AIzaSyAnxFlzbuzUigOUwCULf4Ito_6LEv8GXSI");
+					webBrowser1.Url = new Uri("https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:Ak%7C" + coordenadasInstituicao + "&key="+ Settings.Default.mapsApiKey);
 					RepassaDiretor(idescola);
 					RepassaSecretario(idescola);
 				}
