@@ -205,6 +205,7 @@
     <EmbeddedResource Include="Reports\Formularios\rpt_form_pendencia_turma.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\Comparativo\rpt_comparativo_fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_alunos_pendentes_fundamental.rdlc" />
+    <EmbeddedResource Include="Reports\Fundamental\rpt_comprovacao_endereco_fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_Controle_Solicitacoes_Fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_num_encaminhamento_ano_ensino_fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_num_encaminhamento_data_fundamental.rdlc" />
@@ -217,12 +218,14 @@
     <EmbeddedResource Include="Reports\Fundamental\rpt_solicitacoes_por_motivo_fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Geral\Comparativo\rpt_comparativo_geral.rdlc" />
     <EmbeddedResource Include="Reports\Escolas\lst_listas_instituicoes.rdlc" />
+    <EmbeddedResource Include="Reports\Geral\rpt_comprovacao_endereco.rdlc" />
     <EmbeddedResource Include="Reports\Geral\rpt_num_solicitaco_origem.rdlc" />
     <EmbeddedResource Include="Reports\Geral\rpt_num_encaminhamento_ano_ensino.rdlc" />
     <EmbeddedResource Include="Reports\Geral\rpt_deficientes_geral.rdlc" />
     <EmbeddedResource Include="Reports\Geral\rpt_num_encaminhamento_data.rdlc" />
     <EmbeddedResource Include="Reports\Geral\rpt_Solicitacoes_Por_Motivos.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\Comparativo\rpt_comparativo_infantil.rdlc" />
+    <EmbeddedResource Include="Reports\Infantil\rpt_comprovacao_endereco_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_num_encaminhamento_data_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_num_encaminhamento_ano_ensino_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_num_solicitaco_origem_infantil.rdlc" />

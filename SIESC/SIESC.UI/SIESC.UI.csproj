@@ -377,6 +377,12 @@
     <Compile Include="UI\Relatorios\frm_carteirinha.Designer.cs">
       <DependentUpon>frm_carteirinha.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.Designer.cs">
+      <DependentUpon>frm_RelatorioComprovanteEndereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Relatorios\frm_relatorio_instituicoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -565,6 +571,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_carteirinha.resx">
       <DependentUpon>frm_carteirinha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.resx">
+      <DependentUpon>frm_RelatorioComprovanteEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_instituicoes.resx">
       <DependentUpon>frm_relatorio_instituicoes.cs</DependentUpon>

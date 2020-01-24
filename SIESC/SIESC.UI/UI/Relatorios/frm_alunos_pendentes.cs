@@ -26,6 +26,9 @@ namespace SIESC.UI.UI.Relatorios
 		/// </summary>
 		private TipoConsulta _tipoConsulta;
 
+		/// <summary>
+		/// O nível de ensino para abrir o formulário e iniciar a consulta
+		/// </summary>
 		private int nivel_ensino;
 		/// <summary>
 		/// 
@@ -58,7 +61,7 @@ namespace SIESC.UI.UI.Relatorios
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void Relatorio4_Load(object sender, EventArgs e)
+		private void frm_alunos_pendentes_Load(object sender, EventArgs e)
 		{
 			this.rpt_viewer.RefreshReport();
 			switch (nivel_ensino)
@@ -110,9 +113,6 @@ namespace SIESC.UI.UI.Relatorios
 						this.instituicoesTableAdapter1.Fill(this.siescDataSet.instituicoes);
 					break;
 			}
-
-
-
 		}
 
 		/// <summary>
@@ -291,7 +291,6 @@ namespace SIESC.UI.UI.Relatorios
 			}
 			catch (Exception ex)
 			{
-				t.Abort();
 				Mensageiro.MensagemErro(ex);
 			}
 			finally { t.Abort(); }
@@ -369,8 +368,6 @@ namespace SIESC.UI.UI.Relatorios
 				cbo_anoensino.Enabled = true;
 
 			}
-
 		}
-
 	}
 }

@@ -2435,5 +2435,77 @@ namespace SIESC.UI
                 Mensageiro.MensagemErro(ex);
             }
         }
+
+        private void comprovaçãoDeEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                foreach (Form mdiChild in MdiChildren)
+                {
+                    if (mdiChild.GetType() == typeof(frm_RelatorioComprovanteEndereco))
+                    {
+                        mdiChild.BringToFront();
+                        mdiChild.Focus();
+                        return;
+                    }
+                }
+
+                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(1) { MdiParent = this };
+
+                frm_comprovante_endereco.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex);
+            }
+        }
+
+        private void comprovaçãoDeEndereçoToolStripMenuItem1_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                foreach (Form mdiChild in MdiChildren)
+                {
+                    if (mdiChild.GetType() == typeof(frm_RelatorioComprovanteEndereco))
+                    {
+                        mdiChild.BringToFront();
+                        mdiChild.Focus();
+                        return;
+                    }
+                }
+
+                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(2) { MdiParent = this };
+
+                frm_comprovante_endereco.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex);
+            }
+        }
+
+        private void comprovacaoDeEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                foreach (Form mdiChild in MdiChildren)
+                {
+                    if (mdiChild.GetType() == typeof(frm_RelatorioComprovanteEndereco))
+                    {
+                        mdiChild.BringToFront();
+                        mdiChild.Focus();
+                        return;
+                    }
+                }
+
+                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(3) { MdiParent = this };
+
+                frm_comprovante_endereco.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex);
+            }
+        }
     }
 }
