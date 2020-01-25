@@ -20108,7 +20108,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[8];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[10];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada," +
@@ -20240,6 +20240,19 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA I') AND (regional = @regional) OR
             param.SourceColumn = "regional";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
+FROM            vw_comprovacao_endereco
+WHERE        (anosolicitado <> 'PRÉ-ESCOLA II') AND (anosolicitado <> 'PRÉ-ESCOLA I')";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
+FROM            vw_comprovacao_endereco
+WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
+                         (anosolicitado = 'PRÉ-ESCOLA I')";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20392,6 +20405,28 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA I') AND (regional = @regional) OR
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(regional));
             }
+            dsRelatorios.vw_comprovacao_enderecoDataTable dataTable = new dsRelatorios.vw_comprovacao_enderecoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.vw_comprovacao_enderecoDataTable GetDataFundamental() {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
+            dsRelatorios.vw_comprovacao_enderecoDataTable dataTable = new dsRelatorios.vw_comprovacao_enderecoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.vw_comprovacao_enderecoDataTable GetDataInfantil() {
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             dsRelatorios.vw_comprovacao_enderecoDataTable dataTable = new dsRelatorios.vw_comprovacao_enderecoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

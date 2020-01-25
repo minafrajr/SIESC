@@ -35,30 +35,30 @@
             this.btn_cancel_escola = new System.Windows.Forms.Button();
             this.btn_cancel_regional = new System.Windows.Forms.Button();
             this.cbo_anoensino = new System.Windows.Forms.ComboBox();
+            this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siescDataSet = new SIESC.UI.siescDataSet();
             this.cbo_escola = new SIESC.UI.MyComboBox();
+            this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_regionais = new SIESC.UI.MyComboBox();
+            this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.rpt_viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.siescDataSet = new SIESC.UI.siescDataSet();
-            this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regionaisTableAdapter = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
-            this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
-            this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -151,6 +151,16 @@
             this.cbo_anoensino.ValueMember = "AnoEF";
             this.cbo_anoensino.DropDown += new System.EventHandler(this.cbo_anoensino_DropDown);
             // 
+            // anoBindingSource
+            // 
+            this.anoBindingSource.DataMember = "ano";
+            this.anoBindingSource.DataSource = this.siescDataSet;
+            // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbo_escola
             // 
             this.cbo_escola.DataSource = this.instituicoesBindingSource;
@@ -163,6 +173,11 @@
             this.cbo_escola.TabIndex = 4;
             this.cbo_escola.ValueMember = "nome";
             this.cbo_escola.DropDown += new System.EventHandler(this.cbo_escola_DropDown);
+            // 
+            // instituicoesBindingSource
+            // 
+            this.instituicoesBindingSource.DataMember = "instituicoes";
+            this.instituicoesBindingSource.DataSource = this.siescDataSet;
             // 
             // label3
             // 
@@ -186,15 +201,20 @@
             this.cbo_regionais.ValueMember = "nomeRegional";
             this.cbo_regionais.DropDown += new System.EventHandler(this.cbo_regionais_DropDown);
             // 
+            // regionaisBindingSource
+            // 
+            this.regionaisBindingSource.DataMember = "regionais";
+            this.regionaisBindingSource.DataSource = this.siescDataSet;
+            // 
             // lbl_titulo_form
             // 
             this.lbl_titulo_form.AutoSize = true;
             this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
             this.lbl_titulo_form.Name = "lbl_titulo_form";
-            this.lbl_titulo_form.Size = new System.Drawing.Size(331, 23);
+            this.lbl_titulo_form.Size = new System.Drawing.Size(507, 23);
             this.lbl_titulo_form.TabIndex = 0;
-            this.lbl_titulo_form.Text = "Relatório de Comprovação de Endereço";
+            this.lbl_titulo_form.Text = "Relatório de Comprovação de Endereço - Ensino Fundamental";
             // 
             // label4
             // 
@@ -234,33 +254,13 @@
             this.rpt_viewer.Size = new System.Drawing.Size(935, 471);
             this.rpt_viewer.TabIndex = 0;
             // 
-            // siescDataSet
-            // 
-            this.siescDataSet.DataSetName = "siescDataSet";
-            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // regionaisBindingSource
-            // 
-            this.regionaisBindingSource.DataMember = "regionais";
-            this.regionaisBindingSource.DataSource = this.siescDataSet;
-            // 
             // regionaisTableAdapter
             // 
             this.regionaisTableAdapter.ClearBeforeFill = true;
             // 
-            // instituicoesBindingSource
-            // 
-            this.instituicoesBindingSource.DataMember = "instituicoes";
-            this.instituicoesBindingSource.DataSource = this.siescDataSet;
-            // 
             // instituicoesTableAdapter
             // 
             this.instituicoesTableAdapter.ClearBeforeFill = true;
-            // 
-            // anoBindingSource
-            // 
-            this.anoBindingSource.DataMember = "ano";
-            this.anoBindingSource.DataSource = this.siescDataSet;
             // 
             // anoTableAdapter
             // 
@@ -283,10 +283,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

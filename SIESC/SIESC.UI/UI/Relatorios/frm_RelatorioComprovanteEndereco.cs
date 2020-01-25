@@ -158,8 +158,7 @@ namespace SIESC.UI.UI.Relatorios
 				FolhaPaisagem();
 
 				DataTable dt = new DataTable();
-
-
+				
 				ReportDataSource datasource = new ReportDataSource();
 
 				datasource.Name = "dsRelatorios"; //tem q ser o mesmo dataset informado no rdlc
@@ -184,14 +183,12 @@ namespace SIESC.UI.UI.Relatorios
 
 				switch (_tipoConsulta)
 				{
-					
 					case TipoConsulta.ano:
 						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
 						break;
 					case TipoConsulta.escola:
 						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByEscolaSolicitada(cbo_escola.SelectedValue.ToString());
 						break;
-					
 					case TipoConsulta.regional:
 
 						if (nivel_ensino == 1)
@@ -203,13 +200,10 @@ namespace SIESC.UI.UI.Relatorios
 						break;
 					case TipoConsulta.geral:
 						if (nivel_ensino == 1)
-							dt = this.vw_comprovacao_enderecoTableAdapter1.GetData();
+							dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataInfantil();
 						else
 						{
-							if (nivel_ensino == 2)
-								dt = this.vw_comprovacao_enderecoTableAdapter1.GetData();
-							else
-								dt = this.vw_comprovacao_enderecoTableAdapter1.GetData();
+							dt = nivel_ensino == 2 ? this.vw_comprovacao_enderecoTableAdapter1.GetDataFundamental() : this.vw_comprovacao_enderecoTableAdapter1.GetData();
 						}
 						break;
 				}
