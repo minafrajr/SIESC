@@ -62,6 +62,7 @@ namespace SIESC.WEB
 		/// </summary>
 		public string status { get; set; }
 	}
+
 	/// <summary>
 	/// Classe Distancia
 	/// </summary>
@@ -102,7 +103,6 @@ namespace SIESC.WEB
 		/// </summary>
 		private static Rootobject parent;
 
-
 		/// <summary>
 		/// Calcula a distancia caminhando entre duas coordenadas usando a API do GOOGLE
 		/// </summary>
@@ -115,11 +115,12 @@ namespace SIESC.WEB
 		{
 			try
 			{
+				
 				if (string.IsNullOrEmpty(origemLatitude) || string.IsNullOrEmpty(origemLongitude))
 					return 0;
 
 				string json;
-
+				
 				using (WebClient wc = new WebClient())
 				{
 					json = wc.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origemLatitude + "," + origemLongitude + "&destinations=" + destinoLatitude + "," + destinoLongitude +"&mode=walking&key="+ Settings.Default.distanceMatrixkey);

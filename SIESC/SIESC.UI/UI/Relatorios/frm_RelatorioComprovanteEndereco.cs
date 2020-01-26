@@ -77,22 +77,19 @@ namespace SIESC.UI.UI.Relatorios
 			{
 				case 1:
 					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByRegionalInfantil(siescDataSet.instituicoes,
-							cbo_regionais.SelectedValue.ToString());
+						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
 					else
 						this.instituicoesTableAdapter.FillByInfantil(this.siescDataSet.instituicoes);
 					break;
 				case 2:
 					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,
-							cbo_regionais.SelectedValue.ToString());
+						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
 					else
 						this.instituicoesTableAdapter.FillByEstadoMunicipio(this.siescDataSet.instituicoes);
 					break;
 				case 3:
 					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByRegional(siescDataSet.instituicoes,
-							cbo_regionais.SelectedValue.ToString());
+						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
 					else
 						this.instituicoesTableAdapter.Fill(this.siescDataSet.instituicoes);
 					break;
@@ -105,7 +102,6 @@ namespace SIESC.UI.UI.Relatorios
 			{
 				case 1:
 					this.anoTableAdapter.FillByInfantil(siescDataSet.ano);
-
 					break;
 				case 2:
 					this.anoTableAdapter.FillByFundamental(siescDataSet.ano);

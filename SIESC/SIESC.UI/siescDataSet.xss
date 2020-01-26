@@ -11,7 +11,7 @@
     <Shape ID="DesignTable:bairros" ZOrder="6" X="0" Y="-2" Height="115" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:instorigem" ZOrder="11" X="229" Y="311" Height="115" Width="177" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:instituicoes" ZOrder="1" X="-335" Y="-35" Height="647" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="256" />
-    <Shape ID="DesignTable:instituicoes1" ZOrder="2" X="6" Y="140" Height="343" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:instituicoes1" ZOrder="2" X="6" Y="140" Height="495" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
     <Shape ID="DesignTable:disciplinas" ZOrder="12" X="694" Y="361" Height="153" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:regionais" ZOrder="4" X="488" Y="525" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:mantenedor" ZOrder="8" X="9" Y="685" Height="115" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
@@ -70,7 +70,7 @@
         </Point>
         <Point>
           <X>110</X>
-          <Y>483</Y>
+          <Y>635</Y>
         </Point>
       </RoutePoints>
     </Connector>
