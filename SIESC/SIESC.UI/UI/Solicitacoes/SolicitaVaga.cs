@@ -129,11 +129,10 @@ namespace SIESC.UI.UI.Solicitacoes
             AddListaControles();
 
             InicializaDataSets();
-
-            this._solicitacao = new Solicitacao();
+            
             this._solicitacao = solicitacao;
 
-            TransfereParaControles(aluno, solicitacao);
+            TransfereParaControles(aluno, _solicitacao);
 
             _principalUi = principalUi;
 
@@ -189,7 +188,7 @@ namespace SIESC.UI.UI.Solicitacoes
             txt_pai.Text = aluno.Nomepai;
 
             msk_data_nascimento.Text = aluno.DataNascimento.ToString();
-            
+
             if (aluno.Sexo == "F")
             {
                 rdb_feminino.Checked = true;
@@ -252,7 +251,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     case "COPASA":
                         rdb_copasa.Checked = true;
                         break;
-                   case "CORRESP. BANCÁRIA":
+                    case "CORRESP. BANCÁRIA":
                         rdb_correspondenciabancaria.Checked = true;
                         break;
                     case "TELEFONE FIXO":
@@ -588,10 +587,11 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void LimpaControles()
         {
+            lbl_datanasc.ResetText();
             //limpa os controles do formulário
             foreach (Control control in _listControls)
             {
-               
+
                 if (!(control is RadioButton))
                 {
                     control.Text = string.Empty;
@@ -601,13 +601,13 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     ((MyTextBox)control).ResetText();
                 }
-                
+
                 if (control is MyComboBox)
                 {
                     //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox) control).SelectedIndex = -1;
+                    ((MyComboBox)control).SelectedIndex = -1;
                 }
-                
+
                 if (control is MyMaskedTextBox)
                 {
                     ((MyMaskedTextBox)control).ResetText();
@@ -658,16 +658,12 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 var alunoCriado = CriarAluno();
 
-                if (string.IsNullOrEmpty(txt_codigoSolicitacao.Text)
-                ) //se não existe código para a solicitação nao existe no banco, 
+                if (string.IsNullOrEmpty(txt_codigoSolicitacao.Text)) //se não existe código para a solicitação nao existe no banco, ou seja se não existe a solicitação no banco
                 {
-                    //ou seja se não existe a solicitação no banco
-
                     if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
                     {
                         _controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
-                        alunoCriado.Id =
-                            _controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                        alunoCriado.Id = _controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
                     }
                     else
                     {
@@ -677,34 +673,29 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     codInstituicaoOrigem = CriaInstituicaoOrigem();
 
-                    var solicita = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
+                    _solicitacao = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
 
                     _controleSolicitacao = new SolicitacaoControl();
 
-                    if (_controleSolicitacao.Salvar(solicita))
+                    if (_controleSolicitacao.Salvar(_solicitacao))
                     {
-                        solicita.Codigo =
-                            Convert.ToInt32(_controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
+                        _solicitacao.Codigo = Convert.ToInt32(_controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
 
-                        if (!solicita.InstituicaoEncaminhada.Equals(null))
+                        if (!_solicitacao.InstituicaoEncaminhada.Equals(null) && _encaminhou)
                         {
-                            GravadistanciaAlunoEscola(solicita,
-                                _aluno); //grava a distancia do aluno até escola encaminhada 
+                            GravadistanciaAlunoEscola(_solicitacao, _aluno); //grava a distancia do aluno até escola encaminhada 
                         }
 
-                        LimpaControles();
-                        btn_cancelaEnc_Click(null, null);
-
-                        frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],
-                                _solicitacao.Coordenadas[1], solicita.Ano, solicita.Codigo)
+                        frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0], _solicitacao.Coordenadas[1], _solicitacao.Ano, _solicitacao.Codigo)
                         { MdiParent = this._principalUi };
 
-                        frmSolicitacao.Show();
                         t.Abort();
+
+                        frmSolicitacao.Show();
                     }
                     else
                     {
-                        throw new Exception("Não foi possível cadastrar a solicitação!");
+                        throw new Exception($"Não foi possível salvar a solicitação do aluno {_aluno.Nome}!");
                     }
                 }
                 else //se já existe a solicitação
@@ -713,54 +704,49 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     alunoCriado.Id = Convert.ToInt32(txt_codigoAluno.Text);
 
-                    var solicita = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
-                    solicita.Codigo = Convert.ToInt32(txt_codigoSolicitacao.Text);
+                    _solicitacao = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
+                    _solicitacao.Codigo = Convert.ToInt32(txt_codigoSolicitacao.Text);
 
                     _controleSolicitacao = new SolicitacaoControl();
 
                     if (_encaminhou) //se houve atualização no encaminhamento do aluno
                     {
-                        if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, solicita, true))
+                        if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, _solicitacao, true))
                         {
-                            if (!solicita.InstituicaoEncaminhada.Equals(null)) //verifica se existe escola encaminhada
+                            if (!_solicitacao.InstituicaoEncaminhada.Equals(null)) //verifica se existe escola encaminhada
                             {
-                                GravadistanciaAlunoEscola(solicita,
-                                    alunoCriado); //grava a distancia do aluno até escola encaminhada 
+                                GravadistanciaAlunoEscola(_solicitacao, alunoCriado); //grava a distancia do aluno até escola encaminhada 
                             }
                             else
                             {
                                 _controleSolicitacao.ExcluiDistanciaAlunoEscola(alunoCriado.Id,
-                                    solicita.Codigo); //exclui a dist se o encaminhamento foi cancelado
+                                    _solicitacao.Codigo); //exclui a dist se o encaminhamento foi cancelado
                             }
 
-                            t.Abort();
+
 
                             if (Mensageiro.MensagemPergunta(
                                     $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Caso tenha alterado a escola encaminhada IMPRIMA OUTRA FICHA!")
                                 .Equals(DialogResult.Yes))
                             {
-                                frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(
-                                        _solicitacao.Coordenadas[0],
-                                        _solicitacao.Coordenadas[1], solicita.Ano, solicita.Codigo)
+                                frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0], _solicitacao.Coordenadas[1], _solicitacao.Ano, _solicitacao.Codigo)
                                 { MdiParent = this._principalUi };
 
                                 frmSolicitacao.Show();
+                                t.Abort();
                             }
                         }
                     }
-                    else if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, solicita, false)
+                    else if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, _solicitacao, false)
                     ) //atualiza sem novo encaminhamento
                     {
-                        t.Abort();
+                        //t.Abort();
 
-                        if (Mensageiro
-                            .MensagemPergunta(
-                                $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?")
-                            .Equals(DialogResult.Yes))
+                        if (Mensageiro.MensagemPergunta($"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?").Equals(DialogResult.Yes))
                         {
                             frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(
                                     _solicitacao.Coordenadas[0],
-                                    _solicitacao.Coordenadas[1], solicita.Ano, solicita.Codigo)
+                                    _solicitacao.Coordenadas[1], _solicitacao.Ano, _solicitacao.Codigo)
                             { MdiParent = this._principalUi };
 
                             frmSolicitacao.Show();
@@ -771,11 +757,14 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-              Mensageiro.MensagemErro(ex);
+                t.Abort();
+                Mensageiro.MensagemErro(ex);
             }
             finally
             {
                 t.Abort();
+                LimpaControles();
+                CancelaEncaminhamento();
             }
         }
 
@@ -881,8 +870,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 //caso o SISGEO não encontre as coordenadas do aluno seguir para o zoneamento do GOOGLE
                 if (_solicitacao.Coordenadas[0] == null)
                 {
-                    _solicitacao.Coordenadas = Zoneador.Locate(
-                        $"{_solicitacao.NumResidencia}+{_solicitacao.Logradouro.Replace(" ", "+")},+{cbo_bairro.Text.Replace(" ", "+")},+betim,+brasil");//utiliza a API do Google
+                    _solicitacao.Coordenadas = Zoneador.Locate($"{_solicitacao.NumResidencia}+{_solicitacao.Logradouro.Replace(" ", "+")},+{cbo_bairro.Text.Replace(" ", "+")},+betim,+brasil");//utiliza a API do Google
 
                     //caso não encontre as coordenadas armazenar vazio no banco e não nulo
                     if (_solicitacao.Coordenadas[0] == null)
@@ -987,7 +975,12 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="exception"></param>
         private void MensagemErro(Exception exception)
         {
+#if DEBUG
             MessageBox.Show($"Houve o seguinte erro:{Environment.NewLine} {exception.Message}, {Environment.NewLine} Pilha: {exception.StackTrace}", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+#else
+            MessageBox.Show($"Houve o seguinte erro:{Environment.NewLine} {exception.Message}, {Environment.NewLine} Pilha: ", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+#endif
         }
 
         /// <summary>
@@ -1001,19 +994,22 @@ namespace SIESC.UI.UI.Solicitacoes
 
             //this.Invoke(new Action(() => CarregaProgressoThread()));
             //this.BeginInvoke(new Action(() => CarregaProgressoThread()));
+
             try
             {
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
                 BuscaCep cep = new BuscaCep();
 
                 cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-
-                t.Abort();
+                txt_mumresidencia.Focus();
             }
             catch (Exception exception)
             {
-                t.Abort();
                 Mensageiro.MensagemErro(exception);
+            }
+            finally
+            {
+                t.Abort();
             }
         }
         /// <summary>
@@ -1028,9 +1024,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 this.Close();
             }
         }
-
-
-
+        
         /// <summary>
         /// Evento do botão encaminhar
         /// </summary>
@@ -1047,7 +1041,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 HabilitaEncaminhamento(true);
-                }
+            }
             catch (Exception exception)
             {
                 Mensageiro.MensagemErro(exception);
@@ -1076,7 +1070,6 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                // TODO: esta linha de código carrega dados na tabela 'siescDataSet.bairros'. Você pode movê-la ou removê-la conforme necessário.
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
             }
             catch (Exception exception)
@@ -1094,7 +1087,6 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                // TODO: esta linha de código carrega dados na tabela 'siescDataSet.bairros'. Você pode movê-la ou removê-la conforme necessário.
                 this.instorigemTableAdapter.Fill(this.siescDataSet.instorigem);
             }
             catch (Exception exception)
@@ -1123,8 +1115,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 MensagemErro(exception);
             }
         }
-
-
+        
         /// <summary>
         /// Evento da combobox escola solicitada
         /// </summary>
@@ -1195,17 +1186,22 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                cbo_instituicao_encaminhada.ResetText();
-                cbo_instituicao_encaminhada.SelectedValue = -1;
-                chk_transporte.Checked = false;
-                lbl_justificativa_transporte.Visible = false;
-                HabilitaEncaminhamento(false);
-                _encaminhou = true;
+                CancelaEncaminhamento();
             }
             catch (Exception exception)
             {
                 MensagemErro(exception);
             }
+        }
+
+        private void CancelaEncaminhamento()
+        {
+            cbo_instituicao_encaminhada.ResetText();
+            cbo_instituicao_encaminhada.SelectedValue = -1;
+            chk_transporte.Checked = false;
+            lbl_justificativa_transporte.Visible = false;
+            HabilitaEncaminhamento(false);
+            _encaminhou = true;
         }
 
         /// <summary>
@@ -1256,8 +1252,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                // TODO: esta linha de código carrega dados na tabela 'siescDataSet.motivos'. Você pode movê-la ou removê-la conforme necessário.
-                this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
+              this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
             }
             catch (Exception exception)
             {
@@ -1301,7 +1296,9 @@ namespace SIESC.UI.UI.Solicitacoes
         private void txt_nomealuno_Leave(object sender, EventArgs e)
         {
             txt_nomealuno.Text = Regex.Replace(txt_nomealuno.Text, @"\s+", " ");
-            
+            txt_nomealuno.Text = Regex.Replace(txt_nomealuno.Text, @"^\s+", "");
+            txt_nomealuno.Text = Regex.Replace(txt_nomealuno.Text, @"\s+$", "");
+
             VerificaExistencia();//verifica se já existe o aluno no banco de dados
 
         }
@@ -1314,10 +1311,12 @@ namespace SIESC.UI.UI.Solicitacoes
         private void txt_mae_Leave(object sender, EventArgs e)
         {
             txt_mae.Text = Regex.Replace(txt_mae.Text, @"\s+", " ");
+            txt_mae.Text = Regex.Replace(txt_mae.Text, @"^\s+", "");
+            txt_mae.Text = Regex.Replace(txt_mae.Text, @"\s+$", "");
             VerificaExistencia();
         }
 
-      
+
         /// <summary>
         /// Calcula a idade do aluno
         /// </summary>
@@ -1331,11 +1330,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 anos--;
             }
 
-            lbl_idade.Text = string.Format("{0} anos", anos);
+            lbl_idade.Text = $"{anos} anos";
 
             if (anos >= 15)
             {
-                Mensageiro.MensagemAviso(string.Format("O aluno possui {0} anos.{1} Favor Verificar!", anos, Environment.NewLine));
+                Mensageiro.MensagemAviso($"O aluno possui {anos} anos.{Environment.NewLine} Favor Verificar!");
             }
         }
 
@@ -1346,25 +1345,32 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_nomealuno.Text) && !string.IsNullOrEmpty(txt_mae.Text))
+                if (!DateTime.TryParse(msk_data_nascimento.Text, out var datanascimento))
                 {
-                    _controleAluno = new AlunoControl();
+                    return;
+                }
 
-                    txt_codigoAluno.Text = _controleAluno
-                        .ContemAluno(txt_nomealuno.Text, Convert.ToDateTime(msk_data_nascimento.Text), txt_mae.Text).ToString();
+                if (string.IsNullOrEmpty(txt_nomealuno.Text) || string.IsNullOrEmpty(txt_mae.Text))
+                {
+                    return;
+                }
 
-                    if (!string.IsNullOrEmpty(txt_codigoAluno.Text))
-                    {
-                        //throw new Exception(
-                        //    string.Format("ATENÇÃO: o nome digitado JÁ EXISTE no banco de dados!{0}CONTINUAR A OPERAÇÃO PODERÁ CAUSAR DUPLICIDADE DE ALUNOS.{0}ACESSE O GERENCIAMENTO DE ALUNOS E CLICK EM SOLICITAR VAGA.",Environment.NewLine));
+                _controleAluno = new AlunoControl();
 
-                        Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!");
-                    }
+                txt_codigoAluno.Text = _controleAluno
+                    .ContemAluno(txt_nomealuno.Text, datanascimento, txt_mae.Text).ToString();
+
+                if (!string.IsNullOrEmpty(txt_codigoAluno.Text))
+                {
+                    //throw new Exception(
+                    //    string.Format("ATENÇÃO: o nome digitado JÁ EXISTE no banco de dados!{0}CONTINUAR A OPERAÇÃO PODERÁ CAUSAR DUPLICIDADE DE ALUNOS.{0}ACESSE O GERENCIAMENTO DE ALUNOS E CLICK EM SOLICITAR VAGA.",Environment.NewLine));
+
+                    Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!");
                 }
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                MensagemErro(exception);
+                Mensageiro.MensagemErro(ex);
             }
         }
 
@@ -1517,7 +1523,6 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-
                 if (_statusNavegacao != Navegacao.editando)
                 {
                     txt_solicitante.ResetText();
@@ -1528,7 +1533,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         if (string.IsNullOrEmpty(txt_mae.Text))
                         {
                             cbo_solicitante.SelectedIndex = -1;
-                            throw new Exception("Campo NOME DA MÃE está em branco!");
+                            throw new Exception($"Campo {txt_mae.Tag} está em branco!");
                         }
                         txt_solicitante.Visible = false;
                         txt_solicitante.Text = txt_mae.Text;
@@ -1537,7 +1542,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         if (string.IsNullOrEmpty(txt_pai.Text))
                         {
                             cbo_solicitante.SelectedIndex = -1;
-                            throw new Exception("Campo NOME DO PAI está em branco!");
+                            throw new Exception($"Campo {txt_pai.Tag} está em branco!");
                         }
                         txt_solicitante.Visible = false;
                         txt_solicitante.Text = txt_pai.Text;
@@ -1557,7 +1562,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     _listControlsObrigatorios.Remove(txt_solicitante);
                 }
-                else if (!_listControlsObrigatorios.Contains(txt_solicitante)) { _listControlsObrigatorios.Add(txt_solicitante);}
+                else if (!_listControlsObrigatorios.Contains(txt_solicitante)) { _listControlsObrigatorios.Add(txt_solicitante); }
             }
             catch (Exception exception)
             {
@@ -1670,21 +1675,16 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="aluno"></param>
         private void GravadistanciaAlunoEscola(Solicitacao solicitacao, Aluno aluno)
         {
-            if (_encaminhou && !solicitacao.Coordenadas[0].StartsWith("0")) //se foi encaminhado e as coordenadas não começam com 0
-            {
-                _controleSolicitacao = new SolicitacaoControl();
-                _controleInstituicao = new InstituicaoControl();
+            if (!_encaminhou || solicitacao.Coordenadas[0].StartsWith("0")) return;
+            
+            _controleSolicitacao = new SolicitacaoControl();
+            _controleInstituicao = new InstituicaoControl();
 
-                string[] coordEscola  = _controleInstituicao.RetornaCoordenasInstituicao((int)solicitacao.InstituicaoEncaminhada);
+            string[] coordEscola = _controleInstituicao.RetornaCoordenasInstituicao((int)solicitacao.InstituicaoEncaminhada);
 
-                int distancia = Metrics.CalculaDistanciaCaminhando(solicitacao.Coordenadas[0],
-                    solicitacao.Coordenadas[1], coordEscola[0], coordEscola[1]);
+            var distancia = Metrics.CalculaDistanciaCaminhando(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], coordEscola[0], coordEscola[1]);
 
-                _controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id,
-                    solicitacao.InstituicaoEncaminhada,
-                    distancia);
-
-            }
+            _controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id, solicitacao.InstituicaoEncaminhada, distancia);
         }
 
 
@@ -1704,13 +1704,12 @@ namespace SIESC.UI.UI.Solicitacoes
                     throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco.");
                 }
 
-                var coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
+                string[] coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
 
                 if (!string.IsNullOrEmpty(coordenadas[0]) || !coordenadas[0].Equals("0"))
                 {
                     ZoneamentoControl zoneamento = new ZoneamentoControl();
-                    DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(coordenadas[0], coordenadas[1], 2,
-                        (int)cbo_anosolicitado.SelectedValue);
+                    DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(latitude: coordenadas[0], longitude: coordenadas[1], distancia: 2, anoensino: (int)cbo_anosolicitado.SelectedValue);
 
                     DataView dv = dt.DefaultView;
 
@@ -1769,7 +1768,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 VerificaExistencia();
                 CalculaIdade(Convert.ToDateTime(msk_data_nascimento.Text));
             }
-            catch (FormatException )
+            catch (FormatException)
             {
                 MensagemErro(new Exception("A data não está em um formato correto!"));
             }

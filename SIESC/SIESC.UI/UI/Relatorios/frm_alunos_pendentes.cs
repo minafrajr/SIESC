@@ -39,7 +39,7 @@ namespace SIESC.UI.UI.Relatorios
 		/// </summary>
 		private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem		/// <summary>
 		///<summary>
-	    /// Construtor da classe
+		/// Construtor da classe
 		/// </summary>
 		public frm_alunos_pendentes()
 		{
@@ -91,27 +91,34 @@ namespace SIESC.UI.UI.Relatorios
 		/// <param name="e"></param>
 		private void cbo_escola_DropDown(object sender, EventArgs e)
 		{
-
-			switch (nivel_ensino)
+			try
 			{
-				case 1:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter1.FillByRegionalInfantil(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter1.FillByInfantil(this.siescDataSet.instituicoes);
-					break;
-				case 2:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter1.FillByNomeRegional(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter1.FillByEstadoMunicipio(this.siescDataSet.instituicoes);
-					break;
-				case 3:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter1.FillByRegional(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter1.Fill(this.siescDataSet.instituicoes);
-					break;
+				switch (nivel_ensino)
+				{
+					case 1:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter1.FillByRegionalInfantil(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter1.FillByInfantil(this.siescDataSet.instituicoes);
+						break;
+					case 2:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter1.FillByRegionalFundamental(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter1.FillByEstadoMunicipio(this.siescDataSet.instituicoes);
+						break;
+					case 3:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter1.FillByRegional(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter1.Fill(this.siescDataSet.instituicoes);
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex);
+				throw;
 			}
 		}
 

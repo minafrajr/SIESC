@@ -12,7 +12,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-	public partial class frm_RelatorioComprovanteEndereco : SIESC.UI.base_UI
+	public partial class frm_comprovante_endereco : SIESC.UI.base_UI
 	{
 		/// <summary>
 		/// O nível de ensino para abrir o formulário e iniciar a consulta
@@ -34,7 +34,7 @@ namespace SIESC.UI.UI.Relatorios
 		/// <summary>
 		/// Construtor da classe
 		/// </summary>
-		public frm_RelatorioComprovanteEndereco()
+		public frm_comprovante_endereco()
 		{
 			InitializeComponent();
 		}
@@ -43,7 +43,7 @@ namespace SIESC.UI.UI.Relatorios
 		/// Construtor da classe
 		/// </summary>
 		/// <param name="_nivel_ensino"></param>
-		public frm_RelatorioComprovanteEndereco(int _nivel_ensino)
+		public frm_comprovante_endereco(int _nivel_ensino)
 		{
 			InitializeComponent();
 
@@ -73,26 +73,33 @@ namespace SIESC.UI.UI.Relatorios
 
 		private void cbo_escola_DropDown(object sender, EventArgs e)
 		{
-			switch (nivel_ensino)
+			try
 			{
-				case 1:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter.FillByInfantil(this.siescDataSet.instituicoes);
-					break;
-				case 2:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter.FillByEstadoMunicipio(this.siescDataSet.instituicoes);
-					break;
-				case 3:
-					if (cbo_regionais.SelectedValue != null)
-						this.instituicoesTableAdapter.FillByNomeRegional(siescDataSet.instituicoes,cbo_regionais.SelectedValue.ToString());
-					else
-						this.instituicoesTableAdapter.Fill(this.siescDataSet.instituicoes);
-					break;
+				switch (nivel_ensino)
+				{
+					case 1:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter.FillByRegionalInfantil(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter.FillByInfantil(this.siescDataSet.instituicoes);
+						break;
+					case 2:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter.FillByRegionalFundamental(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter.FillByEstadoMunicipio(this.siescDataSet.instituicoes);
+						break;
+					case 3:
+						if (cbo_regionais.SelectedValue != null)
+							this.instituicoesTableAdapter.FillByRegional(siescDataSet.instituicoes, cbo_regionais.SelectedValue.ToString());
+						else
+							this.instituicoesTableAdapter.Fill(this.siescDataSet.instituicoes);
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex);
 			}
 		}
 
@@ -180,27 +187,33 @@ namespace SIESC.UI.UI.Relatorios
 				switch (_tipoConsulta)
 				{
 					case TipoConsulta.ano:
-						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
+						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString(), (int) nud_num_solicitacao.Value);
 						break;
 					case TipoConsulta.escola:
-						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByEscolaSolicitada(cbo_escola.SelectedValue.ToString());
+						dt = vw_comprovacao_enderecoTableAdapter1.GetDataByEscolaSolicitada(cbo_escola.SelectedValue.ToString(), (int)nud_num_solicitacao.Value);
 						break;
 					case TipoConsulta.regional:
-
 						if (nivel_ensino == 1)
-							dt = vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalInfantil(cbo_regionais.SelectedValue.ToString());
+							dt = vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalInfantil(cbo_regionais.SelectedValue.ToString(), (int)nud_num_solicitacao.Value);
 						else
 						{
-							dt = nivel_ensino == 2 ? vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalFundamental(cbo_regionais.SelectedValue.ToString()) : vw_comprovacao_enderecoTableAdapter1.GetDataByRegional(cbo_regionais.SelectedValue.ToString());
+							dt = nivel_ensino == 2 ? vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalFundamental(cbo_regionais.SelectedValue.ToString(), (int)nud_num_solicitacao.Value) : vw_comprovacao_enderecoTableAdapter1.GetDataByRegional(cbo_regionais.SelectedValue.ToString(), (int)nud_num_solicitacao.Value);
 						}
 						break;
 					case TipoConsulta.geral:
 						if (nivel_ensino == 1)
-							dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataInfantil();
+							dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataInfantil( (int)nud_num_solicitacao.Value);
 						else
 						{
-							dt = nivel_ensino == 2 ? this.vw_comprovacao_enderecoTableAdapter1.GetDataFundamental() : this.vw_comprovacao_enderecoTableAdapter1.GetData();
+							dt = nivel_ensino == 2 ? this.vw_comprovacao_enderecoTableAdapter1.GetDataFundamental((int)nud_num_solicitacao.Value) : this.vw_comprovacao_enderecoTableAdapter1.GetData();
 						}
+						break;
+					case TipoConsulta.regional_ano:
+						dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalAnoEnsino(
+							cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), (int)nud_num_solicitacao.Value);
+						break;
+					case TipoConsulta.regional_escola:
+						dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalEscolaSolicitada(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), (int)nud_num_solicitacao.Value);
 						break;
 				}
 
@@ -235,6 +248,14 @@ namespace SIESC.UI.UI.Relatorios
 				_tipoConsulta = TipoConsulta.escola;
 			if (!regional && !ano && !escola)
 				_tipoConsulta = TipoConsulta.geral;
+			if (regional && ano && !escola)
+				_tipoConsulta = TipoConsulta.regional_ano;
+			if (regional && !ano && escola)
+				_tipoConsulta = TipoConsulta.regional_escola;
+			if (!regional && ano && escola)
+				_tipoConsulta = TipoConsulta.escola_ano;
+			if (regional && ano && escola)
+				_tipoConsulta = TipoConsulta.regional_ano_escola;
 		}
 
 		/// <summary>
@@ -259,6 +280,17 @@ namespace SIESC.UI.UI.Relatorios
 			}
 
 			return t;
+		}
+
+		private void chk_num_solicitacao_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chk_num_solicitacao.Checked)
+				nud_num_solicitacao.Enabled = true;
+			else
+			{
+				nud_num_solicitacao.Value = 1;
+				nud_num_solicitacao.Enabled = false;
+			}
 		}
 	}
 }

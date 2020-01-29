@@ -211,8 +211,7 @@ namespace SIESC.WEB
 				{
 
 					string json =
-						wc.DownloadString("http://www.betim.mg.gov.br/api/geocode/geocode?epsg=4326&key="+Settings.Default.georrefKey+"&cep=@cep&number=@numlograd"
-								.Replace("@cep", cep).Replace("@numlograd", numLogradouro));
+						wc.DownloadString("http://www.betim.mg.gov.br/api/geocode/geocode?epsg=4326&key="+Settings.Default.georrefKey+"&cep=@cep&number=@numlograd".Replace("@cep", cep).Replace("@numlograd", numLogradouro));
 					
 					//exmplo retorno json
 					//string json = @"{'X':-44.196717228867335,'Y':-19.948012579613923,'Precision':0,'CodLogradouro':82,'TipoLogradouro':'RUA','NomeLogradouro':'ALCIDES INACIO DA SILVA','UnidadePlanejamento':'INGÁ'}";

@@ -2440,7 +2440,7 @@ namespace SIESC.UI
         {
             try
             {
-                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(1) { MdiParent = this };
+                frm_comprovante_endereco frm_comprovante_endereco = new frm_comprovante_endereco(1) { MdiParent = this };
 
                 frm_comprovante_endereco.Show();
             }
@@ -2454,7 +2454,7 @@ namespace SIESC.UI
         {
             try
             {
-                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(2) { MdiParent = this };
+                frm_comprovante_endereco frm_comprovante_endereco = new frm_comprovante_endereco(2) { MdiParent = this };
 
                 frm_comprovante_endereco.Show();
             }
@@ -2468,7 +2468,7 @@ namespace SIESC.UI
         {
             try
             {
-                frm_RelatorioComprovanteEndereco frm_comprovante_endereco = new frm_RelatorioComprovanteEndereco(3) { MdiParent = this };
+                frm_comprovante_endereco frm_comprovante_endereco = new frm_comprovante_endereco(3) { MdiParent = this };
 
                 frm_comprovante_endereco.Show();
             }

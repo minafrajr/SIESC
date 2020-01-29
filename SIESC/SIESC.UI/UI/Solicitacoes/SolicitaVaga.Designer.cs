@@ -34,6 +34,7 @@
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigoAluno = new System.Windows.Forms.TextBox();
             this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
+            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.btn_limpacombo = new System.Windows.Forms.Button();
             this.cbo_deficiencia = new SIESC.UI.MyComboBox();
             this.deficienciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -136,7 +137,6 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
-            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -215,6 +215,16 @@
             this.gpb_dadospessoais.TabStop = false;
             this.gpb_dadospessoais.Text = "Dados Pessoais";
             // 
+            // msk_data_nascimento
+            // 
+            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 16);
+            this.msk_data_nascimento.Mask = "00/00/0000";
+            this.msk_data_nascimento.Name = "msk_data_nascimento";
+            this.msk_data_nascimento.Size = new System.Drawing.Size(66, 22);
+            this.msk_data_nascimento.TabIndex = 1;
+            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
+            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
+            // 
             // btn_limpacombo
             // 
             this.btn_limpacombo.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
@@ -222,7 +232,7 @@
             this.btn_limpacombo.Location = new System.Drawing.Point(887, 78);
             this.btn_limpacombo.Name = "btn_limpacombo";
             this.btn_limpacombo.Size = new System.Drawing.Size(22, 22);
-            this.btn_limpacombo.TabIndex = 5;
+            this.btn_limpacombo.TabIndex = 6;
             this.btn_limpacombo.UseVisualStyleBackColor = true;
             this.btn_limpacombo.Click += new System.EventHandler(this.btn_limpacombo_Click);
             // 
@@ -235,7 +245,7 @@
             this.cbo_deficiencia.Location = new System.Drawing.Point(613, 78);
             this.cbo_deficiencia.Name = "cbo_deficiencia";
             this.cbo_deficiencia.Size = new System.Drawing.Size(270, 22);
-            this.cbo_deficiencia.TabIndex = 4;
+            this.cbo_deficiencia.TabIndex = 5;
             this.cbo_deficiencia.ValueMember = "idDeficiencia";
             this.cbo_deficiencia.DropDown += new System.EventHandler(this.cbo_deficiencia_DropDown);
             // 
@@ -266,7 +276,7 @@
             this.msk_telefone3.Mask = "(00)000000000";
             this.msk_telefone3.Name = "msk_telefone3";
             this.msk_telefone3.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone3.TabIndex = 8;
+            this.msk_telefone3.TabIndex = 9;
             this.msk_telefone3.Tag = "Telefone 3";
             this.msk_telefone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone3.Enter += new System.EventHandler(this.msk_telefone3_Enter);
@@ -288,7 +298,7 @@
             this.msk_telefone2.Mask = "(00)000000000";
             this.msk_telefone2.Name = "msk_telefone2";
             this.msk_telefone2.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone2.TabIndex = 7;
+            this.msk_telefone2.TabIndex = 8;
             this.msk_telefone2.Tag = "Telefone 2";
             this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
@@ -315,7 +325,7 @@
             this.msk_telefone1.Mask = "(00)000000000";
             this.msk_telefone1.Name = "msk_telefone1";
             this.msk_telefone1.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone1.TabIndex = 6;
+            this.msk_telefone1.TabIndex = 7;
             this.msk_telefone1.Tag = "Telefone 1";
             this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
@@ -349,7 +359,7 @@
             this.gpb_sexo.Name = "gpb_sexo";
             this.gpb_sexo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpb_sexo.Size = new System.Drawing.Size(170, 38);
-            this.gpb_sexo.TabIndex = 4;
+            this.gpb_sexo.TabIndex = 3;
             this.gpb_sexo.TabStop = false;
             this.gpb_sexo.Text = "Sexo";
             // 
@@ -385,7 +395,7 @@
             this.txt_pai.MaxLength = 60;
             this.txt_pai.Name = "txt_pai";
             this.txt_pai.Size = new System.Drawing.Size(487, 22);
-            this.txt_pai.TabIndex = 3;
+            this.txt_pai.TabIndex = 4;
             this.txt_pai.Tag = "Nome do pai";
             // 
             // txt_mae
@@ -445,7 +455,7 @@
             this.lbl_nome.Location = new System.Drawing.Point(6, 20);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(44, 14);
-            this.lbl_nome.TabIndex = 19;
+            this.lbl_nome.TabIndex = 18;
             this.lbl_nome.Text = " Nome:";
             // 
             // label5
@@ -1357,16 +1367,6 @@
             // origemsolicitacaoTableAdapter1
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // msk_data_nascimento
-            // 
-            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 16);
-            this.msk_data_nascimento.Mask = "00/00/0000";
-            this.msk_data_nascimento.Name = "msk_data_nascimento";
-            this.msk_data_nascimento.Size = new System.Drawing.Size(66, 22);
-            this.msk_data_nascimento.TabIndex = 29;
-            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
-            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
             // 
             // SolicitaVaga
             // 

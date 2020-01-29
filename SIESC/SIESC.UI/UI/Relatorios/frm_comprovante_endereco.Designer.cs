@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Relatorios
 {
-    partial class frm_RelatorioComprovanteEndereco
+    partial class frm_comprovante_endereco
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.chk_num_solicitacao = new System.Windows.Forms.CheckBox();
+            this.nud_num_solicitacao = new System.Windows.Forms.NumericUpDown();
             this.btn_gerar_relatorio = new System.Windows.Forms.Button();
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_cancel_escola = new System.Windows.Forms.Button();
@@ -55,6 +57,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_num_solicitacao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -72,6 +75,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.chk_num_solicitacao);
+            this.splitContainer1.Panel1.Controls.Add(this.nud_num_solicitacao);
             this.splitContainer1.Panel1.Controls.Add(this.btn_gerar_relatorio);
             this.splitContainer1.Panel1.Controls.Add(this.btn_cancel_ano);
             this.splitContainer1.Panel1.Controls.Add(this.btn_cancel_escola);
@@ -88,15 +93,51 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.rpt_viewer);
-            this.splitContainer1.Size = new System.Drawing.Size(935, 557);
+            this.splitContainer1.Size = new System.Drawing.Size(950, 557);
             this.splitContainer1.SplitterDistance = 82;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // chk_num_solicitacao
+            // 
+            this.chk_num_solicitacao.AutoSize = true;
+            this.chk_num_solicitacao.Location = new System.Drawing.Point(628, 54);
+            this.chk_num_solicitacao.Name = "chk_num_solicitacao";
+            this.chk_num_solicitacao.Size = new System.Drawing.Size(138, 18);
+            this.chk_num_solicitacao.TabIndex = 13;
+            this.chk_num_solicitacao.Text = "Maior que solicitação:";
+            this.chk_num_solicitacao.UseVisualStyleBackColor = true;
+            this.chk_num_solicitacao.CheckedChanged += new System.EventHandler(this.chk_num_solicitacao_CheckedChanged);
+            // 
+            // nud_num_solicitacao
+            // 
+            this.nud_num_solicitacao.Enabled = false;
+            this.nud_num_solicitacao.Font = new System.Drawing.Font("Candara", 9F);
+            this.nud_num_solicitacao.Location = new System.Drawing.Point(772, 50);
+            this.nud_num_solicitacao.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nud_num_solicitacao.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_num_solicitacao.Name = "nud_num_solicitacao";
+            this.nud_num_solicitacao.Size = new System.Drawing.Size(51, 22);
+            this.nud_num_solicitacao.TabIndex = 12;
+            this.nud_num_solicitacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_num_solicitacao.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btn_gerar_relatorio
             // 
             this.btn_gerar_relatorio.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gerar_relatorio.Image = global::SIESC.UI.Properties.Resources._1431665945_27_Edit_Text;
-            this.btn_gerar_relatorio.Location = new System.Drawing.Point(641, 42);
+            this.btn_gerar_relatorio.Location = new System.Drawing.Point(828, 42);
             this.btn_gerar_relatorio.Name = "btn_gerar_relatorio";
             this.btn_gerar_relatorio.Size = new System.Drawing.Size(119, 36);
             this.btn_gerar_relatorio.TabIndex = 10;
@@ -109,7 +150,7 @@
             // 
             this.btn_cancel_ano.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_ano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_ano.Location = new System.Drawing.Point(609, 48);
+            this.btn_cancel_ano.Location = new System.Drawing.Point(602, 49);
             this.btn_cancel_ano.Name = "btn_cancel_ano";
             this.btn_cancel_ano.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_ano.TabIndex = 9;
@@ -120,7 +161,7 @@
             // 
             this.btn_cancel_escola.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_escola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_escola.Location = new System.Drawing.Point(456, 48);
+            this.btn_cancel_escola.Location = new System.Drawing.Point(451, 50);
             this.btn_cancel_escola.Name = "btn_cancel_escola";
             this.btn_cancel_escola.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_escola.TabIndex = 8;
@@ -144,7 +185,7 @@
             this.cbo_anoensino.DisplayMember = "AnoEF";
             this.cbo_anoensino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anoensino.FormattingEnabled = true;
-            this.cbo_anoensino.Location = new System.Drawing.Point(487, 49);
+            this.cbo_anoensino.Location = new System.Drawing.Point(479, 51);
             this.cbo_anoensino.Name = "cbo_anoensino";
             this.cbo_anoensino.Size = new System.Drawing.Size(121, 22);
             this.cbo_anoensino.TabIndex = 6;
@@ -167,7 +208,7 @@
             this.cbo_escola.DisplayMember = "nome";
             this.cbo_escola.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_escola.FormattingEnabled = true;
-            this.cbo_escola.Location = new System.Drawing.Point(175, 49);
+            this.cbo_escola.Location = new System.Drawing.Point(171, 51);
             this.cbo_escola.Name = "cbo_escola";
             this.cbo_escola.Size = new System.Drawing.Size(280, 22);
             this.cbo_escola.TabIndex = 4;
@@ -251,7 +292,7 @@
             this.rpt_viewer.Location = new System.Drawing.Point(0, 0);
             this.rpt_viewer.Name = "rpt_viewer";
             this.rpt_viewer.ServerReport.BearerToken = null;
-            this.rpt_viewer.Size = new System.Drawing.Size(935, 471);
+            this.rpt_viewer.Size = new System.Drawing.Size(950, 471);
             this.rpt_viewer.TabIndex = 0;
             // 
             // regionaisTableAdapter
@@ -270,12 +311,12 @@
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
             // 
-            // frm_RelatorioComprovanteEndereco
+            // frm_comprovante_endereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(941, 563);
+            this.ClientSize = new System.Drawing.Size(956, 563);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frm_RelatorioComprovanteEndereco";
+            this.Name = "frm_comprovante_endereco";
             this.Text = "Relatório Comprovação de Endereço";
             this.Load += new System.EventHandler(this.frm_RelatorioComprovanteEndereco_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -283,6 +324,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_num_solicitacao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
@@ -315,5 +357,7 @@
         private System.Windows.Forms.BindingSource anoBindingSource;
         private siescDataSetTableAdapters.anoTableAdapter anoTableAdapter;
         private BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter vw_comprovacao_enderecoTableAdapter1;
+        private System.Windows.Forms.CheckBox chk_num_solicitacao;
+        private System.Windows.Forms.NumericUpDown nud_num_solicitacao;
     }
 }

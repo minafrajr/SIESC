@@ -95,22 +95,5 @@ namespace SIESC.UI.UI
 			System.Media.SystemSounds.Beep.Play();
 			MessageBox.Show($@"{text}", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
-		
-		private void InitializeComponent()
-		{
-			//this.SuspendLayout();
-			//// 
-			//// Mensageiro
-			//// 
-			//this.ClientSize = new System.Drawing.Size(284, 261);
-			//this.Name = "Mensageiro";
-			//this.ShowIcon = false;
-			//this.ShowInTaskbar = false;
-			//this.TopMost = true;
-			//this.ResumeLayout(false);
-
-		}
-
-		
 	}
 }

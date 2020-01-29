@@ -35,7 +35,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>163</ApplicationRevision>
+    <ApplicationRevision>164</ApplicationRevision>
     <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -377,11 +377,11 @@
     <Compile Include="UI\Relatorios\frm_carteirinha.Designer.cs">
       <DependentUpon>frm_carteirinha.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.cs">
+    <Compile Include="UI\Relatorios\frm_comprovante_endereco.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.Designer.cs">
-      <DependentUpon>frm_RelatorioComprovanteEndereco.cs</DependentUpon>
+    <Compile Include="UI\Relatorios\frm_comprovante_endereco.Designer.cs">
+      <DependentUpon>frm_comprovante_endereco.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Relatorios\frm_relatorio_instituicoes.cs">
       <SubType>Form</SubType>
@@ -572,8 +572,8 @@
     <EmbeddedResource Include="UI\Relatorios\frm_carteirinha.resx">
       <DependentUpon>frm_carteirinha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Relatorios\frm_RelatorioComprovanteEndereco.resx">
-      <DependentUpon>frm_RelatorioComprovanteEndereco.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Relatorios\frm_comprovante_endereco.resx">
+      <DependentUpon>frm_comprovante_endereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_instituicoes.resx">
       <DependentUpon>frm_relatorio_instituicoes.cs</DependentUpon>
