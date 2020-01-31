@@ -53,7 +53,7 @@ namespace SIESC.UI.UI.Relatorios
 			catch (Exception ex)
 			{
 				t.Abort();
-				Mensageiro.MensagemErro(ex);
+				 Mensageiro.MensagemErro(ex,frm_Principal);;
 			}
 
 		}

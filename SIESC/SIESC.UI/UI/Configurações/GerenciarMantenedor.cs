@@ -97,7 +97,7 @@ namespace SIESC.UI.UI.Configurações
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 			finally
 			{

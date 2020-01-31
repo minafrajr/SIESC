@@ -59,7 +59,7 @@ namespace SIESC.UI.UI.CEP
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 		/// <summary>
@@ -81,7 +81,7 @@ namespace SIESC.UI.UI.CEP
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 	}

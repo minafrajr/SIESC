@@ -755,7 +755,7 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (Exception ex)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -989,9 +989,6 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             var t = CarregaProgressoThread();
 
-            //this.Invoke(new Action(() => CarregaProgressoThread()));
-            //this.BeginInvoke(new Action(() => CarregaProgressoThread()));
-
             try
             {
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
@@ -1003,7 +1000,7 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (Exception exception)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
@@ -1043,7 +1040,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -1369,7 +1366,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1396,7 +1393,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -1412,7 +1409,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -1429,7 +1426,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -1509,7 +1506,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -1590,9 +1587,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 frmBuscarCep.MdiParent = _principalUi;
                 frmBuscarCep.Show();
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1621,7 +1618,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -1739,7 +1736,7 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (Exception ex)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
            
             

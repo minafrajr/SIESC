@@ -228,7 +228,7 @@ namespace SIESC.UI.UI.Funcionarios
                 }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         
@@ -346,7 +346,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -429,7 +429,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -469,7 +469,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -496,7 +496,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -511,9 +511,9 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 base.SetMask(msk_tel2);
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -528,9 +528,9 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 base.SetMask(msk_tel3);
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -558,7 +558,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex,this);
             }
 
         }
@@ -577,7 +577,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
         /// <summary>
@@ -593,7 +593,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -610,7 +610,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -627,7 +627,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
     }

@@ -67,9 +67,9 @@ namespace SIESC.UI.UI.Relatorios
 				this.nivelensino = NivelEnsino;
 				CarregaCarteirinha();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>

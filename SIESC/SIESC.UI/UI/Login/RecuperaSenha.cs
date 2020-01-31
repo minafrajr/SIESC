@@ -57,7 +57,7 @@ namespace SIESC.UI.UI.Login
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace SIESC.UI.UI.Login
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 
 

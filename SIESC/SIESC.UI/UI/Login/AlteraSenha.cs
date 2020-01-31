@@ -110,7 +110,7 @@ namespace SIESC.UI.UI.Login
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 	}

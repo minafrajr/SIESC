@@ -114,9 +114,9 @@ namespace SIESC.UI.UI
 					RepassaSecretario(idescola);
 				}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				throw exception;
+				throw ex;
 			}
 		}
 
@@ -254,9 +254,9 @@ namespace SIESC.UI.UI
 					this.PreencheDados();
 				}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 
 		}
@@ -278,7 +278,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 
@@ -298,7 +298,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -317,7 +317,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -337,7 +337,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -356,7 +356,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -372,7 +372,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -401,9 +401,9 @@ namespace SIESC.UI.UI
 				else
 					Mensageiro.MensagemPergunta("Não é possível editar os dados!\nSelecione uma escola!");
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -416,7 +416,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 

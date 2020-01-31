@@ -17,15 +17,29 @@ namespace SIESC.UI.UI
 	/// </summary>
 	internal class Mensageiro : Form
 	{
+		private static Principal_UI _formPrincipalUi;
+
+	
 		/// <summary>
 		/// Mensagem de erro padrão
 		/// </summary>
 		/// <param name="exception"></param>
-		public static void MensagemErro(Exception exception)
+		public static void MensagemErro(Exception exception, IWin32Window form )
 		{
 			System.Media.SystemSounds.Beep.Play();
-			MessageBox.Show($@"Houve o seguinte erro: {exception.Message}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
+
+
+		///// <summary>
+		///// Mensagem de erro padrão
+		///// </summary>
+		///// <param name="exception"></param>
+		//public static void MensagemErro(Exception exception)
+		//{
+		//	System.Media.SystemSounds.Beep.Play();
+		//	MessageBox.Show($@"Houve o seguinte erro: {exception.Message}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		//}
 
 		/// <summary>
 		/// Mensagem de cancelamento de formulário

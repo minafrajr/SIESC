@@ -144,7 +144,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 

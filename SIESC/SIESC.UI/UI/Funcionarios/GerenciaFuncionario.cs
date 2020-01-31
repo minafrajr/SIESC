@@ -116,9 +116,9 @@ namespace SIESC.UI.UI.Funcionarios
 				if(dgv_gerenciafuncionarios.Rows.Count>0)
 					RepassaDados();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -136,9 +136,9 @@ namespace SIESC.UI.UI.Funcionarios
 				dgv_gerenciafuncionarios.Refresh();
 				
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -284,9 +284,9 @@ namespace SIESC.UI.UI.Funcionarios
 				//		funcionario, autorizacao);
 				//}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -333,9 +333,9 @@ namespace SIESC.UI.UI.Funcionarios
 
 				frm_cadastrafuncionario.Show();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -374,7 +374,7 @@ namespace SIESC.UI.UI.Funcionarios
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -434,7 +434,7 @@ namespace SIESC.UI.UI.Funcionarios
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -462,7 +462,7 @@ namespace SIESC.UI.UI.Funcionarios
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 	}

@@ -117,7 +117,7 @@ namespace SIESC.UI.UI.Relatorios
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);;
 				throw;
 			}
 		}
@@ -298,7 +298,7 @@ namespace SIESC.UI.UI.Relatorios
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 			finally { t.Abort(); }
 		}

@@ -72,7 +72,7 @@ namespace SIESC.UI.UI.Login
             }
             catch (Exception)
             {
-                Mensageiro.MensagemErro(new Exception("\nUsuário ou senha incorretos!"));
+                Mensageiro.MensagemErro(new Exception("\nUsuário ou senha incorretos!"), this);
             }
         }
 

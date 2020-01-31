@@ -100,9 +100,9 @@ namespace SIESC.UI.UI
 				RepassaDados(instituicao);
 				RepassaTreeViewAnosEnsino(controleOfertaEnsino.RetornaAnosOfertados(codigo));
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -151,9 +151,9 @@ namespace SIESC.UI.UI
 				}
 				trvw_anoensino.ExpandAll();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -240,9 +240,9 @@ namespace SIESC.UI.UI
 				this.LimpaControles(listacontroles);
 				this.Close();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -344,9 +344,9 @@ namespace SIESC.UI.UI
 					}
 				}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		#endregion
@@ -364,9 +364,9 @@ namespace SIESC.UI.UI
 			{
 				base.SetMask(msk_tel1);
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -381,9 +381,9 @@ namespace SIESC.UI.UI
 			{
 				base.SetMask(msk_tel2);
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -398,9 +398,9 @@ namespace SIESC.UI.UI
 			{
 				base.SetMask(msk_tel3);
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -626,9 +626,9 @@ namespace SIESC.UI.UI
 					}
 				}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -646,9 +646,9 @@ namespace SIESC.UI.UI
 				cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipo_Logradouro);
 
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 
 		}
@@ -798,9 +798,9 @@ namespace SIESC.UI.UI
 				form.MdiParent = principalUi;
 				form.Show();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -817,7 +817,7 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 	}

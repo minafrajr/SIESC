@@ -81,9 +81,9 @@ namespace SIESC.UI.UI.Listas
 				Mensageiro.MensagemAviso("Copiado os E-mails!");
 
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 
 		}
@@ -123,9 +123,9 @@ namespace SIESC.UI.UI.Listas
 				}
 				
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -149,9 +149,9 @@ namespace SIESC.UI.UI.Listas
 					txt_email.Text += email + ", ";
 				}
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 	}

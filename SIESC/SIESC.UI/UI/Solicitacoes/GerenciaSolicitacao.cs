@@ -103,7 +103,7 @@ namespace SIESC.UI.UI
             catch (Exception exception)
             {
 
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -159,7 +159,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
 
         }
@@ -314,7 +314,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -352,7 +352,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -381,7 +381,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -556,7 +556,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -597,7 +597,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
@@ -656,7 +656,7 @@ namespace SIESC.UI.UI
             catch (Exception exception)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -682,7 +682,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {

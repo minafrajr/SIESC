@@ -107,13 +107,11 @@ namespace SIESC.UI.UI.Zoneamento
 
                 txt_mumresidencia.ResetText();
                 txt_mumresidencia.Focus();
-
-                //t.Abort();
             }
             catch (Exception exception)
             {
-                //t.Abort();
-                Mensageiro.MensagemErro(exception);
+                t.Abort();
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
@@ -134,19 +132,15 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 LimpaGridView();
 
-                foreach (Control control in camposObrigatoriosList)
-                {
+                //foreach (Control control in camposObrigatoriosList)
+                //{
                     //if (string.IsNullOrEmpty(control.Text))
                     //    throw new Exception("Um dos campos de endereço está vazio");
-                }
+                //}
+                
+               coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
 
-
-                coordenadas = new string[2];
-
-                coordenadas =
-                    Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
-
-                if (coordenadas[0] == null)
+                if (coordenadas[0] == null || coordenadas[0].Equals("0"))
                 {
                     //Georreferencia o aluno pelo GOOGLE
                     coordenadas = Zoneador.Locate(string.Format("{0}+{1},+{2},+betim,+brasil", txt_mumresidencia.Text,
@@ -162,9 +156,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 if (rdb_ens_fundamental.Checked)
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaEscolasEndereco(coordenadas[0], coordenadas[1],
-                        1,
-                        Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaEscolasEndereco(coordenadas[0], coordenadas[1], mantenedor: 1, raio: Convert.ToInt32(nud_raioBusca.Value));
                 }
                 else
                 {
@@ -181,12 +173,11 @@ namespace SIESC.UI.UI.Zoneamento
 
                 dgv_zoneamento.Sort(dgv_zoneamento.Columns[4], ListSortDirection.Ascending);
 
-                //t.Abort();
             }
             catch (Exception exception)
             {
-                //t.Abort();
-                Mensageiro.MensagemErro(exception);
+                t.Abort();
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
@@ -220,7 +211,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -243,7 +234,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -302,12 +293,11 @@ namespace SIESC.UI.UI.Zoneamento
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];
 
-                //t.Abort();
             }
             catch (Exception exception)
             {
-                // t.Abort();
-                Mensageiro.MensagemErro(exception);
+               t.Abort();
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {

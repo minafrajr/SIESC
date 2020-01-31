@@ -103,7 +103,7 @@ namespace SIESC.UI.UI.Zoneamento
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 
 		}
@@ -121,7 +121,7 @@ namespace SIESC.UI.UI.Zoneamento
 
 			catch (Exception e)
 			{
-				Mensageiro.MensagemErro(e);
+				Mensageiro.MensagemErro(e, this);
 			}
 		}
 
@@ -138,7 +138,7 @@ namespace SIESC.UI.UI.Zoneamento
 			}
 			catch (Exception e)
 			{
-				Mensageiro.MensagemErro(e);
+				Mensageiro.MensagemErro(e, this);
 			}
 		}
 
@@ -198,7 +198,7 @@ namespace SIESC.UI.UI.Zoneamento
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 		/// <summary>
@@ -230,7 +230,7 @@ namespace SIESC.UI.UI.Zoneamento
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 
@@ -408,7 +408,7 @@ namespace SIESC.UI.UI.Zoneamento
 			catch (Exception exception)
 			{
 				t.Abort();
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 
@@ -539,7 +539,7 @@ namespace SIESC.UI.UI.Zoneamento
 			catch (Exception ex)
 			{
 				t.Abort();
-				Mensageiro.MensagemErro(ex);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 

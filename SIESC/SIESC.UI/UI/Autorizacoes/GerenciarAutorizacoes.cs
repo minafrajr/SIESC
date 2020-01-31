@@ -158,7 +158,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -176,7 +176,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -224,7 +224,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -256,7 +256,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -459,7 +459,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -496,7 +496,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -532,7 +532,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -561,7 +561,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -583,7 +583,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
             return null;
         }
@@ -602,7 +602,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
             return null;
         }
@@ -636,7 +636,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -668,7 +668,7 @@ namespace SIESC.UI.UI.Autorizacoes
             {
                 t.Abort();
 
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -720,7 +720,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -740,7 +740,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -759,7 +759,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -778,7 +778,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>

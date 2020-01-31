@@ -268,7 +268,7 @@ namespace SIESC.UI.UI
         /// <param name="exception"></param>
         private void MensagemErro(Exception exception)
         {
-            Mensageiro.MensagemErro(exception);
+            Mensageiro.MensagemErro(exception, this);
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, this);
             }
 
         }

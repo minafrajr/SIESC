@@ -77,9 +77,9 @@ namespace SIESC.UI.UI.Escolas
 				else
 					Mensageiro.MensagemPergunta("Não é possível editar os dados!\nSelecione uma escola!");
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -139,9 +139,9 @@ namespace SIESC.UI.UI.Escolas
 
 				dgv_dadosescolas.Refresh();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -167,9 +167,9 @@ namespace SIESC.UI.UI.Escolas
 				else
 					throw new Exception("Selecione uma instituição educacional para excluí-la!");
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 
@@ -308,9 +308,9 @@ namespace SIESC.UI.UI.Escolas
 				txt_email.Text = dgv_dadosescolas[7, dgv_dadosescolas.CurrentCellAddress.Y].Value.ToString();
 				cbo_regional.Text = dgv_dadosescolas[9, dgv_dadosescolas.CurrentCellAddress.Y].Value.ToString();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
@@ -338,9 +338,9 @@ namespace SIESC.UI.UI.Escolas
 				controleInstituicao_vw = new vw_instituicoesTableAdapter();
 				dgv_dadosescolas.DataSource = controleInstituicao_vw.GetData();
 			}
-			catch (Exception exception)
+			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(exception);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 	}
