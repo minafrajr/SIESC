@@ -1002,11 +1002,13 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
+                t.Abort();
                 Mensageiro.MensagemErro(exception);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive)
+                    t.Abort();
             }
         }
         /// <summary>
