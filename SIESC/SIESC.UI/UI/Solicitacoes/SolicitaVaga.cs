@@ -1696,44 +1696,51 @@ namespace SIESC.UI.UI.Solicitacoes
             try
             {
                 if (string.IsNullOrEmpty(msk_cep.Text) || string.IsNullOrEmpty(txt_mumresidencia.Text) ||
-                   cbo_anosolicitado.SelectedValue.Equals(null))
+                    cbo_anosolicitado.SelectedValue.Equals(null))
+                {throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco.");}
+
+                var coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
+
+                if (string.IsNullOrEmpty(coordenadas[0]) || coordenadas[0].Equals("0"))
+                { throw new Exception("Não foi possível localizar escolas!"); }
+
+                ZoneamentoControl zoneamento = new ZoneamentoControl();
+                DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(latitude: coordenadas[0],longitude: coordenadas[1], distancia: 2, anoensino: (int) cbo_anosolicitado.SelectedValue);
+
+                if (dt.Rows.Count.Equals(0))
+                { throw new Exception("Não foram localizadas escolas em um raio de 2 Km!"); }
+
+                DataView dv = dt.DefaultView;
+
+                dv.Sort = "DistanciaReta";
+
+                dt = dv.ToTable();
+
+                cbo_escolasolicitada_DropDown(null, null);
+
+                foreach (DataRowView item in cbo_instituicao_solicitada.Items)
                 {
-                    throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco.");
-                }
-
-                string[] coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
-
-                if (!string.IsNullOrEmpty(coordenadas[0]) || !coordenadas[0].Equals("0"))
-                {
-                    ZoneamentoControl zoneamento = new ZoneamentoControl();
-                    DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(latitude: coordenadas[0], longitude: coordenadas[1], distancia: 2, anoensino: (int)cbo_anosolicitado.SelectedValue);
-
-                    DataView dv = dt.DefaultView;
-
-                    dv.Sort = "DistanciaReta";
-
-                    dt = dv.ToTable();
-
-                    cbo_escolasolicitada_DropDown(null, null);
-
-                    foreach (DataRowView item in cbo_instituicao_solicitada.Items)
+                    if (item["idInstituicoes"].ToString() == dt.Rows[0]["CodigoEscola"].ToString())
                     {
-                        if (item["idInstituicoes"].ToString() == dt.Rows[0]["CodigoEscola"].ToString())
-                        {
-                            cbo_instituicao_solicitada.SelectedItem = item;
-                        }
+                        cbo_instituicao_solicitada.SelectedItem = item;
                     }
-                    cbo_instituicao_solicitada.Refresh();
                 }
+                cbo_instituicao_solicitada.Refresh();
+
+                t.Abort();
+            }
+            catch (NullReferenceException)
+            {
+                t.Abort();
+                MensagemErro(new Exception("Não foi selecionado o ano de ensino!"));
             }
             catch (Exception ex)
             {
+                t.Abort();
                 Mensageiro.MensagemErro(ex);
             }
-            finally
-            {
-                t.Abort();
-            }
+           
+            
         }
         /// <summary>
         /// Evento de alteração do check-box de transporte escolar
