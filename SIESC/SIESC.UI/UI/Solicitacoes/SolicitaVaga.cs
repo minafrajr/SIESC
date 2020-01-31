@@ -723,24 +723,21 @@ namespace SIESC.UI.UI.Solicitacoes
                                     _solicitacao.Codigo); //exclui a dist se o encaminhamento foi cancelado
                             }
 
+                            t.Abort();
 
-
-                            if (Mensageiro.MensagemPergunta(
-                                    $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Caso tenha alterado a escola encaminhada IMPRIMA OUTRA FICHA!")
+                            if (Mensageiro.MensagemPergunta($"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Caso tenha alterado a escola encaminhada IMPRIMA OUTRA FICHA!")
                                 .Equals(DialogResult.Yes))
                             {
                                 frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0], _solicitacao.Coordenadas[1], _solicitacao.Ano, _solicitacao.Codigo)
                                 { MdiParent = this._principalUi };
 
                                 frmSolicitacao.Show();
-                                t.Abort();
                             }
                         }
                     }
-                    else if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, _solicitacao, false)
-                    ) //atualiza sem novo encaminhamento
+                    else if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado, _solicitacao, false)) //atualiza sem novo encaminhamento
                     {
-                        //t.Abort();
+                        t.Abort();
 
                         if (Mensageiro.MensagemPergunta($"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?").Equals(DialogResult.Yes))
                         {
