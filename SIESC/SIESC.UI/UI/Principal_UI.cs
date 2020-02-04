@@ -719,11 +719,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,this);
             }
 
@@ -775,12 +775,12 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -802,12 +802,12 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -857,11 +857,11 @@ namespace SIESC.UI
                 frm_Listas.MdiParent = this;
                 frm_Listas.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -960,13 +960,13 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
 
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -1005,12 +1005,11 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm_relatorio = new frm_Relatorio_geral(26);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1027,16 +1026,15 @@ namespace SIESC.UI
                 frm_solicitacoes_dia frm_relatorio = new frm_solicitacoes_dia(1);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -1053,16 +1051,15 @@ namespace SIESC.UI
                 frm_relatorio_infantil frm_relatorio = new frm_relatorio_infantil(2);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1078,17 +1075,15 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm_relatorio = new frm_Relatorio_geral(27);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-
-                t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1107,12 +1102,12 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1128,17 +1123,15 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm = new frm_Relatorio_geral(10);
                 frm.MdiParent = this;
                 frm.Show();
-
-                t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1155,11 +1148,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1177,11 +1170,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1192,19 +1185,19 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_infantial_escola_solicita_encam_Click(object sender,EventArgs e)
         {
-            //var t = CarregaProgressoThread(); //inicia thread para form carregando 
+            var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
                 frm_alunosporescola frm = new frm_alunosporescola(this,1);
                 frm.MdiParent = this;
                 frm.Show();
 
-                //t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
 
-                //t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1221,12 +1214,12 @@ namespace SIESC.UI
                 frm_relatorio_infantil frm_relatorio = new frm_relatorio_infantil(1);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1244,12 +1237,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1261,12 +1253,11 @@ namespace SIESC.UI
                 frm_relatorio_infantil frm_relatorio = new frm_relatorio_infantil(3);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1278,12 +1269,11 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm_relatorio = new frm_Relatorio_geral(20);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1296,11 +1286,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1314,11 +1304,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1332,18 +1322,18 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_fund_num_sol_instituicao_Click(object sender,EventArgs e)
         {
+            var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
             {
-                var t = CarregaProgressoThread(); //inicia thread para form carregando
-
                 frm_Relatorio_geral frm = new frm_Relatorio_geral(19);
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1354,7 +1344,7 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_fund_alunos_esco_sol_enc_Click(object sender,EventArgs e)
         {
-            //var t = CarregaProgressoThread(); //inicia thread para form carregando 
+            var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
                 frm_alunosporescola frm = new frm_alunosporescola(this,2);
@@ -1362,12 +1352,11 @@ namespace SIESC.UI
 
                 frm.Show();
 
-                //t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                //t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1385,17 +1374,15 @@ namespace SIESC.UI
                 frm_relatorio_fundamental frm_relatorio = new frm_relatorio_fundamental(1);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1411,12 +1398,11 @@ namespace SIESC.UI
                 frm_alunos_motivos frm = new frm_alunos_motivos(this,2);
                 frm.MdiParent = this;
                 frm.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1433,11 +1419,11 @@ namespace SIESC.UI
                 frm_alunos_pendentes frmRelatorio4 = new frm_alunos_pendentes(2);
                 frmRelatorio4.MdiParent = this;
                 frmRelatorio4.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
 
@@ -1457,11 +1443,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
 
@@ -1480,11 +1466,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1502,12 +1488,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1524,12 +1509,11 @@ namespace SIESC.UI
                 frm_relatorio_fundamental frm_relatorio = new frm_relatorio_fundamental(3);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1546,12 +1530,11 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm_relatorio = new frm_Relatorio_geral(28);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1563,12 +1546,11 @@ namespace SIESC.UI
                 frm_relatorio_fundamental frm_relatorio = new frm_relatorio_fundamental(4);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1582,12 +1564,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1605,11 +1586,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1622,11 +1603,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1648,12 +1629,11 @@ namespace SIESC.UI
                 frm_alunos_pendentes frm_relatorio_pendentes = new frm_alunos_pendentes(3);
                 frm_relatorio_pendentes.MdiParent = this;
                 frm_relatorio_pendentes.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1670,12 +1650,12 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm = new frm_Relatorio_geral(1);
                 frm.MdiParent = this;
                 frm.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1694,11 +1674,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
 
@@ -1710,15 +1690,18 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_geral_resumo_sol_Click(object sender,EventArgs e)
         {
+            var t = CarregaProgressoThread();
             try
             {
                 frm_Relatorio_geral frm = new frm_Relatorio_geral(1);
 
                 frm.MdiParent = this;
                 frm.Show();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1729,17 +1712,17 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_geral_alunos_instituicao_Click(object sender,EventArgs e)
         {
-            // var t = CarregaProgressoThread();
+            var t = CarregaProgressoThread();
             try
             {
                 frm_alunosporescola frm = new frm_alunosporescola(this,3);
                 frm.MdiParent = this;
                 frm.Show();
-                //   t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                // t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
 
@@ -1751,14 +1734,17 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_geral_num_sol_dia_Click(object sender,EventArgs e)
         {
+            var t = CarregaProgressoThread();
             try
             {
                 frm_solicitacoes_dia frm = new frm_solicitacoes_dia(3);
                 frm.MdiParent = this;
                 frm.Show();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1777,11 +1763,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1799,11 +1785,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1822,11 +1808,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1844,11 +1830,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1865,17 +1851,16 @@ namespace SIESC.UI
                 frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(6);
                 frmRelatorioGeral.MdiParent = this;
                 frmRelatorioGeral.Show();
-                t.Abort();
             }
             catch (Exception ex)
             {
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -1892,11 +1877,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1914,11 +1899,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1936,12 +1921,12 @@ namespace SIESC.UI
                 frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(25);
                 frmRelatorioGeral.MdiParent = this;
                 frmRelatorioGeral.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1961,12 +1946,11 @@ namespace SIESC.UI
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
 
-                t.Abort();
-
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -1995,12 +1979,12 @@ namespace SIESC.UI
                 frm_relatorio_instituicoes frm_relatorio = new frm_relatorio_instituicoes(1);
                 frm_relatorio.MdiParent = this;
                 frm_relatorio.Show();
-                t.Abort((t.ThreadState & ThreadState.Stopped) != 0);
+                if (t.IsAlive) t.Abort();
             }
 
             catch (Exception ex)
             {
-                t.Abort((t.ThreadState & ThreadState.Stopped) != 0);
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2018,10 +2002,11 @@ namespace SIESC.UI
                 frm_Relatorio_geral frm = new frm_Relatorio_geral(31);
                 frm.MdiParent = this;
                 frm.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
 
@@ -2040,12 +2025,12 @@ namespace SIESC.UI
                 frm_relatorio_fundamental frm = new frm_relatorio_fundamental(7);
                 frm.MdiParent = this;
                 frm.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
 
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2064,11 +2049,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2131,11 +2116,11 @@ namespace SIESC.UI
                 Listas frm_listas = new Listas(3);
                 frm_listas.MdiParent = this;
                 frm_listas.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2154,11 +2139,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2173,11 +2158,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2196,11 +2181,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2219,11 +2204,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2242,11 +2227,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2265,11 +2250,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2286,11 +2271,11 @@ namespace SIESC.UI
                 Listas frm_listas = new Listas(9);
                 frm_listas.MdiParent = this;
                 frm_listas.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2309,11 +2294,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2331,11 +2316,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2354,11 +2339,11 @@ namespace SIESC.UI
                 frm.MdiParent = this;
                 frm.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }
@@ -2395,11 +2380,11 @@ namespace SIESC.UI
                 frmRelatorioInstituicoes.MdiParent = this;
                 frmRelatorioInstituicoes.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }

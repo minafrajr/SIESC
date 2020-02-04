@@ -662,12 +662,11 @@ namespace SIESC.UI.UI.Autorizacoes
                 formCarteirinha.MdiParent = principalUi;
                 formCarteirinha.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
-
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,principalUi);
             }
         }

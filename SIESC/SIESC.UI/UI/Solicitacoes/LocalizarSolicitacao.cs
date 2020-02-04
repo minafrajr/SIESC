@@ -26,7 +26,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Objeto solicitacao
         /// </summary>
         private Solicitacao solicitacao;
-        
+
         /// <summary>
         /// Objeto de acesso as solicitações
         /// </summary>
@@ -36,12 +36,12 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Formulário Principal
         /// </summary>
         private Principal_UI _principalUi;
-        
+
         /// <summary>
         /// Objeto Aluno
         /// </summary>
         private Aluno aluno;
-        
+
         /// <summary>
         /// Obejto de acesso ao banco
         /// </summary>
@@ -80,7 +80,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -127,7 +127,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 controleInstituicao = new InstituicaoControl();
 
                 coordenadasInstituicao = new string[2];
-                
+
                 coordenadasInstituicao = controleInstituicao.RetornaCoordenasInstituicao((int)cbo_instituicao.SelectedValue);
 
                 controleZoneamento = new ZoneamentoControl();
@@ -137,7 +137,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 dgv_solicitacoes.DataSource = dt_solicitacoes;
 
                 dgv_solicitacoes.Columns.Remove("Mantenedor");
-                
+
                 dgv_solicitacoes.Columns["CodigoEscola"].Visible = false;
                 dgv_solicitacoes.Columns["CodigoSolicitacao"].DisplayIndex = 0;
                 dgv_solicitacoes.Columns["NomeAluno"].DisplayIndex = 1;
@@ -146,13 +146,13 @@ namespace SIESC.UI.UI.Solicitacoes
                 dgv_solicitacoes.Columns["DistanciaReta"].DisplayIndex = 3;
 
 
-              //  dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[4],ListSortDirection.Ascending);
-                t.Abort();
+                //  dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[4],ListSortDirection.Ascending);
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
-                Mensageiro.MensagemErro(exception, this);
+                if (t.IsAlive) t.Abort();
+                Mensageiro.MensagemErro(exception,this);
             }
         }
         /// <summary>
@@ -164,12 +164,12 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                Process.Start("https://maps.google.com/?q=@" +dgv_solicitacoes["latitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "," + dgv_solicitacoes["longitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString());
+                Process.Start("https://maps.google.com/?q=@" + dgv_solicitacoes["latitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "," + dgv_solicitacoes["longitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString());
 
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
         /// <summary>
@@ -193,9 +193,8 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
-            
         }
 
         /// <summary>
@@ -209,20 +208,20 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 controleAluno = new AlunoControl();
                 controleSolicitacao = new SolicitacaoControl();
-                
-                aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes["CodigoAluno", dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                solicitacao = controleSolicitacao.RetornaSolicitacao((int) dgv_solicitacoes["CodigoSolicitacao", dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes["CodigoAluno",dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                SolicitaVaga frm_solicitavaga = new SolicitaVaga(aluno, solicitacao, _principalUi) {MdiParent = _principalUi};
-                
+                solicitacao = controleSolicitacao.RetornaSolicitacao((int)dgv_solicitacoes["CodigoSolicitacao",dgv_solicitacoes.CurrentCellAddress.Y].Value);
+
+                SolicitaVaga frm_solicitavaga = new SolicitaVaga(aluno,solicitacao,_principalUi) { MdiParent = _principalUi };
+
                 frm_solicitavaga.Show();
-                
+
                 this.Close();
-             }
+            }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
         /// <summary>
@@ -236,12 +235,12 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 if (dgv_solicitacoes.RowCount > 0)
                 {
-                    RepassaDadosControles(); 
+                    RepassaDadosControles();
                 }
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
         /// <summary>
@@ -251,25 +250,24 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void btn_caminhando_Click(object sender,EventArgs e)
         {
-            var t =  CarregaProgressoThread();
+            var t = CarregaProgressoThread();
 
             try
             {
                 for (int i = 0; i <= dgv_solicitacoes.Rows.Count - 1; i++)
                 {
-                    dgv_solicitacoes["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(coordenadasInstituicao[0], coordenadasInstituicao[1],dgv_solicitacoes["latitude", i].Value.ToString(),dgv_solicitacoes["longitude", i].Value.ToString());
+                    dgv_solicitacoes["DistanciaCaminhando",i].Value = Metrics.CalculaDistanciaCaminhando(coordenadasInstituicao[0],coordenadasInstituicao[1],dgv_solicitacoes["latitude",i].Value.ToString(),dgv_solicitacoes["longitude",i].Value.ToString());
+                }
 
-
-                   }
-                
                 dgv_solicitacoes.Sort(dgv_solicitacoes.Columns[3],ListSortDirection.Ascending);
-                
-                t.Abort();
+
+                if (t.IsAlive) t.Abort();
+
             }
             catch (Exception exception)
             {
-                t.Abort();
-                Mensageiro.MensagemErro(exception, this);
+                if (t.IsAlive) t.Abort();
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 

@@ -166,11 +166,11 @@ namespace SIESC.UI.UI.Zoneamento
                     dgv_zoneamento["DistanciaCaminhando",i].Value = Metrics.CalculaDistanciaCaminhando(latitude,longitude,dgv_zoneamento["latitude",i].Value.ToString(),dgv_zoneamento["longitude",i].Value.ToString());
 
                 dgv_zoneamento.Sort(dgv_zoneamento.Columns[4],ListSortDirection.Ascending);
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 throw exception;
             }
 
@@ -403,11 +403,11 @@ namespace SIESC.UI.UI.Zoneamento
 
                 #endregion
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,this);
             }
         }
@@ -534,11 +534,11 @@ namespace SIESC.UI.UI.Zoneamento
                 if (!string.IsNullOrEmpty(lbl_latitude.Text))
                     Process.Start("https://maps.google.com/?q=@" + lbl_latitude.Text + "," + lbl_longitude.Text);
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception ex)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
         }

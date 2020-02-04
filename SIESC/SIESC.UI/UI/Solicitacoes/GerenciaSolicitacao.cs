@@ -598,11 +598,12 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
 
         }
@@ -652,11 +653,11 @@ namespace SIESC.UI.UI
                 frm_ficha_encaminhamento frm_fichaEncaminhamento = new frm_ficha_encaminhamento((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value) { MdiParent = PrincipalUI };
 
                 frm_fichaEncaminhamento.Show();
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,this);
             }
         }
@@ -683,11 +684,12 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
