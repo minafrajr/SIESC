@@ -51,6 +51,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Progresso";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
