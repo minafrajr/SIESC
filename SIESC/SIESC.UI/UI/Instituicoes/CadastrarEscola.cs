@@ -72,7 +72,7 @@ namespace SIESC.UI.UI
 		/// Construtora da classe para edição do objeto
 		/// </summary>
 		/// <param name="codigo"></param>
-		public CadastrarEscola(string codigo, Principal_UI principalUi)
+		public CadastrarEscola(string codigo,Principal_UI principalUi)
 		{
 			InitializeComponent();
 			this.principalUi = principalUi;
@@ -186,7 +186,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_novo_Click(object sender, EventArgs e)
+		private void btn_novo_Click(object sender,EventArgs e)
 		{
 			this.LimpaControles(listacontroles);
 		}
@@ -196,7 +196,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_salvar_Click(object sender, EventArgs e)
+		private void btn_salvar_Click(object sender,EventArgs e)
 		{
 			try
 			{
@@ -212,13 +212,13 @@ namespace SIESC.UI.UI
 
 				if (string.IsNullOrEmpty(lbl_codigo.Text))
 				{
-					if (controleInstituicao.Salvar(instituicao, true))
+					if (controleInstituicao.Salvar(instituicao,true))
 					{
 						instituicao.Codigo = (int)controleInstituicao.RetornaId(instituicao.NomeInstituicao);
 						PreencheListaAnosEnsino();
-						if (controleOfertaEnsino.Salvar(instituicao.Codigo, listaAnosEnsino))
+						if (controleOfertaEnsino.Salvar(instituicao.Codigo,listaAnosEnsino))
 						{
-							Mensageiro.MensagemConfirmaGravacao();
+							Mensageiro.MensagemConfirmaGravacao(principalUi);
 						}
 					}
 				}
@@ -226,14 +226,14 @@ namespace SIESC.UI.UI
 				{
 					instituicao.Codigo = Convert.ToInt16(lbl_codigo.Text);
 
-					if (controleInstituicao.Salvar(instituicao, false))
+					if (controleInstituicao.Salvar(instituicao,false))
 					{
 						controleOfertaEnsino.ExcluirAnosEnsino(instituicao.Codigo);
 						PreencheListaAnosEnsino();
 
-						if (controleOfertaEnsino.Salvar(instituicao.Codigo, listaAnosEnsino))
+						if (controleOfertaEnsino.Salvar(instituicao.Codigo,listaAnosEnsino))
 						{
-							Mensageiro.MensagemConfirmaAtualizacao();
+							Mensageiro.MensagemConfirmaAtualizacao(principalUi);
 						}
 					}
 				}
@@ -296,7 +296,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_limpar_Click(object sender, EventArgs e)
+		private void btn_limpar_Click(object sender,EventArgs e)
 		{
 			LimpaControles(listacontroles);
 		}
@@ -306,9 +306,9 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_cancelar_Click(object sender, EventArgs e)
+		private void btn_cancelar_Click(object sender,EventArgs e)
 		{
-			if (Mensageiro.MensagemCancelamento() == DialogResult.Yes)
+			if (Mensageiro.MensagemCancelamento(principalUi) == DialogResult.Yes)
 			{
 				this.Close();
 			}
@@ -320,7 +320,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_excluir_Click(object sender, EventArgs e)
+		private void btn_excluir_Click(object sender,EventArgs e)
 		{
 			try
 			{
@@ -328,7 +328,7 @@ namespace SIESC.UI.UI
 				{
 					int codigoEscola = Convert.ToInt16(lbl_codigo.Text);
 
-					if (Mensageiro.MensagemExclusao(txt_nome.Text) == DialogResult.Yes)
+					if (Mensageiro.MensagemExclusao(txt_nome.Text,principalUi) == DialogResult.Yes)
 					{
 						controleInstituicao = new InstituicaoControl();
 						controleOfertaEnsino = new OfertaEnsinoControl();
@@ -337,7 +337,7 @@ namespace SIESC.UI.UI
 						{
 							if (controleInstituicao.Excluir(codigoEscola))
 							{
-								Mensageiro.MensagemConfirmaExclusao();
+								Mensageiro.MensagemConfirmaExclusao(principalUi);
 								this.LimpaControles(listacontroles);
 							}
 						}
@@ -358,7 +358,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void msk_tel1_Leave(object sender, EventArgs e)
+		private void msk_tel1_Leave(object sender,EventArgs e)
 		{
 			try
 			{
@@ -375,7 +375,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void msk_tel2_Leave(object sender, EventArgs e)
+		private void msk_tel2_Leave(object sender,EventArgs e)
 		{
 			try
 			{
@@ -392,7 +392,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void msk_tel3_Leave(object sender, EventArgs e)
+		private void msk_tel3_Leave(object sender,EventArgs e)
 		{
 			try
 			{
@@ -471,7 +471,7 @@ namespace SIESC.UI.UI
 			foreach (TreeNode node in nodes)
 			{
 				node.Checked = false;
-				CheckChildren(node, false);
+				CheckChildren(node,false);
 			}
 
 		}
@@ -480,11 +480,11 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="rootNode"></param>
 		/// <param name="isChecked"></param>
-		private void CheckChildren(TreeNode rootNode, bool isChecked)
+		private void CheckChildren(TreeNode rootNode,bool isChecked)
 		{
 			foreach (TreeNode node in rootNode.Nodes)
 			{
-				CheckChildren(node, isChecked);
+				CheckChildren(node,isChecked);
 				node.Checked = isChecked;
 			}
 		}
@@ -493,7 +493,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void cbo_bairrro_DropDown(object sender, EventArgs e)
+		private void cbo_bairrro_DropDown(object sender,EventArgs e)
 		{
 			//carrega combobox de bairros
 			// TODO: esta linha de código carrega dados na tabela 'siescDataSet.bairros'. Você pode movê-la ou removê-la conforme necessário.
@@ -507,7 +507,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_funcionarios_Click(object sender, EventArgs e)
+		private void btn_funcionarios_Click(object sender,EventArgs e)
 		{
 			foreach (Form mdiChild in principalUi.MdiChildren)
 			{
@@ -596,7 +596,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_localizarcoord_Click(object sender, EventArgs e)
+		private void btn_localizarcoord_Click(object sender,EventArgs e)
 		{
 			try
 			{
@@ -609,18 +609,18 @@ namespace SIESC.UI.UI
 				{
 					string[] coord = new string[2];
 
-					coord = Zoneador.Georrefencia(msk_cep.Text, txt_numero_resid.Text);
+					coord = Zoneador.Georrefencia(msk_cep.Text,txt_numero_resid.Text);
 
 					msk_latitude.Text = coord[0];
 					msk_longitude.Text = coord[1];
 
 					if (!string.IsNullOrEmpty(lbl_codigo.Text))
 					{
-						if (Mensageiro.MensagemPergunta("Deseja salvar as coordenadas atualizadas da escola?").Equals(DialogResult.Yes))
+						if (Mensageiro.MensagemPergunta("Deseja salvar as coordenadas atualizadas da escola?",principalUi).Equals(DialogResult.Yes))
 						{
-							if (controleInstituicao.AtualizaCoordenadas(coord[0], coord[1], Convert.ToInt32(lbl_codigo.Text)))
+							if (controleInstituicao.AtualizaCoordenadas(coord[0],coord[1],Convert.ToInt32(lbl_codigo.Text)))
 							{
-								Mensageiro.MensagemConfirmaAtualizacao();
+								Mensageiro.MensagemConfirmaAtualizacao(principalUi);
 							}
 						}
 					}
@@ -636,14 +636,14 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_buscarcep_Click(object sender, EventArgs e)
+		private void btn_buscarcep_Click(object sender,EventArgs e)
 		{
 			try
 			{
 				this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
 				BuscaCep cep = new BuscaCep();
 
-				cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipo_Logradouro);
+				cep.buscadorCEP(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipo_Logradouro);
 
 			}
 			catch (Exception ex)
@@ -702,7 +702,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void trvw_anoensino_AfterCheck(object sender, TreeViewEventArgs e)
+		private void trvw_anoensino_AfterCheck(object sender,TreeViewEventArgs e)
 		{
 			if (e.Action != TreeViewAction.Unknown)
 			{
@@ -712,7 +712,7 @@ namespace SIESC.UI.UI
 					/* Calls the CheckAllChildNodes method, passing in the current 
 					Checked value of the TreeNode whose checked state changed. */
 
-					this.CheckAllChildNodes(e.Node, e.Node.Checked);
+					this.CheckAllChildNodes(e.Node,e.Node.Checked);
 				}
 			}
 		}
@@ -722,7 +722,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="treeNode">A coleção de nós</param>
 		/// <param name="nodeChecked">o valor boleano da propriedade checked</param>
-		private void CheckAllChildNodes(TreeNode treeNode, bool nodeChecked)
+		private void CheckAllChildNodes(TreeNode treeNode,bool nodeChecked)
 		{
 			if (!nodeChecked)
 			{
@@ -734,7 +734,7 @@ namespace SIESC.UI.UI
 				if (node.Nodes.Count > 0 && !node.Level.Equals(1))
 				{
 					// If the current node has child nodes, call the CheckAllChildsNodes method recursively.
-					this.CheckAllChildNodes(node, nodeChecked);
+					this.CheckAllChildNodes(node,nodeChecked);
 				}
 			}
 		}
@@ -790,7 +790,7 @@ namespace SIESC.UI.UI
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_saberCep_Click(object sender, EventArgs e)
+		private void btn_saberCep_Click(object sender,EventArgs e)
 		{
 			try
 			{
@@ -812,12 +812,12 @@ namespace SIESC.UI.UI
 		{
 			try
 			{
-			    if(!string.IsNullOrEmpty(msk_latitude.Text)&& !string.IsNullOrEmpty(msk_longitude.Text))
-				    Process.Start("https://maps.google.com/?q=@" + msk_latitude.Text + "," + msk_longitude.Text);
+				if (!string.IsNullOrEmpty(msk_latitude.Text) && !string.IsNullOrEmpty(msk_longitude.Text))
+					Process.Start("https://maps.google.com/?q=@" + msk_latitude.Text + "," + msk_longitude.Text);
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex, this);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 	}

@@ -119,7 +119,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_novo_Click(object sender, EventArgs e)
+        private void btn_novo_Click(object sender,EventArgs e)
         {
             LimpaControles();
         }
@@ -222,7 +222,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_salvar_Click(object sender, EventArgs e)
+        private void btn_salvar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -236,11 +236,11 @@ namespace SIESC.UI.UI
 
                 if (string.IsNullOrEmpty(lbl_codigoAluno.Text))
                 {
-                    if (controleAluno.Salvar(aluno, true))
+                    if (controleAluno.Salvar(aluno,true))
                     {
                         aluno.Id = controleAluno.PesquisaID(aluno);
 
-                        Mensageiro.MensagemAviso($"Aluno {aluno} foi salvo com sucesso!");
+                        Mensageiro.MensagemAviso($"Aluno {aluno} foi salvo com sucesso!",this);
 
                         LimpaControles();
                     }
@@ -249,9 +249,9 @@ namespace SIESC.UI.UI
                 {
                     aluno.Id = Convert.ToInt32(lbl_codigoAluno.Text);
 
-                    if (controleAluno.Salvar(aluno, false))
+                    if (controleAluno.Salvar(aluno,false))
                     {
-                        Mensageiro.MensagemAviso($"Aluno {aluno} Código: {aluno.Id} foi atualizado com sucesso!");
+                        Mensageiro.MensagemAviso($"Aluno {aluno} Código: {aluno.Id} foi atualizado com sucesso!",this);
                         LimpaControles();
                     }
                 }
@@ -268,7 +268,7 @@ namespace SIESC.UI.UI
         /// <param name="exception"></param>
         private void MensagemErro(Exception exception)
         {
-            Mensageiro.MensagemErro(exception, this);
+            Mensageiro.MensagemErro(exception,this);
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_Click(object sender, EventArgs e)
+        private void btn_limpar_Click(object sender,EventArgs e)
         {
             LimpaControles();
         }
@@ -286,7 +286,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
             this.Close();
         }
@@ -296,7 +296,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(object sender, EventArgs e)
+        private void btn_excluir_Click(object sender,EventArgs e)
         {
             try
             {
@@ -313,7 +313,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_telefone1_Leave(object sender, EventArgs e)
+        private void msk_telefone1_Leave(object sender,EventArgs e)
         {
             base.SetMask(msk_telefone1);
         }
@@ -323,7 +323,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_telefone2_Leave(object sender, EventArgs e)
+        private void msk_telefone2_Leave(object sender,EventArgs e)
         {
             base.SetMask(msk_telefone2);
         }
@@ -333,7 +333,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_telefone3_Leave(object sender, EventArgs e)
+        private void msk_telefone3_Leave(object sender,EventArgs e)
         {
             base.SetMask(msk_telefone3);
 
@@ -343,7 +343,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_deficiencia_DropDown(object sender, EventArgs e)
+        private void cbo_deficiencia_DropDown(object sender,EventArgs e)
         {
             try
             {
@@ -351,7 +351,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
 
         }
@@ -360,7 +360,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpacombo_Click(object sender, EventArgs e)
+        private void btn_limpacombo_Click(object sender,EventArgs e)
         {
             cbo_deficiencia.SelectedIndex = -1;
         }
@@ -380,21 +380,21 @@ namespace SIESC.UI.UI
             lbl_idade.Text = $"{anos} anos";
         }
 
-        private void msk_telefone1_Enter(object sender, EventArgs e)
+        private void msk_telefone1_Enter(object sender,EventArgs e)
         {
             msk_telefone1.Mask = @"(00)00000-0000";
         }
 
-        private void msk_telefone2_Enter(object sender, EventArgs e)
+        private void msk_telefone2_Enter(object sender,EventArgs e)
         {
             msk_telefone2.Mask = @"(00)00000-0000";
         }
-        private void msk_telefone3_Enter(object sender, EventArgs e)
+        private void msk_telefone3_Enter(object sender,EventArgs e)
         {
             msk_telefone3.Mask = @"(00)00000-0000";
         }
 
-        private void msk_data_nascimento_Leave(object sender, EventArgs e)
+        private void msk_data_nascimento_Leave(object sender,EventArgs e)
         {
             try
             {

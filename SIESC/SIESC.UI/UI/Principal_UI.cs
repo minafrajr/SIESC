@@ -126,7 +126,7 @@ namespace SIESC.UI
             }
             catch (MySqlException ex)
             {
-                if (Mensageiro.MensagemPergunta($"Não há conexão com o banco!{Environment.NewLine}Verifique se possui acesso à rede.{Environment.NewLine}{Environment.NewLine}Erro: {ex.Message}{Environment.NewLine}{Environment.NewLine}Deseja tentar Reconectar?").Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemPergunta($"Não há conexão com o banco!{Environment.NewLine}Verifique se possui acesso à rede.{Environment.NewLine}{Environment.NewLine}Erro: {ex.Message}{Environment.NewLine}{Environment.NewLine}Deseja tentar Reconectar?",this).Equals(DialogResult.Yes))
                 {
                     Connection();
                 }
@@ -138,7 +138,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                    Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
             return false;
         }
@@ -416,7 +416,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -444,7 +444,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -472,7 +472,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -724,7 +724,7 @@ namespace SIESC.UI
             catch (Exception exception)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
 
         }
@@ -962,7 +962,7 @@ namespace SIESC.UI
             {
                 t.Abort();
 
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
@@ -1011,7 +1011,7 @@ namespace SIESC.UI
             {
 
                 t.Abort();
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
         /// <summary>
@@ -1032,7 +1032,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
@@ -1058,7 +1058,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
             finally
             {
@@ -1084,7 +1084,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 t.Abort();
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
             finally
             {

@@ -749,7 +749,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                             if (Mensageiro
                                 .MensagemPergunta(
-                                    $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Caso tenha alterado a escola encaminhada IMPRIMA OUTRA FICHA!")
+                                    $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Caso tenha alterado a escola encaminhada IMPRIMA OUTRA FICHA!",this)
                                 .Equals(DialogResult.Yes))
                             {
                                 frm_ficha_solicitacao frmSolicitacao =
@@ -771,7 +771,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                         if (Mensageiro
                             .MensagemPergunta(
-                                $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?")
+                                $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?",this)
                             .Equals(DialogResult.Yes))
                         {
                             frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(
@@ -1043,7 +1043,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void btn_cancelar_Click(object sender,EventArgs e)
         {
-            if (Mensageiro.MensagemCancelamento().Equals(DialogResult.Yes))
+            if (Mensageiro.MensagemCancelamento(this).Equals(DialogResult.Yes))
             {
                 this.Close();
             }
@@ -1358,7 +1358,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             if (anos >= 15)
             {
-                Mensageiro.MensagemAviso($"O aluno possui {anos} anos.{Environment.NewLine} Favor Verificar!");
+                Mensageiro.MensagemAviso($"O aluno possui {anos} anos.{Environment.NewLine} Favor Verificar!",_principalUi);
             }
         }
 
@@ -1389,7 +1389,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     //throw new Exception(
                     //    string.Format("ATENÇÃO: o nome digitado JÁ EXISTE no banco de dados!{0}CONTINUAR A OPERAÇÃO PODERÁ CAUSAR DUPLICIDADE DE ALUNOS.{0}ACESSE O GERENCIAMENTO DE ALUNOS E CLICK EM SOLICITAR VAGA.",Environment.NewLine));
 
-                    Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!");
+                    Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!",_principalUi);
                 }
             }
             catch (Exception ex)
@@ -1527,7 +1527,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     if (_controleSolicitacao.GravarCodigoEi(_solicitacao,_aluno))
                     {
-                        Mensageiro.MensagemAviso("Código de Expediente Interno gravado com sucesso!");
+                        Mensageiro.MensagemAviso("Código de Expediente Interno gravado com sucesso!",_principalUi);
                         this.Close();
                     }
                 }
@@ -1754,13 +1754,13 @@ namespace SIESC.UI.UI.Solicitacoes
                     }
 
                 }
-                
+
                 if (t.IsAlive) t.Abort();
 
                 if (cbo_instituicao_solicitada.SelectedIndex == -1)
                 {
 
-                    Mensageiro.MensagemAviso("Não foi possível encontrar uma instituição. Por favor selecione uma!");
+                    Mensageiro.MensagemAviso("Não foi possível encontrar uma instituição. Por favor selecione uma!",_principalUi);
                 }
                 cbo_instituicao_solicitada.Refresh();
             }

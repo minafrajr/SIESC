@@ -53,7 +53,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// Construtor da classe funcionario a partir do id do funcionario
         /// </summary>
         /// <param name="func"></param>
-        public CadastroFuncionario(Funcionario func, Principal_UI principal, string numeroautorizacao)
+        public CadastroFuncionario(Funcionario func,Principal_UI principal,string numeroautorizacao)
         {
             PrincipalUi = principal;
             InitializeComponent();
@@ -75,7 +75,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="func"></param>
         /// <param name="autoriz"></param>
-        public CadastroFuncionario(Funcionario func, Autorizacao autoriz, Principal_UI principal)
+        public CadastroFuncionario(Funcionario func,Autorizacao autoriz,Principal_UI principal)
         {
             PrincipalUi = principal;
 
@@ -167,7 +167,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_salvar_Click(object sender, EventArgs e)
+        private void btn_salvar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -189,7 +189,7 @@ namespace SIESC.UI.UI.Funcionarios
                 {
                     if (string.IsNullOrEmpty(msk_cpf.Text))
                     {
-                        if (controlFuncionario.PesquisaID(dtp_datanasc.Value, txt_nome.Text) > 0)
+                        if (controlFuncionario.PesquisaID(dtp_datanasc.Value,txt_nome.Text) > 0)
                         {
                             //verifica se já existe o funcionário no banco.
                             throw new Exception($"Não foi possível salvar!{Environment.NewLine}Já existe o funcionário no sistema.{Environment.NewLine}Por favor localize e edite o funcionário através do botão Editar na tela Gerenciar Funcionários.");
@@ -212,26 +212,26 @@ namespace SIESC.UI.UI.Funcionarios
                 {
                     funcionario.idFuncionario = (int)exist;
 
-                    if (controlFuncionario.Salvar(funcionario, false)) //atualiza no banco o objeto
+                    if (controlFuncionario.Salvar(funcionario,false)) //atualiza no banco o objeto
                     {
-                        Mensageiro.MensagemConfirmaAtualizacao();
+                        Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
                     }
                 }
                 else
                 {
-                    if (controlFuncionario.Salvar(funcionario, true)) //salva no banco o objeto
+                    if (controlFuncionario.Salvar(funcionario,true)) //salva no banco o objeto
                     {
-                        Mensageiro.MensagemConfirmaGravacao();
+                        Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
                     }
                 }
                 LimpaCampos(listaControles);
-                }
+            }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
-        
+
         /// <summary>
         /// Verifica se existem campos dos formulários sem preencher
         /// </summary>
@@ -309,20 +309,20 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
-            if (Mensageiro.MensagemCancelamento() == DialogResult.Yes)
+            if (Mensageiro.MensagemCancelamento(PrincipalUi) == DialogResult.Yes)
             {
                 this.Close();
             }
         }
-        
+
         /// <summary>
         /// Exclui um funionário do banco
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(Object sender, EventArgs e)
+        private void btn_excluir_Click(Object sender,EventArgs e)
         {
             try
             {
@@ -335,18 +335,18 @@ namespace SIESC.UI.UI.Funcionarios
 
                 //funcionario = CriarFuncionario();
 
-                if (Mensageiro.MensagemExclusao(funcionario) == DialogResult.Yes)
+                if (Mensageiro.MensagemExclusao(funcionario,PrincipalUi) == DialogResult.Yes)
                 {
                     if (controlFuncionario.Deletar(Convert.ToInt16(lbl_codigofunc.Text)))
                     {
-                        Mensageiro.MensagemConfirmaExclusao();
+                        Mensageiro.MensagemConfirmaExclusao(PrincipalUi);
                         LimpaCampos(listaControles);
                     }
                 }
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -414,7 +414,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_buscarcep_Click(object sender, EventArgs e)
+        private void btn_buscarcep_Click(object sender,EventArgs e)
         {
             try
             {
@@ -429,7 +429,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -438,7 +438,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_Click(object sender, EventArgs e)
+        private void btn_limpar_Click(object sender,EventArgs e)
         {
             LimpaCampos(listaControles);
         }
@@ -448,7 +448,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_autorizar_Click(object sender, EventArgs e)
+        private void btn_autorizar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -459,7 +459,7 @@ namespace SIESC.UI.UI.Funcionarios
 
                 funcionario = CriarFuncionario();
 
-                SolicitarAutorizacao frmSolicitarAutorizacao = new SolicitarAutorizacao(funcionario, PrincipalUi);
+                SolicitarAutorizacao frmSolicitarAutorizacao = new SolicitarAutorizacao(funcionario,PrincipalUi);
 
                 frmSolicitarAutorizacao.MdiParent = PrincipalUi;
 
@@ -469,7 +469,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -478,7 +478,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_novo_Click(object sender, EventArgs e)
+        private void btn_novo_Click(object sender,EventArgs e)
         {
             LimpaCampos(listaControles);
         }
@@ -488,7 +488,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_tel1_Leave(object sender, EventArgs e)
+        private void msk_tel1_Leave(object sender,EventArgs e)
         {
             try
             {
@@ -496,7 +496,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -505,7 +505,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_tel2_Leave(object sender, EventArgs e)
+        private void msk_tel2_Leave(object sender,EventArgs e)
         {
             try
             {
@@ -522,7 +522,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_tel3_Leave(object sender, EventArgs e)
+        private void msk_tel3_Leave(object sender,EventArgs e)
         {
             try
             {
@@ -539,7 +539,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_instituicao_DropDown(object sender, EventArgs e)
+        private void cbo_instituicao_DropDown(object sender,EventArgs e)
         {
             //esta linha de código carrega dados na tabela 'siescDataSet.instituicoes'. Você pode movê-la ou removê-la conforme necessário.
             this.instituicoesTableAdapter.FillByMunicipioCreche(this.siescDataSet.instituicoes);
@@ -550,7 +550,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_cargo_DropDown(object sender, EventArgs e)
+        private void cbo_cargo_DropDown(object sender,EventArgs e)
         {
             try
             {
@@ -568,7 +568,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_cargoatual_DropDown(object sender, EventArgs e)
+        private void cbo_cargoatual_DropDown(object sender,EventArgs e)
         {
             try
             {
@@ -585,7 +585,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_cbo_cargoOrigem_Click(object sender, EventArgs e)
+        private void btn_limpar_cbo_cargoOrigem_Click(object sender,EventArgs e)
         {
             try
             {
@@ -602,7 +602,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_cbo_cargoAtual_Click(object sender, EventArgs e)
+        private void btn_limpar_cbo_cargoAtual_Click(object sender,EventArgs e)
         {
             try
             {
@@ -619,7 +619,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_saberCep_Click(object sender, EventArgs e)
+        private void btn_saberCep_Click(object sender,EventArgs e)
         {
             try
             {
