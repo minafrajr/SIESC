@@ -70,15 +70,15 @@ namespace SIESC.UI.UI.Autorizacoes
             CarregaGridView();
             FormataGridView();
         }
-               
+
         /// <summary>
         /// Evento de carregamento do formulário
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GerenciarAutorizacoes_Load(object sender, EventArgs e)
+        private void GerenciarAutorizacoes_Load(object sender,EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'siescDataSet1.mantenedor'. Você pode movê-la ou removê-la conforme necessário.
+            // esta linha de código carrega dados na tabela 'siescDataSet1.mantenedor'. Você pode movê-la ou removê-la conforme necessário.
             this.mantenedorTableAdapter.Fill(this.siescDataSet1.mantenedor);
             txt_nome.Focus();
             rdb_nome.Checked = true;
@@ -99,7 +99,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 sit.Image = Resources.circle_blue;
 
-                dgv_autorizacoes.Columns.Insert(0, sit);
+                dgv_autorizacoes.Columns.Insert(0,sit);
             }
             catch (Exception exception)
             {
@@ -158,7 +158,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
         /// <summary>
@@ -172,11 +172,11 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 dgv_autorizacoes.DataSource = controleAutorizacao.Listar(statusautorizacao);
 
-                lbl_totalregistros.Text = string.Format("{0} autorizações", dgv_autorizacoes.Rows.Count);
+                lbl_totalregistros.Text = string.Format("{0} autorizações",dgv_autorizacoes.Rows.Count);
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,principalUi);
             }
         }
 
@@ -185,7 +185,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_localizar_Click(object sender, EventArgs e)
+        private void btn_localizar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -197,34 +197,34 @@ namespace SIESC.UI.UI.Autorizacoes
                     switch (_localizar)
                     {
                         case Localizar.nome:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByNome("%" + txt_nome.Text + "%", statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByNome("%" + txt_nome.Text + "%",statusautorizacao);
                             break;
                         case Localizar.instituicao:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetbyInstituicao(cbo_instituicoes.Text, statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetbyInstituicao(cbo_instituicoes.Text,statusautorizacao);
                             break;
                         case Localizar.datavenc:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByValidade(Convert.ToInt16(cbo_anovencimento.Text), statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByValidade(Convert.ToInt16(cbo_anovencimento.Text),statusautorizacao);
                             break;
                         case Localizar.autorizacao:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByAutorizacao(txt_numautorizacao.Text, statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByAutorizacao(txt_numautorizacao.Text,statusautorizacao);
                             break;
                         case Localizar.cargo:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByTipo(cbo_cargo.Text.ToLower(), statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByTipo(cbo_cargo.Text.ToLower(),statusautorizacao);
                             break;
                         case Localizar.anoexpedicao:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByAnoExpedicao(cbo_anoexpdicao.Text, statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByAnoExpedicao(cbo_anoexpdicao.Text,statusautorizacao);
                             break;
                         case Localizar.mantenedor:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByMantenedor(cbo_mantenedor.SelectedValue.ToString(), statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByMantenedor(cbo_mantenedor.SelectedValue.ToString(),statusautorizacao);
                             break;
                     }
-                    lbl_totalregistros.Text = string.Format("{0} autorizações", dgv_autorizacoes.Rows.Count);
+                    lbl_totalregistros.Text = string.Format("{0} autorizações",dgv_autorizacoes.Rows.Count);
                     FormataGridView();
                 }
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,principalUi);
             }
         }
 
@@ -233,7 +233,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_novo_Click(object sender, EventArgs e)
+        private void btn_novo_Click(object sender,EventArgs e)
         {
             try
             {
@@ -256,7 +256,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,principalUi);
             }
         }
 
@@ -265,7 +265,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_instituicoes_DropDown(object sender, EventArgs e)
+        private void cbo_instituicoes_DropDown(object sender,EventArgs e)
         {
             instituicoesTableAdapter1.FillByMunicipioCreche(this.siescDataSet1.instituicoes);
         }
@@ -275,10 +275,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_nome_CheckedChanged(object sender, EventArgs e)
+        private void rdb_nome_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.nome;
-            this.HabiltaControles(true, false, false, false, false, false, false);
+            this.HabiltaControles(true,false,false,false,false,false,false);
             txt_nome.Focus();
         }
 
@@ -287,10 +287,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_numautorizacao_CheckedChanged(object sender, EventArgs e)
+        private void rdb_numautorizacao_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.autorizacao;
-            this.HabiltaControles(false, true, false, false, false, false, false);
+            this.HabiltaControles(false,true,false,false,false,false,false);
             txt_numautorizacao.Focus();
         }
 
@@ -299,10 +299,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_datavencimento_CheckedChanged(object sender, EventArgs e)
+        private void rdb_datavencimento_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.datavenc;
-            this.HabiltaControles(false, false, true, false, false, false, false);
+            this.HabiltaControles(false,false,true,false,false,false,false);
             cbo_anovencimento.Focus();
         }
 
@@ -311,10 +311,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_escola_CheckedChanged(object sender, EventArgs e)
+        private void rdb_escola_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.instituicao;
-            this.HabiltaControles(false, false, false, true, false, false, false);
+            this.HabiltaControles(false,false,false,true,false,false,false);
             cbo_instituicoes.Focus();
         }
 
@@ -323,10 +323,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_cargo_CheckedChanged(object sender, EventArgs e)
+        private void rdb_cargo_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.cargo;
-            this.HabiltaControles(false, false, false, false, true, false, false);
+            this.HabiltaControles(false,false,false,false,true,false,false);
             cbo_cargo.Focus();
         }
         /// <summary>
@@ -334,10 +334,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_dataexpedicao_CheckedChanged(object sender, EventArgs e)
+        private void rdb_dataexpedicao_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.anoexpedicao;
-            this.HabiltaControles(false, false, false, false, false, true, false);
+            this.HabiltaControles(false,false,false,false,false,true,false);
             cbo_anoexpdicao.Focus();
         }
         /// <summary>
@@ -345,10 +345,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_tipoInstituicao_CheckedChanged(object sender, EventArgs e)
+        private void rdb_tipoInstituicao_CheckedChanged(object sender,EventArgs e)
         {
             _localizar = Localizar.mantenedor;
-            this.HabiltaControles(false, false, false, false, false, false, true);
+            this.HabiltaControles(false,false,false,false,false,false,true);
             cbo_anoexpdicao.Focus();
         }
         /// <summary>
@@ -359,7 +359,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="datavenc"></param>
         /// <param name="escola"></param>
         /// <param name="cargo"></param>
-        private void HabiltaControles(bool nome, bool numautoriz, bool datavenc, bool escola, bool cargo, bool anoexpedicao, bool tipoinstituicao)
+        private void HabiltaControles(bool nome,bool numautoriz,bool datavenc,bool escola,bool cargo,bool anoexpedicao,bool tipoinstituicao)
         {
             txt_nome.Enabled = nome;
             txt_numautorizacao.Enabled = numautoriz;
@@ -459,7 +459,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
@@ -468,7 +468,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editarAutorizacao_Click(object sender, EventArgs e)
+        private void btn_editarAutorizacao_Click(object sender,EventArgs e)
         {
             try
             {
@@ -485,7 +485,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 if (!funcionario.Equals(null))
                 {
-                    SolicitarAutorizacao frm_solicitarautorizacao = new SolicitarAutorizacao(funcionario, autorizacao, principalUi);
+                    SolicitarAutorizacao frm_solicitarautorizacao = new SolicitarAutorizacao(funcionario,autorizacao,principalUi);
 
                     frm_solicitarautorizacao.MdiParent = principalUi;
 
@@ -496,7 +496,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
@@ -505,7 +505,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editarfuncionario_Click(object sender, EventArgs e)
+        private void btn_editarfuncionario_Click(object sender,EventArgs e)
         {
             try
             {
@@ -521,7 +521,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 if (!funcionario.Equals(null))
                 {
-                    CadastroFuncionario frm_cadstrafuncionario = new CadastroFuncionario(funcionario, principalUi, txt_numautorizacao.Text);
+                    CadastroFuncionario frm_cadstrafuncionario = new CadastroFuncionario(funcionario,principalUi,txt_numautorizacao.Text);
 
                     frm_cadstrafuncionario.MdiParent = principalUi;
 
@@ -532,7 +532,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
@@ -541,7 +541,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_autorizacoes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_autorizacoes_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
         {
             RepassaDados();
         }
@@ -552,16 +552,16 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             try
             {
-                txt_nome.Text = dgv_autorizacoes[1, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                txt_numautorizacao.Text = dgv_autorizacoes[4, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                cbo_cargo.Text = dgv_autorizacoes[3, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                cbo_instituicoes.Text = dgv_autorizacoes[5, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                cbo_anovencimento.Text = dgv_autorizacoes[6, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                msk_cpf.Text = dgv_autorizacoes[2, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                txt_nome.Text = dgv_autorizacoes[1,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                txt_numautorizacao.Text = dgv_autorizacoes[4,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                cbo_cargo.Text = dgv_autorizacoes[3,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                cbo_instituicoes.Text = dgv_autorizacoes[5,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                cbo_anovencimento.Text = dgv_autorizacoes[6,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                msk_cpf.Text = dgv_autorizacoes[2,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
@@ -573,17 +573,17 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             try
             {
-                if (!dgv_autorizacoes[13, dgv_autorizacoes.CurrentCellAddress.Y].Value.Equals(null))
+                if (!dgv_autorizacoes[13,dgv_autorizacoes.CurrentCellAddress.Y].Value.Equals(null))
                 {
                     controleFuncionario = new FuncionarioControl();
 
-                    return controleFuncionario.RetornaFuncionario((int)dgv_autorizacoes[13, dgv_autorizacoes.CurrentCellAddress.Y].Value);
+                    return controleFuncionario.RetornaFuncionario((int)dgv_autorizacoes[13,dgv_autorizacoes.CurrentCellAddress.Y].Value);
                 }
                 else { throw new Exception("Nenhum item selecionado!"); }
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
             return null;
         }
@@ -598,11 +598,11 @@ namespace SIESC.UI.UI.Autorizacoes
             {
                 controleAutorizacao = new AutorizacaoControl();
 
-                return controleAutorizacao.RetornaAutorizacao(dgv_autorizacoes[4, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString());
+                return controleAutorizacao.RetornaAutorizacao(dgv_autorizacoes[4,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString());
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
             return null;
         }
@@ -612,7 +612,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(object sender, EventArgs e)
+        private void btn_excluir_Click(object sender,EventArgs e)
         {
             try
             {
@@ -621,22 +621,22 @@ namespace SIESC.UI.UI.Autorizacoes
                     throw new Exception("Selecione uma Autorização para excluir!");
                 }
 
-                if (Mensageiro.MensagemPergunta(string.Format("Deseja Excluir a solicitação nº {0}", txt_numautorizacao.Text)).Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemPergunta($"Deseja Excluir a solicitação nº {txt_numautorizacao.Text}",principalUi).Equals(DialogResult.Yes))
                 {
                     controleAutorizacao = new AutorizacaoControl();
                     if (controleAutorizacao.Excluir(
-                        Convert.ToInt16(dgv_autorizacoes[12, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),
+                        Convert.ToInt16(dgv_autorizacoes[12,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),
                         txt_numautorizacao.Text))
                     {
-                        Mensageiro.MensagemConfirmaExclusao();
-                        
+                        Mensageiro.MensagemConfirmaExclusao(principalUi);
+
                         btn_localizar_Click(null,null);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
         /// <summary>
@@ -644,7 +644,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_emitircarteirinha_Click(object sender, EventArgs e)
+        private void btn_emitircarteirinha_Click(object sender,EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -657,18 +657,17 @@ namespace SIESC.UI.UI.Autorizacoes
                     }
                 }
 
-                frm_carteirinha formCarteirinha = new frm_carteirinha((int)dgv_autorizacoes[13, dgv_autorizacoes.CurrentCellAddress.Y].Value, dgv_autorizacoes[4, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString(), dgv_autorizacoes[10, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString(), principalUi);
+                frm_carteirinha formCarteirinha = new frm_carteirinha((int)dgv_autorizacoes[13,dgv_autorizacoes.CurrentCellAddress.Y].Value,dgv_autorizacoes[4,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString(),dgv_autorizacoes[10,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString(),principalUi);
 
                 formCarteirinha.MdiParent = principalUi;
                 formCarteirinha.Show();
 
-                t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                t.Abort();
-
-                Mensageiro.MensagemErro(exception, this);
+                if (t.IsAlive) t.Abort();
+                Mensageiro.MensagemErro(exception,principalUi);
             }
         }
 
@@ -691,7 +690,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
             this.Close();
         }
@@ -700,27 +699,28 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_inativar_autorizacao_Click(object sender, EventArgs e)
+        private void btn_inativar_autorizacao_Click(object sender,EventArgs e)
         {
             try
             {
                 controleAutorizacao = new AutorizacaoControl();
 
-                var numauto = dgv_autorizacoes[4, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                var numauto = dgv_autorizacoes[4,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
 
                 if (
-                    Mensageiro.MensagemPergunta(string.Format("Deseja inativar a autorização nº {0} ?", numauto))
+                    Mensageiro.MensagemPergunta($"Deseja inativar a autorização nº {numauto} ?",principalUi)
                         .Equals(DialogResult.Yes))
                 {
-                    if (controleAutorizacao.InativaAutoricacao(Convert.ToInt32(dgv_autorizacoes[13, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),Convert.ToInt32(dgv_autorizacoes[14, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),numauto)){
-                        Mensageiro.MensagemAviso(string.Format("A autorização nº {0} foi INATIVADA com sucesso!", numauto));
+                    if (controleAutorizacao.InativaAutoricacao(Convert.ToInt32(dgv_autorizacoes[13,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),Convert.ToInt32(dgv_autorizacoes[14,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),numauto))
+                    {
+                        Mensageiro.MensagemAviso($"A autorização nº {numauto} foi INATIVADA com sucesso!",principalUi);
                         btn_localizar_Click(null,null);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
@@ -729,7 +729,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_ativas_Click(object sender, EventArgs e)
+        private void rdb_ativas_Click(object sender,EventArgs e)
         {
             try
             {
@@ -740,7 +740,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
         /// <summary>
@@ -748,7 +748,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_inativa_Click(object sender, EventArgs e)
+        private void rdb_inativa_Click(object sender,EventArgs e)
         {
             try
             {
@@ -759,7 +759,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
         /// <summary>
@@ -767,7 +767,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_todasautoriz_Click(object sender, EventArgs e)
+        private void rdb_todasautoriz_Click(object sender,EventArgs e)
         {
             try
             {
@@ -778,7 +778,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
         /// <summary>
@@ -786,7 +786,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_autorizacoes_Sorted(object sender, EventArgs e)
+        private void dgv_autorizacoes_Sorted(object sender,EventArgs e)
         {
             FormataGridView();
         }

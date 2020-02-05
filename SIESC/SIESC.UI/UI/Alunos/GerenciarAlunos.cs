@@ -48,7 +48,7 @@ namespace SIESC.UI.UI.Alunos
         public GerenciarAlunos(Principal_UI principalUi)
         {
             PrincipalUi = principalUi;
-            
+
             InitializeComponent();
             CarregaGridView();
             _localizar = Localizar.nome;
@@ -59,7 +59,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GerenciarAlunos_Enter(object sender, EventArgs e)
+        private void GerenciarAlunos_Enter(object sender,EventArgs e)
         {
             CarregaGridView();
         }
@@ -79,7 +79,7 @@ namespace SIESC.UI.UI.Alunos
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -88,9 +88,9 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
-            if (Mensageiro.MensagemPergunta("Deseja fechar a janela?") == DialogResult.Yes)
+            if (Mensageiro.MensagemPergunta("Deseja fechar a janela?",this) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -101,7 +101,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_localizar_Click(object sender, EventArgs e)
+        private void btn_localizar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace SIESC.UI.UI.Alunos
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -145,7 +145,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_novo_Click(object sender, EventArgs e)
+        private void btn_novo_Click(object sender,EventArgs e)
         {
             foreach (Form mdiChild in PrincipalUi.MdiChildren)
             {
@@ -167,52 +167,52 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigo_Click(object sender, EventArgs e)
+        private void rdb_codigo_Click(object sender,EventArgs e)
         {
             _localizar = Localizar.codigo;
-            HabilitaControles(true, false, false, false, false);
+            HabilitaControles(true,false,false,false,false);
         }
         /// <summary>
         /// Evento do radio button nome
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_nome_Click(object sender, EventArgs e)
+        private void rdb_nome_Click(object sender,EventArgs e)
         {
             _localizar = Localizar.nome;
-            this.HabilitaControles(false, true, false, false, false);
+            this.HabilitaControles(false,true,false,false,false);
         }
         /// <summary>
         /// Evento do radio button mae
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_mae_Click(object sender, EventArgs e)
+        private void rdb_mae_Click(object sender,EventArgs e)
         {
             _localizar = Localizar.mae;
-            this.HabilitaControles(false, false, true, false, false);
+            this.HabilitaControles(false,false,true,false,false);
         }
         /// <summary>
         /// Evento do radio button pai
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_pai_Click(object sender, EventArgs e)
+        private void rdb_pai_Click(object sender,EventArgs e)
         {
             _localizar = Localizar.pai;
-            this.HabilitaControles(false, false, false, true, false);
+            this.HabilitaControles(false,false,false,true,false);
         }
         /// <summary>
         /// Evento do radio button data de nascimento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_datanasc_Click(object sender, EventArgs e)
+        private void rdb_datanasc_Click(object sender,EventArgs e)
         {
 
             _localizar = Localizar.datanascimento;
 
-            this.HabilitaControles(false, false, false, false, true);
+            this.HabilitaControles(false,false,false,false,true);
         }
         /// <summary>
         /// Bloqueia os controles conforme o tipo de localização
@@ -222,7 +222,7 @@ namespace SIESC.UI.UI.Alunos
         /// <param name="mae">mae</param>
         /// <param name="pai">pae</param>
         /// <param name="datanasc">datanascimento</param>
-        private void HabilitaControles(bool codigo, bool nome, bool mae, bool pai, bool datanasc)
+        private void HabilitaControles(bool codigo,bool nome,bool mae,bool pai,bool datanasc)
         {
             txt_codigo.Enabled = codigo;
             txt_mae.Enabled = mae;
@@ -276,7 +276,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editar_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -297,7 +297,7 @@ namespace SIESC.UI.UI.Alunos
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, this);
+                Mensageiro.MensagemErro(ex,this);
             }
         }
 
@@ -306,7 +306,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_alunos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_alunos_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
         {
             RepassaDados();
         }
@@ -318,18 +318,18 @@ namespace SIESC.UI.UI.Alunos
         {
             try
             {
-                txt_codigo.Text = dgv_alunos[0, dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                txt_nomealuno.Text = dgv_alunos[1, dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                dtp_datanasc.Value = Convert.ToDateTime(this.dgv_alunos[2, this.dgv_alunos.CurrentCellAddress.Y].Value.ToString());
-                txt_mae.Text = dgv_alunos[3, dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                txt_pai.Text = dgv_alunos[4, dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                txt_deficiencia.Text = dgv_alunos[5, dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                txt_telefones.Text = string.Format("{0} / {1} / {2}", dgv_alunos[6, dgv_alunos.CurrentCellAddress.Y].Value, dgv_alunos[7, dgv_alunos.CurrentCellAddress.Y].Value, dgv_alunos[8, dgv_alunos.CurrentCellAddress.Y].Value);
+                txt_codigo.Text = dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
+                txt_nomealuno.Text = dgv_alunos[1,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
+                dtp_datanasc.Value = Convert.ToDateTime(this.dgv_alunos[2,this.dgv_alunos.CurrentCellAddress.Y].Value.ToString());
+                txt_mae.Text = dgv_alunos[3,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
+                txt_pai.Text = dgv_alunos[4,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
+                txt_deficiencia.Text = dgv_alunos[5,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
+                txt_telefones.Text = string.Format("{0} / {1} / {2}",dgv_alunos[6,dgv_alunos.CurrentCellAddress.Y].Value,dgv_alunos[7,dgv_alunos.CurrentCellAddress.Y].Value,dgv_alunos[8,dgv_alunos.CurrentCellAddress.Y].Value);
 
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -338,7 +338,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_solicitarvaga_Click(object sender, EventArgs e)
+        private void btn_solicitarvaga_Click(object sender,EventArgs e)
         {
             try
             {
@@ -350,13 +350,13 @@ namespace SIESC.UI.UI.Alunos
                         mdiChild.Close();
                     }
                 }
-                frm_solicitavaga = new SolicitaVaga(aluno, null,PrincipalUi);
+                frm_solicitavaga = new SolicitaVaga(aluno,null,PrincipalUi);
                 frm_solicitavaga.MdiParent = PrincipalUi;
                 frm_solicitavaga.Show();
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
 
         }
@@ -366,11 +366,11 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         private Aluno CriaAluno()
         {
-            if (dgv_alunos[0, dgv_alunos.CurrentCellAddress.Y].Value.ToString().Equals(null))
+            if (dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString().Equals(null))
             {
                 throw new Exception("Selecione um aluno na tabela!");
             }
-            return controleAluno.RetornaAluno(Convert.ToInt16(dgv_alunos[0, dgv_alunos.CurrentCellAddress.Y].Value.ToString()));
+            return controleAluno.RetornaAluno(Convert.ToInt16(dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString()));
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace SIESC.UI.UI.Alunos
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -394,15 +394,15 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_alunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_alunos_CellContentClick(object sender,DataGridViewCellEventArgs e)
         {
             try
             {
-                dtp_datanasc.Value = DateTime.Parse(dgv_alunos[2, dgv_alunos.CurrentCellAddress.Y].Value.ToString());
+                dtp_datanasc.Value = DateTime.Parse(dgv_alunos[2,dgv_alunos.CurrentCellAddress.Y].Value.ToString());
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 
@@ -411,7 +411,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dtp_datanasc_ValueChanged(object sender, EventArgs e)
+        private void dtp_datanasc_ValueChanged(object sender,EventArgs e)
         {
             CalculaIdade();
         }
@@ -437,18 +437,18 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(object sender, EventArgs e)
+        private void btn_excluir_Click(object sender,EventArgs e)
         {
             try
             {
-                if (Mensageiro.MensagemExclusao($"Deseja excluir o aluno {dgv_alunos[1, dgv_alunos.CurrentCellAddress.Y].Value}? {Environment.NewLine}Todas as solicitações do aluno também serão excluídas!!!").Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemExclusao($"Deseja excluir o aluno {dgv_alunos[1,dgv_alunos.CurrentCellAddress.Y].Value}? {Environment.NewLine}Todas as solicitações do aluno também serão excluídas!!!",PrincipalUi).Equals(DialogResult.Yes))
                 {
-                    if (Mensageiro.MensagemExclusao($"TEM CERTEZA? {Environment.NewLine}TODAS AS SOLICITAÇÕES DO ALUNO TAMBÉM SERÃO EXCLUÍDAS!!!").Equals(DialogResult.Yes))
+                    if (Mensageiro.MensagemExclusao($"TEM CERTEZA? {Environment.NewLine}TODAS AS SOLICITAÇÕES DO ALUNO TAMBÉM SERÃO EXCLUÍDAS!!!",PrincipalUi).Equals(DialogResult.Yes))
                     {
                         controleAluno = new AlunoControl();
-                        if (controleAluno.Deletar((int)dgv_alunos[0, dgv_alunos.CurrentCellAddress.Y].Value))
+                        if (controleAluno.Deletar((int)dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value))
                         {
-                            Mensageiro.MensagemConfirmaExclusao();
+                            Mensageiro.MensagemConfirmaExclusao(PrincipalUi);
                             CarregaGridView();
                         }
                     }
@@ -456,7 +456,7 @@ namespace SIESC.UI.UI.Alunos
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception, this);
+                Mensageiro.MensagemErro(exception,this);
             }
         }
 

@@ -13,14 +13,14 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// 
         /// </summary>
-        private Margins margins = new Margins(10, 2, 2, 2); //Configurando as margens
-                                                            /// <summary>
-                                                            /// 
-                                                            /// </summary>
+        private Margins margins = new Margins(10,2,2,2); //Configurando as margens
+        /// <summary>
+        /// 
+        /// </summary>
         private PageSettings pg = new PageSettings(); //Configurando para paisagem
-                                                      /// <summary>
-                                                      /// 
-                                                      /// </summary>
+        /// <summary>
+        /// 
+        /// </summary>
         private DataTable dtSolicitacao;
         /// <summary>
         /// 
@@ -50,7 +50,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="idaluno">O código do aluno</param>
         /// <param name="anoensino">O ano Ensino ao qual o aluno pertence</param>
         /// <param name="codigosolicitacao">O código da solicitação</param>
-        public frm_ficha_solicitacao(string latitude, string longitude, int anoensino, int codigosolicitacao)
+        public frm_ficha_solicitacao(string latitude,string longitude,int anoensino,int codigosolicitacao)
         {
             InitializeComponent();
 
@@ -61,9 +61,9 @@ namespace SIESC.UI.UI.Relatorios
             //dtZoneamento = anoensino >= 10 ? this.zoneamentoTableAdapter1.RetornaCreches(idaluno, 2) : this.zoneamentoTableAdapter1.RetornaEscolas(idaluno, 2);
 
 
-            dtZoneamento = zoneamentoTableAdapter1.RetornaUnidadesAnoEnsino(latitude, longitude, 2, anoensino); //2 distancia
+            dtZoneamento = zoneamentoTableAdapter1.RetornaUnidadesAnoEnsino(latitude,longitude,2,anoensino); //2 distancia
 
-            CalculaDistancia(latitude, longitude);
+            CalculaDistancia(latitude,longitude);
 
 
             FinalizaRelatorio();
@@ -77,7 +77,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="idaluno">O Código do aluno</param>
         /// <param name="anoensino">O ano de ensino ao qual o aluno pertence</param>
         /// <param name="codigosolicitacao">O código da solicitação</param>
-        public frm_ficha_solicitacao(string latitude, string longitude, int idaluno, string anoensino, int codigosolicitacao)
+        public frm_ficha_solicitacao(string latitude,string longitude,int idaluno,string anoensino,int codigosolicitacao)
         {
             InitializeComponent();
 
@@ -88,15 +88,15 @@ namespace SIESC.UI.UI.Relatorios
                 /*PREENCHENDO O DATATABLE*/
                 dtSolicitacao = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigosolicitacao);
 
-                dtZoneamento = anoensino.Contains("Ano") ? this.zoneamentoTableAdapter1.RetornaEscolas(idaluno, 2) : this.zoneamentoTableAdapter1.RetornaCreches(idaluno, 2);
+                dtZoneamento = anoensino.Contains("Ano") ? this.zoneamentoTableAdapter1.RetornaEscolas(idaluno,2) : this.zoneamentoTableAdapter1.RetornaCreches(idaluno,2);
 
 
-                CalculaDistancia(latitude, longitude);
+                CalculaDistancia(latitude,longitude);
 
             }
             catch (MySqlException exception)
             {
-                Mensageiro.MensagemAviso("Erro: " + exception.Message + exception.InnerException);
+                Mensageiro.MensagemAviso("Erro: " + exception.Message + exception.InnerException,this);
             }
             FinalizaRelatorio();
         }
@@ -105,7 +105,7 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
-        private void CalculaDistancia(string latitude, string longitude)
+        private void CalculaDistancia(string latitude,string longitude)
         {
             datasource = new ReportDataSource("dsRelatorios");
 
@@ -115,7 +115,7 @@ namespace SIESC.UI.UI.Relatorios
             //{
             foreach (DataRow row in dtZoneamento.Rows)
             {
-                row["DistanciaCaminhando"] = Metrics.CalculaDistanciaCaminhando(latitude, longitude, row["latitude"].ToString(), row["longitude"].ToString());
+                row["DistanciaCaminhando"] = Metrics.CalculaDistanciaCaminhando(latitude,longitude,row["latitude"].ToString(),row["longitude"].ToString());
             }
             //}
             //else
@@ -156,10 +156,10 @@ namespace SIESC.UI.UI.Relatorios
             pg.Margins = margins; //repassa as margens para o relatório
             string PathRelatorio = Settings.Default.RemoteReports;
             //PODE ALTERAR local onde se encontram os arquivos RDLC para montagem dos relatórios LocalReports - na máquina local | RemoteReports - no servidor (deixar essa config ao publicar o executável)
-            rpt_viewer.Padding = new Padding(0, 0, 0, 0);
+            rpt_viewer.Padding = new Padding(0,0,0,0);
 
 #if DEBUG
-				PathRelatorio = Settings.Default.LocalReports; 
+            PathRelatorio = Settings.Default.LocalReports;
 #endif
             rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_ficha_solicitacao_z.rdlc";
 

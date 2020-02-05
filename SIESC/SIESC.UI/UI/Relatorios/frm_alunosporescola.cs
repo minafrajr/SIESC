@@ -19,7 +19,7 @@ namespace SIESC.UI.UI
         /// 
         /// </summary>
         private int tipo_nivelensino;
-        
+
         /// <inheritdoc />
         /// <summary>
         /// </summary>
@@ -29,7 +29,7 @@ namespace SIESC.UI.UI
             InitializeComponent();
             _principalUi = principal_UI;
         }
-        private void frm_alunosporescola_Load(object sender, EventArgs e)
+        private void frm_alunosporescola_Load(object sender,EventArgs e)
         {
             switch (tipo_nivelensino)
             {
@@ -59,7 +59,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="principal_UI"></param>
         /// <param name="nivel_ensino"></param>
-        public frm_alunosporescola(Principal_UI principal_UI, int nivel_ensino)
+        public frm_alunosporescola(Principal_UI principal_UI,int nivel_ensino)
         {
             InitializeComponent();
             _principalUi = principal_UI;
@@ -71,9 +71,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
-         this.Close();
+            this.Close();
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ok_Click(object sender, EventArgs e)
+        private void btn_ok_Click(object sender,EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -95,12 +95,12 @@ namespace SIESC.UI.UI
                 {
                     if (rdb_instituicao_solicitada.Checked)
                     {
-                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi, 4, cbo_escola.SelectedValue.ToString());
+                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,4,cbo_escola.SelectedValue.ToString());
                         frm.Show();
                     }
                     else //se escola encaminhada
                     {
-                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi, 5, cbo_escola.SelectedValue.ToString());
+                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,5,cbo_escola.SelectedValue.ToString());
                         frm.Show();
                     }
                 }
@@ -108,18 +108,18 @@ namespace SIESC.UI.UI
                 {
                     if (rdb_instituicao_solicitada.Checked)
                     {
-                        frm_Relatorio_geral frm = new frm_Relatorio_geral(21, _principalUi);
+                        frm_Relatorio_geral frm = new frm_Relatorio_geral(21,_principalUi);
                         frm.Show();
                     }
-                    
+
                 }
-                t.Abort();
+                if (t.IsAlive) t.Abort();
                 this.Close();
             }
             catch (Exception exception)
             {
-                t.Abort();
-                MessageBox.Show(exception.Message, "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (t.IsAlive) t.Abort();
+                MessageBox.Show(exception.Message,"SIESC",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         /// <summary>
