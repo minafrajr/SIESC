@@ -957,7 +957,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                       <TextRun>
                         <Value>=First(Fields!anosolicitado.Value, "dsRelatorios")</Value>
                         <Style>
-                          <FontSize>12pt</FontSize>
+                          <FontSize>11pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
@@ -968,9 +968,10 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox4</rd:DefaultName>
-                <Left>2.78222cm</Left>
+                <Top>0.03481cm</Top>
+                <Left>2.5cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.71167cm</Width>
+                <Width>3.30311cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -996,14 +997,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Right</TextAlign>
+                      <TextAlign>Left</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox3</rd:DefaultName>
-                <Left>1.40639cm</Left>
+                <Top>0.01717cm</Top>
+                <Left>1.37111cm</Left>
                 <Height>0.6cm</Height>
-                <Width>1.27cm</Width>
+                <Width>1.05833cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1032,7 +1034,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>1.5175cm</Top>
+                <Top>1.55231cm</Top>
                 <Left>0.30867cm</Left>
                 <Height>0.6cm</Height>
                 <Width>3.52304cm</Width>
@@ -1064,9 +1066,10 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Left>5.56445cm</Left>
+                <Top>0.01717cm</Top>
+                <Left>5.88195cm</Left>
                 <Height>0.6cm</Height>
-                <Width>1.50616cm</Width>
+                <Width>1.43596cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -1093,9 +1096,10 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Left>7.10588cm</Left>
+                <Top>0.03481cm</Top>
+                <Left>7.31791cm</Left>
                 <Height>0.6cm</Height>
-                <Width>10.81247cm</Width>
+                <Width>10.60044cm</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
@@ -1123,7 +1127,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>1.5175cm</Top>
+                <Top>1.55231cm</Top>
                 <Left>3.64419cm</Left>
                 <Height>0.6cm</Height>
                 <Width>14.27416cm</Width>
@@ -1156,7 +1160,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.24069cm</Top>
+                <Top>2.2755cm</Top>
                 <Left>12.96219cm</Left>
                 <Height>0.6cm</Height>
                 <Width>0.94819cm</Width>
@@ -1186,7 +1190,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.24069cm</Top>
+                <Top>2.2755cm</Top>
                 <Left>13.91038cm</Left>
                 <Height>0.6cm</Height>
                 <Width>1.67124cm</Width>
@@ -1219,7 +1223,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.24069cm</Top>
+                <Top>2.2755cm</Top>
                 <Left>0.30867cm</Left>
                 <Height>0.6cm</Height>
                 <Width>1.66215cm</Width>
@@ -1249,7 +1253,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.24069cm</Top>
+                <Top>2.2755cm</Top>
                 <Left>2.04138cm</Left>
                 <Height>0.6cm</Height>
                 <Width>9.85006cm</Width>
@@ -1282,7 +1286,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>0.70583cm</Top>
+                <Top>0.74064cm</Top>
                 <Left>0.30867cm</Left>
                 <Height>0.6cm</Height>
                 <Width>3.54951cm</Width>
@@ -1312,7 +1316,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>0.74111cm</Top>
+                <Top>0.77592cm</Top>
                 <Left>3.68179cm</Left>
                 <Height>0.6cm</Height>
                 <Width>14.23656cm</Width>
@@ -1346,6 +1350,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>0.03481cm</Top>
                 <Height>0.46771cm</Height>
                 <Width>1.37111cm</Width>
                 <ZIndex>12</ZIndex>
@@ -1381,9 +1386,9 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>5.63723cm</Top>
+            <Top>5.60242cm</Top>
             <Left>0.73016cm</Left>
-            <Height>3.05558cm</Height>
+            <Height>3.09039cm</Height>
             <Width>18.37887cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1808,7 +1813,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Replace(First(Fields!UsuarioResponsavel.Value, "dsRelatorios"),"SEMED\","").ToUpper</Value>
+                        <Value>=First(Fields!UsuarioResponsavel.Value, "dsRelatorios").ToUpper</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1818,7 +1823,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox8</rd:DefaultName>
-                <Top>3.03388cm</Top>
+                <Top>2.9986cm</Top>
                 <Left>6.56799cm</Left>
                 <Height>0.6cm</Height>
                 <Width>4.91248cm</Width>
@@ -2418,7 +2423,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Microsoft.VisualBasic.Strings.Replace(First(Fields!UsuarioResponsavel.Value, "dsRelatorios"), "SEMED\", "").ToUpper()</Value>
+                        <Value>=First(Fields!UsuarioResponsavel.Value, "dsRelatorios").ToUpper()</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -2905,7 +2910,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
       <Width>7.65002in</Width>
       <Page>
         <PageHeader>
-          <Height>1.87637cm</Height>
+          <Height>1.6647cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2913,7 +2918,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               <Source>Embedded</Source>
               <Value>Logocabeçalho1</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.32793cm</Top>
+              <Top>0.01043cm</Top>
               <Left>6.54395cm</Left>
               <Height>0.67979cm</Height>
               <Width>6.94909cm</Width>
@@ -2938,7 +2943,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.86661cm</Top>
+              <Top>0.54911cm</Top>
               <Left>7.04124cm</Left>
               <Height>0.6cm</Height>
               <Width>5.64854cm</Width>
@@ -2968,7 +2973,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.32928cm</Top>
+              <Top>1.01178cm</Top>
               <Left>7.81599cm</Left>
               <Height>0.54709cm</Height>
               <Width>3.98167cm</Width>
@@ -2991,7 +2996,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.58413cm</Height>
+          <Height>0.7958cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -3022,6 +3027,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Top</VerticalAlign>
                 <PaddingLeft>0.5pt</PaddingLeft>
                 <PaddingRight>0.5pt</PaddingRight>
                 <PaddingTop>0.5pt</PaddingTop>
@@ -3040,7 +3046,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
         <LeftMargin>0.5cm</LeftMargin>
         <RightMargin>0.5cm</RightMargin>
         <TopMargin>0.5cm</TopMargin>
-        <BottomMargin>0.5cm</BottomMargin>
+        <BottomMargin>6cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
