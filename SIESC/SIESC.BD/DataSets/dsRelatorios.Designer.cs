@@ -7750,6 +7750,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columntipocomprovante;
             
+            private global::System.Data.DataColumn columnorigemsolicitacao;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vw_ficha_solicitacaoDataTable() {
@@ -8025,6 +8027,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn origemsolicitacaoColumn {
+                get {
+                    return this.columnorigemsolicitacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8089,7 +8099,8 @@ namespace SIESC.BD.DataSets {
                         long idade, 
                         string UsuarioEncaminhou, 
                         string comprovante, 
-                        string tipocomprovante) {
+                        string tipocomprovante, 
+                        string origemsolicitacao) {
                 vw_ficha_solicitacaoRow rowvw_ficha_solicitacaoRow = ((vw_ficha_solicitacaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8121,7 +8132,8 @@ namespace SIESC.BD.DataSets {
                         idade,
                         UsuarioEncaminhou,
                         comprovante,
-                        tipocomprovante};
+                        tipocomprovante,
+                        origemsolicitacao};
                 rowvw_ficha_solicitacaoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_ficha_solicitacaoRow);
                 return rowvw_ficha_solicitacaoRow;
@@ -8181,6 +8193,7 @@ namespace SIESC.BD.DataSets {
                 this.columnUsuarioEncaminhou = base.Columns["UsuarioEncaminhou"];
                 this.columncomprovante = base.Columns["comprovante"];
                 this.columntipocomprovante = base.Columns["tipocomprovante"];
+                this.columnorigemsolicitacao = base.Columns["origemsolicitacao"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8246,6 +8259,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columncomprovante);
                 this.columntipocomprovante = new global::System.Data.DataColumn("tipocomprovante", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipocomprovante);
+                this.columnorigemsolicitacao = new global::System.Data.DataColumn("origemsolicitacao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnorigemsolicitacao);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodigo}, true));
                 this.columncodigo.AutoIncrement = true;
@@ -8285,6 +8300,7 @@ namespace SIESC.BD.DataSets {
                 this.columnUsuarioEncaminhou.MaxLength = 45;
                 this.columncomprovante.MaxLength = 35;
                 this.columntipocomprovante.MaxLength = 30;
+                this.columnorigemsolicitacao.MaxLength = 60;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13113,6 +13129,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string origemsolicitacao {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_solicitacao.origemsolicitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'origemsolicitacao\' na tabela \'vw_ficha_solicitacao\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_solicitacao.origemsolicitacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsdtnascNull() {
                 return this.IsNull(this.tablevw_ficha_solicitacao.dtnascColumn);
             }
@@ -13373,6 +13405,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SettipocomprovanteNull() {
                 this[this.tablevw_ficha_solicitacao.tipocomprovanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsorigemsolicitacaoNull() {
+                return this.IsNull(this.tablevw_ficha_solicitacao.origemsolicitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetorigemsolicitacaoNull() {
+                this[this.tablevw_ficha_solicitacao.origemsolicitacaoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19623,6 +19667,7 @@ ORDER BY datasolicitacao";
             tableMapping.ColumnMappings.Add("UsuarioEncaminhou", "UsuarioEncaminhou");
             tableMapping.ColumnMappings.Add("comprovante", "comprovante");
             tableMapping.ColumnMappings.Add("tipocomprovante", "tipocomprovante");
+            tableMapping.ColumnMappings.Add("origemsolicitacao", "origemsolicitacao");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19639,14 +19684,13 @@ ORDER BY datasolicitacao";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT `codigo`, `nome`, `dtnasc`, `mae`, `pae`, `deficiencia`, `solicitante`, `parentesco`, `tipologradouro`, `logradouro`, `numresid`, `complem`, `bairro`, `cep`, `telefone`, `anosolicitado`, `escolasolicitada`, `motivo`, `escolaorigem`, `cidade`, `estado`, `datasolicitacao`, `escolaencaminhada`, `dataencaminhamento`, `observacoes`, `UsuarioResponsavel`, `idade`, `UsuarioEncaminhou`, `comprovante`, `tipocomprovante` FROM `siesc`.`vw_ficha_solicitacao`";
+            this._commandCollection[0].CommandText = @"SELECT        codigo, nome, dtnasc, mae, pae, deficiencia, solicitante, parentesco, tipologradouro, logradouro, numresid, complem, bairro, cep, telefone, anosolicitado, escolasolicitada, motivo, escolaorigem, cidade, estado, datasolicitacao, 
+                         escolaencaminhada, dataencaminhamento, observacoes, UsuarioResponsavel, idade, UsuarioEncaminhou, comprovante, tipocomprovante, origemsolicitacao
+FROM            vw_ficha_solicitacao";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        codigo, nome, dtnasc, mae, pae, deficiencia, solicitante, parentesco, tipologradouro, logradouro, numresid, complem, bairro, cep, telefone, anosolicitado, escolasolicitada, motivo, escolaorigem, cidade, estado, datasolicitacao, 
-                         escolaencaminhada, dataencaminhamento, observacoes, UsuarioResponsavel, idade, UsuarioEncaminhou, comprovante, tipocomprovante
-FROM            vw_ficha_solicitacao
-WHERE        (motivo = @motivo)";
+            this._commandCollection[1].CommandText = @"SELECT UsuarioEncaminhou, UsuarioResponsavel, anosolicitado, bairro, cep, cidade, codigo, complem, comprovante, dataencaminhamento, datasolicitacao, deficiencia, dtnasc, escolaencaminhada, escolaorigem, escolasolicitada, estado, idade, logradouro, mae, motivo, nome, numresid, observacoes, origemsolicitacao, pae, parentesco, solicitante, telefone, tipocomprovante, tipologradouro FROM vw_ficha_solicitacao WHERE (motivo = @motivo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@motivo";
@@ -19658,10 +19702,7 @@ WHERE        (motivo = @motivo)";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        codigo, nome, dtnasc, mae, pae, deficiencia, solicitante, parentesco, tipologradouro, logradouro, numresid, complem, bairro, cep, telefone, anosolicitado, escolasolicitada, motivo, escolaorigem, cidade, estado, datasolicitacao, 
-                         escolaencaminhada, dataencaminhamento, observacoes, UsuarioResponsavel, idade, UsuarioEncaminhou, comprovante, tipocomprovante
-FROM            vw_ficha_solicitacao
-WHERE        (codigo = @idSolicitacao)";
+            this._commandCollection[2].CommandText = @"SELECT UsuarioEncaminhou, UsuarioResponsavel, anosolicitado, bairro, cep, cidade, codigo, complem, comprovante, dataencaminhamento, datasolicitacao, deficiencia, dtnasc, escolaencaminhada, escolaorigem, escolasolicitada, estado, idade, logradouro, mae, motivo, nome, numresid, observacoes, origemsolicitacao, pae, parentesco, solicitante, telefone, tipocomprovante, tipologradouro FROM vw_ficha_solicitacao WHERE (codigo = @idSolicitacao)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idSolicitacao";
