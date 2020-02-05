@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// 
         /// </summary>
-        private Margins margins = new Margins(10,2,2,2); //Configurando as margens
+        private Margins margins = new Margins(10,2,2,6); //Configurando as margens
         /// <summary>
         /// 
         /// </summary>

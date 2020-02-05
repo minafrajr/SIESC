@@ -227,7 +227,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>2.39566cm</Top>
-                <Left>0.30867cm</Left>
+                <Left>0.37042cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>2.36772cm</Width>
                 <Style>
@@ -262,7 +262,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.03528cm</Top>
-                <Left>10.49481cm</Left>
+                <Left>10.55656cm</Left>
                 <Height>0.92253cm</Height>
                 <Width>3.41557cm</Width>
                 <ZIndex>1</ZIndex>
@@ -294,7 +294,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.90489cm</Top>
-                <Left>0.31474cm</Left>
+                <Left>0.37649cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.28568cm</Width>
                 <ZIndex>2</ZIndex>
@@ -324,7 +324,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.92253cm</Top>
-                <Left>1.56238cm</Left>
+                <Left>1.62413cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>10.32906cm</Width>
                 <ZIndex>3</ZIndex>
@@ -357,7 +357,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.92253cm</Top>
-                <Left>12.25528cm</Left>
+                <Left>12.31703cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.96772cm</Width>
                 <ZIndex>4</ZIndex>
@@ -391,7 +391,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.92253cm</Top>
-                <Left>14.13481cm</Left>
+                <Left>14.19656cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>2.24291cm</Width>
                 <ZIndex>5</ZIndex>
@@ -424,7 +424,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.14559cm</Top>
-                <Left>0.31474cm</Left>
+                <Left>0.37649cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.90027cm</Width>
                 <ZIndex>6</ZIndex>
@@ -456,7 +456,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>1.68128cm</Top>
-                <Left>0.31474cm</Left>
+                <Left>0.37649cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.07125cm</Width>
                 <ZIndex>7</ZIndex>
@@ -489,7 +489,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.16323cm</Top>
-                <Left>2.28557cm</Left>
+                <Left>2.34732cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>15.63278cm</Width>
                 <ZIndex>8</ZIndex>
@@ -520,7 +520,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>1.68128cm</Top>
-                <Left>1.56238cm</Left>
+                <Left>1.62413cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>16.35597cm</Width>
                 <ZIndex>9</ZIndex>
@@ -553,7 +553,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.9709cm</Top>
-                <Left>0.31474cm</Left>
+                <Left>0.37649cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.38875cm</Width>
                 <ZIndex>10</ZIndex>
@@ -583,7 +583,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.9709cm</Top>
-                <Left>1.73876cm</Left>
+                <Left>1.80051cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>10.15268cm</Width>
                 <ZIndex>11</ZIndex>
@@ -616,7 +616,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.98854cm</Top>
-                <Left>12.5694cm</Left>
+                <Left>12.63115cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.31846cm</Width>
                 <ZIndex>12</ZIndex>
@@ -648,7 +648,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>3.98854cm</Top>
-                <Left>13.88786cm</Left>
+                <Left>13.94961cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>4.03049cm</Width>
                 <ZIndex>13</ZIndex>
@@ -682,7 +682,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>4.77375cm</Top>
-                <Left>0.31474cm</Left>
+                <Left>0.37649cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.97083cm</Width>
                 <ZIndex>14</ZIndex>
@@ -712,7 +712,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>4.79139cm</Top>
-                <Left>2.36671cm</Left>
+                <Left>2.42846cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>9.52473cm</Width>
                 <ZIndex>15</ZIndex>
@@ -745,7 +745,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.03528cm</Top>
-                <Left>3.85543cm</Left>
+                <Left>3.91718cm</Left>
                 <Height>0.7008cm</Height>
                 <Width>7.57155cm</Width>
                 <ZIndex>16</ZIndex>
@@ -780,14 +780,16 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.02267cm</Top>
-                <Left>0.01488cm</Left>
-                <Height>0.46771cm</Height>
-                <Width>3.02641cm</Width>
+                <Left>0.07663cm</Left>
+                <Height>0.46477cm</Height>
+                <Width>1.91185cm</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>
@@ -838,7 +840,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.92253cm</Top>
-                <Left>16.5541cm</Left>
+                <Left>16.61585cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>1.36425cm</Width>
                 <ZIndex>18</ZIndex>
@@ -870,7 +872,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>2.41358cm</Top>
-                <Left>2.36671cm</Left>
+                <Left>2.42846cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>15.54557cm</Width>
                 <ZIndex>19</ZIndex>
@@ -904,7 +906,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>4.78796cm</Top>
-                <Left>12.06783cm</Left>
+                <Left>12.12958cm</Left>
                 <Height>0.6cm</Height>
                 <Width>5.85052cm</Width>
                 <ZIndex>20</ZIndex>
@@ -920,511 +922,10 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.14882cm</Top>
-            <Left>0.71528cm</Left>
-            <Height>5.41785cm</Height>
-            <Width>18.37887cm</Width>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Rectangle>
-          <Rectangle Name="Rectangle2">
-            <ReportItems>
-              <Textbox Name="Textbox4">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!anosolicitado.Value, "dsRelatorios")</Value>
-                        <Style>
-                          <FontSize>11pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox4</rd:DefaultName>
-                <Top>0.06517cm</Top>
-                <Left>2.5cm</Left>
-                <Height>0.6cm</Height>
-                <Width>3.30311cm</Width>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>LightGrey</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox3">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Ano:</Value>
-                        <Style>
-                          <FontSize>12pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Left</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox3</rd:DefaultName>
-                <Top>0.04753cm</Top>
-                <Left>1.37111cm</Left>
-                <Height>0.6cm</Height>
-                <Width>1.05833cm</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox58">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Escola de Origem:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.21767cm</Top>
-                <Left>0.30867cm</Left>
-                <Height>0.6cm</Height>
-                <Width>3.52304cm</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox59">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Motivo:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>0.70927cm</Top>
-                <Left>0.29986cm</Left>
-                <Height>0.6cm</Height>
-                <Width>1.43596cm</Width>
-                <ZIndex>3</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox60">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!motivo.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>0.72691cm</Top>
-                <Left>1.73582cm</Left>
-                <Height>0.6cm</Height>
-                <Width>16.18253cm</Width>
-                <ZIndex>4</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox61">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!escolaorigem.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.21767cm</Top>
-                <Left>3.64419cm</Left>
-                <Height>0.6cm</Height>
-                <Width>14.27416cm</Width>
-                <ZIndex>5</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox62">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>UF:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.94086cm</Top>
-                <Left>12.96219cm</Left>
-                <Height>0.6cm</Height>
-                <Width>0.94819cm</Width>
-                <ZIndex>6</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox63">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!estado.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.94086cm</Top>
-                <Left>13.91038cm</Left>
-                <Height>0.6cm</Height>
-                <Width>1.67124cm</Width>
-                <ZIndex>7</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox64">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Cidade:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.94086cm</Top>
-                <Left>0.30867cm</Left>
-                <Height>0.6cm</Height>
-                <Width>1.66215cm</Width>
-                <ZIndex>8</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox65">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!cidade.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.94086cm</Top>
-                <Left>2.04138cm</Left>
-                <Height>0.6cm</Height>
-                <Width>9.85006cm</Width>
-                <ZIndex>9</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox69">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Escola Solicitada:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>1.406cm</Top>
-                <Left>0.30867cm</Left>
-                <Height>0.6cm</Height>
-                <Width>3.54951cm</Width>
-                <ZIndex>10</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox70">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!escolasolicitada.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>1.44128cm</Top>
-                <Left>3.68179cm</Left>
-                <Height>0.6cm</Height>
-                <Width>14.23656cm</Width>
-                <ZIndex>11</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox68">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Solicitação</Value>
-                        <Style>
-                          <FontSize>6pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>0.06517cm</Top>
-                <Height>0.46771cm</Height>
-                <Width>1.37111cm</Width>
-                <ZIndex>12</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>Solid</Style>
-                  </Border>
-                  <TopBorder>
-                    <Color>Black</Color>
-                    <Style>Solid</Style>
-                    <Width>1pt</Width>
-                  </TopBorder>
-                  <BottomBorder>
-                    <Color>Black</Color>
-                    <Style>Solid</Style>
-                    <Width>1pt</Width>
-                  </BottomBorder>
-                  <LeftBorder>
-                    <Color>Black</Color>
-                    <Style>Solid</Style>
-                    <Width>1pt</Width>
-                  </LeftBorder>
-                  <RightBorder>
-                    <Color>Black</Color>
-                    <Style>Solid</Style>
-                    <Width>1pt</Width>
-                  </RightBorder>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox86">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=First(Fields!origemsolicitacao.Value, "dsRelatorios")</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Left>7.57992cm</Left>
-                <Height>0.6cm</Height>
-                <Width>10.31748cm</Width>
-                <ZIndex>13</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>Gainsboro</BackgroundColor>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-            </ReportItems>
-            <KeepTogether>true</KeepTogether>
-            <Top>5.57206cm</Top>
-            <Left>0.73016cm</Left>
-            <Height>3.61463cm</Height>
-            <Width>18.37887cm</Width>
-            <ZIndex>1</ZIndex>
+            <Top>0.04838cm</Top>
+            <Left>0.40721cm</Left>
+            <Height>5.52661cm</Height>
+            <Width>18.25645cm</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1939,11 +1440,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>12.46636cm</Top>
-            <Left>0.73219cm</Left>
+            <Top>12.29762cm</Top>
+            <Left>0.40721cm</Left>
             <Height>5.26549cm</Height>
-            <Width>18.40618cm</Width>
-            <ZIndex>2</ZIndex>
+            <Width>18.25645cm</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -2518,11 +2019,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>18.01408cm</Top>
-            <Left>0.70285cm</Left>
+            <Top>17.88061cm</Top>
+            <Left>0.41568cm</Left>
             <Height>4.34809cm</Height>
-            <Width>18.40618cm</Width>
-            <ZIndex>3</ZIndex>
+            <Width>18.24798cm</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -2570,6 +2071,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
                 <Top>0.03528cm</Top>
+                <Left>0.01428cm</Left>
                 <Height>0.46771cm</Height>
                 <Width>1.92673cm</Width>
                 <Style>
@@ -2604,11 +2106,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>9.29253cm</Top>
-            <Left>0.73016cm</Left>
-            <Height>1.92237cm</Height>
-            <Width>18.38199cm</Width>
-            <ZIndex>4</ZIndex>
+            <Top>9.4689cm</Top>
+            <Left>0.43205cm</Left>
+            <Height>1.64015cm</Height>
+            <Width>18.23161cm</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -2841,11 +2343,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>11.356cm</Top>
-            <Left>0.73219cm</Left>
+            <Top>11.2049cm</Top>
+            <Left>0.40721cm</Left>
             <Height>1.02217cm</Height>
-            <Width>18.40265cm</Width>
-            <ZIndex>5</ZIndex>
+            <Width>18.25645cm</Width>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -2873,11 +2375,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
             </Style>
           </Rectangle>
           <Line Name="Line8">
-            <Top>17.90824cm</Top>
-            <Left>19.09415cm</Left>
+            <Top>17.7395cm</Top>
+            <Left>18.75184cm</Left>
             <Height>0cm</Height>
-            <Width>-18.79604cm</Width>
-            <ZIndex>6</ZIndex>
+            <Width>-18.48561cm</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -2922,11 +2424,11 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>9.25725cm</Top>
-            <Left>0.73016cm</Left>
-            <Height>1.78125cm</Height>
-            <Width>18.26852cm</Width>
-            <ZIndex>7</ZIndex>
+            <Top>9.50418cm</Top>
+            <Left>0.48384cm</Left>
+            <Height>1.60487cm</Height>
+            <Width>18.17982cm</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2937,15 +2439,467 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox85">
+          <Rectangle Name="Rectangle2">
+            <ReportItems>
+              <Textbox Name="Textbox4">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!anosolicitado.Value, "dsRelatorios")</Value>
+                        <Style>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox4</rd:DefaultName>
+                <Top>0.06517cm</Top>
+                <Left>2.51044cm</Left>
+                <Height>0.6cm</Height>
+                <Width>3.30311cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>LightGrey</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox3">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Ano:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox3</rd:DefaultName>
+                <Top>0.04753cm</Top>
+                <Left>1.38155cm</Left>
+                <Height>0.6cm</Height>
+                <Width>1.05833cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox58">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Escola de Origem:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.13858cm</Top>
+                <Left>0.33737cm</Left>
+                <Height>0.6cm</Height>
+                <Width>3.52304cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox59">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Motivo:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>0.70927cm</Top>
+                <Left>0.3103cm</Left>
+                <Height>0.6cm</Height>
+                <Width>1.43596cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox60">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!motivo.Value, "dsRelatorios")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>0.72691cm</Top>
+                <Left>1.74626cm</Left>
+                <Height>0.6cm</Height>
+                <Width>16.18253cm</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox61">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!escolaorigem.Value, "dsRelatorios")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.13858cm</Top>
+                <Left>3.67289cm</Left>
+                <Height>0.6cm</Height>
+                <Width>14.27416cm</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox62">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>UF:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.86177cm</Top>
+                <Left>12.99089cm</Left>
+                <Height>0.6cm</Height>
+                <Width>0.94819cm</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox63">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!estado.Value, "dsRelatorios")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.86177cm</Top>
+                <Left>13.93908cm</Left>
+                <Height>0.6cm</Height>
+                <Width>1.67124cm</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox64">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Cidade:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.86177cm</Top>
+                <Left>0.35563cm</Left>
+                <Height>0.6cm</Height>
+                <Width>1.66215cm</Width>
+                <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox65">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!cidade.Value, "dsRelatorios")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>2.86177cm</Top>
+                <Left>2.08834cm</Left>
+                <Height>0.6cm</Height>
+                <Width>9.85006cm</Width>
+                <ZIndex>9</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox69">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Escola Solicitada:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>1.406cm</Top>
+                <Left>0.31911cm</Left>
+                <Height>0.6cm</Height>
+                <Width>3.54951cm</Width>
+                <ZIndex>10</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox70">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!escolasolicitada.Value, "dsRelatorios")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>1.43274cm</Top>
+                <Left>3.65463cm</Left>
+                <Height>0.6cm</Height>
+                <Width>14.27416cm</Width>
+                <ZIndex>11</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox85">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Origem:</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox43</rd:DefaultName>
+                <Top>0.04753cm</Top>
+                <Left>5.91938cm</Left>
+                <Height>0.6cm</Height>
+                <Width>1.60042cm</Width>
+                <ZIndex>12</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>5.7308cm</Top>
+            <Left>0.44633cm</Left>
+            <Height>3.59699cm</Height>
+            <Width>18.21733cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox68">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Origem:</Value>
+                    <Value>Solicitação</Value>
                     <Style>
+                      <FontSize>6pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2954,15 +2908,66 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>5.61959cm</Top>
-            <Left>6.6391cm</Left>
-            <Height>0.6cm</Height>
-            <Width>1.60042cm</Width>
+            <Top>5.7308cm</Top>
+            <Left>0.44633cm</Left>
+            <Height>0.46771cm</Height>
+            <Width>1.37111cm</Width>
             <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox86">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!origemsolicitacao.Value, "dsRelatorios")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox43</rd:DefaultName>
+            <Top>5.77833cm</Top>
+            <Left>8.07197cm</Left>
+            <Height>0.6cm</Height>
+            <Width>10.31748cm</Width>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>Gainsboro</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2970,13 +2975,13 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>22.43272cm</Height>
+        <Height>22.33453cm</Height>
         <Style />
       </Body>
-      <Width>7.65002in</Width>
+      <Width>19cm</Width>
       <Page>
         <PageHeader>
-          <Height>1.6647cm</Height>
+          <Height>1.60725cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2984,8 +2989,8 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               <Source>Embedded</Source>
               <Value>Logocabeçalho1</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.01043cm</Top>
-              <Left>6.54395cm</Left>
+              <Top>0.1556cm</Top>
+              <Left>6.56334cm</Left>
               <Height>0.67979cm</Height>
               <Width>6.94909cm</Width>
               <Style>
@@ -3009,8 +3014,8 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.54911cm</Top>
-              <Left>7.04124cm</Left>
+              <Top>0.56675cm</Top>
+              <Left>7.06063cm</Left>
               <Height>0.6cm</Height>
               <Width>5.64854cm</Width>
               <ZIndex>1</ZIndex>
@@ -3039,8 +3044,8 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.01178cm</Top>
-              <Left>7.81599cm</Left>
+              <Top>1.06016cm</Top>
+              <Left>7.83538cm</Left>
               <Height>0.54709cm</Height>
               <Width>3.98167cm</Width>
               <ZIndex>2</ZIndex>
@@ -3062,7 +3067,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.63705cm</Height>
+          <Height>0.66083cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -3085,8 +3090,8 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>0.05827cm</Top>
-              <Left>9.84721cm</Left>
+              <Top>0.00418cm</Top>
+              <Left>9.5491cm</Left>
               <Height>0.4783cm</Height>
               <Width>9.15147cm</Width>
               <Style>
@@ -3109,10 +3114,12 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
+        <InteractiveHeight>27cm</InteractiveHeight>
+        <InteractiveWidth>21cm</InteractiveWidth>
         <LeftMargin>0.5cm</LeftMargin>
         <RightMargin>0.5cm</RightMargin>
         <TopMargin>0.5cm</TopMargin>
-        <BottomMargin>6cm</BottomMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

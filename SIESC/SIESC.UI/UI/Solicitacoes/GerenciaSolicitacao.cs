@@ -579,22 +579,13 @@ namespace SIESC.UI.UI
                 controleSolicitacoes = new SolicitacaoControl();
 
                 //todo ver método para acessar banco só uma vez para retornar 
-                solicitacao.AnoEnsino =
-                    Convert.ToInt32(
-                        controleSolicitacoes.PesquisaAnoEnsino(
-                            (int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value));
+                solicitacao.AnoEnsino =Convert.ToInt32(controleSolicitacoes.PesquisaAnoEnsino((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value));
 
-                solicitacao.Coordenadas =
-                    controleSolicitacoes.RetornaCoordenadas(
-                        (int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                solicitacao.Coordenadas =controleSolicitacoes.RetornaCoordenadas((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                frm_ficha_solicitacao frm_fichasolicitaco = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
-                    solicitacao.Coordenadas[1],solicitacao.AnoEnsino,
-                    (int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value)
-                { MdiParent = PrincipalUI };
+                frm_ficha_solicitacao frm_fichasolicitaco = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],solicitacao.Coordenadas[1],solicitacao.AnoEnsino,(int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value){ MdiParent = PrincipalUI };
 
                 frm_fichasolicitaco.Show();
-
             }
             catch (Exception exception)
             {

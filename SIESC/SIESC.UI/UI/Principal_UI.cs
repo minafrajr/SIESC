@@ -88,6 +88,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Application.Exit();
             }
         }
 
@@ -736,6 +737,7 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_solicitacoes__Click(object sender,EventArgs e)
         {
+            var t = CarregaProgressoThread();
             try
             {
                 foreach (Form mdiChild in this.MdiChildren)
@@ -749,10 +751,15 @@ namespace SIESC.UI
                 }
                 GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this);
                 frm_gerenciasolicita.MdiParent = this;
+
+                if (t.IsAlive) t.Abort();
+
                 frm_gerenciasolicita.Show();
             }
             catch (Exception ex)
             {
+                if (t.IsAlive) t.Abort();
+
                 Mensageiro.MensagemErro(ex,this);
             }
 
