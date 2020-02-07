@@ -749,8 +749,7 @@ namespace SIESC.UI
                         return;
                     }
                 }
-                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this);
-                frm_gerenciasolicita.MdiParent = this;
+                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) {MdiParent = this};
 
                 if (t.IsAlive) t.Abort();
 

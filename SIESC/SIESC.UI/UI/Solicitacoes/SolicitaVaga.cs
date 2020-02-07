@@ -696,8 +696,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                         if (!_solicitacao.InstituicaoEncaminhada.Equals(null) && _encaminhou)
                         {
-                            GravadistanciaAlunoEscola(_solicitacao,
-                                _aluno); //grava a distancia do aluno até escola encaminhada 
+                            GravadistanciaAlunoEscola(_solicitacao,_aluno); //grava a distancia do aluno até escola encaminhada 
                         }
 
                         frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],_solicitacao.Coordenadas[1],_solicitacao.Ano,_solicitacao.Codigo)
