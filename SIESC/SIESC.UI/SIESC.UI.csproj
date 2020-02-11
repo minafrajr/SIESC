@@ -425,6 +425,12 @@
     <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Solicitacoes\GerenciaSindicancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\GerenciaSindicancia.Designer.cs">
+      <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -596,6 +602,9 @@
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\GerenciaSindicancia.resx">
+      <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
       <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -630,6 +639,7 @@
       <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Diagramas\DiagramaClasses.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -694,6 +704,7 @@
     <None Include="Resources\walking-icon-7402.png" />
     <None Include="Resources\bus.png" />
     <None Include="Resources\school-bus.png" />
+    <None Include="Resources\inspector.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

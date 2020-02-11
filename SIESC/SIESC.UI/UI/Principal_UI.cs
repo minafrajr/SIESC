@@ -313,18 +313,19 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_motivos_Click(object sender,EventArgs e)
         {
-            //foreach (Form mdiChild in this.MdiChildren)
-            //{
-            //    if (mdiChild.GetType() == typeof(GerenciaMotivo))
-            //    {
-            //        mdiChild.WindowState = FormWindowState.Normal;
-            //        mdiChild.Focus();
-            //        return;
-            //    }
-            //}
-            //GerenciaMotivo frm_gerenciamotivo = new GerenciaMotivo();
-            //frm_gerenciamotivo.MdiParent = this;
-            //frm_gerenciamotivo.Show();
+            if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("minafra")) return;
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                if (mdiChild.GetType() == typeof(GerenciaMotivo))
+                {
+                    mdiChild.WindowState = FormWindowState.Normal;
+                    mdiChild.Focus();
+                    return;
+                }
+            }
+            GerenciaMotivo frm_gerenciamotivo = new GerenciaMotivo();
+            frm_gerenciamotivo.MdiParent = this;
+            frm_gerenciamotivo.Show();
         }
 
         /// <summary>
@@ -749,7 +750,7 @@ namespace SIESC.UI
                         return;
                     }
                 }
-                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) {MdiParent = this};
+                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) { MdiParent = this };
 
                 if (t.IsAlive) t.Abort();
 
@@ -2464,6 +2465,14 @@ namespace SIESC.UI
             {
                 Mensageiro.MensagemErro(ex,this);
             }
+        }
+
+        private void sindicânciaToolStripMenuItem_Click(object sender,EventArgs e)
+        {
+            GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
+
+            frmSindicancia.MdiParent = this;
+            frmSindicancia.Show();
         }
     }
 }

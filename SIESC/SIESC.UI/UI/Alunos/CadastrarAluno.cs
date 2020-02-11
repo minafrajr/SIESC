@@ -3,14 +3,11 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-using SIESC;
 using SIESC.BD.Control;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using SIESC.BD.Control;
-using SIESC.MODEL;
 using SIESC.MODEL.Classes;
 // ReSharper disable All
 

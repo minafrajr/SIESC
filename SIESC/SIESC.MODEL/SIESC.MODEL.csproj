@@ -80,6 +80,7 @@
     <Compile Include="Classes\Motivo.cs" />
     <Compile Include="Classes\Pessoa.cs" />
     <Compile Include="Classes\Regional.cs" />
+    <Compile Include="Classes\Sindicancia.cs" />
     <Compile Include="Classes\Solicitacao.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="GlobalSuppressions.cs" />

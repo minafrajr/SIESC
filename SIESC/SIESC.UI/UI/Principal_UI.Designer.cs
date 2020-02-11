@@ -56,6 +56,7 @@
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.tsm_solicitacoes_ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_motivos_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.sindicânciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.autorizacaoExpressaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autorizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -362,7 +363,7 @@
             // 
             this.cadastrarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -370,21 +371,21 @@
             // 
             this.autorizarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
             this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
-            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.autorizarToolStripMenuItem.Text = "Autorizar";
             // 
             // gerenciarToolStripMenuItem2
             // 
             this.gerenciarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem2.Name = "gerenciarToolStripMenuItem2";
-            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
+            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.gerenciarToolStripMenuItem2.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem2.Click += new System.EventHandler(this.gerenciarToolStripMenuItem2_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
             // 
             // btn_solicitavaga
             // 
@@ -393,7 +394,8 @@
             this.toolStripSeparator1,
             this.toolStripTextBox3,
             this.tsm_solicitacoes_,
-            this.tsm_motivos_});
+            this.tsm_motivos_,
+            this.sindicânciaToolStripMenuItem});
             this.btn_solicitavaga.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_solicitavaga.Image = global::SIESC.UI.Properties.Resources.desk_chair__2_;
             this.btn_solicitavaga.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -437,13 +439,20 @@
             // 
             // tsm_motivos_
             // 
-            this.tsm_motivos_.Enabled = false;
             this.tsm_motivos_.Image = global::SIESC.UI.Properties.Resources._1431668763_list_alt_32;
             this.tsm_motivos_.Name = "tsm_motivos_";
             this.tsm_motivos_.Size = new System.Drawing.Size(212, 38);
             this.tsm_motivos_.Text = "Motivos";
             this.tsm_motivos_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.tsm_motivos_.Click += new System.EventHandler(this.tsm_motivos_Click);
+            // 
+            // sindicânciaToolStripMenuItem
+            // 
+            this.sindicânciaToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.inspector;
+            this.sindicânciaToolStripMenuItem.Name = "sindicânciaToolStripMenuItem";
+            this.sindicânciaToolStripMenuItem.Size = new System.Drawing.Size(212, 38);
+            this.sindicânciaToolStripMenuItem.Text = "Sindicância";
+            this.sindicânciaToolStripMenuItem.Click += new System.EventHandler(this.sindicânciaToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -1835,7 +1844,8 @@
 		private System.Windows.Forms.ToolStripMenuItem comprovaçãoDeEndereçoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem comprovaçãoDeEndereçoToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem comprovacaoDeEndereçoToolStripMenuItem;
-	}
+        private System.Windows.Forms.ToolStripMenuItem sindicânciaToolStripMenuItem;
+    }
 }
 
 
