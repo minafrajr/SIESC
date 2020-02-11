@@ -34550,7 +34550,7 @@ WHERE        (regional = @regional) AND (escolasolicitada = @isntituicaosolicita
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString2;
+            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -43,9 +43,6 @@ namespace SIESC.UI.UI.Solicitacoes
 
             CarregaGridView();
 
-            dgv_dados.Columns.Add(new DataGridViewCheckBoxColumn()
-            { Name = "sindicar",HeaderText = "Sindicar" }); //adiciona um check box na ultima coluna
-
         }
 
         private void chk_filtro_CheckedChanged(object sender,EventArgs e)
@@ -176,6 +173,8 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 dgv_dados.DataSource = dt;
                 dgv_dados.Refresh();
+
+
             }
             catch (NullReferenceException ex)
             {
@@ -190,26 +189,45 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_concluir_Click(object sender,EventArgs e)
         {
-            listaOfSindicancias = new List<Sindicancia>();
 
-            foreach (DataGridViewRow row in dgv_dados.Rows)
+
+        }
+
+        private void btn_sindicar_Click(object sender,EventArgs e)
+        {
+            try
             {
-                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["sindicar"];
+                listaOfSindicancias = new List<Sindicancia>();
 
-                if ((bool)checkBoxCell.Value)
-                    sindicancia = new Sindicancia()
+                foreach (DataGridViewRow row in dgv_dados.Rows)
+                {
+                    DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["sindicar"];
+
+                    if (checkBoxCell.Value != null)
                     {
-                        codigoSolicitacao = (int)row.Cells["codigo"].Value,
-                        dataSindicancia = DateTime.Now,
-                        usuarioResponsavel = principalUi.user.nomeusuario,
+                        if ((bool)checkBoxCell.Value)
+                        {
+                            sindicancia = new Sindicancia()
+                            {
+                                codigoSolicitacao = (int)row.Cells["codigo"].Value,
+                                dataSindicancia = DateTime.Now,
+                                usuarioResponsavel = principalUi.user.nomeusuario,
 
-                    };
-                listaOfSindicancias.Add(sindicancia);
+                            };
+                            listaOfSindicancias.Add(sindicancia);
+                        }
+                    }
+                }
+
+                sindicanciaControl = new SindicanciaControl();
+                if (sindicanciaControl.InserirSindicancias(listaOfSindicancias))
+                    Mensageiro.MensagemConfirmaGravacao(principalUi);
+                CarregaGridView();
             }
-
-            sindicanciaControl = new SindicanciaControl();
-            sindicanciaControl.InserirSindicancias(listaOfSindicancias);
-
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
+            }
         }
     }
 }

@@ -195,6 +195,7 @@
             this.btn_sindicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_sindicar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_sindicar.UseVisualStyleBackColor = true;
+            this.btn_sindicar.Click += new System.EventHandler(this.btn_sindicar_Click);
             // 
             // txt_telefone
             // 
