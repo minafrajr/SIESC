@@ -10746,7 +10746,7 @@ ORDER BY nome";
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        idRegionais, nomeRegional, codEducanetRegional\r\nFROM            reg" +
-                "ionais\r\nWHERE        (nomeRegional <> \'A DEFINIR\')";
+                "ionais\r\nWHERE        (nomeRegional <> \'A DEFINIR\')\r\nORDER BY nomeRegional";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         

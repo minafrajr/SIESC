@@ -603,7 +603,8 @@ namespace SIESC.UI.UI.Solicitacoes
             //limpa os controles do formulário
             foreach (Control control in _listControls)
             {
-
+                lbl_idade.Text = string.Empty;
+                
                 if (!(control is RadioButton))
                 {
                     control.Text = string.Empty;

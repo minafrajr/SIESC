@@ -80,8 +80,7 @@ namespace SIESC.UI.UI.Zoneamento
                 {
                     throw new Exception("O CEP está vazio!");
                 }
-
-
+                
                 lbl_aviso_coordenadas.Visible = false;
                 lbl_latitude.Text = string.Empty;
                 lbl_longitude.Text = string.Empty;
@@ -89,8 +88,6 @@ namespace SIESC.UI.UI.Zoneamento
                 coordenadas = new string[2];
 
                 coordenadas = Zoneador.Georrefencia(msk_cep.Text,"0"); //Georreferencia o aluno pelo SISGEO
-
-
 
                 if (!coordenadas[0].Equals(string.Empty) && !coordenadas[0].Equals("0"))
                 {
@@ -179,7 +176,6 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 if (t.IsAlive) t.Abort();
             }
-
         }
 
         /// <summary>

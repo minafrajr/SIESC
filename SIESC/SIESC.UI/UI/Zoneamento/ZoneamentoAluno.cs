@@ -90,10 +90,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 //InicializaGridViewAluno();
                 dgv_alunos.Refresh();
-
-
-
-
+                
                 if (dgv_alunos.Rows.Count > 0)
                 {
                     RepassaDados();
