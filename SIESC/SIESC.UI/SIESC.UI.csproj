@@ -425,6 +425,12 @@
     <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Solicitacoes\ConcluirSindicancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\ConcluirSindicancia.Designer.cs">
+      <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSindicancia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -601,6 +607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\ConcluirSindicancia.resx">
+      <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSindicancia.resx">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>

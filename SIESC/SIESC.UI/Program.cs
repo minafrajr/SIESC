@@ -6,20 +6,23 @@
 
 using System;
 using System.Windows.Forms;
+using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI
 {
-	static class Program
-	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Principal_UI());
-		}
-	}
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Principal_UI());
+            //Application.Run(new GerenciaSindicancia(new Principal_UI()));
+
+        }
+    }
 }

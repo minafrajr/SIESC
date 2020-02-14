@@ -32,9 +32,10 @@ namespace SIESC.UI.UI.Solicitacoes
 
         public GerenciaSindicancia(Principal_UI principal)
         {
+            InitializeComponent();
+            listaOfSindicancias = new List<Sindicancia>();
             principalUi = principal;
 
-            InitializeComponent();
         }
 
         private void GerenciaSindicancia_Load(object sender,EventArgs e)
@@ -83,33 +84,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 tipoConsulta = TipoConsulta.regional_escola;
         }
 
-        private void CarregaGridView()
+        private async void CarregaGridView()
         {
             try
             {
-                if (!rdb_sindicadas.Checked)
-                {
-                    if (!dgv_dados.Columns.Contains("sindicar"))
-                    {
-                        chk_encerradas.Visible = chk_pendentes.Visible = rdb_sindicadas.Checked;
-                        var colunaCheck = new DataGridViewCheckBoxColumn()
-                            { Name = "sindicar", HeaderText = "Sindicar" , DisplayIndex = 0}; //adiciona um check box na primeira coluna 
-                        dgv_dados.Columns.Add(colunaCheck); 
-                    }
-                    dgv_dados.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
-                }
-                else
-                {
-                    if (dgv_dados.Columns.Contains("sindicar"))
-                    {
-                        dgv_dados.Columns.Remove("sindicar"); 
-                    }
-                    
-                    dgv_dados.EditMode = DataGridViewEditMode.EditProgrammatically;
-
-                }
-
-                DataTable dt = new DataTable();
+                DataTable dt = null;
                 sindicanciaControl = new SindicanciaControl();
 
                 DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,
@@ -120,45 +99,48 @@ namespace SIESC.UI.UI.Solicitacoes
                     case TipoConsulta.ano:
                         if (cbo_anoensino.SelectedValue != null)
                             dt = sindicanciaControl.GetByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),
-                                rdb_sindicadas.Checked,(int) nupd_cod_solicitacao.Value);
+                                rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.escola:
                         if (cbo_escola.SelectedValue != null)
                             dt = sindicanciaControl.GetByInstituicao(cbo_escola.SelectedValue.ToString(),
-                                rdb_sindicadas.Checked,(int) nupd_cod_solicitacao.Value);
+                                rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.regional:
                         if (cbo_regionais.SelectedValue != null)
                             dt = sindicanciaControl.GetByRegional(cbo_regionais.SelectedValue.ToString(),
-                                rdb_sindicadas.Checked, (int) nupd_cod_solicitacao.Value);
+                                rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.geral:
-                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value); 
-                      break;
+
+                        dt = await sindicanciaControl.GetTodos(rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+
+                        break;
                     case TipoConsulta.regional_ano:
                         if (cbo_regionais.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                             dt = sindicanciaControl.GetByRegionalAnoEnsino(cbo_regionais.SelectedValue.ToString(),
-                                cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                                cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.regional_escola:
                         if (cbo_escola.SelectedValue != null && cbo_regionais.SelectedValue != null)
                             dt = sindicanciaControl.GetByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(),
-                                cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                                cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.escola_ano:
                         if (cbo_escola.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                             dt = sindicanciaControl.GetByInstituicaoAnoEnsino(cbo_escola.SelectedValue.ToString(),
-                                cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                                cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                     case TipoConsulta.regional_ano_escola:
 
                         dt = sindicanciaControl.GetByRegionalInstituicaoAnoEnsino(
                             cbo_regionais.SelectedValue.ToString(),
-                            cbo_anoensino.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            cbo_anoensino.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
                         break;
                 }
 
                 dgv_dados.DataSource = dt;
+
                 dgv_dados.Refresh();
             }
             catch (NullReferenceException ex)
@@ -174,7 +156,9 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_concluir_Click(object sender,EventArgs e)
         {
-            //todo formulário para conclusão da sindicancia
+            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia();
+
+            frm_concluirSindicancia.Show(this);
 
         }
 
@@ -182,33 +166,11 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-               
-
-                //foreach (DataGridViewRow row in dgv_dados.Rows)
-                //{
-                //    DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["sindicar"];
-
-                //    if (checkBoxCell.Value != null)
-                //    {
-                //        if ((bool)checkBoxCell.Value)
-                //        {
-                //            sindicancia = new Sindicancia()
-                //            {
-                //                codigoSolicitacao = (int)row.Cells["codigo"].Value,
-                //                dataSindicancia = DateTime.Now,
-                //                usuarioResponsavel = principalUi.user.nomeusuario,
-
-                //            };
-                //            listaOfSindicancias.Add(sindicancia);
-                //        }
-                //    }
-                //}
-
                 sindicanciaControl = new SindicanciaControl();
 
                 if (sindicanciaControl.InserirSindicancias(listaOfSindicancias))
                     Mensageiro.MensagemConfirmaGravacao(principalUi);
-                
+
                 CarregaGridView();
             }
             catch (Exception ex)
@@ -217,79 +179,232 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        private void rdb_sindicadas_CheckedChanged(object sender, EventArgs e)
+        private void rdb_sindicadas_CheckedChanged(object sender,EventArgs e)
         {
             try
             {
-                chk_encerradas.Visible = chk_pendentes.Visible = true;
-                nupd_cod_solicitacao.Visible = rdb_nao_sindicadas.Checked;
-                lbl_apartir_sol.Visible = rdb_nao_sindicadas.Checked;
-                
-                CarregaGridView();
+                if (rdb_sindicadas.Checked)
+                {
+                    limpacampos();
+                    HabilitarContoles(true);
+                    if (dgv_dados.Columns.Contains("sindicar"))
+                    {
+                        dgv_dados.Columns.Remove("sindicar");
+                    }
+
+                    dgv_dados.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+
+                    nupd_cod_solicitacao.Enabled = rdb_nao_sindicadas.Checked;
+                    lbl_apartir_sol.Visible = rdb_nao_sindicadas.Checked;
+
+                    CarregaGridView();
+                }
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, principalUi);
+                Mensageiro.MensagemErro(ex,principalUi);
             }
         }
 
-        private void chk_pendentes_CheckedChanged(object sender, EventArgs e)
+        private void rdb_nao_sindicadas_CheckedChanged(object sender,EventArgs e)
+        {
+            if (rdb_nao_sindicadas.Checked)
+            {
+                HabilitarContoles(false);
+
+                if (!dgv_dados.Columns.Contains("sindicar"))
+                {
+                    chk_finalizadas.Visible = chk_pendentes.Visible = rdb_sindicadas.Checked;
+                    var colunaCheck = new DataGridViewCheckBoxColumn()
+                    { Name = "sindicar",HeaderText = "Sindicar",DisplayIndex = 0 }; //adiciona um check box na primeira coluna 
+                    dgv_dados.Columns.Add(colunaCheck);
+                }
+
+                dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
+
+                CarregaGridView();
+
+            }
+        }
+        private void HabilitarContoles(bool habilita)
+        {
+            chk_finalizadas.Visible = chk_pendentes.Visible = habilita;
+            btn_concluir.Enabled = habilita;
+            btn_excluir.Enabled = habilita;
+            btn_imprimir_ficha.Enabled = habilita;
+            gpb_sindicados.Visible = habilita;
+            btn_sindicar.Enabled = !habilita;
+            chk_finalizadas.Checked = chk_pendentes.Checked = !habilita;
+        }
+
+        private async void chk_pendentes_CheckedChanged(object sender,EventArgs e)
+        {
+            await PendentesOUFinalizadas();
+        }
+
+        private async Task PendentesOUFinalizadas()
         {
             if (chk_pendentes.Checked)
-                chk_encerradas.Checked = false;
-        }
-
-        private void chk_encerradas_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_encerradas.Checked)
             {
+                chk_finalizadas.Checked = false;
+
+                dgv_dados.DataSource = null;
+
+                sindicanciaControl = new SindicanciaControl();
+
+                dgv_dados.DataSource = await sindicanciaControl.GetSindicanciasPendentes();
+
+                dgv_dados.Refresh();
+            }
+            else if (chk_finalizadas.Checked)
+            {
+                
+
                 chk_pendentes.Checked = false;
+
+                dgv_dados.DataSource = null;
+
+                sindicanciaControl = new SindicanciaControl();
+
+                dgv_dados.DataSource = await sindicanciaControl.GetSindicanciasFinalizadas();
             }
         }
 
-        private void btn_localizar_Click(object sender, EventArgs e)
+        private async void chk_finalizadas_CheckedChanged(object sender,EventArgs e)
         {
-            CarregaGridView();
+            await PendentesOUFinalizadas();
         }
 
-        private void btn_cancel_regional_Click(object sender, EventArgs e)
+        private void btn_localizar_Click(object sender,EventArgs e)
+        {
+
+        }
+
+        private void btn_cancel_regional_Click(object sender,EventArgs e)
         {
             cbo_regionais.SelectedIndex = -1;
         }
 
-        private void btn_cancel_ano_Click(object sender, EventArgs e)
+        private void btn_cancel_ano_Click(object sender,EventArgs e)
         {
             cbo_anoensino.SelectedValue = -1;
         }
 
-        private void btn_cancel_escola_Click(object sender, EventArgs e)
+        private void btn_cancel_escola_Click(object sender,EventArgs e)
         {
             cbo_escola.SelectedValue = -1;
         }
 
-        private void dgv_dados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_dados_CellContentClick(object sender,DataGridViewCellEventArgs e)
         {
-            if(!rdb_nao_sindicadas.Checked)
-                return;
-
-            listaOfSindicancias = new List<Sindicancia>();
-            
-            if (e.ColumnIndex == dgv_dados.Columns["sindicar"].Index)
+            if (rdb_nao_sindicadas.Checked)
             {
-                if ((bool) dgv_dados[0, dgv_dados.CurrentCellAddress.Y].Value)
+                if (e.ColumnIndex == dgv_dados.Columns["sindicar"].Index) //se clicou na coluna de seleção checkbox
                 {
-                    sindicancia = new Sindicancia()
+                    var codigoSol = (int)dgv_dados.CurrentRow.Cells[1].Value;
+
+
+                    foreach (var sindicado in listaOfSindicancias.Where(x => x.codigoSolicitacao == codigoSol))
                     {
-                        codigoSolicitacao = (int) dgv_dados[1, dgv_dados.CurrentCellAddress.Y].Value,
+                        listaOfSindicancias.Remove(sindicado);
+                        return;
+                    }
+
+                    listaOfSindicancias.Add(new Sindicancia()
+                    {
+                        codigoSolicitacao = (int)dgv_dados[1,dgv_dados.CurrentCellAddress.Y].Value,
                         dataSindicancia = DateTime.Now,
                         usuarioResponsavel = principalUi.user.nomeusuario,
-
-                    };
-                    listaOfSindicancias.Add(sindicancia);
+                    });
                 }
-
             }
 
         }
+
+        private void dgv_dados_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
+        {
+            if (rdb_nao_sindicadas.Checked)
+            {
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
+                txt_endereco.Text = dgv_dados.CurrentRow.Cells[5].Value.ToString();
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[8].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[7].Value.ToString();
+                txt_telefone.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[9].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[12].Value.ToString();
+                txt_comprovante_endereco.Text = $@"{dgv_dados.CurrentRow.Cells[10].Value} - {dgv_dados.CurrentRow.Cells[11].Value}";
+
+            }
+
+            if (rdb_sindicadas.Checked)
+            {
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
+                txt_endereco.Text = dgv_dados.CurrentRow.Cells[3].Value.ToString();
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[5].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
+                txt_telefone.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[8].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[7].Value.ToString();
+
+                if ((bool)dgv_dados.CurrentRow.Cells[13].Value)
+                {
+                    lbl_finalizada.Text = "SIM";
+                    lbl_finalizada.ForeColor = Color.Navy;
+                }
+                else
+                {
+                    lbl_finalizada.Text = "NÃO";
+                    lbl_finalizada.ForeColor = Color.DarkRed;
+                }
+
+                if ((bool)dgv_dados.CurrentRow.Cells[14].Value)
+                {
+                    lbl_endereco_comprovado.Text = "SIM";
+                    lbl_endereco_comprovado.ForeColor = Color.Navy;
+                }
+                else
+                {
+                    lbl_endereco_comprovado.Text = "NÃO";
+                    lbl_endereco_comprovado.ForeColor = Color.DarkRed;
+                }
+
+
+                if ((bool)dgv_dados.CurrentRow.Cells[15].Value)
+                {
+                    lbl_pendente.Text = "SIM";
+                    lbl_pendente.ForeColor = Color.Navy;
+                }
+                else
+                {
+                    lbl_pendente.Text = "NÃO";
+                    lbl_pendente.ForeColor = Color.DarkRed;
+                }
+                if ((bool)dgv_dados.CurrentRow.Cells[16].Value)
+                {
+                    lbl_pendente.Text = "SIM";
+                    lbl_pendente.ForeColor = Color.Navy;
+                }
+                else
+                {
+                    lbl_pendente.Text = "NÃO";
+                    lbl_pendente.ForeColor = Color.DarkRed;
+                }
+            }
+        }
+
+        private void limpacampos()
+        {
+            foreach (Control control in pnl_dados.Controls.OfType<MyTextBox>())
+            {
+                control.ResetText();
+            }
+
+
+            
+        }
+
     }
 }
