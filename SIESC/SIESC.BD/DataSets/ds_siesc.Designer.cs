@@ -9636,6 +9636,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnPendente;
             
+            private global::System.Data.DataColumn columnObservacoes;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_sindicanciaDataTable() {
@@ -9807,6 +9809,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ObservacoesColumn {
+                get {
+                    return this.columnObservacoes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9842,7 +9852,23 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public vw_sindicanciaRow Addvw_sindicanciaRow(string NomeAluno, string Endereco, string Regional, string InstituicaoSolicitada, string AnoEnsino, System.DateTime DataSolicitacao, string InstituicaoEncaminhada, string UsuarioResponsavel, System.DateTime DataSindicancia, string UsuarioFinalizou, System.DateTime DataFinalizacao, bool SindicanciaFinalizada, bool EnderecoComprovado, bool Status, bool Pendente) {
+            public vw_sindicanciaRow Addvw_sindicanciaRow(
+                        string NomeAluno, 
+                        string Endereco, 
+                        string Regional, 
+                        string InstituicaoSolicitada, 
+                        string AnoEnsino, 
+                        System.DateTime DataSolicitacao, 
+                        string InstituicaoEncaminhada, 
+                        string UsuarioResponsavel, 
+                        System.DateTime DataSindicancia, 
+                        string UsuarioFinalizou, 
+                        System.DateTime DataFinalizacao, 
+                        bool SindicanciaFinalizada, 
+                        bool EnderecoComprovado, 
+                        bool Status, 
+                        bool Pendente, 
+                        string Observacoes) {
                 vw_sindicanciaRow rowvw_sindicanciaRow = ((vw_sindicanciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9861,7 +9887,8 @@ namespace SIESC.BD.DataSets {
                         SindicanciaFinalizada,
                         EnderecoComprovado,
                         Status,
-                        Pendente};
+                        Pendente,
+                        Observacoes};
                 rowvw_sindicanciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_sindicanciaRow);
                 return rowvw_sindicanciaRow;
@@ -9909,6 +9936,7 @@ namespace SIESC.BD.DataSets {
                 this.columnEnderecoComprovado = base.Columns["EnderecoComprovado"];
                 this.columnStatus = base.Columns["Status"];
                 this.columnPendente = base.Columns["Pendente"];
+                this.columnObservacoes = base.Columns["Observacoes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9948,6 +9976,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnStatus);
                 this.columnPendente = new global::System.Data.DataColumn("Pendente", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPendente);
+                this.columnObservacoes = new global::System.Data.DataColumn("Observacoes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacoes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidSindicancia,
                                 this.columnidSolicitacoesVagas}, true));
@@ -9972,6 +10002,7 @@ namespace SIESC.BD.DataSets {
                 this.columnInstituicaoEncaminhada.MaxLength = 80;
                 this.columnUsuarioResponsavel.MaxLength = 20;
                 this.columnUsuarioFinalizou.MaxLength = 20;
+                this.columnObservacoes.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16402,6 +16433,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Observacoes {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.ObservacoesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Observacoes\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_sindicancia.ObservacoesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEnderecoNull() {
                 return this.IsNull(this.tablevw_sindicancia.EnderecoColumn);
             }
@@ -16518,6 +16565,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPendenteNull() {
                 this[this.tablevw_sindicancia.PendenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsObservacoesNull() {
+                return this.IsNull(this.tablevw_sindicancia.ObservacoesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetObservacoesNull() {
+                this[this.tablevw_sindicancia.ObservacoesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -33631,6 +33690,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             tableMapping.ColumnMappings.Add("EnderecoComprovado", "EnderecoComprovado");
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("Pendente", "Pendente");
+            tableMapping.ColumnMappings.Add("Observacoes", "Observacoes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -33647,12 +33707,12 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[11];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status
+            this._commandCollection[0].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status
 FROM            vw_sindicancia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @AnoEnsino)";
+            this._commandCollection[1].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @AnoEnsino)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@AnoEnsino";
@@ -33665,7 +33725,7 @@ FROM            vw_sindicancia";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Sindicado = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada)";
+            this._commandCollection[2].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33687,10 +33747,7 @@ FROM            vw_sindicancia";
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, 
-                         DataFinalizacao, Pendente, SindicanciaFinalizada, Status
-FROM            vw_sindicancia
-WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
+            this._commandCollection[3].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@instituicaosolicitada";
@@ -33703,7 +33760,7 @@ WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECTidSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Regional = @regional)";
+            this._commandCollection[4].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Regional = @regional)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -33716,7 +33773,7 @@ WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1)  AND (AnoEnsino = @anoensino) AND (Regional = @regional)";
+            this._commandCollection[5].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (Regional = @regional)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33738,7 +33795,7 @@ WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[5].Parameters.Add(param);
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, NomeAluno, Pendente, Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicancia, idSolicitacoesVagas FROM vw_sindicancia WHERE (Status = 1) AND (Sindicado = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada) AND (Regional = @regional)";
+            this._commandCollection[6].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1)  AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada) AND (Regional = @regional)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33769,7 +33826,7 @@ WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[6].Parameters.Add(param);
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1)  AND (InstituicaoSolicitada = @InstituicaoSolicitada) AND (Regional = @Regional)";
+            this._commandCollection[7].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @InstituicaoSolicitada) AND (Regional = @Regional)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@InstituicaoSolicitada";
@@ -33791,17 +33848,15 @@ WHERE        (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)";
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) ";
+            this._commandCollection[8].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (SindicanciaFinalizada = 1)";
+            this._commandCollection[9].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (SindicanciaFinalizada = 1)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"SELECT  idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, DataFinalizacao, Pendente, SindicanciaFinalizada, Status
-FROM            vw_sindicancia
-WHERE        (Status = 1) AND (Pendente = 1)";
+            this._commandCollection[10].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Pendente = 1)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34340,9 +34395,10 @@ WHERE        (Status = 1) AND (Pendente = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE sindicancia SET observacoes = @observacoes, finalizada = @finalizada, ende" +
-                "recoConferido = @enderecoConferido, status = @status, dataFinalizou = @dataFinal" +
-                "izou, usuarioFinalizou = @usuarioFinalizou";
+            this._commandCollection[1].CommandText = @"UPDATE       sindicancia
+SET                observacoes = @observacoes, finalizada = @finalizada, enderecoConferido = @enderecoConferido, dataFinalizacao = @dataFinalizacao, usuarioFinalizou = @usuarioFinalizou, pendente = @pendente, 
+                         dataFinalizacao = @datafinalizacao, dataSindicancia = @dataSindicancia, usuarioResponsavel = @usuarioResponsavel
+WHERE        (idSindicancia = @idSindicancia)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@observacoes";
@@ -34372,20 +34428,11 @@ WHERE        (Status = 1) AND (Pendente = 1)";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[1].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
+            param.ParameterName = "@dataFinalizacao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
-            param.SourceColumn = "status";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataFinalizou";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "dataFinalizou";
+            param.SourceColumn = "dataFinalizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[1].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -34396,6 +34443,40 @@ WHERE        (Status = 1) AND (Pendente = 1)";
             param.IsNullable = true;
             param.SourceColumn = "usuarioFinalizou";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@pendente";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "pendente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataSindicancia";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usuarioResponsavel";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioResponsavel";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -34588,7 +34669,7 @@ WHERE        (Status = 1) AND (Pendente = 1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int AtualizarSindicado(string observacoes, object finalizada, object enderecoConferido, object status, object dataFinalizou, string usuarioFinalizou) {
+        public virtual int AtualizarSindicado(string observacoes, object finalizada, object enderecoConferido, global::System.Nullable<global::System.DateTime> dataFinalizacao, string usuarioFinalizou, object pendente, global::System.Nullable<global::System.DateTime> dataSindicancia, string usuarioResponsavel, int idSindicancia) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
             if ((observacoes == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -34608,24 +34689,37 @@ WHERE        (Status = 1) AND (Pendente = 1)";
             else {
                 command.Parameters[2].Value = ((object)(enderecoConferido));
             }
-            if ((status == null)) {
+            if ((dataFinalizacao.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(dataFinalizacao.Value));
+            }
+            else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                command.Parameters[3].Value = ((object)(status));
-            }
-            if ((dataFinalizou == null)) {
-                throw new global::System.ArgumentNullException("dataFinalizou");
-            }
-            else {
-                command.Parameters[4].Value = ((object)(dataFinalizou));
-            }
             if ((usuarioFinalizou == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(usuarioFinalizou));
+            }
+            if ((pendente == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(usuarioFinalizou));
+                command.Parameters[5].Value = ((object)(pendente));
             }
+            if ((dataSindicancia.HasValue == true)) {
+                command.Parameters[6].Value = ((System.DateTime)(dataSindicancia.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioResponsavel == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(usuarioResponsavel));
+            }
+            command.Parameters[8].Value = ((int)(idSindicancia));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

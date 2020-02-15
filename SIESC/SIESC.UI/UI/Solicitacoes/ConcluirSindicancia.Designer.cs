@@ -36,13 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.chk_comprovou_endereco = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chk_pendente = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_observacoes = new SIESC.UI.MyTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.txt_observacoes = new SIESC.UI.MyTextBox();
+            this.chk_finalizada = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -130,17 +130,19 @@
             this.chk_comprovou_endereco.TabIndex = 8;
             this.chk_comprovou_endereco.Text = "Endereço Confirmado";
             this.chk_comprovou_endereco.UseVisualStyleBackColor = true;
+            this.chk_comprovou_endereco.CheckedChanged += new System.EventHandler(this.chk_comprovou_endereco_CheckedChanged);
             // 
-            // checkBox1
+            // chk_pendente
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.Location = new System.Drawing.Point(181, 105);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(88, 22);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Pendente";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_pendente.AutoSize = true;
+            this.chk_pendente.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.chk_pendente.Location = new System.Drawing.Point(181, 105);
+            this.chk_pendente.Name = "chk_pendente";
+            this.chk_pendente.Size = new System.Drawing.Size(88, 22);
+            this.chk_pendente.TabIndex = 9;
+            this.chk_pendente.Text = "Pendente";
+            this.chk_pendente.UseVisualStyleBackColor = true;
+            this.chk_pendente.CheckedChanged += new System.EventHandler(this.chk_pendente_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -152,6 +154,16 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Observações";
+            // 
+            // txt_observacoes
+            // 
+            this.txt_observacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_observacoes.Location = new System.Drawing.Point(3, 21);
+            this.txt_observacoes.MaxLength = 500;
+            this.txt_observacoes.Multiline = true;
+            this.txt_observacoes.Name = "txt_observacoes";
+            this.txt_observacoes.Size = new System.Drawing.Size(720, 123);
+            this.txt_observacoes.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -181,6 +193,7 @@
             this.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_confirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_confirmar.UseVisualStyleBackColor = true;
+            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
             // 
             // btn_cancelar
             // 
@@ -196,34 +209,25 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // checkBox2
+            // chk_finalizada
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.checkBox2.Location = new System.Drawing.Point(275, 105);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(81, 22);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Finalizar";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // txt_observacoes
-            // 
-            this.txt_observacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_observacoes.Location = new System.Drawing.Point(3, 21);
-            this.txt_observacoes.MaxLength = 500;
-            this.txt_observacoes.Multiline = true;
-            this.txt_observacoes.Name = "txt_observacoes";
-            this.txt_observacoes.Size = new System.Drawing.Size(720, 123);
-            this.txt_observacoes.TabIndex = 0;
+            this.chk_finalizada.AutoSize = true;
+            this.chk_finalizada.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.chk_finalizada.Location = new System.Drawing.Point(275, 105);
+            this.chk_finalizada.Name = "chk_finalizada";
+            this.chk_finalizada.Size = new System.Drawing.Size(81, 22);
+            this.chk_finalizada.TabIndex = 15;
+            this.chk_finalizada.Text = "Finalizar";
+            this.chk_finalizada.UseVisualStyleBackColor = true;
+            this.chk_finalizada.CheckedChanged += new System.EventHandler(this.chk_finalizada_CheckedChanged);
             // 
             // ConcluirSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.ClientSize = new System.Drawing.Size(738, 376);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.chk_pendente);
+            this.Controls.Add(this.chk_finalizada);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_confirmar);
             this.Controls.Add(this.groupBox2);
@@ -251,12 +255,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_endereco;
         private System.Windows.Forms.CheckBox chk_comprovou_endereco;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chk_pendente;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_confirmar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chk_finalizada;
         private MyTextBox txt_observacoes;
     }
 }

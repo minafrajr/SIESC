@@ -156,10 +156,50 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_concluir_Click(object sender,EventArgs e)
         {
-            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia();
 
-            frm_concluirSindicancia.Show(this);
+            sindicancia = CriarSindicancia();
 
+            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia,principalUi);
+
+            frm_concluirSindicancia.Show(principalUi);
+
+
+            CarregaGridView();
+
+        }
+
+        private Sindicancia CriarSindicancia()
+        {
+            try
+            {
+                var _sindicancia = new Sindicancia();
+
+                _sindicancia.codigoSincidancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
+                _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacoesVagas"].Value;
+                _sindicancia.nomeAluno = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
+                _sindicancia.observacoes = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
+                _sindicancia.enderecoConfirmado = (bool)dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value;
+                _sindicancia.sindicanciaFinalizada =
+                    (bool)dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value;
+                _sindicancia.dataSindicancia = dgv_dados.CurrentRow.Cells["DataSindicancia"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataSindicancia"].Value;
+                _sindicancia.usuarioResponsavel = dgv_dados.CurrentRow.Cells["UsuarioResponsavel"].Value.ToString();
+                _sindicancia.dataFinalizacao = dgv_dados.CurrentRow.Cells["DataFinalizacao"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataFinalizacao"].Value;
+                _sindicancia.enderecoAluno = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
+                _sindicancia.usuarioFinalizacao = dgv_dados.CurrentRow.Cells["UsuarioFinalizou"].Value.ToString();
+                _sindicancia.sindicanciaPendente = (bool)dgv_dados.CurrentRow.Cells["Pendente"].Value;
+
+                return _sindicancia;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Mensageiro.MensagemAviso(ex.Message + " \n " + ex.StackTrace,principalUi);
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception,principalUi);
+            }
+
+            return null;
         }
 
         private void btn_sindicar_Click(object sender,EventArgs e)
@@ -236,6 +276,8 @@ namespace SIESC.UI.UI.Solicitacoes
             gpb_sindicados.Visible = habilita;
             btn_sindicar.Enabled = !habilita;
             chk_finalizadas.Checked = chk_pendentes.Checked = !habilita;
+            lbl_apartir_sol.Visible = !habilita;
+            nupd_cod_solicitacao.Visible = !habilita;
         }
 
         private async void chk_pendentes_CheckedChanged(object sender,EventArgs e)
@@ -259,7 +301,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             else if (chk_finalizadas.Checked)
             {
-                
+
 
                 chk_pendentes.Checked = false;
 
@@ -402,8 +444,10 @@ namespace SIESC.UI.UI.Solicitacoes
                 control.ResetText();
             }
 
-
-            
+            lbl_finalizada.ResetText();
+            lbl_pendente.ResetText();
+            lbl_usuario_finalizou.ResetText();
+            lbl_endereco_comprovado.ResetText();
         }
 
     }

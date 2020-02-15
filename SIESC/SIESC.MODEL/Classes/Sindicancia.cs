@@ -19,6 +19,15 @@ namespace SIESC.MODEL.Classes
         /// O código da solicitação a ser sindicada
         /// </summary>
         public int codigoSolicitacao { get; set; }
+        /// <summary>
+        /// O nome do aluno sindicado
+        /// </summary>
+        public string nomeAluno { get; set; }
+
+        /// <summary>
+        /// Endereço do aluno sindicado
+        /// </summary>
+        public string enderecoAluno { get; set; }
 
         /// <summary>
         /// O usuário responsável por marcar como sindicado
@@ -28,34 +37,38 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Usuario que concluiu a sindicancia
         /// </summary>
-        public int usuarioEfetivacao { get; set; }
+        public string usuarioFinalizacao { get; set; }
 
         /// <summary>
         /// A data em que foi indicada como sindicancia
         /// </summary>
-        public DateTime dataSindicancia { get; set; }
+        public DateTime? dataSindicancia { get; set; }
 
         /// <summary>
         /// A data em que a sindicancia foi efetivada
         /// </summary>
-        public DateTime dataEfetivacao { get; set; }
-        /// <summary>
-        /// Marcador para sindicada
-        /// </summary>
-        public bool sindicado { get; set; }
+        public DateTime? dataFinalizacao { get; set; }
+
         /// <summary>
         /// Se a sindicancia foi efetivada
         /// </summary>
-        public bool sindicanciaEfetivada { get; set; }
+        public bool? sindicanciaFinalizada { get; set; }
         /// <summary>
         /// Se o endereço sindicado foi confirmado
         /// </summary>
-        public bool enderecoConfirmado { get; set; }
-        public bool status { get; set; }
+        public bool? enderecoConfirmado { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool? status { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool? sindicanciaPendente { get; set; }
         /// <summary>
         /// Observações da sindicancia
         /// </summary>
-        public string observavoes { get; set; }
+        public string observacoes { get; set; }
 
 
 

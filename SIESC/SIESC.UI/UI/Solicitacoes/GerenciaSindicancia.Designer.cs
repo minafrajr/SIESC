@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
+            this.lbl_usuario_finalizou = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_finalizada = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,8 +94,6 @@
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_usuario_finalizou = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -156,6 +156,26 @@
             this.gpb_sindicados.TabStop = false;
             this.gpb_sindicados.Text = "Sindicância";
             this.gpb_sindicados.Visible = false;
+            // 
+            // lbl_usuario_finalizou
+            // 
+            this.lbl_usuario_finalizou.AutoSize = true;
+            this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(170, 62);
+            this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
+            this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
+            this.lbl_usuario_finalizou.TabIndex = 10;
+            this.lbl_usuario_finalizou.Text = "S/N";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(120, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 14);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Usuário:";
             // 
             // label6
             // 
@@ -563,7 +583,7 @@
             this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
             this.nupd_cod_solicitacao.Location = new System.Drawing.Point(877, 9);
             this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
-            5000,
+            3500,
             0,
             0,
             0});
@@ -577,7 +597,7 @@
             this.nupd_cod_solicitacao.TabIndex = 86;
             this.nupd_cod_solicitacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nupd_cod_solicitacao.Value = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             0});
@@ -797,26 +817,6 @@
             // vw_comprovacao_enderecoTableAdapter1
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(120, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 14);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Usuário:";
-            // 
-            // lbl_usuario_finalizou
-            // 
-            this.lbl_usuario_finalizou.AutoSize = true;
-            this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(170, 62);
-            this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
-            this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
-            this.lbl_usuario_finalizou.TabIndex = 10;
-            this.lbl_usuario_finalizou.Text = "S/N";
             // 
             // GerenciaSindicancia
             // 

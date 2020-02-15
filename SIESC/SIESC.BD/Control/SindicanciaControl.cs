@@ -29,24 +29,7 @@ namespace SIESC.BD.Control
         /// </summary>
         private Sindicancia sindicancia;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public async Task<DataTable> GetAsync()
-        {
-            vw_ComprovacaoEnderecoTA = new vw_comprovacao_enderecoTableAdapter();
-            return await Task.Factory.StartNew(() => vw_ComprovacaoEnderecoTA.GetDataFundamental(1));
-        }
 
-
-        public DataTable GetaDataTable()
-        {
-            vw_ComprovacaoEnderecoTA = new vw_comprovacao_enderecoTableAdapter();
-
-            return vw_ComprovacaoEnderecoTA.GetData();
-
-        }
 
         public bool InserirSindicancias(List<Sindicancia> sindicancias)
         {
@@ -73,7 +56,7 @@ namespace SIESC.BD.Control
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
 
-            return await Task.Factory.StartNew(() =>selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao));
+            return await Task.Factory.StartNew(() => selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao));
 
         }
 
@@ -165,14 +148,20 @@ namespace SIESC.BD.Control
         public async Task<DataTable> GetSindicanciasPendentes()
         {
             vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
-            return await Task.Factory.StartNew(() =>vw_sindicancia_TA.GetSindicanciasPendentes());
+            return await Task.Factory.StartNew(() => vw_sindicancia_TA.GetSindicanciasPendentes());
         }
 
         public async Task<DataTable> GetSindicanciasFinalizadas()
         {
             vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
 
-            return await Task.Factory.StartNew(() =>vw_sindicancia_TA.GetSindicanciasFinalizadas());
+            return await Task.Factory.StartNew(() => vw_sindicancia_TA.GetSindicanciasFinalizadas());
+        }
+
+        public bool AtualizarSindicancia(Sindicancia _sindicancia)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+            return (sindicancia_TA.AtualizarSindicado(_sindicancia.observacoes,_sindicancia.sindicanciaFinalizada,_sindicancia.enderecoConfirmado,_sindicancia.dataFinalizacao,_sindicancia.usuarioFinalizacao,_sindicancia.sindicanciaPendente,_sindicancia.dataSindicancia,_sindicancia.usuarioResponsavel,_sindicancia.codigoSincidancia) > 0);
         }
     }
 }
