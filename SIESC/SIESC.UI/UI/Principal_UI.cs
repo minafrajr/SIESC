@@ -2474,5 +2474,12 @@ namespace SIESC.UI
             frmSindicancia.MdiParent = this;
             frmSindicancia.Show();
         }
+
+        private void sindicadosToolStripMenuItem_Click(object sender,EventArgs e)
+        {
+            frm_relatorio_sindicancia frmRelatorioSindicancia = new frm_relatorio_sindicancia() { MdiParent = this };
+            frmRelatorioSindicancia.Show();
+
+        }
     }
 }

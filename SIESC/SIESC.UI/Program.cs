@@ -6,6 +6,7 @@
 
 using System;
 using System.Windows.Forms;
+using SIESC.UI.UI.Relatorios;
 using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI
@@ -21,8 +22,6 @@ namespace SIESC.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Principal_UI());
-            //Application.Run(new GerenciaSindicancia(new Principal_UI()));
-
         }
     }
 }

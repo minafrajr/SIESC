@@ -244,7 +244,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void LimpaCombos()
         {
-            foreach (MyComboBox combo in gpb_filtros_de_busca.Controls)
+            foreach (MyComboBox combo in gpb_filtros_de_busca.Controls.OfType<MyComboBox>())
             {
                 combo.SelectedIndex = -1;
             }
