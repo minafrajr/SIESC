@@ -28,7 +28,10 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private Sindicancia sindicancia;
 
+        private SolicitacaoControl solicitacaoControl;
+
         private List<Sindicancia> listaOfSindicancias;
+
 
         public GerenciaSindicancia(Principal_UI principal)
         {
@@ -113,7 +116,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         break;
                     case TipoConsulta.geral:
 
-                        dt = await sindicanciaControl.GetTodos(rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
 
                         break;
                     case TipoConsulta.regional_ano:
@@ -156,16 +159,28 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_concluir_Click(object sender,EventArgs e)
         {
+            try
+            {
+                ConcluirSindicancia();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
+            }
+            finally
+            {
+                CarregaGridView();
 
+            }
+        }
+
+        private void ConcluirSindicancia()
+        {
             sindicancia = CriarSindicancia();
 
             ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia,principalUi);
 
             frm_concluirSindicancia.Show(principalUi);
-
-
-            CarregaGridView();
-
         }
 
         private Sindicancia CriarSindicancia()
@@ -206,12 +221,20 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
+                if (listaOfSindicancias.Count == 0)
+                    throw new ArgumentNullException("Não existem solicitações selecionadas para serem sindicadas");
+
                 sindicanciaControl = new SindicanciaControl();
 
                 if (sindicanciaControl.InserirSindicancias(listaOfSindicancias))
+                {
+                    listaOfSindicancias.Clear();
                     Mensageiro.MensagemConfirmaGravacao(principalUi);
+                }
 
-                CarregaGridView();
+                LimpaCombos();
+                RadioButtonChecked_Click(null,null);
+
             }
             catch (Exception ex)
             {
@@ -219,55 +242,21 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        private void rdb_sindicadas_CheckedChanged(object sender,EventArgs e)
+        private void LimpaCombos()
         {
-            try
+            foreach (MyComboBox combo in gpb_filtros_de_busca.Controls)
             {
-                if (rdb_sindicadas.Checked)
-                {
-                    limpacampos();
-                    HabilitarContoles(true);
-                    if (dgv_dados.Columns.Contains("sindicar"))
-                    {
-                        dgv_dados.Columns.Remove("sindicar");
-                    }
-
-                    dgv_dados.EditMode = DataGridViewEditMode.EditProgrammatically;
-
-
-                    nupd_cod_solicitacao.Enabled = rdb_nao_sindicadas.Checked;
-                    lbl_apartir_sol.Visible = rdb_nao_sindicadas.Checked;
-
-                    CarregaGridView();
-                }
-            }
-            catch (Exception ex)
-            {
-                Mensageiro.MensagemErro(ex,principalUi);
+                combo.SelectedIndex = -1;
             }
         }
 
-        private void rdb_nao_sindicadas_CheckedChanged(object sender,EventArgs e)
-        {
-            if (rdb_nao_sindicadas.Checked)
-            {
-                HabilitarContoles(false);
-
-                if (!dgv_dados.Columns.Contains("sindicar"))
-                {
-                    chk_finalizadas.Visible = chk_pendentes.Visible = rdb_sindicadas.Checked;
-                    var colunaCheck = new DataGridViewCheckBoxColumn()
-                    { Name = "sindicar",HeaderText = "Sindicar",DisplayIndex = 0 }; //adiciona um check box na primeira coluna 
-                    dgv_dados.Columns.Add(colunaCheck);
-                }
-
-                dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
-
-                CarregaGridView();
-
-            }
-        }
-        private void HabilitarContoles(bool habilita)
+        /// <summary>
+        /// Habilitas os controles conforme a seleção
+        /// </summary>
+        /// <param name="habilita">Controle dos sindicados</param>
+        /// <param name="busca">Controles dos filtros de busca</param>
+        /// <param name="sindicados">Detalhes dos sindicados</param>
+        private void HabilitarContoles(bool habilita,bool busca,bool sindicados)
         {
             chk_finalizadas.Visible = chk_pendentes.Visible = habilita;
             btn_concluir.Enabled = habilita;
@@ -278,49 +267,73 @@ namespace SIESC.UI.UI.Solicitacoes
             chk_finalizadas.Checked = chk_pendentes.Checked = !habilita;
             lbl_apartir_sol.Visible = !habilita;
             nupd_cod_solicitacao.Visible = !habilita;
+            gpb_filtros_de_busca.Visible = busca;
+            gpb_sindicados.Visible = sindicados;
+            txt_observacoes.Visible = sindicados;
+            lbl_observacoes.Visible = sindicados;
         }
 
-        private async void chk_pendentes_CheckedChanged(object sender,EventArgs e)
+
+        private void chk_pendentes_ou_finalizadas_CheckedCanged(object sender,EventArgs e)
         {
-            await PendentesOUFinalizadas();
+            dgv_dados.DataSource = null;
+            PendentesOuFinalizadas();
         }
 
-        private async Task PendentesOUFinalizadas()
+        private void PendentesOuFinalizadas()
         {
-            if (chk_pendentes.Checked)
+            try
             {
-                chk_finalizadas.Checked = false;
-
-                dgv_dados.DataSource = null;
-
                 sindicanciaControl = new SindicanciaControl();
+                if (chk_pendentes.Checked)
+                {
+                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasPendentes();
 
-                dgv_dados.DataSource = await sindicanciaControl.GetSindicanciasPendentes();
+                }
+                else if (chk_finalizadas.Checked)
+                {
+                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasFinalizadas();
+                }
 
                 dgv_dados.Refresh();
             }
-            else if (chk_finalizadas.Checked)
+            catch (Exception ex)
             {
-
-
-                chk_pendentes.Checked = false;
-
-                dgv_dados.DataSource = null;
-
-                sindicanciaControl = new SindicanciaControl();
-
-                dgv_dados.DataSource = await sindicanciaControl.GetSindicanciasFinalizadas();
+                Mensageiro.MensagemErro(ex,principalUi);
             }
+
         }
 
-        private async void chk_finalizadas_CheckedChanged(object sender,EventArgs e)
-        {
-            await PendentesOUFinalizadas();
-        }
 
         private void btn_localizar_Click(object sender,EventArgs e)
         {
+            try
+            {
+                if (rdb_nome.Checked)
+                {
+                    if (string.IsNullOrEmpty(txt_nomealuno.Text))
+                        throw new ArgumentNullException($"O campo {txt_nomealuno.Tag} está vazio!");
 
+                    CarregaGridViewByNomeAluno(txt_nomealuno.Text);
+                }
+
+                if (rdb_codigo.Checked)
+                {
+                    if (string.IsNullOrEmpty(txt_codigo.Text))
+                        throw new ArgumentNullException($"O campo {txt_codigo.Tag} está vazio!");
+
+                    CarregaGridViewByIdSolicitacao(txt_codigo.Text);
+                }
+
+                if (rdb_nao_sindicadas.Checked || rdb_sindicadas.Checked)
+                {
+                    CarregaGridView();
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
+            }
         }
 
         private void btn_cancel_regional_Click(object sender,EventArgs e)
@@ -336,30 +349,48 @@ namespace SIESC.UI.UI.Solicitacoes
         private void btn_cancel_escola_Click(object sender,EventArgs e)
         {
             cbo_escola.SelectedValue = -1;
+
         }
 
         private void dgv_dados_CellContentClick(object sender,DataGridViewCellEventArgs e)
         {
-            if (rdb_nao_sindicadas.Checked)
+            try
             {
-                if (e.ColumnIndex == dgv_dados.Columns["sindicar"].Index) //se clicou na coluna de seleção checkbox
+                if (rdb_nao_sindicadas.Checked || rdb_codigo.Checked || rdb_nome.Checked)
                 {
-                    var codigoSol = (int)dgv_dados.CurrentRow.Cells[1].Value;
-
-
-                    foreach (var sindicado in listaOfSindicancias.Where(x => x.codigoSolicitacao == codigoSol))
+                    if (e.ColumnIndex == dgv_dados.Columns["sindicar"].Index) //se clicou na coluna de seleção checkbox
                     {
-                        listaOfSindicancias.Remove(sindicado);
-                        return;
+                        var codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells[1].Value;
+
+                        if (rdb_codigo.Checked || rdb_nome.Checked)
+                        {
+                            sindicanciaControl = new SindicanciaControl();
+                            if (sindicanciaControl.ContemSindicado(codigoSolicitacao))
+                            {
+                                dgv_dados.CancelEdit();
+
+                                throw new Exception("A solicitação já se encontra em processo de sindicância!");
+                            }
+                        }
+
+                        foreach (var sindicado in listaOfSindicancias.Where(x => x.codigoSolicitacao == codigoSolicitacao))
+                        {
+                            listaOfSindicancias.Remove(sindicado);
+                            return;
+                        }
+
+                        listaOfSindicancias.Add(new Sindicancia()
+                        {
+                            codigoSolicitacao = (int)dgv_dados[1,dgv_dados.CurrentCellAddress.Y].Value,
+                            dataSindicancia = DateTime.Now,
+                            usuarioResponsavel = principalUi.user.nomeusuario,
+                        });
                     }
-
-                    listaOfSindicancias.Add(new Sindicancia()
-                    {
-                        codigoSolicitacao = (int)dgv_dados[1,dgv_dados.CurrentCellAddress.Y].Value,
-                        dataSindicancia = DateTime.Now,
-                        usuarioResponsavel = principalUi.user.nomeusuario,
-                    });
                 }
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
             }
 
         }
@@ -377,7 +408,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[9].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[12].Value.ToString();
                 txt_comprovante_endereco.Text = $@"{dgv_dados.CurrentRow.Cells[10].Value} - {dgv_dados.CurrentRow.Cells[11].Value}";
-
             }
 
             if (rdb_sindicadas.Checked)
@@ -387,14 +417,16 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_endereco.Text = dgv_dados.CurrentRow.Cells[3].Value.ToString();
                 txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[5].Value.ToString();
                 txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
-                txt_telefone.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
                 txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[8].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[7].Value.ToString();
+                txt_observacoes.Text = dgv_dados.CurrentRow.Cells[17].Value.ToString();
+
 
                 if ((bool)dgv_dados.CurrentRow.Cells[13].Value)
                 {
                     lbl_finalizada.Text = "SIM";
                     lbl_finalizada.ForeColor = Color.Navy;
+                    lbl_usuario_finalizou.Text = dgv_dados.CurrentRow.Cells[11].Value.ToString();
                 }
                 else
                 {
@@ -424,6 +456,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_pendente.Text = "NÃO";
                     lbl_pendente.ForeColor = Color.DarkRed;
                 }
+
                 if ((bool)dgv_dados.CurrentRow.Cells[16].Value)
                 {
                     lbl_pendente.Text = "SIM";
@@ -435,11 +468,23 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_pendente.ForeColor = Color.DarkRed;
                 }
             }
+
+            if (rdb_codigo.Checked || rdb_nome.Checked)
+            {
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[4].Value.ToString();
+                txt_endereco.Text = solicitacaoControl.RetornaEndereco((int)dgv_dados.CurrentRow.Cells[1].Value);
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[10].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[12].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[11].Value.ToString();
+                txt_telefone.Text = $"{dgv_dados.CurrentRow.Cells[6].Value} - {dgv_dados.CurrentRow.Cells[7].Value}";
+            }
         }
 
         private void limpacampos()
         {
-            foreach (Control control in pnl_dados.Controls.OfType<MyTextBox>())
+            foreach (MyTextBox control in pnl_dados.Controls.OfType<MyTextBox>())
             {
                 control.ResetText();
             }
@@ -449,6 +494,159 @@ namespace SIESC.UI.UI.Solicitacoes
             lbl_usuario_finalizou.ResetText();
             lbl_endereco_comprovado.ResetText();
         }
+
+
+
+        private void CarregaGridViewByIdSolicitacao(string codigoSolicitacao)
+        {
+            solicitacaoControl = new SolicitacaoControl();
+
+            DataTable dt = solicitacaoControl.RetornaSolicitacaoById(Convert.ToInt32(codigoSolicitacao));
+
+            dgv_dados.DataSource = dt;
+
+            dgv_dados.Refresh();
+
+            dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
+
+        }
+
+
+        private void CarregaGridViewByNomeAluno(string nomeAluno)
+        {
+            solicitacaoControl = new SolicitacaoControl();
+
+            DataTable dt = solicitacaoControl.LocalizarSolicitAluno(nomeAluno);
+
+            dgv_dados.DataSource = dt;
+
+            dgv_dados.Refresh();
+
+            dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
+        }
+
+        private void RadioButtonChecked_Click(object sender,EventArgs e)
+        {
+            if (rdb_nao_sindicadas.Checked)
+            {
+                HabilitarContoles(false,true,false);
+
+                AcrescentarColunaSindicar(true);
+
+                dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
+
+                CarregaGridView();
+
+            }
+
+            if (rdb_sindicadas.Checked)
+            {
+                limpacampos();
+                HabilitarContoles(true,true,true);
+
+                AcrescentarColunaSindicar(false);
+
+                dgv_dados.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+                CarregaGridView();
+            }
+
+            if (rdb_codigo.Checked)
+            {
+
+                limpacampos();
+                AcrescentarColunaSindicar(true);
+                HabilitarContoles(false,false,false);
+
+                dgv_dados.DataSource = null;
+                txt_codigo.Enabled = true;
+                txt_codigo.Focus();
+            }
+
+            if (rdb_nome.Checked)
+            {
+                limpacampos();
+                AcrescentarColunaSindicar(true);
+                HabilitarContoles(false,false,false);
+
+                dgv_dados.DataSource = null;
+                txt_nomealuno.Enabled = true;
+                txt_nomealuno.Focus();
+            }
+        }
+
+        private void AcrescentarColunaSindicar(bool acrescentar)
+        {
+            if (acrescentar)//adiciona um check box na primeira coluna 
+            {
+                if (!dgv_dados.Columns.Contains("sindicar"))
+                {
+                    var colunaCheck = new DataGridViewCheckBoxColumn()
+                    {
+                        Name = "sindicar",
+                        HeaderText = "Sindicar",
+                        DisplayIndex = 0
+                    };
+                    dgv_dados.Columns.Add(colunaCheck);
+                }
+            }
+            else
+            {
+                if (dgv_dados.Columns.Contains("sindicar"))
+                {
+                    dgv_dados.Columns.Remove("sindicar");
+                }
+            }
+        }
+
+        private void chk_pendentes_Click(object sender,EventArgs e)
+        {
+            chk_finalizadas.Checked = !chk_pendentes.Checked;
+        }
+
+        private void chk_finalizadas_Click(object sender,EventArgs e)
+        {
+            chk_pendentes.Checked = !chk_finalizadas.Checked;
+
+        }
+
+        private void btn_excluir_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                if (Mensageiro.MensagemExclusao($"solicitação nº {(int)dgv_dados.CurrentRow.Cells[1].Value}",principalUi).Equals(DialogResult.Yes))
+                {
+                    sindicanciaControl = new SindicanciaControl();
+                    if (sindicanciaControl.ExcluirSindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,
+                        (int)dgv_dados.CurrentRow.Cells[1].Value))
+                    {
+                        Mensageiro.MensagemConfirmaExclusao(principalUi);
+                        RadioButtonChecked_Click(null,null);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
+            }
+        }
+
+        private void dgv_dados_CellMouseDoubleClick(object sender,DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (rdb_sindicadas.Checked)
+                {
+                    ConcluirSindicancia();
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,principalUi);
+            }
+        }
+
 
     }
 }

@@ -9,7 +9,7 @@ namespace SIESC.MODEL.Classes
     /// <summary>
     /// Classe Sindicância
     /// </summary>
-    public class Sindicancia
+    public class Sindicancia : IComparable
     {
         /// <summary>
         /// O código da sindicancia
@@ -70,8 +70,22 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public string observacoes { get; set; }
 
+        /// <summary>
+        /// Comparacao
+        /// </summary>
+        /// <param name="obj">A sindicância</param>
+        /// <returns> 0 - iguais | -1 diferente</returns>
+        public int CompareTo(object obj)
+        {
+            var novoSindicado = obj as Sindicancia;
 
+            if (this.codigoSolicitacao == novoSindicado.codigoSolicitacao)
+            {
+                return 0;
+            }
 
+            return -1;
+        }
     }
 
 }

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIESC.BD.DataSets;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using SIESC.MODEL.Classes;
@@ -45,18 +41,18 @@ namespace SIESC.BD.Control
         }
 
 
-        public async Task<DataTable> GetTodos(bool sindicados,int codigoSolicitacao)
+        public DataTable GetTodos(bool sindicados,int codigoSolicitacao)
         {
             if (sindicados)
             {
                 vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
 
-                return await Task.Factory.StartNew(() => vw_sindicancia_TA.GetSindicancias());
+                return vw_sindicancia_TA.GetSindicancias();
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
 
-            return await Task.Factory.StartNew(() => selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao));
+            return selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao);
 
         }
 
@@ -145,23 +141,37 @@ namespace SIESC.BD.Control
             return selecionarSindicados_TA.GetDataByRegionalInstituicaoAnoEnsino(regional,anoeensino,instituicao,codigoSolicitacao);
         }
 
-        public async Task<DataTable> GetSindicanciasPendentes()
+        public DataTable GetSindicanciasPendentes()
         {
             vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
-            return await Task.Factory.StartNew(() => vw_sindicancia_TA.GetSindicanciasPendentes());
+            return vw_sindicancia_TA.GetSindicanciasPendentes();
         }
 
-        public async Task<DataTable> GetSindicanciasFinalizadas()
+        public DataTable GetSindicanciasFinalizadas()
         {
             vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
 
-            return await Task.Factory.StartNew(() => vw_sindicancia_TA.GetSindicanciasFinalizadas());
+            return vw_sindicancia_TA.GetSindicanciasFinalizadas();
         }
 
         public bool AtualizarSindicancia(Sindicancia _sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
             return (sindicancia_TA.AtualizarSindicado(_sindicancia.observacoes,_sindicancia.sindicanciaFinalizada,_sindicancia.enderecoConfirmado,_sindicancia.dataFinalizacao,_sindicancia.usuarioFinalizacao,_sindicancia.sindicanciaPendente,_sindicancia.dataSindicancia,_sindicancia.usuarioResponsavel,_sindicancia.codigoSincidancia) > 0);
+        }
+
+        public bool ExcluirSindicancia(int codigoSindicancia,int codigoSolicitacao)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+
+            return (sindicancia_TA.ExcluirSindicado(codigoSindicancia,codigoSolicitacao) > 0);
+        }
+
+        public bool ContemSindicado(int idSolicitacao)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+
+            return (Convert.ToInt32(sindicancia_TA.VerificaIdSolicitacao(idSolicitacao)) > 0);
         }
     }
 }

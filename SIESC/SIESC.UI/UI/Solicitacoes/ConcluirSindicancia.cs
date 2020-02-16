@@ -48,12 +48,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                controleSindicancia = new SindicanciaControl();
-
-                if (controleSindicancia.AtualizarSindicancia(sindicancia))
-                    Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
-
-                this.Close();
+                ConfirmarAlteracoes();
             }
             catch (MySqlException ex)
             {
@@ -64,6 +59,19 @@ namespace SIESC.UI.UI.Solicitacoes
                 Mensageiro.MensagemErro(ex,PrincipalUi);
             }
 
+        }
+
+        private void ConfirmarAlteracoes()
+        {
+            if (!string.IsNullOrEmpty(txt_observacoes.Text))
+                sindicancia.observacoes = txt_observacoes.Text;
+
+            controleSindicancia = new SindicanciaControl();
+
+            if (controleSindicancia.AtualizarSindicancia(sindicancia))
+                Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
+
+            this.Close();
         }
 
         private void chk_pendente_CheckedChanged(object sender,EventArgs e)
@@ -96,6 +104,21 @@ namespace SIESC.UI.UI.Solicitacoes
 
             if (sindicancia.enderecoConfirmado != null && ((bool)!sindicancia.enderecoConfirmado && chk_comprovou_endereco.Checked))
                 sindicancia.enderecoConfirmado = true;
+        }
+
+        private void ConcluirSindicancia_KeyDown(object sender,KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    ConfirmarAlteracoes();
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, PrincipalUi);
+            }
         }
     }
 }
