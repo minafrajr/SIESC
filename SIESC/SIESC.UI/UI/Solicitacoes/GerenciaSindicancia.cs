@@ -647,6 +647,10 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-
+        private void btn_imprimir_ficha_Click(object sender,EventArgs e)
+        {
+            frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,(int)dgv_dados.CurrentRow.Cells[1].Value) { MdiParent = principalUi };
+            fichaSindicancia.Show();
+        }
     }
 }

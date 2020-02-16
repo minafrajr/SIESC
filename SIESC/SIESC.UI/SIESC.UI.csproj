@@ -353,6 +353,12 @@
     <Compile Include="UI\Progresso.Designer.cs">
       <DependentUpon>Progresso.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_sindicancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Relatorios\frm_ficha_sindicancia.Designer.cs">
+      <DependentUpon>frm_ficha_sindicancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Relatorios\frm_encaminhamento_transporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_ficha_encaminhamento.resx">
       <DependentUpon>frm_ficha_encaminhamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Relatorios\frm_ficha_sindicancia.resx">
+      <DependentUpon>frm_ficha_sindicancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_ficha_solicitacao.resx">
       <DependentUpon>frm_ficha_solicitacao.cs</DependentUpon>

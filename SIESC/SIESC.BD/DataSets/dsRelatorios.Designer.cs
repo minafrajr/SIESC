@@ -68,6 +68,8 @@ namespace SIESC.BD.DataSets {
         
         private vw_comprovacao_enderecoDataTable tablevw_comprovacao_endereco;
         
+        private vw_ficha_sindicanciaDataTable tablevw_ficha_sindicancia;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -161,6 +163,9 @@ namespace SIESC.BD.DataSets {
                 }
                 if ((ds.Tables["vw_comprovacao_endereco"] != null)) {
                     base.Tables.Add(new vw_comprovacao_enderecoDataTable(ds.Tables["vw_comprovacao_endereco"]));
+                }
+                if ((ds.Tables["vw_ficha_sindicancia"] != null)) {
+                    base.Tables.Add(new vw_ficha_sindicanciaDataTable(ds.Tables["vw_ficha_sindicancia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -402,6 +407,16 @@ namespace SIESC.BD.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vw_ficha_sindicanciaDataTable vw_ficha_sindicancia {
+            get {
+                return this.tablevw_ficha_sindicancia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -532,6 +547,9 @@ namespace SIESC.BD.DataSets {
                 }
                 if ((ds.Tables["vw_comprovacao_endereco"] != null)) {
                     base.Tables.Add(new vw_comprovacao_enderecoDataTable(ds.Tables["vw_comprovacao_endereco"]));
+                }
+                if ((ds.Tables["vw_ficha_sindicancia"] != null)) {
+                    base.Tables.Add(new vw_ficha_sindicanciaDataTable(ds.Tables["vw_ficha_sindicancia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -698,6 +716,12 @@ namespace SIESC.BD.DataSets {
                     this.tablevw_comprovacao_endereco.InitVars();
                 }
             }
+            this.tablevw_ficha_sindicancia = ((vw_ficha_sindicanciaDataTable)(base.Tables["vw_ficha_sindicancia"]));
+            if ((initTable == true)) {
+                if ((this.tablevw_ficha_sindicancia != null)) {
+                    this.tablevw_ficha_sindicancia.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -752,6 +776,8 @@ namespace SIESC.BD.DataSets {
             base.Tables.Add(this.tablevw_ficha_encaminhamento);
             this.tablevw_comprovacao_endereco = new vw_comprovacao_enderecoDataTable();
             base.Tables.Add(this.tablevw_comprovacao_endereco);
+            this.tablevw_ficha_sindicancia = new vw_ficha_sindicanciaDataTable();
+            base.Tables.Add(this.tablevw_ficha_sindicancia);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -888,6 +914,12 @@ namespace SIESC.BD.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializevw_ficha_sindicancia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1006,6 +1038,9 @@ namespace SIESC.BD.DataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void vw_comprovacao_enderecoRowChangeEventHandler(object sender, vw_comprovacao_enderecoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void vw_ficha_sindicanciaRowChangeEventHandler(object sender, vw_ficha_sindicanciaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9273,6 +9308,540 @@ namespace SIESC.BD.DataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vw_ficha_sindicanciaDataTable : global::System.Data.TypedTableBase<vw_ficha_sindicanciaRow> {
+            
+            private global::System.Data.DataColumn columnidSindicancia;
+            
+            private global::System.Data.DataColumn columnidSolicitacoesVagas;
+            
+            private global::System.Data.DataColumn columnNomeAluno;
+            
+            private global::System.Data.DataColumn columnEndereco;
+            
+            private global::System.Data.DataColumn columnRegional;
+            
+            private global::System.Data.DataColumn columnInstituicaoSolicitada;
+            
+            private global::System.Data.DataColumn columnAnoEnsino;
+            
+            private global::System.Data.DataColumn columnDataSolicitacao;
+            
+            private global::System.Data.DataColumn columnInstituicaoEncaminhada;
+            
+            private global::System.Data.DataColumn columnUsuarioResponsavel;
+            
+            private global::System.Data.DataColumn columnDataSindicancia;
+            
+            private global::System.Data.DataColumn columnUsuarioFinalizou;
+            
+            private global::System.Data.DataColumn columnObservacoes;
+            
+            private global::System.Data.DataColumn columnDataFinalizacao;
+            
+            private global::System.Data.DataColumn columnPendente;
+            
+            private global::System.Data.DataColumn columnSindicanciaFinalizada;
+            
+            private global::System.Data.DataColumn columnEnderecoComprovado;
+            
+            private global::System.Data.DataColumn columnStatus;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaDataTable() {
+                this.TableName = "vw_ficha_sindicancia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal vw_ficha_sindicanciaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected vw_ficha_sindicanciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idSindicanciaColumn {
+                get {
+                    return this.columnidSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idSolicitacoesVagasColumn {
+                get {
+                    return this.columnidSolicitacoesVagas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NomeAlunoColumn {
+                get {
+                    return this.columnNomeAluno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnderecoColumn {
+                get {
+                    return this.columnEndereco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RegionalColumn {
+                get {
+                    return this.columnRegional;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn InstituicaoSolicitadaColumn {
+                get {
+                    return this.columnInstituicaoSolicitada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AnoEnsinoColumn {
+                get {
+                    return this.columnAnoEnsino;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataSolicitacaoColumn {
+                get {
+                    return this.columnDataSolicitacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn InstituicaoEncaminhadaColumn {
+                get {
+                    return this.columnInstituicaoEncaminhada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UsuarioResponsavelColumn {
+                get {
+                    return this.columnUsuarioResponsavel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataSindicanciaColumn {
+                get {
+                    return this.columnDataSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UsuarioFinalizouColumn {
+                get {
+                    return this.columnUsuarioFinalizou;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ObservacoesColumn {
+                get {
+                    return this.columnObservacoes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataFinalizacaoColumn {
+                get {
+                    return this.columnDataFinalizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PendenteColumn {
+                get {
+                    return this.columnPendente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SindicanciaFinalizadaColumn {
+                get {
+                    return this.columnSindicanciaFinalizada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnderecoComprovadoColumn {
+                get {
+                    return this.columnEnderecoComprovado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRow this[int index] {
+                get {
+                    return ((vw_ficha_sindicanciaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_ficha_sindicanciaRowChangeEventHandler vw_ficha_sindicanciaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_ficha_sindicanciaRowChangeEventHandler vw_ficha_sindicanciaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_ficha_sindicanciaRowChangeEventHandler vw_ficha_sindicanciaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_ficha_sindicanciaRowChangeEventHandler vw_ficha_sindicanciaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addvw_ficha_sindicanciaRow(vw_ficha_sindicanciaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRow Addvw_ficha_sindicanciaRow(
+                        string NomeAluno, 
+                        string Endereco, 
+                        string Regional, 
+                        string InstituicaoSolicitada, 
+                        string AnoEnsino, 
+                        System.DateTime DataSolicitacao, 
+                        string InstituicaoEncaminhada, 
+                        string UsuarioResponsavel, 
+                        System.DateTime DataSindicancia, 
+                        string UsuarioFinalizou, 
+                        string Observacoes, 
+                        System.DateTime DataFinalizacao, 
+                        bool Pendente, 
+                        bool SindicanciaFinalizada, 
+                        bool EnderecoComprovado, 
+                        bool Status) {
+                vw_ficha_sindicanciaRow rowvw_ficha_sindicanciaRow = ((vw_ficha_sindicanciaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        NomeAluno,
+                        Endereco,
+                        Regional,
+                        InstituicaoSolicitada,
+                        AnoEnsino,
+                        DataSolicitacao,
+                        InstituicaoEncaminhada,
+                        UsuarioResponsavel,
+                        DataSindicancia,
+                        UsuarioFinalizou,
+                        Observacoes,
+                        DataFinalizacao,
+                        Pendente,
+                        SindicanciaFinalizada,
+                        EnderecoComprovado,
+                        Status};
+                rowvw_ficha_sindicanciaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvw_ficha_sindicanciaRow);
+                return rowvw_ficha_sindicanciaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRow FindByidSindicanciaidSolicitacoesVagas(int idSindicancia, int idSolicitacoesVagas) {
+                return ((vw_ficha_sindicanciaRow)(this.Rows.Find(new object[] {
+                            idSindicancia,
+                            idSolicitacoesVagas})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vw_ficha_sindicanciaDataTable cln = ((vw_ficha_sindicanciaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vw_ficha_sindicanciaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnidSindicancia = base.Columns["idSindicancia"];
+                this.columnidSolicitacoesVagas = base.Columns["idSolicitacoesVagas"];
+                this.columnNomeAluno = base.Columns["NomeAluno"];
+                this.columnEndereco = base.Columns["Endereco"];
+                this.columnRegional = base.Columns["Regional"];
+                this.columnInstituicaoSolicitada = base.Columns["InstituicaoSolicitada"];
+                this.columnAnoEnsino = base.Columns["AnoEnsino"];
+                this.columnDataSolicitacao = base.Columns["DataSolicitacao"];
+                this.columnInstituicaoEncaminhada = base.Columns["InstituicaoEncaminhada"];
+                this.columnUsuarioResponsavel = base.Columns["UsuarioResponsavel"];
+                this.columnDataSindicancia = base.Columns["DataSindicancia"];
+                this.columnUsuarioFinalizou = base.Columns["UsuarioFinalizou"];
+                this.columnObservacoes = base.Columns["Observacoes"];
+                this.columnDataFinalizacao = base.Columns["DataFinalizacao"];
+                this.columnPendente = base.Columns["Pendente"];
+                this.columnSindicanciaFinalizada = base.Columns["SindicanciaFinalizada"];
+                this.columnEnderecoComprovado = base.Columns["EnderecoComprovado"];
+                this.columnStatus = base.Columns["Status"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnidSindicancia = new global::System.Data.DataColumn("idSindicancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSindicancia);
+                this.columnidSolicitacoesVagas = new global::System.Data.DataColumn("idSolicitacoesVagas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSolicitacoesVagas);
+                this.columnNomeAluno = new global::System.Data.DataColumn("NomeAluno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeAluno);
+                this.columnEndereco = new global::System.Data.DataColumn("Endereco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndereco);
+                this.columnRegional = new global::System.Data.DataColumn("Regional", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegional);
+                this.columnInstituicaoSolicitada = new global::System.Data.DataColumn("InstituicaoSolicitada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstituicaoSolicitada);
+                this.columnAnoEnsino = new global::System.Data.DataColumn("AnoEnsino", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnoEnsino);
+                this.columnDataSolicitacao = new global::System.Data.DataColumn("DataSolicitacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataSolicitacao);
+                this.columnInstituicaoEncaminhada = new global::System.Data.DataColumn("InstituicaoEncaminhada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstituicaoEncaminhada);
+                this.columnUsuarioResponsavel = new global::System.Data.DataColumn("UsuarioResponsavel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuarioResponsavel);
+                this.columnDataSindicancia = new global::System.Data.DataColumn("DataSindicancia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataSindicancia);
+                this.columnUsuarioFinalizou = new global::System.Data.DataColumn("UsuarioFinalizou", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuarioFinalizou);
+                this.columnObservacoes = new global::System.Data.DataColumn("Observacoes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacoes);
+                this.columnDataFinalizacao = new global::System.Data.DataColumn("DataFinalizacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataFinalizacao);
+                this.columnPendente = new global::System.Data.DataColumn("Pendente", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPendente);
+                this.columnSindicanciaFinalizada = new global::System.Data.DataColumn("SindicanciaFinalizada", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSindicanciaFinalizada);
+                this.columnEnderecoComprovado = new global::System.Data.DataColumn("EnderecoComprovado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnderecoComprovado);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidSindicancia,
+                                this.columnidSolicitacoesVagas}, true));
+                this.columnidSindicancia.AutoIncrement = true;
+                this.columnidSindicancia.AutoIncrementSeed = -1;
+                this.columnidSindicancia.AutoIncrementStep = -1;
+                this.columnidSindicancia.AllowDBNull = false;
+                this.columnidSolicitacoesVagas.AutoIncrement = true;
+                this.columnidSolicitacoesVagas.AutoIncrementSeed = -1;
+                this.columnidSolicitacoesVagas.AutoIncrementStep = -1;
+                this.columnidSolicitacoesVagas.AllowDBNull = false;
+                this.columnNomeAluno.AllowDBNull = false;
+                this.columnNomeAluno.MaxLength = 60;
+                this.columnEndereco.MaxLength = 150;
+                this.columnRegional.AllowDBNull = false;
+                this.columnRegional.MaxLength = 45;
+                this.columnInstituicaoSolicitada.AllowDBNull = false;
+                this.columnInstituicaoSolicitada.MaxLength = 80;
+                this.columnAnoEnsino.AllowDBNull = false;
+                this.columnAnoEnsino.MaxLength = 45;
+                this.columnDataSolicitacao.AllowDBNull = false;
+                this.columnInstituicaoEncaminhada.MaxLength = 80;
+                this.columnUsuarioResponsavel.MaxLength = 20;
+                this.columnUsuarioFinalizou.MaxLength = 20;
+                this.columnObservacoes.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRow Newvw_ficha_sindicanciaRow() {
+                return ((vw_ficha_sindicanciaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vw_ficha_sindicanciaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vw_ficha_sindicanciaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vw_ficha_sindicanciaRowChanged != null)) {
+                    this.vw_ficha_sindicanciaRowChanged(this, new vw_ficha_sindicanciaRowChangeEvent(((vw_ficha_sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vw_ficha_sindicanciaRowChanging != null)) {
+                    this.vw_ficha_sindicanciaRowChanging(this, new vw_ficha_sindicanciaRowChangeEvent(((vw_ficha_sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vw_ficha_sindicanciaRowDeleted != null)) {
+                    this.vw_ficha_sindicanciaRowDeleted(this, new vw_ficha_sindicanciaRowChangeEvent(((vw_ficha_sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vw_ficha_sindicanciaRowDeleting != null)) {
+                    this.vw_ficha_sindicanciaRowDeleting(this, new vw_ficha_sindicanciaRowChangeEvent(((vw_ficha_sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removevw_ficha_sindicanciaRow(vw_ficha_sindicanciaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsRelatorios ds = new dsRelatorios();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vw_ficha_sindicanciaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class vw_controlesolicitacoesRow : global::System.Data.DataRow {
@@ -13914,6 +14483,410 @@ namespace SIESC.BD.DataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vw_ficha_sindicanciaRow : global::System.Data.DataRow {
+            
+            private vw_ficha_sindicanciaDataTable tablevw_ficha_sindicancia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal vw_ficha_sindicanciaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevw_ficha_sindicancia = ((vw_ficha_sindicanciaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idSindicancia {
+                get {
+                    return ((int)(this[this.tablevw_ficha_sindicancia.idSindicanciaColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.idSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idSolicitacoesVagas {
+                get {
+                    return ((int)(this[this.tablevw_ficha_sindicancia.idSolicitacoesVagasColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.idSolicitacoesVagasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NomeAluno {
+                get {
+                    return ((string)(this[this.tablevw_ficha_sindicancia.NomeAlunoColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.NomeAlunoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Endereco {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.EnderecoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Endereco\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.EnderecoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Regional {
+                get {
+                    return ((string)(this[this.tablevw_ficha_sindicancia.RegionalColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.RegionalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string InstituicaoSolicitada {
+                get {
+                    return ((string)(this[this.tablevw_ficha_sindicancia.InstituicaoSolicitadaColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.InstituicaoSolicitadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string AnoEnsino {
+                get {
+                    return ((string)(this[this.tablevw_ficha_sindicancia.AnoEnsinoColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.AnoEnsinoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime DataSolicitacao {
+                get {
+                    return ((global::System.DateTime)(this[this.tablevw_ficha_sindicancia.DataSolicitacaoColumn]));
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.DataSolicitacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string InstituicaoEncaminhada {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.InstituicaoEncaminhadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'InstituicaoEncaminhada\' na tabela \'vw_ficha_sindicancia\' é DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.InstituicaoEncaminhadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string UsuarioResponsavel {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.UsuarioResponsavelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'UsuarioResponsavel\' na tabela \'vw_ficha_sindicancia\' é DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.UsuarioResponsavelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime DataSindicancia {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevw_ficha_sindicancia.DataSindicanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataSindicancia\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.DataSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string UsuarioFinalizou {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.UsuarioFinalizouColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'UsuarioFinalizou\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.UsuarioFinalizouColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Observacoes {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.ObservacoesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Observacoes\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.ObservacoesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime DataFinalizacao {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevw_ficha_sindicancia.DataFinalizacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataFinalizacao\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.DataFinalizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Pendente {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_ficha_sindicancia.PendenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Pendente\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.PendenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool SindicanciaFinalizada {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_ficha_sindicancia.SindicanciaFinalizadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'SindicanciaFinalizada\' na tabela \'vw_ficha_sindicancia\' é DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.SindicanciaFinalizadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool EnderecoComprovado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_ficha_sindicancia.EnderecoComprovadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EnderecoComprovado\' na tabela \'vw_ficha_sindicancia\' é DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.EnderecoComprovadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Status {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_ficha_sindicancia.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Status\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEnderecoNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.EnderecoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEnderecoNull() {
+                this[this.tablevw_ficha_sindicancia.EnderecoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsInstituicaoEncaminhadaNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.InstituicaoEncaminhadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetInstituicaoEncaminhadaNull() {
+                this[this.tablevw_ficha_sindicancia.InstituicaoEncaminhadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUsuarioResponsavelNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.UsuarioResponsavelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUsuarioResponsavelNull() {
+                this[this.tablevw_ficha_sindicancia.UsuarioResponsavelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataSindicanciaNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.DataSindicanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataSindicanciaNull() {
+                this[this.tablevw_ficha_sindicancia.DataSindicanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUsuarioFinalizouNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.UsuarioFinalizouColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUsuarioFinalizouNull() {
+                this[this.tablevw_ficha_sindicancia.UsuarioFinalizouColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsObservacoesNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.ObservacoesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetObservacoesNull() {
+                this[this.tablevw_ficha_sindicancia.ObservacoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataFinalizacaoNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.DataFinalizacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataFinalizacaoNull() {
+                this[this.tablevw_ficha_sindicancia.DataFinalizacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPendenteNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.PendenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPendenteNull() {
+                this[this.tablevw_ficha_sindicancia.PendenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSindicanciaFinalizadaNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.SindicanciaFinalizadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSindicanciaFinalizadaNull() {
+                this[this.tablevw_ficha_sindicancia.SindicanciaFinalizadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEnderecoComprovadoNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.EnderecoComprovadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEnderecoComprovadoNull() {
+                this[this.tablevw_ficha_sindicancia.EnderecoComprovadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tablevw_ficha_sindicancia.StatusColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -14647,6 +15620,40 @@ namespace SIESC.BD.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_comprovacao_enderecoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class vw_ficha_sindicanciaRowChangeEvent : global::System.EventArgs {
+            
+            private vw_ficha_sindicanciaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRowChangeEvent(vw_ficha_sindicanciaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_ficha_sindicanciaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -20606,6 +21613,225 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
             this.Adapter.SelectCommand = this.CommandCollection[10];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigo));
             dsRelatorios.vw_comprovacao_enderecoDataTable dataTable = new dsRelatorios.vw_comprovacao_enderecoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vw_ficha_sindicanciaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public vw_ficha_sindicanciaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vw_ficha_sindicancia";
+            tableMapping.ColumnMappings.Add("idSindicancia", "idSindicancia");
+            tableMapping.ColumnMappings.Add("idSolicitacoesVagas", "idSolicitacoesVagas");
+            tableMapping.ColumnMappings.Add("NomeAluno", "NomeAluno");
+            tableMapping.ColumnMappings.Add("Endereco", "Endereco");
+            tableMapping.ColumnMappings.Add("Regional", "Regional");
+            tableMapping.ColumnMappings.Add("InstituicaoSolicitada", "InstituicaoSolicitada");
+            tableMapping.ColumnMappings.Add("AnoEnsino", "AnoEnsino");
+            tableMapping.ColumnMappings.Add("DataSolicitacao", "DataSolicitacao");
+            tableMapping.ColumnMappings.Add("InstituicaoEncaminhada", "InstituicaoEncaminhada");
+            tableMapping.ColumnMappings.Add("UsuarioResponsavel", "UsuarioResponsavel");
+            tableMapping.ColumnMappings.Add("DataSindicancia", "DataSindicancia");
+            tableMapping.ColumnMappings.Add("UsuarioFinalizou", "UsuarioFinalizou");
+            tableMapping.ColumnMappings.Add("Observacoes", "Observacoes");
+            tableMapping.ColumnMappings.Add("DataFinalizacao", "DataFinalizacao");
+            tableMapping.ColumnMappings.Add("Pendente", "Pendente");
+            tableMapping.ColumnMappings.Add("SindicanciaFinalizada", "SindicanciaFinalizada");
+            tableMapping.ColumnMappings.Add("EnderecoComprovado", "EnderecoComprovado");
+            tableMapping.ColumnMappings.Add("Status", "Status");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, UsuarioFinalizou, Observacoes, 
+                         DataFinalizacao, Pendente, SindicanciaFinalizada, EnderecoComprovado, Status
+FROM            vw_sindicancia";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, NomeAluno, Observacoes, Pendente, Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicancia, idSolicitacoesVagas FROM vw_sindicancia WHERE (idSindicancia = @idSindicancia) AND (idSolicitacoesVagas = @idSolicitacao)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacoesVagas";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsRelatorios.vw_ficha_sindicanciaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsRelatorios.vw_ficha_sindicanciaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsRelatorios.vw_ficha_sindicanciaDataTable dataTable = new dsRelatorios.vw_ficha_sindicanciaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.vw_ficha_sindicanciaDataTable GetDadosFichaSindicancia(int idSindicancia, int idSolicitacao) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idSindicancia));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idSolicitacao));
+            dsRelatorios.vw_ficha_sindicanciaDataTable dataTable = new dsRelatorios.vw_ficha_sindicanciaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
