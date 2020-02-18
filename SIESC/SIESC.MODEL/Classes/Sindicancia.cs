@@ -45,6 +45,10 @@ namespace SIESC.MODEL.Classes
         public DateTime? dataSindicancia { get; set; }
 
         /// <summary>
+        /// O motivo ao qual a solicitação foi enviada para sindicância
+        /// </summary>
+        public string motivoSindicancia { get; set; }
+        /// <summary>
         /// A data em que a sindicancia foi efetivada
         /// </summary>
         public DateTime? dataFinalizacao { get; set; }

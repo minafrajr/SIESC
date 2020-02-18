@@ -3,14 +3,13 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-using SIESC;
 using SIESC.BD.Control;
+using SIESC.MODEL.Classes;
 using SIESC.UI.UI.Relatorios;
+using SIESC.UI.UI.Solicitacoes;
 using System;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.MODEL.Classes;
-using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI
 
@@ -63,7 +62,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GerenciaSolicitacao_Load(object sender,EventArgs e)
+        private void GerenciaSolicitacao_Load(object sender, EventArgs e)
         {
             try
             {
@@ -82,7 +81,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GerenciaSolicitacao_Enter(object sender,EventArgs e)
+        private void GerenciaSolicitacao_Enter(object sender, EventArgs e)
         {
             CarregaGridView();
             dgv_solicitacoes.Update();
@@ -103,7 +102,7 @@ namespace SIESC.UI.UI
             catch (Exception exception)
             {
 
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -112,7 +111,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_localizar_Click(object sender,EventArgs e)
+        private void btn_localizar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -126,7 +125,9 @@ namespace SIESC.UI.UI
                     {
                         case Localizar.codigo:
                             if (string.IsNullOrEmpty(txt_codigo.Text))
+                            {
                                 throw new Exception("valor do código não digitado!");
+                            }
 
                             dgv_solicitacoes.DataSource = controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                             break;
@@ -150,7 +151,7 @@ namespace SIESC.UI.UI
                     {
                         anosAnterioresControl = new AnosAnterioresControl();
 
-                        dgv_solicitacoes.DataSource = anosAnterioresControl.carregaDados(cbo_anoreferencia.Text,SelecionaParametros(),_localiza.ToString());
+                        dgv_solicitacoes.DataSource = anosAnterioresControl.carregaDados(cbo_anoreferencia.Text, SelecionaParametros(), _localiza.ToString());
                     }
                 }
 
@@ -159,7 +160,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
 
         }
@@ -213,7 +214,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_solicitacoes_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
+        private void dgv_solicitacoes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             RepassaDadosControles();
         }
@@ -226,40 +227,42 @@ namespace SIESC.UI.UI
 
                 DesabilitaTextBox(true);
 
-                this.txt_nomealuno.Text = this.dgv_solicitacoes[1,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-                this.txt_codigo.Text = this.dgv_solicitacoes[2,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-                this.lbl_anoensino.Text = this.dgv_solicitacoes[3,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-                this.txt_mae.Text = this.dgv_solicitacoes[4,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_nomealuno.Text = this.dgv_solicitacoes[1, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_codigo.Text = this.dgv_solicitacoes[2, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.lbl_anoensino.Text = this.dgv_solicitacoes[3, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_mae.Text = this.dgv_solicitacoes[4, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
                 this.controleAluno = new AlunoControl();
 
-                this.txt_endereco.Text = this.controleSolicitacoes.RetornaEndereco((int)this.dgv_solicitacoes[0,this.dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                this.txt_endereco.Text = this.controleSolicitacoes.RetornaEndereco((int)this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                this.txt_origem_solicitacao.Text = this.dgv_solicitacoes[8,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_origem_solicitacao.Text = this.dgv_solicitacoes[8, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_instituicao_solicitada.Text = this.dgv_solicitacoes[9,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_instituicao_solicitada.Text = this.dgv_solicitacoes[9, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_instituicao_encaminhada.Text = this.dgv_solicitacoes[11,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_instituicao_encaminhada.Text = this.dgv_solicitacoes[11, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_dataencaminhamento.Text = this.dgv_solicitacoes[12,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() != "01/01/0001 00:00:00" ? this.dgv_solicitacoes[12,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() : string.Empty;
+                this.txt_dataencaminhamento.Text = this.dgv_solicitacoes[12, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() != "01/01/0001 00:00:00" ? this.dgv_solicitacoes[12, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() : string.Empty;
 
-                this.txt_datasolicitacao.Text = this.dgv_solicitacoes[10,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_datasolicitacao.Text = this.dgv_solicitacoes[10, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_motivo.Text = this.dgv_solicitacoes[7,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_motivo.Text = this.dgv_solicitacoes[7, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_observacoes.Text = this.dgv_solicitacoes[18,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " - " + this.dgv_solicitacoes[13,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_observacoes.Text = this.dgv_solicitacoes[18, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " - " + this.dgv_solicitacoes[13, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.txt_datanasc.Text = this.dgv_solicitacoes[19,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString().Substring(0,10);
+                this.txt_datanasc.Text = this.dgv_solicitacoes[19, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString().Substring(0, 10);
 
-                this.txt_telefone.Text = this.dgv_solicitacoes[5,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "  " + this.dgv_solicitacoes[6,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                this.txt_telefone.Text = this.dgv_solicitacoes[5, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "  " + this.dgv_solicitacoes[6, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                this.lbl_idade.Text = this.dgv_solicitacoes[15,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " anos";
+                this.lbl_idade.Text = this.dgv_solicitacoes[15, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " anos";
 
-                txt_usuario.Text = this.dgv_solicitacoes[17,this.dgv_solicitacoes.CurrentCellAddress.Y].Value
+                txt_usuario.Text = this.dgv_solicitacoes[17, this.dgv_solicitacoes.CurrentCellAddress.Y].Value
                     .ToString();
 
                 if (txt_observacoes.Text.Contains("SOLICITAÇÃO FINALIZADA"))
+                {
                     txt_instituicao_encaminhada.Text = "SOLICITAÇÃO FINALIZADA";
+                }
             }
         }
 
@@ -283,7 +286,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editar_Click(object sender,EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -292,13 +295,13 @@ namespace SIESC.UI.UI
                     throw new Exception("Não é permitido editar solicitações de anos anteriores.");
                 }
 
-                solicitacao = controleSolicitacoes.RetornaSolicitacao((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                solicitacao = controleSolicitacoes.RetornaSolicitacao((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
                 controleAluno = new AlunoControl();
 
-                Aluno aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes[2,dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                Aluno aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes[2, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                aluno.Nome = dgv_solicitacoes[1,dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                aluno.Nome = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
                 foreach (Form mdiChild in PrincipalUI.MdiChildren)
                 {
@@ -307,14 +310,14 @@ namespace SIESC.UI.UI
                         mdiChild.Close();
                     }
                 }
-                SolicitaVaga frm_solicita = new SolicitaVaga(aluno,solicitacao,PrincipalUI);
+                SolicitaVaga frm_solicita = new SolicitaVaga(aluno, solicitacao, PrincipalUI);
                 frm_solicita.MdiParent = PrincipalUI;
                 frm_solicita.Show();
 
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -322,7 +325,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_finaliza_solicitacao_Click(object sender,EventArgs e)
+        private void btn_finaliza_solicitacao_Click(object sender, EventArgs e)
         {
             try
             {
@@ -331,18 +334,18 @@ namespace SIESC.UI.UI
                     throw new Exception("Não é permitido finalizar solicitações de anos anteriores.");
                 }
 
-                if (Mensageiro.MensagemPergunta($"Deseja finalizar a Solicitação?{Environment.NewLine}A solicitação será considerada como encaminhada.",this).Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemPergunta($"Deseja finalizar a Solicitação?{Environment.NewLine}A solicitação será considerada como encaminhada.", this).Equals(DialogResult.Yes))
                 {
                     controleSolicitacoes = new SolicitacaoControl();
 
 
                     int codigoSolicitacao;
 
-                    if (int.TryParse(this.dgv_solicitacoes[0,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString(),out codigoSolicitacao))
+                    if (int.TryParse(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString(), out codigoSolicitacao))
                     {
-                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao,DateTime.Now,PrincipalUI.user.nomeusuario.ToUpper(),this.dgv_solicitacoes[18,this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "- SOLICITAÇÃO FINALIZADA"))
+                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao, DateTime.Now, PrincipalUI.user.nomeusuario.ToUpper(), this.dgv_solicitacoes[18, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "- SOLICITAÇÃO FINALIZADA"))
                         {
-                            Mensageiro.MensagemAviso("A solicitação foi finalizada com sucesso!",this);
+                            Mensageiro.MensagemAviso("A solicitação foi finalizada com sucesso!", this);
                         }
                     }
 
@@ -352,7 +355,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -360,28 +363,30 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(object sender,EventArgs e)
+        private void btn_excluir_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2020"))
+                {
                     throw new Exception("Não é permitido excluir solicitações de anos anteriores.");
+                }
 
                 controleSolicitacoes = new SolicitacaoControl();
 
-                if (MessageBox.Show(string.Format("Deseja excluir a solicitação de vaga do _aluno {0}?",dgv_solicitacoes[1,dgv_solicitacoes.CurrentCellAddress.Y].Value),"Siesc",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(string.Format("Deseja excluir a solicitação de vaga do _aluno {0}?", dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value), "Siesc", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (controleSolicitacoes.Excluir((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value))
+                    if (controleSolicitacoes.Excluir((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value))
                     {
                         dgv_solicitacoes.Refresh();
-                        MessageBox.Show("Solicitação excluída com sucesso!!!","SIESC",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Solicitação excluída com sucesso!!!", "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                GerenciaSolicitacao_Load(null,null);
+                GerenciaSolicitacao_Load(null, null);
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -389,9 +394,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigo_CheckedChanged(object sender,EventArgs e)
+        private void rdb_codigo_CheckedChanged(object sender, EventArgs e)
         {
-            HabilitaTextBox(true,false,false,false);
+            HabilitaTextBox(true, false, false, false);
             _localiza = Localizar.codigo;
         }
         /// <summary>
@@ -399,9 +404,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigo_Click(object sender,EventArgs e)
+        private void rdb_codigo_Click(object sender, EventArgs e)
         {
-            HabilitaTextBox(true,false,false,false);
+            HabilitaTextBox(true, false, false, false);
             _localiza = Localizar.codigo;
         }
 
@@ -410,9 +415,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_nome_CheckedChanged(object sender,EventArgs e)
+        private void rdb_nome_CheckedChanged(object sender, EventArgs e)
         {
-            HabilitaTextBox(false,true,false,false);
+            HabilitaTextBox(false, true, false, false);
             _localiza = Localizar.nome;
         }
 
@@ -421,9 +426,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_mae_CheckedChanged(object sender,EventArgs e)
+        private void rdb_mae_CheckedChanged(object sender, EventArgs e)
         {
-            HabilitaTextBox(false,false,true,false);
+            HabilitaTextBox(false, false, true, false);
             _localiza = Localizar.mae;
         }
 
@@ -432,9 +437,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_nome_Click(object sender,EventArgs e)
+        private void rdb_nome_Click(object sender, EventArgs e)
         {
-            HabilitaTextBox(false,true,false,false);
+            HabilitaTextBox(false, true, false, false);
             _localiza = Localizar.nome;
         }
         /// <summary>
@@ -442,9 +447,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_mae_Click(object sender,EventArgs e)
+        private void rdb_mae_Click(object sender, EventArgs e)
         {
-            HabilitaTextBox(false,false,true,false);
+            HabilitaTextBox(false, false, true, false);
             _localiza = Localizar.mae;
         }
         /// <summary>
@@ -452,9 +457,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigoAluno_Click(object sender,EventArgs e)
+        private void rdb_codigoAluno_Click(object sender, EventArgs e)
         {
-            HabilitaTextBox(true,false,false,false);
+            HabilitaTextBox(true, false, false, false);
             _localiza = Localizar.aluno;
         }
 
@@ -464,7 +469,7 @@ namespace SIESC.UI.UI
         /// <param name="cod">True - Habilita a TextBox código</param>
         /// <param name="nome">True - Habilita a TextBox nome</param>
         /// <param name="mae">True - Habilita a TextBox mae</param>
-        public void HabilitaTextBox(bool cod,bool nome,bool mae,bool codigoEI)
+        public void HabilitaTextBox(bool cod, bool nome, bool mae, bool codigoEI)
         {
             LimpaCampos();
             if (cod)
@@ -519,9 +524,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_solicitacoes_CellMouseDoubleClick(object sender,DataGridViewCellMouseEventArgs e)
+        private void dgv_solicitacoes_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            btn_editar_Click(null,null);
+            btn_editar_Click(null, null);
         }
 
         /// <summary>
@@ -529,7 +534,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editaraluno_Click(object sender,EventArgs e)
+        private void btn_editaraluno_Click(object sender, EventArgs e)
         {
             try
             {
@@ -540,7 +545,7 @@ namespace SIESC.UI.UI
 
                 controleAluno = new AlunoControl();
 
-                aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes[2,dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                aluno = controleAluno.RetornaAluno((int)dgv_solicitacoes[2, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
                 foreach (Form mdiChild in PrincipalUI.MdiChildren)
                 {
@@ -556,7 +561,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -565,10 +570,12 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_imprimir_Click(object sender,EventArgs e)
+        private void btn_imprimir_Click(object sender, EventArgs e)
         {
             if (!cbo_anoreferencia.Text.Equals("2020"))
+            {
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
+            }
 
             var t = CarregaProgressoThread();
 
@@ -579,22 +586,29 @@ namespace SIESC.UI.UI
                 controleSolicitacoes = new SolicitacaoControl();
 
                 //todo ver método para acessar banco só uma vez para retornar 
-                solicitacao.AnoEnsino =Convert.ToInt32(controleSolicitacoes.PesquisaAnoEnsino((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value));
+                solicitacao.AnoEnsino = Convert.ToInt32(controleSolicitacoes.PesquisaAnoEnsino((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value));
 
-                solicitacao.Coordenadas =controleSolicitacoes.RetornaCoordenadas((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                solicitacao.Coordenadas = controleSolicitacoes.RetornaCoordenadas((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-                frm_ficha_solicitacao frm_fichasolicitaco = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],solicitacao.Coordenadas[1],solicitacao.AnoEnsino,(int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value){ MdiParent = PrincipalUI };
+                frm_ficha_solicitacao frm_fichasolicitaco = new frm_ficha_solicitacao(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.AnoEnsino, (int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value) { MdiParent = PrincipalUI };
 
                 frm_fichasolicitaco.Show();
             }
             catch (Exception exception)
             {
-                if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
+
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
-                if (t.IsAlive) t.Abort();
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
             }
 
         }
@@ -604,9 +618,9 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigoEI_CheckedChanged(object sender,EventArgs e)
+        private void rdb_codigoEI_CheckedChanged(object sender, EventArgs e)
         {
-            HabilitaTextBox(true,false,false,true);
+            HabilitaTextBox(true, false, false, true);
             _localiza = Localizar.expediente;
         }
 
@@ -629,7 +643,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ficha_encaminhamento_Click(object sender,EventArgs e)
+        private void btn_ficha_encaminhamento_Click(object sender, EventArgs e)
         {
             if (!cbo_anoreferencia.Text.Equals("2020"))
             {
@@ -641,15 +655,22 @@ namespace SIESC.UI.UI
             {
                 controleSolicitacoes = new SolicitacaoControl();
 
-                frm_ficha_encaminhamento frm_fichaEncaminhamento = new frm_ficha_encaminhamento((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y].Value) { MdiParent = PrincipalUI };
+                frm_ficha_encaminhamento frm_fichaEncaminhamento = new frm_ficha_encaminhamento((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value) { MdiParent = PrincipalUI };
 
                 frm_fichaEncaminhamento.Show();
-                if (t.IsAlive) t.Abort();
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
             }
             catch (Exception exception)
             {
-                if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
+
+                Mensageiro.MensagemErro(exception, this);
             }
         }
         /// <summary>
@@ -657,16 +678,18 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_encam_transp_Click(object sender,EventArgs e)
+        private void btn_encam_transp_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2020"))
+                {
                     throw new Exception("Não é permitido imprimir encaminhamentos de transporte de anos anteriores.");
+                }
 
                 frm_encaminhamento_transporte frm_enca_transp =
-                    new frm_encaminhamento_transporte((int)dgv_solicitacoes[0,dgv_solicitacoes.CurrentCellAddress.Y]
+                    new frm_encaminhamento_transporte((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y]
                         .Value)
                     {
                         MdiParent = PrincipalUI
@@ -675,29 +698,49 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
+
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
-                if (t.IsAlive) t.Abort();
+                if (t.IsAlive)
+                {
+                    t.Abort();
+                }
             }
         }
-
-
-        ///// <summary>
-        ///// Evento de alteração de seleção da linha do gridview
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void dgv_solicitacoes_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    //if (_localiza.Equals(Localizar.aguardando))
-        //    //	RepassaDadosControles();
-        //}
-
-
-
+        /// <summary>
+        /// Evento ENTER DO FORMULÁRIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GerenciaSolicitacao_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (!_localiza.Equals(Localizar.aguardando))
+            //{
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_localizar_Click(sender, e);
+            }
+            //}
+        }
+        
+        /// <summary>
+        /// Evento de alteração de seleção da linha do gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_solicitacoes_SelectionChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (_localiza.Equals(Localizar.aguardando))
+            {
+                RepassaDadosControles();
+            }
+        }
     }
 
 }

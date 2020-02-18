@@ -49,14 +49,6 @@
           <DataField>DataSolicitacao</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="GrauSolicitante">
-          <DataField>GrauSolicitante</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Solicitante">
-          <DataField>Solicitante</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="InstituicaoEncaminhada">
           <DataField>InstituicaoEncaminhada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -100,7 +92,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\minaf\Documents\Visual Studio 2017\Projects\Git\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_ficha_sindicancia</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1257,7 +1249,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(First(Fields!GrauSolicitante.Value, "dsRelatorios") = "MÃE","MÃE",First(Fields!Solicitante.Value, "dsRelatorios") &amp; " - " &amp; First(Fields!GrauSolicitante.Value, "dsRelatorios"))</Value>
+                    <Value EvaluationMode="Constant" />
                     <Style />
                   </TextRun>
                 </TextRuns>

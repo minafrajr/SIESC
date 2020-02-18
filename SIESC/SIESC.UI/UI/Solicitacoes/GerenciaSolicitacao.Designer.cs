@@ -84,12 +84,20 @@
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_codigo = new System.Windows.Forms.RadioButton();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
+            this.gpb_sindicados = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_finalizada = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_pendente = new System.Windows.Forms.Label();
+            this.lbl_endereco_comprovado = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.gpb_localizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
+            this.gpb_sindicados.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -101,6 +109,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.gpb_sindicados);
             this.splitContainer1.Panel1.Controls.Add(this.btn_ficha_encaminhamento);
             this.splitContainer1.Panel1.Controls.Add(this.txt_usuario);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -149,7 +158,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_solicitacoes);
             this.splitContainer1.Size = new System.Drawing.Size(1289, 628);
-            this.splitContainer1.SplitterDistance = 263;
+            this.splitContainer1.SplitterDistance = 267;
             this.splitContainer1.TabIndex = 33;
             // 
             // btn_ficha_encaminhamento
@@ -295,7 +304,7 @@
             this.txt_motivo.Enabled = false;
             this.txt_motivo.Location = new System.Drawing.Point(604, 132);
             this.txt_motivo.Name = "txt_motivo";
-            this.txt_motivo.Size = new System.Drawing.Size(493, 22);
+            this.txt_motivo.Size = new System.Drawing.Size(247, 22);
             this.txt_motivo.TabIndex = 41;
             // 
             // btn_imprimir
@@ -681,10 +690,86 @@
             this.dgv_solicitacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_solicitacoes.ShowEditingIcon = false;
             this.dgv_solicitacoes.ShowRowErrors = false;
-            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 361);
+            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 357);
             this.dgv_solicitacoes.TabIndex = 18;
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
             this.dgv_solicitacoes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseDoubleClick);
+            // 
+            // gpb_sindicados
+            // 
+            this.gpb_sindicados.Controls.Add(this.label6);
+            this.gpb_sindicados.Controls.Add(this.lbl_finalizada);
+            this.gpb_sindicados.Controls.Add(this.label4);
+            this.gpb_sindicados.Controls.Add(this.lbl_pendente);
+            this.gpb_sindicados.Controls.Add(this.lbl_endereco_comprovado);
+            this.gpb_sindicados.Controls.Add(this.label8);
+            this.gpb_sindicados.Location = new System.Drawing.Point(865, 106);
+            this.gpb_sindicados.Name = "gpb_sindicados";
+            this.gpb_sindicados.Size = new System.Drawing.Size(357, 62);
+            this.gpb_sindicados.TabIndex = 90;
+            this.gpb_sindicados.TabStop = false;
+            this.gpb_sindicados.Text = "Sindicância";
+            this.gpb_sindicados.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 14);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Finalizada:";
+            // 
+            // lbl_finalizada
+            // 
+            this.lbl_finalizada.AutoSize = true;
+            this.lbl_finalizada.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_finalizada.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_finalizada.Location = new System.Drawing.Point(75, 38);
+            this.lbl_finalizada.Name = "lbl_finalizada";
+            this.lbl_finalizada.Size = new System.Drawing.Size(30, 18);
+            this.lbl_finalizada.TabIndex = 7;
+            this.lbl_finalizada.Text = "S/N";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(209, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 14);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Pendente:";
+            // 
+            // lbl_pendente
+            // 
+            this.lbl_pendente.AutoSize = true;
+            this.lbl_pendente.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_pendente.ForeColor = System.Drawing.Color.Orange;
+            this.lbl_pendente.Location = new System.Drawing.Point(275, 19);
+            this.lbl_pendente.Name = "lbl_pendente";
+            this.lbl_pendente.Size = new System.Drawing.Size(54, 18);
+            this.lbl_pendente.TabIndex = 5;
+            this.lbl_pendente.Text = "Análise";
+            // 
+            // lbl_endereco_comprovado
+            // 
+            this.lbl_endereco_comprovado.AutoSize = true;
+            this.lbl_endereco_comprovado.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_endereco_comprovado.ForeColor = System.Drawing.Color.Orange;
+            this.lbl_endereco_comprovado.Location = new System.Drawing.Point(136, 19);
+            this.lbl_endereco_comprovado.Name = "lbl_endereco_comprovado";
+            this.lbl_endereco_comprovado.Size = new System.Drawing.Size(54, 18);
+            this.lbl_endereco_comprovado.TabIndex = 4;
+            this.lbl_endereco_comprovado.Text = "Análise";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 14);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Confirmado Endereço:";
             // 
             // GerenciaSolicitacao
             // 
@@ -699,6 +784,7 @@
             this.Text = "Gerenciar Solicitações";
             this.Load += new System.EventHandler(this.GerenciaSolicitacao_Load);
             this.Enter += new System.EventHandler(this.GerenciaSolicitacao_Enter);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GerenciaSolicitacao_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -707,6 +793,8 @@
             this.gpb_localizar.ResumeLayout(false);
             this.gpb_localizar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
+            this.gpb_sindicados.ResumeLayout(false);
+            this.gpb_sindicados.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -763,6 +851,13 @@
         private System.Windows.Forms.TextBox txt_origem_solicitacao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ficha_encaminhamento;
+        private System.Windows.Forms.GroupBox gpb_sindicados;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_finalizada;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_pendente;
+        private System.Windows.Forms.Label lbl_endereco_comprovado;
+        private System.Windows.Forms.Label label8;
 
         private enum Localizar
         {

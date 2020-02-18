@@ -49,14 +49,6 @@
           <DataField>DataSolicitacao</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="GrauSolicitante">
-          <DataField>GrauSolicitante</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Solicitante">
-          <DataField>Solicitante</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="InstituicaoEncaminhada">
           <DataField>InstituicaoEncaminhada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -100,7 +92,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\minaf\Documents\Visual Studio 2017\Projects\Git\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_ficha_sindicancia</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -116,8 +108,8 @@
             <Source>Embedded</Source>
             <Value>timpradoEscrituracao</Value>
             <Sizing>Fit</Sizing>
-            <Height>28.98981cm</Height>
-            <Width>20.48834cm</Width>
+            <Height>26.80352cm</Height>
+            <Width>19.85334cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -141,8 +133,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>3.56121cm</Top>
-            <Left>0.63238cm</Left>
+            <Top>4.35524cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.25646cm</Width>
             <ZIndex>1</ZIndex>
@@ -174,7 +166,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
             <Top>5.12281cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.90027cm</Width>
             <ZIndex>2</ZIndex>
@@ -206,7 +198,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>6.73733cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.6cm</Height>
             <Width>2.6411cm</Width>
             <ZIndex>3</ZIndex>
@@ -214,6 +206,37 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox25">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Data: " &amp; First(Fields!DataSolicitacao.Value, "dsRelatorios")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox23</rd:DefaultName>
+            <Top>6.73733cm</Top>
+            <Left>12.61339cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.89007cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Gainsboro</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -238,10 +261,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
             <Top>5.96094cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.6cm</Height>
             <Width>3.25707cm</Width>
-            <ZIndex>4</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -259,7 +282,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Ano de Ensino: </Value>
+                    <Value>Ano: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -269,11 +292,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>2.81128cm</Top>
-            <Left>4.99879cm</Left>
+            <Top>4.35524cm</Top>
+            <Left>13.45595cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.9189cm</Width>
-            <ZIndex>5</ZIndex>
+            <Width>1.20354cm</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -306,10 +329,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>7.51372cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.51083cm</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -327,7 +350,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>DATA: ___/___/___    HORA ___:___        DATA: ___/___/___    HORA ___:___        DATA: ___/___/___    HORA ___:___</Value>
+                    <Value>DATA: ___/___/___                      HORÁRIO:___________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -343,10 +366,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>8.32547cm</Top>
-            <Left>0.54465cm</Left>
+            <Left>0.2912cm</Left>
             <Height>0.67056cm</Height>
-            <Width>19.11583cm</Width>
-            <ZIndex>7</ZIndex>
+            <Width>12.1458cm</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -364,7 +387,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>ENDEREÇO LOCALIZADO?      (   ) SIM          (   ) NÃO </Value>
+                    <Value>ENDEREÇO LOCALIZADO? (   ) SIM          (   ) NÃO </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -379,10 +402,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>9.17241cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.62646cm</Height>
-            <Width>14.1152cm</Width>
-            <ZIndex>8</ZIndex>
+            <Width>7.8975cm</Width>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -400,7 +423,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>RESPONSÁVEIS  PELA SINDICÂNCIA:___________________________________________________________________</Value>
+                    <Value>RESPONSÁVEL (EIS)  PELA SINDICÂNCIA:____________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -414,11 +437,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>25.1565cm</Top>
-            <Left>0.63238cm</Left>
+            <Top>17.46269cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.86458cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>9</ZIndex>
+            <Width>17.84583cm</Width>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -451,10 +474,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>11.57214cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.6cm</Height>
             <Width>4.82833cm</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -472,7 +495,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>O CANDIDATO RESIDE NO IMÓVEL?        (   ) SIM        (   ) NÃO</Value>
+                    <Value>O CANDIDATO RESIDE NO IMÓVEL? (   ) SIM        (   ) NÃO</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -487,10 +510,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>10.83102cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.6cm</Height>
-            <Width>15.30583cm</Width>
-            <ZIndex>11</ZIndex>
+            <Width>9.3527cm</Width>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -508,7 +531,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>O ENDEREÇO É:        (   ) RESIDENCIAL         (   ) COMERCIAL:          TIPO _________________________________________ </Value>
+                    <Value>O ENDEREÇO É: (   ) RESIDENCIAL  (   ) COMERCIAL:  TIPO ________________ (   ) OUTROS_____________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -522,11 +545,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>9.97526cm</Top>
-            <Left>0.57111cm</Left>
+            <Top>10.01054cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.67938cm</Height>
-            <Width>19.48624cm</Width>
-            <ZIndex>12</ZIndex>
+            <Width>16.73679cm</Width>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -544,7 +567,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -558,11 +581,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>12.96478cm</Top>
-            <Left>0.59757cm</Left>
+            <Top>12.8854cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>13</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -576,7 +599,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -591,10 +614,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>15.5056cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>14</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -608,7 +631,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -623,10 +646,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>14.6322cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>15</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -640,7 +663,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -654,11 +677,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>13.83818cm</Top>
-            <Left>0.59757cm</Left>
+            <Top>13.7588cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>16</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -672,7 +695,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -687,10 +710,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>16.379cm</Top>
-            <Left>0.59757cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>17</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -704,7 +727,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>ANÁLISE DO CASO: __________________________________________________________________________________</Value>
+                    <Value>ANÁLISE DO CASO: ______________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -718,11 +741,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>22.04963cm</Top>
-            <Left>0.59757cm</Left>
+            <Top>18.36255cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.86458cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>18</ZIndex>
+            <Width>17.84583cm</Width>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -740,7 +763,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -754,11 +777,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>20.87664cm</Top>
-            <Left>0.54465cm</Left>
+            <Top>19.36824cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>19</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -772,7 +795,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -786,11 +809,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>17.2524cm</Top>
-            <Left>0.54465cm</Left>
+            <Top>20.24164cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>20</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -804,7 +827,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -818,11 +841,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>23.02004cm</Top>
-            <Left>0.59757cm</Left>
+            <Top>21.11504cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>21</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -836,7 +859,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -850,11 +873,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>23.89344cm</Top>
-            <Left>0.59757cm</Left>
+            <Top>21.98844cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>22</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -868,7 +891,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -882,11 +905,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>18.16108cm</Top>
-            <Left>0.54465cm</Left>
+            <Top>22.86185cm</Top>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>23</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>24</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -908,11 +931,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>3.58767cm</Top>
-            <Left>2.06524cm</Left>
+            <Top>4.35524cm</Top>
+            <Left>1.77698cm</Left>
             <Height>0.62646cm</Height>
-            <Width>14.2278cm</Width>
-            <ZIndex>24</ZIndex>
+            <Width>11.50259cm</Width>
+            <ZIndex>25</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -940,10 +963,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
             <Top>5.15809cm</Top>
-            <Left>2.67423cm</Left>
+            <Left>2.42078cm</Left>
             <Height>0.62646cm</Height>
-            <Width>16.98625cm</Width>
-            <ZIndex>25</ZIndex>
+            <Width>15.08268cm</Width>
+            <ZIndex>26</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -971,10 +994,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
             <Top>5.96094cm</Top>
-            <Left>3.96048cm</Left>
+            <Left>3.70703cm</Left>
             <Height>0.6cm</Height>
-            <Width>15.7cm</Width>
-            <ZIndex>26</ZIndex>
+            <Width>13.76116cm</Width>
+            <ZIndex>27</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1002,10 +1025,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
             <Top>6.73733cm</Top>
-            <Left>3.41506cm</Left>
+            <Left>3.16161cm</Left>
             <Height>0.6cm</Height>
-            <Width>16.24542cm</Width>
-            <ZIndex>27</ZIndex>
+            <Width>9.27538cm</Width>
+            <ZIndex>28</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1024,7 +1047,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>________________________________________________________________________</Value>
+                    <Value>________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -1039,10 +1062,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>7.51372cm</Top>
-            <Left>5.43945cm</Left>
+            <Left>5.186cm</Left>
             <Height>0.70583cm</Height>
-            <Width>14.6179cm</Width>
-            <ZIndex>28</ZIndex>
+            <Width>11.36496cm</Width>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1070,11 +1093,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>2.78482cm</Top>
-            <Left>0.63238cm</Left>
+            <Top>8.39594cm</Top>
+            <Left>13.13775cm</Left>
             <Height>0.62646cm</Height>
             <Width>2.72119cm</Width>
-            <ZIndex>29</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1102,11 +1125,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>2.78482cm</Top>
-            <Left>3.33524cm</Left>
+            <Top>8.39594cm</Top>
+            <Left>15.86776cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.46001cm</Width>
-            <ZIndex>30</ZIndex>
+            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1125,7 +1148,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
+                    <Value>_____________________________________________________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -1140,10 +1163,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>12.11783cm</Top>
-            <Left>0.57111cm</Left>
+            <Left>0.34412cm</Left>
             <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>31</ZIndex>
+            <Width>19.11583cm</Width>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1167,11 +1190,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>2.81128cm</Top>
-            <Left>7.77658cm</Left>
+            <Top>4.35524cm</Top>
+            <Left>14.6595cm</Left>
             <Height>0.6cm</Height>
             <Width>2.80869cm</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>33</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1183,17 +1206,21 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox3">
+          <Textbox Name="Textbox141">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Sindicância - Solicitação de vaga " &amp; Year(Now())</Value>
+                    <Value>SINDICÂNCIA -  CADASTRO ESCOLAR 2019/2020</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                      <Color>#000000</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -1202,43 +1229,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.53182cm</Top>
-            <Left>0.65048cm</Left>
-            <Height>0.70583cm</Height>
-            <Width>9.29979cm</Width>
-            <ZIndex>33</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox53">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Responsável:</Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>4.31996cm</Top>
-            <Left>0.63238cm</Left>
-            <Height>0.62646cm</Height>
-            <Width>2.52647cm</Width>
+            <rd:DefaultName>Textbox141</rd:DefaultName>
+            <Top>2.80737cm</Top>
+            <Left>3.30311cm</Left>
+            <Height>0.6cm</Height>
+            <Width>10.4375cm</Width>
             <ZIndex>34</ZIndex>
             <Style>
               <Border>
@@ -1250,139 +1245,11 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox54">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=IIf(First(Fields!GrauSolicitante.Value, "dsRelatorios") = "MÃE","MÃE",First(Fields!Solicitante.Value, "dsRelatorios") &amp; " - " &amp; First(Fields!GrauSolicitante.Value, "dsRelatorios"))</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>4.34642cm</Top>
-            <Left>3.33524cm</Left>
-            <Height>0.62646cm</Height>
-            <Width>10.19778cm</Width>
-            <ZIndex>35</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>Gainsboro</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox55">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Telefone</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>4.37288cm</Top>
-            <Left>13.7094cm</Left>
-            <Height>0.6cm</Height>
-            <Width>5.95107cm</Width>
-            <ZIndex>36</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>Gainsboro</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox56">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>19.07665cm</Top>
-            <Left>0.54465cm</Left>
-            <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>37</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox57">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>19.98533cm</Top>
-            <Left>0.54465cm</Left>
-            <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>38</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>11.41331in</Height>
+        <Height>10.59369in</Height>
         <Style />
       </Body>
-      <Width>8.06628in</Width>
+      <Width>7.89851in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

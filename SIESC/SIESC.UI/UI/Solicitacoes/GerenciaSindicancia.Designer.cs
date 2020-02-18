@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_apartir_sol = new System.Windows.Forms.Label();
             this.btn_concluir = new System.Windows.Forms.Button();
@@ -570,7 +570,7 @@
             this.lbl_usuario_finalizou.AutoSize = true;
             this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(170, 38);
+            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(217, 38);
             this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
             this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
             this.lbl_usuario_finalizou.TabIndex = 10;
@@ -579,7 +579,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(120, 41);
+            this.label7.Location = new System.Drawing.Point(167, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 14);
             this.label7.TabIndex = 9;
@@ -598,17 +598,17 @@
             // 
             this.lbl_finalizada.AutoSize = true;
             this.lbl_finalizada.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_finalizada.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_finalizada.ForeColor = System.Drawing.Color.DarkRed;
             this.lbl_finalizada.Location = new System.Drawing.Point(75, 38);
             this.lbl_finalizada.Name = "lbl_finalizada";
-            this.lbl_finalizada.Size = new System.Drawing.Size(30, 18);
+            this.lbl_finalizada.Size = new System.Drawing.Size(33, 18);
             this.lbl_finalizada.TabIndex = 7;
-            this.lbl_finalizada.Text = "S/N";
+            this.lbl_finalizada.Text = "Não";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(172, 22);
+            this.label5.Location = new System.Drawing.Point(209, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 14);
             this.label5.TabIndex = 6;
@@ -618,23 +618,23 @@
             // 
             this.lbl_pendente.AutoSize = true;
             this.lbl_pendente.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_pendente.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_pendente.Location = new System.Drawing.Point(238, 19);
+            this.lbl_pendente.ForeColor = System.Drawing.Color.Peru;
+            this.lbl_pendente.Location = new System.Drawing.Point(275, 19);
             this.lbl_pendente.Name = "lbl_pendente";
-            this.lbl_pendente.Size = new System.Drawing.Size(30, 18);
+            this.lbl_pendente.Size = new System.Drawing.Size(54, 18);
             this.lbl_pendente.TabIndex = 5;
-            this.lbl_pendente.Text = "S/N";
+            this.lbl_pendente.Text = "Análise";
             // 
             // lbl_endereco_comprovado
             // 
             this.lbl_endereco_comprovado.AutoSize = true;
             this.lbl_endereco_comprovado.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_endereco_comprovado.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_endereco_comprovado.ForeColor = System.Drawing.Color.Peru;
             this.lbl_endereco_comprovado.Location = new System.Drawing.Point(136, 19);
             this.lbl_endereco_comprovado.Name = "lbl_endereco_comprovado";
-            this.lbl_endereco_comprovado.Size = new System.Drawing.Size(30, 18);
+            this.lbl_endereco_comprovado.Size = new System.Drawing.Size(54, 18);
             this.lbl_endereco_comprovado.TabIndex = 4;
-            this.lbl_endereco_comprovado.Text = "S/N";
+            this.lbl_endereco_comprovado.Text = "Análise";
             // 
             // label4
             // 
@@ -820,8 +820,8 @@
             this.dgv_dados.AllowUserToDeleteRows = false;
             this.dgv_dados.AllowUserToOrderColumns = true;
             this.dgv_dados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -871,6 +871,7 @@
             this.Name = "GerenciaSindicancia";
             this.Text = "Gerenciamento de Sindicâncias";
             this.Load += new System.EventHandler(this.GerenciaSindicancia_Load);
+            this.Enter += new System.EventHandler(this.GerenciaSindicancia_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
