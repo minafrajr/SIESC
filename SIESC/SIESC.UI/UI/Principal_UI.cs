@@ -97,7 +97,7 @@ namespace SIESC.UI
             if (VerificaConexaoBanco())
             {
                 Login frmLogin = new Login(user);
-                frmLogin.ShowDialog();
+                frmLogin.ShowDialog(this);
 
                 user = new Usuario();
                 user = frmLogin.usuario;
@@ -750,11 +750,15 @@ namespace SIESC.UI
                         return;
                     }
                 }
-                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) { MdiParent = this };
+                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) {MdiParent = this};
 
                 if (t.IsAlive) t.Abort();
 
                 frm_gerenciasolicita.Show();
+            }
+            catch (ThreadAbortException)
+            {
+               
             }
             catch (Exception ex)
             {

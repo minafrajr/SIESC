@@ -20,13 +20,7 @@ namespace SIESC.BD.Control
 
         private vw_sindicanciaTableAdapter vw_sindicancia_TA;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private Sindicancia sindicancia;
-
-
-
+      
         public bool InserirSindicancias(List<Sindicancia> sindicancias)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
@@ -154,11 +148,13 @@ namespace SIESC.BD.Control
             return vw_sindicancia_TA.GetSindicanciasFinalizadas();
         }
 
-        public bool AtualizarSindicancia(Sindicancia _sindicancia)
+        public bool AtualizarSindicancia(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
-            return (sindicancia_TA.AtualizarSindicado(_sindicancia.observacoes,_sindicancia.sindicanciaFinalizada,_sindicancia.enderecoConfirmado,_sindicancia.dataFinalizacao,_sindicancia.usuarioFinalizacao,_sindicancia.sindicanciaPendente,_sindicancia.dataSindicancia,_sindicancia.usuarioResponsavel,_sindicancia.codigoSincidancia) > 0);
+            return (sindicancia_TA.AtualizaSindicado(sindicancia.dataSindicancia, sindicancia.usuarioResponsavel,
+                        sindicancia.motivoSindicancia, sindicancia.enderecoConfirmado, sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao, sindicancia.observacoes, sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada, sindicancia.codigoSincidancia,sindicancia.codigoSolicitacao) > 0);
         }
+
 
         public bool ExcluirSindicancia(int codigoSindicancia,int codigoSolicitacao)
         {

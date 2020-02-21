@@ -66,9 +66,9 @@ namespace SIESC.BD.DataSets {
         
         private vw_selecionar_sindicadosDataTable tablevw_selecionar_sindicados;
         
-        private vw_sindicanciaDataTable tablevw_sindicancia;
-        
         private sindicanciaDataTable tablesindicancia;
+        
+        private vw_sindicanciaDataTable tablevw_sindicancia;
         
         private global::System.Data.DataRelation relationfk_Instituicoes_Bairros;
         
@@ -185,11 +185,11 @@ namespace SIESC.BD.DataSets {
                 if ((ds.Tables["vw_selecionar_sindicados"] != null)) {
                     base.Tables.Add(new vw_selecionar_sindicadosDataTable(ds.Tables["vw_selecionar_sindicados"]));
                 }
-                if ((ds.Tables["vw_sindicancia"] != null)) {
-                    base.Tables.Add(new vw_sindicanciaDataTable(ds.Tables["vw_sindicancia"]));
-                }
                 if ((ds.Tables["sindicancia"] != null)) {
                     base.Tables.Add(new sindicanciaDataTable(ds.Tables["sindicancia"]));
+                }
+                if ((ds.Tables["vw_sindicancia"] != null)) {
+                    base.Tables.Add(new vw_sindicanciaDataTable(ds.Tables["vw_sindicancia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -423,9 +423,9 @@ namespace SIESC.BD.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public vw_sindicanciaDataTable vw_sindicancia {
+        public sindicanciaDataTable sindicancia {
             get {
-                return this.tablevw_sindicancia;
+                return this.tablesindicancia;
             }
         }
         
@@ -433,9 +433,9 @@ namespace SIESC.BD.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sindicanciaDataTable sindicancia {
+        public vw_sindicanciaDataTable vw_sindicancia {
             get {
-                return this.tablesindicancia;
+                return this.tablevw_sindicancia;
             }
         }
         
@@ -569,11 +569,11 @@ namespace SIESC.BD.DataSets {
                 if ((ds.Tables["vw_selecionar_sindicados"] != null)) {
                     base.Tables.Add(new vw_selecionar_sindicadosDataTable(ds.Tables["vw_selecionar_sindicados"]));
                 }
-                if ((ds.Tables["vw_sindicancia"] != null)) {
-                    base.Tables.Add(new vw_sindicanciaDataTable(ds.Tables["vw_sindicancia"]));
-                }
                 if ((ds.Tables["sindicancia"] != null)) {
                     base.Tables.Add(new sindicanciaDataTable(ds.Tables["sindicancia"]));
+                }
+                if ((ds.Tables["vw_sindicancia"] != null)) {
+                    base.Tables.Add(new vw_sindicanciaDataTable(ds.Tables["vw_sindicancia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -734,16 +734,16 @@ namespace SIESC.BD.DataSets {
                     this.tablevw_selecionar_sindicados.InitVars();
                 }
             }
-            this.tablevw_sindicancia = ((vw_sindicanciaDataTable)(base.Tables["vw_sindicancia"]));
-            if ((initTable == true)) {
-                if ((this.tablevw_sindicancia != null)) {
-                    this.tablevw_sindicancia.InitVars();
-                }
-            }
             this.tablesindicancia = ((sindicanciaDataTable)(base.Tables["sindicancia"]));
             if ((initTable == true)) {
                 if ((this.tablesindicancia != null)) {
                     this.tablesindicancia.InitVars();
+                }
+            }
+            this.tablevw_sindicancia = ((vw_sindicanciaDataTable)(base.Tables["vw_sindicancia"]));
+            if ((initTable == true)) {
+                if ((this.tablevw_sindicancia != null)) {
+                    this.tablevw_sindicancia.InitVars();
                 }
             }
             this.relationfk_Instituicoes_Bairros = this.Relations["fk_Instituicoes_Bairros"];
@@ -810,10 +810,10 @@ namespace SIESC.BD.DataSets {
             base.Tables.Add(this.tablevw_alunos);
             this.tablevw_selecionar_sindicados = new vw_selecionar_sindicadosDataTable();
             base.Tables.Add(this.tablevw_selecionar_sindicados);
-            this.tablevw_sindicancia = new vw_sindicanciaDataTable();
-            base.Tables.Add(this.tablevw_sindicancia);
             this.tablesindicancia = new sindicanciaDataTable();
             base.Tables.Add(this.tablesindicancia);
+            this.tablevw_sindicancia = new vw_sindicanciaDataTable();
+            base.Tables.Add(this.tablevw_sindicancia);
             this.relationfk_Instituicoes_Bairros = new global::System.Data.DataRelation("fk_Instituicoes_Bairros", new global::System.Data.DataColumn[] {
                         this.tablebairros.idBairroColumn}, new global::System.Data.DataColumn[] {
                         this.tableinstituicoes.BairroColumn}, false);
@@ -992,13 +992,13 @@ namespace SIESC.BD.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializevw_sindicancia() {
+        private bool ShouldSerializesindicancia() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializesindicancia() {
+        private bool ShouldSerializevw_sindicancia() {
             return false;
         }
         
@@ -1121,10 +1121,10 @@ namespace SIESC.BD.DataSets {
         public delegate void vw_selecionar_sindicadosRowChangeEventHandler(object sender, vw_selecionar_sindicadosRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void vw_sindicanciaRowChangeEventHandler(object sender, vw_sindicanciaRowChangeEvent e);
+        public delegate void sindicanciaRowChangeEventHandler(object sender, sindicanciaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void sindicanciaRowChangeEventHandler(object sender, sindicanciaRowChangeEvent e);
+        public delegate void vw_sindicanciaRowChangeEventHandler(object sender, vw_sindicanciaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9600,6 +9600,425 @@ namespace SIESC.BD.DataSets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class sindicanciaDataTable : global::System.Data.TypedTableBase<sindicanciaRow> {
+            
+            private global::System.Data.DataColumn columnidSindicancia;
+            
+            private global::System.Data.DataColumn columnidSolicitacao;
+            
+            private global::System.Data.DataColumn columndataSindicancia;
+            
+            private global::System.Data.DataColumn columnusuarioResponsavel;
+            
+            private global::System.Data.DataColumn columnmotivoSindicancia;
+            
+            private global::System.Data.DataColumn columnenderecoConferido;
+            
+            private global::System.Data.DataColumn columndataFinalizacao;
+            
+            private global::System.Data.DataColumn columnusuarioFinalizou;
+            
+            private global::System.Data.DataColumn columnobservacoes;
+            
+            private global::System.Data.DataColumn columnpendente;
+            
+            private global::System.Data.DataColumn columnfinalizada;
+            
+            private global::System.Data.DataColumn columnstatus;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public sindicanciaDataTable() {
+                this.TableName = "sindicancia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal sindicanciaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected sindicanciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idSindicanciaColumn {
+                get {
+                    return this.columnidSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idSolicitacaoColumn {
+                get {
+                    return this.columnidSolicitacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dataSindicanciaColumn {
+                get {
+                    return this.columndataSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn usuarioResponsavelColumn {
+                get {
+                    return this.columnusuarioResponsavel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn motivoSindicanciaColumn {
+                get {
+                    return this.columnmotivoSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn enderecoConferidoColumn {
+                get {
+                    return this.columnenderecoConferido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dataFinalizacaoColumn {
+                get {
+                    return this.columndataFinalizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn usuarioFinalizouColumn {
+                get {
+                    return this.columnusuarioFinalizou;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn observacoesColumn {
+                get {
+                    return this.columnobservacoes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pendenteColumn {
+                get {
+                    return this.columnpendente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn finalizadaColumn {
+                get {
+                    return this.columnfinalizada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public sindicanciaRow this[int index] {
+                get {
+                    return ((sindicanciaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event sindicanciaRowChangeEventHandler sindicanciaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event sindicanciaRowChangeEventHandler sindicanciaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event sindicanciaRowChangeEventHandler sindicanciaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event sindicanciaRowChangeEventHandler sindicanciaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddsindicanciaRow(sindicanciaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public sindicanciaRow AddsindicanciaRow(int idSolicitacao, System.DateTime dataSindicancia, string usuarioResponsavel, string motivoSindicancia, bool enderecoConferido, System.DateTime dataFinalizacao, string usuarioFinalizou, string observacoes, bool pendente, bool finalizada, bool status) {
+                sindicanciaRow rowsindicanciaRow = ((sindicanciaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idSolicitacao,
+                        dataSindicancia,
+                        usuarioResponsavel,
+                        motivoSindicancia,
+                        enderecoConferido,
+                        dataFinalizacao,
+                        usuarioFinalizou,
+                        observacoes,
+                        pendente,
+                        finalizada,
+                        status};
+                rowsindicanciaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsindicanciaRow);
+                return rowsindicanciaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public sindicanciaRow FindByidSindicancia(int idSindicancia) {
+                return ((sindicanciaRow)(this.Rows.Find(new object[] {
+                            idSindicancia})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                sindicanciaDataTable cln = ((sindicanciaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new sindicanciaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnidSindicancia = base.Columns["idSindicancia"];
+                this.columnidSolicitacao = base.Columns["idSolicitacao"];
+                this.columndataSindicancia = base.Columns["dataSindicancia"];
+                this.columnusuarioResponsavel = base.Columns["usuarioResponsavel"];
+                this.columnmotivoSindicancia = base.Columns["motivoSindicancia"];
+                this.columnenderecoConferido = base.Columns["enderecoConferido"];
+                this.columndataFinalizacao = base.Columns["dataFinalizacao"];
+                this.columnusuarioFinalizou = base.Columns["usuarioFinalizou"];
+                this.columnobservacoes = base.Columns["observacoes"];
+                this.columnpendente = base.Columns["pendente"];
+                this.columnfinalizada = base.Columns["finalizada"];
+                this.columnstatus = base.Columns["status"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnidSindicancia = new global::System.Data.DataColumn("idSindicancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSindicancia);
+                this.columnidSolicitacao = new global::System.Data.DataColumn("idSolicitacao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSolicitacao);
+                this.columndataSindicancia = new global::System.Data.DataColumn("dataSindicancia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndataSindicancia);
+                this.columnusuarioResponsavel = new global::System.Data.DataColumn("usuarioResponsavel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuarioResponsavel);
+                this.columnmotivoSindicancia = new global::System.Data.DataColumn("motivoSindicancia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmotivoSindicancia);
+                this.columnenderecoConferido = new global::System.Data.DataColumn("enderecoConferido", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnenderecoConferido);
+                this.columndataFinalizacao = new global::System.Data.DataColumn("dataFinalizacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndataFinalizacao);
+                this.columnusuarioFinalizou = new global::System.Data.DataColumn("usuarioFinalizou", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuarioFinalizou);
+                this.columnobservacoes = new global::System.Data.DataColumn("observacoes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobservacoes);
+                this.columnpendente = new global::System.Data.DataColumn("pendente", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpendente);
+                this.columnfinalizada = new global::System.Data.DataColumn("finalizada", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfinalizada);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidSindicancia}, true));
+                this.columnidSindicancia.AutoIncrement = true;
+                this.columnidSindicancia.AutoIncrementSeed = -1;
+                this.columnidSindicancia.AutoIncrementStep = -1;
+                this.columnidSindicancia.AllowDBNull = false;
+                this.columnidSindicancia.Unique = true;
+                this.columnusuarioResponsavel.MaxLength = 20;
+                this.columnmotivoSindicancia.MaxLength = 60;
+                this.columnusuarioFinalizou.MaxLength = 20;
+                this.columnobservacoes.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public sindicanciaRow NewsindicanciaRow() {
+                return ((sindicanciaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new sindicanciaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(sindicanciaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.sindicanciaRowChanged != null)) {
+                    this.sindicanciaRowChanged(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.sindicanciaRowChanging != null)) {
+                    this.sindicanciaRowChanging(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.sindicanciaRowDeleted != null)) {
+                    this.sindicanciaRowDeleted(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.sindicanciaRowDeleting != null)) {
+                    this.sindicanciaRowDeleting(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemovesindicanciaRow(sindicanciaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ds_siesc ds = new ds_siesc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "sindicanciaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class vw_sindicanciaDataTable : global::System.Data.TypedTableBase<vw_sindicanciaRow> {
             
             private global::System.Data.DataColumn columnidSindicancia;
@@ -9624,19 +10043,21 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnDataSindicancia;
             
+            private global::System.Data.DataColumn columnMotivoSindicancia;
+            
             private global::System.Data.DataColumn columnUsuarioFinalizou;
             
+            private global::System.Data.DataColumn columnObservacoes;
+            
             private global::System.Data.DataColumn columnDataFinalizacao;
+            
+            private global::System.Data.DataColumn columnPendente;
             
             private global::System.Data.DataColumn columnSindicanciaFinalizada;
             
             private global::System.Data.DataColumn columnEnderecoComprovado;
             
             private global::System.Data.DataColumn columnStatus;
-            
-            private global::System.Data.DataColumn columnPendente;
-            
-            private global::System.Data.DataColumn columnObservacoes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -9761,6 +10182,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MotivoSindicanciaColumn {
+                get {
+                    return this.columnMotivoSindicancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn UsuarioFinalizouColumn {
                 get {
                     return this.columnUsuarioFinalizou;
@@ -9769,9 +10198,25 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ObservacoesColumn {
+                get {
+                    return this.columnObservacoes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn DataFinalizacaoColumn {
                 get {
                     return this.columnDataFinalizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PendenteColumn {
+                get {
+                    return this.columnPendente;
                 }
             }
             
@@ -9796,22 +10241,6 @@ namespace SIESC.BD.DataSets {
             public global::System.Data.DataColumn StatusColumn {
                 get {
                     return this.columnStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PendenteColumn {
-                get {
-                    return this.columnPendente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ObservacoesColumn {
-                get {
-                    return this.columnObservacoes;
                 }
             }
             
@@ -9862,13 +10291,14 @@ namespace SIESC.BD.DataSets {
                         string InstituicaoEncaminhada, 
                         string UsuarioResponsavel, 
                         System.DateTime DataSindicancia, 
+                        string MotivoSindicancia, 
                         string UsuarioFinalizou, 
+                        string Observacoes, 
                         System.DateTime DataFinalizacao, 
+                        bool Pendente, 
                         bool SindicanciaFinalizada, 
                         bool EnderecoComprovado, 
-                        bool Status, 
-                        bool Pendente, 
-                        string Observacoes) {
+                        bool Status) {
                 vw_sindicanciaRow rowvw_sindicanciaRow = ((vw_sindicanciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9882,13 +10312,14 @@ namespace SIESC.BD.DataSets {
                         InstituicaoEncaminhada,
                         UsuarioResponsavel,
                         DataSindicancia,
+                        MotivoSindicancia,
                         UsuarioFinalizou,
+                        Observacoes,
                         DataFinalizacao,
+                        Pendente,
                         SindicanciaFinalizada,
                         EnderecoComprovado,
-                        Status,
-                        Pendente,
-                        Observacoes};
+                        Status};
                 rowvw_sindicanciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_sindicanciaRow);
                 return rowvw_sindicanciaRow;
@@ -9930,13 +10361,14 @@ namespace SIESC.BD.DataSets {
                 this.columnInstituicaoEncaminhada = base.Columns["InstituicaoEncaminhada"];
                 this.columnUsuarioResponsavel = base.Columns["UsuarioResponsavel"];
                 this.columnDataSindicancia = base.Columns["DataSindicancia"];
+                this.columnMotivoSindicancia = base.Columns["MotivoSindicancia"];
                 this.columnUsuarioFinalizou = base.Columns["UsuarioFinalizou"];
+                this.columnObservacoes = base.Columns["Observacoes"];
                 this.columnDataFinalizacao = base.Columns["DataFinalizacao"];
+                this.columnPendente = base.Columns["Pendente"];
                 this.columnSindicanciaFinalizada = base.Columns["SindicanciaFinalizada"];
                 this.columnEnderecoComprovado = base.Columns["EnderecoComprovado"];
                 this.columnStatus = base.Columns["Status"];
-                this.columnPendente = base.Columns["Pendente"];
-                this.columnObservacoes = base.Columns["Observacoes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9964,20 +10396,22 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnUsuarioResponsavel);
                 this.columnDataSindicancia = new global::System.Data.DataColumn("DataSindicancia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataSindicancia);
+                this.columnMotivoSindicancia = new global::System.Data.DataColumn("MotivoSindicancia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMotivoSindicancia);
                 this.columnUsuarioFinalizou = new global::System.Data.DataColumn("UsuarioFinalizou", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsuarioFinalizou);
+                this.columnObservacoes = new global::System.Data.DataColumn("Observacoes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacoes);
                 this.columnDataFinalizacao = new global::System.Data.DataColumn("DataFinalizacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataFinalizacao);
+                this.columnPendente = new global::System.Data.DataColumn("Pendente", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPendente);
                 this.columnSindicanciaFinalizada = new global::System.Data.DataColumn("SindicanciaFinalizada", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSindicanciaFinalizada);
                 this.columnEnderecoComprovado = new global::System.Data.DataColumn("EnderecoComprovado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEnderecoComprovado);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
-                this.columnPendente = new global::System.Data.DataColumn("Pendente", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPendente);
-                this.columnObservacoes = new global::System.Data.DataColumn("Observacoes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnObservacoes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidSindicancia,
                                 this.columnidSolicitacoesVagas}, true));
@@ -10001,6 +10435,7 @@ namespace SIESC.BD.DataSets {
                 this.columnDataSolicitacao.AllowDBNull = false;
                 this.columnInstituicaoEncaminhada.MaxLength = 80;
                 this.columnUsuarioResponsavel.MaxLength = 20;
+                this.columnMotivoSindicancia.MaxLength = 60;
                 this.columnUsuarioFinalizou.MaxLength = 20;
                 this.columnObservacoes.MaxLength = 500;
             }
@@ -10089,424 +10524,6 @@ namespace SIESC.BD.DataSets {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "vw_sindicanciaDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sindicanciaDataTable : global::System.Data.TypedTableBase<sindicanciaRow> {
-            
-            private global::System.Data.DataColumn columnidSindicancia;
-            
-            private global::System.Data.DataColumn columnidSolicitacao;
-            
-            private global::System.Data.DataColumn columndataSindicancia;
-            
-            private global::System.Data.DataColumn columnusuarioResponsavel;
-            
-            private global::System.Data.DataColumn columnenderecoConferido;
-            
-            private global::System.Data.DataColumn columndataFinalizacao;
-            
-            private global::System.Data.DataColumn columnusuarioFinalizou;
-            
-            private global::System.Data.DataColumn columnobservacoes;
-            
-            private global::System.Data.DataColumn columnpendente;
-            
-            private global::System.Data.DataColumn columnfinalizada;
-            
-            private global::System.Data.DataColumn columnstatus;
-            
-            private global::System.Data.DataColumn columnmotivoSindicancia;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaDataTable() {
-                this.TableName = "sindicancia";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal sindicanciaDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected sindicanciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idSindicanciaColumn {
-                get {
-                    return this.columnidSindicancia;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idSolicitacaoColumn {
-                get {
-                    return this.columnidSolicitacao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dataSindicanciaColumn {
-                get {
-                    return this.columndataSindicancia;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn usuarioResponsavelColumn {
-                get {
-                    return this.columnusuarioResponsavel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn enderecoConferidoColumn {
-                get {
-                    return this.columnenderecoConferido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dataFinalizacaoColumn {
-                get {
-                    return this.columndataFinalizacao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn usuarioFinalizouColumn {
-                get {
-                    return this.columnusuarioFinalizou;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn observacoesColumn {
-                get {
-                    return this.columnobservacoes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn pendenteColumn {
-                get {
-                    return this.columnpendente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn finalizadaColumn {
-                get {
-                    return this.columnfinalizada;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn statusColumn {
-                get {
-                    return this.columnstatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn motivoSindicanciaColumn {
-                get {
-                    return this.columnmotivoSindicancia;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRow this[int index] {
-                get {
-                    return ((sindicanciaRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event sindicanciaRowChangeEventHandler sindicanciaRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event sindicanciaRowChangeEventHandler sindicanciaRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event sindicanciaRowChangeEventHandler sindicanciaRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event sindicanciaRowChangeEventHandler sindicanciaRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddsindicanciaRow(sindicanciaRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRow AddsindicanciaRow(int idSolicitacao, System.DateTime dataSindicancia, string usuarioResponsavel, bool enderecoConferido, System.DateTime dataFinalizacao, string usuarioFinalizou, string observacoes, bool pendente, bool finalizada, bool status, string motivoSindicancia) {
-                sindicanciaRow rowsindicanciaRow = ((sindicanciaRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        idSolicitacao,
-                        dataSindicancia,
-                        usuarioResponsavel,
-                        enderecoConferido,
-                        dataFinalizacao,
-                        usuarioFinalizou,
-                        observacoes,
-                        pendente,
-                        finalizada,
-                        status,
-                        motivoSindicancia};
-                rowsindicanciaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsindicanciaRow);
-                return rowsindicanciaRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRow FindByidSindicancia(int idSindicancia) {
-                return ((sindicanciaRow)(this.Rows.Find(new object[] {
-                            idSindicancia})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                sindicanciaDataTable cln = ((sindicanciaDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new sindicanciaDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnidSindicancia = base.Columns["idSindicancia"];
-                this.columnidSolicitacao = base.Columns["idSolicitacao"];
-                this.columndataSindicancia = base.Columns["dataSindicancia"];
-                this.columnusuarioResponsavel = base.Columns["usuarioResponsavel"];
-                this.columnenderecoConferido = base.Columns["enderecoConferido"];
-                this.columndataFinalizacao = base.Columns["dataFinalizacao"];
-                this.columnusuarioFinalizou = base.Columns["usuarioFinalizou"];
-                this.columnobservacoes = base.Columns["observacoes"];
-                this.columnpendente = base.Columns["pendente"];
-                this.columnfinalizada = base.Columns["finalizada"];
-                this.columnstatus = base.Columns["status"];
-                this.columnmotivoSindicancia = base.Columns["motivoSindicancia"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnidSindicancia = new global::System.Data.DataColumn("idSindicancia", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidSindicancia);
-                this.columnidSolicitacao = new global::System.Data.DataColumn("idSolicitacao", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidSolicitacao);
-                this.columndataSindicancia = new global::System.Data.DataColumn("dataSindicancia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndataSindicancia);
-                this.columnusuarioResponsavel = new global::System.Data.DataColumn("usuarioResponsavel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusuarioResponsavel);
-                this.columnenderecoConferido = new global::System.Data.DataColumn("enderecoConferido", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnenderecoConferido);
-                this.columndataFinalizacao = new global::System.Data.DataColumn("dataFinalizacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndataFinalizacao);
-                this.columnusuarioFinalizou = new global::System.Data.DataColumn("usuarioFinalizou", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusuarioFinalizou);
-                this.columnobservacoes = new global::System.Data.DataColumn("observacoes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnobservacoes);
-                this.columnpendente = new global::System.Data.DataColumn("pendente", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpendente);
-                this.columnfinalizada = new global::System.Data.DataColumn("finalizada", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfinalizada);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus);
-                this.columnmotivoSindicancia = new global::System.Data.DataColumn("motivoSindicancia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmotivoSindicancia);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidSindicancia}, true));
-                this.columnidSindicancia.AutoIncrement = true;
-                this.columnidSindicancia.AutoIncrementSeed = -1;
-                this.columnidSindicancia.AutoIncrementStep = -1;
-                this.columnidSindicancia.AllowDBNull = false;
-                this.columnidSindicancia.Unique = true;
-                this.columnusuarioResponsavel.MaxLength = 20;
-                this.columnusuarioFinalizou.MaxLength = 20;
-                this.columnobservacoes.MaxLength = 500;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRow NewsindicanciaRow() {
-                return ((sindicanciaRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sindicanciaRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(sindicanciaRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.sindicanciaRowChanged != null)) {
-                    this.sindicanciaRowChanged(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.sindicanciaRowChanging != null)) {
-                    this.sindicanciaRowChanging(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.sindicanciaRowDeleted != null)) {
-                    this.sindicanciaRowDeleted(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.sindicanciaRowDeleting != null)) {
-                    this.sindicanciaRowDeleting(this, new sindicanciaRowChangeEvent(((sindicanciaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovesindicanciaRow(sindicanciaRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ds_siesc ds = new ds_siesc();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sindicanciaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -16197,6 +16214,340 @@ namespace SIESC.BD.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class sindicanciaRow : global::System.Data.DataRow {
+            
+            private sindicanciaDataTable tablesindicancia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal sindicanciaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablesindicancia = ((sindicanciaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idSindicancia {
+                get {
+                    return ((int)(this[this.tablesindicancia.idSindicanciaColumn]));
+                }
+                set {
+                    this[this.tablesindicancia.idSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idSolicitacao {
+                get {
+                    try {
+                        return ((int)(this[this.tablesindicancia.idSolicitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idSolicitacao\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.idSolicitacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dataSindicancia {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesindicancia.dataSindicanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataSindicancia\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.dataSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string usuarioResponsavel {
+                get {
+                    try {
+                        return ((string)(this[this.tablesindicancia.usuarioResponsavelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'usuarioResponsavel\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.usuarioResponsavelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string motivoSindicancia {
+                get {
+                    try {
+                        return ((string)(this[this.tablesindicancia.motivoSindicanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'motivoSindicancia\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.motivoSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool enderecoConferido {
+                get {
+                    try {
+                        return ((bool)(this[this.tablesindicancia.enderecoConferidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'enderecoConferido\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.enderecoConferidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dataFinalizacao {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesindicancia.dataFinalizacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataFinalizacao\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.dataFinalizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string usuarioFinalizou {
+                get {
+                    try {
+                        return ((string)(this[this.tablesindicancia.usuarioFinalizouColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'usuarioFinalizou\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.usuarioFinalizouColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string observacoes {
+                get {
+                    try {
+                        return ((string)(this[this.tablesindicancia.observacoesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'observacoes\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.observacoesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool pendente {
+                get {
+                    try {
+                        return ((bool)(this[this.tablesindicancia.pendenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'pendente\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.pendenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool finalizada {
+                get {
+                    try {
+                        return ((bool)(this[this.tablesindicancia.finalizadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'finalizada\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.finalizadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool status {
+                get {
+                    try {
+                        return ((bool)(this[this.tablesindicancia.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'status\' na tabela \'sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesindicancia.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidSolicitacaoNull() {
+                return this.IsNull(this.tablesindicancia.idSolicitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidSolicitacaoNull() {
+                this[this.tablesindicancia.idSolicitacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdataSindicanciaNull() {
+                return this.IsNull(this.tablesindicancia.dataSindicanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdataSindicanciaNull() {
+                this[this.tablesindicancia.dataSindicanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsusuarioResponsavelNull() {
+                return this.IsNull(this.tablesindicancia.usuarioResponsavelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetusuarioResponsavelNull() {
+                this[this.tablesindicancia.usuarioResponsavelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmotivoSindicanciaNull() {
+                return this.IsNull(this.tablesindicancia.motivoSindicanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmotivoSindicanciaNull() {
+                this[this.tablesindicancia.motivoSindicanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsenderecoConferidoNull() {
+                return this.IsNull(this.tablesindicancia.enderecoConferidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetenderecoConferidoNull() {
+                this[this.tablesindicancia.enderecoConferidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdataFinalizacaoNull() {
+                return this.IsNull(this.tablesindicancia.dataFinalizacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdataFinalizacaoNull() {
+                this[this.tablesindicancia.dataFinalizacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsusuarioFinalizouNull() {
+                return this.IsNull(this.tablesindicancia.usuarioFinalizouColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetusuarioFinalizouNull() {
+                this[this.tablesindicancia.usuarioFinalizouColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsobservacoesNull() {
+                return this.IsNull(this.tablesindicancia.observacoesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetobservacoesNull() {
+                this[this.tablesindicancia.observacoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspendenteNull() {
+                return this.IsNull(this.tablesindicancia.pendenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpendenteNull() {
+                this[this.tablesindicancia.pendenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfinalizadaNull() {
+                return this.IsNull(this.tablesindicancia.finalizadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfinalizadaNull() {
+                this[this.tablesindicancia.finalizadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tablesindicancia.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tablesindicancia.statusColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class vw_sindicanciaRow : global::System.Data.DataRow {
             
             private vw_sindicanciaDataTable tablevw_sindicancia;
@@ -16351,6 +16702,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string MotivoSindicancia {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.MotivoSindicanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'MotivoSindicancia\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_sindicancia.MotivoSindicanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string UsuarioFinalizou {
                 get {
                     try {
@@ -16367,6 +16734,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Observacoes {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.ObservacoesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Observacoes\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_sindicancia.ObservacoesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DataFinalizacao {
                 get {
                     try {
@@ -16378,6 +16761,22 @@ namespace SIESC.BD.DataSets {
                 }
                 set {
                     this[this.tablevw_sindicancia.DataFinalizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Pendente {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_sindicancia.PendenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Pendente\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_sindicancia.PendenteColumn] = value;
                 }
             }
             
@@ -16431,38 +16830,6 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Pendente {
-                get {
-                    try {
-                        return ((bool)(this[this.tablevw_sindicancia.PendenteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Pendente\' na tabela \'vw_sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_sindicancia.PendenteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Observacoes {
-                get {
-                    try {
-                        return ((string)(this[this.tablevw_sindicancia.ObservacoesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Observacoes\' na tabela \'vw_sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_sindicancia.ObservacoesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEnderecoNull() {
                 return this.IsNull(this.tablevw_sindicancia.EnderecoColumn);
             }
@@ -16511,6 +16878,18 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMotivoSindicanciaNull() {
+                return this.IsNull(this.tablevw_sindicancia.MotivoSindicanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMotivoSindicanciaNull() {
+                this[this.tablevw_sindicancia.MotivoSindicanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsUsuarioFinalizouNull() {
                 return this.IsNull(this.tablevw_sindicancia.UsuarioFinalizouColumn);
             }
@@ -16523,6 +16902,18 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsObservacoesNull() {
+                return this.IsNull(this.tablevw_sindicancia.ObservacoesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetObservacoesNull() {
+                this[this.tablevw_sindicancia.ObservacoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDataFinalizacaoNull() {
                 return this.IsNull(this.tablevw_sindicancia.DataFinalizacaoColumn);
             }
@@ -16531,6 +16922,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDataFinalizacaoNull() {
                 this[this.tablevw_sindicancia.DataFinalizacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPendenteNull() {
+                return this.IsNull(this.tablevw_sindicancia.PendenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPendenteNull() {
+                this[this.tablevw_sindicancia.PendenteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16567,364 +16970,6 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStatusNull() {
                 this[this.tablevw_sindicancia.StatusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPendenteNull() {
-                return this.IsNull(this.tablevw_sindicancia.PendenteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPendenteNull() {
-                this[this.tablevw_sindicancia.PendenteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsObservacoesNull() {
-                return this.IsNull(this.tablevw_sindicancia.ObservacoesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetObservacoesNull() {
-                this[this.tablevw_sindicancia.ObservacoesColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class sindicanciaRow : global::System.Data.DataRow {
-            
-            private sindicanciaDataTable tablesindicancia;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal sindicanciaRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablesindicancia = ((sindicanciaDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int idSindicancia {
-                get {
-                    return ((int)(this[this.tablesindicancia.idSindicanciaColumn]));
-                }
-                set {
-                    this[this.tablesindicancia.idSindicanciaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int idSolicitacao {
-                get {
-                    try {
-                        return ((int)(this[this.tablesindicancia.idSolicitacaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idSolicitacao\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.idSolicitacaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dataSindicancia {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablesindicancia.dataSindicanciaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataSindicancia\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.dataSindicanciaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string usuarioResponsavel {
-                get {
-                    try {
-                        return ((string)(this[this.tablesindicancia.usuarioResponsavelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'usuarioResponsavel\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.usuarioResponsavelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool enderecoConferido {
-                get {
-                    try {
-                        return ((bool)(this[this.tablesindicancia.enderecoConferidoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'enderecoConferido\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.enderecoConferidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dataFinalizacao {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablesindicancia.dataFinalizacaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataFinalizacao\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.dataFinalizacaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string usuarioFinalizou {
-                get {
-                    try {
-                        return ((string)(this[this.tablesindicancia.usuarioFinalizouColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'usuarioFinalizou\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.usuarioFinalizouColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string observacoes {
-                get {
-                    try {
-                        return ((string)(this[this.tablesindicancia.observacoesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'observacoes\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.observacoesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool pendente {
-                get {
-                    try {
-                        return ((bool)(this[this.tablesindicancia.pendenteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'pendente\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.pendenteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool finalizada {
-                get {
-                    try {
-                        return ((bool)(this[this.tablesindicancia.finalizadaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'finalizada\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.finalizadaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool status {
-                get {
-                    try {
-                        return ((bool)(this[this.tablesindicancia.statusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'status\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.statusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string motivoSindicancia {
-                get {
-                    try {
-                        return ((string)(this[this.tablesindicancia.motivoSindicanciaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'motivoSindicancia\' na tabela \'sindicancia\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesindicancia.motivoSindicanciaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsidSolicitacaoNull() {
-                return this.IsNull(this.tablesindicancia.idSolicitacaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetidSolicitacaoNull() {
-                this[this.tablesindicancia.idSolicitacaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdataSindicanciaNull() {
-                return this.IsNull(this.tablesindicancia.dataSindicanciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdataSindicanciaNull() {
-                this[this.tablesindicancia.dataSindicanciaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsusuarioResponsavelNull() {
-                return this.IsNull(this.tablesindicancia.usuarioResponsavelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetusuarioResponsavelNull() {
-                this[this.tablesindicancia.usuarioResponsavelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsenderecoConferidoNull() {
-                return this.IsNull(this.tablesindicancia.enderecoConferidoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetenderecoConferidoNull() {
-                this[this.tablesindicancia.enderecoConferidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdataFinalizacaoNull() {
-                return this.IsNull(this.tablesindicancia.dataFinalizacaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdataFinalizacaoNull() {
-                this[this.tablesindicancia.dataFinalizacaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsusuarioFinalizouNull() {
-                return this.IsNull(this.tablesindicancia.usuarioFinalizouColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetusuarioFinalizouNull() {
-                this[this.tablesindicancia.usuarioFinalizouColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsobservacoesNull() {
-                return this.IsNull(this.tablesindicancia.observacoesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetobservacoesNull() {
-                this[this.tablesindicancia.observacoesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IspendenteNull() {
-                return this.IsNull(this.tablesindicancia.pendenteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetpendenteNull() {
-                this[this.tablesindicancia.pendenteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsfinalizadaNull() {
-                return this.IsNull(this.tablesindicancia.finalizadaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetfinalizadaNull() {
-                this[this.tablesindicancia.finalizadaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsstatusNull() {
-                return this.IsNull(this.tablesindicancia.statusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetstatusNull() {
-                this[this.tablesindicancia.statusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmotivoSindicanciaNull() {
-                return this.IsNull(this.tablesindicancia.motivoSindicanciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmotivoSindicanciaNull() {
-                this[this.tablesindicancia.motivoSindicanciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -17646,22 +17691,22 @@ namespace SIESC.BD.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class vw_sindicanciaRowChangeEvent : global::System.EventArgs {
+        public class sindicanciaRowChangeEvent : global::System.EventArgs {
             
-            private vw_sindicanciaRow eventRow;
+            private sindicanciaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vw_sindicanciaRowChangeEvent(vw_sindicanciaRow row, global::System.Data.DataRowAction action) {
+            public sindicanciaRowChangeEvent(sindicanciaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vw_sindicanciaRow Row {
+            public sindicanciaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -17680,22 +17725,22 @@ namespace SIESC.BD.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class sindicanciaRowChangeEvent : global::System.EventArgs {
+        public class vw_sindicanciaRowChangeEvent : global::System.EventArgs {
             
-            private sindicanciaRow eventRow;
+            private vw_sindicanciaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRowChangeEvent(sindicanciaRow row, global::System.Data.DataRowAction action) {
+            public vw_sindicanciaRowChangeEvent(vw_sindicanciaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sindicanciaRow Row {
+            public vw_sindicanciaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -33109,6 +33154,884 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class sindicanciaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public sindicanciaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "sindicancia";
+            tableMapping.ColumnMappings.Add("idSindicancia", "idSindicancia");
+            tableMapping.ColumnMappings.Add("idSolicitacao", "idSolicitacao");
+            tableMapping.ColumnMappings.Add("dataSindicancia", "dataSindicancia");
+            tableMapping.ColumnMappings.Add("usuarioResponsavel", "usuarioResponsavel");
+            tableMapping.ColumnMappings.Add("motivoSindicancia", "motivoSindicancia");
+            tableMapping.ColumnMappings.Add("enderecoConferido", "enderecoConferido");
+            tableMapping.ColumnMappings.Add("dataFinalizacao", "dataFinalizacao");
+            tableMapping.ColumnMappings.Add("usuarioFinalizou", "usuarioFinalizou");
+            tableMapping.ColumnMappings.Add("observacoes", "observacoes");
+            tableMapping.ColumnMappings.Add("pendente", "pendente");
+            tableMapping.ColumnMappings.Add("finalizada", "finalizada");
+            tableMapping.ColumnMappings.Add("status", "status");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `sindicancia` (`idSolicitacao`, `dataSindicancia`, `usuarioResponsavel`, `motivoSindicancia`, `enderecoConferido`, `dataFinalizacao`, `usuarioFinalizou`, `observacoes`, `pendente`, `finalizada`, `status`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacao";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataSindicancia";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioResponsavel";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "motivoSindicancia";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "enderecoConferido";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataFinalizacao";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioFinalizou";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "observacoes";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "pendente";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "finalizada";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._adapter.InsertCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[7];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `idSindicancia`, `idSolicitacao`, `dataSindicancia`, `usuarioResponsavel`," +
+                " `motivoSindicancia`, `enderecoConferido`, `dataFinalizacao`, `usuarioFinalizou`" +
+                ", `observacoes`, `pendente`, `finalizada`, `status` FROM `sindicancia`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE       sindicancia
+SET                dataSindicancia = @dataSindicancia, usuarioResponsavel = @usuarioResponsavel, motivoSindicancia = @motivoSindicancia, enderecoConferido = @enderecoConferido, dataFinalizacao = @dataFinalizacao, 
+                         usuarioFinalizou = @usuarioFinalizou, observacoes = @observacoes, pendente = @pendente, finalizada = @finalizada
+WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitacao)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataSindicancia";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataSindicancia";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usuarioResponsavel";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioResponsavel";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@motivoSindicancia";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "motivoSindicancia";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@enderecoConferido";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "enderecoConferido";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataFinalizacao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataFinalizacao";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usuarioFinalizou";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioFinalizou";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@observacoes";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 500;
+            param.IsNullable = true;
+            param.SourceColumn = "observacoes";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@pendente";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "pendente";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@finalizada";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "finalizada";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE       sindicancia\r\nSET                enderecoConferido = @enderecoConferi" +
+                "do, dataFinalizacao = @dataFinalizacao, usuarioFinalizou = @usuarioFinalizou, ob" +
+                "servacoes = @observacao\r\nWHERE        (idSindicancia = @idSindicancia)\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@enderecoConferido";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "enderecoConferido";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataFinalizacao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataFinalizacao";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usuarioFinalizou";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioFinalizou";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@observacao";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 500;
+            param.IsNullable = true;
+            param.SourceColumn = "observacoes";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "DELETE FROM sindicancia\r\nWHERE        (idSindicancia = @idSindicancia) AND (idSol" +
+                "icitacao = @idSolicitacao)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE       sindicancia\r\nSET                status = @status\r\nWHERE        (idSi" +
+                "ndicancia = @idSindicancia)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@status";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSindicancia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSindicancia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "INSERT INTO sindicancia  (idSolicitacao, dataSindicancia, usuarioResponsavel, sta" +
+                "tus)\r\nVALUES        (@idSolicitacao, @dataSindicancia, @usurarioResponsavel, @st" +
+                "atus)\r\n\r\n\r\n";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacao";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataSindicancia";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataSindicancia";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usurarioResponsavel";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuarioResponsavel";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@status";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        1 \r\nFROM            sindicancia\r\nWHERE        (idSolicitacao = @idS" +
+                "olicitacao)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacao";
+            this._commandCollection[6].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ds_siesc.sindicanciaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ds_siesc.sindicanciaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ds_siesc.sindicanciaDataTable dataTable = new ds_siesc.sindicanciaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ds_siesc.sindicanciaDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ds_siesc dataSet) {
+            return this.Adapter.Update(dataSet, "sindicancia");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> p1, global::System.Nullable<global::System.DateTime> p2, string p3, string p4, global::System.Nullable<byte> p5, global::System.Nullable<global::System.DateTime> p6, string p7, string p8, global::System.Nullable<byte> p9, global::System.Nullable<byte> p10, global::System.Nullable<byte> p11) {
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((p2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p3 == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((byte)(p5.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((p6.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(p6.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((p7 == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p7));
+            }
+            if ((p8 == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p8));
+            }
+            if ((p9.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((byte)(p9.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((p10.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((byte)(p10.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((p11.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((byte)(p11.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int AtualizaSindicado(global::System.Nullable<global::System.DateTime> dataSindicancia, string usuarioResponsavel, string motivoSindicancia, object enderecoConferido, global::System.Nullable<global::System.DateTime> dataFinalizacao, string usuarioFinalizou, string observacoes, object pendente, object finalizada, int idSindicancia, global::System.Nullable<int> idSolicitacao) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
+            if ((dataSindicancia.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(dataSindicancia.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioResponsavel == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(usuarioResponsavel));
+            }
+            if ((motivoSindicancia == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(motivoSindicancia));
+            }
+            if ((enderecoConferido == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(enderecoConferido));
+            }
+            if ((dataFinalizacao.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(dataFinalizacao.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioFinalizou == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(usuarioFinalizou));
+            }
+            if ((observacoes == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(observacoes));
+            }
+            if ((pendente == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((object)(pendente));
+            }
+            if ((finalizada == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((object)(finalizada));
+            }
+            command.Parameters[9].Value = ((int)(idSindicancia));
+            if ((idSolicitacao.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(idSolicitacao.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int ConferirEnderecoSindicado(object enderecoConferido, global::System.Nullable<global::System.DateTime> dataFinalizacao, string usuarioFinalizou, string observacao, int idSindicancia) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
+            if ((enderecoConferido == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((object)(enderecoConferido));
+            }
+            if ((dataFinalizacao.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(dataFinalizacao.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioFinalizou == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(usuarioFinalizou));
+            }
+            if ((observacao == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(observacao));
+            }
+            command.Parameters[4].Value = ((int)(idSindicancia));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int ExcluirSindicado(int idSindicancia, global::System.Nullable<int> idSolicitacao) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(idSindicancia));
+            if ((idSolicitacao.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(idSolicitacao.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int InativarSindicado(object status, int idSindicancia) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
+            if ((status == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((object)(status));
+            }
+            command.Parameters[1].Value = ((int)(idSindicancia));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int SalvarSindicado(global::System.Nullable<int> idSolicitacao, global::System.Nullable<global::System.DateTime> dataSindicancia, string usurarioResponsavel, object status) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
+            if ((idSolicitacao.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(idSolicitacao.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((dataSindicancia.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(dataSindicancia.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((usurarioResponsavel == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(usurarioResponsavel));
+            }
+            if ((status == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(status));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object VerificaIdSolicitacao(global::System.Nullable<int> idSolicitacao) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[6];
+            if ((idSolicitacao.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(idSolicitacao.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class vw_sindicanciaTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
@@ -33232,13 +34155,14 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             tableMapping.ColumnMappings.Add("InstituicaoEncaminhada", "InstituicaoEncaminhada");
             tableMapping.ColumnMappings.Add("UsuarioResponsavel", "UsuarioResponsavel");
             tableMapping.ColumnMappings.Add("DataSindicancia", "DataSindicancia");
+            tableMapping.ColumnMappings.Add("MotivoSindicancia", "MotivoSindicancia");
             tableMapping.ColumnMappings.Add("UsuarioFinalizou", "UsuarioFinalizou");
+            tableMapping.ColumnMappings.Add("Observacoes", "Observacoes");
             tableMapping.ColumnMappings.Add("DataFinalizacao", "DataFinalizacao");
+            tableMapping.ColumnMappings.Add("Pendente", "Pendente");
             tableMapping.ColumnMappings.Add("SindicanciaFinalizada", "SindicanciaFinalizada");
             tableMapping.ColumnMappings.Add("EnderecoComprovado", "EnderecoComprovado");
             tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("Pendente", "Pendente");
-            tableMapping.ColumnMappings.Add("Observacoes", "Observacoes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -33255,13 +34179,11 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[11];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status
-FROM            vw_sindicancia";
+            this._commandCollection[0].CommandText = @"SELECT `idSindicancia`, `idSolicitacoesVagas`, `NomeAluno`, `Endereco`, `Regional`, `InstituicaoSolicitada`, `AnoEnsino`, `DataSolicitacao`, `InstituicaoEncaminhada`, `UsuarioResponsavel`, `DataSindicancia`, `MotivoSindicancia`, `UsuarioFinalizou`, `Observacoes`, `DataFinalizacao`, `Pendente`, `SindicanciaFinalizada`, `EnderecoComprovado`, `Status` FROM `siesc`.`vw_sindicancia`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @AnoEnsino) 
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[1].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @AnoEnsino) ORDER BY idSolicitacoesVagas";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@AnoEnsino";
@@ -33273,8 +34195,7 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada)
-ORDER BY InstituicaoSolicitada, idSolicitacoesVagas";
+            this._commandCollection[2].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada) ORDER BY InstituicaoSolicitada, idSolicitacoesVagas";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33294,8 +34215,7 @@ ORDER BY InstituicaoSolicitada, idSolicitacoesVagas";
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[3].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @instituicaosolicitada) ORDER BY idSolicitacoesVagas";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@instituicaosolicitada";
@@ -33307,8 +34227,7 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Regional = @regional)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[4].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Regional = @regional) ORDER BY idSolicitacoesVagas";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -33320,8 +34239,7 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (Regional = @regional)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[5].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (Regional = @regional) ORDER BY idSolicitacoesVagas";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33341,8 +34259,7 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[5].Parameters.Add(param);
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1)  AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada) AND (Regional = @regional)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[6].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (AnoEnsino = @anoensino) AND (InstituicaoSolicitada = @instituicaosolicitada) AND (Regional = @regional) ORDER BY idSolicitacoesVagas";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoensino";
@@ -33370,8 +34287,7 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[6].Parameters.Add(param);
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @InstituicaoSolicitada) AND (Regional = @Regional)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[7].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (InstituicaoSolicitada = @InstituicaoSolicitada) AND (Regional = @Regional) ORDER BY idSolicitacoesVagas";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@InstituicaoSolicitada";
@@ -33391,21 +34307,15 @@ ORDER BY idSolicitacoesVagas";
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, 
-                         Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status
-FROM            vw_sindicancia
-WHERE        (Status = 1) AND (SindicanciaFinalizada IS NULL) AND (Pendente IS NULL)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[8].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (SindicanciaFinalizada IS NULL) AND (Pendente IS NULL) ORDER BY idSolicitacoesVagas";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (SindicanciaFinalizada = 1)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[9].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (SindicanciaFinalizada = 1) ORDER BY idSolicitacoesVagas";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Pendente = 1)
-ORDER BY idSolicitacoesVagas";
+            this._commandCollection[10].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Pendente = 1) ORDER BY idSolicitacoesVagas";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -33613,844 +34523,6 @@ ORDER BY idSolicitacoesVagas";
             ds_siesc.vw_sindicanciaDataTable dataTable = new ds_siesc.vw_sindicanciaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sindicanciaTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public sindicanciaTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sindicancia";
-            tableMapping.ColumnMappings.Add("idSindicancia", "idSindicancia");
-            tableMapping.ColumnMappings.Add("idSolicitacao", "idSolicitacao");
-            tableMapping.ColumnMappings.Add("dataSindicancia", "dataSindicancia");
-            tableMapping.ColumnMappings.Add("usuarioResponsavel", "usuarioResponsavel");
-            tableMapping.ColumnMappings.Add("enderecoConferido", "enderecoConferido");
-            tableMapping.ColumnMappings.Add("dataFinalizacao", "dataFinalizacao");
-            tableMapping.ColumnMappings.Add("usuarioFinalizou", "usuarioFinalizou");
-            tableMapping.ColumnMappings.Add("observacoes", "observacoes");
-            tableMapping.ColumnMappings.Add("finalizada", "finalizada");
-            tableMapping.ColumnMappings.Add("status", "status");
-            tableMapping.ColumnMappings.Add("pendente", "pendente");
-            tableMapping.ColumnMappings.Add("motivoSindicancia", "motivoSindicancia");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `sindicancia` WHERE ((`idSindicancia` = @p1))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `sindicancia` (`idSolicitacao`, `dataSindicancia`, `usuarioResponsave" +
-                "l`, `enderecoConferido`, `dataFinalizacao`, `usuarioFinalizou`, `observacoes`, `" +
-                "finalizada`, `status`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSolicitacao";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataSindicancia";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioResponsavel";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "enderecoConferido";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataFinalizacao";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioFinalizou";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "observacoes";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "finalizada";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `sindicancia` SET `idSolicitacao` = @p1, `dataSindicancia` = @p2, `usuarioResponsavel` = @p3, `enderecoConferido` = @p4, `dataFinalizacao` = @p5, `usuarioFinalizou` = @p6, `observacoes` = @p7, `finalizada` = @p8, `status` = @p9 WHERE ((`idSindicancia` = @p10))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSolicitacao";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataSindicancia";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioResponsavel";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "enderecoConferido";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataFinalizacao";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioFinalizou";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "observacoes";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "finalizada";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[7];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idSindicancia, idSolicitacao, dataSindicancia, usuarioResponsavel, enderec" +
-                "oConferido, dataFinalizacao, usuarioFinalizou, observacoes, finalizada, status F" +
-                "ROM sindicancia";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE       sindicancia
-SET                observacoes = @observacoes, finalizada = @finalizada, enderecoConferido = @enderecoConferido, dataFinalizacao = @dataFinalizacao, usuarioFinalizou = @usuarioFinalizou, pendente = @pendente, 
-                         dataFinalizacao = @datafinalizacao, dataSindicancia = @dataSindicancia, usuarioResponsavel = @usuarioResponsavel, motivoSindicancia =@ motivoSindicancia
-WHERE        (idSindicancia = @idSindicancia)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@observacoes";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "observacoes";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@finalizada";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "finalizada";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@enderecoConferido";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "enderecoConferido";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataFinalizacao";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataFinalizacao";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@usuarioFinalizou";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioFinalizou";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@pendente";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "pendente";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataSindicancia";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataSindicancia";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@usuarioResponsavel";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioResponsavel";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSindicancia";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       sindicancia\r\nSET                enderecoConferido = @enderecoConferi" +
-                "do, dataFinalizacao = @dataFinalizacao, usuarioFinalizou = @usuarioFinalizou, ob" +
-                "servacoes = @observacao\r\nWHERE        (idSindicancia = @idSindicancia)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@enderecoConferido";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "enderecoConferido";
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataFinalizacao";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataFinalizacao";
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@usuarioFinalizou";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioFinalizou";
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@observacao";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "observacoes";
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSindicancia";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "DELETE FROM sindicancia\r\nWHERE        (idSindicancia = @idSindicancia) AND (idSol" +
-                "icitacao = @idSolicitacao)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSindicancia";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSolicitacao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSolicitacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[3].Parameters.Add(param);
-            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       sindicancia\r\nSET                status = @status\r\nWHERE        (idSi" +
-                "ndicancia = @idSindicancia)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSindicancia";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSindicancia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO sindicancia\r\n                         (idSolicitacao, dataSindicancia" +
-                ", usuarioResponsavel, status)\r\nVALUES        (@idSolicitacao, @dataSindicancia, " +
-                "@usurarioResponsavel, @status)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSolicitacao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSolicitacao";
-            this._commandCollection[5].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataSindicancia";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataSindicancia";
-            this._commandCollection[5].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@usurarioResponsavel";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "usuarioResponsavel";
-            this._commandCollection[5].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        1 AS Expr1\r\nFROM            sindicancia\r\nWHERE        (idSolicitaca" +
-                "o = @idSolicitacao)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idSolicitacao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idSolicitacao";
-            this._commandCollection[6].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ds_siesc.sindicanciaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ds_siesc.sindicanciaDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            ds_siesc.sindicanciaDataTable dataTable = new ds_siesc.sindicanciaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ds_siesc.sindicanciaDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ds_siesc dataSet) {
-            return this.Adapter.Update(dataSet, "sindicancia");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int AtualizarSindicado(string observacoes, object finalizada, object enderecoConferido, global::System.Nullable<global::System.DateTime> dataFinalizacao, string usuarioFinalizou, object pendente, global::System.Nullable<global::System.DateTime> dataSindicancia, string usuarioResponsavel, int idSindicancia) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
-            if ((observacoes == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(observacoes));
-            }
-            if ((finalizada == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((object)(finalizada));
-            }
-            if ((enderecoConferido == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((object)(enderecoConferido));
-            }
-            if ((dataFinalizacao.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(dataFinalizacao.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((usuarioFinalizou == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(usuarioFinalizou));
-            }
-            if ((pendente == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((object)(pendente));
-            }
-            if ((dataSindicancia.HasValue == true)) {
-                command.Parameters[6].Value = ((System.DateTime)(dataSindicancia.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((usuarioResponsavel == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(usuarioResponsavel));
-            }
-            command.Parameters[8].Value = ((int)(idSindicancia));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int ConferirEnderecoSindicado(object enderecoConferido, global::System.Nullable<global::System.DateTime> dataFinalizacao, string usuarioFinalizou, string observacao, int idSindicancia) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
-            if ((enderecoConferido == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((object)(enderecoConferido));
-            }
-            if ((dataFinalizacao.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(dataFinalizacao.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((usuarioFinalizou == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(usuarioFinalizou));
-            }
-            if ((observacao == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(observacao));
-            }
-            command.Parameters[4].Value = ((int)(idSindicancia));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int ExcluirSindicado(int idSindicancia, global::System.Nullable<int> idSolicitacao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
-            command.Parameters[0].Value = ((int)(idSindicancia));
-            if ((idSolicitacao.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idSolicitacao.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int InativarSindicado(object status, int idSindicancia) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
-            if ((status == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((object)(status));
-            }
-            command.Parameters[1].Value = ((int)(idSindicancia));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int SalvarSindicado(global::System.Nullable<int> idSolicitacao, global::System.Nullable<global::System.DateTime> dataSindicancia, string usurarioResponsavel, object status) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
-            if ((idSolicitacao.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(idSolicitacao.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((dataSindicancia.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(dataSindicancia.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((usurarioResponsavel == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(usurarioResponsavel));
-            }
-            if ((status == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((object)(status));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object VerificaIdSolicitacao(global::System.Nullable<int> idSolicitacao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[6];
-            if ((idSolicitacao.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(idSolicitacao.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
         }
     }
     
@@ -34776,6 +34848,15 @@ WHERE        (idSindicancia = @idSindicancia)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._sindicanciaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sindicanciaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -34800,15 +34881,6 @@ WHERE        (idSindicancia = @idSindicancia)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._solicitacoesvagasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sindicanciaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sindicanciaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -34862,6 +34934,14 @@ WHERE        (idSindicancia = @idSindicancia)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._sindicanciaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sindicanciaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -34886,14 +34966,6 @@ WHERE        (idSindicancia = @idSindicancia)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sindicanciaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sindicanciaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -34904,14 +34976,6 @@ WHERE        (idSindicancia = @idSindicancia)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(ds_siesc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sindicanciaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sindicanciaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._solicitacoesvagasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.solicitacoesvagas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -34933,6 +34997,14 @@ WHERE        (idSindicancia = @idSindicancia)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._usuariosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sindicanciaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.sindicancia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sindicanciaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

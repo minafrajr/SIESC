@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_apartir_sol = new System.Windows.Forms.Label();
             this.btn_concluir = new System.Windows.Forms.Button();
@@ -820,14 +820,15 @@
             this.dgv_dados.AllowUserToDeleteRows = false;
             this.dgv_dados.AllowUserToOrderColumns = true;
             this.dgv_dados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sindicar});
             this.dgv_dados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_dados.Location = new System.Drawing.Point(0, 0);
+            this.dgv_dados.MultiSelect = false;
             this.dgv_dados.Name = "dgv_dados";
             this.dgv_dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dados.ShowEditingIcon = false;

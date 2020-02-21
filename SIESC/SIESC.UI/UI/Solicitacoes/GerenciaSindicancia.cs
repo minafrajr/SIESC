@@ -14,7 +14,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias
     /// </summary>
-    public partial class GerenciaSindicancia : base_UI
+    public partial class GerenciaSindicancia : SIESC.UI.base_UI
     {
         private Principal_UI principalUi;
 
@@ -215,9 +215,12 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             sindicancia = CriarSindicancia();
 
-            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia, principalUi) { MdiParent = principalUi };
+            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia, principalUi) ;
 
-            frm_concluirSindicancia.Show();
+            frm_concluirSindicancia.ShowDialog();
+            
+            RadioButtonChecked_Click(null,null);
+
         }
 
         private Sindicancia CriarSindicancia()
@@ -230,6 +233,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacoesVagas"].Value;
                 _sindicancia.nomeAluno = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
                 _sindicancia.observacoes = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
+                _sindicancia.motivoSindicancia = dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString();
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(), out var endereco))
                 {
@@ -318,8 +322,8 @@ namespace SIESC.UI.UI.Solicitacoes
             gpb_sindicados.Visible = habilita;
             btn_sindicar.Enabled = !habilita;
             chk_finalizadas.Checked = chk_pendentes.Checked = !habilita;
-            lbl_apartir_sol.Visible = !habilita;
-            nupd_cod_solicitacao.Visible = !habilita;
+            lbl_apartir_sol.Visible = busca;
+            nupd_cod_solicitacao.Visible = busca;
             gpb_filtros_de_busca.Visible = busca;
             gpb_sindicados.Visible = sindicados;
             txt_observacoes.Visible = sindicados;
@@ -463,39 +467,44 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             if (rdb_nao_sindicadas.Checked)
             {
-                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
-                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
-                txt_endereco.Text = dgv_dados.CurrentRow.Cells[5].Value.ToString();
-                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[8].Value.ToString();
-                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[7].Value.ToString();
-                txt_telefone.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
-                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[9].Value.ToString();
-                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[12].Value.ToString();
-                txt_comprovante_endereco.Text = $@"{dgv_dados.CurrentRow.Cells[10].Value} - {dgv_dados.CurrentRow.Cells[11].Value}";
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells["codigo"].Value.ToString();
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells["nome"].Value.ToString();
+                txt_endereco.Text = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["escolasolicitada"].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
+                txt_telefone.Text = dgv_dados.CurrentRow.Cells["telefone"].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
+                txt_comprovante_endereco.Text =
+                    $@"{dgv_dados.CurrentRow.Cells["Comprovante"].Value} - {
+                            dgv_dados.CurrentRow.Cells["tipoComprovante"].Value
+                        }";
             }
 
             if (rdb_sindicadas.Checked)
             {
-                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
-                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
-                txt_endereco.Text = dgv_dados.CurrentRow.Cells[3].Value.ToString();
-                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[5].Value.ToString();
-                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[6].Value.ToString();
-                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[8].Value.ToString();
-                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[7].Value.ToString();
-                txt_observacoes.Text = dgv_dados.CurrentRow.Cells[17].Value.ToString();
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells["idSindicancia"].Value.ToString();
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
+                txt_endereco.Text = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["InstituicaoSolicitada"].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells["AnoEnsino"].Value.ToString();
+                txt_instituicao_encaminhada.Text =
+                    dgv_dados.CurrentRow.Cells["InstituicaoEncaminhada"].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
+                txt_observacoes.Text = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
 
 
                 bool finalizada, pendente, endereco;
 
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells[13].Value.ToString(), out finalizada))
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(), out finalizada))
                 {
                     if (finalizada)
                     {
                         lbl_finalizada.Text = "Sim";
                         lbl_finalizada.ForeColor = Color.DarkGreen;
-                        lbl_usuario_finalizou.Text = dgv_dados.CurrentRow.Cells[11].Value.ToString();
+                        lbl_usuario_finalizou.Text = dgv_dados.CurrentRow.Cells["UsuarioFinalizou"].Value.ToString();
+                        lbl_pendente.ResetText();
                     }
                 }
                 else
@@ -504,7 +513,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_finalizada.ForeColor = Color.DarkRed;
                 }
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells[14].Value.ToString(), out endereco))
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(), out endereco))
                 {
                     if (endereco)
                     {
@@ -523,8 +532,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_endereco_comprovado.ForeColor = Color.Peru;
                 }
 
-
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells[16].Value.ToString(), out pendente))
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(), out pendente))
                 {
                     if (pendente)
                     {
@@ -544,36 +552,36 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_pendente.Text = "Análise";
                     lbl_pendente.ForeColor = Color.Peru;
                 }
-
             }
 
             if (rdb_codigo.Checked || rdb_nome.Checked)
             {
-                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells[2].Value.ToString();
-                txt_codigo.Text = dgv_dados.CurrentRow.Cells[1].Value.ToString();
-                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells[4].Value.ToString();
-                txt_endereco.Text = solicitacaoControl.RetornaEndereco((int)dgv_dados.CurrentRow.Cells[1].Value);
-                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells[10].Value.ToString();
-                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells[12].Value.ToString();
-                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells[11].Value.ToString();
-                txt_telefone.Text = $"{dgv_dados.CurrentRow.Cells[6].Value} - {dgv_dados.CurrentRow.Cells[7].Value}";
+                txt_nomealuno.Text = dgv_dados.CurrentRow.Cells["Nome do Aluno"].Value.ToString();
+                txt_codigo.Text = dgv_dados.CurrentRow.Cells["Solicitacao"].Value.ToString();
+                txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells["Ano de Ensino"].Value.ToString();
+
+                txt_endereco.Text = solicitacaoControl.RetornaEndereco(Convert.ToInt32(txt_codigo.Text));
+                txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["Escola Solicitada"].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["Escola Encaminhada"].Value.ToString();
+                txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["Data Solicitacao"].Value.ToString();
+                txt_telefone.Text = $@"{dgv_dados.CurrentRow.Cells["Telefone 1"].Value} - {dgv_dados.CurrentRow.Cells["Telefone 2"].Value}";
             }
         }
 
-        private void limpacampos()
+        private void LimparCampos()
         {
             foreach (MyTextBox control in pnl_dados.Controls.OfType<MyTextBox>())
             {
                 control.ResetText();
             }
             txt_codigo.Enabled = txt_nomealuno.Enabled = false;
-            
+
             lbl_finalizada.ResetText();
             lbl_pendente.ResetText();
             lbl_usuario_finalizou.ResetText();
             lbl_endereco_comprovado.ResetText();
         }
-        
+
         private void CarregaGridViewByIdSolicitacao(string codigoSolicitacao)
         {
             solicitacaoControl = new SolicitacaoControl();
@@ -595,8 +603,8 @@ namespace SIESC.UI.UI.Solicitacoes
 
             dgv_dados.DataSource = dt;
 
-            dgv_dados.Sort(dgv_dados.Columns[2],ListSortDirection.Ascending);
-            
+            dgv_dados.Sort(dgv_dados.Columns[2], ListSortDirection.Ascending);
+
             dgv_dados.Refresh();
 
             dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
@@ -606,9 +614,9 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             if (rdb_nao_sindicadas.Checked)
             {
-                
+
                 txt_codigo.Enabled = txt_nomealuno.Enabled = false;
-                
+
                 HabilitarContoles(false, true, false);
 
                 AcrescentarColunaSindicar(true);
@@ -622,10 +630,10 @@ namespace SIESC.UI.UI.Solicitacoes
             if (rdb_sindicadas.Checked)
             {
                 listaOfSindicancias.Clear();
-                
+
                 txt_codigo.Enabled = txt_nomealuno.Enabled = false;
-                
-                limpacampos();
+
+                LimparCampos();
                 HabilitarContoles(true, true, true);
 
                 AcrescentarColunaSindicar(false);
@@ -638,7 +646,7 @@ namespace SIESC.UI.UI.Solicitacoes
             if (rdb_codigo.Checked)
             {
 
-                limpacampos();
+                LimparCampos();
                 AcrescentarColunaSindicar(true);
                 HabilitarContoles(false, false, false);
 
@@ -649,7 +657,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             if (rdb_nome.Checked)
             {
-                limpacampos();
+                LimparCampos();
                 AcrescentarColunaSindicar(true);
                 HabilitarContoles(false, false, false);
 

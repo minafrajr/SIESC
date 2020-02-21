@@ -9354,6 +9354,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnStatus;
             
+            private global::System.Data.DataColumn columnTelefone;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vw_ficha_sindicanciaDataTable() {
@@ -9549,6 +9551,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TelefoneColumn {
+                get {
+                    return this.columnTelefone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9602,7 +9612,8 @@ namespace SIESC.BD.DataSets {
                         bool Pendente, 
                         bool SindicanciaFinalizada, 
                         bool EnderecoComprovado, 
-                        bool Status) {
+                        bool Status, 
+                        string Telefone) {
                 vw_ficha_sindicanciaRow rowvw_ficha_sindicanciaRow = ((vw_ficha_sindicanciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9624,7 +9635,8 @@ namespace SIESC.BD.DataSets {
                         Pendente,
                         SindicanciaFinalizada,
                         EnderecoComprovado,
-                        Status};
+                        Status,
+                        Telefone};
                 rowvw_ficha_sindicanciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_ficha_sindicanciaRow);
                 return rowvw_ficha_sindicanciaRow;
@@ -9675,6 +9687,7 @@ namespace SIESC.BD.DataSets {
                 this.columnSindicanciaFinalizada = base.Columns["SindicanciaFinalizada"];
                 this.columnEnderecoComprovado = base.Columns["EnderecoComprovado"];
                 this.columnStatus = base.Columns["Status"];
+                this.columnTelefone = base.Columns["Telefone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9720,6 +9733,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnEnderecoComprovado);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
+                this.columnTelefone = new global::System.Data.DataColumn("Telefone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefone);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidSindicancia,
                                 this.columnidSolicitacoesVagas}, true));
@@ -9747,6 +9762,7 @@ namespace SIESC.BD.DataSets {
                 this.columnUsuarioResponsavel.MaxLength = 20;
                 this.columnUsuarioFinalizou.MaxLength = 20;
                 this.columnObservacoes.MaxLength = 500;
+                this.columnTelefone.MaxLength = 47;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14819,6 +14835,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Telefone {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_ficha_sindicancia.TelefoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Telefone\' na tabela \'vw_ficha_sindicancia\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ficha_sindicancia.TelefoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEnderecoNull() {
                 return this.IsNull(this.tablevw_ficha_sindicancia.EnderecoColumn);
             }
@@ -14971,6 +15003,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStatusNull() {
                 this[this.tablevw_ficha_sindicancia.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTelefoneNull() {
+                return this.IsNull(this.tablevw_ficha_sindicancia.TelefoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTelefoneNull() {
+                this[this.tablevw_ficha_sindicancia.TelefoneColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21782,6 +21826,7 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
             tableMapping.ColumnMappings.Add("SindicanciaFinalizada", "SindicanciaFinalizada");
             tableMapping.ColumnMappings.Add("EnderecoComprovado", "EnderecoComprovado");
             tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("Telefone", "Telefone");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21789,7 +21834,7 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString1;
+            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21798,13 +21843,13 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT `idSindicancia`, `idSolicitacoesVagas`, `NomeAluno`, `Endereco`, `Regional`, `InstituicaoSolicitada`, `AnoEnsino`, `DataSolicitacao`, `GrauSolicitante`, `Solicitante`, `InstituicaoEncaminhada`, `UsuarioResponsavel`, `DataSindicancia`, `UsuarioFinalizou`, `Observacoes`, `DataFinalizacao`, `Pendente`, `SindicanciaFinalizada`, `EnderecoComprovado`, `Status` FROM `siesc`.`vw_ficha_sindicancia`";
+            this._commandCollection[0].CommandText = @"SELECT        idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, Telefone, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, GrauSolicitante, Solicitante, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, 
+                         UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, EnderecoComprovado, Status
+FROM            vw_ficha_sindicancia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, GrauSolicitante, Solicitante, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, NomeAluno, Observacoes, Pendente, Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicancia, idSolicitacoesVagas
-FROM            vw_ficha_sindicancia
-WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacoesVagas = @idSolicitacao)";
+            this._commandCollection[1].CommandText = @"SELECT AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, GrauSolicitante, InstituicaoEncaminhada, InstituicaoSolicitada, NomeAluno, Observacoes, Pendente, Regional, SindicanciaFinalizada, Solicitante, Status, Telefone, UsuarioFinalizou, UsuarioResponsavel, idSindicancia, idSolicitacoesVagas FROM vw_ficha_sindicancia WHERE (idSindicancia = @idSindicancia) AND (idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idSindicancia";

@@ -97,6 +97,10 @@
           <DataField>Status</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
+        <Field Name="Telefone">
+          <DataField>Telefone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
@@ -1288,7 +1292,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Telefone</Value>
+                    <Value>=First(Fields!Telefone.Value, "dsRelatorios")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
