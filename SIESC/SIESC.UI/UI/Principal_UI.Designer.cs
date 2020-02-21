@@ -369,7 +369,7 @@
             // 
             this.cadastrarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -377,21 +377,21 @@
             // 
             this.autorizarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
             this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
-            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.autorizarToolStripMenuItem.Text = "Autorizar";
             // 
             // gerenciarToolStripMenuItem2
             // 
             this.gerenciarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem2.Name = "gerenciarToolStripMenuItem2";
-            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
             this.gerenciarToolStripMenuItem2.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem2.Click += new System.EventHandler(this.gerenciarToolStripMenuItem2_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(193, 6);
             // 
             // btn_solicitavaga
             // 

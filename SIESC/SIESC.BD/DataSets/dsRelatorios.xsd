@@ -2393,7 +2393,7 @@ FROM            vw_ficha_sindicancia</CommandText>
             <xs:sequence>
               <xs:element name="idSindicancia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSindicancia" msprop:Generator_ColumnPropNameInRow="idSindicancia" msprop:Generator_ColumnPropNameInTable="idSindicanciaColumn" msprop:Generator_UserColumnName="idSindicancia" type="xs:int" />
               <xs:element name="idSolicitacoesVagas" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSolicitacoesVagas" msprop:Generator_ColumnPropNameInRow="idSolicitacoesVagas" msprop:Generator_ColumnPropNameInTable="idSolicitacoesVagasColumn" msprop:Generator_UserColumnName="idSolicitacoesVagas" type="xs:int" />
-              <xs:element name="NomeAluno" msprop:Generator_ColumnVarNameInTable="columnNomeAluno" msprop:Generator_ColumnPropNameInRow="NomeAluno" msprop:Generator_ColumnPropNameInTable="NomeAlunoColumn" msprop:Generator_UserColumnName="NomeAluno">
+              <xs:element name="NomeAluno" msprop:Generator_ColumnVarNameInTable="columnNomeAluno" msprop:Generator_ColumnPropNameInRow="NomeAluno" msprop:Generator_ColumnPropNameInTable="NomeAlunoColumn" msprop:Generator_UserColumnName="NomeAluno" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="60" />
@@ -2407,28 +2407,28 @@ FROM            vw_ficha_sindicancia</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Regional" msprop:Generator_ColumnVarNameInTable="columnRegional" msprop:Generator_ColumnPropNameInRow="Regional" msprop:Generator_ColumnPropNameInTable="RegionalColumn" msprop:Generator_UserColumnName="Regional">
+              <xs:element name="Regional" msprop:Generator_ColumnVarNameInTable="columnRegional" msprop:Generator_ColumnPropNameInRow="Regional" msprop:Generator_ColumnPropNameInTable="RegionalColumn" msprop:Generator_UserColumnName="Regional" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="InstituicaoSolicitada" msprop:Generator_ColumnVarNameInTable="columnInstituicaoSolicitada" msprop:Generator_ColumnPropNameInRow="InstituicaoSolicitada" msprop:Generator_ColumnPropNameInTable="InstituicaoSolicitadaColumn" msprop:Generator_UserColumnName="InstituicaoSolicitada">
+              <xs:element name="InstituicaoSolicitada" msprop:Generator_ColumnVarNameInTable="columnInstituicaoSolicitada" msprop:Generator_ColumnPropNameInRow="InstituicaoSolicitada" msprop:Generator_ColumnPropNameInTable="InstituicaoSolicitadaColumn" msprop:Generator_UserColumnName="InstituicaoSolicitada" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="80" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AnoEnsino" msprop:Generator_ColumnVarNameInTable="columnAnoEnsino" msprop:Generator_ColumnPropNameInRow="AnoEnsino" msprop:Generator_ColumnPropNameInTable="AnoEnsinoColumn" msprop:Generator_UserColumnName="AnoEnsino">
+              <xs:element name="AnoEnsino" msprop:Generator_ColumnVarNameInTable="columnAnoEnsino" msprop:Generator_ColumnPropNameInRow="AnoEnsino" msprop:Generator_ColumnPropNameInTable="AnoEnsinoColumn" msprop:Generator_UserColumnName="AnoEnsino" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DataSolicitacao" msprop:Generator_ColumnVarNameInTable="columnDataSolicitacao" msprop:Generator_ColumnPropNameInRow="DataSolicitacao" msprop:Generator_ColumnPropNameInTable="DataSolicitacaoColumn" msprop:Generator_UserColumnName="DataSolicitacao" type="xs:dateTime" />
+              <xs:element name="DataSolicitacao" msprop:Generator_ColumnVarNameInTable="columnDataSolicitacao" msprop:Generator_ColumnPropNameInRow="DataSolicitacao" msprop:Generator_ColumnPropNameInTable="DataSolicitacaoColumn" msprop:Generator_UserColumnName="DataSolicitacao" type="xs:dateTime" minOccurs="0" />
               <xs:element name="GrauSolicitante" msprop:Generator_ColumnVarNameInTable="columnGrauSolicitante" msprop:Generator_ColumnPropNameInRow="GrauSolicitante" msprop:Generator_ColumnPropNameInTable="GrauSolicitanteColumn" msprop:Generator_UserColumnName="GrauSolicitante" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

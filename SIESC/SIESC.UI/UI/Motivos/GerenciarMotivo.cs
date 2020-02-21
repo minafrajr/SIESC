@@ -67,11 +67,11 @@ namespace SIESC.UI.UI
 			}
 			catch (Exception ex)
 			{
-				MensagemErro(ex);
+				Mensageiro.MensagemErro(ex,this);
 			}
 		}
 		/// <summary>
-		/// Esclui o motivo selecionado no data DataGridView
+		/// Exclui o motivo selecionado no data DataGridView
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -84,16 +84,15 @@ namespace SIESC.UI.UI
 
 				controleMotivo = new MotivoControl();
 
-				int id = Convert.ToInt16(txt_codigo.Text);
+				int id = Convert.ToInt32(txt_codigo.Text);
 
-				if (MessageBox.Show(string.Format("Deseja excluir o motivo {0} ? {1}Clique SIM para Confirmar ou NÂO para cancelar", dgv_motivos[1, dgv_motivos.CurrentCellAddress.X].Value, Environment.NewLine), "SIESC - Gerenciar Motivo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
+				if (MessageBox.Show($"Deseja excluir o motivo {dgv_motivos[1, dgv_motivos.CurrentCellAddress.X].Value} ? {Environment.NewLine}Clique SIM para Confirmar ou NÂO para cancelar", "SIESC - Gerenciar Motivo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
 				{
 					if (controleMotivo.Deletar(id))
 						MessageBox.Show("Excluído com sucesso!", "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 					CarregaDataGridView();
 				}
-
 				txt_nomemotivo.ResetText();
 				txt_codigo.ResetText();
 			}
@@ -101,7 +100,6 @@ namespace SIESC.UI.UI
 			{
 				MensagemErro(ex);
 			}
-
 		}
 
 		/// <summary>
@@ -119,7 +117,7 @@ namespace SIESC.UI.UI
 				if (string.IsNullOrEmpty(txt_nomemotivo.Text))
 					throw new Exception("Impossível salvar!!! Preencha o motivo para cadastrá-lo.");
 
-				if (string.IsNullOrEmpty(txt_codigo.Text))
+				if (!string.IsNullOrEmpty(txt_codigo.Text))
 				{
 					if (controleMotivo.Salvar(motivo, true))
 					{
@@ -131,7 +129,7 @@ namespace SIESC.UI.UI
 				}
 				else
 				{
-					if (controleMotivo.Alterar(motivo, true))
+					if (controleMotivo.Alterar(motivo))
 					{
 						MessageBox.Show("Atualizado com sucesso!", "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						txt_nomemotivo.ResetText();
@@ -140,8 +138,6 @@ namespace SIESC.UI.UI
 						CarregaDataGridView();
 					}
 				}
-
-
 			}
 			catch (Exception ex)
 			{
@@ -158,23 +154,55 @@ namespace SIESC.UI.UI
 			MessageBox.Show(string.Format("Houve o seguinte erro: {0}", exception.Message), "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
 
 		}
-
+		/// <summary>
+		/// Envento de mouse do datagrid
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void dgv_motivos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-
-
 			txt_codigo.Text = dgv_motivos[0, dgv_motivos.CurrentCellAddress.Y].Value.ToString();
 			txt_nomemotivo.Text = dgv_motivos[1, dgv_motivos.CurrentCellAddress.Y].Value.ToString();
 		}
-
+		/// <summary>
+		/// Evento do botão editar
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btn_editar_Click(object sender, EventArgs e)
 		{
 			txt_nomemotivo.Enabled = true;
 		}
+        /// <summary>
+        /// Inativa o motivo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_inativar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_codigo.Text))
+                    throw new Exception("Selecione um motivo para excluí-lo");
 
-		private void GerenciaMotivo_Load(object sender, EventArgs e)
-		{
-			
-		}
-	}
+                controleMotivo = new MotivoControl();
+
+                int id = Convert.ToInt32(txt_codigo.Text);
+
+                if (MessageBox.Show($"Deseja excluir o motivo {dgv_motivos[1, dgv_motivos.CurrentCellAddress.X].Value} ? {Environment.NewLine}Clique SIM para Confirmar ou NÂO para cancelar", "SIESC - Gerenciar Motivo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
+                {
+                    if (controleMotivo.Inativar(id))
+                        MessageBox.Show("Excluído com sucesso!", "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    CarregaDataGridView();
+                }
+                txt_nomemotivo.ResetText();
+                txt_codigo.ResetText();
+            }
+            catch (Exception ex)
+            {
+                MensagemErro(ex);
+            }
+        }
+    }
 }

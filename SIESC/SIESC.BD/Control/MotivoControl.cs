@@ -3,11 +3,12 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
+using SIESC.BD.DataSets.ds_siescTableAdapters;
+using SIESC.MODEL.Classes;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.MODEL.Classes;
+using MySql.Data.MySqlClient;
 
 namespace SIESC.BD.Control
 {
@@ -19,19 +20,13 @@ namespace SIESC.BD.Control
         {
             try
             {
-                if (salvar)
-                {
-                    
-                    motivoTA = new motivosTableAdapter();
+                motivoTA = new motivosTableAdapter();
 
-                    return (motivoTA.Inserir(motivo.Descricao, salvar) > 0);
-
-                }
-                else
-                {
-                    motivoTA.Atualizar(motivo.Descricao, motivo.Codigo);
-                    return false;
-                }
+                return (motivoTA.Inserir(motivo.Descricao, motivo.Status) > 0);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -45,8 +40,12 @@ namespace SIESC.BD.Control
             {
                 motivoTA = new motivosTableAdapter();
 
-                return (DataTable)motivoTA.GetData();
+                return motivoTA.GetData();
 
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
             }
             catch (SqlException ex)
             {
@@ -63,21 +62,27 @@ namespace SIESC.BD.Control
 
                 return (motivoTA.Excluir(id) > 0);
             }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
             catch (SqlException ex)
             {
                 throw ex;
             }
         }
 
-        public bool Alterar(Motivo motivo, bool status)
+        public bool Alterar(Motivo motivo)
         {
             try
             {
                 motivoTA = new motivosTableAdapter();
 
-                
-
-                return (motivoTA.Atualizar(motivo.Descricao,motivo.Codigo) > 0);
+                return (motivoTA.Atualizar(motivo.Descricao, motivo.Codigo) > 0);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
             }
             catch (SqlException ex)
             {
@@ -86,22 +91,22 @@ namespace SIESC.BD.Control
             }
         }
 
-        public string Localizar(int id)
+        public bool Inativar(int id)
         {
             try
             {
-                return motivoTA.PesquisaDescricao(id).ToString();
+                motivoTA = new motivosTableAdapter();
+
+                return (motivoTA.Inativar(id) > 0);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
             }
             catch (SqlException ex)
             {
                 throw ex;
             }
         }
-
-        public int? Localizar(Motivo motivo)
-        {
-            return motivoTA.PesquisaID(motivo.Descricao);
-        }
-
     }
 }

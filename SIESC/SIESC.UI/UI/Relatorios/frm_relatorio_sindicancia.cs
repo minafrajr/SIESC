@@ -17,8 +17,6 @@ namespace SIESC.UI.UI.Relatorios
     {
         private ReportDataSource dataSource;
 
-        private vw_ficha_sindicanciaTableAdapter fichaSindicancia_TA;
-
         private vw_sindicanciaTableAdapter Sindicancia_TA;
 
         private TipoConsulta _tipoConsulta;
@@ -60,14 +58,12 @@ namespace SIESC.UI.UI.Relatorios
 
             FolhaPaisagem();
 
-
             DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,cbo_escola.SelectedValue != null);
-
-            fichaSindicancia_TA = new vw_ficha_sindicanciaTableAdapter();
+            
             Sindicancia_TA = new vw_sindicanciaTableAdapter();
 
-            DataTable dt = fichaSindicancia_TA.GetData();
-
+            DataTable dt = null;
+            
             switch (_tipoConsulta)
             {
                 case TipoConsulta.regional_ano_escola:

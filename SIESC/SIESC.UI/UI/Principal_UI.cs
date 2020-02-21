@@ -313,7 +313,11 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_motivos_Click(object sender,EventArgs e)
         {
+#if !DEBUG
+
             if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("minafra")) return;
+#endif
+
             foreach (Form mdiChild in this.MdiChildren)
             {
                 if (mdiChild.GetType() == typeof(GerenciaMotivo))
