@@ -2,9 +2,10 @@
 <xs:schema id="dsRelatorios" targetNamespace="http://tempuri.org/dsRelatorios.xsd" xmlns:mstns="http://tempuri.org/dsRelatorios.xsd" xmlns="http://tempuri.org/dsRelatorios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_controlesolicitacoesTableAdapter" GeneratorDataComponentClassName="vw_controlesolicitacoesTableAdapter" Name="vw_controlesolicitacoes" UserDataComponentName="vw_controlesolicitacoesTableAdapter">
@@ -1253,6 +1254,131 @@ FROM            vw_ficha_sindicancia</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_sindicancia_numericoTableAdapter" GeneratorDataComponentClassName="vw_sindicancia_numericoTableAdapter" Name="vw_sindicancia_numerico" UserDataComponentName="vw_sindicancia_numericoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `regional`, `instituicoes`, `anoEnsino`, `endConfirmado`, `endNaoConferido`, `endAConferir`, `denuncias`, `pendentes`, `finalizadas`, `abertas`, `total` FROM `siesc`.`vw_sindicancia_numerico`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="regional" DataSetColumn="regional" />
+              <Mapping SourceColumn="instituicoes" DataSetColumn="instituicoes" />
+              <Mapping SourceColumn="anoEnsino" DataSetColumn="anoEnsino" />
+              <Mapping SourceColumn="endConfirmado" DataSetColumn="endConfirmado" />
+              <Mapping SourceColumn="endNaoConferido" DataSetColumn="endNaoConferido" />
+              <Mapping SourceColumn="endAConferir" DataSetColumn="endAConferir" />
+              <Mapping SourceColumn="denuncias" DataSetColumn="denuncias" />
+              <Mapping SourceColumn="pendentes" DataSetColumn="pendentes" />
+              <Mapping SourceColumn="finalizadas" DataSetColumn="finalizadas" />
+              <Mapping SourceColumn="abertas" DataSetColumn="abertas" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAnoEnsino" GetMethodModifier="Public" GetMethodName="GetDataByAnoEnsino" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAnoEnsino" UserSourceName="GetDataByAnoEnsino">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (anoEnsino = @anoensino)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="anoensino" ColumnName="anoEnsino" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anoensino" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anoEnsino" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInstituicaoAnoEnsino" GetMethodModifier="Public" GetMethodName="GetDataByInstituicaoAnoEnsino" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInstituicaoAnoEnsino" UserSourceName="GetDataByInstituicaoAnoEnsino">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (instituicoes = @instituicao) AND (anoEnsino = @anoensino)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="instituicao" ColumnName="instituicoes" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@instituicao" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="instituicoes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="anoensino" ColumnName="anoEnsino" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anoensino" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anoEnsino" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInstituicaoSolicitada" GetMethodModifier="Public" GetMethodName="GetDataByInstituicaoSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInstituicaoSolicitada" UserSourceName="GetDataByInstituicaoSolicitada">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (instituicoes = @instituicao)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="instituicao" ColumnName="instituicoes" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@instituicao" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="instituicoes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegional" GetMethodModifier="Public" GetMethodName="GetDataByRegional" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegional" UserSourceName="GetDataByRegional">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (regional = @regional)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalAnoEnsino" GetMethodModifier="Public" GetMethodName="GetDataByRegionalAnoEnsino" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalAnoEnsino" UserSourceName="GetDataByRegionalAnoEnsino">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (regional = @regional) AND (anoEnsino = @anoensino)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="anoensino" ColumnName="anoEnsino" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anoensino" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anoEnsino" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalAnoInstituicao" GetMethodModifier="Public" GetMethodName="GetDataByRegionalAnoInstituicao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalAnoInstituicao" UserSourceName="GetDataByRegionalAnoInstituicao">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (regional = @regional) AND (instituicoes = @instituicao) AND (anoEnsino = @anoensino)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="instituicao" ColumnName="instituicoes" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@instituicao" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="instituicoes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="anoensino" ColumnName="anoEnsino" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anoensino" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anoEnsino" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalInstituicao" GetMethodModifier="Public" GetMethodName="GetDataByRegionalInstituicao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalInstituicao" UserSourceName="GetDataByRegionalInstituicao">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico
+WHERE        (regional = @regional) AND (instituicoes = @instituicao)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="instituicao" ColumnName="instituicoes" DataSourceName="siesc.vw_sindicancia_numerico" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@instituicao" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="instituicoes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia_numerico" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetNumeroGeral" GetMethodModifier="Public" GetMethodName="GetNumeroGeral" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetNumeroGeral" UserSourceName="GetNumeroGeral">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        regional, instituicoes, anoEnsino, endConfirmado, endNaoConferido, endAConferir, denuncias, pendentes, finalizadas, abertas, total
+FROM            vw_sindicancia_numerico</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2484,6 +2610,41 @@ FROM            vw_ficha_sindicancia</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_sindicancia_numerico" msprop:Generator_TableClassName="vw_sindicancia_numericoDataTable" msprop:Generator_TableVarName="tablevw_sindicancia_numerico" msprop:Generator_TablePropName="vw_sindicancia_numerico" msprop:Generator_RowDeletingName="vw_sindicancia_numericoRowDeleting" msprop:Generator_RowChangingName="vw_sindicancia_numericoRowChanging" msprop:Generator_RowEvHandlerName="vw_sindicancia_numericoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_sindicancia_numericoRowDeleted" msprop:Generator_UserTableName="vw_sindicancia_numerico" msprop:Generator_RowChangedName="vw_sindicancia_numericoRowChanged" msprop:Generator_RowEvArgName="vw_sindicancia_numericoRowChangeEvent" msprop:Generator_RowClassName="vw_sindicancia_numericoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="regional" msprop:Generator_ColumnVarNameInTable="columnregional" msprop:Generator_ColumnPropNameInRow="regional" msprop:Generator_ColumnPropNameInTable="regionalColumn" msprop:Generator_UserColumnName="regional">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="instituicoes" msprop:Generator_ColumnVarNameInTable="columninstituicoes" msprop:Generator_ColumnPropNameInRow="instituicoes" msprop:Generator_ColumnPropNameInTable="instituicoesColumn" msprop:Generator_UserColumnName="instituicoes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoEnsino" msprop:Generator_ColumnVarNameInTable="columnanoEnsino" msprop:Generator_ColumnPropNameInRow="anoEnsino" msprop:Generator_ColumnPropNameInTable="anoEnsinoColumn" msprop:Generator_UserColumnName="anoEnsino">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="endConfirmado" msprop:Generator_ColumnVarNameInTable="columnendConfirmado" msprop:Generator_ColumnPropNameInRow="endConfirmado" msprop:Generator_ColumnPropNameInTable="endConfirmadoColumn" msprop:Generator_UserColumnName="endConfirmado" type="xs:long" />
+              <xs:element name="endNaoConferido" msprop:Generator_ColumnVarNameInTable="columnendNaoConferido" msprop:Generator_ColumnPropNameInRow="endNaoConferido" msprop:Generator_ColumnPropNameInTable="endNaoConferidoColumn" msprop:Generator_UserColumnName="endNaoConferido" type="xs:long" />
+              <xs:element name="endAConferir" msprop:Generator_ColumnVarNameInTable="columnendAConferir" msprop:Generator_ColumnPropNameInRow="endAConferir" msprop:Generator_ColumnPropNameInTable="endAConferirColumn" msprop:Generator_UserColumnName="endAConferir" type="xs:long" />
+              <xs:element name="denuncias" msprop:Generator_ColumnVarNameInTable="columndenuncias" msprop:Generator_ColumnPropNameInRow="denuncias" msprop:Generator_ColumnPropNameInTable="denunciasColumn" msprop:Generator_UserColumnName="denuncias" type="xs:long" />
+              <xs:element name="pendentes" msprop:Generator_ColumnVarNameInTable="columnpendentes" msprop:Generator_ColumnPropNameInRow="pendentes" msprop:Generator_ColumnPropNameInTable="pendentesColumn" msprop:Generator_UserColumnName="pendentes" type="xs:long" />
+              <xs:element name="finalizadas" msprop:Generator_ColumnVarNameInTable="columnfinalizadas" msprop:Generator_ColumnPropNameInRow="finalizadas" msprop:Generator_ColumnPropNameInTable="finalizadasColumn" msprop:Generator_UserColumnName="finalizadas" type="xs:long" />
+              <xs:element name="abertas" msprop:Generator_ColumnVarNameInTable="columnabertas" msprop:Generator_ColumnPropNameInRow="abertas" msprop:Generator_ColumnPropNameInTable="abertasColumn" msprop:Generator_UserColumnName="abertas" type="xs:long" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

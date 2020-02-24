@@ -754,7 +754,7 @@ namespace SIESC.UI
                         return;
                     }
                 }
-                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) {MdiParent = this};
+                GerenciaSolicitacao frm_gerenciasolicita = new GerenciaSolicitacao(this) { MdiParent = this };
 
                 if (t.IsAlive) t.Abort();
 
@@ -762,7 +762,7 @@ namespace SIESC.UI
             }
             catch (ThreadAbortException)
             {
-               
+
             }
             catch (Exception ex)
             {
@@ -2487,6 +2487,14 @@ namespace SIESC.UI
         {
             frm_relatorio_sindicancia frmRelatorioSindicancia = new frm_relatorio_sindicancia() { MdiParent = this };
             frmRelatorioSindicancia.Show();
+
+        }
+
+        private void nºDeSindicadosPorSituaçãoToolStripMenuItem_Click(object sender,EventArgs e)
+        {
+            frm_relatorio_sindicancia_numerico frmRelatorioSindicanciaNumerico = new frm_relatorio_sindicancia_numerico() { MdiParent = this };
+
+            frmRelatorioSindicanciaNumerico.Show();
 
         }
     }
