@@ -1712,18 +1712,25 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 if (string.IsNullOrEmpty(msk_cep.Text) || string.IsNullOrEmpty(txt_mumresidencia.Text) ||
                     cbo_anosolicitado.SelectedValue.Equals(null))
-                { throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco."); }
+                {
+                    throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco.");
+                }
 
-                var coordenadas = Zoneador.Georrefencia(msk_cep.Text,txt_mumresidencia.Text);
+                var coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
 
                 if (string.IsNullOrEmpty(coordenadas[0]) || coordenadas[0].Equals("0"))
-                { throw new Exception("Não foi possível localizar escolas!"); }
+                {
+                    throw new Exception("Não foi possível localizar escolas!");
+                }
 
                 ZoneamentoControl zoneamento = new ZoneamentoControl();
-                DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(latitude: coordenadas[0],longitude: coordenadas[1],distancia: 2,anoensino: (int)cbo_anosolicitado.SelectedValue);
+                DataTable dt = zoneamento.RetornaUnidadeAnoEnsino(latitude: coordenadas[0], longitude: coordenadas[1],
+                    distancia: 2, anoensino: (int) cbo_anosolicitado.SelectedValue);
 
                 if (dt.Rows.Count.Equals(0))
-                { throw new Exception("Não foram localizadas escolas em um raio de 2 Km!"); }
+                {
+                    throw new Exception("Não foram localizadas escolas em um raio de 2 Km!");
+                }
 
                 DataView dv = dt.DefaultView;
 
@@ -1731,7 +1738,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 dt = dv.ToTable();
 
-                cbo_escolasolicitada_DropDown(null,null);
+                cbo_escolasolicitada_DropDown(null, null);
                 cbo_instituicao_solicitada.SelectedIndex = -1;
 
                 foreach (DataRowView item in cbo_instituicao_solicitada.Items)
@@ -1741,26 +1748,30 @@ namespace SIESC.UI.UI.Solicitacoes
                         cbo_instituicao_solicitada.SelectedItem = item;
                     }
                 }
-
-                if (t.IsAlive) t.Abort();
-
+                
                 if (cbo_instituicao_solicitada.SelectedIndex == -1)
                 {
                     if (t.IsAlive) t.Abort();
-                    Mensageiro.MensagemAviso("Não foi possível encontrar uma instituição. Por favor selecione uma!",_principalUi);
+                    Mensageiro.MensagemAviso("Não foi possível encontrar uma instituição. Por favor selecione uma!",
+                        _principalUi);
                 }
+
                 cbo_instituicao_solicitada.Refresh();
             }
             catch (NullReferenceException)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(new Exception("Não foi selecionado o ano de ensino!"),this);
+                Mensageiro.MensagemErro(new Exception("Não foi selecionado o ano de ensino!"), this);
             }
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
 
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
+            }
+            finally
+            {
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>

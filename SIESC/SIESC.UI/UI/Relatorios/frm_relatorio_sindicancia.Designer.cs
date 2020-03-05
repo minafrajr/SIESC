@@ -211,9 +211,9 @@
             this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
             this.lbl_titulo_form.Name = "lbl_titulo_form";
-            this.lbl_titulo_form.Size = new System.Drawing.Size(203, 23);
+            this.lbl_titulo_form.Size = new System.Drawing.Size(276, 23);
             this.lbl_titulo_form.TabIndex = 0;
-            this.lbl_titulo_form.Text = "Relatório de Sindicância";
+            this.lbl_titulo_form.Text = "Relatório Nominal de Sindicância";
             // 
             // label4
             // 

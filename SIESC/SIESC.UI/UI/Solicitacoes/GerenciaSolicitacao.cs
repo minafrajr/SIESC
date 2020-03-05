@@ -646,31 +646,29 @@ namespace SIESC.UI.UI
         private void btn_ficha_encaminhamento_Click(object sender, EventArgs e)
         {
             if (!cbo_anoreferencia.Text.Equals("2020"))
-            {
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
-            }
+            
             var t = CarregaProgressoThread();
 
             try
             {
                 controleSolicitacoes = new SolicitacaoControl();
 
-                frm_ficha_encaminhamento frm_fichaEncaminhamento = new frm_ficha_encaminhamento((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value) { MdiParent = PrincipalUI };
+                frm_ficha_encaminhamento frm_fichaEncaminhamento =
+                    new frm_ficha_encaminhamento((int) dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)
+                        {MdiParent = PrincipalUI};
 
                 frm_fichaEncaminhamento.Show();
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
             }
             catch (Exception exception)
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
 
                 Mensageiro.MensagemErro(exception, this);
+            }
+            finally
+            {
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>

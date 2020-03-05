@@ -119,8 +119,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.11.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.11.1\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -135,12 +135,8 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Fabric.Plugin, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Fabric.6.9.12\lib\net45\MySql.Fabric.Plugin.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -180,6 +176,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsultaWeb\BuscaCep.cs" />
@@ -443,16 +442,16 @@
     <Compile Include="UI\Relatorios\frm_relatorio_autorizacoes.Designer.cs">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Solicitacoes\ConcluirSindicancia.cs">
+    <Compile Include="UI\Sindicância\ConcluirSindicancia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Solicitacoes\ConcluirSindicancia.Designer.cs">
+    <Compile Include="UI\Sindicância\ConcluirSindicancia.Designer.cs">
       <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Solicitacoes\GerenciaSindicancia.cs">
+    <Compile Include="UI\Sindicância\GerenciaSindicancia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Solicitacoes\GerenciaSindicancia.Designer.cs">
+    <Compile Include="UI\Sindicância\GerenciaSindicancia.Designer.cs">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
@@ -635,10 +634,10 @@
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_autorizacoes.resx">
       <DependentUpon>frm_relatorio_autorizacoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Solicitacoes\ConcluirSindicancia.resx">
+    <EmbeddedResource Include="UI\Sindicância\ConcluirSindicancia.resx">
       <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Solicitacoes\GerenciaSindicancia.resx">
+    <EmbeddedResource Include="UI\Sindicância\GerenciaSindicancia.resx">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
