@@ -103,6 +103,7 @@ namespace SIESC.UI.UI.Relatorios
 
             rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Sindicancia\\rpt_controle_sindicancia.rdlc";
 
+
             dataSource = new ReportDataSource();
             dataSource.Name = "dsRelatorios";
 
