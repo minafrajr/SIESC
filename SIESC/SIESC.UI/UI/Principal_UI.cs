@@ -2497,5 +2497,13 @@ namespace SIESC.UI
             frmRelatorioSindicanciaNumerico.Show();
 
         }
+
+        private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
+
+            frmSindicancia.MdiParent = this;
+            frmSindicancia.Show();
+        }
     }
 }

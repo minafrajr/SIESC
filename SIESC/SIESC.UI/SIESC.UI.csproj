@@ -454,6 +454,12 @@
     <Compile Include="UI\Sindicância\GerenciaSindicancia.Designer.cs">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Sindicância\CadastraSindicancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sindicância\CadastraSindicancia.Designer.cs">
+      <DependentUpon>CadastraSindicancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Solicitacoes\GerenciaSolicitacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,17 +497,17 @@
     <Compile Include="UI\Solicitacoes\LocalizarSolicitacao.Designer.cs">
       <DependentUpon>LocalizarSolicitacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Solicitacoes\SolicitaVaga.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Solicitacoes\SolicitaVaga.Designer.cs">
-      <DependentUpon>SolicitaVaga.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Relatorios\frm_alunosporescola.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Relatorios\frm_alunosporescola.Designer.cs">
       <DependentUpon>frm_alunosporescola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\SolicitaVaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Solicitacoes\SolicitaVaga.Designer.cs">
+      <DependentUpon>SolicitaVaga.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Zoneamento\ZoneamentoEndereco.cs">
       <SubType>Form</SubType>
@@ -640,6 +646,9 @@
     <EmbeddedResource Include="UI\Sindicância\GerenciaSindicancia.resx">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sindicância\CadastraSindicancia.resx">
+      <DependentUpon>CadastraSindicancia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Solicitacoes\GerenciaSolicitacao.resx">
       <DependentUpon>GerenciaSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,12 +669,11 @@
     <EmbeddedResource Include="UI\Solicitacoes\LocalizarSolicitacao.resx">
       <DependentUpon>LocalizarSolicitacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Solicitacoes\SolicitaVaga.resx">
-      <DependentUpon>SolicitaVaga.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_alunosporescola.resx">
       <DependentUpon>frm_alunosporescola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Solicitacoes\SolicitaVaga.resx">
+      <DependentUpon>SolicitaVaga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Zoneamento\ZoneamentoEndereco.resx">
       <DependentUpon>ZoneamentoEndereco.cs</DependentUpon>

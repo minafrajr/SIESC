@@ -23,7 +23,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class SolicitaVaga: base_UI
+    public partial class CadastraSindicancia: base_UI
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -102,7 +102,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Contrutor do formulário
         /// </summary>
         /// <param name="principalUi"></param>
-        public SolicitaVaga(Principal_UI principalUi)
+        public CadastraSindicancia(Principal_UI principalUi)
         {
             InitializeComponent();
 
@@ -121,7 +121,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="aluno">Objeto aluno</param>
         /// <param name="solicitacao">Objeto solicitação</param>
-        public SolicitaVaga(Aluno aluno,Solicitacao solicitacao,Principal_UI principalUi)
+        public CadastraSindicancia(Aluno aluno,Solicitacao solicitacao,Principal_UI principalUi)
         {
             InitializeComponent();
 
