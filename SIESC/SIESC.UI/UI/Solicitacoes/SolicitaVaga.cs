@@ -760,15 +760,15 @@ namespace SIESC.UI.UI.Solicitacoes
                     {
                         if (t.IsAlive) { t.Abort(); }
 
-                        if (Mensageiro
-                            .MensagemPergunta(
+                        if (Mensageiro.MensagemPergunta(
                                 $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?",this)
                             .Equals(DialogResult.Yes))
                         {
                             frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(
                                     _solicitacao.Coordenadas[0],
-                                    _solicitacao.Coordenadas[1],_solicitacao.Ano,_solicitacao.Codigo)
-                            { MdiParent = this._principalUi };
+                                    _solicitacao.Coordenadas[1],
+                                    _solicitacao.Ano,
+                                    _solicitacao.Codigo){ MdiParent = this._principalUi };
 
                             frmSolicitacao.Show();
                         }
@@ -782,7 +782,7 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (MySqlException ex)
             {
                 if (t.IsAlive) { t.Abort(); }
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro($"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}",this);
             }
             catch (Exception ex)
             {

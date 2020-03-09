@@ -30,6 +30,15 @@ namespace SIESC.UI.UI
             MessageBox.Show(form,$@"Houve o seguinte erro: {exception.Message}",@"ERRO!",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// Mensagem de erro padrão
+        /// </summary>
+        /// <param name="exception"></param>
+        public static void MensagemErro(string msg,IWin32Window form)
+        {
+            System.Media.SystemSounds.Beep.Play();
+            MessageBox.Show(form,$@"Houve o seguinte erro: {msg}",@"ERRO!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+        }
 
         ///// <summary>
         ///// Mensagem de erro padrão
