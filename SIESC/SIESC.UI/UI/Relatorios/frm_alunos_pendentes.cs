@@ -223,6 +223,7 @@ namespace SIESC.UI.UI.Relatorios
                         datasource.Name = "dsRelatorios";//tem q ser o mesmo dataset informado no rdlc
                         break;
                 }
+
                 DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,cbo_escola.SelectedValue != null);
 
 
