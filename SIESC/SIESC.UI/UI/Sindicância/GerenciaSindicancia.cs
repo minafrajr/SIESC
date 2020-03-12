@@ -634,6 +634,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_codigo.Enabled = txt_nomealuno.Enabled = false;
 
                 LimparCampos();
+
                 HabilitarContoles(true, true, true);
 
                 AcrescentarColunaSindicar(false);

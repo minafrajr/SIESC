@@ -169,5 +169,11 @@ namespace SIESC.BD.Control
 
             return (Convert.ToInt32(sindicancia_TA.VerificaIdSolicitacao(idSolicitacao)) > 0);
         }
+
+        public string MaximoIdSolicitacao()
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+            return vw_sindicancia_TA.GetMaxidSolicitacao().ToString();
+        }
     }
 }

@@ -97,6 +97,8 @@
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
+            this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
+            this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -123,6 +125,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_id_ultima_sindicada);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_ultima_sol_sindicada);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_apartir_sol);
             this.splitContainer1.Panel1.Controls.Add(this.btn_concluir);
             this.splitContainer1.Panel1.Controls.Add(this.nupd_cod_solicitacao);
@@ -145,7 +149,7 @@
             // lbl_apartir_sol
             // 
             this.lbl_apartir_sol.AutoSize = true;
-            this.lbl_apartir_sol.Location = new System.Drawing.Point(960, 74);
+            this.lbl_apartir_sol.Location = new System.Drawing.Point(955, 74);
             this.lbl_apartir_sol.Name = "lbl_apartir_sol";
             this.lbl_apartir_sol.Size = new System.Drawing.Size(135, 14);
             this.lbl_apartir_sol.TabIndex = 87;
@@ -170,7 +174,7 @@
             // 
             this.nupd_cod_solicitacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
-            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1098, 70);
+            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1091, 70);
             this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
             3500,
             0,
@@ -864,6 +868,24 @@
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
             // 
+            // lbl_ultima_sol_sindicada
+            // 
+            this.lbl_ultima_sol_sindicada.AutoSize = true;
+            this.lbl_ultima_sol_sindicada.Location = new System.Drawing.Point(1143, 73);
+            this.lbl_ultima_sol_sindicada.Name = "lbl_ultima_sol_sindicada";
+            this.lbl_ultima_sol_sindicada.Size = new System.Drawing.Size(150, 14);
+            this.lbl_ultima_sol_sindicada.TabIndex = 89;
+            this.lbl_ultima_sol_sindicada.Text = "Última solicitação sindicada";
+            // 
+            // lbl_id_ultima_sindicada
+            // 
+            this.lbl_id_ultima_sindicada.AutoSize = true;
+            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1152, 86);
+            this.lbl_id_ultima_sindicada.Name = "lbl_id_ultima_sindicada";
+            this.lbl_id_ultima_sindicada.Size = new System.Drawing.Size(13, 14);
+            this.lbl_id_ultima_sindicada.TabIndex = 90;
+            this.lbl_id_ultima_sindicada.Text = "_";
+            // 
             // GerenciaSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -967,5 +989,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_observacoes;
         private MyTextBox txt_observacoes;
+        private System.Windows.Forms.Label lbl_id_ultima_sindicada;
+        private System.Windows.Forms.Label lbl_ultima_sol_sindicada;
     }
 }
