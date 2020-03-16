@@ -10146,16 +10146,11 @@ namespace SIESC.BD.DataSets {
                 this.columnidSolicitacoesVagas.AutoIncrementSeed = -1;
                 this.columnidSolicitacoesVagas.AutoIncrementStep = -1;
                 this.columnidSolicitacoesVagas.AllowDBNull = false;
-                this.columnNomeAluno.AllowDBNull = false;
                 this.columnNomeAluno.MaxLength = 60;
                 this.columnEndereco.MaxLength = 112;
-                this.columnRegional.AllowDBNull = false;
                 this.columnRegional.MaxLength = 45;
-                this.columnInstituicaoSolicitada.AllowDBNull = false;
                 this.columnInstituicaoSolicitada.MaxLength = 80;
-                this.columnAnoEnsino.AllowDBNull = false;
                 this.columnAnoEnsino.MaxLength = 45;
-                this.columnDataSolicitacao.AllowDBNull = false;
                 this.columnInstituicaoEncaminhada.MaxLength = 80;
                 this.columnUsuarioResponsavel.MaxLength = 20;
                 this.columnMotivoSindicancia.MaxLength = 60;
@@ -16563,7 +16558,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string NomeAluno {
                 get {
-                    return ((string)(this[this.tablevw_sindicancia.NomeAlunoColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.NomeAlunoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeAluno\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_sindicancia.NomeAlunoColumn] = value;
@@ -16590,7 +16590,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Regional {
                 get {
-                    return ((string)(this[this.tablevw_sindicancia.RegionalColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.RegionalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Regional\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_sindicancia.RegionalColumn] = value;
@@ -16601,7 +16606,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string InstituicaoSolicitada {
                 get {
-                    return ((string)(this[this.tablevw_sindicancia.InstituicaoSolicitadaColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.InstituicaoSolicitadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'InstituicaoSolicitada\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_sindicancia.InstituicaoSolicitadaColumn] = value;
@@ -16612,7 +16622,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AnoEnsino {
                 get {
-                    return ((string)(this[this.tablevw_sindicancia.AnoEnsinoColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_sindicancia.AnoEnsinoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'AnoEnsino\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_sindicancia.AnoEnsinoColumn] = value;
@@ -16623,7 +16638,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime DataSolicitacao {
                 get {
-                    return ((global::System.DateTime)(this[this.tablevw_sindicancia.DataSolicitacaoColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevw_sindicancia.DataSolicitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataSolicitacao\' na tabela \'vw_sindicancia\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_sindicancia.DataSolicitacaoColumn] = value;
@@ -16808,6 +16828,18 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNomeAlunoNull() {
+                return this.IsNull(this.tablevw_sindicancia.NomeAlunoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNomeAlunoNull() {
+                this[this.tablevw_sindicancia.NomeAlunoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEnderecoNull() {
                 return this.IsNull(this.tablevw_sindicancia.EnderecoColumn);
             }
@@ -16816,6 +16848,54 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEnderecoNull() {
                 this[this.tablevw_sindicancia.EnderecoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRegionalNull() {
+                return this.IsNull(this.tablevw_sindicancia.RegionalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRegionalNull() {
+                this[this.tablevw_sindicancia.RegionalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsInstituicaoSolicitadaNull() {
+                return this.IsNull(this.tablevw_sindicancia.InstituicaoSolicitadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetInstituicaoSolicitadaNull() {
+                this[this.tablevw_sindicancia.InstituicaoSolicitadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAnoEnsinoNull() {
+                return this.IsNull(this.tablevw_sindicancia.AnoEnsinoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAnoEnsinoNull() {
+                this[this.tablevw_sindicancia.AnoEnsinoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataSolicitacaoNull() {
+                return this.IsNull(this.tablevw_sindicancia.DataSolicitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataSolicitacaoNull() {
+                this[this.tablevw_sindicancia.DataSolicitacaoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34339,7 +34419,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[12];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[13];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT `idSindicancia`, `idSolicitacoesVagas`, `NomeAluno`, `Endereco`, `Regional`, `InstituicaoSolicitada`, `AnoEnsino`, `DataSolicitacao`, `InstituicaoEncaminhada`, `UsuarioResponsavel`, `DataSindicancia`, `MotivoSindicancia`, `UsuarioFinalizou`, `Observacoes`, `DataFinalizacao`, `Pendente`, `SindicanciaFinalizada`, `EnderecoComprovado`, `Status` FROM `siesc`.`vw_sindicancia`";
@@ -34497,6 +34577,20 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
             this._commandCollection[11].Connection = this.Connection;
             this._commandCollection[11].CommandText = @"SELECT idSindicancia, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, MotivoSindicancia,  EnderecoComprovado, UsuarioFinalizou, Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, Status FROM vw_sindicancia WHERE (Status = 1) AND (Pendente = 1) ORDER BY idSolicitacoesVagas";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[12] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "SELECT        idSindicancia, idSolicitacoesVagas, Pendente, SindicanciaFinalizada" +
+                ", EnderecoComprovado\r\nFROM            vw_sindicancia\r\nWHERE        (idSolicitaco" +
+                "esVagas = @idSolicitacao)";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSolicitacoesVagas";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[12].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34530,7 +34624,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByAnoEnsino(string AnoEnsino) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((AnoEnsino == null)) {
-                throw new global::System.ArgumentNullException("AnoEnsino");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(AnoEnsino));
@@ -34547,13 +34641,13 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByInstituicaoAnoEnsino(string anoensino, string instituicaosolicitada) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((anoensino == null)) {
-                throw new global::System.ArgumentNullException("anoensino");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(anoensino));
             }
             if ((instituicaosolicitada == null)) {
-                throw new global::System.ArgumentNullException("instituicaosolicitada");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(instituicaosolicitada));
@@ -34570,7 +34664,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByInstituicaoSolicitada(string instituicaosolicitada) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((instituicaosolicitada == null)) {
-                throw new global::System.ArgumentNullException("instituicaosolicitada");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(instituicaosolicitada));
@@ -34587,7 +34681,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByRegional(string regional) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((regional == null)) {
-                throw new global::System.ArgumentNullException("regional");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(regional));
@@ -34604,13 +34698,13 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByRegionalAnoEnsino(string anoensino, string regional) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((anoensino == null)) {
-                throw new global::System.ArgumentNullException("anoensino");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(anoensino));
             }
             if ((regional == null)) {
-                throw new global::System.ArgumentNullException("regional");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(regional));
@@ -34627,19 +34721,19 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByRegionalAnoInstituicao(string anoensino, string instituicaosolicitada, string regional) {
             this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((anoensino == null)) {
-                throw new global::System.ArgumentNullException("anoensino");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(anoensino));
             }
             if ((instituicaosolicitada == null)) {
-                throw new global::System.ArgumentNullException("instituicaosolicitada");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(instituicaosolicitada));
             }
             if ((regional == null)) {
-                throw new global::System.ArgumentNullException("regional");
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(regional));
@@ -34656,13 +34750,13 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         public virtual ds_siesc.vw_sindicanciaDataTable GetDataByRegionalInstituicao(string InstituicaoSolicitada, string Regional) {
             this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((InstituicaoSolicitada == null)) {
-                throw new global::System.ArgumentNullException("InstituicaoSolicitada");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(InstituicaoSolicitada));
             }
             if ((Regional == null)) {
-                throw new global::System.ArgumentNullException("Regional");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Regional));
@@ -34700,6 +34794,18 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSolicitacao = @idSolicitaca
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_sindicanciaDataTable GetSindicanciasPendentes() {
             this.Adapter.SelectCommand = this.CommandCollection[11];
+            ds_siesc.vw_sindicanciaDataTable dataTable = new ds_siesc.vw_sindicanciaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ds_siesc.vw_sindicanciaDataTable GetStatusSindicancia(int idSolicitacao) {
+            this.Adapter.SelectCommand = this.CommandCollection[12];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idSolicitacao));
             ds_siesc.vw_sindicanciaDataTable dataTable = new ds_siesc.vw_sindicanciaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

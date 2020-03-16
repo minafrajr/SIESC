@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using SIESC.BD.DataSets;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using SIESC.MODEL.Classes;
@@ -174,6 +177,27 @@ namespace SIESC.BD.Control
         {
             sindicancia_TA = new sindicanciaTableAdapter();
             return vw_sindicancia_TA.GetMaxidSolicitacao().ToString();
+        }
+
+        public ArrayList StatusSindicancia(int idSolicitacao)
+        {
+            vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
+
+            var dt = vw_sindicancia_TA.GetStatusSindicancia(idSolicitacao);
+
+
+            var lista = new ArrayList();
+
+            foreach (ds_siesc.vw_sindicanciaRow row in dt)
+            {
+                lista.Add(row[0]);
+                lista.Add(row[1]);
+                lista.Add(row[15]);
+                lista.Add(row[16]);
+                lista.Add(row[17]);
+            }
+
+            return lista;
         }
     }
 }

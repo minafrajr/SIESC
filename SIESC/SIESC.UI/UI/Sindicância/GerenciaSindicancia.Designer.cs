@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
+            this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
             this.lbl_apartir_sol = new System.Windows.Forms.Label();
             this.btn_concluir = new System.Windows.Forms.Button();
             this.nupd_cod_solicitacao = new System.Windows.Forms.NumericUpDown();
@@ -97,8 +99,8 @@
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
-            this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
-            this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_denuncia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -145,6 +147,24 @@
             this.splitContainer1.Size = new System.Drawing.Size(1287, 626);
             this.splitContainer1.SplitterDistance = 201;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // lbl_id_ultima_sindicada
+            // 
+            this.lbl_id_ultima_sindicada.AutoSize = true;
+            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1152, 86);
+            this.lbl_id_ultima_sindicada.Name = "lbl_id_ultima_sindicada";
+            this.lbl_id_ultima_sindicada.Size = new System.Drawing.Size(13, 14);
+            this.lbl_id_ultima_sindicada.TabIndex = 90;
+            this.lbl_id_ultima_sindicada.Text = "_";
+            // 
+            // lbl_ultima_sol_sindicada
+            // 
+            this.lbl_ultima_sol_sindicada.AutoSize = true;
+            this.lbl_ultima_sol_sindicada.Location = new System.Drawing.Point(1143, 73);
+            this.lbl_ultima_sol_sindicada.Name = "lbl_ultima_sol_sindicada";
+            this.lbl_ultima_sol_sindicada.Size = new System.Drawing.Size(150, 14);
+            this.lbl_ultima_sol_sindicada.TabIndex = 89;
+            this.lbl_ultima_sol_sindicada.Text = "Última solicitação sindicada";
             // 
             // lbl_apartir_sol
             // 
@@ -553,6 +573,8 @@
             // 
             // gpb_sindicados
             // 
+            this.gpb_sindicados.Controls.Add(this.lbl_denuncia);
+            this.gpb_sindicados.Controls.Add(this.label8);
             this.gpb_sindicados.Controls.Add(this.lbl_usuario_finalizou);
             this.gpb_sindicados.Controls.Add(this.label7);
             this.gpb_sindicados.Controls.Add(this.label6);
@@ -574,7 +596,7 @@
             this.lbl_usuario_finalizou.AutoSize = true;
             this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(217, 38);
+            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(182, 38);
             this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
             this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
             this.lbl_usuario_finalizou.TabIndex = 10;
@@ -583,7 +605,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(167, 41);
+            this.label7.Location = new System.Drawing.Point(132, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 14);
             this.label7.TabIndex = 9;
@@ -868,23 +890,25 @@
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
             // 
-            // lbl_ultima_sol_sindicada
+            // label8
             // 
-            this.lbl_ultima_sol_sindicada.AutoSize = true;
-            this.lbl_ultima_sol_sindicada.Location = new System.Drawing.Point(1143, 73);
-            this.lbl_ultima_sol_sindicada.Name = "lbl_ultima_sol_sindicada";
-            this.lbl_ultima_sol_sindicada.Size = new System.Drawing.Size(150, 14);
-            this.lbl_ultima_sol_sindicada.TabIndex = 89;
-            this.lbl_ultima_sol_sindicada.Text = "Última solicitação sindicada";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(212, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 14);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Denúncia: ";
             // 
-            // lbl_id_ultima_sindicada
+            // lbl_denuncia
             // 
-            this.lbl_id_ultima_sindicada.AutoSize = true;
-            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1152, 86);
-            this.lbl_id_ultima_sindicada.Name = "lbl_id_ultima_sindicada";
-            this.lbl_id_ultima_sindicada.Size = new System.Drawing.Size(13, 14);
-            this.lbl_id_ultima_sindicada.TabIndex = 90;
-            this.lbl_id_ultima_sindicada.Text = "_";
+            this.lbl_denuncia.AutoSize = true;
+            this.lbl_denuncia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_denuncia.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_denuncia.Location = new System.Drawing.Point(271, 38);
+            this.lbl_denuncia.Name = "lbl_denuncia";
+            this.lbl_denuncia.Size = new System.Drawing.Size(30, 18);
+            this.lbl_denuncia.TabIndex = 12;
+            this.lbl_denuncia.Text = "S/N";
             // 
             // GerenciaSindicancia
             // 
@@ -991,5 +1015,7 @@
         private MyTextBox txt_observacoes;
         private System.Windows.Forms.Label lbl_id_ultima_sindicada;
         private System.Windows.Forms.Label lbl_ultima_sol_sindicada;
+        private System.Windows.Forms.Label lbl_denuncia;
+        private System.Windows.Forms.Label label8;
     }
 }
