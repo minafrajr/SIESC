@@ -276,33 +276,31 @@ namespace SIESC.UI.UI
             }
 
            
-                if (controleSindicancia.ContemSindicado(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value)))
+            if (controleSindicancia.ContemSindicado(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value)))
+            {
+                gpb_sindicados.Visible = true;
+
+                ArrayList listaStatusSindicancia =
+                    controleSindicancia.StatusSindicancia(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value));
+
+                if(bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
                 {
-                    gpb_sindicados.Visible = true;
-
-                    ArrayList listaStatusSindicancia =
-                        controleSindicancia.StatusSindicancia(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value));
-
-                    if(bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
-                    {
-                        lbl_pendente.Text = pendente ? "SIM" : "NÃO";
-                    }
-
-                    if(bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
-                    {
-                        lbl_finalizada.Text = finalizada ? "SIM" : "NÃO";
-                    }
-                    if(bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
-                    {
-                        lbl_endereco_comprovado.Text = endereco ? "SIM" : "NÃO";
-                    }
+                    lbl_pendente.Text = pendente ? "SIM" : "NÃO";
                 }
-                else
+
+                if(bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
                 {
-                    gpb_sindicados.Visible = false;
-                    
+                    lbl_finalizada.Text = finalizada ? "SIM" : "NÃO";
                 }
-            
+                if(bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
+                {
+                    lbl_endereco_comprovado.Text = endereco ? "SIM" : "NÃO";
+                }
+            }
+            else
+            {
+                gpb_sindicados.Visible = false;
+            }
         }
 
         /// <summary>                                  

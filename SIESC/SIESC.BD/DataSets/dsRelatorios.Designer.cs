@@ -9782,11 +9782,11 @@ namespace SIESC.BD.DataSets {
                 this.columnidSolicitacoesVagas.AutoIncrementStep = -1;
                 this.columnidSolicitacoesVagas.AllowDBNull = false;
                 this.columnNomeAluno.MaxLength = 60;
-                this.columnEndereco.MaxLength = 112;
+                this.columnEndereco.MaxLength = 150;
                 this.columnRegional.MaxLength = 45;
                 this.columnInstituicaoSolicitada.MaxLength = 80;
                 this.columnAnoEnsino.MaxLength = 45;
-                this.columnGrauSolicitante.MaxLength = 7;
+                this.columnGrauSolicitante.MaxLength = 10;
                 this.columnSolicitante.MaxLength = 45;
                 this.columnInstituicaoEncaminhada.MaxLength = 80;
                 this.columnUsuarioResponsavel.MaxLength = 20;
