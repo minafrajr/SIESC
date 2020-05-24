@@ -56,7 +56,9 @@
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.tsm_solicitacoes_ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_motivos_ = new System.Windows.Forms.ToolStripMenuItem();
-            this.sindicânciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.autorizacaoExpressaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autorizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -207,9 +209,6 @@
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.regionaisTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gerenciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.tsm_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -342,7 +341,7 @@
             // 
             this.tsmi_cadastraraluno.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.tsmi_cadastraraluno.Name = "tsmi_cadastraraluno";
-            this.tsmi_cadastraraluno.Size = new System.Drawing.Size(196, 38);
+            this.tsmi_cadastraraluno.Size = new System.Drawing.Size(124, 22);
             this.tsmi_cadastraraluno.Text = "Cadastrar";
             this.tsmi_cadastraraluno.Click += new System.EventHandler(this.tsmi_cadastraraluno_Click);
             // 
@@ -350,7 +349,7 @@
             // 
             this.gerenciarToolStripMenuItem4.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem4.Name = "gerenciarToolStripMenuItem4";
-            this.gerenciarToolStripMenuItem4.Size = new System.Drawing.Size(196, 38);
+            this.gerenciarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
             this.gerenciarToolStripMenuItem4.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem4.Click += new System.EventHandler(this.gerenciarToolStripMenuItem4_Click);
             // 
@@ -372,7 +371,7 @@
             // 
             this.cadastrarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -380,21 +379,21 @@
             // 
             this.autorizarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
             this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
-            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.autorizarToolStripMenuItem.Text = "Autorizar";
             // 
             // gerenciarToolStripMenuItem2
             // 
             this.gerenciarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem2.Name = "gerenciarToolStripMenuItem2";
-            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
+            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.gerenciarToolStripMenuItem2.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem2.Click += new System.EventHandler(this.gerenciarToolStripMenuItem2_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
             // 
             // btn_solicitavaga
             // 
@@ -403,8 +402,7 @@
             this.toolStripSeparator1,
             this.toolStripTextBox3,
             this.tsm_solicitacoes_,
-            this.tsm_motivos_,
-            this.sindicânciaToolStripMenuItem});
+            this.tsm_motivos_});
             this.btn_solicitavaga.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_solicitavaga.Image = global::SIESC.UI.Properties.Resources.desk_chair__2_;
             this.btn_solicitavaga.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -418,14 +416,14 @@
             // 
             this.tsmi_solicitar.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.tsmi_solicitar.Name = "tsmi_solicitar";
-            this.tsmi_solicitar.Size = new System.Drawing.Size(212, 38);
+            this.tsmi_solicitar.Size = new System.Drawing.Size(196, 22);
             this.tsmi_solicitar.Text = "Solicitar Vaga";
             this.tsmi_solicitar.Click += new System.EventHandler(this.tsmi_solicitar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
             // 
             // toolStripTextBox3
             // 
@@ -442,7 +440,7 @@
             // 
             this.tsm_solicitacoes_.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.tsm_solicitacoes_.Name = "tsm_solicitacoes_";
-            this.tsm_solicitacoes_.Size = new System.Drawing.Size(212, 38);
+            this.tsm_solicitacoes_.Size = new System.Drawing.Size(196, 22);
             this.tsm_solicitacoes_.Text = "Gerenciar Solicitações";
             this.tsm_solicitacoes_.Click += new System.EventHandler(this.tsm_solicitacoes__Click);
             // 
@@ -450,18 +448,38 @@
             // 
             this.tsm_motivos_.Image = global::SIESC.UI.Properties.Resources._1431668763_list_alt_32;
             this.tsm_motivos_.Name = "tsm_motivos_";
-            this.tsm_motivos_.Size = new System.Drawing.Size(212, 38);
+            this.tsm_motivos_.Size = new System.Drawing.Size(196, 22);
             this.tsm_motivos_.Text = "Motivos";
             this.tsm_motivos_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.tsm_motivos_.Click += new System.EventHandler(this.tsm_motivos_Click);
             // 
-            // sindicânciaToolStripMenuItem
+            // toolStripButton2
             // 
-            this.sindicânciaToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.inspector;
-            this.sindicânciaToolStripMenuItem.Name = "sindicânciaToolStripMenuItem";
-            this.sindicânciaToolStripMenuItem.Size = new System.Drawing.Size(212, 38);
-            this.sindicânciaToolStripMenuItem.Text = "Sindicância";
-            this.sindicânciaToolStripMenuItem.Click += new System.EventHandler(this.sindicânciaToolStripMenuItem_Click);
+            this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem2,
+            this.gerenciarToolStripMenuItem});
+            this.toolStripButton2.Image = global::SIESC.UI.Properties.Resources.inspector;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(80, 51);
+            this.toolStripButton2.Text = "Sindicância";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // cadastrarToolStripMenuItem2
+            // 
+            this.cadastrarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
+            this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
+            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
+            // 
+            // gerenciarToolStripMenuItem
+            // 
+            this.gerenciarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Tools;
+            this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem.Text = "Gerenciar";
+            this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -1571,7 +1589,7 @@
             // 
             this.alterarSenhaToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources.editor_0308_replace;
             this.alterarSenhaToolStripMenuItem1.Name = "alterarSenhaToolStripMenuItem1";
-            this.alterarSenhaToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.alterarSenhaToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.alterarSenhaToolStripMenuItem1.Text = "Alterar Senha";
             this.alterarSenhaToolStripMenuItem1.Click += new System.EventHandler(this.alterarSenhaToolStripMenuItem1_Click);
             // 
@@ -1593,7 +1611,7 @@
             // 
             this.mantenedoresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
-            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
             this.mantenedoresToolStripMenuItem.Click += new System.EventHandler(this.mantenedoresToolStripMenuItem_Click);
             // 
@@ -1601,14 +1619,14 @@
             // 
             this.regionaisToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.regionaisToolStripMenuItem.Name = "regionaisToolStripMenuItem";
-            this.regionaisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.regionaisToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.regionaisToolStripMenuItem.Text = "Regionais";
             // 
             // diretoriasToolStripMenuItem
             // 
             this.diretoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.diretoriasToolStripMenuItem.Name = "diretoriasToolStripMenuItem";
-            this.diretoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diretoriasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.diretoriasToolStripMenuItem.Text = "Diretorias";
             // 
             // janelasToolStripMenuItem
@@ -1622,7 +1640,7 @@
             this.fecharToolStripMenuItem,
             this.organizarÍconesToolStripMenuItem});
             this.janelasToolStripMenuItem.Name = "janelasToolStripMenuItem";
-            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.janelasToolStripMenuItem.Text = "Janelas";
             // 
             // cascataToolStripMenuItem
@@ -1701,37 +1719,11 @@
             // 
             this.regionaisTableAdapter1.ClearBeforeFill = true;
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem2,
-            this.gerenciarToolStripMenuItem});
-            this.toolStripButton2.Image = global::SIESC.UI.Properties.Resources.inspector;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(80, 51);
-            this.toolStripButton2.Text = "Sindicância";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // cadastrarToolStripMenuItem2
-            // 
-            this.cadastrarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
-            this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
-            this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
-            // 
-            // gerenciarToolStripMenuItem
-            // 
-            this.gerenciarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Tools;
-            this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.gerenciarToolStripMenuItem.Text = "Gerenciar";
-            this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
-            // 
             // Principal_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(957, 561);
             this.Controls.Add(this.tsm_Principal);
             this.Controls.Add(this.statusStrip);
@@ -1925,7 +1917,6 @@
 		private System.Windows.Forms.ToolStripMenuItem comprovaçãoDeEndereçoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem comprovaçãoDeEndereçoToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem comprovacaoDeEndereçoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sindicânciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sindicânciaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox13;
         private System.Windows.Forms.ToolStripMenuItem sindicadosToolStripMenuItem;

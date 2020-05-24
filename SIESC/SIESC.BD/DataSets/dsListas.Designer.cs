@@ -1173,21 +1173,19 @@ namespace SIESC.BD.DataSets {
                 this.columnCodigo.AutoIncrement = true;
                 this.columnCodigo.AutoIncrementSeed = -1;
                 this.columnCodigo.AutoIncrementStep = -1;
-                this.columnCodigo.AllowDBNull = false;
                 this.columnNome.AllowDBNull = false;
                 this.columnNome.MaxLength = 45;
                 this.columnCPF.MaxLength = 14;
                 this.columnInstituicao.AllowDBNull = false;
                 this.columnInstituicao.MaxLength = 80;
-                this.columnTelefoneEscola.Caption = "Telefone Escola";
-                this.columnEmailEscola.Caption = "Email Escola";
+                this.columnTelefoneEscola.MaxLength = 15;
+                this.columnEmailEscola.MaxLength = 90;
                 this.columnCargodeOrigem.MaxLength = 45;
                 this.columnCargoAtual.MaxLength = 45;
                 this.columnAutorizacao.MaxLength = 10;
-                this.columnTelefone1.AllowDBNull = false;
-                this.columnTelefone1.MaxLength = 13;
-                this.columnTelefone2.MaxLength = 13;
-                this.columnEmail.MaxLength = 45;
+                this.columnTelefone1.MaxLength = 15;
+                this.columnTelefone2.MaxLength = 15;
+                this.columnEmail.MaxLength = 90;
                 this.columnLogradouro.MaxLength = 61;
                 this.columnNumero.MaxLength = 26;
                 this.columnBairro.MaxLength = 30;
@@ -2677,7 +2675,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Codigo {
                 get {
-                    return ((int)(this[this.tablevw_funcionarios.CodigoColumn]));
+                    try {
+                        return ((int)(this[this.tablevw_funcionarios.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Codigo\' na tabela \'vw_funcionarios\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_funcionarios.CodigoColumn] = value;
@@ -2822,7 +2825,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Telefone1 {
                 get {
-                    return ((string)(this[this.tablevw_funcionarios.Telefone1Column]));
+                    try {
+                        return ((string)(this[this.tablevw_funcionarios.Telefone1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Telefone1\' na tabela \'vw_funcionarios\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_funcionarios.Telefone1Column] = value;
@@ -2927,6 +2935,18 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tablevw_funcionarios.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tablevw_funcionarios.CodigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDatadeNascimentoNull() {
                 return this.IsNull(this.tablevw_funcionarios.DatadeNascimentoColumn);
             }
@@ -3007,6 +3027,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAutorizacaoNull() {
                 this[this.tablevw_funcionarios.AutorizacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTelefone1Null() {
+                return this.IsNull(this.tablevw_funcionarios.Telefone1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTelefone1Null() {
+                this[this.tablevw_funcionarios.Telefone1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4244,8 +4276,9 @@ WHERE        (instituicoes.mantenedor = 4)";
                          vw_funcionarios.Email, vw_funcionarios.EmailEscola, vw_funcionarios.Instituicao, vw_funcionarios.Logradouro, vw_funcionarios.Nome, vw_funcionarios.Numero, vw_funcionarios.Telefone1, vw_funcionarios.Telefone2, 
                          vw_funcionarios.TelefoneEscola
 FROM            vw_funcionarios INNER JOIN
-                         instituicoes ON vw_funcionarios.Instituicao = instituicoes.nome
-WHERE        (instituicoes.mantenedor = 1) AND (vw_funcionarios.CargoAtual <> 'PROFESSOR PII')";
+                         instituicoes ON vw_funcionarios.Instituicao = instituicoes.nome INNER JOIN
+                         autorizacoes ON vw_funcionarios.Codigo = autorizacoes.idFuncionario
+WHERE        (instituicoes.mantenedor = 1) AND (vw_funcionarios.CargoAtual <> 'PROFESSOR PII') AND (autorizacoes.statusAutorizacao = 1)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;

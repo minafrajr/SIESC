@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using SIESC.BD.DataSets;
-using SIESC.BD.DataSets.ds_siescTableAdapters;
+using SIESC.BD.DataSets.dsSindicanciaTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using SIESC.MODEL.Classes;
 
@@ -23,14 +24,25 @@ namespace SIESC.BD.Control
 
         private vw_sindicanciaTableAdapter vw_sindicancia_TA;
 
-      
+
+        public bool Salvar(Sindicancia sindicancia)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,
+                sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,
+                sindicancia.Coordenadas[0],sindicancia.Coordenadas[1],sindicancia.Cep,
+                sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSolicitacao,sindicancia.anoEnsino,
+                 sindicancia.observacoes,sindicancia.status) > 0);
+        }
+
         public bool InserirSindicancias(List<Sindicancia> sindicancias)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
             foreach (Sindicancia item in sindicancias)
             {
-                sindicancia_TA.SalvarSindicado(item.codigoSolicitacao,item.dataSindicancia,
+                sindicancia_TA.SalvarSindicancia(item.codigoSolicitacao,item.dataSindicancia,
                     item.usuarioResponsavel,true);
             }
 
@@ -154,8 +166,8 @@ namespace SIESC.BD.Control
         public bool AtualizarSindicancia(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
-            return (sindicancia_TA.AtualizaSindicado(sindicancia.dataSindicancia, sindicancia.usuarioResponsavel,
-                        sindicancia.motivoSindicancia, sindicancia.enderecoConfirmado, sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao, sindicancia.observacoes, sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada, sindicancia.codigoSincidancia,sindicancia.codigoSolicitacao) > 0);
+            return (sindicancia_TA.AtualizarSindicancia(sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,
+                        sindicancia.motivoSindicancia,sindicancia.enderecoConfirmado,sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao,sindicancia.observacoes,sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada,sindicancia.codigoSincidancia,sindicancia.codigoSolicitacao) > 0);
         }
 
 
@@ -163,14 +175,14 @@ namespace SIESC.BD.Control
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (sindicancia_TA.ExcluirSindicado(codigoSindicancia,codigoSolicitacao) > 0);
+            return (sindicancia_TA.ExcluirSindicancia(codigoSindicancia,codigoSolicitacao) > 0);
         }
 
         public bool ContemSindicado(int idSolicitacao)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (Convert.ToInt32(sindicancia_TA.VerificaIdSolicitacao(idSolicitacao)) > 0);
+            return (Convert.ToInt32(sindicancia_TA.VerificarIdSindicado(idSolicitacao)) > 0);
         }
 
         public string MaximoIdSolicitacao()
@@ -188,7 +200,7 @@ namespace SIESC.BD.Control
 
             var lista = new ArrayList();
 
-            foreach (ds_siesc.vw_sindicanciaRow row in dt)
+            foreach (dsSindicancia.vw_sindicanciaRow row in dt)
             {
                 lista.Add(row[0]);
                 lista.Add(row[1]);
@@ -198,6 +210,13 @@ namespace SIESC.BD.Control
             }
 
             return lista;
+        }
+
+        public int PesquisaCodigoSindicancia(int alunoCriadoId)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+
+            return (int)sindicancia_TA.PesquisaIdSindicancia(alunoCriadoId);
         }
     }
 }

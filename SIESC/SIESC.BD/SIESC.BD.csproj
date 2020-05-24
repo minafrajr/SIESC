@@ -172,6 +172,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRelatorios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\dsSindicancia.cs">
+      <DependentUpon>dsSindicancia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsSindicancia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSindicancia.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\ds_siesc.cs">
       <DependentUpon>ds_siesc.xsd</DependentUpon>
     </Compile>
@@ -317,6 +325,17 @@
     </None>
     <None Include="DataSets\dsRelatorios.xss">
       <DependentUpon>dsRelatorios.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsSindicancia.xsc">
+      <DependentUpon>dsSindicancia.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsSindicancia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSindicancia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsSindicancia.xss">
+      <DependentUpon>dsSindicancia.xsd</DependentUpon>
     </None>
     <None Include="DataSets\ds_siesc.xsc">
       <DependentUpon>ds_siesc.xsd</DependentUpon>

@@ -63,7 +63,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -99,32 +98,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Endereço">
+                    <Textbox Name="Endereco">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value xml:space="preserve"> </Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>=Fields!Endereço.Value</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value xml:space="preserve"> </Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>=Fields!Bairro.Value</Value>
+                              <Value>=Fields!Endereco.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -133,7 +114,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Endereço</rd:DefaultName>
+                      <rd:DefaultName>Endereco</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -181,14 +162,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Celular">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Celular.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -199,7 +180,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Celular</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -247,14 +228,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Diretoria">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Diretoria.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -265,7 +246,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Diretoria</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -335,7 +316,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
-        <DataSetName>DsLista</DataSetName>
+        <DataSetName>dsListas</DataSetName>
         <SortExpressions>
           <SortExpression>
             <Value>=Fields!Nome.Value</Value>
@@ -539,7 +520,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DsLista">
+    <DataSet Name="dsListas">
       <Query>
         <DataSourceName>dsListas</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -557,20 +538,20 @@
           <DataField>Mantenedor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Endereço">
-          <DataField>Endereço</DataField>
+        <Field Name="Endereco">
+          <DataField>Endereco</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Bairro">
           <DataField>Bairro</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Telefone">
-          <DataField>Telefone</DataField>
+        <Field Name="Cep">
+          <DataField>Cep</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Celular">
-          <DataField>Celular</DataField>
+        <Field Name="Telefone">
+          <DataField>Telefone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="INEP">
@@ -581,10 +562,6 @@
           <DataField>Email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Diretoria">
-          <DataField>Diretoria</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Regional">
           <DataField>Regional</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -592,7 +569,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsListas</rd:DataSetName>
-        <rd:SchemaPath>E:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsListas.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsListas.xsd</rd:SchemaPath>
         <rd:TableName>vw_instituicoes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using SIESC.BD.DataSets;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
+using SIESC.BD.DataSets.dsSindicanciaTableAdapters;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
@@ -48,7 +48,7 @@ namespace SIESC.UI.UI.Relatorios
             ConfiguraRelatorio();
 
             ficha_sindicancia_TA = new vw_ficha_sindicanciaTableAdapter();
-            
+
             dtSindicancia = ficha_sindicancia_TA.GetDadosFichaSindicancia(idSindicancia,idSolicitacao);
 
             datasource = new ReportDataSource("dsRelatorios");

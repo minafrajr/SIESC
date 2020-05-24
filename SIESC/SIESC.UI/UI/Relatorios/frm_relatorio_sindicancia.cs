@@ -7,8 +7,7 @@ using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
+using SIESC.BD.DataSets.dsSindicanciaTableAdapters;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
@@ -59,11 +58,11 @@ namespace SIESC.UI.UI.Relatorios
             FolhaPaisagem();
 
             DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,cbo_escola.SelectedValue != null);
-            
+
             Sindicancia_TA = new vw_sindicanciaTableAdapter();
 
             DataTable dt = null;
-            
+
             switch (_tipoConsulta)
             {
                 case TipoConsulta.regional_ano_escola:

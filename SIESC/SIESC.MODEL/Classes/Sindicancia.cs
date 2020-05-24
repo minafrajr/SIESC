@@ -9,8 +9,18 @@ namespace SIESC.MODEL.Classes
     /// <summary>
     /// Classe Sindicância
     /// </summary>
-    public class Sindicancia : IComparable
+    public class Sindicancia
     {
+        /// <summary>
+        /// O nome do aluno
+        /// </summary>
+        public string nomeSindicado;
+
+        /// <summary>
+        /// O endereço do sindicado 
+        /// </summary>
+        public string enderecoSindicado;
+
         /// <summary>
         /// O código da sindicancia
         /// </summary>
@@ -18,21 +28,55 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// O código da solicitação a ser sindicada
         /// </summary>
-        public int codigoSolicitacao { get; set; }
-        /// <summary>
-        /// O nome do aluno sindicado
-        /// </summary>
-        public string nomeAluno { get; set; }
+        public int? codigoSolicitacao { get; set; }
 
-        /// <summary>
-        /// Endereço do aluno sindicado
-        /// </summary>
-        public string enderecoAluno { get; set; }
+        public int codigoAluno { get; set; }
 
+
+        public DateTime? dataSindicancia { get; set; }
+        /// <summary>
+        /// O ano de ensino
+        /// </summary>
+        public int anoEnsino { get; set; }
         /// <summary>
         /// O usuário responsável por marcar como sindicado
         /// </summary>
         public string usuarioResponsavel { get; set; }
+
+        /// <summary>
+        /// O tipo de logradouro
+        /// </summary>
+        public string TipoLogradouro { get; set; }
+
+        /// <summary>
+        /// O nome do logradouro
+        /// </summary>
+        public string Logradouro { get; set; }
+
+        /// <summary>
+        /// O núlmero da residencia
+        /// </summary>
+        public string NumResidencia { get; set; }
+
+        /// <summary>
+        /// O complemento do endereço
+        /// </summary>
+        public string Complemento { get; set; }
+
+        /// <summary>
+        /// O código do bairro
+        /// </summary>
+        public int Bairro { get; set; }
+
+        /// <summary>
+        /// O cep do logradouro
+        /// </summary>
+        public string Cep { get; set; }
+
+        /// <summary>
+        /// Coordendas do endereço
+        /// </summary>
+        public string[] Coordenadas { get; set; }
 
         /// <summary>
         /// Usuario que concluiu a sindicancia
@@ -40,9 +84,9 @@ namespace SIESC.MODEL.Classes
         public string usuarioFinalizacao { get; set; }
 
         /// <summary>
-        /// A data em que foi indicada como sindicancia
+        /// 
         /// </summary>
-        public DateTime? dataSindicancia { get; set; }
+        public string origemSolicitacao { get; private set; }
 
         /// <summary>
         /// O motivo ao qual a solicitação foi enviada para sindicância
@@ -53,6 +97,9 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public DateTime? dataFinalizacao { get; set; }
 
+        public int instituicaoSolicitada { get; set; }
+
+        public int? instituicaoEncaminhada { get; set; }
         /// <summary>
         /// Se a sindicancia foi efetivada
         /// </summary>
@@ -74,22 +121,7 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public string observacoes { get; set; }
 
-        /// <summary>
-        /// Comparacao
-        /// </summary>
-        /// <param name="obj">A sindicância</param>
-        /// <returns> 0 - iguais | -1 diferente</returns>
-        public int CompareTo(object obj)
-        {
-            var novoSindicado = obj as Sindicancia;
 
-            if (this.codigoSolicitacao == novoSindicado.codigoSolicitacao)
-            {
-                return 0;
-            }
-
-            return -1;
-        }
     }
 
 }

@@ -12,7 +12,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private Principal_UI PrincipalUi;
         private SindicanciaControl controleSindicancia;
 
-        public ConcluirSindicancia(Sindicancia _sindicancia, Principal_UI principalUi)
+        public ConcluirSindicancia(Sindicancia _sindicancia,Principal_UI principalUi)
         {
             InitializeComponent();
 
@@ -25,15 +25,15 @@ namespace SIESC.UI.UI.Solicitacoes
         private void RepassaSindicancia()
         {
             txt_observacoes.Text = sindicancia.observacoes;
-            lbl_endereco.Text = sindicancia.enderecoAluno;
-            lbl_nome_sindicado.Text = sindicancia.nomeAluno;
+            lbl_endereco.Text = sindicancia.enderecoSindicado;
+            lbl_nome_sindicado.Text = sindicancia.nomeSindicado;
             lbl_num_solicitacao.Text = sindicancia.codigoSolicitacao.ToString();
 
             if (sindicancia.motivoSindicancia.Equals("DENÚNCIA"))
             {
                 rdb_denuncia.Checked = true;
             }
-            
+
             if (sindicancia.enderecoConfirmado == true)
             {
                 rdb_endereco_sim.Checked = true;
@@ -49,12 +49,12 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender,EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_confirmar_Click(object sender, EventArgs e)
+        private void btn_confirmar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -62,18 +62,18 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (MySqlException ex)
             {
-                Mensageiro.MensagemErro(ex, PrincipalUi);
+                Mensageiro.MensagemErro(ex,PrincipalUi);
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, PrincipalUi);
+                Mensageiro.MensagemErro(ex,PrincipalUi);
             }
 
         }
 
         private void ConfirmarAlteracoes()
         {
-             if (!rdb_endereco_sim.Checked && !rdb_endereco_nao.Checked && !chk_pendente.Checked)
+            if (!rdb_endereco_sim.Checked && !rdb_endereco_nao.Checked && !chk_pendente.Checked)
             {
                 throw new Exception("A situação do endereço ou pendência deve ser definida!");
             }
@@ -89,7 +89,8 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 sindicancia.enderecoConfirmado = true;
             }
-            if(rdb_endereco_nao.Checked) { 
+            if (rdb_endereco_nao.Checked)
+            {
                 sindicancia.enderecoConfirmado = false;
             }
 
@@ -104,8 +105,8 @@ namespace SIESC.UI.UI.Solicitacoes
                 sindicancia.usuarioFinalizacao = PrincipalUi.user.nomeusuario;
                 sindicancia.dataFinalizacao = DateTime.Now;
             }
-            
-            
+
+
             if (controleSindicancia.AtualizarSindicancia(sindicancia))
             {
                 Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
@@ -114,7 +115,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.Close();
         }
 
-        private void chk_pendente_CheckedChanged(object sender, EventArgs e)
+        private void chk_pendente_CheckedChanged(object sender,EventArgs e)
         {
             if (sindicancia.sindicanciaPendente != null && ((bool)sindicancia.sindicanciaPendente && !chk_pendente.Checked))
             {
@@ -127,9 +128,9 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-       
 
-      private void ConcluirSindicancia_KeyDown(object sender, KeyEventArgs e)
+
+        private void ConcluirSindicancia_KeyDown(object sender,KeyEventArgs e)
         {
             try
             {
@@ -140,7 +141,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex, PrincipalUi);
+                Mensageiro.MensagemErro(ex,PrincipalUi);
             }
         }
     }

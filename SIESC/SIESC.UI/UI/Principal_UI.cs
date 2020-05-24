@@ -27,6 +27,9 @@ using ThreadState = System.Threading.ThreadState;
 
 namespace SIESC.UI
 {
+    /// <summary>
+    /// Classe do formulário principal
+    /// </summary>
     public partial class Principal_UI : Form
     {
         /// <summary>
@@ -57,11 +60,11 @@ namespace SIESC.UI
             {
                 myversion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
 
-                tssl_versao.Text = String.Format("Versão {0}",myversion);
+                tssl_versao.Text = $@"Versão {myversion}";
             }
             else
             {
-                tssl_versao.Text = String.Format("Versão {0}",Assembly.GetExecutingAssembly().GetName().Version);
+                tssl_versao.Text = $@"Versão {Assembly.GetExecutingAssembly().GetName().Version}";
             }
 
         }
@@ -71,7 +74,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Principal_UI_Load(object sender,EventArgs e)
+        private void Principal_UI_Load(object sender, EventArgs e)
         {
             try
             {
@@ -83,6 +86,7 @@ namespace SIESC.UI
 
                 lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
                 lbl_statusStrip.BackColor = Color.OrangeRed;
+                this.BackColor= Color.OrangeRed;
 #endif
             }
             catch (Exception ex)
@@ -127,7 +131,7 @@ namespace SIESC.UI
             }
             catch (MySqlException ex)
             {
-                if (Mensageiro.MensagemPergunta($"Não há conexão com o banco!{Environment.NewLine}Verifique se possui acesso à rede.{Environment.NewLine}{Environment.NewLine}Erro: {ex.Message}{Environment.NewLine}{Environment.NewLine}Deseja tentar Reconectar?",this).Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemPergunta($"Não há conexão com o banco!{Environment.NewLine}Verifique se possui acesso à rede.{Environment.NewLine}{Environment.NewLine}Erro: {ex.Message}{Environment.NewLine}{Environment.NewLine}Deseja tentar Reconectar?", this).Equals(DialogResult.Yes))
                 {
                     Connection();
                 }
@@ -139,7 +143,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             return false;
         }
@@ -152,7 +156,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ShowNewForm(object sender,EventArgs e)
+        private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
             childForm.MdiParent = this;
@@ -165,7 +169,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OpenFile(object sender,EventArgs e)
+        private void OpenFile(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -181,7 +185,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SaveAsToolStripMenuItem_Click(object sender,EventArgs e)
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -197,7 +201,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ExitToolsStripMenuItem_Click(object sender,EventArgs e)
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -207,7 +211,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CascadeToolStripMenuItem_Click(object sender,EventArgs e)
+        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
@@ -217,7 +221,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TileVerticalToolStripMenuItem_Click(object sender,EventArgs e)
+        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
@@ -227,7 +231,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TileHorizontalToolStripMenuItem_Click(object sender,EventArgs e)
+        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
         }
@@ -237,7 +241,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ArrangeIconsToolStripMenuItem_Click(object sender,EventArgs e)
+        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.ArrangeIcons);
 
@@ -248,7 +252,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void minimizarToolStripMenuItem_Click(object sender,EventArgs e)
+        private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in MdiChildren)
             {
@@ -261,7 +265,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void maximizarToolStripMenuItem_Click(object sender,EventArgs e)
+        private void maximizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in MdiChildren)
             {
@@ -274,7 +278,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CloseAllToolStripMenuItem_Click(object sender,EventArgs e)
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in MdiChildren)
             {
@@ -290,7 +294,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsmi_solicitar_Click(object sender,EventArgs e)
+        private void tsmi_solicitar_Click(object sender, EventArgs e)
         {
             foreach (Form mdiChild in this.MdiChildren)
             {
@@ -311,7 +315,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_motivos_Click(object sender,EventArgs e)
+        private void tsm_motivos_Click(object sender, EventArgs e)
         {
 #if !DEBUG
 
@@ -337,7 +341,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsmi_cadastraraluno_Click(object sender,EventArgs e)
+        private void tsmi_cadastraraluno_Click(object sender, EventArgs e)
         {
             foreach (Form mdiChild in this.MdiChildren)
             {
@@ -375,7 +379,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void consultarToolStripMenuItem_Click(object sender,EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -394,7 +398,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -403,7 +407,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripButton1_Click(object sender,EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -422,7 +426,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -431,7 +435,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cadastrarToolStripMenuItem_Click(object sender,EventArgs e)
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -450,7 +454,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -459,7 +463,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cadastrarToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -478,7 +482,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -487,7 +491,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void gerenciarToolStripMenuItem2_Click(object sender,EventArgs e)
+        private void gerenciarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             try
             {
@@ -506,7 +510,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -515,7 +519,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void autorizarToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void autorizarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -536,7 +540,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -545,7 +549,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void gerenciarToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void gerenciarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -564,7 +568,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -573,7 +577,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void gerenciarToolStripMenuItem3_Click(object sender,EventArgs e)
+        private void gerenciarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             try
             {
@@ -592,7 +596,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -602,7 +606,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void gerenciarToolStripMenuItem4_Click(object sender,EventArgs e)
+        private void gerenciarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             try
             {
@@ -623,7 +627,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -631,7 +635,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void emitirCarteirinhaToolStripMenuItem_Click(object sender,EventArgs e)
+        private void emitirCarteirinhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -652,7 +656,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -660,7 +664,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mantenedoresToolStripMenuItem_Click(object sender,EventArgs e)
+        private void mantenedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -671,7 +675,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -680,7 +684,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void alterarSenhaToolStripMenuItem_Click(object sender,EventArgs e)
+        private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -689,7 +693,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -699,7 +703,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mapaEndereçoSolicitadosToolStripMenuItem_Click(object sender,EventArgs e)
+        private void mapaEndereçoSolicitadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -707,7 +711,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -716,7 +720,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_pend_Click(object sender,EventArgs e)
+        private void tsm_fund_num_pend_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -730,7 +734,7 @@ namespace SIESC.UI
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
 
         }
@@ -740,7 +744,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_solicitacoes__Click(object sender,EventArgs e)
+        private void tsm_solicitacoes__Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -768,7 +772,7 @@ namespace SIESC.UI
             {
                 if (t.IsAlive) t.Abort();
 
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -778,7 +782,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void locallizarCEPToolStripMenuItem_Click(object sender,EventArgs e)
+        private void locallizarCEPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -791,7 +795,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -804,7 +808,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void localizarEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void localizarEndereçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -818,7 +822,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -832,7 +836,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_listarEmails_Click(object sender,EventArgs e)
+        private void tsm_listarEmails_Click(object sender, EventArgs e)
         {
             foreach (Form mdiChild in this.MdiChildren)
             {
@@ -877,7 +881,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -886,7 +890,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void diretoraPorEscolaToolStripMenuItem_Click(object sender,EventArgs e)
+        private void diretoraPorEscolaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(4);
         }
@@ -896,7 +900,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void zonearAlunoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void zonearAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -915,7 +919,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -923,7 +927,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void zonearEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void zonearEndereçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -942,12 +946,12 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
 
-        private void autorizacaoExpressaToolStripMenuItem_Click(object sender,EventArgs e)
+        private void autorizacaoExpressaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -957,11 +961,11 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void tsm_formulariopendenteturma_Click(object sender,EventArgs e)
+        private void tsm_formulariopendenteturma_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
 
@@ -977,7 +981,7 @@ namespace SIESC.UI
             {
                 if (t.IsAlive) t.Abort();
 
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -990,7 +994,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void alterarSenhaToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void alterarSenhaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -999,7 +1003,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1012,7 +1016,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_solic_por_ano_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_solic_por_ano_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1025,7 +1029,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1033,7 +1037,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_sol_dia_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_sol_dia_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1045,7 +1049,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1058,7 +1062,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_sol_mes_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_sol_mes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1070,7 +1074,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1082,7 +1086,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_sol_regional_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_sol_regional_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1094,7 +1098,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1106,7 +1110,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_alunos_pendentes_Click(object sender,EventArgs e)
+        private void tsm_infantil_alunos_pendentes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1118,7 +1122,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1130,7 +1134,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_pendentes_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_pendentes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1142,7 +1146,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1154,7 +1158,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_comp_sol_enc_Click(object sender,EventArgs e)
+        private void tsm_infantil_comp_sol_enc_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
@@ -1168,7 +1172,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1176,7 +1180,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_num_sol_instituicao_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_sol_instituicao_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
@@ -1190,7 +1194,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1198,12 +1202,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantial_escola_solicita_encam_Click(object sender,EventArgs e)
+        private void tsm_infantial_escola_solicita_encam_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunosporescola frm = new frm_alunosporescola(this,1);
+                frm_alunosporescola frm = new frm_alunosporescola(this, 1);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -1213,7 +1217,7 @@ namespace SIESC.UI
             {
 
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1221,7 +1225,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_deficientes_Click(object sender,EventArgs e)
+        private void tsm_infantil_deficientes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1235,7 +1239,7 @@ namespace SIESC.UI
             {
 
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1243,12 +1247,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_infantil_alunos_motivo_Click(object sender,EventArgs e)
+        private void tsm_infantil_alunos_motivo_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this,1);
+                frm_alunos_motivos frm = new frm_alunos_motivos(this, 1);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -1257,10 +1261,10 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-        private void tsm_infantil_num_sol_motivos_Click(object sender,EventArgs e)
+        private void tsm_infantil_num_sol_motivos_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1273,10 +1277,10 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-        private void tsm_num_sol_ano_vs_instituicao_Click(object sender,EventArgs e)
+        private void tsm_num_sol_ano_vs_instituicao_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1289,10 +1293,10 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-        private void encaminhadosPorAnoDeEnsinoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void encaminhadosPorAnoDeEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1306,11 +1310,11 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void encaminhadosPorDataToolStripMenuItem2_Click(object sender,EventArgs e)
+        private void encaminhadosPorDataToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1324,7 +1328,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         #endregion
@@ -1335,7 +1339,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_sol_instituicao_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_instituicao_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
@@ -1349,7 +1353,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1357,12 +1361,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_alunos_esco_sol_enc_Click(object sender,EventArgs e)
+        private void tsm_fund_alunos_esco_sol_enc_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunosporescola frm = new frm_alunosporescola(this,2);
+                frm_alunosporescola frm = new frm_alunosporescola(this, 2);
                 frm.MdiParent = this;
 
                 frm.Show();
@@ -1372,7 +1376,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1381,7 +1385,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_alunos_deficientes_Click(object sender,EventArgs e)
+        private void tsm_fund_alunos_deficientes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1393,7 +1397,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1405,12 +1409,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_alunos_motivo_Click(object sender,EventArgs e)
+        private void tsm_fund_alunos_motivo_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this,2);
+                frm_alunos_motivos frm = new frm_alunos_motivos(this, 2);
                 frm.MdiParent = this;
                 frm.Show();
                 if (t.IsAlive) t.Abort();
@@ -1418,7 +1422,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1426,7 +1430,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_alunos_pendentes_Click(object sender,EventArgs e)
+        private void tsm_fund_alunos_pendentes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1439,7 +1443,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -1448,7 +1452,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_sol_anoensino_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_anoensino_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1463,7 +1467,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -1472,7 +1476,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_comp_sol_enc_Click(object sender,EventArgs e)
+        private void tsm_fund_comp_sol_enc_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
@@ -1486,7 +1490,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1494,7 +1498,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_sol_dia_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_dia_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1508,7 +1512,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1516,7 +1520,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_sol_mes_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_mes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1529,7 +1533,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1537,7 +1541,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_fund_num_sol_regional_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_regional_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1550,10 +1554,10 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-        private void tsm_fund_num_sol_motivos_Click(object sender,EventArgs e)
+        private void tsm_fund_num_sol_motivos_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1566,11 +1570,11 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void tsm_num_sol_ano_escola_Click(object sender,EventArgs e)
+        private void tsm_num_sol_ano_escola_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1584,7 +1588,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1592,7 +1596,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void encaminhadosPorAnoEnsinoToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void encaminhadosPorAnoEnsinoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1606,10 +1610,10 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-        private void encaminhadosPorDataToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void encaminhadosPorDataToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1623,7 +1627,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1636,7 +1640,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_pendentes_Click(object sender,EventArgs e)
+        private void tsm_geral_pendentes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1649,7 +1653,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1657,7 +1661,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_pendentes_Click(object sender,EventArgs e)
+        private void tsm_geral_num_pendentes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1671,7 +1675,7 @@ namespace SIESC.UI
             {
 
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1679,7 +1683,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_sol_motivos_Click(object sender,EventArgs e)
+        private void tsm_geral_num_sol_motivos_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1694,7 +1698,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -1703,7 +1707,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_resumo_sol_Click(object sender,EventArgs e)
+        private void tsm_geral_resumo_sol_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1717,7 +1721,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1725,12 +1729,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_alunos_instituicao_Click(object sender,EventArgs e)
+        private void tsm_geral_alunos_instituicao_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
             {
-                frm_alunosporescola frm = new frm_alunosporescola(this,3);
+                frm_alunosporescola frm = new frm_alunosporescola(this, 3);
                 frm.MdiParent = this;
                 frm.Show();
                 if (t.IsAlive) t.Abort();
@@ -1738,7 +1742,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -1747,7 +1751,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_sol_dia_Click(object sender,EventArgs e)
+        private void tsm_geral_num_sol_dia_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1760,7 +1764,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1769,7 +1773,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_sol_anoensino_Click(object sender,EventArgs e)
+        private void tsm_geral_num_sol_anoensino_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1783,7 +1787,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1791,7 +1795,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_sol_regional_Click(object sender,EventArgs e)
+        private void tsm_geral_num_sol_regional_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1805,7 +1809,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1813,7 +1817,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_num_sol_mes_Click(object sender,EventArgs e)
+        private void tsm_geral_num_sol_mes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1828,7 +1832,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1836,12 +1840,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_alunos_motivos_Click(object sender,EventArgs e)
+        private void tsm_geral_alunos_motivos_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this,3);
+                frm_alunos_motivos frm = new frm_alunos_motivos(this, 3);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -1850,7 +1854,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1858,7 +1862,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_geral_deficientes_Click(object sender,EventArgs e)
+        private void tsm_geral_deficientes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1871,7 +1875,7 @@ namespace SIESC.UI
             {
 
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
@@ -1883,7 +1887,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void encaminhadosPorDataToolStripMenuItem_Click(object sender,EventArgs e)
+        private void encaminhadosPorDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1897,7 +1901,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -1905,7 +1909,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void encaminhadosPorAnoEnsinoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void encaminhadosPorAnoEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1919,7 +1923,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         #endregion
@@ -1928,7 +1932,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_solicitacoes_encaminhamentos_Click(object sender,EventArgs e)
+        private void tsm_solicitacoes_encaminhamentos_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
@@ -1942,7 +1946,7 @@ namespace SIESC.UI
             {
 
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1952,7 +1956,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listaDeAutorizaçõesToolStripMenuItem_Click(object sender,EventArgs e)
+        private void listaDeAutorizaçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -1966,7 +1970,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -1975,7 +1979,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem6_Click(object sender,EventArgs e)
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(6);
         }
@@ -1986,7 +1990,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_num_instituicoes_mantenedor_Click(object sender,EventArgs e)
+        private void tsm_num_instituicoes_mantenedor_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2000,7 +2004,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2008,7 +2012,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void solicitaçõesPorOrigemToolStripMenuItem2_Click(object sender,EventArgs e)
+        private void solicitaçõesPorOrigemToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2022,7 +2026,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -2031,7 +2035,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void solicitaçõesPorOrigemToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void solicitaçõesPorOrigemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2046,7 +2050,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2054,7 +2058,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void solicitaçõesPorOrigemToolStripMenuItem_Click(object sender,EventArgs e)
+        private void solicitaçõesPorOrigemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2069,7 +2073,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2077,7 +2081,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem3_Click(object sender,EventArgs e)
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(7);
         }
@@ -2086,7 +2090,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem4_Click(object sender,EventArgs e)
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(6);
         }
@@ -2095,7 +2099,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem5_Click(object sender,EventArgs e)
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(3);
         }
@@ -2104,7 +2108,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void funcionáriosPorEscolaToolStripMenuItem_Click(object sender,EventArgs e)
+        private void funcionáriosPorEscolaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -2113,7 +2117,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem2_Click(object sender,EventArgs e)
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             GerarListaFuncionarios(5);
         }
@@ -2123,7 +2127,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contatoDasEscolasToolStripMenuItem_Click(object sender,EventArgs e)
+        private void contatoDasEscolasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2136,7 +2140,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2144,13 +2148,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2,"MUNICIPAL");
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2, "MUNICIPAL");
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2159,17 +2163,17 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void ofertaAnoEnsinoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void ofertaAnoEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4,1);
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4, 1);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2178,7 +2182,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2186,13 +2190,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2,"ESTADUAL");
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2, "ESTADUAL");
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2201,7 +2205,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2209,13 +2213,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ofertaAnoEnsinoToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void ofertaAnoEnsinoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4,2);
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4, 2);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2224,7 +2228,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2232,13 +2236,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem2_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2,"INFANTIL CONVENIADA");
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2, "INFANTIL CONVENIADA");
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2247,7 +2251,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2255,13 +2259,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem4_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2,"PARTICULAR");
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2, "PARTICULAR");
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2270,7 +2274,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2278,7 +2282,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contatoDasInstituiçõesToolStripMenuItem_Click(object sender,EventArgs e)
+        private void contatoDasInstituiçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2291,7 +2295,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2299,13 +2303,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ofertaAnoEnsinoToolStripMenuItem2_Click(object sender,EventArgs e)
+        private void ofertaAnoEnsinoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4,4);
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4, 4);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2314,7 +2318,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2322,12 +2326,12 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ofertaAnoEnsinoToolStripMenuItem3_Click(object sender,EventArgs e)
+        private void ofertaAnoEnsinoToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4,3);
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(4, 3);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2336,7 +2340,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2344,13 +2348,13 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem3_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
             try
             {
-                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2,"INFANTIL MUNICIPAL");
+                frm_relatorio_instituicoes frm = new frm_relatorio_instituicoes(2, "INFANTIL MUNICIPAL");
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -2359,7 +2363,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -2368,7 +2372,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contatoDasInstituiçõesToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void contatoDasInstituiçõesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2378,7 +2382,7 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -2386,7 +2390,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem5_Click(object sender,EventArgs e)
+        private void listagemToolStripMenuItem5_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2400,7 +2404,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -2409,7 +2413,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void localizarSolicitaçãoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void localizarSolicitaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2429,11 +2433,11 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void comprovaçãoDeEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void comprovaçãoDeEndereçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2443,11 +2447,11 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void comprovaçãoDeEndereçoToolStripMenuItem1_Click(object sender,EventArgs e)
+        private void comprovaçãoDeEndereçoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2457,11 +2461,11 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void comprovacaoDeEndereçoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void comprovacaoDeEndereçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2471,26 +2475,18 @@ namespace SIESC.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void sindicânciaToolStripMenuItem_Click(object sender,EventArgs e)
-        {
-            GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
-
-            frmSindicancia.MdiParent = this;
-            frmSindicancia.Show();
-        }
-
-        private void sindicadosToolStripMenuItem_Click(object sender,EventArgs e)
+        private void sindicadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_relatorio_sindicancia frmRelatorioSindicancia = new frm_relatorio_sindicancia() { MdiParent = this };
             frmRelatorioSindicancia.Show();
 
         }
 
-        private void nºDeSindicadosPorSituaçãoToolStripMenuItem_Click(object sender,EventArgs e)
+        private void nºDeSindicadosPorSituaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_relatorio_sindicancia_numerico frmRelatorioSindicanciaNumerico = new frm_relatorio_sindicancia_numerico() { MdiParent = this };
 
@@ -2504,6 +2500,14 @@ namespace SIESC.UI
 
             frmSindicancia.MdiParent = this;
             frmSindicancia.Show();
+        }
+
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CadastraSindicancia frm_cadastraSindicancia = new CadastraSindicancia(this);
+
+            frm_cadastraSindicancia.MdiParent = this;
+            frm_cadastraSindicancia.Show();
         }
     }
 }

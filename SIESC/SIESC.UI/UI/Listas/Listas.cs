@@ -113,7 +113,7 @@ namespace SIESC.UI.UI.Relatorios
 				{
 					case 1:
 						rpt_viewer_listas.SetPageSettings(pg); //configura a folha do relatório para paisagem
-						datasource.Name = "DsLista";
+						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\lst_Contatos_Escolas1.rdlc";
 						dt = this.vw_instituicoesTableAdapter1.GetData();

@@ -7,8 +7,7 @@ using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using SIESC.BD.DataSets.ds_siescTableAdapters;
-using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
+using SIESC.BD.DataSets.dsSindicanciaTableAdapters;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios

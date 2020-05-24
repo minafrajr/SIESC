@@ -67,6 +67,8 @@
             this.lbl_observacoes = new System.Windows.Forms.Label();
             this.txt_observacoes = new SIESC.UI.MyTextBox();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
+            this.lbl_denuncia = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lbl_usuario_finalizou = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -99,8 +101,6 @@
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_denuncia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -517,9 +517,9 @@
             this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
             this.lbl_titulo_form.Name = "lbl_titulo_form";
-            this.lbl_titulo_form.Size = new System.Drawing.Size(257, 23);
+            this.lbl_titulo_form.Size = new System.Drawing.Size(267, 23);
             this.lbl_titulo_form.TabIndex = 0;
-            this.lbl_titulo_form.Text = "Gernciamento das Sindicâncias";
+            this.lbl_titulo_form.Text = "Gerenciamento das Sindicâncias";
             // 
             // pnl_dados
             // 
@@ -590,6 +590,26 @@
             this.gpb_sindicados.TabStop = false;
             this.gpb_sindicados.Text = "Sindicância";
             this.gpb_sindicados.Visible = false;
+            // 
+            // lbl_denuncia
+            // 
+            this.lbl_denuncia.AutoSize = true;
+            this.lbl_denuncia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_denuncia.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_denuncia.Location = new System.Drawing.Point(271, 38);
+            this.lbl_denuncia.Name = "lbl_denuncia";
+            this.lbl_denuncia.Size = new System.Drawing.Size(30, 18);
+            this.lbl_denuncia.TabIndex = 12;
+            this.lbl_denuncia.Text = "S/N";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(212, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 14);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Denúncia: ";
             // 
             // lbl_usuario_finalizou
             // 
@@ -889,26 +909,6 @@
             // vw_comprovacao_enderecoTableAdapter1
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(212, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 14);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Denúncia: ";
-            // 
-            // lbl_denuncia
-            // 
-            this.lbl_denuncia.AutoSize = true;
-            this.lbl_denuncia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_denuncia.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_denuncia.Location = new System.Drawing.Point(271, 38);
-            this.lbl_denuncia.Name = "lbl_denuncia";
-            this.lbl_denuncia.Size = new System.Drawing.Size(30, 18);
-            this.lbl_denuncia.TabIndex = 12;
-            this.lbl_denuncia.Text = "S/N";
             // 
             // GerenciaSindicancia
             // 
