@@ -34,7 +34,7 @@
             this.txt_codigoAluno = new System.Windows.Forms.TextBox();
             this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
             this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
-            this.btn_limpacombo = new System.Windows.Forms.Button();
+            this.btn_limpaComboDeficiencia = new System.Windows.Forms.Button();
             this.cbo_deficiencia = new SIESC.UI.MyComboBox();
             this.deficienciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
@@ -66,7 +66,7 @@
             this.cbo_bairro = new SIESC.UI.MyComboBox();
             this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._bairro = new System.Windows.Forms.Label();
-            this.txt_mumresidencia = new SIESC.UI.MyTextBox();
+            this.txt_numresidencia = new SIESC.UI.MyTextBox();
             this.lbl_num = new System.Windows.Forms.Label();
             this.txt_logradouro = new SIESC.UI.MyTextBox();
             this.btn_buscarcep = new System.Windows.Forms.Button();
@@ -75,14 +75,16 @@
             this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
-            this.cbo_instituicao_encaminhada = new System.Windows.Forms.ComboBox();
-            this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_limpaComboInstEnc = new System.Windows.Forms.Button();
+            this.cbo_instituicao_encaminhada = new SIESC.UI.MyComboBox();
+            this.instituicoes1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbo_instituicao_origem = new SIESC.UI.MyComboBox();
+            this.cbo_instituicao_inscricao = new SIESC.UI.MyComboBox();
+            this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_anosolicitado = new System.Windows.Forms.Label();
             this.cbo_anosolicitado = new SIESC.UI.MyComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbl_escolaorigem = new System.Windows.Forms.Label();
+            this.lbl_instituicaoInscricao = new System.Windows.Forms.Label();
             this.lbl_instituicaosolicitada = new System.Windows.Forms.Label();
             this.gpb_observacoes = new System.Windows.Forms.GroupBox();
             this.txt_observacoes = new SIESC.UI.MyTextBox();
@@ -92,10 +94,10 @@
             this.btn_salvar = new System.Windows.Forms.Button();
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.bairrosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.bairrosTableAdapter();
-            this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.lbl_tituloform = new System.Windows.Forms.Label();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
-            this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
+            this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
+            this.instituicoes1TableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoes1TableAdapter();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -103,8 +105,9 @@
             this.gpb_endereço.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bairrosBindingSource)).BeginInit();
             this.gpb_solicitacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoes1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
             this.gpb_observacoes.SuspendLayout();
             this.SuspendLayout();
@@ -136,7 +139,7 @@
             // gpb_dadospessoais
             // 
             this.gpb_dadospessoais.Controls.Add(this.msk_data_nascimento);
-            this.gpb_dadospessoais.Controls.Add(this.btn_limpacombo);
+            this.gpb_dadospessoais.Controls.Add(this.btn_limpaComboDeficiencia);
             this.gpb_dadospessoais.Controls.Add(this.cbo_deficiencia);
             this.gpb_dadospessoais.Controls.Add(this.lbl_idade);
             this.gpb_dadospessoais.Controls.Add(this.msk_telefone3);
@@ -178,16 +181,16 @@
             this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
             this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
             // 
-            // btn_limpacombo
+            // btn_limpaComboDeficiencia
             // 
-            this.btn_limpacombo.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.btn_limpacombo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_limpacombo.Location = new System.Drawing.Point(747, 104);
-            this.btn_limpacombo.Name = "btn_limpacombo";
-            this.btn_limpacombo.Size = new System.Drawing.Size(22, 22);
-            this.btn_limpacombo.TabIndex = 6;
-            this.btn_limpacombo.UseVisualStyleBackColor = true;
-            this.btn_limpacombo.Click += new System.EventHandler(this.btn_limpacombo_Click);
+            this.btn_limpaComboDeficiencia.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_limpaComboDeficiencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_limpaComboDeficiencia.Location = new System.Drawing.Point(747, 104);
+            this.btn_limpaComboDeficiencia.Name = "btn_limpaComboDeficiencia";
+            this.btn_limpaComboDeficiencia.Size = new System.Drawing.Size(22, 22);
+            this.btn_limpaComboDeficiencia.TabIndex = 8;
+            this.btn_limpaComboDeficiencia.UseVisualStyleBackColor = true;
+            this.btn_limpaComboDeficiencia.Click += new System.EventHandler(this.btn_limpacombo_Click);
             // 
             // cbo_deficiencia
             // 
@@ -198,7 +201,7 @@
             this.cbo_deficiencia.Location = new System.Drawing.Point(473, 104);
             this.cbo_deficiencia.Name = "cbo_deficiencia";
             this.cbo_deficiencia.Size = new System.Drawing.Size(270, 22);
-            this.cbo_deficiencia.TabIndex = 5;
+            this.cbo_deficiencia.TabIndex = 8;
             this.cbo_deficiencia.ValueMember = "idDeficiencia";
             this.cbo_deficiencia.DropDown += new System.EventHandler(this.cbo_deficiencia_DropDown);
             // 
@@ -229,7 +232,7 @@
             this.msk_telefone3.Mask = "(00)000000000";
             this.msk_telefone3.Name = "msk_telefone3";
             this.msk_telefone3.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone3.TabIndex = 9;
+            this.msk_telefone3.TabIndex = 7;
             this.msk_telefone3.Tag = "Telefone 3";
             this.msk_telefone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone3.Enter += new System.EventHandler(this.msk_telefone3_Enter);
@@ -251,7 +254,7 @@
             this.msk_telefone2.Mask = "(00)000000000";
             this.msk_telefone2.Name = "msk_telefone2";
             this.msk_telefone2.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone2.TabIndex = 8;
+            this.msk_telefone2.TabIndex = 6;
             this.msk_telefone2.Tag = "Telefone 2";
             this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
@@ -278,7 +281,7 @@
             this.msk_telefone1.Mask = "(00)000000000";
             this.msk_telefone1.Name = "msk_telefone1";
             this.msk_telefone1.Size = new System.Drawing.Size(100, 21);
-            this.msk_telefone1.TabIndex = 7;
+            this.msk_telefone1.TabIndex = 5;
             this.msk_telefone1.Tag = "Telefone 1";
             this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
@@ -307,12 +310,12 @@
             this.gpb_sexo.Controls.Add(this.rdb_feminino);
             this.gpb_sexo.Controls.Add(this.rdb_masculino);
             this.gpb_sexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gpb_sexo.Location = new System.Drawing.Point(542, 59);
+            this.gpb_sexo.Location = new System.Drawing.Point(542, 35);
             this.gpb_sexo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpb_sexo.Name = "gpb_sexo";
             this.gpb_sexo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpb_sexo.Size = new System.Drawing.Size(170, 38);
-            this.gpb_sexo.TabIndex = 3;
+            this.gpb_sexo.TabIndex = 4;
             this.gpb_sexo.TabStop = false;
             this.gpb_sexo.Text = "Sexo";
             // 
@@ -348,7 +351,7 @@
             this.txt_pai.MaxLength = 60;
             this.txt_pai.Name = "txt_pai";
             this.txt_pai.Size = new System.Drawing.Size(487, 22);
-            this.txt_pai.TabIndex = 4;
+            this.txt_pai.TabIndex = 3;
             this.txt_pai.Tag = "Nome do pai";
             // 
             // txt_mae
@@ -437,7 +440,7 @@
             this.gpb_endereço.Controls.Add(this.lbl_complemento);
             this.gpb_endereço.Controls.Add(this.cbo_bairro);
             this.gpb_endereço.Controls.Add(this._bairro);
-            this.gpb_endereço.Controls.Add(this.txt_mumresidencia);
+            this.gpb_endereço.Controls.Add(this.txt_numresidencia);
             this.gpb_endereço.Controls.Add(this.lbl_num);
             this.gpb_endereço.Controls.Add(this.txt_logradouro);
             this.gpb_endereço.Controls.Add(this.btn_buscarcep);
@@ -446,9 +449,9 @@
             this.gpb_endereço.Controls.Add(this.msk_cep);
             this.gpb_endereço.Controls.Add(this.lbl_cep);
             this.gpb_endereço.Controls.Add(this.lbl_tipologradouro);
-            this.gpb_endereço.Location = new System.Drawing.Point(4, 166);
+            this.gpb_endereço.Location = new System.Drawing.Point(4, 159);
             this.gpb_endereço.Name = "gpb_endereço";
-            this.gpb_endereço.Size = new System.Drawing.Size(651, 134);
+            this.gpb_endereço.Size = new System.Drawing.Size(651, 150);
             this.gpb_endereço.TabIndex = 2;
             this.gpb_endereço.TabStop = false;
             this.gpb_endereço.Text = "Endereço";
@@ -527,15 +530,15 @@
             this._bairro.TabIndex = 18;
             this._bairro.Text = "Bairro:";
             // 
-            // txt_mumresidencia
+            // txt_numresidencia
             // 
-            this.txt_mumresidencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_mumresidencia.Location = new System.Drawing.Point(12, 103);
-            this.txt_mumresidencia.MaxLength = 10;
-            this.txt_mumresidencia.Name = "txt_mumresidencia";
-            this.txt_mumresidencia.Size = new System.Drawing.Size(100, 22);
-            this.txt_mumresidencia.TabIndex = 5;
-            this.txt_mumresidencia.Tag = "Número da residência";
+            this.txt_numresidencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_numresidencia.Location = new System.Drawing.Point(9, 103);
+            this.txt_numresidencia.MaxLength = 10;
+            this.txt_numresidencia.Name = "txt_numresidencia";
+            this.txt_numresidencia.Size = new System.Drawing.Size(100, 22);
+            this.txt_numresidencia.TabIndex = 5;
+            this.txt_numresidencia.Tag = "Número da residência";
             // 
             // lbl_num
             // 
@@ -631,58 +634,76 @@
             // 
             // gpb_solicitacao
             // 
+            this.gpb_solicitacao.Controls.Add(this.btn_limpaComboInstEnc);
             this.gpb_solicitacao.Controls.Add(this.cbo_instituicao_encaminhada);
-            this.gpb_solicitacao.Controls.Add(this.cbo_instituicao_origem);
+            this.gpb_solicitacao.Controls.Add(this.cbo_instituicao_inscricao);
             this.gpb_solicitacao.Controls.Add(this.lbl_anosolicitado);
             this.gpb_solicitacao.Controls.Add(this.cbo_anosolicitado);
-            this.gpb_solicitacao.Controls.Add(this.lbl_escolaorigem);
+            this.gpb_solicitacao.Controls.Add(this.lbl_instituicaoInscricao);
             this.gpb_solicitacao.Controls.Add(this.lbl_instituicaosolicitada);
-            this.gpb_solicitacao.Location = new System.Drawing.Point(661, 166);
+            this.gpb_solicitacao.Location = new System.Drawing.Point(661, 159);
             this.gpb_solicitacao.Name = "gpb_solicitacao";
-            this.gpb_solicitacao.Size = new System.Drawing.Size(378, 134);
+            this.gpb_solicitacao.Size = new System.Drawing.Size(378, 150);
             this.gpb_solicitacao.TabIndex = 3;
             this.gpb_solicitacao.TabStop = false;
             this.gpb_solicitacao.Text = "Dados do Cadastro Escolar";
             // 
+            // btn_limpaComboInstEnc
+            // 
+            this.btn_limpaComboInstEnc.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_limpaComboInstEnc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_limpaComboInstEnc.Location = new System.Drawing.Point(347, 119);
+            this.btn_limpaComboInstEnc.Name = "btn_limpaComboInstEnc";
+            this.btn_limpaComboInstEnc.Size = new System.Drawing.Size(22, 22);
+            this.btn_limpaComboInstEnc.TabIndex = 29;
+            this.btn_limpaComboInstEnc.UseVisualStyleBackColor = true;
+            this.btn_limpaComboInstEnc.Click += new System.EventHandler(this.btn_limpaComboInstEnc_Click);
+            // 
             // cbo_instituicao_encaminhada
             // 
-            this.cbo_instituicao_encaminhada.DataSource = this.instituicoesBindingSource;
-            this.cbo_instituicao_encaminhada.DisplayMember = "idInstituicoes";
+            this.cbo_instituicao_encaminhada.DataSource = this.instituicoes1BindingSource;
+            this.cbo_instituicao_encaminhada.DisplayMember = "nome";
             this.cbo_instituicao_encaminhada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao_encaminhada.FormattingEnabled = true;
-            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(3, 106);
+            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(3, 120);
             this.cbo_instituicao_encaminhada.Name = "cbo_instituicao_encaminhada";
-            this.cbo_instituicao_encaminhada.Size = new System.Drawing.Size(375, 22);
-            this.cbo_instituicao_encaminhada.TabIndex = 26;
-            this.cbo_instituicao_encaminhada.ValueMember = "nome";
+            this.cbo_instituicao_encaminhada.Size = new System.Drawing.Size(338, 22);
+            this.cbo_instituicao_encaminhada.TabIndex = 13;
+            this.cbo_instituicao_encaminhada.ValueMember = "idInstituicoes";
             this.cbo_instituicao_encaminhada.DropDown += new System.EventHandler(this.cbo_instituicao_encaminhada_DropDown);
             // 
-            // instituicoesBindingSource
+            // instituicoes1BindingSource
             // 
-            this.instituicoesBindingSource.DataMember = "instituicoes";
-            this.instituicoesBindingSource.DataSource = this.siescDataSetBindingSource;
+            this.instituicoes1BindingSource.DataMember = "instituicoes1";
+            this.instituicoes1BindingSource.DataSource = this.siescDataSetBindingSource;
             // 
             // siescDataSetBindingSource
             // 
             this.siescDataSetBindingSource.DataSource = this.siescDataSet;
             this.siescDataSetBindingSource.Position = 0;
             // 
-            // cbo_instituicao_origem
+            // cbo_instituicao_inscricao
             // 
-            this.cbo_instituicao_origem.DataSource = this.instituicoesBindingSource;
-            this.cbo_instituicao_origem.DisplayMember = "nome";
-            this.cbo_instituicao_origem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_instituicao_origem.FormattingEnabled = true;
-            this.cbo_instituicao_origem.Location = new System.Drawing.Point(130, 57);
-            this.cbo_instituicao_origem.Name = "cbo_instituicao_origem";
-            this.cbo_instituicao_origem.Size = new System.Drawing.Size(244, 22);
-            this.cbo_instituicao_origem.TabIndex = 25;
-            this.cbo_instituicao_origem.ValueMember = "idInstituicoes";
+            this.cbo_instituicao_inscricao.DataSource = this.instituicoesBindingSource;
+            this.cbo_instituicao_inscricao.DisplayMember = "nome";
+            this.cbo_instituicao_inscricao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_instituicao_inscricao.FormattingEnabled = true;
+            this.cbo_instituicao_inscricao.Location = new System.Drawing.Point(6, 77);
+            this.cbo_instituicao_inscricao.Name = "cbo_instituicao_inscricao";
+            this.cbo_instituicao_inscricao.Size = new System.Drawing.Size(357, 22);
+            this.cbo_instituicao_inscricao.TabIndex = 12;
+            this.cbo_instituicao_inscricao.ValueMember = "idInstituicoes";
+            this.cbo_instituicao_inscricao.DropDown += new System.EventHandler(this.cbo_instituicao_inscricao_DropDown);
+            // 
+            // instituicoesBindingSource
+            // 
+            this.instituicoesBindingSource.DataMember = "instituicoes";
+            this.instituicoesBindingSource.DataSource = this.siescDataSetBindingSource;
             // 
             // lbl_anosolicitado
             // 
             this.lbl_anosolicitado.AutoSize = true;
-            this.lbl_anosolicitado.Location = new System.Drawing.Point(0, 40);
+            this.lbl_anosolicitado.Location = new System.Drawing.Point(3, 16);
             this.lbl_anosolicitado.Name = "lbl_anosolicitado";
             this.lbl_anosolicitado.Size = new System.Drawing.Size(85, 14);
             this.lbl_anosolicitado.TabIndex = 11;
@@ -696,32 +717,33 @@
             this.cbo_anosolicitado.DisplayMember = "AnoEF";
             this.cbo_anosolicitado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anosolicitado.FormattingEnabled = true;
-            this.cbo_anosolicitado.Location = new System.Drawing.Point(3, 57);
+            this.cbo_anosolicitado.Location = new System.Drawing.Point(6, 33);
             this.cbo_anosolicitado.Name = "cbo_anosolicitado";
             this.cbo_anosolicitado.Size = new System.Drawing.Size(121, 22);
             this.cbo_anosolicitado.TabIndex = 1;
             this.cbo_anosolicitado.Tag = "Ano solicitado";
             this.cbo_anosolicitado.ValueMember = "idAno";
             this.cbo_anosolicitado.DropDown += new System.EventHandler(this.cbo_anosolicitado_DropDown);
+            this.cbo_anosolicitado.SelectedIndexChanged += new System.EventHandler(this.cbo_anosolicitado_SelectedIndexChanged);
             // 
             // anoBindingSource
             // 
             this.anoBindingSource.DataMember = "ano";
             this.anoBindingSource.DataSource = this.siescDataSet;
             // 
-            // lbl_escolaorigem
+            // lbl_instituicaoInscricao
             // 
-            this.lbl_escolaorigem.AutoSize = true;
-            this.lbl_escolaorigem.Location = new System.Drawing.Point(131, 40);
-            this.lbl_escolaorigem.Name = "lbl_escolaorigem";
-            this.lbl_escolaorigem.Size = new System.Drawing.Size(119, 14);
-            this.lbl_escolaorigem.TabIndex = 2;
-            this.lbl_escolaorigem.Text = "Instituição de Origem:";
+            this.lbl_instituicaoInscricao.AutoSize = true;
+            this.lbl_instituicaoInscricao.Location = new System.Drawing.Point(6, 60);
+            this.lbl_instituicaoInscricao.Name = "lbl_instituicaoInscricao";
+            this.lbl_instituicaoInscricao.Size = new System.Drawing.Size(124, 14);
+            this.lbl_instituicaoInscricao.TabIndex = 2;
+            this.lbl_instituicaoInscricao.Text = "Instituição de Inscrição";
             // 
             // lbl_instituicaosolicitada
             // 
             this.lbl_instituicaosolicitada.AutoSize = true;
-            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(4, 86);
+            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(0, 102);
             this.lbl_instituicaosolicitada.Name = "lbl_instituicaosolicitada";
             this.lbl_instituicaosolicitada.Size = new System.Drawing.Size(136, 14);
             this.lbl_instituicaosolicitada.TabIndex = 0;
@@ -730,7 +752,7 @@
             // gpb_observacoes
             // 
             this.gpb_observacoes.Controls.Add(this.txt_observacoes);
-            this.gpb_observacoes.Location = new System.Drawing.Point(4, 303);
+            this.gpb_observacoes.Location = new System.Drawing.Point(4, 315);
             this.gpb_observacoes.Name = "gpb_observacoes";
             this.gpb_observacoes.Size = new System.Drawing.Size(1029, 89);
             this.gpb_observacoes.TabIndex = 4;
@@ -754,7 +776,7 @@
             // 
             this.btn_limpar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Image = global::SIESC.UI.Properties.Resources._1431669200_eraser;
-            this.btn_limpar.Location = new System.Drawing.Point(907, 399);
+            this.btn_limpar.Location = new System.Drawing.Point(907, 408);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(60, 59);
             this.btn_limpar.TabIndex = 6;
@@ -768,7 +790,7 @@
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SIESC.UI.Properties.Resources.prohibit_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(979, 399);
+            this.btn_cancelar.Location = new System.Drawing.Point(979, 408);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(60, 59);
             this.btn_cancelar.TabIndex = 7;
@@ -782,7 +804,7 @@
             // 
             this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_novo.Image = global::SIESC.UI.Properties.Resources._114;
-            this.btn_novo.Location = new System.Drawing.Point(776, 399);
+            this.btn_novo.Location = new System.Drawing.Point(776, 408);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(60, 59);
             this.btn_novo.TabIndex = 9;
@@ -796,7 +818,7 @@
             // 
             this.btn_salvar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.Image = global::SIESC.UI.Properties.Resources.Tick;
-            this.btn_salvar.Location = new System.Drawing.Point(841, 399);
+            this.btn_salvar.Location = new System.Drawing.Point(841, 408);
             this.btn_salvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(60, 59);
@@ -815,10 +837,6 @@
             // 
             this.bairrosTableAdapter.ClearBeforeFill = true;
             // 
-            // instituicoesTableAdapter
-            // 
-            this.instituicoesTableAdapter.ClearBeforeFill = true;
-            // 
             // lbl_tituloform
             // 
             this.lbl_tituloform.AutoSize = true;
@@ -833,14 +851,18 @@
             // 
             this.deficienciasTableAdapter1.ClearBeforeFill = true;
             // 
-            // instorigemTableAdapter
+            // instituicoesTableAdapter
             // 
-            this.instorigemTableAdapter.ClearBeforeFill = true;
+            this.instituicoesTableAdapter.ClearBeforeFill = true;
+            // 
+            // instituicoes1TableAdapter
+            // 
+            this.instituicoes1TableAdapter.ClearBeforeFill = true;
             // 
             // CadastraSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1044, 462);
+            this.ClientSize = new System.Drawing.Size(1044, 474);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_novo);
@@ -864,8 +886,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bairrosBindingSource)).EndInit();
             this.gpb_solicitacao.ResumeLayout(false);
             this.gpb_solicitacao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoes1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
             this.gpb_observacoes.ResumeLayout(false);
             this.gpb_observacoes.PerformLayout();
@@ -907,11 +930,11 @@
         private System.Windows.Forms.Label lbl_complemento;
         private MyComboBox cbo_bairro;
         private System.Windows.Forms.Label _bairro;
-        private MyTextBox txt_mumresidencia;
+        private MyTextBox txt_numresidencia;
         private System.Windows.Forms.Label lbl_num;
         private MyTextBox txt_logradouro;
         private System.Windows.Forms.GroupBox gpb_solicitacao;
-        private System.Windows.Forms.Label lbl_escolaorigem;
+        private System.Windows.Forms.Label lbl_instituicaoInscricao;
         private System.Windows.Forms.Label lbl_instituicaosolicitada;
         private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.GroupBox gpb_observacoes;
@@ -924,8 +947,6 @@
         private System.Windows.Forms.BindingSource bairrosBindingSource;
         private siescDataSetTableAdapters.bairrosTableAdapter bairrosTableAdapter;
         private System.Windows.Forms.BindingSource siescDataSetBindingSource;
-        private System.Windows.Forms.BindingSource instituicoesBindingSource;
-        private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
         private System.Windows.Forms.Button btn_limpaEnder;
         private System.Windows.Forms.Label lbl_tituloform;
         private System.Windows.Forms.TextBox txt_codigoSindicado;
@@ -937,11 +958,15 @@
         private System.Windows.Forms.Label label5;
         private MyComboBox cbo_deficiencia;
         private System.Windows.Forms.BindingSource deficienciasBindingSource;
-        private System.Windows.Forms.Button btn_limpacombo;
+        private System.Windows.Forms.Button btn_limpaComboDeficiencia;
         private MyMaskedTextBox msk_data_nascimento;
-        private MyComboBox cbo_instituicao_origem;
-        private System.Windows.Forms.ComboBox cbo_instituicao_encaminhada;
-        private siescDataSetTableAdapters.instorigemTableAdapter instorigemTableAdapter;
+        private MyComboBox cbo_instituicao_inscricao;
+        private System.Windows.Forms.BindingSource instituicoesBindingSource;
+        private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
+        private MyComboBox cbo_instituicao_encaminhada;
+        private System.Windows.Forms.BindingSource instituicoes1BindingSource;
+        private siescDataSetTableAdapters.instituicoes1TableAdapter instituicoes1TableAdapter;
+        private System.Windows.Forms.Button btn_limpaComboInstEnc;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga

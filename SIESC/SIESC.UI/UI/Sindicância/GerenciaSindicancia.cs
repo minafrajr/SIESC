@@ -229,11 +229,17 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 var _sindicancia = new Sindicancia();
 
-                _sindicancia.codigoSincidancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
-                _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacoesVagas"].Value;
+                _sindicancia.codigoSindidancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
+
+                _sindicancia.motivoSindicancia = dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString();
+                
+                if(_sindicancia.motivoSindicancia.Equals("CADASTRO"))
+                    _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacoesVagas"].Value;
+                
                 _sindicancia.nomeSindicado = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
                 _sindicancia.observacoes = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
-                _sindicancia.motivoSindicancia = dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString();
+
+                _sindicancia.origemSindicância = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(),out var endereco))
                 {
@@ -250,7 +256,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 _sindicancia.dataSindicancia = dgv_dados.CurrentRow.Cells["DataSindicancia"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataSindicancia"].Value;
                 _sindicancia.usuarioResponsavel = dgv_dados.CurrentRow.Cells["UsuarioResponsavel"].Value.ToString();
                 _sindicancia.dataFinalizacao = dgv_dados.CurrentRow.Cells["DataFinalizacao"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataFinalizacao"].Value;
-                _sindicancia.nomeSindicado = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
+                _sindicancia.EnderecoCompleto = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
                 _sindicancia.usuarioFinalizacao = dgv_dados.CurrentRow.Cells["UsuarioFinalizou"].Value.ToString();
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(),out bool pendente))
@@ -330,13 +336,19 @@ namespace SIESC.UI.UI.Solicitacoes
             lbl_observacoes.Visible = sindicados;
         }
 
-
+        /// <summary>
+        /// Evento quando ocorre a alteração no status checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chk_pendentes_ou_finalizadas_CheckedCanged(object sender,EventArgs e)
         {
             dgv_dados.DataSource = null;
             PendentesOuFinalizadas();
         }
-
+        /// <summary>
+        /// Defina DataSource do DataGridView conforme os checkbox de pendentes ou finalizadas
+        /// </summary>
         private void PendentesOuFinalizadas()
         {
             try
@@ -348,16 +360,10 @@ namespace SIESC.UI.UI.Solicitacoes
                 lbl_usuario_finalizou.ResetText();
                 lbl_endereco_comprovado.ResetText();
 
-
                 if (chk_pendentes.Checked)
-                {
                     dgv_dados.DataSource = sindicanciaControl.GetSindicanciasPendentes();
-
-                }
                 else if (chk_finalizadas.Checked)
-                {
                     dgv_dados.DataSource = sindicanciaControl.GetSindicanciasFinalizadas();
-                }
 
                 dgv_dados.Refresh();
             }
@@ -368,7 +374,11 @@ namespace SIESC.UI.UI.Solicitacoes
 
         }
 
-
+        /// <summary>
+        /// Evento do botão localizar sindicâncias
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_localizar_Click(object sender,EventArgs e)
         {
             try
@@ -386,21 +396,15 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (rdb_codigo.Checked)
                 {
                     if (string.IsNullOrEmpty(txt_codigo.Text))
-                    {
                         throw new ArgumentNullException($"O campo {txt_codigo.Tag} está vazio!");
-                    }
                     if (sindicanciaControl.ContemSindicado(Convert.ToInt32(txt_codigo.Text)))
-                    {
                         throw new Exception("A solicitação já se encontra em processo de sindicância!");
-                    }
 
                     CarregaGridViewByIdSolicitacao(txt_codigo.Text);
                 }
 
-                if (rdb_nao_sindicadas.Checked || rdb_sindicadas.Checked)
-                {
+                if (rdb_nao_sindicadas.Checked || rdb_sindicadas.Checked) 
                     CarregaGridView();
-                }
             }
             catch (Exception ex)
             {
@@ -476,7 +480,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_endereco.Text = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
                 txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["escolasolicitada"].Value.ToString();
                 txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
-                txt_telefone.Text = dgv_dados.CurrentRow.Cells["telefone"].Value.ToString();
                 txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
                 txt_comprovante_endereco.Text =
@@ -496,11 +499,9 @@ namespace SIESC.UI.UI.Solicitacoes
                     dgv_dados.CurrentRow.Cells["InstituicaoEncaminhada"].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
                 txt_observacoes.Text = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
-
-
+                
                 bool finalizada, pendente, endereco;
-
-
+                
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(),out finalizada))
                 {
                     if (finalizada)
@@ -568,10 +569,12 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["Escola Solicitada"].Value.ToString();
                 txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["Escola Encaminhada"].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["Data Solicitacao"].Value.ToString();
-                txt_telefone.Text = $@"{dgv_dados.CurrentRow.Cells["Telefone 1"].Value} - {dgv_dados.CurrentRow.Cells["Telefone 2"].Value}";
             }
         }
 
+        /// <summary>
+        /// Limpa os campos do formulário
+        /// </summary>
         private void LimparCampos()
         {
             foreach (MyTextBox control in pnl_dados.Controls.OfType<MyTextBox>())
@@ -586,6 +589,10 @@ namespace SIESC.UI.UI.Solicitacoes
             lbl_endereco_comprovado.ResetText();
         }
 
+        /// <summary>
+        /// Carrega da GridView conforme a solicitação
+        /// </summary>
+        /// <param name="codigoSolicitacao"></param>
         private void CarregaGridViewByIdSolicitacao(string codigoSolicitacao)
         {
             solicitacaoControl = new SolicitacaoControl();
@@ -746,7 +753,8 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_imprimir_ficha_Click(object sender,EventArgs e)
         {
-            frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,(int)dgv_dados.CurrentRow.Cells[1].Value) { MdiParent = principalUi };
+
+           frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,(int?)dgv_dados.CurrentRow.Cells[2].Value) { MdiParent = principalUi };
             fichaSindicancia.Show();
         }
 

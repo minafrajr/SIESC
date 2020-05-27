@@ -32,7 +32,7 @@ namespace SIESC.BD.Control
             return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,
                 sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,
                 sindicancia.Coordenadas[0],sindicancia.Coordenadas[1],sindicancia.Cep,
-                sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSolicitacao,sindicancia.anoEnsino,
+                sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,
                  sindicancia.observacoes,sindicancia.status) > 0);
         }
 
@@ -166,8 +166,14 @@ namespace SIESC.BD.Control
         public bool AtualizarSindicancia(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
-            return (sindicancia_TA.AtualizarSindicancia(sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,
-                        sindicancia.motivoSindicancia,sindicancia.enderecoConfirmado,sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao,sindicancia.observacoes,sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada,sindicancia.codigoSincidancia,sindicancia.codigoSolicitacao) > 0);
+
+            if (sindicancia.origemSindicância.Equals("CADASTRO"))
+                return (sindicancia_TA.AtualizarSindicanciaCadastro(sindicancia.dataSindicancia, sindicancia.usuarioResponsavel,
+                            sindicancia.motivoSindicancia, sindicancia.enderecoConfirmado, sindicancia.dataFinalizacao,
+                            sindicancia.usuarioFinalizacao, sindicancia.observacoes, sindicancia.sindicanciaPendente,
+                            sindicancia.sindicanciaFinalizada, sindicancia.codigoSindidancia) > 0);
+
+            return (sindicancia_TA.AtualizarSindicancia(sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.motivoSindicancia,sindicancia.enderecoConfirmado,sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao,sindicancia.observacoes,sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada,sindicancia.codigoSindidancia,sindicancia.codigoSolicitacao) > 0);
         }
 
 

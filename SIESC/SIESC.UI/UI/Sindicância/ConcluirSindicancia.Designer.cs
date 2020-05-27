@@ -47,10 +47,13 @@
             this.gpb_motivo_sindicancia = new System.Windows.Forms.GroupBox();
             this.rdb_sem_comprovante = new System.Windows.Forms.RadioButton();
             this.rdb_denuncia = new System.Windows.Forms.RadioButton();
+            this.lbl_origemSindicancia = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gpb_motivo_sindicancia.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +133,7 @@
             // 
             this.chk_pendente.AutoSize = true;
             this.chk_pendente.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
-            this.chk_pendente.Location = new System.Drawing.Point(491, 132);
+            this.chk_pendente.Location = new System.Drawing.Point(644, 132);
             this.chk_pendente.Name = "chk_pendente";
             this.chk_pendente.Size = new System.Drawing.Size(88, 22);
             this.chk_pendente.TabIndex = 9;
@@ -277,11 +280,34 @@
             this.rdb_denuncia.Text = "Denúncia";
             this.rdb_denuncia.UseVisualStyleBackColor = true;
             // 
+            // lbl_origemSindicancia
+            // 
+            this.lbl_origemSindicancia.AutoSize = true;
+            this.lbl_origemSindicancia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_origemSindicancia.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_origemSindicancia.Location = new System.Drawing.Point(10, 28);
+            this.lbl_origemSindicancia.Name = "lbl_origemSindicancia";
+            this.lbl_origemSindicancia.Size = new System.Drawing.Size(126, 18);
+            this.lbl_origemSindicancia.TabIndex = 8;
+            this.lbl_origemSindicancia.Text = "origemSindicância";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lbl_origemSindicancia);
+            this.groupBox4.Font = new System.Drawing.Font("Candara", 11F);
+            this.groupBox4.Location = new System.Drawing.Point(494, 109);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(144, 56);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Origem Sindicância";
+            // 
             // ConcluirSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.ClientSize = new System.Drawing.Size(738, 385);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.gpb_motivo_sindicancia);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.chk_pendente);
@@ -301,6 +327,8 @@
             this.groupBox3.PerformLayout();
             this.gpb_motivo_sindicancia.ResumeLayout(false);
             this.gpb_motivo_sindicancia.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +355,7 @@
         private System.Windows.Forms.GroupBox gpb_motivo_sindicancia;
         private System.Windows.Forms.RadioButton rdb_sem_comprovante;
         private System.Windows.Forms.RadioButton rdb_denuncia;
+        private System.Windows.Forms.Label lbl_origemSindicancia;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

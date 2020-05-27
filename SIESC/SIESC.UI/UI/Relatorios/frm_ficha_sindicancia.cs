@@ -16,9 +16,6 @@ namespace SIESC.UI.UI.Relatorios
 {
     public partial class frm_ficha_sindicancia : SIESC.UI.base_UI
     {
-        private int idSolicitacao;
-        private int idSindicancia;
-
         /// <summary>
         /// 
         /// </summary>
@@ -40,11 +37,10 @@ namespace SIESC.UI.UI.Relatorios
         private ReportDataSource datasource;
 
 
-        public frm_ficha_sindicancia(int _idsindicancia,int _idsolicitacao)
+        public frm_ficha_sindicancia(int idSindicancia, int? idSolicitacao)
         {
             InitializeComponent();
-            idSolicitacao = _idsolicitacao;
-            idSindicancia = _idsindicancia;
+           
             ConfiguraRelatorio();
 
             ficha_sindicancia_TA = new vw_ficha_sindicanciaTableAdapter();

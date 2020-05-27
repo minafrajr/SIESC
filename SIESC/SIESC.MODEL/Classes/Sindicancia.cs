@@ -17,22 +17,21 @@ namespace SIESC.MODEL.Classes
         public string nomeSindicado;
 
         /// <summary>
-        /// O endereço do sindicado 
-        /// </summary>
-        public string enderecoSindicado;
-
-        /// <summary>
         /// O código da sindicancia
         /// </summary>
-        public int codigoSincidancia { get; set; }
+        public int codigoSindidancia { get; set; }
         /// <summary>
         /// O código da solicitação a ser sindicada
         /// </summary>
         public int? codigoSolicitacao { get; set; }
-
+        /// <summary>
+        /// O Código do aluno
+        /// </summary>
         public int codigoAluno { get; set; }
 
-
+        /// <summary>
+        /// A data em que a sindicancia foi gerada
+        /// </summary>
         public DateTime? dataSindicancia { get; set; }
         /// <summary>
         /// O ano de ensino
@@ -72,7 +71,10 @@ namespace SIESC.MODEL.Classes
         /// O cep do logradouro
         /// </summary>
         public string Cep { get; set; }
-
+        /// <summary>
+        /// O Endereço completo da sindicância
+        /// </summary>
+        public string EnderecoCompleto { get; set; }
         /// <summary>
         /// Coordendas do endereço
         /// </summary>
@@ -84,9 +86,9 @@ namespace SIESC.MODEL.Classes
         public string usuarioFinalizacao { get; set; }
 
         /// <summary>
-        /// 
+        /// Origem da sindicancia. Se solicitação de Vaga ou Cadastro Escolar
         /// </summary>
-        public string origemSolicitacao { get; private set; }
+        public string origemSindicância { get;  set; }
 
         /// <summary>
         /// O motivo ao qual a solicitação foi enviada para sindicância
@@ -96,9 +98,13 @@ namespace SIESC.MODEL.Classes
         /// A data em que a sindicancia foi efetivada
         /// </summary>
         public DateTime? dataFinalizacao { get; set; }
-
+        /// <summary>
+        /// O código da instituição solicitada
+        /// </summary>
         public int instituicaoSolicitada { get; set; }
-
+        /// <summary>
+        /// O código da instituição encaminhada
+        /// </summary>
         public int? instituicaoEncaminhada { get; set; }
         /// <summary>
         /// Se a sindicancia foi efetivada
@@ -109,11 +115,11 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public bool? enderecoConfirmado { get; set; }
         /// <summary>
-        /// 
+        /// O status da sindicância
         /// </summary>
         public bool? status { get; set; }
         /// <summary>
-        /// 
+        /// A situação de pendencia da sindicância
         /// </summary>
         public bool? sindicanciaPendente { get; set; }
         /// <summary>

@@ -62,7 +62,6 @@
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_localizar = new System.Windows.Forms.Button();
-            this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.pnl_dados = new System.Windows.Forms.Panel();
             this.lbl_observacoes = new System.Windows.Forms.Label();
             this.txt_observacoes = new SIESC.UI.MyTextBox();
@@ -93,14 +92,13 @@
             this.lbl_datasolicitacao = new System.Windows.Forms.Label();
             this.txt_instituicao_solicitada = new SIESC.UI.MyTextBox();
             this.lbl_escolasolicitada = new System.Windows.Forms.Label();
-            this.lbl_telefone = new System.Windows.Forms.Label();
-            this.txt_telefone = new SIESC.UI.MyTextBox();
             this.dgv_dados = new System.Windows.Forms.DataGridView();
             this.sindicar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.regionaisTableAdapter = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
+            this.lbl_titulo_form = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -144,14 +142,14 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_dados);
-            this.splitContainer1.Size = new System.Drawing.Size(1287, 626);
-            this.splitContainer1.SplitterDistance = 201;
+            this.splitContainer1.Size = new System.Drawing.Size(1313, 626);
+            this.splitContainer1.SplitterDistance = 206;
             this.splitContainer1.TabIndex = 1;
             // 
             // lbl_id_ultima_sindicada
             // 
             this.lbl_id_ultima_sindicada.AutoSize = true;
-            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1152, 86);
+            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1182, 85);
             this.lbl_id_ultima_sindicada.Name = "lbl_id_ultima_sindicada";
             this.lbl_id_ultima_sindicada.Size = new System.Drawing.Size(13, 14);
             this.lbl_id_ultima_sindicada.TabIndex = 90;
@@ -169,7 +167,7 @@
             // lbl_apartir_sol
             // 
             this.lbl_apartir_sol.AutoSize = true;
-            this.lbl_apartir_sol.Location = new System.Drawing.Point(955, 74);
+            this.lbl_apartir_sol.Location = new System.Drawing.Point(959, 74);
             this.lbl_apartir_sol.Name = "lbl_apartir_sol";
             this.lbl_apartir_sol.Size = new System.Drawing.Size(135, 14);
             this.lbl_apartir_sol.TabIndex = 87;
@@ -180,7 +178,7 @@
             this.btn_concluir.Enabled = false;
             this.btn_concluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_concluir.Image = global::SIESC.UI.Properties.Resources._11;
-            this.btn_concluir.Location = new System.Drawing.Point(1080, 4);
+            this.btn_concluir.Location = new System.Drawing.Point(1113, 4);
             this.btn_concluir.Name = "btn_concluir";
             this.btn_concluir.Size = new System.Drawing.Size(72, 59);
             this.btn_concluir.TabIndex = 85;
@@ -194,7 +192,7 @@
             // 
             this.nupd_cod_solicitacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
-            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1091, 70);
+            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1095, 70);
             this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
             3500,
             0,
@@ -224,7 +222,7 @@
             this.gpb_localizar.Controls.Add(this.rdb_codigo);
             this.gpb_localizar.Location = new System.Drawing.Point(585, 2);
             this.gpb_localizar.Name = "gpb_localizar";
-            this.gpb_localizar.Size = new System.Drawing.Size(357, 64);
+            this.gpb_localizar.Size = new System.Drawing.Size(367, 64);
             this.gpb_localizar.TabIndex = 34;
             this.gpb_localizar.TabStop = false;
             this.gpb_localizar.Text = "Opções de busca";
@@ -235,7 +233,7 @@
             this.panel1.Controls.Add(this.chk_pendentes);
             this.panel1.Location = new System.Drawing.Point(189, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 26);
+            this.panel1.Size = new System.Drawing.Size(178, 26);
             this.panel1.TabIndex = 1;
             // 
             // chk_finalizadas
@@ -317,7 +315,7 @@
             // 
             this.btn_sindicar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sindicar.Image = global::SIESC.UI.Properties.Resources.inspector;
-            this.btn_sindicar.Location = new System.Drawing.Point(1007, 4);
+            this.btn_sindicar.Location = new System.Drawing.Point(1040, 4);
             this.btn_sindicar.Name = "btn_sindicar";
             this.btn_sindicar.Size = new System.Drawing.Size(72, 59);
             this.btn_sindicar.TabIndex = 84;
@@ -332,7 +330,7 @@
             this.btn_imprimir_ficha.Enabled = false;
             this.btn_imprimir_ficha.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_imprimir_ficha.Image = global::SIESC.UI.Properties.Resources._10693_323x32;
-            this.btn_imprimir_ficha.Location = new System.Drawing.Point(1152, 4);
+            this.btn_imprimir_ficha.Location = new System.Drawing.Point(1185, 4);
             this.btn_imprimir_ficha.Name = "btn_imprimir_ficha";
             this.btn_imprimir_ficha.Size = new System.Drawing.Size(72, 59);
             this.btn_imprimir_ficha.TabIndex = 44;
@@ -353,7 +351,7 @@
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_regional);
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_escola);
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_ano);
-            this.gpb_filtros_de_busca.Location = new System.Drawing.Point(954, 92);
+            this.gpb_filtros_de_busca.Location = new System.Drawing.Point(960, 95);
             this.gpb_filtros_de_busca.Name = "gpb_filtros_de_busca";
             this.gpb_filtros_de_busca.Size = new System.Drawing.Size(327, 99);
             this.gpb_filtros_de_busca.TabIndex = 88;
@@ -487,7 +485,7 @@
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
             this.btn_excluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_excluir.Location = new System.Drawing.Point(1225, 4);
+            this.btn_excluir.Location = new System.Drawing.Point(1258, 4);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(55, 59);
             this.btn_excluir.TabIndex = 41;
@@ -501,7 +499,7 @@
             // 
             this.btn_localizar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_localizar.Image = global::SIESC.UI.Properties.Resources._127;
-            this.btn_localizar.Location = new System.Drawing.Point(946, 4);
+            this.btn_localizar.Location = new System.Drawing.Point(979, 4);
             this.btn_localizar.Name = "btn_localizar";
             this.btn_localizar.Size = new System.Drawing.Size(60, 59);
             this.btn_localizar.TabIndex = 43;
@@ -510,16 +508,6 @@
             this.btn_localizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_localizar.UseVisualStyleBackColor = true;
             this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
-            // 
-            // lbl_titulo_form
-            // 
-            this.lbl_titulo_form.AutoSize = true;
-            this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
-            this.lbl_titulo_form.Name = "lbl_titulo_form";
-            this.lbl_titulo_form.Size = new System.Drawing.Size(267, 23);
-            this.lbl_titulo_form.TabIndex = 0;
-            this.lbl_titulo_form.Text = "Gerenciamento das Sindicâncias";
             // 
             // pnl_dados
             // 
@@ -542,8 +530,6 @@
             this.pnl_dados.Controls.Add(this.lbl_datasolicitacao);
             this.pnl_dados.Controls.Add(this.txt_instituicao_solicitada);
             this.pnl_dados.Controls.Add(this.lbl_escolasolicitada);
-            this.pnl_dados.Controls.Add(this.lbl_telefone);
-            this.pnl_dados.Controls.Add(this.txt_telefone);
             this.pnl_dados.Location = new System.Drawing.Point(3, 26);
             this.pnl_dados.Name = "pnl_dados";
             this.pnl_dados.Size = new System.Drawing.Size(952, 171);
@@ -567,7 +553,7 @@
             this.txt_observacoes.Location = new System.Drawing.Point(580, 116);
             this.txt_observacoes.Multiline = true;
             this.txt_observacoes.Name = "txt_observacoes";
-            this.txt_observacoes.Size = new System.Drawing.Size(365, 44);
+            this.txt_observacoes.Size = new System.Drawing.Size(369, 44);
             this.txt_observacoes.TabIndex = 96;
             this.txt_observacoes.Visible = false;
             // 
@@ -585,7 +571,7 @@
             this.gpb_sindicados.Controls.Add(this.label4);
             this.gpb_sindicados.Location = new System.Drawing.Point(583, 38);
             this.gpb_sindicados.Name = "gpb_sindicados";
-            this.gpb_sindicados.Size = new System.Drawing.Size(357, 62);
+            this.gpb_sindicados.Size = new System.Drawing.Size(366, 62);
             this.gpb_sindicados.TabIndex = 89;
             this.gpb_sindicados.TabStop = false;
             this.gpb_sindicados.Text = "Sindicância";
@@ -596,7 +582,7 @@
             this.lbl_denuncia.AutoSize = true;
             this.lbl_denuncia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_denuncia.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_denuncia.Location = new System.Drawing.Point(271, 38);
+            this.lbl_denuncia.Location = new System.Drawing.Point(173, 38);
             this.lbl_denuncia.Name = "lbl_denuncia";
             this.lbl_denuncia.Size = new System.Drawing.Size(30, 18);
             this.lbl_denuncia.TabIndex = 12;
@@ -605,7 +591,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(212, 42);
+            this.label8.Location = new System.Drawing.Point(114, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 14);
             this.label8.TabIndex = 11;
@@ -616,7 +602,7 @@
             this.lbl_usuario_finalizou.AutoSize = true;
             this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(182, 38);
+            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(257, 38);
             this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
             this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
             this.lbl_usuario_finalizou.TabIndex = 10;
@@ -625,7 +611,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(132, 41);
+            this.label7.Location = new System.Drawing.Point(207, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 14);
             this.label7.TabIndex = 9;
@@ -654,7 +640,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(209, 22);
+            this.label5.Location = new System.Drawing.Point(184, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 14);
             this.label5.TabIndex = 6;
@@ -665,7 +651,7 @@
             this.lbl_pendente.AutoSize = true;
             this.lbl_pendente.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_pendente.ForeColor = System.Drawing.Color.Peru;
-            this.lbl_pendente.Location = new System.Drawing.Point(275, 19);
+            this.lbl_pendente.Location = new System.Drawing.Point(242, 20);
             this.lbl_pendente.Name = "lbl_pendente";
             this.lbl_pendente.Size = new System.Drawing.Size(54, 18);
             this.lbl_pendente.TabIndex = 5;
@@ -676,7 +662,7 @@
             this.lbl_endereco_comprovado.AutoSize = true;
             this.lbl_endereco_comprovado.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_endereco_comprovado.ForeColor = System.Drawing.Color.Peru;
-            this.lbl_endereco_comprovado.Location = new System.Drawing.Point(136, 19);
+            this.lbl_endereco_comprovado.Location = new System.Drawing.Point(128, 19);
             this.lbl_endereco_comprovado.Name = "lbl_endereco_comprovado";
             this.lbl_endereco_comprovado.Size = new System.Drawing.Size(54, 18);
             this.lbl_endereco_comprovado.TabIndex = 4;
@@ -696,9 +682,9 @@
             this.txt_ano_ensino.BackColor = System.Drawing.Color.White;
             this.txt_ano_ensino.Enabled = false;
             this.txt_ano_ensino.Font = new System.Drawing.Font("Candara", 9F);
-            this.txt_ano_ensino.Location = new System.Drawing.Point(448, 21);
+            this.txt_ano_ensino.Location = new System.Drawing.Point(370, 99);
             this.txt_ano_ensino.Name = "txt_ano_ensino";
-            this.txt_ano_ensino.Size = new System.Drawing.Size(119, 22);
+            this.txt_ano_ensino.Size = new System.Drawing.Size(197, 22);
             this.txt_ano_ensino.TabIndex = 95;
             // 
             // lbl_cod_solicitacao
@@ -706,14 +692,14 @@
             this.lbl_cod_solicitacao.AutoSize = true;
             this.lbl_cod_solicitacao.Location = new System.Drawing.Point(2, 5);
             this.lbl_cod_solicitacao.Name = "lbl_cod_solicitacao";
-            this.lbl_cod_solicitacao.Size = new System.Drawing.Size(51, 14);
+            this.lbl_cod_solicitacao.Size = new System.Drawing.Size(52, 14);
             this.lbl_cod_solicitacao.TabIndex = 72;
-            this.lbl_cod_solicitacao.Text = "Solic. nº:";
+            this.lbl_cod_solicitacao.Text = "Solic. Nº:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(447, 5);
+            this.label3.Location = new System.Drawing.Point(369, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 14);
             this.label3.TabIndex = 94;
@@ -760,7 +746,7 @@
             this.txt_nomealuno.Enabled = false;
             this.txt_nomealuno.Location = new System.Drawing.Point(52, 21);
             this.txt_nomealuno.Name = "txt_nomealuno";
-            this.txt_nomealuno.Size = new System.Drawing.Size(395, 22);
+            this.txt_nomealuno.Size = new System.Drawing.Size(515, 22);
             this.txt_nomealuno.TabIndex = 76;
             this.txt_nomealuno.Tag = "Nome do aluno";
             // 
@@ -841,25 +827,6 @@
             this.lbl_escolasolicitada.TabIndex = 80;
             this.lbl_escolasolicitada.Text = "Instituição Solicitada:";
             // 
-            // lbl_telefone
-            // 
-            this.lbl_telefone.AutoSize = true;
-            this.lbl_telefone.Location = new System.Drawing.Point(366, 82);
-            this.lbl_telefone.Name = "lbl_telefone";
-            this.lbl_telefone.Size = new System.Drawing.Size(54, 14);
-            this.lbl_telefone.TabIndex = 82;
-            this.lbl_telefone.Text = "Telefone:";
-            // 
-            // txt_telefone
-            // 
-            this.txt_telefone.BackColor = System.Drawing.Color.White;
-            this.txt_telefone.Enabled = false;
-            this.txt_telefone.Font = new System.Drawing.Font("Candara", 9F);
-            this.txt_telefone.Location = new System.Drawing.Point(369, 99);
-            this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(198, 22);
-            this.txt_telefone.TabIndex = 83;
-            // 
             // dgv_dados
             // 
             this.dgv_dados.AllowUserToAddRows = false;
@@ -878,7 +845,7 @@
             this.dgv_dados.Name = "dgv_dados";
             this.dgv_dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dados.ShowEditingIcon = false;
-            this.dgv_dados.Size = new System.Drawing.Size(1287, 421);
+            this.dgv_dados.Size = new System.Drawing.Size(1313, 416);
             this.dgv_dados.TabIndex = 0;
             this.dgv_dados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dados_CellContentClick);
             this.dgv_dados.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_dados_CellMouseClick);
@@ -910,10 +877,20 @@
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
             // 
+            // lbl_titulo_form
+            // 
+            this.lbl_titulo_form.AutoSize = true;
+            this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
+            this.lbl_titulo_form.Name = "lbl_titulo_form";
+            this.lbl_titulo_form.Size = new System.Drawing.Size(267, 23);
+            this.lbl_titulo_form.TabIndex = 0;
+            this.lbl_titulo_form.Text = "Gerenciamento das Sindicâncias";
+            // 
             // GerenciaSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1293, 632);
+            this.ClientSize = new System.Drawing.Size(1319, 632);
             this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciaSindicancia";
             this.Text = "Gerenciamento de Sindicâncias";
@@ -954,7 +931,6 @@
         private MyComboBox cbo_escola;
         private System.Windows.Forms.Label lbl_ano_ensino;
         private MyComboBox cbo_regionais;
-        private System.Windows.Forms.Label lbl_titulo_form;
         private System.Windows.Forms.Label lbl_instituicoes;
         private System.Windows.Forms.Label lbl_regionais;
         private System.Windows.Forms.Button btn_imprimir_ficha;
@@ -972,8 +948,6 @@
         private MyTextBox txt_instituicao_solicitada;
         private System.Windows.Forms.Label lbl_datasolicitacao;
         private MyTextBox txt_datasolicitacao;
-        private MyTextBox txt_telefone;
-        private System.Windows.Forms.Label lbl_telefone;
         private System.Windows.Forms.Button btn_sindicar;
         private siescDataSet siescDataSet;
         private System.Windows.Forms.BindingSource regionaisBindingSource;
@@ -1017,5 +991,6 @@
         private System.Windows.Forms.Label lbl_ultima_sol_sindicada;
         private System.Windows.Forms.Label lbl_denuncia;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_titulo_form;
     }
 }

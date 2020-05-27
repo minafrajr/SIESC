@@ -25,8 +25,10 @@ namespace SIESC.UI.UI.Solicitacoes
         private void RepassaSindicancia()
         {
             txt_observacoes.Text = sindicancia.observacoes;
-            lbl_endereco.Text = sindicancia.enderecoSindicado;
+            lbl_endereco.Text = sindicancia.EnderecoCompleto;
             lbl_nome_sindicado.Text = sindicancia.nomeSindicado;
+            lbl_origemSindicancia.Text = sindicancia.origemSindicância;
+
             lbl_num_solicitacao.Text = sindicancia.codigoSolicitacao.ToString();
 
             if (sindicancia.motivoSindicancia.Equals("DENÚNCIA"))
@@ -35,18 +37,12 @@ namespace SIESC.UI.UI.Solicitacoes
             }
 
             if (sindicancia.enderecoConfirmado == true)
-            {
                 rdb_endereco_sim.Checked = true;
-            }
-            else if (sindicancia.enderecoConfirmado == false)
-            {
+            else if (sindicancia.enderecoConfirmado == false) 
                 rdb_endereco_nao.Checked = true;
-            }
 
-            if (sindicancia.sindicanciaPendente != null)
-            {
-                chk_pendente.Checked = (bool)sindicancia.sindicanciaPendente;
-            }
+            if (sindicancia.sindicanciaPendente != null) 
+                chk_pendente.Checked = (bool) sindicancia.sindicanciaPendente;
         }
 
         private void btn_cancelar_Click(object sender,EventArgs e)
@@ -74,9 +70,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private void ConfirmarAlteracoes()
         {
             if (!rdb_endereco_sim.Checked && !rdb_endereco_nao.Checked && !chk_pendente.Checked)
-            {
                 throw new Exception("A situação do endereço ou pendência deve ser definida!");
-            }
 
             controleSindicancia = new SindicanciaControl();
 
@@ -85,14 +79,8 @@ namespace SIESC.UI.UI.Solicitacoes
             sindicancia.motivoSindicancia = rdb_denuncia.Checked ? rdb_denuncia.Tag.ToString() : rdb_sem_comprovante.Tag.ToString();
 
 
-            if (rdb_endereco_sim.Checked)
-            {
-                sindicancia.enderecoConfirmado = true;
-            }
-            if (rdb_endereco_nao.Checked)
-            {
-                sindicancia.enderecoConfirmado = false;
-            }
+            if (rdb_endereco_sim.Checked) sindicancia.enderecoConfirmado = true;
+            if (rdb_endereco_nao.Checked) sindicancia.enderecoConfirmado = false;
 
             if (chk_pendente.Checked)
             {
@@ -108,9 +96,9 @@ namespace SIESC.UI.UI.Solicitacoes
 
 
             if (controleSindicancia.AtualizarSindicancia(sindicancia))
-            {
                 Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
-            }
+            else
+                Mensageiro.MensagemErro("Não foi possível concluir a sindicância!", PrincipalUi);
 
             this.Close();
         }
@@ -118,14 +106,10 @@ namespace SIESC.UI.UI.Solicitacoes
         private void chk_pendente_CheckedChanged(object sender,EventArgs e)
         {
             if (sindicancia.sindicanciaPendente != null && ((bool)sindicancia.sindicanciaPendente && !chk_pendente.Checked))
-            {
                 sindicancia.sindicanciaPendente = false;
-            }
 
             if (sindicancia.sindicanciaPendente != null && ((bool)!sindicancia.sindicanciaPendente && chk_pendente.Checked))
-            {
                 sindicancia.sindicanciaPendente = true;
-            }
         }
 
 
