@@ -40,7 +40,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private void GerenciaSindicancia_Load(object sender,EventArgs e)
         {
             tipoConsulta = TipoConsulta.geral;
-
+            
             CarregaGridView();
 
         }
@@ -768,6 +768,16 @@ namespace SIESC.UI.UI.Solicitacoes
         private void GerenciaSindicancia_Enter(object sender,EventArgs e)
         {
             RadioButtonChecked_Click(sender,e);
+        }
+
+        private void dgv_dados_ColumnStateChanged(object sender, DataGridViewColumnStateChangedEventArgs e)
+        {
+            
+        }
+
+        private void dgv_dados_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_linhas.Text = $@"Total de sindicâncias: {dgv_dados.Rows.Count}";
         }
     }
 }

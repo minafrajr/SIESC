@@ -62,6 +62,7 @@
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_localizar = new System.Windows.Forms.Button();
+            this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.pnl_dados = new System.Windows.Forms.Panel();
             this.lbl_observacoes = new System.Windows.Forms.Label();
             this.txt_observacoes = new SIESC.UI.MyTextBox();
@@ -92,13 +93,14 @@
             this.lbl_datasolicitacao = new System.Windows.Forms.Label();
             this.txt_instituicao_solicitada = new SIESC.UI.MyTextBox();
             this.lbl_escolasolicitada = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_linhas = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_dados = new System.Windows.Forms.DataGridView();
             this.sindicar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.regionaisTableAdapter = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
-            this.lbl_titulo_form = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -113,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
             this.pnl_dados.SuspendLayout();
             this.gpb_sindicados.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +144,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_dados);
             this.splitContainer1.Size = new System.Drawing.Size(1313, 626);
             this.splitContainer1.SplitterDistance = 206;
@@ -509,6 +513,16 @@
             this.btn_localizar.UseVisualStyleBackColor = true;
             this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
             // 
+            // lbl_titulo_form
+            // 
+            this.lbl_titulo_form.AutoSize = true;
+            this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
+            this.lbl_titulo_form.Name = "lbl_titulo_form";
+            this.lbl_titulo_form.Size = new System.Drawing.Size(267, 23);
+            this.lbl_titulo_form.TabIndex = 0;
+            this.lbl_titulo_form.Text = "Gerenciamento das Sindicâncias";
+            // 
             // pnl_dados
             // 
             this.pnl_dados.Controls.Add(this.lbl_observacoes);
@@ -827,6 +841,22 @@
             this.lbl_escolasolicitada.TabIndex = 80;
             this.lbl_escolasolicitada.Text = "Instituição Solicitada:";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_linhas});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 394);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1313, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_linhas
+            // 
+            this.lbl_num_linhas.Name = "lbl_num_linhas";
+            this.lbl_num_linhas.Size = new System.Drawing.Size(121, 17);
+            this.lbl_num_linhas.Text = "Total de sindicâncias: ";
+            // 
             // dgv_dados
             // 
             this.dgv_dados.AllowUserToAddRows = false;
@@ -839,17 +869,17 @@
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sindicar});
-            this.dgv_dados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_dados.Location = new System.Drawing.Point(0, 0);
             this.dgv_dados.MultiSelect = false;
             this.dgv_dados.Name = "dgv_dados";
             this.dgv_dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dados.ShowEditingIcon = false;
-            this.dgv_dados.Size = new System.Drawing.Size(1313, 416);
+            this.dgv_dados.Size = new System.Drawing.Size(1313, 391);
             this.dgv_dados.TabIndex = 0;
             this.dgv_dados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dados_CellContentClick);
             this.dgv_dados.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_dados_CellMouseClick);
             this.dgv_dados.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_dados_CellMouseDoubleClick);
+            this.dgv_dados.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_dados_DataBindingComplete);
             // 
             // sindicar
             // 
@@ -877,16 +907,6 @@
             // 
             this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
             // 
-            // lbl_titulo_form
-            // 
-            this.lbl_titulo_form.AutoSize = true;
-            this.lbl_titulo_form.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo_form.Location = new System.Drawing.Point(4, 2);
-            this.lbl_titulo_form.Name = "lbl_titulo_form";
-            this.lbl_titulo_form.Size = new System.Drawing.Size(267, 23);
-            this.lbl_titulo_form.TabIndex = 0;
-            this.lbl_titulo_form.Text = "Gerenciamento das Sindicâncias";
-            // 
             // GerenciaSindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -899,6 +919,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nupd_cod_solicitacao)).EndInit();
@@ -916,6 +937,8 @@
             this.pnl_dados.PerformLayout();
             this.gpb_sindicados.ResumeLayout(false);
             this.gpb_sindicados.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dados)).EndInit();
             this.ResumeLayout(false);
 
@@ -992,5 +1015,7 @@
         private System.Windows.Forms.Label lbl_denuncia;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_titulo_form;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_linhas;
     }
 }
