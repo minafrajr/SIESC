@@ -265,6 +265,7 @@
     <EmbeddedResource Include="Reports\Infantil\rpt_solicitacoes_escola_pivot_ano_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_solicitacoes_escola_pivot_ano.rdlc" />
     <EmbeddedResource Include="Reports\rpt_Solicitacoes_Dia.rdlc" />
+    <EmbeddedResource Include="Reports\Sindicancia\rpt_ficha_sindicancia_cadastro.rdlc" />
     <EmbeddedResource Include="Reports\Sindicancia\rpt_sindicancia_numerico.rdlc" />
     <EmbeddedResource Include="Reports\Sindicancia\rpt_controle_sindicancia.rdlc" />
     <EmbeddedResource Include="Reports\Sindicancia\rpt_ficha_sindicancia.rdlc" />

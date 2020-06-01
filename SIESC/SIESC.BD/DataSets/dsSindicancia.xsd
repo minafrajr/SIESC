@@ -2,10 +2,11 @@
 <xs:schema id="dsSindicancia" targetNamespace="http://tempuri.org/dsSindicancia.xsd" xmlns:mstns="http://tempuri.org/dsSindicancia.xsd" xmlns="http://tempuri.org/dsSindicancia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sindicanciaTableAdapter" GeneratorDataComponentClassName="sindicanciaTableAdapter" Name="sindicancia" UserDataComponentName="sindicanciaTableAdapter">
@@ -774,7 +775,7 @@ ORDER BY idSindicado</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_ficha_sindicanciaTableAdapter" GeneratorDataComponentClassName="vw_ficha_sindicanciaTableAdapter" Name="vw_ficha_sindicancia" UserDataComponentName="vw_ficha_sindicanciaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="siescConnectionString1 (Settings)" DbObjectName="siesc.vw_ficha_sindicancia" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_ficha_sindicancia" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idSindicancia`, `idSindicado`, `idSolicitacoesVagas`, `NomeAluno`, `Endereco`, `Regional`, `InstituicaoSolicitada`, `AnoEnsino`, `DataSolicitacao`, `GrauSolicitante`, `Solicitante`, `InstituicaoEncaminhada`, `UsuarioResponsavel`, `DataSindicancia`, `OrigemSindicancia`, `MotivoSindicancia`, `UsuarioFinalizou`, `Observacoes`, `DataFinalizacao`, `Pendente`, `SindicanciaFinalizada`, `EnderecoComprovado`, `Status`, `Telefone` FROM `siesc`.`vw_ficha_sindicancia`</CommandText>
@@ -810,7 +811,7 @@ ORDER BY idSindicado</CommandText>
               <Mapping SourceColumn="Telefone" DataSetColumn="Telefone" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="siescConnectionString1 (Settings)" DbObjectName="siesc.vw_ficha_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDadosFichaSindicancia" GetMethodModifier="Public" GetMethodName="GetDadosFichaSindicancia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDadosFichaSindicancia" UserSourceName="GetDadosFichaSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_ficha_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDadosFichaSindicancia" GetMethodModifier="Public" GetMethodName="GetDadosFichaSindicancia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDadosFichaSindicancia" UserSourceName="GetDadosFichaSindicancia">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        idSindicancia, idSindicado, idSolicitacoesVagas, NomeAluno, Endereco, Regional, InstituicaoSolicitada, AnoEnsino, DataSolicitacao, GrauSolicitante, Solicitante, InstituicaoEncaminhada, UsuarioResponsavel, DataSindicancia, 
@@ -826,6 +827,56 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_ficha_sindicancia_cadastradoTableAdapter" GeneratorDataComponentClassName="vw_ficha_sindicancia_cadastradoTableAdapter" Name="vw_ficha_sindicancia_cadastrado" UserDataComponentName="vw_ficha_sindicancia_cadastradoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_ficha_sindicancia_cadastrado" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idSindicancia`, `idSindicado`, `nomeAluno`, `Mae`, `Endereco`, `Regional`, `Telefone`, `InstituicaoSolicitada`, `InstituicaoEncaminhada`, `AnoEnsino`, `DataSindicancia`, `UsuarioResponsavel`, `OrigemSindicancia`, `MotivoSindicancia`, `Observacoes`, `DataFinalizacao`, `Pendente`, `SindicanciaFinalizada`, `EnderecoComprovado`, `Status` FROM `siesc`.`vw_ficha_sindicancia_cadastrado`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idSindicancia" DataSetColumn="idSindicancia" />
+              <Mapping SourceColumn="idSindicado" DataSetColumn="idSindicado" />
+              <Mapping SourceColumn="nomeAluno" DataSetColumn="nomeAluno" />
+              <Mapping SourceColumn="Mae" DataSetColumn="Mae" />
+              <Mapping SourceColumn="Endereco" DataSetColumn="Endereco" />
+              <Mapping SourceColumn="Regional" DataSetColumn="Regional" />
+              <Mapping SourceColumn="Telefone" DataSetColumn="Telefone" />
+              <Mapping SourceColumn="InstituicaoSolicitada" DataSetColumn="InstituicaoSolicitada" />
+              <Mapping SourceColumn="InstituicaoEncaminhada" DataSetColumn="InstituicaoEncaminhada" />
+              <Mapping SourceColumn="AnoEnsino" DataSetColumn="AnoEnsino" />
+              <Mapping SourceColumn="DataSindicancia" DataSetColumn="DataSindicancia" />
+              <Mapping SourceColumn="UsuarioResponsavel" DataSetColumn="UsuarioResponsavel" />
+              <Mapping SourceColumn="OrigemSindicancia" DataSetColumn="OrigemSindicancia" />
+              <Mapping SourceColumn="MotivoSindicancia" DataSetColumn="MotivoSindicancia" />
+              <Mapping SourceColumn="Observacoes" DataSetColumn="Observacoes" />
+              <Mapping SourceColumn="DataFinalizacao" DataSetColumn="DataFinalizacao" />
+              <Mapping SourceColumn="Pendente" DataSetColumn="Pendente" />
+              <Mapping SourceColumn="SindicanciaFinalizada" DataSetColumn="SindicanciaFinalizada" />
+              <Mapping SourceColumn="EnderecoComprovado" DataSetColumn="EnderecoComprovado" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_ficha_sindicancia_cadastrado" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDadosFichaSindicancia" GetMethodModifier="Public" GetMethodName="GetDadosFichaSindicancia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDadosFichaSindicancia" UserSourceName="GetDadosFichaSindicancia">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idSindicancia, idSindicado, nomeAluno, Mae, Endereco, Regional, Telefone, InstituicaoSolicitada, InstituicaoEncaminhada, AnoEnsino, DataSindicancia, UsuarioResponsavel, OrigemSindicancia, MotivoSindicancia, 
+                         Observacoes, DataFinalizacao, Pendente, SindicanciaFinalizada, EnderecoComprovado, Status
+FROM            vw_ficha_sindicancia_cadastrado
+WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idSindicancia" ColumnName="idSindicancia" DataSourceName="siesc.vw_ficha_sindicancia_cadastrado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idSindicancia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idSindicancia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idSindicado" ColumnName="idSindicado" DataSourceName="siesc.vw_ficha_sindicancia_cadastrado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idSindicado" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idSindicado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -834,7 +885,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
   <xs:element name="dsSindicancia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsSindicancia" msprop:Generator_UserDSName="dsSindicancia">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="sindicancia" msprop:Generator_TableClassName="sindicanciaDataTable" msprop:Generator_TableVarName="tablesindicancia" msprop:Generator_TablePropName="sindicancia" msprop:Generator_RowDeletingName="sindicanciaRowDeleting" msprop:Generator_RowChangingName="sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="sindicanciaRowDeleted" msprop:Generator_UserTableName="sindicancia" msprop:Generator_RowChangedName="sindicanciaRowChanged" msprop:Generator_RowEvArgName="sindicanciaRowChangeEvent" msprop:Generator_RowClassName="sindicanciaRow">
+        <xs:element name="sindicancia" msprop:Generator_TableClassName="sindicanciaDataTable" msprop:Generator_TableVarName="tablesindicancia" msprop:Generator_RowChangedName="sindicanciaRowChanged" msprop:Generator_TablePropName="sindicancia" msprop:Generator_RowDeletingName="sindicanciaRowDeleting" msprop:Generator_RowChangingName="sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="sindicanciaRowDeleted" msprop:Generator_RowClassName="sindicanciaRow" msprop:Generator_UserTableName="sindicancia" msprop:Generator_RowEvArgName="sindicanciaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSindicancia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSindicancia" msprop:Generator_ColumnPropNameInRow="idSindicancia" msprop:Generator_ColumnPropNameInTable="idSindicanciaColumn" msprop:Generator_UserColumnName="idSindicancia" type="xs:int" />
@@ -938,7 +989,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_sindicancia" msprop:Generator_TableClassName="vw_sindicanciaDataTable" msprop:Generator_TableVarName="tablevw_sindicancia" msprop:Generator_TablePropName="vw_sindicancia" msprop:Generator_RowDeletingName="vw_sindicanciaRowDeleting" msprop:Generator_RowChangingName="vw_sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="vw_sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_sindicanciaRowDeleted" msprop:Generator_UserTableName="vw_sindicancia" msprop:Generator_RowChangedName="vw_sindicanciaRowChanged" msprop:Generator_RowEvArgName="vw_sindicanciaRowChangeEvent" msprop:Generator_RowClassName="vw_sindicanciaRow">
+        <xs:element name="vw_sindicancia" msprop:Generator_TableClassName="vw_sindicanciaDataTable" msprop:Generator_TableVarName="tablevw_sindicancia" msprop:Generator_RowChangedName="vw_sindicanciaRowChanged" msprop:Generator_TablePropName="vw_sindicancia" msprop:Generator_RowDeletingName="vw_sindicanciaRowDeleting" msprop:Generator_RowChangingName="vw_sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="vw_sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_sindicanciaRowDeleted" msprop:Generator_RowClassName="vw_sindicanciaRow" msprop:Generator_UserTableName="vw_sindicancia" msprop:Generator_RowEvArgName="vw_sindicanciaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSindicancia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSindicancia" msprop:Generator_ColumnPropNameInRow="idSindicancia" msprop:Generator_ColumnPropNameInTable="idSindicanciaColumn" msprop:Generator_UserColumnName="idSindicancia" type="xs:int" />
@@ -1031,7 +1082,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_selecionar_sindicados" msprop:Generator_TableClassName="vw_selecionar_sindicadosDataTable" msprop:Generator_TableVarName="tablevw_selecionar_sindicados" msprop:Generator_TablePropName="vw_selecionar_sindicados" msprop:Generator_RowDeletingName="vw_selecionar_sindicadosRowDeleting" msprop:Generator_RowChangingName="vw_selecionar_sindicadosRowChanging" msprop:Generator_RowEvHandlerName="vw_selecionar_sindicadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_selecionar_sindicadosRowDeleted" msprop:Generator_UserTableName="vw_selecionar_sindicados" msprop:Generator_RowChangedName="vw_selecionar_sindicadosRowChanged" msprop:Generator_RowEvArgName="vw_selecionar_sindicadosRowChangeEvent" msprop:Generator_RowClassName="vw_selecionar_sindicadosRow">
+        <xs:element name="vw_selecionar_sindicados" msprop:Generator_TableClassName="vw_selecionar_sindicadosDataTable" msprop:Generator_TableVarName="tablevw_selecionar_sindicados" msprop:Generator_RowChangedName="vw_selecionar_sindicadosRowChanged" msprop:Generator_TablePropName="vw_selecionar_sindicados" msprop:Generator_RowDeletingName="vw_selecionar_sindicadosRowDeleting" msprop:Generator_RowChangingName="vw_selecionar_sindicadosRowChanging" msprop:Generator_RowEvHandlerName="vw_selecionar_sindicadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_selecionar_sindicadosRowDeleted" msprop:Generator_RowClassName="vw_selecionar_sindicadosRow" msprop:Generator_UserTableName="vw_selecionar_sindicados" msprop:Generator_RowEvArgName="vw_selecionar_sindicadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
@@ -1109,7 +1160,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_sindicancia_numerico" msprop:Generator_TableClassName="vw_sindicancia_numericoDataTable" msprop:Generator_TableVarName="tablevw_sindicancia_numerico" msprop:Generator_TablePropName="vw_sindicancia_numerico" msprop:Generator_RowDeletingName="vw_sindicancia_numericoRowDeleting" msprop:Generator_RowChangingName="vw_sindicancia_numericoRowChanging" msprop:Generator_RowEvHandlerName="vw_sindicancia_numericoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_sindicancia_numericoRowDeleted" msprop:Generator_UserTableName="vw_sindicancia_numerico" msprop:Generator_RowChangedName="vw_sindicancia_numericoRowChanged" msprop:Generator_RowEvArgName="vw_sindicancia_numericoRowChangeEvent" msprop:Generator_RowClassName="vw_sindicancia_numericoRow">
+        <xs:element name="vw_sindicancia_numerico" msprop:Generator_TableClassName="vw_sindicancia_numericoDataTable" msprop:Generator_TableVarName="tablevw_sindicancia_numerico" msprop:Generator_RowChangedName="vw_sindicancia_numericoRowChanged" msprop:Generator_TablePropName="vw_sindicancia_numerico" msprop:Generator_RowDeletingName="vw_sindicancia_numericoRowDeleting" msprop:Generator_RowChangingName="vw_sindicancia_numericoRowChanging" msprop:Generator_RowEvHandlerName="vw_sindicancia_numericoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_sindicancia_numericoRowDeleted" msprop:Generator_RowClassName="vw_sindicancia_numericoRow" msprop:Generator_UserTableName="vw_sindicancia_numerico" msprop:Generator_RowEvArgName="vw_sindicancia_numericoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="regional" msprop:Generator_ColumnVarNameInTable="columnregional" msprop:Generator_ColumnPropNameInRow="regional" msprop:Generator_ColumnPropNameInTable="regionalColumn" msprop:Generator_UserColumnName="regional">
@@ -1144,7 +1195,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_ficha_sindicancia" msprop:Generator_TableClassName="vw_ficha_sindicanciaDataTable" msprop:Generator_TableVarName="tablevw_ficha_sindicancia" msprop:Generator_TablePropName="vw_ficha_sindicancia" msprop:Generator_RowDeletingName="vw_ficha_sindicanciaRowDeleting" msprop:Generator_RowChangingName="vw_ficha_sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_sindicanciaRowDeleted" msprop:Generator_UserTableName="vw_ficha_sindicancia" msprop:Generator_RowChangedName="vw_ficha_sindicanciaRowChanged" msprop:Generator_RowEvArgName="vw_ficha_sindicanciaRowChangeEvent" msprop:Generator_RowClassName="vw_ficha_sindicanciaRow">
+        <xs:element name="vw_ficha_sindicancia" msprop:Generator_TableClassName="vw_ficha_sindicanciaDataTable" msprop:Generator_TableVarName="tablevw_ficha_sindicancia" msprop:Generator_RowChangedName="vw_ficha_sindicanciaRowChanged" msprop:Generator_TablePropName="vw_ficha_sindicancia" msprop:Generator_RowDeletingName="vw_ficha_sindicanciaRowDeleting" msprop:Generator_RowChangingName="vw_ficha_sindicanciaRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_sindicanciaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_sindicanciaRowDeleted" msprop:Generator_RowClassName="vw_ficha_sindicanciaRow" msprop:Generator_UserTableName="vw_ficha_sindicancia" msprop:Generator_RowEvArgName="vw_ficha_sindicanciaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSindicancia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSindicancia" msprop:Generator_ColumnPropNameInRow="idSindicancia" msprop:Generator_ColumnPropNameInTable="idSindicanciaColumn" msprop:Generator_UserColumnName="idSindicancia" type="xs:int" />
@@ -1258,6 +1309,104 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vw_ficha_sindicancia_cadastrado" msprop:Generator_TableClassName="vw_ficha_sindicancia_cadastradoDataTable" msprop:Generator_TableVarName="tablevw_ficha_sindicancia_cadastrado" msprop:Generator_TablePropName="vw_ficha_sindicancia_cadastrado" msprop:Generator_RowDeletingName="vw_ficha_sindicancia_cadastradoRowDeleting" msprop:Generator_RowChangingName="vw_ficha_sindicancia_cadastradoRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_sindicancia_cadastradoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_sindicancia_cadastradoRowDeleted" msprop:Generator_UserTableName="vw_ficha_sindicancia_cadastrado" msprop:Generator_RowChangedName="vw_ficha_sindicancia_cadastradoRowChanged" msprop:Generator_RowEvArgName="vw_ficha_sindicancia_cadastradoRowChangeEvent" msprop:Generator_RowClassName="vw_ficha_sindicancia_cadastradoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idSindicancia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSindicancia" msprop:Generator_ColumnPropNameInRow="idSindicancia" msprop:Generator_ColumnPropNameInTable="idSindicanciaColumn" msprop:Generator_UserColumnName="idSindicancia" type="xs:int" />
+              <xs:element name="idSindicado" msprop:Generator_ColumnVarNameInTable="columnidSindicado" msprop:Generator_ColumnPropNameInRow="idSindicado" msprop:Generator_ColumnPropNameInTable="idSindicadoColumn" msprop:Generator_UserColumnName="idSindicado" type="xs:int" minOccurs="0" />
+              <xs:element name="nomeAluno" msprop:Generator_ColumnVarNameInTable="columnnomeAluno" msprop:Generator_ColumnPropNameInRow="nomeAluno" msprop:Generator_ColumnPropNameInTable="nomeAlunoColumn" msprop:Generator_UserColumnName="nomeAluno">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mae" msprop:Generator_ColumnVarNameInTable="columnMae" msprop:Generator_ColumnPropNameInRow="Mae" msprop:Generator_ColumnPropNameInTable="MaeColumn" msprop:Generator_UserColumnName="Mae">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Endereco" msprop:Generator_ColumnVarNameInTable="columnEndereco" msprop:Generator_ColumnPropNameInRow="Endereco" msprop:Generator_ColumnPropNameInTable="EnderecoColumn" msprop:Generator_UserColumnName="Endereco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Regional" msprop:Generator_ColumnVarNameInTable="columnRegional" msprop:Generator_ColumnPropNameInRow="Regional" msprop:Generator_ColumnPropNameInTable="RegionalColumn" msprop:Generator_UserColumnName="Regional">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefone" msprop:Generator_ColumnVarNameInTable="columnTelefone" msprop:Generator_ColumnPropNameInRow="Telefone" msprop:Generator_ColumnPropNameInTable="TelefoneColumn" msprop:Generator_UserColumnName="Telefone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="47" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InstituicaoSolicitada" msprop:Generator_ColumnVarNameInTable="columnInstituicaoSolicitada" msprop:Generator_ColumnPropNameInRow="InstituicaoSolicitada" msprop:Generator_ColumnPropNameInTable="InstituicaoSolicitadaColumn" msprop:Generator_UserColumnName="InstituicaoSolicitada">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InstituicaoEncaminhada" msprop:Generator_ColumnVarNameInTable="columnInstituicaoEncaminhada" msprop:Generator_ColumnPropNameInRow="InstituicaoEncaminhada" msprop:Generator_ColumnPropNameInTable="InstituicaoEncaminhadaColumn" msprop:Generator_UserColumnName="InstituicaoEncaminhada" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnoEnsino" msprop:Generator_ColumnVarNameInTable="columnAnoEnsino" msprop:Generator_ColumnPropNameInRow="AnoEnsino" msprop:Generator_ColumnPropNameInTable="AnoEnsinoColumn" msprop:Generator_UserColumnName="AnoEnsino">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataSindicancia" msprop:Generator_ColumnVarNameInTable="columnDataSindicancia" msprop:Generator_ColumnPropNameInRow="DataSindicancia" msprop:Generator_ColumnPropNameInTable="DataSindicanciaColumn" msprop:Generator_UserColumnName="DataSindicancia" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UsuarioResponsavel" msprop:Generator_ColumnVarNameInTable="columnUsuarioResponsavel" msprop:Generator_ColumnPropNameInRow="UsuarioResponsavel" msprop:Generator_ColumnPropNameInTable="UsuarioResponsavelColumn" msprop:Generator_UserColumnName="UsuarioResponsavel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrigemSindicancia" msprop:Generator_ColumnVarNameInTable="columnOrigemSindicancia" msprop:Generator_ColumnPropNameInRow="OrigemSindicancia" msprop:Generator_ColumnPropNameInTable="OrigemSindicanciaColumn" msprop:Generator_UserColumnName="OrigemSindicancia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MotivoSindicancia" msprop:Generator_ColumnVarNameInTable="columnMotivoSindicancia" msprop:Generator_ColumnPropNameInRow="MotivoSindicancia" msprop:Generator_ColumnPropNameInTable="MotivoSindicanciaColumn" msprop:Generator_UserColumnName="MotivoSindicancia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacoes" msprop:Generator_ColumnVarNameInTable="columnObservacoes" msprop:Generator_ColumnPropNameInRow="Observacoes" msprop:Generator_ColumnPropNameInTable="ObservacoesColumn" msprop:Generator_UserColumnName="Observacoes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataFinalizacao" msprop:Generator_ColumnVarNameInTable="columnDataFinalizacao" msprop:Generator_ColumnPropNameInRow="DataFinalizacao" msprop:Generator_ColumnPropNameInTable="DataFinalizacaoColumn" msprop:Generator_UserColumnName="DataFinalizacao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Pendente" msprop:Generator_ColumnVarNameInTable="columnPendente" msprop:Generator_ColumnPropNameInRow="Pendente" msprop:Generator_ColumnPropNameInTable="PendenteColumn" msprop:Generator_UserColumnName="Pendente" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SindicanciaFinalizada" msprop:Generator_ColumnVarNameInTable="columnSindicanciaFinalizada" msprop:Generator_ColumnPropNameInRow="SindicanciaFinalizada" msprop:Generator_ColumnPropNameInTable="SindicanciaFinalizadaColumn" msprop:Generator_UserColumnName="SindicanciaFinalizada" type="xs:boolean" minOccurs="0" />
+              <xs:element name="EnderecoComprovado" msprop:Generator_ColumnVarNameInTable="columnEnderecoComprovado" msprop:Generator_ColumnPropNameInRow="EnderecoComprovado" msprop:Generator_ColumnPropNameInTable="EnderecoComprovadoColumn" msprop:Generator_UserColumnName="EnderecoComprovado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1274,6 +1423,10 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
     </xs:unique>
     <xs:unique name="vw_ficha_sindicancia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vw_ficha_sindicancia" />
+      <xs:field xpath="mstns:idSindicancia" />
+    </xs:unique>
+    <xs:unique name="vw_ficha_sindicancia_cadastrado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_ficha_sindicancia_cadastrado" />
       <xs:field xpath="mstns:idSindicancia" />
     </xs:unique>
   </xs:element>

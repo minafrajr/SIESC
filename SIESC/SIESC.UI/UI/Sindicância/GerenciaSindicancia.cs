@@ -753,8 +753,15 @@ namespace SIESC.UI.UI.Solicitacoes
 
         private void btn_imprimir_ficha_Click(object sender,EventArgs e)
         {
+            int.TryParse(dgv_dados.CurrentRow.Cells[2].Value.ToString(), out int idSolicitacao);
+                
+           //if (!dgv_dados.CurrentRow.Cells[2].Value.Equals(null)) 
+           //    idSolicitacao = (int) dgv_dados.CurrentRow.Cells[2].Value;
 
-           frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,(int?)dgv_dados.CurrentRow.Cells[2].Value) { MdiParent = principalUi };
+            int? idSindicado = null;
+            idSindicado = (int?) dgv_dados.CurrentRow.Cells[1].Value;
+
+           frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,idSolicitacao, idSindicado) { MdiParent = principalUi };
             fichaSindicancia.Show();
         }
 

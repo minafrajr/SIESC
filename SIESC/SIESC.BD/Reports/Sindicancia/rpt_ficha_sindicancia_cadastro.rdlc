@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b43d56d0-cba8-4ba1-956d-28c33e7d22bc</rd:DataSourceID>
+      <rd:DataSourceID>95507765-faa1-4dc1-ba85-71c420147690</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -25,12 +25,12 @@
           <DataField>idSindicado</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="idSolicitacoesVagas">
-          <DataField>idSolicitacoesVagas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="nomeAluno">
+          <DataField>nomeAluno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NomeAluno">
-          <DataField>NomeAluno</DataField>
+        <Field Name="Mae">
+          <DataField>Mae</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Endereco">
@@ -41,37 +41,29 @@
           <DataField>Regional</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Telefone">
+          <DataField>Telefone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="InstituicaoSolicitada">
           <DataField>InstituicaoSolicitada</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="AnoEnsino">
-          <DataField>AnoEnsino</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DataSolicitacao">
-          <DataField>DataSolicitacao</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="GrauSolicitante">
-          <DataField>GrauSolicitante</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Solicitante">
-          <DataField>Solicitante</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="InstituicaoEncaminhada">
           <DataField>InstituicaoEncaminhada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="UsuarioResponsavel">
-          <DataField>UsuarioResponsavel</DataField>
+        <Field Name="AnoEnsino">
+          <DataField>AnoEnsino</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DataSindicancia">
           <DataField>DataSindicancia</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UsuarioResponsavel">
+          <DataField>UsuarioResponsavel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="OrigemSindicancia">
           <DataField>OrigemSindicancia</DataField>
@@ -79,10 +71,6 @@
         </Field>
         <Field Name="MotivoSindicancia">
           <DataField>MotivoSindicancia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="UsuarioFinalizou">
-          <DataField>UsuarioFinalizou</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Observacoes">
@@ -109,18 +97,14 @@
           <DataField>Status</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="Telefone">
-          <DataField>Telefone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsSindicancia</rd:DataSetName>
         <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsSindicancia.xsd</rd:SchemaPath>
-        <rd:TableName>vw_ficha_sindicancia</rd:TableName>
+        <rd:TableName>vw_ficha_sindicancia_cadastrado</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>vw_ficha_sindicanciaTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>vw_ficha_sindicancia_cadastradoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -916,7 +900,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!NomeAluno.Value, "dsSindicancia")</Value>
+                    <Value>=First(Fields!nomeAluno.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1009,7 +993,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!InstituicaoSolicitada.Value, "dsSindicancia")</Value>
+                    <Value>=First(Fields!InstituicaoEncaminhada.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1076,7 +1060,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Solicitação Nº:</Value>
+                    <Value>Sindicância Nº:</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1108,7 +1092,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!idSolicitacoesVagas.Value, "dsSindicancia")</Value>
+                    <Value>=First(Fields!idSindicancia.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1241,7 +1225,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Responsável:</Value>
+                    <Value>Mãe:</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1273,7 +1257,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(First(Fields!GrauSolicitante.Value, "dsSindicancia") = "MÃE","MÃE",First(Fields!Solicitante.Value, "dsSindicancia") &amp; " - " &amp; First(Fields!GrauSolicitante.Value, "dsSindicancia"))</Value>
+                    <Value>=First(Fields!Mae.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
