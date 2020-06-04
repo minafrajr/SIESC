@@ -93,18 +93,15 @@ namespace SIESC.UI.UI.Relatorios
                         cbo_escola.SelectedValue.ToString());
                     break;
                 case TipoConsulta.geral:
-
-                    dt = this.Sindicancia_TA.GetSindicancias();
-
+                    dt = this.Sindicancia_TA.GetData();
                     break;
-
             }
 
             rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Sindicancia\\rpt_controle_sindicancia.rdlc";
 
 
             dataSource = new ReportDataSource();
-            dataSource.Name = "dsRelatorios";
+            dataSource.Name = "dsSindicancia";
 
             dataSource.Value = dt;
 

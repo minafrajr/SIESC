@@ -41,8 +41,10 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             tipoConsulta = TipoConsulta.geral;
             
+            sindicanciaControl = new SindicanciaControl();
+            lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
+            nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
             CarregaGridView();
-
         }
 
         private void cbo_regionais_DropDown(object sender,EventArgs e)
@@ -182,6 +184,8 @@ namespace SIESC.UI.UI.Solicitacoes
                 dgv_dados.DataSource = dt;
 
                 dgv_dados.Refresh();
+
+               
             }
             catch (NullReferenceException ex)
             {
@@ -191,7 +195,6 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 Mensageiro.MensagemErro(ex,this);
             }
-
         }
 
         private void btn_concluir_Click(object sender,EventArgs e)
@@ -770,11 +773,7 @@ namespace SIESC.UI.UI.Solicitacoes
             RadioButtonChecked_Click(sender,e);
         }
 
-        private void dgv_dados_ColumnStateChanged(object sender, DataGridViewColumnStateChangedEventArgs e)
-        {
-            
-        }
-
+     
         private void dgv_dados_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             lbl_num_linhas.Text = $@"Total de sindicâncias: {dgv_dados.Rows.Count}";

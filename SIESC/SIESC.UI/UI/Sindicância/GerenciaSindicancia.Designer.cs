@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
             this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
@@ -153,7 +153,7 @@
             // lbl_id_ultima_sindicada
             // 
             this.lbl_id_ultima_sindicada.AutoSize = true;
-            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1182, 85);
+            this.lbl_id_ultima_sindicada.Location = new System.Drawing.Point(1117, 87);
             this.lbl_id_ultima_sindicada.Name = "lbl_id_ultima_sindicada";
             this.lbl_id_ultima_sindicada.Size = new System.Drawing.Size(13, 14);
             this.lbl_id_ultima_sindicada.TabIndex = 90;
@@ -162,7 +162,7 @@
             // lbl_ultima_sol_sindicada
             // 
             this.lbl_ultima_sol_sindicada.AutoSize = true;
-            this.lbl_ultima_sol_sindicada.Location = new System.Drawing.Point(1143, 73);
+            this.lbl_ultima_sol_sindicada.Location = new System.Drawing.Point(961, 88);
             this.lbl_ultima_sol_sindicada.Name = "lbl_ultima_sol_sindicada";
             this.lbl_ultima_sol_sindicada.Size = new System.Drawing.Size(150, 14);
             this.lbl_ultima_sol_sindicada.TabIndex = 89;
@@ -171,7 +171,7 @@
             // lbl_apartir_sol
             // 
             this.lbl_apartir_sol.AutoSize = true;
-            this.lbl_apartir_sol.Location = new System.Drawing.Point(959, 74);
+            this.lbl_apartir_sol.Location = new System.Drawing.Point(959, 67);
             this.lbl_apartir_sol.Name = "lbl_apartir_sol";
             this.lbl_apartir_sol.Size = new System.Drawing.Size(135, 14);
             this.lbl_apartir_sol.TabIndex = 87;
@@ -196,7 +196,7 @@
             // 
             this.nupd_cod_solicitacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
-            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1095, 70);
+            this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1100, 64);
             this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
             3500,
             0,
@@ -355,7 +355,7 @@
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_regional);
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_escola);
             this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_ano);
-            this.gpb_filtros_de_busca.Location = new System.Drawing.Point(960, 95);
+            this.gpb_filtros_de_busca.Location = new System.Drawing.Point(960, 104);
             this.gpb_filtros_de_busca.Name = "gpb_filtros_de_busca";
             this.gpb_filtros_de_busca.Size = new System.Drawing.Size(327, 99);
             this.gpb_filtros_de_busca.TabIndex = 88;
@@ -398,6 +398,7 @@
             // 
             this.regionaisBindingSource.DataMember = "regionais";
             this.regionaisBindingSource.DataSource = this.siescDataSet;
+            this.regionaisBindingSource.Sort = "nomeRegional";
             // 
             // siescDataSet
             // 
@@ -863,8 +864,8 @@
             this.dgv_dados.AllowUserToDeleteRows = false;
             this.dgv_dados.AllowUserToOrderColumns = true;
             this.dgv_dados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

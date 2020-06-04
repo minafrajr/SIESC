@@ -209,6 +209,9 @@
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.regionaisTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
+            this.finalizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_gerenciar_cadastrados = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.tsm_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -296,7 +299,7 @@
             // 
             this.cadastrarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
@@ -304,7 +307,7 @@
             // 
             this.consultarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431676741_How_to;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -312,7 +315,7 @@
             // 
             this.gerenciarToolStripMenuItem3.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem3.Name = "gerenciarToolStripMenuItem3";
-            this.gerenciarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.gerenciarToolStripMenuItem3.Size = new System.Drawing.Size(196, 38);
             this.gerenciarToolStripMenuItem3.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem3.Click += new System.EventHandler(this.gerenciarToolStripMenuItem3_Click);
             // 
@@ -320,7 +323,7 @@
             // 
             this.tsm_listarEmails.Image = global::SIESC.UI.Properties.Resources.mail;
             this.tsm_listarEmails.Name = "tsm_listarEmails";
-            this.tsm_listarEmails.Size = new System.Drawing.Size(140, 22);
+            this.tsm_listarEmails.Size = new System.Drawing.Size(196, 38);
             this.tsm_listarEmails.Text = "Lista E-mails";
             this.tsm_listarEmails.Click += new System.EventHandler(this.tsm_listarEmails_Click);
             // 
@@ -341,7 +344,7 @@
             // 
             this.tsmi_cadastraraluno.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.tsmi_cadastraraluno.Name = "tsmi_cadastraraluno";
-            this.tsmi_cadastraraluno.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_cadastraraluno.Size = new System.Drawing.Size(196, 38);
             this.tsmi_cadastraraluno.Text = "Cadastrar";
             this.tsmi_cadastraraluno.Click += new System.EventHandler(this.tsmi_cadastraraluno_Click);
             // 
@@ -349,7 +352,7 @@
             // 
             this.gerenciarToolStripMenuItem4.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem4.Name = "gerenciarToolStripMenuItem4";
-            this.gerenciarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem4.Size = new System.Drawing.Size(196, 38);
             this.gerenciarToolStripMenuItem4.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem4.Click += new System.EventHandler(this.gerenciarToolStripMenuItem4_Click);
             // 
@@ -371,7 +374,7 @@
             // 
             this.cadastrarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -379,21 +382,21 @@
             // 
             this.autorizarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
             this.autorizarToolStripMenuItem.Name = "autorizarToolStripMenuItem";
-            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.autorizarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.autorizarToolStripMenuItem.Text = "Autorizar";
             // 
             // gerenciarToolStripMenuItem2
             // 
             this.gerenciarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem2.Name = "gerenciarToolStripMenuItem2";
-            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
             this.gerenciarToolStripMenuItem2.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem2.Click += new System.EventHandler(this.gerenciarToolStripMenuItem2_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(193, 6);
             // 
             // btn_solicitavaga
             // 
@@ -416,14 +419,14 @@
             // 
             this.tsmi_solicitar.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.tsmi_solicitar.Name = "tsmi_solicitar";
-            this.tsmi_solicitar.Size = new System.Drawing.Size(196, 22);
+            this.tsmi_solicitar.Size = new System.Drawing.Size(212, 38);
             this.tsmi_solicitar.Text = "Solicitar Vaga";
             this.tsmi_solicitar.Click += new System.EventHandler(this.tsmi_solicitar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(209, 6);
             // 
             // toolStripTextBox3
             // 
@@ -440,7 +443,7 @@
             // 
             this.tsm_solicitacoes_.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.tsm_solicitacoes_.Name = "tsm_solicitacoes_";
-            this.tsm_solicitacoes_.Size = new System.Drawing.Size(196, 22);
+            this.tsm_solicitacoes_.Size = new System.Drawing.Size(212, 38);
             this.tsm_solicitacoes_.Text = "Gerenciar Solicitações";
             this.tsm_solicitacoes_.Click += new System.EventHandler(this.tsm_solicitacoes__Click);
             // 
@@ -448,7 +451,7 @@
             // 
             this.tsm_motivos_.Image = global::SIESC.UI.Properties.Resources._1431668763_list_alt_32;
             this.tsm_motivos_.Name = "tsm_motivos_";
-            this.tsm_motivos_.Size = new System.Drawing.Size(196, 22);
+            this.tsm_motivos_.Size = new System.Drawing.Size(212, 38);
             this.tsm_motivos_.Text = "Motivos";
             this.tsm_motivos_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.tsm_motivos_.Click += new System.EventHandler(this.tsm_motivos_Click);
@@ -457,7 +460,8 @@
             // 
             this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem2,
-            this.gerenciarToolStripMenuItem});
+            this.gerenciarToolStripMenuItem,
+            this.tsm_gerenciar_cadastrados});
             this.toolStripButton2.Image = global::SIESC.UI.Properties.Resources.inspector;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
@@ -469,7 +473,7 @@
             // 
             this.cadastrarToolStripMenuItem2.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(208, 38);
             this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
@@ -477,7 +481,7 @@
             // 
             this.gerenciarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(208, 38);
             this.gerenciarToolStripMenuItem.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
             // 
@@ -499,7 +503,7 @@
             // 
             this.autorizacaoExpressaToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.rocket_icon;
             this.autorizacaoExpressaToolStripMenuItem.Name = "autorizacaoExpressaToolStripMenuItem";
-            this.autorizacaoExpressaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.autorizacaoExpressaToolStripMenuItem.Size = new System.Drawing.Size(201, 38);
             this.autorizacaoExpressaToolStripMenuItem.Text = "Autorização Expressa";
             this.autorizacaoExpressaToolStripMenuItem.Click += new System.EventHandler(this.autorizacaoExpressaToolStripMenuItem_Click);
             // 
@@ -507,7 +511,7 @@
             // 
             this.autorizarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
             this.autorizarToolStripMenuItem1.Name = "autorizarToolStripMenuItem1";
-            this.autorizarToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.autorizarToolStripMenuItem1.Size = new System.Drawing.Size(201, 38);
             this.autorizarToolStripMenuItem1.Text = "Solicitar Autorização";
             this.autorizarToolStripMenuItem1.Click += new System.EventHandler(this.autorizarToolStripMenuItem1_Click);
             // 
@@ -515,7 +519,7 @@
             // 
             this.gerenciarToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem1.Name = "gerenciarToolStripMenuItem1";
-            this.gerenciarToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.gerenciarToolStripMenuItem1.Size = new System.Drawing.Size(201, 38);
             this.gerenciarToolStripMenuItem1.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem1.Click += new System.EventHandler(this.gerenciarToolStripMenuItem1_Click);
             // 
@@ -524,7 +528,7 @@
             this.emitirCarteirinhaToolStripMenuItem.Enabled = false;
             this.emitirCarteirinhaToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431671337_user_info;
             this.emitirCarteirinhaToolStripMenuItem.Name = "emitirCarteirinhaToolStripMenuItem";
-            this.emitirCarteirinhaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.emitirCarteirinhaToolStripMenuItem.Size = new System.Drawing.Size(201, 38);
             this.emitirCarteirinhaToolStripMenuItem.Text = "Emitir Carteirinha";
             this.emitirCarteirinhaToolStripMenuItem.Click += new System.EventHandler(this.emitirCarteirinhaToolStripMenuItem_Click);
             // 
@@ -544,7 +548,7 @@
             // 
             this.locallizarCEPToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.correios_128x96;
             this.locallizarCEPToolStripMenuItem.Name = "locallizarCEPToolStripMenuItem";
-            this.locallizarCEPToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.locallizarCEPToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.locallizarCEPToolStripMenuItem.Text = "Localizar CEP";
             this.locallizarCEPToolStripMenuItem.Click += new System.EventHandler(this.locallizarCEPToolStripMenuItem_Click);
             // 
@@ -552,7 +556,7 @@
             // 
             this.localizarEndereçoToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.mapmarker;
             this.localizarEndereçoToolStripMenuItem.Name = "localizarEndereçoToolStripMenuItem";
-            this.localizarEndereçoToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.localizarEndereçoToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.localizarEndereçoToolStripMenuItem.Text = "Localizar Endereço";
             this.localizarEndereçoToolStripMenuItem.Click += new System.EventHandler(this.localizarEndereçoToolStripMenuItem_Click);
             // 
@@ -573,7 +577,7 @@
             // 
             this.zonearAlunoToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.if_location_718953;
             this.zonearAlunoToolStripMenuItem.Name = "zonearAlunoToolStripMenuItem";
-            this.zonearAlunoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.zonearAlunoToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.zonearAlunoToolStripMenuItem.Text = "Zonear por Aluno";
             this.zonearAlunoToolStripMenuItem.Click += new System.EventHandler(this.zonearAlunoToolStripMenuItem_Click);
             // 
@@ -581,7 +585,7 @@
             // 
             this.zonearEndereçoToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.if_compass_15195;
             this.zonearEndereçoToolStripMenuItem.Name = "zonearEndereçoToolStripMenuItem";
-            this.zonearEndereçoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.zonearEndereçoToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.zonearEndereçoToolStripMenuItem.Text = "Zonear por Endereço";
             this.zonearEndereçoToolStripMenuItem.Click += new System.EventHandler(this.zonearEndereçoToolStripMenuItem_Click);
             // 
@@ -589,7 +593,7 @@
             // 
             this.localizarSolicitaçãoToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1211805003;
             this.localizarSolicitaçãoToolStripMenuItem.Name = "localizarSolicitaçãoToolStripMenuItem";
-            this.localizarSolicitaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.localizarSolicitaçãoToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.localizarSolicitaçãoToolStripMenuItem.Text = "Localizar Solicitação";
             this.localizarSolicitaçãoToolStripMenuItem.Click += new System.EventHandler(this.localizarSolicitaçãoToolStripMenuItem_Click);
             // 
@@ -639,7 +643,7 @@
             this.tsm_infantil_comp_sol_enc});
             this.educaçãoInfantilToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.baby_icon_31207_32;
             this.educaçãoInfantilToolStripMenuItem.Name = "educaçãoInfantilToolStripMenuItem";
-            this.educaçãoInfantilToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.educaçãoInfantilToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.educaçãoInfantilToolStripMenuItem.Text = "Educação Infantil";
             // 
             // toolStripTextBox4
@@ -815,7 +819,7 @@
             this.tsm_fund_comp_sol_enc});
             this.ensinoFundamentalToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.kid_icon_31185_32;
             this.ensinoFundamentalToolStripMenuItem.Name = "ensinoFundamentalToolStripMenuItem";
-            this.ensinoFundamentalToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.ensinoFundamentalToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.ensinoFundamentalToolStripMenuItem.Text = "Ensino Fundamental";
             // 
             // nominalToolStripMenuItem
@@ -990,7 +994,7 @@
             this.tsm_solicitacoes_encaminhamentos});
             this.geralToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.doc_math_97139_48;
             this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
-            this.geralToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.geralToolStripMenuItem.Text = "Geral";
             // 
             // toolStripTextBox7
@@ -1138,18 +1142,20 @@
             // 
             this.toolStripSeparator3.ForeColor = System.Drawing.Color.Black;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(195, 6);
             // 
             // sindicânciaToolStripMenuItem1
             // 
             this.sindicânciaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox13,
+            this.finalizadasToolStripMenuItem,
+            this.pendentesToolStripMenuItem,
             this.sindicadosToolStripMenuItem,
             this.nUMÉRICOSToolStripMenuItem,
             this.nºDeSindicadosPorSituaçãoToolStripMenuItem});
             this.sindicânciaToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources.inspector;
             this.sindicânciaToolStripMenuItem1.Name = "sindicânciaToolStripMenuItem1";
-            this.sindicânciaToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.sindicânciaToolStripMenuItem1.Size = new System.Drawing.Size(198, 38);
             this.sindicânciaToolStripMenuItem1.Text = "Sindicância";
             // 
             // toolStripTextBox13
@@ -1199,7 +1205,7 @@
             this.toolStripMenuItem10});
             this.autorizacoesToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431672026_check_box;
             this.autorizacoesToolStripMenuItem.Name = "autorizacoesToolStripMenuItem";
-            this.autorizacoesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.autorizacoesToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.autorizacoesToolStripMenuItem.Text = "Autorizações";
             // 
             // tsm_autorizacoes_escola
@@ -1281,7 +1287,7 @@
             this.funcionáriosPorEscolaToolStripMenuItem});
             this.funcionáriosToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431654656_people;
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             // 
             // diretoresPorEscolaToolStripMenuItem
@@ -1374,7 +1380,7 @@
             this.tsm_num_instituicoes_mantenedor});
             this.instituiçõesToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Home_128;
             this.instituiçõesToolStripMenuItem.Name = "instituiçõesToolStripMenuItem";
-            this.instituiçõesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.instituiçõesToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.instituiçõesToolStripMenuItem.Text = "Instituições";
             // 
             // municipaisToolStripMenuItem2
@@ -1548,7 +1554,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(195, 6);
             // 
             // outrosToolStripMenuItem
             // 
@@ -1557,7 +1563,7 @@
             this.tsm_formulariopendenteturma});
             this.outrosToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.box_full_products_14639_48;
             this.outrosToolStripMenuItem.Name = "outrosToolStripMenuItem";
-            this.outrosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.outrosToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.outrosToolStripMenuItem.Text = "Outros";
             // 
             // mapaEndereçoSolicitadosToolStripMenuItem
@@ -1611,7 +1617,7 @@
             // 
             this.mantenedoresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
-            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
             this.mantenedoresToolStripMenuItem.Click += new System.EventHandler(this.mantenedoresToolStripMenuItem_Click);
             // 
@@ -1619,14 +1625,14 @@
             // 
             this.regionaisToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.regionaisToolStripMenuItem.Name = "regionaisToolStripMenuItem";
-            this.regionaisToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.regionaisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.regionaisToolStripMenuItem.Text = "Regionais";
             // 
             // diretoriasToolStripMenuItem
             // 
             this.diretoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.diretoriasToolStripMenuItem.Name = "diretoriasToolStripMenuItem";
-            this.diretoriasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.diretoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.diretoriasToolStripMenuItem.Text = "Diretorias";
             // 
             // janelasToolStripMenuItem
@@ -1640,7 +1646,7 @@
             this.fecharToolStripMenuItem,
             this.organizarÍconesToolStripMenuItem});
             this.janelasToolStripMenuItem.Name = "janelasToolStripMenuItem";
-            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.janelasToolStripMenuItem.Text = "Janelas";
             // 
             // cascataToolStripMenuItem
@@ -1718,6 +1724,25 @@
             // regionaisTableAdapter1
             // 
             this.regionaisTableAdapter1.ClearBeforeFill = true;
+            // 
+            // finalizadasToolStripMenuItem
+            // 
+            this.finalizadasToolStripMenuItem.Name = "finalizadasToolStripMenuItem";
+            this.finalizadasToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.finalizadasToolStripMenuItem.Text = "Finalizadas";
+            // 
+            // pendentesToolStripMenuItem
+            // 
+            this.pendentesToolStripMenuItem.Name = "pendentesToolStripMenuItem";
+            this.pendentesToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.pendentesToolStripMenuItem.Text = "Pendentes";
+            // 
+            // tsm_gerenciar_cadastrados
+            // 
+            this.tsm_gerenciar_cadastrados.Image = global::SIESC.UI.Properties.Resources._10693_323x32;
+            this.tsm_gerenciar_cadastrados.Name = "tsm_gerenciar_cadastrados";
+            this.tsm_gerenciar_cadastrados.Size = new System.Drawing.Size(208, 38);
+            this.tsm_gerenciar_cadastrados.Text = "Gerenciar Cadastrados";
             // 
             // Principal_UI
             // 
@@ -1925,6 +1950,9 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem gerenciarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finalizadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsm_gerenciar_cadastrados;
     }
 }
 

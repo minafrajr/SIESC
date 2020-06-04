@@ -13,11 +13,6 @@ namespace SIESC.BD.Control
 {
     public class SindicanciaControl
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        private vw_comprovacao_enderecoTableAdapter vw_ComprovacaoEnderecoTA;
-
         private sindicanciaTableAdapter sindicancia_TA;
 
         private vw_selecionar_sindicadosTableAdapter selecionarSindicados_TA;
@@ -29,11 +24,7 @@ namespace SIESC.BD.Control
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,
-                sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,
-                sindicancia.Coordenadas[0],sindicancia.Coordenadas[1],sindicancia.Cep,
-                sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,
-                 sindicancia.observacoes,sindicancia.status) > 0);
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,sindicancia.Coordenadas[0],sindicancia.Coordenadas[1], sindicancia.Cep,sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,sindicancia.observacoes,sindicancia.status) > 0);
         }
 
         public bool InserirSindicancias(List<Sindicancia> sindicancias)
@@ -45,10 +36,8 @@ namespace SIESC.BD.Control
                 sindicancia_TA.SalvarSindicancia(item.codigoSolicitacao,item.dataSindicancia,
                     item.usuarioResponsavel,true);
             }
-
             return true;
         }
-
 
         public DataTable GetTodos(bool sindicados,int codigoSolicitacao)
         {
@@ -193,7 +182,7 @@ namespace SIESC.BD.Control
 
         public string MaximoIdSolicitacao()
         {
-            sindicancia_TA = new sindicanciaTableAdapter();
+            vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
             return vw_sindicancia_TA.GetMaxidSolicitacao().ToString();
         }
 
