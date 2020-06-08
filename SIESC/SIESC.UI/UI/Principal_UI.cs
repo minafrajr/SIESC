@@ -2509,5 +2509,10 @@ namespace SIESC.UI
             frm_cadastraSindicancia.MdiParent = this;
             frm_cadastraSindicancia.Show();
         }
+
+        private void tsm_gerenciar_cadastrados_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

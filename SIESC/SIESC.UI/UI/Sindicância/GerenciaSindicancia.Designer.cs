@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
             this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
@@ -198,7 +198,7 @@
             this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
             this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1100, 64);
             this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
-            3500,
+            5000,
             0,
             0,
             0});
@@ -212,7 +212,7 @@
             this.nupd_cod_solicitacao.TabIndex = 86;
             this.nupd_cod_solicitacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nupd_cod_solicitacao.Value = new decimal(new int[] {
-            1000,
+            1500,
             0,
             0,
             0});
@@ -864,8 +864,8 @@
             this.dgv_dados.AllowUserToDeleteRows = false;
             this.dgv_dados.AllowUserToOrderColumns = true;
             this.dgv_dados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

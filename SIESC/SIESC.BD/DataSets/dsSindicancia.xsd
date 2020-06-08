@@ -495,12 +495,36 @@ FROM            vw_sindicancia</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicanciaDenuncia" GetMethodModifier="Public" GetMethodName="GetSindicanciaDenuncia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicanciaDenuncia" UserSourceName="GetSindicanciaDenuncia">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, 
+                         Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+FROM            vw_sindicancia
+WHERE        (Status = 1) AND (MotivoSindicancia = 'DENÚNCIA')
+ORDER BY idSindicado</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicancias" GetMethodModifier="Public" GetMethodName="GetSindicancias" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicancias" UserSourceName="GetSindicancias">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente,Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
 FROM            vw_sindicancia
 WHERE        (Status = 1) AND (SindicanciaFinalizada IS NULL) AND (Pendente IS NULL)
+ORDER BY idSindicado</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicanciasCadastro" GetMethodModifier="Public" GetMethodName="GetSindicanciasCadastro" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicanciasCadastro" UserSourceName="GetSindicanciasCadastro">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, 
+                         Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+FROM            vw_sindicancia
+WHERE        (Status = 1) AND (SindicanciaFinalizada IS NULL) AND (Pendente IS NULL) AND (OrigemSindicancia = 'Cadastro')
 ORDER BY idSindicado</CommandText>
                     <Parameters />
                   </DbCommand>

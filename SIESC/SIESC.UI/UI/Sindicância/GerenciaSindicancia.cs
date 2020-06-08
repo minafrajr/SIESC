@@ -43,7 +43,7 @@ namespace SIESC.UI.UI.Solicitacoes
             
             sindicanciaControl = new SindicanciaControl();
             lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
-            nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+            //nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
             CarregaGridView();
         }
 

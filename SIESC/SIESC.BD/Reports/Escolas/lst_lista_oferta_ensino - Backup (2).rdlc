@@ -59,7 +59,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="SIESC " &amp; Year(Now())</Value>
+                    <Value>="Solicitação de vaga " &amp; Year(Now())</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -93,7 +93,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="LISTA DAS UNIDADES DE ENSINO"</Value>
+                    <Value>="LISTA DAS UNIDADES DE ENSINO - : "</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -758,6 +758,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0cm</Top>
               <Height>0.46771cm</Height>
               <Width>5.83375cm</Width>
               <Style>
@@ -789,6 +790,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0cm</Top>
               <Left>13.46412cm</Left>
               <Height>0.46771cm</Height>
               <Width>6.4008cm</Width>

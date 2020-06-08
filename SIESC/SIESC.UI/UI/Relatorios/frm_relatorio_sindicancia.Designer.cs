@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.chk_situação = new System.Windows.Forms.CheckBox();
+            this.pnl_situacao = new System.Windows.Forms.Panel();
+            this.rdb_cadastrados = new System.Windows.Forms.RadioButton();
+            this.rdb_denuncia = new System.Windows.Forms.RadioButton();
+            this.rdb_pendentes = new System.Windows.Forms.RadioButton();
+            this.rdb_finalizadas = new System.Windows.Forms.RadioButton();
             this.btn_gerar_relatorio = new System.Windows.Forms.Button();
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_cancel_escola = new System.Windows.Forms.Button();
@@ -54,6 +60,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pnl_situacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -71,6 +78,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.chk_situação);
+            this.splitContainer1.Panel1.Controls.Add(this.pnl_situacao);
             this.splitContainer1.Panel1.Controls.Add(this.btn_gerar_relatorio);
             this.splitContainer1.Panel1.Controls.Add(this.btn_cancel_ano);
             this.splitContainer1.Panel1.Controls.Add(this.btn_cancel_escola);
@@ -91,11 +100,76 @@
             this.splitContainer1.SplitterDistance = 82;
             this.splitContainer1.TabIndex = 1;
             // 
+            // chk_situação
+            // 
+            this.chk_situação.AutoSize = true;
+            this.chk_situação.Location = new System.Drawing.Point(634, 19);
+            this.chk_situação.Name = "chk_situação";
+            this.chk_situação.Size = new System.Drawing.Size(69, 18);
+            this.chk_situação.TabIndex = 13;
+            this.chk_situação.Text = "Situação";
+            this.chk_situação.UseVisualStyleBackColor = true;
+            this.chk_situação.CheckedChanged += new System.EventHandler(this.chk_situação_CheckedChanged);
+            // 
+            // pnl_situacao
+            // 
+            this.pnl_situacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_situacao.Controls.Add(this.rdb_cadastrados);
+            this.pnl_situacao.Controls.Add(this.rdb_denuncia);
+            this.pnl_situacao.Controls.Add(this.rdb_pendentes);
+            this.pnl_situacao.Controls.Add(this.rdb_finalizadas);
+            this.pnl_situacao.Enabled = false;
+            this.pnl_situacao.Location = new System.Drawing.Point(634, 36);
+            this.pnl_situacao.Name = "pnl_situacao";
+            this.pnl_situacao.Size = new System.Drawing.Size(173, 44);
+            this.pnl_situacao.TabIndex = 12;
+            this.pnl_situacao.EnabledChanged += new System.EventHandler(this.pnl_situacao_EnabledChanged);
+            // 
+            // rdb_cadastrados
+            // 
+            this.rdb_cadastrados.AutoSize = true;
+            this.rdb_cadastrados.Location = new System.Drawing.Point(86, 21);
+            this.rdb_cadastrados.Name = "rdb_cadastrados";
+            this.rdb_cadastrados.Size = new System.Drawing.Size(89, 18);
+            this.rdb_cadastrados.TabIndex = 3;
+            this.rdb_cadastrados.Text = "Cadastrados";
+            this.rdb_cadastrados.UseVisualStyleBackColor = true;
+            // 
+            // rdb_denuncia
+            // 
+            this.rdb_denuncia.AutoSize = true;
+            this.rdb_denuncia.Location = new System.Drawing.Point(4, 21);
+            this.rdb_denuncia.Name = "rdb_denuncia";
+            this.rdb_denuncia.Size = new System.Drawing.Size(78, 18);
+            this.rdb_denuncia.TabIndex = 2;
+            this.rdb_denuncia.Text = "Denúncias";
+            this.rdb_denuncia.UseVisualStyleBackColor = true;
+            // 
+            // rdb_pendentes
+            // 
+            this.rdb_pendentes.AutoSize = true;
+            this.rdb_pendentes.Location = new System.Drawing.Point(86, 5);
+            this.rdb_pendentes.Name = "rdb_pendentes";
+            this.rdb_pendentes.Size = new System.Drawing.Size(80, 18);
+            this.rdb_pendentes.TabIndex = 1;
+            this.rdb_pendentes.Text = "Pendentes";
+            this.rdb_pendentes.UseVisualStyleBackColor = true;
+            // 
+            // rdb_finalizadas
+            // 
+            this.rdb_finalizadas.AutoSize = true;
+            this.rdb_finalizadas.Location = new System.Drawing.Point(4, 4);
+            this.rdb_finalizadas.Name = "rdb_finalizadas";
+            this.rdb_finalizadas.Size = new System.Drawing.Size(82, 18);
+            this.rdb_finalizadas.TabIndex = 0;
+            this.rdb_finalizadas.Text = "Finalizadas";
+            this.rdb_finalizadas.UseVisualStyleBackColor = true;
+            // 
             // btn_gerar_relatorio
             // 
             this.btn_gerar_relatorio.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gerar_relatorio.Image = global::SIESC.UI.Properties.Resources._1431665945_27_Edit_Text;
-            this.btn_gerar_relatorio.Location = new System.Drawing.Point(790, 43);
+            this.btn_gerar_relatorio.Location = new System.Drawing.Point(811, 43);
             this.btn_gerar_relatorio.Name = "btn_gerar_relatorio";
             this.btn_gerar_relatorio.Size = new System.Drawing.Size(119, 36);
             this.btn_gerar_relatorio.TabIndex = 10;
@@ -108,7 +182,7 @@
             // 
             this.btn_cancel_ano.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_ano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_ano.Location = new System.Drawing.Point(605, 48);
+            this.btn_cancel_ano.Location = new System.Drawing.Point(605, 50);
             this.btn_cancel_ano.Name = "btn_cancel_ano";
             this.btn_cancel_ano.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_ano.TabIndex = 9;
@@ -119,7 +193,7 @@
             // 
             this.btn_cancel_escola.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_escola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_escola.Location = new System.Drawing.Point(456, 48);
+            this.btn_cancel_escola.Location = new System.Drawing.Point(456, 49);
             this.btn_cancel_escola.Name = "btn_cancel_escola";
             this.btn_cancel_escola.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_escola.TabIndex = 8;
@@ -143,7 +217,7 @@
             this.cbo_anoensino.DisplayMember = "AnoEF";
             this.cbo_anoensino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anoensino.FormattingEnabled = true;
-            this.cbo_anoensino.Location = new System.Drawing.Point(483, 49);
+            this.cbo_anoensino.Location = new System.Drawing.Point(483, 51);
             this.cbo_anoensino.Name = "cbo_anoensino";
             this.cbo_anoensino.Size = new System.Drawing.Size(121, 22);
             this.cbo_anoensino.TabIndex = 6;
@@ -166,7 +240,7 @@
             this.cbo_escola.DisplayMember = "nome";
             this.cbo_escola.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_escola.FormattingEnabled = true;
-            this.cbo_escola.Location = new System.Drawing.Point(175, 49);
+            this.cbo_escola.Location = new System.Drawing.Point(175, 50);
             this.cbo_escola.Name = "cbo_escola";
             this.cbo_escola.Size = new System.Drawing.Size(280, 22);
             this.cbo_escola.TabIndex = 4;
@@ -238,7 +312,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(638, 25);
+            this.label5.Location = new System.Drawing.Point(656, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(271, 15);
             this.label5.TabIndex = 11;
@@ -277,6 +351,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pnl_situacao.ResumeLayout(false);
+            this.pnl_situacao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
@@ -308,5 +384,11 @@
         private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
         private System.Windows.Forms.BindingSource anoBindingSource;
         private siescDataSetTableAdapters.anoTableAdapter anoTableAdapter;
+        private System.Windows.Forms.Panel pnl_situacao;
+        private System.Windows.Forms.CheckBox chk_situação;
+        private System.Windows.Forms.RadioButton rdb_pendentes;
+        private System.Windows.Forms.RadioButton rdb_finalizadas;
+        private System.Windows.Forms.RadioButton rdb_denuncia;
+        private System.Windows.Forms.RadioButton rdb_cadastrados;
     }
 }

@@ -23,7 +23,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// 
         /// </summary>
-        private Margins margins = new Margins(4,4,4,4); //Configurando as margens
+        private Margins margins = new Margins(4, 4, 4, 4); //Configurando as margens
         /// <summary>
         /// 
         /// </summary>
@@ -53,52 +53,56 @@ namespace SIESC.UI.UI.Relatorios
 #endif
             pg.Margins = margins; //repassa as margens para o relatório
 
-            rpt_viewer.Padding = new Padding(0,0,0,0);
+            rpt_viewer.Padding = new Padding(0, 0, 0, 0);
 
             FolhaPaisagem();
 
-            DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,cbo_escola.SelectedValue != null);
+            DefineConsulta(cbo_regionais.SelectedValue != null, cbo_anoensino.SelectedValue != null, cbo_escola.SelectedValue != null);
 
             Sindicancia_TA = new vw_sindicanciaTableAdapter();
 
             DataTable dt = null;
 
-            switch (_tipoConsulta)
+            if (!chk_situação.Checked)
             {
-                case TipoConsulta.regional_ano_escola:
-                    dt = Sindicancia_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.regional_ano:
-                    dt = Sindicancia_TA.GetDataByRegionalAnoEnsino(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_regionais.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.ano:
-                    dt = Sindicancia_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.escola:
-                    dt = Sindicancia_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.escola_ano:
-                    dt = Sindicancia_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_escola.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.regional:
-
-                    dt = Sindicancia_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString());
-
-                    break;
-                case TipoConsulta.regional_escola:
-                    dt = Sindicancia_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(),
-                        cbo_escola.SelectedValue.ToString());
-                    break;
-                case TipoConsulta.geral:
-                    dt = this.Sindicancia_TA.GetData();
-                    break;
+                switch (_tipoConsulta)
+                {
+                    case TipoConsulta.regional_ano_escola:
+                        dt = Sindicancia_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(), cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.regional_ano:
+                        dt = Sindicancia_TA.GetDataByRegionalAnoEnsino(cbo_anoensino.SelectedValue.ToString(), cbo_regionais.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.ano:
+                        dt = Sindicancia_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.escola:
+                        dt = Sindicancia_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.escola_ano:
+                        dt = Sindicancia_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.regional:
+                        dt = Sindicancia_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.regional_escola:
+                        dt = Sindicancia_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                        break;
+                    case TipoConsulta.geral:
+                        dt = this.Sindicancia_TA.GetData();
+                        break;
+                }
             }
+            else if (rdb_pendentes.Checked)
+                dt = Sindicancia_TA.GetSindicanciasPendentes();
+            else if (rdb_finalizadas.Checked)
+                dt = Sindicancia_TA.GetSindicanciasFinalizadas();
+            else if (rdb_denuncia.Checked)
+                dt = Sindicancia_TA.GetSindicanciaDenuncia();
+            else
+                dt = Sindicancia_TA.GetSindicanciasCadastro();
 
             rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Sindicancia\\rpt_controle_sindicancia.rdlc";
-
 
             dataSource = new ReportDataSource();
             dataSource.Name = "dsSindicancia";
@@ -118,7 +122,7 @@ namespace SIESC.UI.UI.Relatorios
             rpt_viewer.SetPageSettings(pg); //configura a folha do relatório para paisagem
         }
 
-        private void btn_gerar_relatorio_Click(object sender,EventArgs e)
+        private void btn_gerar_relatorio_Click(object sender, EventArgs e)
         {
             ConfigurarRelatorio();
         }
@@ -129,7 +133,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="regional"></param>
         /// <param name="ano"></param>
         /// <param name="escola"></param>
-        private void DefineConsulta(bool regional,bool ano,bool escola)
+        private void DefineConsulta(bool regional, bool ano, bool escola)
         {
 
             if (regional && ano && escola)
@@ -144,40 +148,64 @@ namespace SIESC.UI.UI.Relatorios
                 _tipoConsulta = TipoConsulta.escola;
             if (!regional && ano && escola)
                 _tipoConsulta = TipoConsulta.escola_ano;
-            if (!regional && !ano && !escola)
-                _tipoConsulta = TipoConsulta.geral;
             if (regional && !ano && escola)
                 _tipoConsulta = TipoConsulta.regional_escola;
+            if (!regional && !ano && !escola)
+                _tipoConsulta = TipoConsulta.geral;
         }
 
-        private void cbo_regionais_DropDown(object sender,EventArgs e)
+        private void cbo_regionais_DropDown(object sender, EventArgs e)
         {
             this.regionaisTableAdapter.Fill(this.siescDataSet.regionais);
         }
 
-        private void cbo_escola_DropDown(object sender,EventArgs e)
+        private void cbo_escola_DropDown(object sender, EventArgs e)
         {
             this.instituicoesTableAdapter.Fill(this.siescDataSet.instituicoes);
         }
 
-        private void cbo_anoensino_DropDown(object sender,EventArgs e)
+        private void cbo_anoensino_DropDown(object sender, EventArgs e)
         {
             this.anoTableAdapter.Fill(this.siescDataSet.ano);
         }
 
-        private void btn_cancel_regional_Click(object sender,EventArgs e)
+        private void btn_cancel_regional_Click(object sender, EventArgs e)
         {
             cbo_regionais.SelectedIndex = -1;
         }
 
-        private void btn_cancel_escola_Click(object sender,EventArgs e)
+        private void btn_cancel_escola_Click(object sender, EventArgs e)
         {
             cbo_escola.SelectedIndex = -1;
         }
 
-        private void btn_cancel_ano_Click(object sender,EventArgs e)
+        private void btn_cancel_ano_Click(object sender, EventArgs e)
         {
             cbo_anoensino.SelectedIndex = -1;
+        }
+
+        private void chk_situação_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaCombos(chk_situação.Checked);
+        }
+
+        private void HabilitaCombos(bool habilita)
+        {
+            pnl_situacao.Enabled = habilita;
+            
+            cbo_anoensino.Enabled = !habilita;
+            cbo_escola.Enabled = !habilita;
+            cbo_regionais.Enabled = !habilita;
+            btn_cancel_ano.Enabled = !habilita;
+            btn_cancel_escola.Enabled = !habilita;
+            btn_cancel_regional.Enabled = !habilita;
+
+        }
+
+        private void pnl_situacao_EnabledChanged(object sender, EventArgs e)
+        {
+            rdb_cadastrados.Checked = rdb_denuncia.Checked = rdb_pendentes.Checked = rdb_finalizadas.Checked = pnl_situacao.Enabled;
+             
         }
     }
 }
