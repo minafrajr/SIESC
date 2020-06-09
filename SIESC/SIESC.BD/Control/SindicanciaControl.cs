@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Linq;
 using SIESC.BD.DataSets;
 using SIESC.BD.DataSets.dsSindicanciaTableAdapters;
-using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using SIESC.MODEL.Classes;
 
 namespace SIESC.BD.Control
@@ -19,25 +16,62 @@ namespace SIESC.BD.Control
 
         private vw_sindicanciaTableAdapter vw_sindicancia_TA;
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sindicancia"></param>
+        /// <returns></returns>
         public bool Salvar(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,sindicancia.Coordenadas[0],sindicancia.Coordenadas[1], sindicancia.Cep,sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,sindicancia.observacoes,sindicancia.status) > 0);
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.codigoSolicitacao,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,sindicancia.Coordenadas[0],sindicancia.Coordenadas[1], sindicancia.Cep,sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,sindicancia.observacoes,sindicancia.status) > 0);
         }
 
-        public bool InserirSindicancias(List<Sindicancia> sindicancias)
+        public bool InserirSindicancia(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            foreach (Sindicancia item in sindicancias)
-            {
-                sindicancia_TA.SalvarSindicancia(item.codigoSolicitacao,item.dataSindicancia,
-                    item.usuarioResponsavel,true);
-            }
-            return true;
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno, sindicancia.codigoSolicitacao, DateTime.Now,
+                sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro,
+                sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0],
+                sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada,
+                sindicancia.instituicaoEncaminhada, sindicancia.origemSindicância, sindicancia.anoEnsino,
+                sindicancia.observacoes, true)>0);
         }
+
+
+        public bool InserirSindicancias(IEnumerable<Sindicancia> sindicancias)
+        {
+            sindicancia_TA = new sindicanciaTableAdapter();
+            bool salvou = false;
+
+            foreach (Sindicancia sindicancia in sindicancias)
+            {
+                salvou = (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno, sindicancia.codigoSolicitacao, DateTime.Now,
+                     sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro,
+                     sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0],
+                     sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada,
+                     sindicancia.instituicaoEncaminhada, sindicancia.origemSindicância, sindicancia.anoEnsino,
+                     sindicancia.observacoes, true) > 0);
+            }
+            return salvou;
+        }
+
+
+
+
+        //public bool InserirSindicancias(List<Sindicancia> sindicancias)
+        //{
+        //    sindicancia_TA = new sindicanciaTableAdapter();
+
+        //    foreach (Sindicancia item in sindicancias)
+        //    {
+        //        sindicancia_TA.SalvarSindicancia(item.codigoAluno,item.dataSindicancia,
+        //            item.usuarioResponsavel,true);
+        //    }
+        //    return true;
+        //}
 
         public DataTable GetTodos(bool sindicados,int codigoSolicitacao)
         {

@@ -349,7 +349,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 foreach (DataRowView item in cbo_anosolicitado.Items)
                 {
-                    if (item["idAno"].ToString() == solicitacao.Ano.ToString())
+                    if (item["idAno"].ToString() == solicitacao.AnoEnsino.ToString())
                     {
                         cbo_anosolicitado.SelectedIndex = cbo_anosolicitado.Items.IndexOf(item);
                     }
@@ -700,7 +700,7 @@ namespace SIESC.UI.UI.Solicitacoes
                             GravadistanciaAlunoEscola(_solicitacao,_aluno); //grava a distancia do aluno até escola encaminhada 
                         }
 
-                        frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],_solicitacao.Coordenadas[1],_solicitacao.Ano,_solicitacao.Codigo)
+                        frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],_solicitacao.Coordenadas[1],_solicitacao.AnoEnsino,_solicitacao.Codigo)
                         { MdiParent = this._principalUi };
 
                         if (t.IsAlive) { t.Abort(); }
@@ -748,7 +748,7 @@ namespace SIESC.UI.UI.Solicitacoes
                             {
                                 frm_ficha_solicitacao frmSolicitacao =
                                     new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],_solicitacao.Coordenadas[1],
-                                            _solicitacao.Ano,_solicitacao.Codigo)
+                                            _solicitacao.AnoEnsino,_solicitacao.Codigo)
                                     { MdiParent = this._principalUi };
 
                                 frmSolicitacao.Show();
@@ -767,7 +767,7 @@ namespace SIESC.UI.UI.Solicitacoes
                             frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(
                                     _solicitacao.Coordenadas[0],
                                     _solicitacao.Coordenadas[1],
-                                    _solicitacao.Ano,
+                                    _solicitacao.AnoEnsino,
                                     _solicitacao.Codigo){ MdiParent = this._principalUi };
 
                             frmSolicitacao.Show();
@@ -848,7 +848,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     CidadeOrigem = cbo_cidades.Text,
                     instituicaoOrigem = cod,
                     EstadoOrigem = this.cbo_estado.Text,
-                    Ano = (int)this.cbo_anosolicitado.SelectedValue,
+                    AnoEnsino = (int)this.cbo_anosolicitado.SelectedValue,
                     InstituicaoSolicitada = (int)this.cbo_instituicao_solicitada.SelectedValue,
                     Motivo = (int)this.cbo_motivo.SelectedValue,
                     Observacoes = this.txt_observacoes.Text,

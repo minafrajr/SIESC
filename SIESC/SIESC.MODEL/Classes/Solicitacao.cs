@@ -80,7 +80,7 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Código do ano do ensino fundamental
         /// </summary>
-        public int Ano { get; set; }
+        public int AnoEnsino { get; set; }
 
         /// <summary>
         /// Código do expediente interno
@@ -145,11 +145,6 @@ namespace SIESC.MODEL.Classes
         /// O tipo de comprovante de endereço
         /// </summary>
         public string TipoComprovante { get; set; }
-
-        /// <summary>
-        /// O ano de ensino solicitado
-        /// </summary>
-        public int AnoEnsino { get; set; }
 
         /// <summary>
         /// Origem da solicitação

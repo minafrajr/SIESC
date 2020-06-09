@@ -197,7 +197,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 foreach (DataRowView item in cbo_anosolicitado.Items)
                 {
-                    if (item["idAno"].ToString() == solicitacao.Ano.ToString())
+                    if (item["idAno"].ToString() == solicitacao.AnoEnsino.ToString())
                     {
                         cbo_anosolicitado.SelectedIndex = cbo_anosolicitado.Items.IndexOf(item);
                     }
