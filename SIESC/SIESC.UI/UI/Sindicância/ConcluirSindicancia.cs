@@ -27,7 +27,7 @@ namespace SIESC.UI.UI.Solicitacoes
             txt_observacoes.Text = sindicancia.observacoes;
             lbl_endereco.Text = sindicancia.EnderecoCompleto;
             lbl_nome_sindicado.Text = sindicancia.nomeSindicado;
-            lbl_origemSindicancia.Text = sindicancia.origemSindicância;
+            lbl_origemSindicancia.Text = sindicancia.origemSindicancia;
 
             lbl_num_solicitacao.Text = sindicancia.codigoSolicitacao.ToString();
 

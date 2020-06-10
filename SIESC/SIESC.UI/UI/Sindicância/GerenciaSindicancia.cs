@@ -222,7 +222,6 @@ namespace SIESC.UI.UI.Solicitacoes
             frm_concluirSindicancia.ShowDialog();
 
             RadioButtonChecked_Click(null,null);
-
         }
 
         private Sindicancia CriarSindicancia()
@@ -233,27 +232,26 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 _sindicancia.codigoSindidancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
 
+                _sindicancia.codigoAluno = (int)dgv_dados.CurrentRow.Cells["idSindicado"].Value;
+
                 _sindicancia.motivoSindicancia = dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString();
                 
-                if(_sindicancia.motivoSindicancia.Equals("CADASTRO"))
-                    _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacoesVagas"].Value;
+                _sindicancia.origemSindicancia = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
+                
+                if(!_sindicancia.origemSindicancia.Equals("CADASTRO"))
+                    _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacao"].Value;
                 
                 _sindicancia.nomeSindicado = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
                 _sindicancia.observacoes = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
 
-                _sindicancia.origemSindicância = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
+                _sindicancia.origemSindicancia = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(),out var endereco))
-                {
-                    _sindicancia.enderecoConfirmado = (bool?)dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value;
-                }
+                    _sindicancia.enderecoConfirmado = (bool?) dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value;
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(),
                     out bool finalizada))
-                {
-                    _sindicancia.sindicanciaFinalizada =
-                        (bool?)dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value;
-                }
+                    _sindicancia.sindicanciaFinalizada = (bool?) dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value;
 
                 _sindicancia.dataSindicancia = dgv_dados.CurrentRow.Cells["DataSindicancia"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataSindicancia"].Value;
                 _sindicancia.usuarioResponsavel = dgv_dados.CurrentRow.Cells["UsuarioResponsavel"].Value.ToString();
@@ -262,9 +260,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 _sindicancia.usuarioFinalizacao = dgv_dados.CurrentRow.Cells["UsuarioFinalizou"].Value.ToString();
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(),out bool pendente))
-                {
-                    _sindicancia.sindicanciaPendente = (bool?)dgv_dados.CurrentRow.Cells["Pendente"].Value;
-                }
+                    _sindicancia.sindicanciaPendente = (bool?) dgv_dados.CurrentRow.Cells["Pendente"].Value;
 
                 return _sindicancia;
             }
@@ -489,7 +485,7 @@ namespace SIESC.UI.UI.Solicitacoes
             Sindicancia sindicancia = new Sindicancia()
             {
                 codigoAluno = solicitacao.Aluno,
-                origemSindicância = "SOLICITAÇÃO",
+                origemSindicancia = "SOLICITAÇÃO",
                 Bairro =solicitacao.Bairro,
                 Cep = solicitacao.Cep,
                 Complemento = solicitacao.Complemento,

@@ -289,7 +289,7 @@
             this.lbl_origemSindicancia.Name = "lbl_origemSindicancia";
             this.lbl_origemSindicancia.Size = new System.Drawing.Size(126, 18);
             this.lbl_origemSindicancia.TabIndex = 8;
-            this.lbl_origemSindicancia.Text = "origemSindicância";
+            this.lbl_origemSindicancia.Text = "origemSindicancia";
             // 
             // groupBox4
             // 

@@ -21,25 +21,12 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="sindicancia"></param>
         /// <returns></returns>
-        public bool Salvar(Sindicancia sindicancia)
-        {
-            sindicancia_TA = new sindicanciaTableAdapter();
-
-            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.codigoSolicitacao,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,sindicancia.Coordenadas[0],sindicancia.Coordenadas[1], sindicancia.Cep,sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicância,sindicancia.anoEnsino,sindicancia.observacoes,sindicancia.status) > 0);
-        }
-
         public bool InserirSindicancia(Sindicancia sindicancia)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno, sindicancia.codigoSolicitacao, DateTime.Now,
-                sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro,
-                sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0],
-                sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada,
-                sindicancia.instituicaoEncaminhada, sindicancia.origemSindicância, sindicancia.anoEnsino,
-                sindicancia.observacoes, true)>0);
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno,sindicancia.codigoSolicitacao,sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.TipoLogradouro,sindicancia.Logradouro,sindicancia.NumResidencia,sindicancia.Complemento,sindicancia.Bairro,sindicancia.Coordenadas[0],sindicancia.Coordenadas[1], sindicancia.Cep,sindicancia.instituicaoSolicitada,sindicancia.instituicaoEncaminhada,sindicancia.origemSindicancia,sindicancia.anoEnsino,sindicancia.observacoes,sindicancia.status) > 0);
         }
-
 
         public bool InserirSindicancias(IEnumerable<Sindicancia> sindicancias)
         {
@@ -52,26 +39,12 @@ namespace SIESC.BD.Control
                      sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro,
                      sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0],
                      sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada,
-                     sindicancia.instituicaoEncaminhada, sindicancia.origemSindicância, sindicancia.anoEnsino,
+                     sindicancia.instituicaoEncaminhada, sindicancia.origemSindicancia, sindicancia.anoEnsino,
                      sindicancia.observacoes, true) > 0);
             }
             return salvou;
         }
 
-
-
-
-        //public bool InserirSindicancias(List<Sindicancia> sindicancias)
-        //{
-        //    sindicancia_TA = new sindicanciaTableAdapter();
-
-        //    foreach (Sindicancia item in sindicancias)
-        //    {
-        //        sindicancia_TA.SalvarSindicancia(item.codigoAluno,item.dataSindicancia,
-        //            item.usuarioResponsavel,true);
-        //    }
-        //    return true;
-        //}
 
         public DataTable GetTodos(bool sindicados,int codigoSolicitacao)
         {
@@ -190,16 +163,13 @@ namespace SIESC.BD.Control
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            if (sindicancia.origemSindicância.Equals("CADASTRO"))
-                return (sindicancia_TA.AtualizarSindicanciaCadastro(sindicancia.dataSindicancia, sindicancia.usuarioResponsavel,
-                            sindicancia.motivoSindicancia, sindicancia.enderecoConfirmado, sindicancia.dataFinalizacao,
-                            sindicancia.usuarioFinalizacao, sindicancia.observacoes, sindicancia.sindicanciaPendente,
-                            sindicancia.sindicanciaFinalizada, sindicancia.codigoSindidancia) > 0);
-
-            return (sindicancia_TA.AtualizarSindicancia(sindicancia.dataSindicancia,sindicancia.usuarioResponsavel,sindicancia.motivoSindicancia,sindicancia.enderecoConfirmado,sindicancia.dataFinalizacao,sindicancia.usuarioFinalizacao,sindicancia.observacoes,sindicancia.sindicanciaPendente,sindicancia.sindicanciaFinalizada,sindicancia.codigoSindidancia,sindicancia.codigoSolicitacao) > 0);
+            return (sindicancia_TA.ConcluirSindicancia(sindicancia.motivoSindicancia, sindicancia.enderecoConfirmado,
+                        sindicancia.dataFinalizacao, sindicancia.usuarioFinalizacao, sindicancia.observacoes,
+                        sindicancia.sindicanciaPendente, sindicancia.sindicanciaFinalizada,
+                        sindicancia.codigoSindidancia, sindicancia.codigoAluno) > 0);
         }
 
-
+        
         public bool ExcluirSindicancia(int codigoSindicancia,int codigoSolicitacao)
         {
             sindicancia_TA = new sindicanciaTableAdapter();
@@ -239,13 +209,6 @@ namespace SIESC.BD.Control
             }
 
             return lista;
-        }
-
-        public int PesquisaCodigoSindicancia(int alunoCriadoId)
-        {
-            sindicancia_TA = new sindicanciaTableAdapter();
-
-            return (int)sindicancia_TA.PesquisaIdSindicancia(alunoCriadoId);
         }
     }
 }

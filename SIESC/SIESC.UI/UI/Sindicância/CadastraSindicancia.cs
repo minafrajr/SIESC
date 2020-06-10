@@ -355,8 +355,15 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 _sindicanciaControl = new SindicanciaControl();
 
-                if (_sindicanciaControl.Salvar(_sindicancia))
+                if (_sindicanciaControl.InserirSindicancia(_sindicancia))
+                {
+                    if (t.IsAlive)
+                    {
+                        t.Abort();
+                    }
+
                     Mensageiro.MensagemConfirmaGravacao(_principalUi);
+                }
                 else
                     throw new Exception($"Não foi possível salvar a solicitação do aluno {_aluno.Nome}!");
 
@@ -423,7 +430,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 observacoes = txt_observacoes.Text,
                 codigoAluno = codigoAluno,
                 nomeSindicado = txt_nomealuno.Text,
-                origemSindicância = "CADASTRO"
+                origemSindicancia = "CADASTRO"
                 
             };
 

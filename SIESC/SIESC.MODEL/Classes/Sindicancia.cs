@@ -88,7 +88,7 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Origem da sindicancia. Se solicitação de Vaga ou Cadastro Escolar
         /// </summary>
-        public string origemSindicância { get;  set; }
+        public string origemSindicancia { get;  set; }
 
         /// <summary>
         /// O motivo ao qual a solicitação foi enviada para sindicância
