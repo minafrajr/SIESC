@@ -28,7 +28,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <summary>
         /// Objeto do formulário principal
         /// </summary>
-        private readonly Principal_UI _principalUi;
+        private readonly Principal_UI principalUi;
 
         /// <summary>
         /// Lista de Controles do formulario
@@ -43,39 +43,39 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <summary>
         /// Objeto da classe de controle ao acesso a dados dos alunos
         /// </summary>
-        private AlunoControl _controleAluno;
+        private AlunoControl controleAluno;
 
         /// <summary>
         /// Objeto Sindicancia
         /// </summary>
-        private Sindicancia _sindicancia;
+        private Sindicancia sindicancia;
 
         /// <summary>
         /// Objeto acesso ao banco de dados
         /// </summary>
-        private SindicanciaControl _sindicanciaControl;
+        private SindicanciaControl sindicanciaControl;
 
         /// <summary>
         /// Objeto Aluno
         /// </summary>
-        private Aluno _aluno;
+        private Aluno aluno;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga.
         /// salvando - o usuário deseja criar uma nova solicitação.
         /// editando - o usuário irá alterar um solicitação salva.
         /// </summary>
-        private Navegacao _statusNavegacao;
+        private Navegacao statusNavegacao;
 
         /// <summary>
         /// Objeto de busca de ceps
         /// </summary>
-        private BuscaCep _buscadorCep;
+        private BuscaCep buscadorCep;
 
         /// <summary>
         /// Lista de endereços
         /// </summary>
-        private List<tecnologia1.Endereco> _listOfEnderecos;
+        private List<tecnologia1.Endereco> listOfEnderecos;
 
         /// <inheritdoc />
         /// <summary>
@@ -90,9 +90,9 @@ namespace SIESC.UI.UI.Solicitacoes
 
             AddListaControles();
 
-            _principalUi = principalUi;
+            this.principalUi = principalUi;
 
-            _statusNavegacao = Navegacao.salvando;
+            statusNavegacao = Navegacao.salvando;
         }
 
         /// <inheritdoc />
@@ -100,25 +100,26 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Construtor do formulário de cadastro de solicitação de vaga, executado quando a solicitação está sendo editada
         /// </summary>
         /// <param name="aluno">Objeto aluno</param>
-        /// <param name="solicitacao">Objeto solicitação</param>
+        /// <param name="sindicancia">Objeto Sindicância</param>
+        /// <param name="principalUi">O formulário pai</param>
         public CadastraSindicancia(Aluno aluno, Sindicancia sindicancia, Principal_UI principalUi)
         {
             InitializeComponent();
-
-            _statusNavegacao = sindicancia == null ? Navegacao.salvando : Navegacao.editando;
-
             AddListaControles();
-
             InicializaDataSets();
 
-            TransfereParaControles(aluno);
+            statusNavegacao = Navegacao.editando;
+            this.sindicancia = sindicancia;
+            this.aluno = aluno;
+            this.principalUi = principalUi;
 
-            _principalUi = principalUi;
+
+            TransfereParaControles(this.aluno, this.sindicancia);
 
             CalculaIdade(Convert.ToDateTime(msk_data_nascimento.Text));
             HabilitaControlesAluno(false);
         }
-        
+
         /// <summary>
         /// Bloqueia os campos de edição do cadastro de aluno
         /// </summary>
@@ -143,7 +144,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="aluno">O objeto aluno com os seus dados</param>
         /// <param name="solicitacao">O objeto solicitação com seus dados</param>
-        private void TransfereParaControles(Aluno aluno)
+        private void TransfereParaControles(Aluno aluno, Sindicancia sindicancia)
         {
             txt_nomealuno.Text = aluno.Nome;
             txt_codigoAluno.Text = aluno.Id.ToString();
@@ -154,21 +155,29 @@ namespace SIESC.UI.UI.Solicitacoes
             msk_data_nascimento.Text = aluno.DataNascimento.ToString();
 
             if (aluno.Sexo == "F")
-            {
                 rdb_feminino.Checked = true;
-            }
             else
-            {
                 rdb_masculino.Checked = true;
-            }
 
             msk_telefone1.Text = aluno.Tel1;
             msk_telefone2.Text = aluno.Tel2;
             msk_telefone3.Text = aluno.Tel3;
 
             Preenche_cbo_Deficiencia(aluno);
-        }
 
+            txt_observacoes.Text = sindicancia.observacoes;
+            txt_codigoSindicancia.Text = sindicancia.codigoSindicancia.ToString();
+            txt_complemento.Text = sindicancia.Complemento;
+            txt_logradouro.Text = sindicancia.Logradouro;
+            txt_numresidencia.Text = sindicancia.NumResidencia;
+            msk_cep.Text = sindicancia.Cep;
+            cbo_tipologradouro.Text = sindicancia.TipoLogradouro;
+
+            Preenche_cbo_Ano(sindicancia);
+            Preenche_cbo_InstituicaoInscricao(sindicancia);
+            Preenche_cbo_InstituicaoEncaminhada(sindicancia);
+            Preenche_cbo_Bairro(sindicancia);
+        }
 
         /// <summary>
         /// Inicializa os DataSets que carregam as combobox
@@ -186,10 +195,10 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <summary>
         /// Prenche a combobox de ano do ensino fundamental com a escola salva no banco
         /// </summary>
-        /// <param name="solicitacao"></param>
-        private void Preenche_cbo_Ano(Solicitacao solicitacao)
+        /// <param name="sindicancia"></param>
+        private void Preenche_cbo_Ano(Sindicancia sindicancia)
         {
-            if (solicitacao.Equals(null))
+            if (sindicancia.Equals(null))
             {
                 cbo_anosolicitado.SelectedItem = -1;
             }
@@ -197,7 +206,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 foreach (DataRowView item in cbo_anosolicitado.Items)
                 {
-                    if (item["idAno"].ToString() == solicitacao.AnoEnsino.ToString())
+                    if (item["idAno"].ToString() == sindicancia.anoEnsino.ToString())
                     {
                         cbo_anosolicitado.SelectedIndex = cbo_anosolicitado.Items.IndexOf(item);
                     }
@@ -220,6 +229,63 @@ namespace SIESC.UI.UI.Solicitacoes
                     if (item["idDeficiencia"].ToString() == aluno1.Deficiencia.ToString())
                     {
                         cbo_deficiencia.SelectedIndex = cbo_deficiencia.Items.IndexOf(item);
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void Preenche_cbo_InstituicaoEncaminhada(Sindicancia sindicancia)
+        {
+            if (sindicancia.instituicaoEncaminhada.Equals(null))
+                cbo_instituicao_encaminhada.SelectedIndex = -1;
+            else
+            {
+                foreach (DataRowView item in cbo_instituicao_encaminhada.Items)
+                {
+                    if (item["idInstituicoes"].ToString() == sindicancia.instituicaoEncaminhada.ToString())
+                    {
+                        cbo_instituicao_encaminhada.SelectedIndex = cbo_instituicao_encaminhada.Items.IndexOf(item);
+                        return;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Carrega a combobox de deficiencias
+        /// </summary>
+        /// <param name="sindicancia"></param>
+        private void Preenche_cbo_InstituicaoInscricao(Sindicancia sindicancia)
+        {
+            if (sindicancia.instituicaoSolicitada.Equals(null))
+                cbo_instituicao_inscricao.SelectedIndex = -1;
+            else
+            {
+                foreach (DataRowView item in cbo_instituicao_inscricao.Items)
+                {
+                    if (item["idInstituicoes"].ToString() == sindicancia.instituicaoSolicitada.ToString())
+                    {
+                        cbo_instituicao_inscricao.SelectedIndex = cbo_instituicao_inscricao.Items.IndexOf(item);
+                        return;
+                    }
+                }
+            }
+        }
+
+        
+
+        private void Preenche_cbo_Bairro(Sindicancia sindicancia)
+        {
+            if (sindicancia.Bairro.Equals(null))
+                cbo_bairro.SelectedIndex = -1;
+            else
+            {
+                foreach (DataRowView item in cbo_bairro.Items)
+                {
+                    if (item["idBairro"].ToString() == sindicancia.Bairro.ToString())
+                    {
+                        cbo_bairro.SelectedIndex = cbo_bairro.Items.IndexOf(item);
                         return;
                     }
                 }
@@ -252,7 +318,7 @@ namespace SIESC.UI.UI.Solicitacoes
             _listControls.Add(msk_data_nascimento);
             _listControls.Add(rdb_feminino);
             _listControls.Add(rdb_masculino);
-            _listControls.Add(txt_codigoSindicado);
+            _listControls.Add(txt_codigoSindicancia);
             _listControls.Add(cbo_deficiencia);
 
             #endregion
@@ -306,17 +372,17 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (!(control is RadioButton)) control.Text = string.Empty;
 
-                if (control is MyTextBox) ((MyTextBox) control).ResetText();
+                if (control is MyTextBox) ((MyTextBox)control).ResetText();
 
                 if (control is MyComboBox)
                     //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox) control).SelectedIndex = -1;
+                    ((MyComboBox)control).SelectedIndex = -1;
 
-                if (control is MyMaskedTextBox) ((MyMaskedTextBox) control).ResetText();
+                if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
-                if (control is RadioButton) ((RadioButton) control).Checked = false;
+                if (control is RadioButton) ((RadioButton)control).Checked = false;
 
-                if (control is DateTimePicker) ((DateTimePicker) control).Text = DateTime.Now.ToShortDateString();
+                if (control is DateTimePicker) ((DateTimePicker)control).Text = DateTime.Now.ToShortDateString();
             }
         }
 
@@ -327,62 +393,69 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            var t = CarregaProgressoThread();
+            //var t = CarregaProgressoThread();
 
             try
             {
-                string tag = null;
+                var tag = string.Empty;
 
                 if (CamposObrigatoriosEmBranco(ref tag))
                     throw new Exception("Por Favor preencha o campo obrigatório: " + tag.ToUpper() + " !!!");
 
-                _controleAluno = new AlunoControl();
-
-                var alunoCriado = CriarAluno();
-
-                if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
-                {
-                    _controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
-                    alunoCriado.Id = _controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
-                }
-                else
-                {
-                    alunoCriado.Id = Convert.ToInt32(txt_codigoAluno.Text); //repassa o id do aluno ao objeto aluno
-                    _controleAluno.Salvar(alunoCriado, false); //atualiza os dados do aluno no banco de dados 
-                }
+                sindicanciaControl = new SindicanciaControl();
                 
-                _sindicancia = CriarSindicancia(alunoCriado.Id);
+                sindicancia = CriarSindicancia();
 
-                _sindicanciaControl = new SindicanciaControl();
-
-                if (_sindicanciaControl.InserirSindicancia(_sindicancia))
+                if (statusNavegacao == Navegacao.salvando)
                 {
-                    if (t.IsAlive)
-                    {
-                        t.Abort();
-                    }
+                    var alunoCriado = CriarAluno();
 
-                    Mensageiro.MensagemConfirmaGravacao(_principalUi);
+                    //if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
+                   
+                    controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
+                    alunoCriado.Id = controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                   
+
+                    sindicancia.codigoAluno = alunoCriado.Id;
+                    if (sindicanciaControl.InserirSindicancia(sindicancia))
+                    {
+                        //                        if (t.IsAlive)
+                        //                        {
+                        //                            t.Abort();
+                        //                        }
+
+                        Mensageiro.MensagemConfirmaGravacao(principalUi);
+                    }
+                    else
+                        throw new Exception($"Não foi possível salvar a solicitação do aluno {aluno.Nome}!");
                 }
                 else
-                    throw new Exception($"Não foi possível salvar a solicitação do aluno {_aluno.Nome}!");
+                {
+                    sindicancia.codigoSindicancia = Convert.ToInt32(txt_codigoSindicancia.Text);
+                    sindicancia.codigoAluno = Convert.ToInt32(txt_codigoAluno.Text);
+
+                    if (sindicanciaControl.AtualizarSindicancia(sindicancia))
+                    {
+                        //                        if (t.IsAlive)
+                        //                        {
+                        //                            t.Abort();
+                        //                        }
+
+                        Mensageiro.MensagemConfirmaAtualizacao(principalUi);
+                    }
+                    else
+                        throw new Exception($"Não foi possível atualizar a solicitação!");
+
+                }
 
                 LimpaControles();
             }
-            catch (MySqlException ex)
-            {
-                if (t.IsAlive) { t.Abort(); }
-                Mensageiro.MensagemErro(ex, this);
-            }
             catch (Exception ex)
             {
-                if (t.IsAlive) { t.Abort(); }
+                // if (t.IsAlive) { t.Abort(); }
                 Mensageiro.MensagemErro(ex, this);
             }
-            finally
-            {
-                if (t.IsAlive) { t.Abort(); }
-            }
+
         }
 
         /// <summary>
@@ -391,7 +464,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <returns>O objeto Aluno</returns>
         private Aluno CriarAluno()
         {
-            _aluno = new Aluno()
+            aluno = new Aluno()
             {
                 Nome = txt_nomealuno.Text,
                 NomeMae = txt_mae.Text,
@@ -403,14 +476,14 @@ namespace SIESC.UI.UI.Solicitacoes
                 Tel3 = msk_telefone3.Text,
                 Deficiencia = (int?)cbo_deficiencia.SelectedValue,
             };
-            return _aluno;
+            return aluno;
         }
         /// <summary>
         /// Cria uma nova Sindicância
         /// </summary>
         /// <param name="codigoAluno"></param>
         /// <returns></returns>
-        private Sindicancia CriarSindicancia(int codigoAluno)
+        private Sindicancia CriarSindicancia()
         {
             var sindicancia = new Sindicancia()
             {
@@ -425,13 +498,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 dataSindicancia = DateTime.Now,
                 instituicaoEncaminhada = (int?)cbo_instituicao_encaminhada.SelectedValue,
                 instituicaoSolicitada = (int)cbo_instituicao_inscricao.SelectedValue,
-                usuarioResponsavel = _principalUi.user.nomeusuario.ToUpper(),
+                usuarioResponsavel = principalUi.user.nomeusuario.ToUpper(),
                 status = true,
                 observacoes = txt_observacoes.Text,
-                codigoAluno = codigoAluno,
                 nomeSindicado = txt_nomealuno.Text,
                 origemSindicancia = "CADASTRO"
-                
             };
 
             sindicancia.Coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_numresidencia.Text);
@@ -472,7 +543,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 BuscaCep cep = new BuscaCep();
 
 #if DEBUG
-                cep.buscadorAlternativo(msk_cep.Text,cbo_bairro,txt_logradouro, cbo_tipologradouro);
+                cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
 #else
                 cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
 
@@ -670,7 +741,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             if (anos >= 15)
                 Mensageiro.MensagemAviso($"O aluno possui {anos} anos.{Environment.NewLine} Favor Verificar!",
-                    _principalUi);
+                    principalUi);
         }
 
         /// <summary>
@@ -686,15 +757,15 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (string.IsNullOrEmpty(txt_nomealuno.Text) || string.IsNullOrEmpty(txt_mae.Text))
                     return;
 
-                _controleAluno = new AlunoControl();
+                controleAluno = new AlunoControl();
 
-                txt_codigoAluno.Text = _controleAluno
+                txt_codigoAluno.Text = controleAluno
                     .ContemAluno(txt_nomealuno.Text, datanascimento, txt_mae.Text).ToString();
 
                 if (!string.IsNullOrEmpty(txt_codigoAluno.Text))
                     Mensageiro.MensagemAviso(
                         $"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!",
-                        _principalUi);
+                        principalUi);
             }
             catch (Exception ex)
             {
@@ -791,7 +862,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                foreach (Form mdiChild in _principalUi.MdiChildren)
+                foreach (Form mdiChild in principalUi.MdiChildren)
                 {
                     if (mdiChild.GetType() == typeof(frm_buscaCEP))
                     {
@@ -801,7 +872,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     }
                 }
                 frm_buscaCEP frmBuscarCep = new frm_buscaCEP();
-                frmBuscarCep.MdiParent = _principalUi;
+                frmBuscarCep.MdiParent = principalUi;
                 frmBuscarCep.Show();
             }
             catch (Exception ex)

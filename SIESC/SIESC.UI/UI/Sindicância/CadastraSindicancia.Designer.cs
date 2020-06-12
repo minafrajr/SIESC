@@ -42,7 +42,7 @@
             this.msk_telefone3 = new SIESC.UI.MyMaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.msk_telefone2 = new SIESC.UI.MyMaskedTextBox();
-            this.txt_codigoSindicado = new System.Windows.Forms.TextBox();
+            this.txt_codigoSindicancia = new System.Windows.Forms.TextBox();
             this.msk_telefone1 = new SIESC.UI.MyMaskedTextBox();
             this.lbl_codigoSolicitacao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@
             this.gpb_dadospessoais.Controls.Add(this.msk_telefone3);
             this.gpb_dadospessoais.Controls.Add(this.label4);
             this.gpb_dadospessoais.Controls.Add(this.msk_telefone2);
-            this.gpb_dadospessoais.Controls.Add(this.txt_codigoSindicado);
+            this.gpb_dadospessoais.Controls.Add(this.txt_codigoSindicancia);
             this.gpb_dadospessoais.Controls.Add(this.msk_telefone1);
             this.gpb_dadospessoais.Controls.Add(this.lbl_codigoSolicitacao);
             this.gpb_dadospessoais.Controls.Add(this.label3);
@@ -260,19 +260,19 @@
             this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
             this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
             // 
-            // txt_codigoSindicado
+            // txt_codigoSindicancia
             // 
-            this.txt_codigoSindicado.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_codigoSindicado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_codigoSindicado.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigoSindicado.ForeColor = System.Drawing.Color.MediumBlue;
-            this.txt_codigoSindicado.Location = new System.Drawing.Point(836, 34);
-            this.txt_codigoSindicado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_codigoSindicado.Multiline = true;
-            this.txt_codigoSindicado.Name = "txt_codigoSindicado";
-            this.txt_codigoSindicado.ReadOnly = true;
-            this.txt_codigoSindicado.Size = new System.Drawing.Size(75, 29);
-            this.txt_codigoSindicado.TabIndex = 21;
+            this.txt_codigoSindicancia.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_codigoSindicancia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigoSindicancia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigoSindicancia.ForeColor = System.Drawing.Color.MediumBlue;
+            this.txt_codigoSindicancia.Location = new System.Drawing.Point(836, 34);
+            this.txt_codigoSindicancia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_codigoSindicancia.Multiline = true;
+            this.txt_codigoSindicancia.Name = "txt_codigoSindicancia";
+            this.txt_codigoSindicancia.ReadOnly = true;
+            this.txt_codigoSindicancia.Size = new System.Drawing.Size(75, 29);
+            this.txt_codigoSindicancia.TabIndex = 21;
             // 
             // msk_telefone1
             // 
@@ -949,7 +949,7 @@
         private System.Windows.Forms.BindingSource siescDataSetBindingSource;
         private System.Windows.Forms.Button btn_limpaEnder;
         private System.Windows.Forms.Label lbl_tituloform;
-        private System.Windows.Forms.TextBox txt_codigoSindicado;
+        private System.Windows.Forms.TextBox txt_codigoSindicancia;
         private System.Windows.Forms.Label lbl_codigoSolicitacao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_idade;

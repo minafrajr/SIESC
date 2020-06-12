@@ -156,7 +156,7 @@ namespace SIESC.UI.UI.Alunos
                     return;
                 }
             }
-            CadastrarAluno frmCadastrarAluno = new CadastrarAluno();
+            CadastrarAluno frmCadastrarAluno = new CadastrarAluno(PrincipalUi);
 
             frmCadastrarAluno.MdiParent = PrincipalUi;
 
@@ -291,7 +291,7 @@ namespace SIESC.UI.UI.Alunos
                         return;
                     }
                 }
-                CadastrarAluno frmCadastrarAluno = new CadastrarAluno(alunodCriado);
+                CadastrarAluno frmCadastrarAluno = new CadastrarAluno(alunodCriado, PrincipalUi);
                 frmCadastrarAluno.MdiParent = PrincipalUi;
                 frmCadastrarAluno.Show();
             }

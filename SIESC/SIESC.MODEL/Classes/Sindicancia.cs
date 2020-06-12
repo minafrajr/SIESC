@@ -19,7 +19,7 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// O código da sindicancia
         /// </summary>
-        public int codigoSindidancia { get; set; }
+        public int codigoSindicancia { get; set; }
         /// <summary>
         /// O código da solicitação a ser sindicada
         /// </summary>

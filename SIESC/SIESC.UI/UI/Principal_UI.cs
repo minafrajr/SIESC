@@ -22,6 +22,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+using SIESC.UI.UI.Sindicância;
 using SIESC.UI.UI.Solicitacoes;
 using ThreadState = System.Threading.ThreadState;
 
@@ -352,7 +353,7 @@ namespace SIESC.UI
                     return;
                 }
             }
-            CadastrarAluno frm_cadastraraluno = new CadastrarAluno();
+            CadastrarAluno frm_cadastraraluno = new CadastrarAluno(this);
             frm_cadastraraluno.MdiParent = this;
             frm_cadastraraluno.Show();
         }
@@ -2512,7 +2513,10 @@ namespace SIESC.UI
 
         private void tsm_gerenciar_cadastrados_Click(object sender, EventArgs e)
         {
-            
+            GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada =new GerenciarSindicanciaCadastrada(this);
+
+            frm_gerenciarSindicanciaCadastrada.MdiParent = this;
+            frm_gerenciarSindicanciaCadastrada.Show();
         }
     }
 }

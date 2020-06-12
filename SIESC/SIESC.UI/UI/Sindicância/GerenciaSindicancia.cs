@@ -230,7 +230,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 var _sindicancia = new Sindicancia();
 
-                _sindicancia.codigoSindidancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
+                _sindicancia.codigoSindicancia = (int)dgv_dados.CurrentRow.Cells["idSindicancia"].Value;
 
                 _sindicancia.codigoAluno = (int)dgv_dados.CurrentRow.Cells["idSindicado"].Value;
 

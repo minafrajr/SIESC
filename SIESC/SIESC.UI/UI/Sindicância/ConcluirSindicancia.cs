@@ -54,7 +54,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                ConfirmarAlteracoes();
+                FinalizaSindicancia();
             }
             catch (MySqlException ex)
             {
@@ -67,7 +67,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
         }
 
-        private void ConfirmarAlteracoes()
+        private void FinalizaSindicancia()
         {
             if (!rdb_endereco_sim.Checked && !rdb_endereco_nao.Checked && !chk_pendente.Checked)
                 throw new Exception("A situação do endereço ou pendência deve ser definida!");
@@ -95,7 +95,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
 
 
-            if (controleSindicancia.AtualizarSindicancia(sindicancia))
+            if (controleSindicancia.ConcluirSindicancia(sindicancia))
                 Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
             else
                 Mensageiro.MensagemErro("Não foi possível concluir a sindicância!", PrincipalUi);
@@ -120,7 +120,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    ConfirmarAlteracoes();
+                    FinalizaSindicancia();
                 }
             }
             catch (Exception ex)

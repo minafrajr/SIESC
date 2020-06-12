@@ -38,11 +38,13 @@ namespace SIESC.UI.UI
         /// </summary>
         private Aluno aluno;
 
+        private Principal_UI principalUi;
         /// <summary>
         /// Construtor da classe
         /// </summary>
-        public CadastrarAluno()
+        public CadastrarAluno(Principal_UI principalUi)
         {
+            this.principalUi = principalUi;
             InitializeComponent();
             AddListaControls();
         }
@@ -52,20 +54,22 @@ namespace SIESC.UI.UI
         /// preencimento com os dados do aluno
         /// </summary>
         /// <param name="_aluno"></param>
-        public CadastrarAluno(Aluno _aluno)
+        public CadastrarAluno(Aluno _aluno,Principal_UI principalUi)
         {
             try
             {
+                this.principalUi = principalUi;
                 InitializeComponent();
                 AddListaControls();
 
                 this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
 
                 TransfereDados(_aluno);
+                CalculaIdade(DateTime.Parse(msk_data_nascimento.Text));
             }
             catch (Exception exception)
             {
-                MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, principalUi);
             }
         }
 
@@ -166,7 +170,7 @@ namespace SIESC.UI.UI
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="listaControls"></param>
+        /// <param name="list"></param>
         /// <returns></returns>
         private bool CamposObrigatoriosEmBranco(List<Control> list)
         {
@@ -255,7 +259,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                MensagemErro(exception);
+                Mensageiro.MensagemErro(exception, principalUi);
             }
         }
 
@@ -295,14 +299,7 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void btn_excluir_Click(object sender,EventArgs e)
         {
-            try
-            {
                 throw new NotImplementedException("Ainda a desenvolver...!");
-            }
-            catch (Exception exception)
-            {
-                MensagemErro(exception);
-            }
         }
 
         /// <summary>
@@ -399,11 +396,11 @@ namespace SIESC.UI.UI
             }
             catch (FormatException)
             {
-                MensagemErro(new Exception("A data de nascimento não está num formato correto!"));
+                Mensageiro.MensagemErro(new Exception("A data de nascimento não está num formato correto!"),principalUi);
             }
             catch (Exception ex)
             {
-                MensagemErro(ex);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
     }

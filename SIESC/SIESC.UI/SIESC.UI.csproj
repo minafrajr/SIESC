@@ -448,6 +448,12 @@
     <Compile Include="UI\Sindicância\ConcluirSindicancia.Designer.cs">
       <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Sindicância\GerenciarSindicanciaCadastrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sindicância\GerenciarSindicanciaCadastrada.Designer.cs">
+      <DependentUpon>GerenciarSindicanciaCadastrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sindicância\GerenciaSindicancia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -642,6 +648,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sindicância\ConcluirSindicancia.resx">
       <DependentUpon>ConcluirSindicancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sindicância\GerenciarSindicanciaCadastrada.resx">
+      <DependentUpon>GerenciarSindicanciaCadastrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sindicância\GerenciaSindicancia.resx">
       <DependentUpon>GerenciaSindicancia.cs</DependentUpon>

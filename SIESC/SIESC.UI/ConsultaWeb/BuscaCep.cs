@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
+using static System.StringSplitOptions;
 
 
 namespace SIESC.UI
@@ -53,21 +54,24 @@ namespace SIESC.UI
 
                             bairro.Text = xElementbairro.Value.ToUpper();
 
-
                             logradouro.Text = xElementlogradouro.Value.ToUpper();
-                            tipologradouro.Text = String.Empty;
+                            var tipo = logradouro.Text.Split(' ');
+                            tipologradouro.Text = tipo[0];
+
+                            var pos = logradouro.Text.IndexOf(' ') + 1;
+
+                            logradouro.Text = logradouro.Text.Substring(pos, logradouro.Text.Length -pos);
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-                            throw new Exception("Cep não encontrado!\nPor favor digite o endereço.");
+                            throw new Exception($"Cep não encontrado!\nPor favor digite o endereço.\n{e.Message}");
                         }
                     }
                 }
             }
             catch (WebException erro)
             {
-                throw new WebException("Não foi possível acessar o WebService!\n" + erro.Message +
-                                       "\nVerifique sua conexão de rede.");
+                throw new WebException("Não foi possível acessar o WebService!\n" + erro.Message +"\nVerifique sua conexão de rede.");
             }
             catch (XmlException erro)
             {
