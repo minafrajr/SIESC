@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -32,7 +33,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
             this.rdb_codigoAluno = new System.Windows.Forms.RadioButton();
-            this.rdb_mae = new System.Windows.Forms.RadioButton();
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_codigo = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -117,7 +117,6 @@
             // gpb_localizar
             // 
             this.gpb_localizar.Controls.Add(this.rdb_codigoAluno);
-            this.gpb_localizar.Controls.Add(this.rdb_mae);
             this.gpb_localizar.Controls.Add(this.rdb_nome);
             this.gpb_localizar.Controls.Add(this.rdb_codigo);
             this.gpb_localizar.Location = new System.Drawing.Point(926, 70);
@@ -137,17 +136,7 @@
             this.rdb_codigoAluno.TabStop = true;
             this.rdb_codigoAluno.Text = "Código Aluno";
             this.rdb_codigoAluno.UseVisualStyleBackColor = true;
-            // 
-            // rdb_mae
-            // 
-            this.rdb_mae.AutoSize = true;
-            this.rdb_mae.Location = new System.Drawing.Point(302, 19);
-            this.rdb_mae.Name = "rdb_mae";
-            this.rdb_mae.Size = new System.Drawing.Size(47, 18);
-            this.rdb_mae.TabIndex = 2;
-            this.rdb_mae.TabStop = true;
-            this.rdb_mae.Text = "Mãe";
-            this.rdb_mae.UseVisualStyleBackColor = true;
+            this.rdb_codigoAluno.CheckedChanged += new System.EventHandler(this.rdb_codigoAluno_CheckedChanged);
             // 
             // rdb_nome
             // 
@@ -159,6 +148,7 @@
             this.rdb_nome.TabStop = true;
             this.rdb_nome.Text = "Nome";
             this.rdb_nome.UseVisualStyleBackColor = true;
+            this.rdb_nome.CheckedChanged += new System.EventHandler(this.rdb_nome_CheckedChanged);
             // 
             // rdb_codigo
             // 
@@ -170,6 +160,7 @@
             this.rdb_codigo.TabStop = true;
             this.rdb_codigo.Text = "Código Sindicancia";
             this.rdb_codigo.UseVisualStyleBackColor = true;
+            this.rdb_codigo.CheckedChanged += new System.EventHandler(this.rdb_codigo_CheckedChanged);
             // 
             // panel1
             // 
@@ -204,6 +195,7 @@
             // 
             // txt_dataFinalizacao
             // 
+            this.txt_dataFinalizacao.Enabled = false;
             this.txt_dataFinalizacao.Location = new System.Drawing.Point(366, 97);
             this.txt_dataFinalizacao.Name = "txt_dataFinalizacao";
             this.txt_dataFinalizacao.Size = new System.Drawing.Size(123, 22);
@@ -220,6 +212,7 @@
             // 
             // txt_responsável
             // 
+            this.txt_responsável.Enabled = false;
             this.txt_responsável.Location = new System.Drawing.Point(218, 97);
             this.txt_responsável.Name = "txt_responsável";
             this.txt_responsável.Size = new System.Drawing.Size(142, 22);
@@ -246,16 +239,14 @@
             // 
             // txt_codigoSindicancia
             // 
-            this.txt_codigoSindicancia.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_codigoSindicancia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigoSindicancia.BackColor = System.Drawing.Color.White;
             this.txt_codigoSindicancia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigoSindicancia.ForeColor = System.Drawing.Color.MediumBlue;
             this.txt_codigoSindicancia.Location = new System.Drawing.Point(566, 23);
-            this.txt_codigoSindicancia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_codigoSindicancia.Multiline = true;
+            this.txt_codigoSindicancia.Margin = new System.Windows.Forms.Padding(1);
             this.txt_codigoSindicancia.Name = "txt_codigoSindicancia";
             this.txt_codigoSindicancia.ReadOnly = true;
-            this.txt_codigoSindicancia.Size = new System.Drawing.Size(75, 29);
+            this.txt_codigoSindicancia.Size = new System.Drawing.Size(75, 35);
             this.txt_codigoSindicancia.TabIndex = 104;
             // 
             // lbl_codigoSolicitacao
@@ -269,16 +260,14 @@
             // 
             // txt_codigoAluno
             // 
-            this.txt_codigoAluno.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_codigoAluno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigoAluno.BackColor = System.Drawing.Color.White;
             this.txt_codigoAluno.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigoAluno.ForeColor = System.Drawing.Color.DarkRed;
             this.txt_codigoAluno.Location = new System.Drawing.Point(672, 22);
             this.txt_codigoAluno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_codigoAluno.Multiline = true;
             this.txt_codigoAluno.Name = "txt_codigoAluno";
             this.txt_codigoAluno.ReadOnly = true;
-            this.txt_codigoAluno.Size = new System.Drawing.Size(82, 29);
+            this.txt_codigoAluno.Size = new System.Drawing.Size(75, 35);
             this.txt_codigoAluno.TabIndex = 102;
             // 
             // lbl_codigo
@@ -302,6 +291,7 @@
             // 
             // txt_instituicao_encaminhada
             // 
+            this.txt_instituicao_encaminhada.Enabled = false;
             this.txt_instituicao_encaminhada.Location = new System.Drawing.Point(6, 182);
             this.txt_instituicao_encaminhada.Name = "txt_instituicao_encaminhada";
             this.txt_instituicao_encaminhada.Size = new System.Drawing.Size(535, 22);
@@ -320,6 +310,7 @@
             // 
             // txt_instituicao_inscricao
             // 
+            this.txt_instituicao_inscricao.Enabled = false;
             this.txt_instituicao_inscricao.Location = new System.Drawing.Point(6, 140);
             this.txt_instituicao_inscricao.Name = "txt_instituicao_inscricao";
             this.txt_instituicao_inscricao.Size = new System.Drawing.Size(535, 22);
@@ -349,7 +340,7 @@
             this.lbl_denuncia.AutoSize = true;
             this.lbl_denuncia.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_denuncia.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_denuncia.Location = new System.Drawing.Point(173, 38);
+            this.lbl_denuncia.Location = new System.Drawing.Point(161, 38);
             this.lbl_denuncia.Name = "lbl_denuncia";
             this.lbl_denuncia.Size = new System.Drawing.Size(30, 18);
             this.lbl_denuncia.TabIndex = 12;
@@ -358,7 +349,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(114, 42);
+            this.label8.Location = new System.Drawing.Point(102, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 14);
             this.label8.TabIndex = 11;
@@ -369,7 +360,7 @@
             this.lbl_usuario_finalizou.AutoSize = true;
             this.lbl_usuario_finalizou.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_usuario_finalizou.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(257, 38);
+            this.lbl_usuario_finalizou.Location = new System.Drawing.Point(251, 38);
             this.lbl_usuario_finalizou.Name = "lbl_usuario_finalizou";
             this.lbl_usuario_finalizou.Size = new System.Drawing.Size(30, 18);
             this.lbl_usuario_finalizou.TabIndex = 10;
@@ -378,7 +369,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(207, 41);
+            this.label7.Location = new System.Drawing.Point(201, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 14);
             this.label7.TabIndex = 9;
@@ -398,7 +389,7 @@
             this.lbl_finalizada.AutoSize = true;
             this.lbl_finalizada.Font = new System.Drawing.Font("Candara", 11F, System.Drawing.FontStyle.Bold);
             this.lbl_finalizada.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbl_finalizada.Location = new System.Drawing.Point(75, 38);
+            this.lbl_finalizada.Location = new System.Drawing.Point(69, 39);
             this.lbl_finalizada.Name = "lbl_finalizada";
             this.lbl_finalizada.Size = new System.Drawing.Size(33, 18);
             this.lbl_finalizada.TabIndex = 7;
@@ -446,6 +437,7 @@
             // 
             // txt_anoEnsino
             // 
+            this.txt_anoEnsino.Enabled = false;
             this.txt_anoEnsino.Location = new System.Drawing.Point(6, 98);
             this.txt_anoEnsino.Name = "txt_anoEnsino";
             this.txt_anoEnsino.Size = new System.Drawing.Size(81, 22);
@@ -453,6 +445,7 @@
             // 
             // txt_endereco
             // 
+            this.txt_endereco.Enabled = false;
             this.txt_endereco.Location = new System.Drawing.Point(67, 52);
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(474, 22);
@@ -478,6 +471,7 @@
             // 
             // txt_dataSindicancia
             // 
+            this.txt_dataSindicancia.Enabled = false;
             this.txt_dataSindicancia.Location = new System.Drawing.Point(91, 97);
             this.txt_dataSindicancia.Name = "txt_dataSindicancia";
             this.txt_dataSindicancia.Size = new System.Drawing.Size(123, 22);
@@ -496,6 +490,7 @@
             // 
             this.txt_nomealuno.BackColor = System.Drawing.Color.White;
             this.txt_nomealuno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nomealuno.Enabled = false;
             this.txt_nomealuno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt_nomealuno.Location = new System.Drawing.Point(46, 27);
             this.txt_nomealuno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -578,7 +573,6 @@
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Enabled = false;
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
             this.btn_excluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -604,6 +598,7 @@
             this.btn_localizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_localizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_localizar.UseVisualStyleBackColor = true;
+            this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
             // 
             // statusStrip1
             // 
@@ -631,13 +626,14 @@
             this.dgv_dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_dados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgv_dados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_dados.Location = new System.Drawing.Point(0, 0);
             this.dgv_dados.MultiSelect = false;
             this.dgv_dados.Name = "dgv_dados";
             this.dgv_dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dados.ShowEditingIcon = false;
-            this.dgv_dados.Size = new System.Drawing.Size(1313, 407);
+            this.dgv_dados.Size = new System.Drawing.Size(1313, 382);
             this.dgv_dados.TabIndex = 1;
             this.dgv_dados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dados_CellContentClick);
             this.dgv_dados.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_dados_DataBindingComplete);
@@ -649,6 +645,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciarSindicanciaCadastrada";
             this.Text = "Gerenciar Sindicancias Cadastradas";
+            this.Enter += new System.EventHandler(this.GerenciarSindicanciaCadastrada_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -690,7 +687,6 @@
         private System.Windows.Forms.Label lbl_instituicaosolicitada;
         private System.Windows.Forms.GroupBox gpb_localizar;
         private System.Windows.Forms.RadioButton rdb_codigoAluno;
-        private System.Windows.Forms.RadioButton rdb_mae;
         private System.Windows.Forms.RadioButton rdb_nome;
         private System.Windows.Forms.RadioButton rdb_codigo;
         private System.Windows.Forms.Label lbl_observacoes;
@@ -718,5 +714,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_num_linhas;
+
+        private enum Localizar
+        {
+            idAluno,
+            idSindicancia,
+            nomeAluno,
+            aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
+            
+
+        };
     }
 }

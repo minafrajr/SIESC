@@ -223,6 +223,27 @@ namespace SIESC.BD.Control
             return vw_sindicancia_TA.GetSindicanciasCadastradas();
         }
 
+        public DataTable GetSindicanciasByIdAluno(int? idAluno)
+        {
+            vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
+
+            return vw_sindicancia_TA.GetSindicanciasCadastradasByIdAluno(idAluno);
+        }
+
+        public DataTable GetSindicanciasByIdSindicancia(int idSindicancia)
+        {
+            vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
+
+            return vw_sindicancia_TA.GetSindicanciasCadastradasByIdSindicancia(idSindicancia);
+        }
+
+        public DataTable GetSindicanciaByNomeAluno(string nomeAluno)
+        {
+            vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
+
+            return vw_sindicancia_TA.GetSindicanciasCadastradasByNomeAluno($"%{nomeAluno}%");
+        }
+
         public Sindicancia RetornaSindicancia(int idSindicancia, int idAluno)
         {
             sindicancia_TA = new sindicanciaTableAdapter();

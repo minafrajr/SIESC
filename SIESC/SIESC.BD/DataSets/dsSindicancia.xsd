@@ -220,7 +220,7 @@
               <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AtualizarSindicancia" Modifier="Public" Name="AtualizarSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="AtualizarSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AtualizarSindicancia" Modifier="Public" Name="AtualizarSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AtualizarSindicancia">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       sindicancia
@@ -250,7 +250,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ConcluirSindicancia" Modifier="Public" Name="ConcluirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ConcluirSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ConcluirSindicancia" Modifier="Public" Name="ConcluirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ConcluirSindicancia">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       sindicancia
@@ -271,7 +271,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExcluirSindicancia" Modifier="Public" Name="ExcluirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ExcluirSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExcluirSindicancia" Modifier="Public" Name="ExcluirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ExcluirSindicancia">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM sindicancia
@@ -283,7 +283,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirSindicancia" Modifier="Public" Name="InserirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InserirSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirSindicancia" Modifier="Public" Name="InserirSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InserirSindicancia">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO sindicancia
@@ -328,7 +328,7 @@ WHERE        (idSindicancia = @idSindicancia) AND (idSindicado = @idSindicado)</
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SalvarSindicancia" Modifier="Public" Name="SalvarSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SalvarSindicancia">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SalvarSindicancia" Modifier="Public" Name="SalvarSindicancia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SalvarSindicancia">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO sindicancia  (idSindicado, dataSindicancia, usuarioResponsavel, status)
@@ -342,7 +342,7 @@ VALUES        (@idSindicado, @dataSindicancia, @usurarioResponsavel, @status)</C
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="VerificarIdSindicado" Modifier="Public" Name="VerificarIdSindicado" QueryType="Scalar" ScalarCallRetval="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="VerificarIdSindicado">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="VerificarIdSindicado" Modifier="Public" Name="VerificarIdSindicado" QueryType="Scalar" ScalarCallRetval="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="VerificarIdSindicado">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        1 AS Expr1
@@ -507,6 +507,48 @@ FROM            vw_sindicancia
 WHERE        (Status = 1) AND (OrigemSindicancia = 'Cadastro')
 ORDER BY idSindicado</CommandText>
                     <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicanciasCadastradasByIdAluno" GetMethodModifier="Public" GetMethodName="GetSindicanciasCadastradasByIdAluno" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicanciasCadastradasByIdAluno" UserSourceName="GetSindicanciasCadastradasByIdAluno">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, 
+                         Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+FROM            vw_sindicancia
+WHERE        (Status = 1) AND (OrigemSindicancia = 'Cadastro') AND (idSindicado = @idSindicado)
+ORDER BY idSindicado</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="idSindicado" ColumnName="idSindicado" DataSourceName="siesc.vw_sindicancia" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idSindicado" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idSindicado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicanciasCadastradasByIdSindicancia" GetMethodModifier="Public" GetMethodName="GetSindicanciasCadastradasByIdSindicancia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicanciasCadastradasByIdSindicancia" UserSourceName="GetSindicanciasCadastradasByIdSindicancia">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, 
+                         Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+FROM            vw_sindicancia
+WHERE        (Status = 1) AND (OrigemSindicancia = 'Cadastro') AND (idSindicancia = @idSindicancia)
+ORDER BY idSindicado</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idSindicancia" ColumnName="idSindicancia" DataSourceName="siesc.vw_sindicancia" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idSindicancia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idSindicancia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_sindicancia" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSindicanciasCadastradasByNomeAluno" GetMethodModifier="Public" GetMethodName="GetSindicanciasCadastradasByNomeAluno" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSindicanciasCadastradasByNomeAluno" UserSourceName="GetSindicanciasCadastradasByNomeAluno">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AnoEnsino, DataFinalizacao, DataSindicancia, DataSolicitacao, Endereco, EnderecoComprovado, InstituicaoEncaminhada, InstituicaoSolicitada, OrigemSindicancia, MotivoSindicancia, NomeAluno, Observacoes, Pendente, 
+                         Regional, SindicanciaFinalizada, Status, UsuarioFinalizou, UsuarioResponsavel, idSindicado, idSindicancia, idSolicitacao
+FROM            vw_sindicancia
+WHERE        (Status = 1) AND (OrigemSindicancia = 'Cadastro') AND (NomeAluno LIKE @NomeAluno)
+ORDER BY idSindicado</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="NomeAluno" ColumnName="NomeAluno" DataSourceName="siesc.vw_sindicancia" DataTypeServer="varchar(60)(60)" DbType="String" Direction="Input" ParameterName="@NomeAluno" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumn="NomeAluno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>

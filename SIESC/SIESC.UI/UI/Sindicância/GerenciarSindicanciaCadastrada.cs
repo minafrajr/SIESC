@@ -19,12 +19,37 @@ namespace SIESC.UI.UI.Sindicância
         private AlunoControl AlunoControl;
         private Sindicancia sindicancia;
         private Aluno aluno;
+        private Localizar localizar;
+        private List<Control> listaControles = new List<Control>();
 
         public GerenciarSindicanciaCadastrada(Principal_UI principalUi)
         {
             InitializeComponent();
+            AddListaControles();
             this.principalUi = principalUi;
+            localizar = Localizar.aguardando;
             CarregaGridView();
+        }
+
+        private void AddListaControles()
+        {
+            listaControles.Add(txt_codigoAluno);
+            listaControles.Add(txt_anoEnsino);
+            listaControles.Add(txt_codigoSindicancia);
+            listaControles.Add(txt_dataFinalizacao);
+            listaControles.Add(txt_dataSindicancia);
+            listaControles.Add(txt_endereco);
+            listaControles.Add(txt_instituicao_encaminhada);
+            listaControles.Add(txt_instituicao_inscricao);
+            listaControles.Add(txt_nomealuno);
+            listaControles.Add(txt_observacoes);
+            listaControles.Add(txt_responsável);
+            listaControles.Add(lbl_denuncia);
+            listaControles.Add(lbl_data_sindicancia);
+            listaControles.Add(lbl_endereco_comprovado);
+            listaControles.Add(lbl_pendente);
+            listaControles.Add(lbl_finalizada);
+            listaControles.Add(lbl_usuario_finalizou);
         }
 
         private void CarregaGridView()
@@ -34,15 +59,31 @@ namespace SIESC.UI.UI.Sindicância
                 sindicanciaControl = new SindicanciaControl();
                 var dt = sindicanciaControl.GetTodasSindicanciasCadastradas();
 
+                switch (localizar)
+                {
+                    case Localizar.idAluno:
+                        dt = sindicanciaControl.GetSindicanciasByIdAluno(Convert.ToInt32(txt_codigoAluno.Text));
+                        break;
+                    case Localizar.idSindicancia:
+                        dt = sindicanciaControl.GetSindicanciasByIdSindicancia(Convert.ToInt32(txt_codigoSindicancia.Text));
+                        break;
+                    case Localizar.nomeAluno:
+                        dt = sindicanciaControl.GetSindicanciaByNomeAluno(txt_nomealuno.Text);
+                        break;
+
+                    case Localizar.aguardando:
+                        dt = sindicanciaControl.GetTodasSindicanciasCadastradas();
+                        break;
+                }
                 dt.Columns.Remove("idSolicitacao");
                 dt.Columns.Remove("Regional");
                 dt.Columns.Remove("OrigemSindicancia");
-                dt.Columns.Remove("MotivoSindicancia");
                 dt.Columns.Remove("DataSolicitacao");
 
                 dgv_dados.DataSource = dt;
 
                 dgv_dados.Refresh();
+
             }
             catch (Exception e)
             {
@@ -125,6 +166,17 @@ namespace SIESC.UI.UI.Sindicância
                 lbl_pendente.Text = "Análise";
                 lbl_pendente.ForeColor = Color.Peru;
             }
+
+            if (dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString().Equals("DENÚNCIA"))
+            {
+                lbl_denuncia.Text = "Sim";
+                lbl_denuncia.ForeColor = Color.DarkRed;
+            }
+            else
+            {
+                lbl_denuncia.Text = "Não";
+                lbl_denuncia.ForeColor = Color.DarkGreen;
+            }
         }
 
         private void dgv_dados_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -143,6 +195,9 @@ namespace SIESC.UI.UI.Sindicância
         {
             try
             {
+                if (string.IsNullOrEmpty(txt_codigoSindicancia.Text) && string.IsNullOrEmpty(txt_codigoAluno.Text))
+                    throw new ArgumentNullException("Nenhuma sindicancia foi selecionada!");
+
                 sindicanciaControl = new SindicanciaControl();
                 AlunoControl = new AlunoControl();
 
@@ -163,13 +218,12 @@ namespace SIESC.UI.UI.Sindicância
 
                         }
                     }
+                    CarregaGridView();
                 }
-
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                throw;
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -177,25 +231,23 @@ namespace SIESC.UI.UI.Sindicância
         {
             try
             {
-                if(string.IsNullOrEmpty(txt_codigoSindicancia.Text) && string.IsNullOrEmpty(txt_codigoAluno.Text))
+                if (string.IsNullOrEmpty(txt_codigoSindicancia.Text) && string.IsNullOrEmpty(txt_codigoAluno.Text))
                     throw new ArgumentNullException("Nenhuma sindicancia foi selecionada!");
-                
+
                 sindicanciaControl = new SindicanciaControl();
                 AlunoControl = new AlunoControl();
-                sindicancia = sindicanciaControl.RetornaSindicancia(Convert.ToInt32(txt_codigoSindicancia.Text),Convert.ToInt32(txt_codigoAluno.Text));
+                sindicancia = sindicanciaControl.RetornaSindicancia(Convert.ToInt32(txt_codigoSindicancia.Text), Convert.ToInt32(txt_codigoAluno.Text));
                 aluno = AlunoControl.RetornaAluno(Convert.ToInt32(txt_codigoAluno.Text));
 
-                CadastraSindicancia frm_cadastraSindicancia = new CadastraSindicancia(aluno,sindicancia,principalUi);
+                CadastraSindicancia frm_cadastraSindicancia = new CadastraSindicancia(aluno, sindicancia, principalUi);
                 frm_cadastraSindicancia.MdiParent = principalUi;
                 frm_cadastraSindicancia.Show();
 
             }
             catch (Exception exception)
             {
-
                 Mensageiro.MensagemErro(exception, this);
             }
-
         }
 
         private void btn_editaraluno_Click(object sender, EventArgs e)
@@ -205,7 +257,7 @@ namespace SIESC.UI.UI.Sindicância
                 AlunoControl = new AlunoControl();
                 aluno = AlunoControl.RetornaAluno(Convert.ToInt32(txt_codigoAluno.Text));
 
-                CadastrarAluno frm_cadastraAluno = new CadastrarAluno(aluno,principalUi);
+                CadastrarAluno frm_cadastraAluno = new CadastrarAluno(aluno, principalUi);
                 frm_cadastraAluno.MdiParent = principalUi;
                 frm_cadastraAluno.Show();
             }
@@ -214,5 +266,92 @@ namespace SIESC.UI.UI.Sindicância
                 Mensageiro.MensagemErro(exception, this);
             }
         }
+
+        private void GerenciarSindicanciaCadastrada_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregaGridView();
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception, this);
+            }
+        }
+
+        private void btn_localizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregaGridView();
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception, this);
+            }
+        }
+
+        private void rdb_codigo_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaControles(false, true, false);
+            localizar = Localizar.idSindicancia;
+        }
+
+        private void rdb_codigoAluno_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaControles(true, false, false);
+            localizar = Localizar.idAluno;
+        }
+
+        private void rdb_nome_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaControles(false, false, true);
+            localizar = Localizar.nomeAluno;
+        }
+        private void HabilitaControles(bool idAluno, bool idSindicancia, bool NomeAluno)
+        {
+            LimpaCampos();
+
+            txt_codigoAluno.Enabled = idAluno;
+            txt_codigoSindicancia.Enabled = idSindicancia;
+            txt_nomealuno.Enabled = NomeAluno;
+
+            if (idSindicancia)
+            {
+                txt_codigoSindicancia.Focus();
+                txt_codigoSindicancia.ReadOnly = !idSindicancia;
+            }
+            if (NomeAluno)
+                txt_nomealuno.Focus();
+            if (idAluno)
+            {
+                txt_codigoAluno.Focus();
+                txt_codigoAluno.ReadOnly = !idAluno;
+            }
+        }
+
+
+        private void LimpaCampos()
+        {
+            dgv_dados.DataSource = null;
+            dgv_dados.Refresh();
+
+            foreach (Control controle in listaControles)
+            {
+                switch (controle)
+                {
+                    case MyTextBox _:
+                        controle.ResetText();
+                        break;
+                    case Label _:
+                        controle.ResetText();
+                        break;
+                    case TextBox _:
+                        controle.ResetText();
+                        break;
+                }
+            }
+        }
+
     }
 }
