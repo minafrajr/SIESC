@@ -2497,6 +2497,10 @@ namespace SIESC.UI
 
         private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+#if !DEBUG
+
+            if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) return;
+#endif
             GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
 
             frmSindicancia.MdiParent = this;
@@ -2513,6 +2517,10 @@ namespace SIESC.UI
 
         private void tsm_gerenciar_cadastrados_Click(object sender, EventArgs e)
         {
+#if !DEBUG
+
+            if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) return;
+#endif
             GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada =new GerenciarSindicanciaCadastrada(this);
 
             frm_gerenciarSindicanciaCadastrada.MdiParent = this;
