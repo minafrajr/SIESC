@@ -60,7 +60,12 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 instituicoesTableAdapter.FillByMunicipioCreche(siescDataSet.instituicoes);
 
+                cargosTableAdapter1.Fill(siescDataSet.cargos);
+                cargos1TableAdapter1.Fill(siescDataSet.cargos1);
+
                 cbo_instituicao.SelectedIndex = -1;
+                cbo_cargoAtual.SelectedIndex =-1;
+                cbo_cargoOrigem.SelectedIndex = -1;
             }
             catch (Exception e)
             {

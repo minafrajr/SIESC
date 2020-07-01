@@ -27164,8 +27164,8 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
                 "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (`Cargo Atual` LIKE @car" +
-                "goAtual)";
+                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (`CargoAtual` LIKE @carg" +
+                "oAtual)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cargoAtual";
@@ -27173,15 +27173,14 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 45;
             param.IsNullable = true;
-            param.SourceColumn = "Cargo Atual";
+            param.SourceColumn = "CargoAtual";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (`Cargo de Origem` LIKE " +
-                "@cargoOrigem)";
+            this._commandCollection[3].CommandText = @"SELECT        Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, DatadeNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone1, Telefone2, TelefoneEscola
+FROM            vw_funcionarios
+WHERE        (CargodeOrigem LIKE @cargoOrigem)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cargoOrigem";
@@ -27189,7 +27188,7 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 45;
             param.IsNullable = true;
-            param.SourceColumn = "Cargo de Origem";
+            param.SourceColumn = "CargodeOrigem";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
