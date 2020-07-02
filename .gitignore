@@ -21,6 +21,11 @@
 SIESC/SIESC/SIESC.BD/App.config
 [Aa]pp.config
 
+
+# Bloquear relatórios de Backup
+
+*Backup*.rdlc
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
