@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>95507765-faa1-4dc1-ba85-71c420147690</rd:DataSourceID>
+      <rd:DataSourceID>b43d56d0-cba8-4ba1-956d-28c33e7d22bc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -25,8 +25,12 @@
           <DataField>idSindicado</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="nomeAluno">
-          <DataField>nomeAluno</DataField>
+        <Field Name="idSolicitacoesVagas">
+          <DataField>idSolicitacoesVagas</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NomeAluno">
+          <DataField>NomeAluno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Mae">
@@ -41,29 +45,37 @@
           <DataField>Regional</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Telefone">
-          <DataField>Telefone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="InstituicaoSolicitada">
           <DataField>InstituicaoSolicitada</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="InstituicaoEncaminhada">
-          <DataField>InstituicaoEncaminhada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="AnoEnsino">
           <DataField>AnoEnsino</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DataSindicancia">
-          <DataField>DataSindicancia</DataField>
+        <Field Name="DataSolicitacao">
+          <DataField>DataSolicitacao</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="GrauSolicitante">
+          <DataField>GrauSolicitante</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Solicitante">
+          <DataField>Solicitante</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InstituicaoEncaminhada">
+          <DataField>InstituicaoEncaminhada</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="UsuarioResponsavel">
           <DataField>UsuarioResponsavel</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataSindicancia">
+          <DataField>DataSindicancia</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="OrigemSindicancia">
           <DataField>OrigemSindicancia</DataField>
@@ -71,6 +83,10 @@
         </Field>
         <Field Name="MotivoSindicancia">
           <DataField>MotivoSindicancia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UsuarioFinalizou">
+          <DataField>UsuarioFinalizou</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Observacoes">
@@ -97,14 +113,18 @@
           <DataField>Status</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
+        <Field Name="Telefone">
+          <DataField>Telefone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsSindicancia</rd:DataSetName>
         <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsSindicancia.xsd</rd:SchemaPath>
-        <rd:TableName>vw_ficha_sindicancia_cadastrado</rd:TableName>
+        <rd:TableName>vw_ficha_sindicancia</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>vw_ficha_sindicancia_cadastradoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>vw_ficha_sindicanciaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -141,8 +161,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>3.56121cm</Top>
-            <Left>0.63238cm</Left>
+            <Top>3.49065cm</Top>
+            <Left>0.65048cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.25646cm</Width>
             <ZIndex>1</ZIndex>
@@ -173,7 +193,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>5.12281cm</Top>
+            <Top>5.8992cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.90027cm</Width>
@@ -205,7 +225,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>6.73733cm</Top>
+            <Top>7.51372cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.6cm</Height>
             <Width>2.6411cm</Width>
@@ -237,7 +257,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>5.96094cm</Top>
+            <Top>6.73733cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.6cm</Height>
             <Width>3.25707cm</Width>
@@ -269,8 +289,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>2.81128cm</Top>
-            <Left>4.99879cm</Left>
+            <Top>2.74072cm</Top>
+            <Left>5.01689cm</Left>
             <Height>0.6cm</Height>
             <Width>2.9189cm</Width>
             <ZIndex>5</ZIndex>
@@ -305,7 +325,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>7.51372cm</Top>
+            <Top>8.29011cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.51083cm</Width>
@@ -342,7 +362,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>8.32547cm</Top>
+            <Top>9.10186cm</Top>
             <Left>0.54465cm</Left>
             <Height>0.67056cm</Height>
             <Width>19.11583cm</Width>
@@ -378,7 +398,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>9.17241cm</Top>
+            <Top>9.9488cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.62646cm</Height>
             <Width>14.1152cm</Width>
@@ -415,7 +435,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>25.1565cm</Top>
-            <Left>0.65884cm</Left>
+            <Left>0.63238cm</Left>
             <Height>0.86458cm</Height>
             <Width>19.5127cm</Width>
             <ZIndex>9</ZIndex>
@@ -450,7 +470,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>11.57214cm</Top>
+            <Top>12.52464cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.6cm</Height>
             <Width>4.82833cm</Width>
@@ -486,7 +506,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>10.83102cm</Top>
+            <Top>11.60741cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.6cm</Height>
             <Width>15.30583cm</Width>
@@ -522,7 +542,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>9.97526cm</Top>
+            <Top>10.75165cm</Top>
             <Left>0.57111cm</Left>
             <Height>0.67938cm</Height>
             <Width>19.48624cm</Width>
@@ -558,7 +578,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>12.96478cm</Top>
+            <Top>13.91728cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
@@ -590,7 +610,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>15.5056cm</Top>
+            <Top>16.4581cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
@@ -622,7 +642,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>14.6322cm</Top>
+            <Top>15.5847cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
@@ -654,7 +674,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>13.83818cm</Top>
+            <Top>14.79068cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
@@ -686,7 +706,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>16.379cm</Top>
+            <Top>17.3315cm</Top>
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
@@ -719,7 +739,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>22.04963cm</Top>
-            <Left>0.62403cm</Left>
+            <Left>0.59757cm</Left>
             <Height>0.86458cm</Height>
             <Width>19.5127cm</Width>
             <ZIndex>18</ZIndex>
@@ -731,38 +751,6 @@
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
               <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox39">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>___________________________________________________________________________________________________</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>20.87664cm</Top>
-            <Left>0.57111cm</Left>
-            <Height>0.73229cm</Height>
-            <Width>19.5127cm</Width>
-            <ZIndex>19</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
             </Style>
           </Textbox>
           <Textbox Name="Textbox40">
@@ -786,11 +774,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>17.2524cm</Top>
+            <Top>18.2049cm</Top>
             <Left>0.54465cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -822,7 +810,7 @@
             <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -851,10 +839,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
             <Top>23.89344cm</Top>
-            <Left>0.62403cm</Left>
+            <Left>0.59757cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -882,11 +870,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>18.16108cm</Top>
+            <Top>19.11358cm</Top>
             <Left>0.54465cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -900,7 +888,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!nomeAluno.Value, "dsSindicancia")</Value>
+                    <Value>=First(Fields!NomeAluno.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -908,11 +896,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>3.58767cm</Top>
-            <Left>2.06524cm</Left>
+            <Top>3.51711cm</Top>
+            <Left>2.08334cm</Left>
             <Height>0.62646cm</Height>
             <Width>14.2278cm</Width>
-            <ZIndex>24</ZIndex>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -939,11 +927,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>5.15809cm</Top>
+            <Top>5.93448cm</Top>
             <Left>2.67423cm</Left>
             <Height>0.62646cm</Height>
             <Width>16.98625cm</Width>
-            <ZIndex>25</ZIndex>
+            <ZIndex>24</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -970,11 +958,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>5.96094cm</Top>
+            <Top>6.73733cm</Top>
             <Left>3.96048cm</Left>
             <Height>0.6cm</Height>
             <Width>15.7cm</Width>
-            <ZIndex>26</ZIndex>
+            <ZIndex>25</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -993,7 +981,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!InstituicaoEncaminhada.Value, "dsSindicancia")</Value>
+                    <Value>=First(Fields!InstituicaoSolicitada.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1001,11 +989,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>6.73733cm</Top>
+            <Top>7.51372cm</Top>
             <Left>3.41506cm</Left>
             <Height>0.6cm</Height>
             <Width>16.24542cm</Width>
-            <ZIndex>27</ZIndex>
+            <ZIndex>26</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1038,11 +1026,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>7.51372cm</Top>
+            <Top>8.29011cm</Top>
             <Left>5.43945cm</Left>
             <Height>0.70583cm</Height>
             <Width>14.6179cm</Width>
-            <ZIndex>28</ZIndex>
+            <ZIndex>27</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1060,7 +1048,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Sindicância Nº:</Value>
+                    <Value>Solicitação Nº:</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1070,11 +1058,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>2.78482cm</Top>
-            <Left>0.63238cm</Left>
+            <Top>2.71426cm</Top>
+            <Left>0.65048cm</Left>
             <Height>0.62646cm</Height>
             <Width>2.72119cm</Width>
-            <ZIndex>29</ZIndex>
+            <ZIndex>28</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1092,7 +1080,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!idSindicancia.Value, "dsSindicancia")</Value>
+                    <Value>=Sum(Fields!idSolicitacoesVagas.Value, "dsSindicancia")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1102,11 +1090,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>2.78482cm</Top>
-            <Left>3.33524cm</Left>
+            <Top>2.71426cm</Top>
+            <Left>3.35334cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.46001cm</Width>
-            <ZIndex>30</ZIndex>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1139,11 +1127,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>12.11783cm</Top>
+            <Top>13.07033cm</Top>
             <Left>0.57111cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>31</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1167,11 +1155,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>2.81128cm</Top>
-            <Left>7.77658cm</Left>
+            <Top>2.74072cm</Top>
+            <Left>7.79468cm</Left>
             <Height>0.6cm</Height>
             <Width>2.80869cm</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1190,7 +1178,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Sindicância " &amp; Year(Now())</Value>
+                    <Value>="Sindicância - Solicitação de vaga " &amp; Year(Now())</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1207,7 +1195,7 @@
             <Left>0.65048cm</Left>
             <Height>0.70583cm</Height>
             <Width>9.29979cm</Width>
-            <ZIndex>33</ZIndex>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1225,7 +1213,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Mãe:</Value>
+                    <Value>Responsável:</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1235,11 +1223,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>4.31996cm</Top>
+            <Top>5.09635cm</Top>
             <Left>0.63238cm</Left>
             <Height>0.62646cm</Height>
             <Width>2.52647cm</Width>
-            <ZIndex>34</ZIndex>
+            <ZIndex>33</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1257,7 +1245,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Mae.Value, "dsSindicancia")</Value>
+                    <Value>=IIf(First(Fields!GrauSolicitante.Value, "dsSindicancia") = "MÃE","MÃE",First(Fields!Solicitante.Value, "dsSindicancia") &amp; " - " &amp; First(Fields!GrauSolicitante.Value, "dsSindicancia"))</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1265,11 +1253,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>4.34642cm</Top>
+            <Top>5.12281cm</Top>
             <Left>3.33524cm</Left>
             <Height>0.62646cm</Height>
             <Width>10.19778cm</Width>
-            <ZIndex>35</ZIndex>
+            <ZIndex>34</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1298,11 +1286,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>4.37288cm</Top>
-            <Left>13.7094cm</Left>
+            <Top>5.14927cm</Top>
+            <Left>13.70941cm</Left>
             <Height>0.6cm</Height>
             <Width>5.95107cm</Width>
-            <ZIndex>36</ZIndex>
+            <ZIndex>35</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1335,11 +1323,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>19.07665cm</Top>
+            <Top>20.02915cm</Top>
             <Left>0.54465cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
-            <ZIndex>37</ZIndex>
+            <ZIndex>36</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1367,15 +1355,78 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>19.98533cm</Top>
-            <Left>0.57111cm</Left>
+            <Top>20.93783cm</Top>
+            <Left>0.54465cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.5127cm</Width>
+            <ZIndex>37</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox58">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Mãe:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox43</rd:DefaultName>
+            <Top>4.2935cm</Top>
+            <Left>0.65048cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>1.23836cm</Width>
             <ZIndex>38</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox59">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Mae.Value, "dsSindicancia")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox43</rd:DefaultName>
+            <Top>4.31996cm</Top>
+            <Left>2.08334cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>14.2278cm</Width>
+            <ZIndex>39</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Gainsboro</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
         </ReportItems>

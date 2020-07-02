@@ -704,8 +704,8 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         private void CarregaCombosCargos()
         {
-            this.cargosTableAdapter.Fill(this.siescDataSet.cargos);
-            this.cargos1TableAdapter.Fill(this.siescDataSet.cargos1);
+            this.cargosTableAdapter.FillCargos(this.siescDataSet.cargos);
+            this.cargos1TableAdapter.FillCargos(this.siescDataSet.cargos1);
 
         }
 

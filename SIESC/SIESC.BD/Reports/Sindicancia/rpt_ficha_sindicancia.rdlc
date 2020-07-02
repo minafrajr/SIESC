@@ -1178,7 +1178,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Sindicância - Solicitação de vaga " &amp; Year(Now())</Value>
+                    <Value>="Sindicância " &amp; Year(Now())</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>

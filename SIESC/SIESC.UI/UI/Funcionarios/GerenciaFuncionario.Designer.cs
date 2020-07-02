@@ -34,6 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaFuncionario));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.cbo_cargoAtual = new SIESC.UI.MyComboBox();
+            this.siescDataSet = new SIESC.UI.siescDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_instituicao = new SIESC.UI.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.siescDataSet = new SIESC.UI.siescDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_cargoOrigem = new SIESC.UI.MyComboBox();
             this.lbl_cargo = new System.Windows.Forms.Label();
@@ -80,8 +80,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             this.gpb_localizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gerenciafuncionarios)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,11 @@
             this.cbo_cargoAtual.TabIndex = 64;
             this.cbo_cargoAtual.ValueMember = "cargos1.idcargos";
             // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -195,7 +200,7 @@
             // 
             this.txt_telefone2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_telefone2.Enabled = false;
-            this.txt_telefone2.Location = new System.Drawing.Point(564, 129);
+            this.txt_telefone2.Location = new System.Drawing.Point(561, 129);
             this.txt_telefone2.Name = "txt_telefone2";
             this.txt_telefone2.Size = new System.Drawing.Size(108, 22);
             this.txt_telefone2.TabIndex = 58;
@@ -272,11 +277,6 @@
             this.instituicoesBindingSource.DataMember = "instituicoes";
             this.instituicoesBindingSource.DataSource = this.siescDataSet;
             // 
-            // siescDataSet
-            // 
-            this.siescDataSet.DataSetName = "siescDataSet";
-            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -295,7 +295,7 @@
             this.cbo_cargoOrigem.FormattingEnabled = true;
             this.cbo_cargoOrigem.Location = new System.Drawing.Point(480, 88);
             this.cbo_cargoOrigem.Name = "cbo_cargoOrigem";
-            this.cbo_cargoOrigem.Size = new System.Drawing.Size(178, 22);
+            this.cbo_cargoOrigem.Size = new System.Drawing.Size(240, 22);
             this.cbo_cargoOrigem.TabIndex = 49;
             this.cbo_cargoOrigem.ValueMember = "cargos.idcargos";
             // 
@@ -599,8 +599,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             this.gpb_localizar.ResumeLayout(false);
             this.gpb_localizar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gerenciafuncionarios)).EndInit();
