@@ -646,7 +646,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void btn_emitircarteirinha_Click(object sender,EventArgs e)
         {
-            var t = CarregaProgressoThread();
+            //var t = CarregaProgressoThread();
             try
             {
                 foreach (Form mdiChild in MdiChildren)
@@ -662,17 +662,17 @@ namespace SIESC.UI.UI.Autorizacoes
                 formCarteirinha.MdiParent = principalUi;
                 formCarteirinha.Show();
 
-                if (t.IsAlive) t.Abort();
+               // if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                if (t.IsAlive) t.Abort();
+               // if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,principalUi);
             }
         }
 
         /// <summary>
-        /// Carrega form com gif enquenao é aberto o relatório 
+        /// Carrega form com gif enquanto é aberto o relatório 
         /// </summary>
         /// <returns></returns>
         private static Thread CarregaProgressoThread()
