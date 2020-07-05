@@ -62,7 +62,11 @@
             this.lbl_aluno = new System.Windows.Forms.Label();
             this.lbl_data_nasc = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_alunos = new System.Windows.Forms.DataGridView();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_zoneamento = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -77,7 +81,9 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alunos)).BeginInit();
+            this.statusStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -460,14 +466,33 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.statusStrip1);
             this.splitContainer2.Panel1.Controls.Add(this.dgv_alunos);
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer2.Panel2.Controls.Add(this.dgv_zoneamento);
             this.splitContainer2.Size = new System.Drawing.Size(1227, 451);
             this.splitContainer2.SplitterDistance = 119;
             this.splitContainer2.TabIndex = 2;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 97);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1227, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(96, 17);
+            this.lbl_num_registros.Text = "Total de registros";
             // 
             // dgv_alunos
             // 
@@ -480,7 +505,7 @@
             this.dgv_alunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_alunos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_alunos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_alunos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_alunos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_alunos.Location = new System.Drawing.Point(0, 0);
             this.dgv_alunos.MultiSelect = false;
@@ -490,10 +515,28 @@
             this.dgv_alunos.ShowCellToolTips = false;
             this.dgv_alunos.ShowEditingIcon = false;
             this.dgv_alunos.ShowRowErrors = false;
-            this.dgv_alunos.Size = new System.Drawing.Size(1227, 119);
+            this.dgv_alunos.Size = new System.Drawing.Size(1227, 96);
             this.dgv_alunos.TabIndex = 1;
             this.dgv_alunos.TabStop = false;
             this.dgv_alunos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_alunos_CellMouseClick);
+            this.dgv_alunos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_alunos_DataBindingComplete);
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros2});
+            this.statusStrip2.Location = new System.Drawing.Point(0, 306);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(1227, 22);
+            this.statusStrip2.TabIndex = 1;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // lbl_num_registros2
+            // 
+            this.lbl_num_registros2.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros2.Name = "lbl_num_registros2";
+            this.lbl_num_registros2.Size = new System.Drawing.Size(96, 17);
+            this.lbl_num_registros2.Text = "Total de registros";
             // 
             // dgv_zoneamento
             // 
@@ -506,7 +549,7 @@
             this.dgv_zoneamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_zoneamento.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_zoneamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_zoneamento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_zoneamento.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_zoneamento.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_zoneamento.Location = new System.Drawing.Point(0, 0);
             this.dgv_zoneamento.MultiSelect = false;
@@ -517,9 +560,10 @@
             this.dgv_zoneamento.ShowCellToolTips = false;
             this.dgv_zoneamento.ShowEditingIcon = false;
             this.dgv_zoneamento.ShowRowErrors = false;
-            this.dgv_zoneamento.Size = new System.Drawing.Size(1227, 328);
+            this.dgv_zoneamento.Size = new System.Drawing.Size(1227, 304);
             this.dgv_zoneamento.TabIndex = 0;
             this.dgv_zoneamento.TabStop = false;
+            this.dgv_zoneamento.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_zoneamento_DataBindingComplete);
             // 
             // ZoneamentoAluno
             // 
@@ -543,10 +587,16 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alunos)).EndInit();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).EndInit();
             this.ResumeLayout(false);
 
@@ -588,5 +638,9 @@
 		private MyTextBox txt_endereço;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button btn_maps;
-	}
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros2;
+    }
 }

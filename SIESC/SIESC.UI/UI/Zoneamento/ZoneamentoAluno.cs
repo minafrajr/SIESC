@@ -86,9 +86,11 @@ namespace SIESC.UI.UI.Zoneamento
         {
             try
             {
+                lbl_num_registros2.Text = "Total de registros:";
+                dgv_zoneamento.DataSource = null;
+
                 dgv_alunos.DataSource = carregaAlunos();
 
-                //InicializaGridViewAluno();
                 dgv_alunos.Refresh();
                 
                 if (dgv_alunos.Rows.Count > 0)
@@ -123,7 +125,7 @@ namespace SIESC.UI.UI.Zoneamento
         }
 
         /// <summary>
-        /// 
+        /// Retorno o endereço da solicitação
         /// </summary>
         private void RepassaLocalização()
         {
@@ -141,7 +143,7 @@ namespace SIESC.UI.UI.Zoneamento
 
 
         /// <summary>
-        /// 
+        /// Calcula a distancia de acordo com o endereço do aluno
         /// </summary>
         /// <param name="IdSolicitacao"></param>
         /// <param name="latitude"></param>
@@ -364,7 +366,7 @@ namespace SIESC.UI.UI.Zoneamento
         }
 
         /// <summary>
-        /// 
+        /// Localiza as coordenadas de acordo com o endereço
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -540,5 +542,14 @@ namespace SIESC.UI.UI.Zoneamento
             }
         }
 
+        private void dgv_alunos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $"Total de registros: {dgv_alunos.Rows.Count}";
+        }
+
+        private void dgv_zoneamento_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros2.Text = $"Total de registros: {dgv_zoneamento.Rows.Count}";
+        }
     }
 }
