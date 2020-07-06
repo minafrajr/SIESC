@@ -34,24 +34,28 @@ namespace SIESC.UI.UI.Solicitacoes
             InitializeComponent();
             listaOfSindicancias = new List<Sindicancia>();
             principalUi = principal;
-
         }
 
         private void GerenciaSindicancia_Load(object sender,EventArgs e)
         {
             tipoConsulta = TipoConsulta.geral;
-            
-            
-            
             AtualizaUltimaSindicancia();
             CarregaGridView();
         }
 
         private void AtualizaUltimaSindicancia()
         {
-            sindicanciaControl = new SindicanciaControl();
-            lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
-            nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+            try
+            {
+                sindicanciaControl = new SindicanciaControl();
+                lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
+                nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+            }
+            catch (Exception ex)
+            {
+
+                Mensageiro.MensagemErro(ex.Message,principalUi);
+            }
         }
 
         private void cbo_regionais_DropDown(object sender,EventArgs e)
