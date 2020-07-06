@@ -104,9 +104,10 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 Mensageiro.MensagemErro(exception,this);
             }
-
         }
-
+        /// <summary>
+        /// Repassa o endereço a partir da solicitação
+        /// </summary>
         private void RepassaEndereço()
         {
             try
@@ -172,7 +173,6 @@ namespace SIESC.UI.UI.Zoneamento
                 if (t.IsAlive) t.Abort();
                 throw exception;
             }
-
         }
 
         /// <summary>
@@ -207,6 +207,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// <param name="e"></param>
         private void dgv_alunos_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
         {
+            dgv_zoneamento.DataSource = null;
             RepassaDados();
             RepassaEndereço();
             RepassaLocalização();
@@ -224,8 +225,6 @@ namespace SIESC.UI.UI.Zoneamento
                 txt_datanasc.Text = Convert.ToDateTime(dgv_alunos[19,dgv_alunos.CurrentCellAddress.Y].Value).ToShortDateString();
 
                 txt_codigo.Text = dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-
-
             }
             catch (Exception exception)
             {

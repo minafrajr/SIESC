@@ -323,5 +323,10 @@ namespace SIESC.UI.UI.Zoneamento
             dgv_zoneamento.DataSource = null;
             dgv_zoneamento.Refresh();
         }
+
+        private void dgv_zoneamento_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $"Total de registros: {dgv_zoneamento.RowCount}";
+        }
     }
 }
