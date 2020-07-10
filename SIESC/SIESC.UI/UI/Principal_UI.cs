@@ -101,7 +101,7 @@ namespace SIESC.UI
         {
             if (VerificaConexaoBanco())
             {
-                Login frmLogin = new Login(user);
+                Login frmLogin = new Login(user,this);
                 frmLogin.ShowDialog(this);
 
                 user = new Usuario();
@@ -145,6 +145,7 @@ namespace SIESC.UI
             catch (Exception ex)
             {
                 Mensageiro.MensagemErro(ex, this);
+                Application.Exit(); //fecha a aplicação
             }
             return false;
         }
@@ -788,7 +789,7 @@ namespace SIESC.UI
             var t = CarregaProgressoThread();
             try
             {
-                frm_buscaCEP frmBuscaCep = new frm_buscaCEP();
+                FrmBuscaCep frmBuscaCep = new FrmBuscaCep();
 
                 frmBuscaCep.MdiParent = this;
                 frmBuscaCep.Show();
@@ -815,7 +816,7 @@ namespace SIESC.UI
 
             try
             {
-                frm_buscaEndereço frmBuscaEndereço = new frm_buscaEndereço(this);
+                frmBuscaEndereço frmBuscaEndereço = new frmBuscaEndereço(this);
 
                 frmBuscaEndereço.MdiParent = this;
                 frmBuscaEndereço.Show();

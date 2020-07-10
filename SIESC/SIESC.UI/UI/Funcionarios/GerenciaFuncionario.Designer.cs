@@ -72,6 +72,8 @@
             this.btn_novo = new System.Windows.Forms.Button();
             this.btn_editarAutorizacao = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_gerenciafuncionarios = new System.Windows.Forms.DataGridView();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.cargos1TableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.cargos1TableAdapter();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             this.gpb_localizar.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gerenciafuncionarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +132,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_gerenciafuncionarios);
             this.splitContainer1.Size = new System.Drawing.Size(1314, 546);
             this.splitContainer1.SplitterDistance = 156;
@@ -542,6 +546,23 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 364);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1314, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
+            this.lbl_num_registros.Text = "Total de registros:";
+            // 
             // dgv_gerenciafuncionarios
             // 
             this.dgv_gerenciafuncionarios.AllowUserToAddRows = false;
@@ -553,7 +574,7 @@
             this.dgv_gerenciafuncionarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_gerenciafuncionarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_gerenciafuncionarios.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgv_gerenciafuncionarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_gerenciafuncionarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_gerenciafuncionarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_gerenciafuncionarios.Location = new System.Drawing.Point(0, 0);
             this.dgv_gerenciafuncionarios.MultiSelect = false;
@@ -568,9 +589,10 @@
             this.dgv_gerenciafuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_gerenciafuncionarios.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_gerenciafuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_gerenciafuncionarios.Size = new System.Drawing.Size(1314, 386);
+            this.dgv_gerenciafuncionarios.Size = new System.Drawing.Size(1314, 361);
             this.dgv_gerenciafuncionarios.TabIndex = 0;
             this.dgv_gerenciafuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_gerenciafuncionarios_CellMouseClick);
+            this.dgv_gerenciafuncionarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_gerenciafuncionarios_DataBindingComplete);
             // 
             // instituicoesTableAdapter
             // 
@@ -597,12 +619,15 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             this.gpb_localizar.ResumeLayout(false);
             this.gpb_localizar.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gerenciafuncionarios)).EndInit();
             this.ResumeLayout(false);
 
@@ -654,6 +679,8 @@
 		private System.Windows.Forms.RadioButton rdb_cargoatual;
         private siescDataSetTableAdapters.cargos1TableAdapter cargos1TableAdapter1;
         private siescDataSetTableAdapters.cargosTableAdapter cargosTableAdapter1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
 
         private enum Localizar
 		{

@@ -271,17 +271,17 @@
     <Compile Include="UI\Alunos\CadastrarAluno.Designer.cs">
       <DependentUpon>CadastrarAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CEP\frm_buscaCEP.cs">
+    <Compile Include="UI\CEP\frmbuscaCEP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\CEP\frm_buscaCEP.Designer.cs">
-      <DependentUpon>frm_buscaCEP.cs</DependentUpon>
+    <Compile Include="UI\CEP\frmbuscaCEP.Designer.cs">
+      <DependentUpon>frmbuscaCEP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CEP\frm_buscaEndereço.cs">
+    <Compile Include="UI\CEP\frmBuscaEndereço.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\CEP\frm_buscaEndereço.Designer.cs">
-      <DependentUpon>frm_buscaEndereço.cs</DependentUpon>
+    <Compile Include="UI\CEP\frmBuscaEndereço.Designer.cs">
+      <DependentUpon>frmBuscaEndereço.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Configurações\GerenciarMantenedor.cs">
       <SubType>Form</SubType>
@@ -324,12 +324,6 @@
     </Compile>
     <Compile Include="UI\Funcionarios\GerenciaFuncionario.Designer.cs">
       <DependentUpon>GerenciaFuncionario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Listas\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Listas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Listas\frm_listaEmails.cs">
       <SubType>Form</SubType>
@@ -568,11 +562,11 @@
     <EmbeddedResource Include="UI\Alunos\CadastrarAluno.resx">
       <DependentUpon>CadastrarAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CEP\frm_buscaCEP.resx">
-      <DependentUpon>frm_buscaCEP.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CEP\frmbuscaCEP.resx">
+      <DependentUpon>frmbuscaCEP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CEP\frm_buscaEndereço.resx">
-      <DependentUpon>frm_buscaEndereço.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CEP\frmBuscaEndereço.resx">
+      <DependentUpon>frmBuscaEndereço.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Configurações\GerenciarMantenedor.resx">
       <DependentUpon>GerenciarMantenedor.cs</DependentUpon>

@@ -27,18 +27,16 @@ namespace SIESC.UI.UI.Login
         /// <summary>
         /// 
         /// </summary>
-        public Login()
-        {
-            InitializeComponent();
-        }
+        private Principal_UI principalUi;
+        
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_usuario"></param>
-        public Login(Usuario _usuario)
+        public Login(Usuario _usuario, Principal_UI principalUi)
         {
             InitializeComponent();
-
+            this.principalUi = principalUi;
             usuario = _usuario;
         }
 
@@ -82,66 +80,66 @@ namespace SIESC.UI.UI.Login
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        private string SelecionaUsuarioBanco(Usuario user)
-        {
-            try
-            {
-                StringBuilder strbd = new StringBuilder();
+        //private string SelecionaUsuarioBanco(Usuario user)
+        //{
+        //    try
+        //    {
+        //        StringBuilder strbd = new StringBuilder();
 
-                strbd.Append("user id=");
-                strbd.Append(user.nomeusuario);
-                strbd.Append(";password=");
-                strbd.Append(user.senhausuario);
-                strbd.Append(";persistsecurityinfo=True;database=siesc;server=localhost");
+        //        strbd.Append("user id=");
+        //        strbd.Append(user.nomeusuario);
+        //        strbd.Append(";password=");
+        //        strbd.Append(user.senhausuario);
+        //        strbd.Append(";persistsecurityinfo=True;database=siesc;server=localhost");
 
-                string con = strbd.ToString();
+        //        string con = strbd.ToString();
 
-                SqlConnection dbConnection = new SqlConnection();
+        //        SqlConnection dbConnection = new SqlConnection();
 
-                ConfigurationManager.RefreshSection("connectiosStrings");
+        //        ConfigurationManager.RefreshSection("connectiosStrings");
 
-                dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings[3].ToString();
+        //        dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings[3].ToString();
 
-                return con;
-            }
-            catch (ConfigurationException exception)
-            {
-                throw exception;
-            }
-            catch (SqlException exception)
-            {
-                throw exception;
-            }
-        }
+        //        return con;
+        //    }
+        //    catch (ConfigurationException exception)
+        //    {
+        //        throw exception;
+        //    }
+        //    catch (SqlException exception)
+        //    {
+        //        throw exception;
+        //    }
+        //}
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="con"></param>
-        private void AtualizarXMLConectionString(string con)
-        {
-            try
-            {
-                XmlDocument documentoXML = new XmlDocument();
+        //private void AtualizarXMLConectionString(string con)
+        //{
+        //    try
+        //    {
+        //        XmlDocument documentoXML = new XmlDocument();
 
-                documentoXML.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+        //        documentoXML.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 
-                foreach (XmlElement element in documentoXML.DocumentElement)
-                {
-                    if (element.Name == "connectionString")
-                    {
-                        element.FirstChild.Attributes[0].Value = con;
-                    }
-                }
+        //        foreach (XmlElement element in documentoXML.DocumentElement)
+        //        {
+        //            if (element.Name == "connectionString")
+        //            {
+        //                element.FirstChild.Attributes[0].Value = con;
+        //            }
+        //        }
 
-                documentoXML.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-            }
-            catch (XmlException exception)
-            {
-                throw exception;
-            }
+        //        documentoXML.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+        //    }
+        //    catch (XmlException exception)
+        //    {
+        //        throw exception;
+        //    }
 
-        }
+        //}
 
         /// <summary>
         /// Evento do botão cancelar
@@ -162,8 +160,8 @@ namespace SIESC.UI.UI.Login
         private void llb_mudarsenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RecuperaSenha frm_RecuperaSenha = new RecuperaSenha();
-
-            frm_RecuperaSenha.ShowDialog();
+            
+            frm_RecuperaSenha.ShowDialog(this);
         }
         /// <summary>
         /// Evento quando pressionado o botao ENTER

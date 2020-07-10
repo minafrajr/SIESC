@@ -74,13 +74,12 @@ namespace SIESC.BD.Control
 		    return this.vw_aluno.GetData();
 		}
 
-	    /// <summary>
-	    /// Deletar um aluno do Banco de dados
-	    /// </summary>
-	    /// <param name="Id">O <see cref="Id"/> do aluno a ser deletado</param>
-	    /// <param name="idAluno">O <see cref="idAluno"/> do aluno</param>
-	    /// <returns>true - para a operação feita corretamente</returns>
-	    public bool Deletar(int idAluno)
+		/// <summary>
+		/// Deletar um aluno do Banco de dados
+		/// </summary>
+		/// <param name="idAluno">O código do aluno</param>
+		/// <returns>true - para a operação feita corretamente</returns>
+		public bool Deletar(int idAluno)
 		{
 			try
 			{
@@ -105,7 +104,7 @@ namespace SIESC.BD.Control
 				aluno_TA = new alunosTableAdapter();
 
 				return (aluno_TA.Atualizar(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
-						aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia,  (int)aluno.Id) > 0);
+						aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia, aluno.Id) > 0);
 			}
 			catch (Exception exception)
 			{

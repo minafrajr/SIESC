@@ -470,5 +470,14 @@ namespace SIESC.UI.UI.Funcionarios
                 Mensageiro.MensagemErro(ex,principalUi);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_gerenciafuncionarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $@"Total de registros: {dgv_gerenciafuncionarios.Rows.Count}";
+        }
     }
 }

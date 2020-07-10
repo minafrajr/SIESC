@@ -41,14 +41,22 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_inativar = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_motivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_nomeMotivo
             // 
             this.lbl_nomeMotivo.AutoSize = true;
             this.lbl_nomeMotivo.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nomeMotivo.Location = new System.Drawing.Point(6, 42);
+            this.lbl_nomeMotivo.Location = new System.Drawing.Point(4, 35);
             this.lbl_nomeMotivo.Name = "lbl_nomeMotivo";
             this.lbl_nomeMotivo.Size = new System.Drawing.Size(55, 17);
             this.lbl_nomeMotivo.TabIndex = 1;
@@ -59,7 +67,7 @@
             this.txt_nomemotivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nomemotivo.Enabled = false;
             this.txt_nomemotivo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nomemotivo.Location = new System.Drawing.Point(60, 41);
+            this.txt_nomemotivo.Location = new System.Drawing.Point(58, 34);
             this.txt_nomemotivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nomemotivo.Name = "txt_nomemotivo";
             this.txt_nomemotivo.Size = new System.Drawing.Size(421, 23);
@@ -78,24 +86,25 @@
             this.dgv_motivos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_motivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_motivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_motivos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_motivos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_motivos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_motivos.Location = new System.Drawing.Point(3, 102);
+            this.dgv_motivos.Location = new System.Drawing.Point(0, 0);
             this.dgv_motivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_motivos.MultiSelect = false;
             this.dgv_motivos.Name = "dgv_motivos";
             this.dgv_motivos.ReadOnly = true;
             this.dgv_motivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_motivos.ShowEditingIcon = false;
-            this.dgv_motivos.Size = new System.Drawing.Size(924, 420);
+            this.dgv_motivos.Size = new System.Drawing.Size(924, 392);
             this.dgv_motivos.TabIndex = 5;
             this.dgv_motivos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_motivos_CellMouseClick);
+            this.dgv_motivos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_motivos_DataBindingComplete);
             // 
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
             this.lbl_codigo.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo.Location = new System.Drawing.Point(5, 16);
+            this.lbl_codigo.Location = new System.Drawing.Point(3, 9);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(55, 17);
             this.lbl_codigo.TabIndex = 7;
@@ -105,7 +114,7 @@
             // 
             this.txt_codigo.Enabled = false;
             this.txt_codigo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo.Location = new System.Drawing.Point(60, 14);
+            this.txt_codigo.Location = new System.Drawing.Point(58, 7);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(49, 23);
             this.txt_codigo.TabIndex = 8;
@@ -114,7 +123,7 @@
             // 
             this.lbl_info.AutoSize = true;
             this.lbl_info.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_info.Location = new System.Drawing.Point(4, 81);
+            this.lbl_info.Location = new System.Drawing.Point(2, 74);
             this.lbl_info.Name = "lbl_info";
             this.lbl_info.Size = new System.Drawing.Size(330, 19);
             this.lbl_info.TabIndex = 11;
@@ -124,7 +133,7 @@
             // 
             this.btn_editar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editar.Image = global::SIESC.UI.Properties.Resources.editor_0308_replace;
-            this.btn_editar.Location = new System.Drawing.Point(605, 16);
+            this.btn_editar.Location = new System.Drawing.Point(603, 9);
             this.btn_editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(60, 59);
@@ -139,7 +148,7 @@
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SIESC.UI.Properties.Resources.prohibit_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(803, 16);
+            this.btn_cancelar.Location = new System.Drawing.Point(801, 9);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(60, 59);
             this.btn_cancelar.TabIndex = 10;
@@ -153,7 +162,7 @@
             // 
             this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_novo.Image = global::SIESC.UI.Properties.Resources._278_128x128;
-            this.btn_novo.Location = new System.Drawing.Point(543, 16);
+            this.btn_novo.Location = new System.Drawing.Point(541, 9);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(60, 59);
             this.btn_novo.TabIndex = 9;
@@ -167,7 +176,7 @@
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
-            this.btn_excluir.Location = new System.Drawing.Point(864, 16);
+            this.btn_excluir.Location = new System.Drawing.Point(862, 9);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(60, 59);
             this.btn_excluir.TabIndex = 6;
@@ -181,7 +190,7 @@
             // 
             this.btn_salvar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.Image = global::SIESC.UI.Properties.Resources.Tick;
-            this.btn_salvar.Location = new System.Drawing.Point(669, 16);
+            this.btn_salvar.Location = new System.Drawing.Point(667, 9);
             this.btn_salvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(60, 59);
@@ -196,7 +205,7 @@
             // 
             this.btn_inativar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inativar.Image = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.btn_inativar.Location = new System.Drawing.Point(732, 16);
+            this.btn_inativar.Location = new System.Drawing.Point(730, 9);
             this.btn_inativar.Name = "btn_inativar";
             this.btn_inativar.Size = new System.Drawing.Size(60, 59);
             this.btn_inativar.TabIndex = 13;
@@ -206,28 +215,70 @@
             this.btn_inativar.UseVisualStyleBackColor = true;
             this.btn_inativar.Click += new System.EventHandler(this.btn_inativar_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_codigo);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_inativar);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_nomeMotivo);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_editar);
+            this.splitContainer1.Panel1.Controls.Add(this.txt_nomemotivo);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_info);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_salvar);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_cancelar);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_excluir);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_novo);
+            this.splitContainer1.Panel1.Controls.Add(this.txt_codigo);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_motivos);
+            this.splitContainer1.Size = new System.Drawing.Size(924, 519);
+            this.splitContainer1.SplitterDistance = 98;
+            this.splitContainer1.TabIndex = 14;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 395);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(924, 22);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl
+            // 
+            this.lbl.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(99, 17);
+            this.lbl.Text = "Total de registros:";
+            // 
             // GerenciaMotivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 525);
-            this.Controls.Add(this.btn_inativar);
-            this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.lbl_info);
-            this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.btn_novo);
-            this.Controls.Add(this.txt_codigo);
-            this.Controls.Add(this.lbl_codigo);
-            this.Controls.Add(this.btn_excluir);
-            this.Controls.Add(this.dgv_motivos);
-            this.Controls.Add(this.btn_salvar);
-            this.Controls.Add(this.txt_nomemotivo);
-            this.Controls.Add(this.lbl_nomeMotivo);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciaMotivo";
             this.Text = "Gerenciar Motivos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_motivos)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -245,5 +296,8 @@
 		public System.Windows.Forms.Button btn_editar;
 		public MyTextBox txt_codigo;
         public System.Windows.Forms.Button btn_inativar;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl;
     }
 }

@@ -9,12 +9,12 @@ namespace SIESC.UI.UI.CEP
 	/// <summary>
 	/// Classe do formulário de busca de endereço por cep
 	/// </summary>
-	public partial class frm_buscaEndereço : SIESC.UI.base_UI
+	public partial class frmBuscaEndereço : SIESC.UI.base_UI
 	{
 		/// <summary>
 		/// objeto do formulário principal
 		/// </summary>
-		private Principal_UI formPrincipalUi;
+		private readonly Principal_UI formPrincipalUi;
 		/// <summary>
 		/// Objto de acesso á consulta CEP
 		/// </summary>
@@ -22,13 +22,13 @@ namespace SIESC.UI.UI.CEP
 		/// <summary>
 		/// Lista de endereços
 		/// </summary>
-		private List<Endereco> ListofEnderecos;
+		private List<Endereco> listOfEnderecos;
 
 		/// <summary>
 		/// Construtor da classe
 		/// </summary>
 		/// <param name="principalUi"></param>
-		public frm_buscaEndereço(Principal_UI principalUi)
+		public frmBuscaEndereço(Principal_UI principalUi)
 		{
 			InitializeComponent();
 			formPrincipalUi = principalUi;
@@ -43,15 +43,15 @@ namespace SIESC.UI.UI.CEP
 		{
 			try
 			{
-			    if (string.IsNullOrEmpty(msk_cep.Text))
-			        throw new Exception("O campo CEP está vazio!");
+				if (string.IsNullOrEmpty(msk_cep.Text))
+					throw new Exception("O campo CEP está vazio!");
 
-			    dgv_endereços.DataSource = null;
+				dgv_endereços.DataSource = null;
 				buscadorCep = new BuscaCep();
 
-				ListofEnderecos = buscadorCep.buscadorCEP(msk_cep.Text).ToList();
+				listOfEnderecos = buscadorCep.buscadorCEP(msk_cep.Text).ToList();
 
-				dgv_endereços.DataSource = ListofEnderecos;
+				dgv_endereços.DataSource = listOfEnderecos;
 
 				dgv_endereços.Refresh();
 				dgv_endereços.Show();
@@ -74,15 +74,24 @@ namespace SIESC.UI.UI.CEP
 				if (dgv_endereços.DisplayedRowCount(false) <= 0)
 				{ throw new Exception("Faça a busca do endereço pelo cep antes de abrir o zoneamento."); }
 
-				ZoneamentoEndereco form_zoneamento = new ZoneamentoEndereco(dgv_endereços["Cep", dgv_endereços.CurrentCellAddress.Y].Value.ToString());
-				form_zoneamento.MdiParent = formPrincipalUi;
-				form_zoneamento.Show();
+				ZoneamentoEndereco formZoneamento = new ZoneamentoEndereco(dgv_endereços["Cep", dgv_endereços.CurrentCellAddress.Y].Value.ToString());
+				formZoneamento.MdiParent = formPrincipalUi;
+				formZoneamento.Show();
 
 			}
 			catch (Exception ex)
 			{
 				Mensageiro.MensagemErro(ex, this);
 			}
+		}
+		/// <summary>
+		/// Evento de binding concluído do datagridview
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void dgv_endereços_DataBindingComplete(object sender, System.Windows.Forms.DataGridViewBindingCompleteEventArgs e)
+		{
+			lbl_num_registros.Text = $@"Total de registros:{dgv_endereços.Rows.Count}";
 		}
 	}
 }

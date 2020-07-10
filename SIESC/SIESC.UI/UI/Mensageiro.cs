@@ -4,9 +4,6 @@
 // Criado em: 17/05/2015
 #endregion
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SIESC.UI.UI
@@ -17,27 +14,26 @@ namespace SIESC.UI.UI
     /// </summary>
     internal class Mensageiro : Form
     {
-        private static Principal_UI _formPrincipalUi;
-
-
         /// <summary>
         /// Mensagem de erro padrão
         /// </summary>
         /// <param name="exception"></param>
-        public static void MensagemErro(Exception exception,IWin32Window form)
+        /// <param name="form">O formulário proprietário</param>
+        public static void MensagemErro(Exception exception, IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,$@"Houve o seguinte erro: {exception.Message}",@"ERRO!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>
         /// Mensagem de erro padrão
         /// </summary>
-        /// <param name="exception"></param>
-        public static void MensagemErro(string msg,IWin32Window form)
+        /// <param name="msg"></param>
+        /// <param name="form">O formulário proprietário</param>
+        public static void MensagemErro(string msg, IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,$@"Houve o seguinte erro: {msg}",@"ERRO!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(form, $@"Houve o seguinte erro: {msg}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         ///// <summary>
@@ -53,60 +49,65 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Mensagem de cancelamento de formulário
         /// </summary>
-        /// <returns></returns>
+        ///<param name="form">O formulário proprietário</param>
         public static DialogResult MensagemCancelamento(IWin32Window form)
         {
             System.Media.SystemSounds.Question.Play();
-            return MessageBox.Show(form,@"Deseja cancelar o preenchimento?",@"Pergunta!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            return MessageBox.Show(form, @"Deseja cancelar o preenchimento?", @"Pergunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         /// <summary>
         /// Mensagem para perguntar ao usuario se deseja excluir
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="form">O formulário proprietário</param>
         /// <returns></returns>
-        public static DialogResult MensagemExclusao(Object obj,IWin32Window form)
+        public static DialogResult MensagemExclusao(Object obj, IWin32Window form)
         {
             System.Media.SystemSounds.Question.Play();
-            return MessageBox.Show(form,$@"Deseja excluir {obj} ?",@"Pergunta!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            return MessageBox.Show(form, $@"Deseja excluir {obj} ?", @"Pergunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         /// <summary>
         /// Confirma a exclusão de um objeto no banco
         /// </summary>
+        /// <param name="form">O formulário proprietário</param>
         public static void MensagemConfirmaExclusao(IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,@"Excluído com sucesso!!!!",@"Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(form, @"Excluído com sucesso!!!!", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
         /// Confirma a gravação no banco
         /// </summary>
+        /// <param name="form">O formulário proprietário</param>
         public static void MensagemConfirmaGravacao(IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,@"Salvo com sucesso!!!!",@"Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(form, @"Salvo com sucesso!!!!", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
         /// Confirma a atualização do objeto
         /// </summary>
+        /// <param name="form">O formulário proprietário</param>
         public static void MensagemConfirmaAtualizacao(IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,@"Atualizado com sucesso!!!!",@"Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(form, @"Atualizado com sucesso!!!!", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
         /// Mensagem de pergunta personalizada
         /// </summary>
         /// <param name="texto">O texto que se quer perguntar</param>
+        /// <param name="form">O formulário proprietário</param>
         /// <returns>Sim | Não </returns>
-        public static DialogResult MensagemPergunta(string texto,IWin32Window form)
+        public static DialogResult MensagemPergunta(string texto, IWin32Window form)
         {
             System.Media.SystemSounds.Question.Play();
-            return MessageBox.Show(form,$@"{texto}",@"Pergunta!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            return MessageBox.Show(form, $@"{texto}", @"Pergunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         /// <summary>
@@ -114,10 +115,10 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="text">O texto para aparecer no aviso</param>
         /// <param name="form"></param>
-        public static void MensagemAviso(string text,IWin32Window form)
+        public static void MensagemAviso(string text, IWin32Window form)
         {
             System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form,$@"{text}",@"Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(form, $@"{text}", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

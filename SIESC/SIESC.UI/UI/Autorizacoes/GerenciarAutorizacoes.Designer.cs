@@ -30,14 +30,12 @@
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.cbo_mantenedor = new SIESC.UI.MyComboBox();
             this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet1 = new SIESC.UI.siescDataSet();
             this.label12 = new System.Windows.Forms.Label();
-            this.lbl_totalregistros = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -81,6 +79,8 @@
             this.dgv_autorizacoes = new System.Windows.Forms.DataGridView();
             this.instituicoesTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.mantenedorTableAdapter = new SIESC.UI.siescDataSetTableAdapters.mantenedorTableAdapter();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             this.gpb_opcoesbusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_autorizacoes)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -106,8 +107,6 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.cbo_mantenedor);
             this.splitContainer1.Panel1.Controls.Add(this.label12);
-            this.splitContainer1.Panel1.Controls.Add(this.lbl_totalregistros);
-            this.splitContainer1.Panel1.Controls.Add(this.label11);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
@@ -140,6 +139,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_autorizacoes);
             this.splitContainer1.Size = new System.Drawing.Size(1270, 551);
             this.splitContainer1.SplitterDistance = 175;
@@ -175,24 +175,6 @@
             this.label12.Size = new System.Drawing.Size(105, 14);
             this.label12.TabIndex = 72;
             this.label12.Text = "Tipo de Instituição:";
-            // 
-            // lbl_totalregistros
-            // 
-            this.lbl_totalregistros.AutoSize = true;
-            this.lbl_totalregistros.Location = new System.Drawing.Point(276, 155);
-            this.lbl_totalregistros.Name = "lbl_totalregistros";
-            this.lbl_totalregistros.Size = new System.Drawing.Size(13, 14);
-            this.lbl_totalregistros.TabIndex = 71;
-            this.lbl_totalregistros.Text = "_";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(182, 154);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 14);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "Total de registros:";
             // 
             // label9
             // 
@@ -663,20 +645,21 @@
             // 
             this.dgv_autorizacoes.AllowUserToAddRows = false;
             this.dgv_autorizacoes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_autorizacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_autorizacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_autorizacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_autorizacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_autorizacoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_autorizacoes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_autorizacoes.Location = new System.Drawing.Point(0, 0);
             this.dgv_autorizacoes.Name = "dgv_autorizacoes";
             this.dgv_autorizacoes.ReadOnly = true;
             this.dgv_autorizacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_autorizacoes.Size = new System.Drawing.Size(1270, 372);
+            this.dgv_autorizacoes.Size = new System.Drawing.Size(1270, 347);
             this.dgv_autorizacoes.TabIndex = 0;
             this.dgv_autorizacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_autorizacoes_CellMouseClick);
+            this.dgv_autorizacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_autorizacoes_DataBindingComplete);
             this.dgv_autorizacoes.Sorted += new System.EventHandler(this.dgv_autorizacoes_Sorted);
             // 
             // instituicoesTableAdapter1
@@ -686,6 +669,23 @@
             // mantenedorTableAdapter
             // 
             this.mantenedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 350);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1270, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
+            this.lbl_num_registros.Text = "Total de registros:";
             // 
             // GerenciarAutorizacoes
             // 
@@ -700,6 +700,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mantenedorBindingSource)).EndInit();
@@ -712,6 +713,8 @@
             this.gpb_opcoesbusca.ResumeLayout(false);
             this.gpb_opcoesbusca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_autorizacoes)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -760,16 +763,16 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label lbl_totalregistros;
-		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.BindingSource instituicoesBindingSource;
 		private MyComboBox cbo_mantenedor;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.RadioButton rdb_tipoInstituicao;
 		private System.Windows.Forms.BindingSource mantenedorBindingSource;
 		private siescDataSetTableAdapters.mantenedorTableAdapter mantenedorTableAdapter;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
 
-		private enum Localizar
+        private enum Localizar
 		{
 			nome, autorizacao, datavenc, instituicao, aguardando, cargo, anoexpedicao,mantenedor
 

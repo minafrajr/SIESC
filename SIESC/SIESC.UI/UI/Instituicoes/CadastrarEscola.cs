@@ -794,7 +794,7 @@ namespace SIESC.UI.UI
 		{
 			try
 			{
-				frm_buscaCEP form = new frm_buscaCEP();
+				FrmBuscaCep form = new FrmBuscaCep();
 				form.MdiParent = principalUi;
 				form.Show();
 			}

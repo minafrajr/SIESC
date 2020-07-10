@@ -171,8 +171,6 @@ namespace SIESC.UI.UI.Autorizacoes
                 controleAutorizacao = new AutorizacaoControl();
 
                 dgv_autorizacoes.DataSource = controleAutorizacao.Listar(statusautorizacao);
-
-                lbl_totalregistros.Text = string.Format("{0} autorizações",dgv_autorizacoes.Rows.Count);
             }
             catch (Exception exception)
             {
@@ -218,7 +216,7 @@ namespace SIESC.UI.UI.Autorizacoes
                             dgv_autorizacoes.DataSource = controleAutorizacao.GetByMantenedor(cbo_mantenedor.SelectedValue.ToString(),statusautorizacao);
                             break;
                     }
-                    lbl_totalregistros.Text = string.Format("{0} autorizações",dgv_autorizacoes.Rows.Count);
+                    
                     FormataGridView();
                 }
             }
@@ -791,6 +789,14 @@ namespace SIESC.UI.UI.Autorizacoes
             FormataGridView();
         }
 
-
+        /// <summary>
+        /// Evento de binding concluído no datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_autorizacoes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $"Total de registros: {dgv_autorizacoes.Rows.Count}";
+        }
     }
 }

@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Configurações
 {
-	public partial class GerenciarMantenedor : SIESC.UI.UI.GerenciaMotivo
+	/// <summary>
+	/// Classe do formulário de gerenciamento do mantenedor
+	/// </summary>
+	public partial class GerenciarMantenedor : GerenciaMotivo
 	{
 		/// <summary>
 		/// 
 		/// </summary>
-		private MantenedorControl ControleMantenedor;
+		private MantenedorControl controleMantenedor;
 		
 		/// <summary>
 		/// Objeto mantenedor
@@ -37,9 +34,9 @@ namespace SIESC.UI.UI.Configurações
 		/// <param name="e"></param>
 		private void GerenciarMantenedor_Load(object sender, EventArgs e)
 		{
-			ControleMantenedor = new MantenedorControl();
+			controleMantenedor = new MantenedorControl();
 
-			dgv_motivos.DataSource = ControleMantenedor.Listar();
+			dgv_motivos.DataSource = controleMantenedor.Listar();
 			dgv_motivos.Refresh();
 		}
 
@@ -82,7 +79,7 @@ namespace SIESC.UI.UI.Configurações
 		{
 			try
 			{
-				ControleMantenedor = new MantenedorControl();
+				controleMantenedor = new MantenedorControl();
 
 				mantenedor = new Mantenedor()
 				             {
@@ -91,9 +88,9 @@ namespace SIESC.UI.UI.Configurações
 				             };
 
 				if (string.IsNullOrEmpty(txt_codigo.Text))
-					ControleMantenedor.Salvar(mantenedor, true);
+					controleMantenedor.Salvar(mantenedor, true);
 				else
-					ControleMantenedor.Salvar(mantenedor, false);
+					controleMantenedor.Salvar(mantenedor, false);
 			}
 			catch (Exception exception)
 			{

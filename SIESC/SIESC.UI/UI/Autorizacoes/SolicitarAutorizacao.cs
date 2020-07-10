@@ -810,7 +810,7 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             try
             {
-                frm_buscaCEP frmBuscaCep = new frm_buscaCEP();
+                FrmBuscaCep frmBuscaCep = new FrmBuscaCep();
                 frmBuscaCep.MdiParent = PrincipalUi;
                 frmBuscaCep.Show();
             }

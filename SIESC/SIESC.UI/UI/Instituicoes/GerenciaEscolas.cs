@@ -347,5 +347,14 @@ namespace SIESC.UI.UI.Escolas
                 Mensageiro.MensagemErro(ex,this);
             }
         }
+        /// <summary>
+        /// Evento de binding concluído do datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_dadosescolas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $@"Total de registros: {dgv_dadosescolas.Rows.Count}";
+        }
     }
 }

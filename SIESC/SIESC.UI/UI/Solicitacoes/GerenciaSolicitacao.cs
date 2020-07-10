@@ -776,6 +776,15 @@ namespace SIESC.UI.UI
                 RepassaDadosControles();
             }
         }
+        /// <summary>
+        /// Evento quando o binding da grid está concluida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_solicitacoes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $"Total de registros: {dgv_solicitacoes.RowCount}";
+        }
     }
 
 }

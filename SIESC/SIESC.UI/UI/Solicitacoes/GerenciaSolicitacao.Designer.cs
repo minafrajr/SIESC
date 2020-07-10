@@ -90,6 +90,8 @@
             this.rdb_mae = new System.Windows.Forms.RadioButton();
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_codigo = new System.Windows.Forms.RadioButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -97,6 +99,7 @@
             this.splitContainer1.SuspendLayout();
             this.gpb_sindicados.SuspendLayout();
             this.gpb_localizar.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +159,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_solicitacoes);
             this.splitContainer1.Size = new System.Drawing.Size(1289, 628);
             this.splitContainer1.SplitterDistance = 267;
@@ -746,6 +750,23 @@
             this.rdb_codigo.CheckedChanged += new System.EventHandler(this.rdb_codigo_CheckedChanged);
             this.rdb_codigo.Click += new System.EventHandler(this.rdb_codigo_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1289, 22);
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(102, 17);
+            this.lbl_num_registros.Text = "Total de registros: ";
+            // 
             // dgv_solicitacoes
             // 
             this.dgv_solicitacoes.AllowUserToAddRows = false;
@@ -756,7 +777,7 @@
             this.dgv_solicitacoes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_solicitacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_solicitacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_solicitacoes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_solicitacoes.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dgv_solicitacoes.Location = new System.Drawing.Point(0, 0);
@@ -766,10 +787,11 @@
             this.dgv_solicitacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_solicitacoes.ShowEditingIcon = false;
             this.dgv_solicitacoes.ShowRowErrors = false;
-            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 357);
+            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 332);
             this.dgv_solicitacoes.TabIndex = 18;
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
             this.dgv_solicitacoes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseDoubleClick);
+            this.dgv_solicitacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_solicitacoes_DataBindingComplete);
             // 
             // GerenciaSolicitacao
             // 
@@ -788,12 +810,15 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.gpb_sindicados.ResumeLayout(false);
             this.gpb_sindicados.PerformLayout();
             this.gpb_localizar.ResumeLayout(false);
             this.gpb_localizar.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
             this.ResumeLayout(false);
 
@@ -858,6 +883,8 @@
         private System.Windows.Forms.Label lbl_pendente;
         private System.Windows.Forms.Label lbl_endereco_comprovado;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
 
         private enum Localizar
         {

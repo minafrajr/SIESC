@@ -1592,14 +1592,14 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 foreach (Form mdiChild in _principalUi.MdiChildren)
                 {
-                    if (mdiChild.GetType() == typeof(frm_buscaCEP))
+                    if (mdiChild.GetType() == typeof(FrmBuscaCep))
                     {
                         mdiChild.WindowState = FormWindowState.Normal;
                         mdiChild.Focus();
                         return;
                     }
                 }
-                frm_buscaCEP frmBuscarCep = new frm_buscaCEP();
+                FrmBuscaCep frmBuscarCep = new FrmBuscaCep();
                 frmBuscarCep.MdiParent = _principalUi;
                 frmBuscarCep.Show();
             }

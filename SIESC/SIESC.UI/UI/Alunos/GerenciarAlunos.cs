@@ -459,6 +459,14 @@ namespace SIESC.UI.UI.Alunos
                 Mensageiro.MensagemErro(exception,this);
             }
         }
-
+        /// <summary>
+        /// Evento quando o binding dos dados estiver concluido no datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_alunos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $"Total de registros: {dgv_alunos.RowCount}";
+        }
     }
 }

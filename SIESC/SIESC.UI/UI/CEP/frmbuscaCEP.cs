@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using SIESC.UI.tecnologia1;
 
 namespace SIESC.UI.UI.CEP
 {
-	public partial class frm_buscaCEP : SIESC.UI.base_UI
+	/// <summary>
+	/// Classe do formulário de busca de endereço pelo cep
+	/// </summary>
+	public partial class FrmBuscaCep : base_UI
 	{
 		/// <summary>
 		/// Objto de acesso á consulta CEP
@@ -20,17 +19,17 @@ namespace SIESC.UI.UI.CEP
 		/// <summary>
 		/// Lista de endereços
 		/// </summary>
-		private List<Endereco> ListofEnderecos;
+		private List<Endereco> listOfEnderecos;
 
 		/// <summary>
 		/// Construtor da classe
 		/// </summary>
-		public frm_buscaCEP()
+		public FrmBuscaCep()
 		{
 			InitializeComponent();
-			cbo_estados.Text = "MG";
+			cbo_estados.Text = @"MG";
 			CarregaCidades(cbo_estados.Text);
-			cbo_cidades.Text = "BETIM";
+			cbo_cidades.Text = @"BETIM";
 			cbo_cidades.SelectedValue = 2762;
 		}
 
@@ -62,9 +61,9 @@ namespace SIESC.UI.UI.CEP
 			try
 			{
 				buscadorCep = new BuscaCep();
-				ListofEnderecos = buscadorCep.RetornaCidades(estado).ToList();
+				listOfEnderecos = buscadorCep.RetornaCidades(estado).ToList();
 
-				cbo_cidades.DataSource = ListofEnderecos;
+				cbo_cidades.DataSource = listOfEnderecos;
 				cbo_cidades.DisplayMember = "Cidade";
 				cbo_cidades.ValueMember = "ChaveLocalidade";
 			}
@@ -89,9 +88,9 @@ namespace SIESC.UI.UI.CEP
 
 				buscadorCep = new BuscaCep();
 
-				ListofEnderecos = buscadorCep.RetornaCEPS(txt_logradouro.Text, Convert.ToInt16(cbo_cidades.SelectedValue), cbo_estados.Text).ToList();
+				listOfEnderecos = buscadorCep.RetornaCEPS(txt_logradouro.Text, Convert.ToInt16(cbo_cidades.SelectedValue), cbo_estados.Text).ToList();
 
-				dgv_retornaceps.DataSource = ListofEnderecos;
+				dgv_retornaceps.DataSource = listOfEnderecos;
 				dgv_retornaceps.Refresh();
 				dgv_retornaceps.Show();
 
@@ -137,6 +136,15 @@ namespace SIESC.UI.UI.CEP
 		private void txt_numlogradouro_Enter(object sender, EventArgs e)
 		{
 			txt_numlogradouro.ResetText();
+		}
+		/// <summary>
+		/// Evento de binding concluído do datagridview
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void dgv_retornaceps_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		{
+			lbl_num_registros.Text = $@"Total de registros: {dgv_retornaceps.Rows.Count}";
 		}
 	}
 }

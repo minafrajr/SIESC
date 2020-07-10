@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.CEP
 {
-	partial class frm_buscaEndereço
+	partial class frmBuscaEndereço
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_buscaEndereço));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaEndereço));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btn_zonear = new System.Windows.Forms.Button();
             this.btn_buscarendereco = new System.Windows.Forms.Button();
@@ -41,11 +41,14 @@
             this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_endereços)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -64,6 +67,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_endereços);
             this.splitContainer1.Size = new System.Drawing.Size(1086, 464);
             this.splitContainer1.SplitterDistance = 72;
@@ -123,12 +127,13 @@
             this.Cep,
             this.Cidade,
             this.Uf});
-            this.dgv_endereços.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_endereços.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_endereços.Location = new System.Drawing.Point(0, 0);
             this.dgv_endereços.Name = "dgv_endereços";
             this.dgv_endereços.ReadOnly = true;
-            this.dgv_endereços.Size = new System.Drawing.Size(1086, 388);
+            this.dgv_endereços.Size = new System.Drawing.Size(1086, 364);
             this.dgv_endereços.TabIndex = 0;
+            this.dgv_endereços.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_endereços_DataBindingComplete);
             // 
             // tipoLogradouro
             // 
@@ -178,6 +183,22 @@
             this.Uf.ReadOnly = true;
             this.Uf.Width = 46;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 366);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1086, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
+            this.lbl_num_registros.Text = "Total de registros:";
+            // 
             // frm_buscaEndereço
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -190,9 +211,12 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_endereços)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -211,5 +235,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Uf;
         private System.Windows.Forms.Button btn_zonear;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
     }
 }

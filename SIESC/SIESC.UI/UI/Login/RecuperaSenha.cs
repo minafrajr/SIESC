@@ -107,7 +107,8 @@ namespace SIESC.UI.UI.Login
 
                     string NovaSenha = controleUsuario.ResgataSenha(usuario);
 
-                    string TextoEmail = string.Format("Por sua solicitação a senha provisória é: {0}.{1}Faça um novo login utilizando-a e posteriormente crie uma nova senha.",NovaSenha,Environment.NewLine);
+                    string TextoEmail =
+                        $"Por sua solicitação a senha provisória é: {NovaSenha}.{Environment.NewLine}Faça um novo login utilizando-a e posteriormente crie uma nova senha.";
 
                     string resposta = EnviarEmail.EnviandoEmail(txt_email.Text,"siesc.recuperasenha@gmail.com","Recuperação de Senha",TextoEmail);
 
