@@ -313,11 +313,11 @@
     <Compile Include="UI\Funcionarios\CadastroFuncionario.Designer.cs">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Funcionarios\frm_listar_emails_funcionarios.cs">
+    <Compile Include="UI\Funcionarios\FrmListarEmailsFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Funcionarios\frm_listar_emails_funcionarios.Designer.cs">
-      <DependentUpon>frm_listar_emails_funcionarios.cs</DependentUpon>
+    <Compile Include="UI\Funcionarios\FrmListarEmailsFuncionarios.Designer.cs">
+      <DependentUpon>FrmListarEmailsFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Funcionarios\GerenciaFuncionario.cs">
       <SubType>Form</SubType>
@@ -583,8 +583,8 @@
     <EmbeddedResource Include="UI\Funcionarios\CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Funcionarios\frm_listar_emails_funcionarios.resx">
-      <DependentUpon>frm_listar_emails_funcionarios.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Funcionarios\FrmListarEmailsFuncionarios.resx">
+      <DependentUpon>FrmListarEmailsFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Funcionarios\GerenciaFuncionario.resx">
       <DependentUpon>GerenciaFuncionario.cs</DependentUpon>

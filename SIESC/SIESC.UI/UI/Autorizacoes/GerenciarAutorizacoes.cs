@@ -10,7 +10,6 @@ using SIESC.UI.UI.Relatorios;
 using System;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.MODEL;
 using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Autorizacoes
@@ -23,7 +22,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <summary>
         /// 
         /// </summary>
-        private Localizar _localizar;
+        private Localizar localizar;
         /// <summary>
         /// Objeto de acesso ao banco de dados
         /// </summary>
@@ -60,10 +59,10 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <summary>
         /// Construtor da classe
         /// </summary>
-        /// <param name="principal_UI">O formulário pai</param>
-        public GerenciarAutorizacoes(Principal_UI principal_UI)
+        /// <param name="principalUi">O formulário pai</param>
+        public GerenciarAutorizacoes(Principal_UI principalUi)
         {
-            principalUi = principal_UI;
+            this.principalUi = principalUi;
             InitializeComponent();
             TipoAutorizacao();
             AcrescentaColuna();
@@ -89,54 +88,39 @@ namespace SIESC.UI.UI.Autorizacoes
         /// </summary>
         private void AcrescentaColuna()
         {
-            try
+            DataGridViewImageColumn sit = new DataGridViewImageColumn()
             {
-                DataGridViewImageColumn sit = new DataGridViewImageColumn()
-                {
-                    Name = "situacao",
-                    HeaderText = "Situação"
-                };
+                Name = "situacao",
+                HeaderText = @"Situação"
+            };
 
-                sit.Image = Resources.circle_blue;
+            sit.Image = Resources.circle_blue;
 
-                dgv_autorizacoes.Columns.Insert(0,sit);
-            }
-            catch (Exception exception)
-            {
-
-                throw exception;
-            }
-
+            dgv_autorizacoes.Columns.Insert(0,sit);
         }
         /// <summary>
         /// Formata o gridview de acordo com a autorização
         /// </summary>
         private void FormataGridView()
         {
-            try
+            foreach (DataGridViewRow viewRow in dgv_autorizacoes.Rows)
             {
-                foreach (DataGridViewRow viewRow in dgv_autorizacoes.Rows)
+                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)viewRow.Cells["Status"];
+
+                if ((bool)checkBoxCell.Value)
                 {
-                    DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)viewRow.Cells["Status"];
-
-                    if ((bool)checkBoxCell.Value)
-                    {
-                        viewRow.Cells["situacao"].Value = Resources.circle_blue;
-                    }
-                    else
-                    {
-                        viewRow.Cells["situacao"].Value = Resources.circle_red;
-                    }
+                    viewRow.Cells["situacao"].Value = Resources.circle_blue;
                 }
-
-                dgv_autorizacoes.Columns["Status"].Visible = false;
-                dgv_autorizacoes.Refresh();
+                else
+                {
+                    viewRow.Cells["situacao"].Value = Resources.circle_red;
+                }
             }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
+            // ReSharper disable once PossibleNullReferenceException
+            dgv_autorizacoes.Columns["Status"].Visible = false;
+
+            dgv_autorizacoes.Refresh();
         }
 
         /// <summary>
@@ -187,12 +171,12 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             try
             {
-                if (!_localizar.Equals(Localizar.aguardando))
+                if (!localizar.Equals(Localizar.aguardando))
                 {
                     controleAutorizacao = new AutorizacaoControl();
                     dgv_autorizacoes.DataSource = null;
 
-                    switch (_localizar)
+                    switch (localizar)
                     {
                         case Localizar.nome:
                             dgv_autorizacoes.DataSource = controleAutorizacao.GetByNome("%" + txt_nome.Text + "%",statusautorizacao);
@@ -243,11 +227,11 @@ namespace SIESC.UI.UI.Autorizacoes
                     }
                 }
 
-                SolicitarAutorizacao frm_solicitarautorizacao = new SolicitarAutorizacao(principalUi);
+                SolicitarAutorizacao frmSolicitarautorizacao = new SolicitarAutorizacao(principalUi);
 
-                frm_solicitarautorizacao.MdiParent = principalUi;
+                frmSolicitarautorizacao.MdiParent = principalUi;
 
-                frm_solicitarautorizacao.Show();
+                frmSolicitarautorizacao.Show();
 
                 this.Close();
 
@@ -275,7 +259,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_nome_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.nome;
+            localizar = Localizar.nome;
             this.HabiltaControles(true,false,false,false,false,false,false);
             txt_nome.Focus();
         }
@@ -287,7 +271,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_numautorizacao_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.autorizacao;
+            localizar = Localizar.autorizacao;
             this.HabiltaControles(false,true,false,false,false,false,false);
             txt_numautorizacao.Focus();
         }
@@ -299,7 +283,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_datavencimento_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.datavenc;
+            localizar = Localizar.datavenc;
             this.HabiltaControles(false,false,true,false,false,false,false);
             cbo_anovencimento.Focus();
         }
@@ -311,7 +295,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_escola_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.instituicao;
+            localizar = Localizar.instituicao;
             this.HabiltaControles(false,false,false,true,false,false,false);
             cbo_instituicoes.Focus();
         }
@@ -323,7 +307,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_cargo_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.cargo;
+            localizar = Localizar.cargo;
             this.HabiltaControles(false,false,false,false,true,false,false);
             cbo_cargo.Focus();
         }
@@ -334,7 +318,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_dataexpedicao_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.anoexpedicao;
+            localizar = Localizar.anoexpedicao;
             this.HabiltaControles(false,false,false,false,false,true,false);
             cbo_anoexpdicao.Focus();
         }
@@ -345,10 +329,11 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void rdb_tipoInstituicao_CheckedChanged(object sender,EventArgs e)
         {
-            _localizar = Localizar.mantenedor;
+            localizar = Localizar.mantenedor;
             this.HabiltaControles(false,false,false,false,false,false,true);
             cbo_anoexpdicao.Focus();
         }
+
         /// <summary>
         /// Habilta os controles
         /// </summary>
@@ -357,6 +342,8 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="datavenc"></param>
         /// <param name="escola"></param>
         /// <param name="cargo"></param>
+        /// <param name="anoexpedicao"></param>
+        /// <param name="tipoinstituicao"></param>
         private void HabiltaControles(bool nome,bool numautoriz,bool datavenc,bool escola,bool cargo,bool anoexpedicao,bool tipoinstituicao)
         {
             txt_nome.Enabled = nome;
@@ -413,7 +400,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.ResetText();
-                cbo_cargo.SelectedIndex = -1; ;
+                cbo_cargo.SelectedIndex = -1; 
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -479,15 +466,15 @@ namespace SIESC.UI.UI.Autorizacoes
                 }
 
                 funcionario = CriaFuncionario();
-                autorizacao = criaAutorizacao();
+                autorizacao = CriaAutorizacao();
 
                 if (!funcionario.Equals(null))
                 {
-                    SolicitarAutorizacao frm_solicitarautorizacao = new SolicitarAutorizacao(funcionario,autorizacao,principalUi);
+                    SolicitarAutorizacao frmSolicitarautorizacao = new SolicitarAutorizacao(funcionario,autorizacao,principalUi);
 
-                    frm_solicitarautorizacao.MdiParent = principalUi;
+                    frmSolicitarautorizacao.MdiParent = principalUi;
 
-                    frm_solicitarautorizacao.Show();
+                    frmSolicitarautorizacao.Show();
 
                     //this.Close(); 
                 }
@@ -519,11 +506,11 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 if (!funcionario.Equals(null))
                 {
-                    CadastroFuncionario frm_cadstrafuncionario = new CadastroFuncionario(funcionario,principalUi,txt_numautorizacao.Text);
+                    CadastroFuncionario frmCadstrafuncionario = new CadastroFuncionario(funcionario,principalUi,txt_numautorizacao.Text);
 
-                    frm_cadstrafuncionario.MdiParent = principalUi;
+                    frmCadstrafuncionario.MdiParent = principalUi;
 
-                    frm_cadstrafuncionario.Show();
+                    frmCadstrafuncionario.Show();
 
                     this.Close();
                 }
@@ -590,7 +577,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// Retorna uma autorização a partir do número da autorização
         /// </summary>
         /// <returns>O objeto Autorização</returns>
-        private Autorizacao criaAutorizacao()
+        private Autorizacao CriaAutorizacao()
         {
             try
             {
@@ -644,7 +631,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void btn_emitircarteirinha_Click(object sender,EventArgs e)
         {
-            //var t = CarregaProgressoThread();
+            var t = CarregaProgressoThread();
             try
             {
                 foreach (Form mdiChild in MdiChildren)
@@ -660,11 +647,11 @@ namespace SIESC.UI.UI.Autorizacoes
                 formCarteirinha.MdiParent = principalUi;
                 formCarteirinha.Show();
 
-               // if (t.IsAlive) t.Abort();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-               // if (t.IsAlive) t.Abort();
+                if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,principalUi);
             }
         }
@@ -683,15 +670,7 @@ namespace SIESC.UI.UI.Autorizacoes
             }
             return t;
         }
-        /// <summary>
-        /// Evento do botão cancelar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender,EventArgs e)
-        {
-            this.Close();
-        }
+
         /// <summary>
         /// Ação do botão inativar autorização
         /// </summary>
@@ -796,7 +775,7 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void dgv_autorizacoes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            lbl_num_registros.Text = $"Total de registros: {dgv_autorizacoes.Rows.Count}";
+            lbl_num_registros.Text = $@"Total de registros: {dgv_autorizacoes.Rows.Count}";
         }
     }
 }

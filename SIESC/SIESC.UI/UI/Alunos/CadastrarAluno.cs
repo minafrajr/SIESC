@@ -53,7 +53,8 @@ namespace SIESC.UI.UI
         /// Construtor da classe com parãmetro da Classe aluno para 
         /// preencimento com os dados do aluno
         /// </summary>
-        /// <param name="_aluno"></param>
+        /// <param name="_aluno">O Objeto Aluno</param>
+        /// <param name="principalUi">O formulário MDI pai</param>
         public CadastrarAluno(Aluno _aluno,Principal_UI principalUi)
         {
             try

@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Funcionarios
 {
-	partial class frm_listar_emails_funcionarios
+	partial class FrmListarEmailsFuncionarios
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -172,7 +172,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.ClientSize = new System.Drawing.Size(908, 483);
 			this.Controls.Add(this.splitContainer1);
-			this.Name = "frm_listar_emails_funcionarios";
+			this.Name = "FrmListarEmailsFuncionarios";
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);

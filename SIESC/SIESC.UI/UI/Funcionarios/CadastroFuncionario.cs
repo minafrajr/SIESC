@@ -18,7 +18,7 @@ namespace SIESC.UI.UI.Funcionarios
     /// <summary>
     /// 
     /// </summary>
-    public partial class CadastroFuncionario : SIESC.UI.base_UI
+    public partial class CadastroFuncionario : base_UI
     {
         /// <summary>
         /// Objeto para manipulação no banco de dados
@@ -54,6 +54,8 @@ namespace SIESC.UI.UI.Funcionarios
         /// Construtor da classe funcionario a partir do id do funcionario
         /// </summary>
         /// <param name="func"></param>
+        /// <param name="principal"></param>
+        /// <param name="numeroautorizacao"></param>
         public CadastroFuncionario(Funcionario func,Principal_UI principal,string numeroautorizacao)
         {
             PrincipalUi = principal;
@@ -76,6 +78,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="func"></param>
         /// <param name="autoriz"></param>
+        /// <param name="principal"></param>
         public CadastroFuncionario(Funcionario func,Autorizacao autoriz,Principal_UI principal)
         {
             PrincipalUi = principal;
@@ -493,7 +496,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                base.SetMask(msk_tel1);
+                SetMask(msk_tel1);
             }
             catch (Exception exception)
             {
@@ -510,7 +513,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                base.SetMask(msk_tel2);
+                SetMask(msk_tel2);
             }
             catch (Exception ex)
             {
@@ -527,7 +530,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                base.SetMask(msk_tel3);
+                SetMask(msk_tel3);
             }
             catch (Exception ex)
             {
