@@ -163,7 +163,7 @@ namespace SIESC.BD.Control
 
                 if (this.AlteraSenha(usuario,novasenha))
                 {
-                    string texto_email = string.Format("A sua nova senha é: {0}.{1}Utilize-a para um novo acesso",novasenha,Environment.NewLine);
+                    string texto_email = $"A sua nova senha é: {novasenha}.{Environment.NewLine}Utilize-a para um novo acesso";
 
                     return EnviarEmail.EnviandoEmail(usuario.nomeusuario,usuario.email,"SIESC","siesc@oi.com.br","SIESC - Recuperação de senha",texto_email);
                 }
