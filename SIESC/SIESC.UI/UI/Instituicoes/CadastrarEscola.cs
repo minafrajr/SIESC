@@ -13,6 +13,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI
 {

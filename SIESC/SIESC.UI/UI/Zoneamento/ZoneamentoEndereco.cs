@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Zoneamento
 {

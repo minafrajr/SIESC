@@ -14,6 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using SIESC.MODEL;
 using SIESC.MODEL.Classes;
+using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Autorizacoes
 {

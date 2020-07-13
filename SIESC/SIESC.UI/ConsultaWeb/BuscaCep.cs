@@ -3,7 +3,7 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
-using SIESC.UI.tecnologia1;
+
 using System;
 using System.Data;
 using System.IO;
@@ -11,10 +11,9 @@ using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
-using static System.StringSplitOptions;
+using SIESC.UI.tecnologia1;
 
-
-namespace SIESC.UI
+namespace SIESC.UI.ConsultaWeb
 {
     /// <summary>
     /// Classe para consulta de CEP
@@ -27,7 +26,6 @@ namespace SIESC.UI
         /// Utiliza os sites republicavirtual.com.br e viacep.com.br
         /// </summary>
         /// <param name="cep">O CEP a ser pesquisado</param>
-        /// <param name="cidade"></param>
         /// <param name="bairro"></param>
         /// <param name="logradouro"></param>
         /// <param name="tipologradouro"></param>
@@ -45,7 +43,7 @@ namespace SIESC.UI
                 {
                     using (Stream stream = response.GetResponseStream())
                     {
-                        XDocument document = XDocument.Load(new StreamReader(stream));
+                        XDocument document = XDocument.Load(new StreamReader(stream ?? throw new InvalidOperationException("Strema não é válido!")));
 
                         try
                         {
@@ -86,7 +84,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="cep">O cep que se deseja localizar a endereço</param>
         /// <returns>Array de string contendo o endereço. [0] bairro | [2] logradouro </returns>
-        public string[] buscadorAlternativo(string cep)
+        public string[] BuscadorAlternativo(string cep)
         {
             string[] saida = new string[6];
 
@@ -96,7 +94,7 @@ namespace SIESC.UI
             {
                 using (Stream stream = response.GetResponseStream())
                 {
-                    XDocument document = XDocument.Load(new StreamReader(stream));
+                    XDocument document = XDocument.Load(new StreamReader(stream ?? throw new InvalidOperationException()));
 
                     try
                     {
@@ -162,21 +160,14 @@ namespace SIESC.UI
         /// <param name="cep">O cep para consulta</param>
         public Endereco[] buscadorCEP(string cep)
         {
-            try
-            {
-                ServicoCEP srv = new ServicoCEP();
+            ServicoCEP srv = new ServicoCEP();
 
-                Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
+            Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
-                if (enderecos == null)
-                    throw new Exception("CEP não encontrado!Por favor digite o endereço.");
+            if (enderecos == null)
+                throw new Exception("CEP não encontrado!Por favor digite o endereço.");
 
-                return enderecos;
-            }
-            catch (Exception exception)
-            {
-                throw exception;
-            }
+            return enderecos;
         }
 
         /// <summary>
@@ -185,26 +176,18 @@ namespace SIESC.UI
         /// <param name="logradouro">Nome do logradouro</param>
         /// <param name="codigoCidade">Código da Cidade</param>
         /// <param name="estado">Estado</param>
-        /// <param name="numerologradouro">Número do logradouro</param>
-        /// <returns></returns>
+        /// <returns>Array de endereços</returns>
         public Endereco[] RetornaCEPS(string logradouro, int codigoCidade, string estado)
         {
-            try
-            {
-                ServicoCEP srv = new ServicoCEP();
+            ServicoCEP srv = new ServicoCEP();
 
-                Endereco[] enderecos = srv.ObterEnderecoPorLogradouro(logradouro, codigoCidade, estado, null);
+            Endereco[] enderecos = srv.ObterEnderecoPorLogradouro(logradouro, codigoCidade, estado, null);
 
-                if (enderecos == null)
-                    throw new NullReferenceException(
-                        "Endereço não localizado!\nVerifique o nome do logradouro ou a cidade.");
+            if (enderecos == null)
+                throw new NullReferenceException(
+                    "Endereço não localizado!\nVerifique o nome do logradouro ou a cidade.");
 
-                return enderecos;
-            }
-            catch (Exception exception)
-            {
-                throw exception;
-            }
+            return enderecos;
         }
 
         /// <summary>
@@ -214,22 +197,15 @@ namespace SIESC.UI
         /// <returns></returns>
         public Endereco[] RetornaCidades(string estado)
         {
-            try
-            {
-                ServicoCEP servicoCep = new ServicoCEP();
+            ServicoCEP servicoCep = new ServicoCEP();
 
-                if (estado != null)
-                {
-                    Endereco[] enderecos = servicoCep.ObterCidadesPorEstado(estado);
-
-                    return enderecos;
-                }
-                return null;
-            }
-            catch (WebException ex)
+            if (estado != null)
             {
-                throw ex;
+                Endereco[] enderecos = servicoCep.ObterCidadesPorEstado(estado);
+
+                return enderecos;
             }
+            return null;
         }
     }
 }

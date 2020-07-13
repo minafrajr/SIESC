@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Solicitacoes
 {

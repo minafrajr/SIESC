@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC.UI.ConsultaWeb;
 using SIESC.UI.tecnologia1;
 
 namespace SIESC.UI.UI.CEP

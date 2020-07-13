@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+using SIESC.UI.ConsultaWeb;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Funcionarios

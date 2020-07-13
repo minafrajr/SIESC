@@ -3,6 +3,7 @@ using SIESC.UI.UI.Zoneamento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.CEP
 {
