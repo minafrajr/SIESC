@@ -16,27 +16,26 @@ namespace SIESC.UI.UI.Relatorios
 {
 	public partial class Listas : Form
 	{
-
-        /// <summary>
-        /// 
-        /// </summary>
-	    private int codigorelatorio;
-        /// <summary>
-        /// 
-        /// </summary>
-	    private Margins margins = new Margins(12, 2, 0, 0); //Configurando as margens
-        /// <summary>
-        /// 
-        /// </summary>
-	    private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
-
-        /// <summary>
-        /// 
-        /// </summary>
-		public Listas()
-		{
-			InitializeComponent();
-		}
+		/// <summary>
+		/// O código do relatório a ser gerado
+		/// </summary>
+		private int codigorelatorio;
+		/// <summary>
+		/// O mantenedor da instituição
+		/// </summary>
+		private int? mantenedor;
+		/// <summary>
+		/// Autorizações ativas ou inativas
+		/// </summary>
+		private bool? ativa;
+		/// <summary>
+		/// 
+		/// </summary>
+		private Margins margins = new Margins(12, 2, 0, 0); //Configurando as margens
+		/// <summary>
+		/// 
+		/// </summary>
+		private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
 
 		/// <summary>
 		/// Construtor da classe
@@ -49,8 +48,7 @@ namespace SIESC.UI.UI.Relatorios
 				this.InitializeComponent();
 
 				this.codigorelatorio = codigorelatorio;
-				//this.vw_instituicoesTableAdapter1.Fill(this.dsListas1.vw_instituicoes);
-				//this.vw_autorizacoesTableAdapter1.Fill(this.dsListas1.vw_autorizacoes);
+			
 				this.ConfiguraLista();
 			}
 			catch (Exception ex)
@@ -60,17 +58,20 @@ namespace SIESC.UI.UI.Relatorios
 		}
 
 		/// <summary>
-		/// Evento do carregamento 
+		/// Construtor da classe
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void Listas_Load(object sender, EventArgs e)
+		/// <param name="codigorelatorio"></param>
+		public Listas(int codigorelatorio, int? mantenedor, bool? ativa)
 		{
 			try
 			{
-				//this.vw_instituicoesTableAdapter1.Fill(this.dsListas1.vw_instituicoes);
-				//this.vw_autorizacoesTableAdapter1.Fill(this.dsListas1.vw_autorizacoes);
-				//this.rpt_viewer_listas.RefreshReport();
+				this.InitializeComponent();
+
+				this.codigorelatorio = codigorelatorio;
+				this.mantenedor = mantenedor;
+				this.ativa = ativa;
+
+				this.ConfiguraLista();
 			}
 			catch (Exception ex)
 			{
@@ -103,7 +104,7 @@ namespace SIESC.UI.UI.Relatorios
 
 				rpt_viewer_listas.Padding = new Padding(0, 0, 0, 0);
 				pg.Margins = margins; //repassa as margens para o relatório
-
+				pg.Landscape = false;
 
 				DataTable dt = new DataTable();
 
@@ -127,7 +128,7 @@ namespace SIESC.UI.UI.Relatorios
 						datasource.Value = dt;
 						break;
 					case 3:
-						pg.Landscape = false;
+						
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -137,16 +138,20 @@ namespace SIESC.UI.UI.Relatorios
 						break;
 
 					case 4:
-						pg.Landscape = false;
+						pg.Landscape = true;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_Diretores.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetDiretoresEF();
+						rpt_viewer_listas.LocalReport.ReportPath = mantenedor.Equals(1)
+							? PathRelatorio + @"\\Listas\\Escolas\\lst_Diretor_por_Escola.rdlc"
+							: PathRelatorio + @"\\Listas\\Infantil\\lst_Diretor_por_InstInfantil.rdlc";
+
+
+						dt = this.vw_diretoresTableAdapter1.GetDiretoresAtivosByMantenedor(mantenedor, true);
 						datasource.Value = dt;
 						break;
+					//E:\Projects\SIESC\SIESC\SIESC.BD\Reports\
 					case 5:
-						pg.Landscape = false;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -155,7 +160,6 @@ namespace SIESC.UI.UI.Relatorios
 						datasource.Value = dt;
 						break;
 					case 6:
-						pg.Landscape = false;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -165,7 +169,6 @@ namespace SIESC.UI.UI.Relatorios
 						break;
 
 					case 7:
-						pg.Landscape = false;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -174,7 +177,6 @@ namespace SIESC.UI.UI.Relatorios
 						datasource.Value = dt;
 						break;
 					case 8:
-						pg.Landscape = false;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -183,7 +185,6 @@ namespace SIESC.UI.UI.Relatorios
 						datasource.Value = dt;
 						break;
 					case 9:
-						pg.Landscape = false;
 						rpt_viewer_listas.SetPageSettings(pg);
 						datasource.Name = "dsListas";
 
@@ -191,6 +192,25 @@ namespace SIESC.UI.UI.Relatorios
 						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCreches();
 						datasource.Value = dt;
 						break;
+					case 10:
+						pg.Landscape = true;
+						rpt_viewer_listas.SetPageSettings(pg);
+						datasource.Name = "dsListas";
+
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + @"\\Listas\\Infantil\\lst_Diretor_Infantil.rdlc";
+						dt = this.vw_diretoresTableAdapter1.GetDiretoresEdInfantil(ativa);
+						datasource.Value = dt;
+						break;
+					case 11:
+						pg.Landscape = true;
+						rpt_viewer_listas.SetPageSettings(pg);
+						datasource.Name = "dsListas";
+
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + @"\\Listas\\lst_Gestores.rdlc";
+						dt = this.vw_diretoresTableAdapter1.GetTodosDiretores(ativa);
+						datasource.Value = dt;
+						break;
+
 				}
 				rpt_viewer_listas.LocalReport.DataSources.Add(datasource);
 				rpt_viewer_listas.RefreshReport();

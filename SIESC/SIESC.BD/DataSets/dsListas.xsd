@@ -5,6 +5,7 @@
       <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_instituicoesTableAdapter" GeneratorDataComponentClassName="vw_instituicoesTableAdapter" Name="vw_instituicoes" UserDataComponentName="vw_instituicoesTableAdapter">
@@ -302,6 +303,77 @@ WHERE        (instituicoes.mantenedor = @mantenedor)</CommandText>
 FROM            vw_lista_autorizacoes
 ORDER BY Validade</CommandText>
                     <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_diretoresTableAdapter" GeneratorDataComponentClassName="vw_diretoresTableAdapter" Name="vw_diretores" UserDataComponentName="vw_diretoresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_diretores" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idInstituicao`, `Instituicao`, `TelefoneInstituicao`, `EmailInstituicao`, `idAutorizacao`, `StatusAutorizacao`, `NumeroAutorizacao`, `NomeDiretor`, `TelefoneDiretor`, `EmailDiretor`, `Validade`, `DataExpedicao`, `Usuario`, `idMantenedor` FROM `siesc`.`vw_diretores`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idInstituicao" DataSetColumn="idInstituicao" />
+              <Mapping SourceColumn="Instituicao" DataSetColumn="Instituicao" />
+              <Mapping SourceColumn="TelefoneInstituicao" DataSetColumn="TelefoneInstituicao" />
+              <Mapping SourceColumn="EmailInstituicao" DataSetColumn="EmailInstituicao" />
+              <Mapping SourceColumn="idAutorizacao" DataSetColumn="idAutorizacao" />
+              <Mapping SourceColumn="StatusAutorizacao" DataSetColumn="StatusAutorizacao" />
+              <Mapping SourceColumn="NumeroAutorizacao" DataSetColumn="NumeroAutorizacao" />
+              <Mapping SourceColumn="NomeDiretor" DataSetColumn="NomeDiretor" />
+              <Mapping SourceColumn="TelefoneDiretor" DataSetColumn="TelefoneDiretor" />
+              <Mapping SourceColumn="EmailDiretor" DataSetColumn="EmailDiretor" />
+              <Mapping SourceColumn="Validade" DataSetColumn="Validade" />
+              <Mapping SourceColumn="DataExpedicao" DataSetColumn="DataExpedicao" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="idMantenedor" DataSetColumn="idMantenedor" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_diretores" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDiretoresAtivosByMantenedor" GetMethodModifier="Public" GetMethodName="GetDiretoresAtivosByMantenedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDiretoresAtivosByMantenedor" UserSourceName="GetDiretoresAtivosByMantenedor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, Instituicao, TelefoneInstituicao, EmailInstituicao, NomeDiretor, TelefoneDiretor, EmailDiretor, idMantenedor
+FROM            vw_diretores
+WHERE        (idMantenedor = @idMantenedor) AND (StatusAutorizacao = @statusAutorizacao)
+ORDER BY Instituicao</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="idMantenedor" ColumnName="idMantenedor" DataSourceName="siesc.vw_diretores" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idMantenedor" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idMantenedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="statusAutorizacao" ColumnName="StatusAutorizacao" DataSourceName="siesc.vw_diretores" DataTypeServer="tinyint(1)" DbType="Object" Direction="Input" ParameterName="@statusAutorizacao" Precision="0" ProviderType="Byte" Scale="0" Size="1024" SourceColumn="StatusAutorizacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_diretores" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDiretoresEdInfantil" GetMethodModifier="Public" GetMethodName="GetDiretoresEdInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDiretoresEdInfantil" UserSourceName="GetDiretoresEdInfantil">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, Instituicao, TelefoneInstituicao, EmailInstituicao, NomeDiretor, TelefoneDiretor, EmailDiretor, idMantenedor, StatusAutorizacao
+FROM            vw_diretores
+WHERE        (idMantenedor = 3 OR
+                         idMantenedor = 4) AND (StatusAutorizacao = @statusAutorizacao)
+ORDER BY idMantenedor, Instituicao</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="statusAutorizacao" ColumnName="StatusAutorizacao" DataSourceName="siesc.vw_diretores" DataTypeServer="tinyint(1)" DbType="Object" Direction="Input" ParameterName="@statusAutorizacao" Precision="0" ProviderType="Byte" Scale="0" Size="1024" SourceColumn="StatusAutorizacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_diretores" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetTodosDiretores" GetMethodModifier="Public" GetMethodName="GetTodosDiretores" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTodosDiretores" UserSourceName="GetTodosDiretores">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, Instituicao, TelefoneInstituicao, EmailInstituicao, NomeDiretor, TelefoneDiretor, EmailDiretor, idMantenedor
+FROM            vw_diretores
+WHERE        (StatusAutorizacao = @statusAutorizacao)
+ORDER BY idMantenedor, Instituicao</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="statusAutorizacao" ColumnName="StatusAutorizacao" DataSourceName="siesc.vw_diretores" DataTypeServer="tinyint(1)" DbType="Object" Direction="Input" ParameterName="@statusAutorizacao" Precision="0" ProviderType="Byte" Scale="0" Size="1024" SourceColumn="StatusAutorizacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
@@ -652,6 +724,86 @@ ORDER BY Validade</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Validade" msprop:Generator_ColumnVarNameInTable="columnValidade" msprop:Generator_ColumnPropNameInRow="Validade" msprop:Generator_ColumnPropNameInTable="ValidadeColumn" msprop:Generator_UserColumnName="Validade" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_diretores" msprop:Generator_TableClassName="vw_diretoresDataTable" msprop:Generator_TableVarName="tablevw_diretores" msprop:Generator_TablePropName="vw_diretores" msprop:Generator_RowDeletingName="vw_diretoresRowDeleting" msprop:Generator_RowChangingName="vw_diretoresRowChanging" msprop:Generator_RowEvHandlerName="vw_diretoresRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_diretoresRowDeleted" msprop:Generator_UserTableName="vw_diretores" msprop:Generator_RowChangedName="vw_diretoresRowChanged" msprop:Generator_RowEvArgName="vw_diretoresRowChangeEvent" msprop:Generator_RowClassName="vw_diretoresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idInstituicao" msprop:Generator_ColumnVarNameInTable="columnidInstituicao" msprop:Generator_ColumnPropNameInRow="idInstituicao" msprop:Generator_ColumnPropNameInTable="idInstituicaoColumn" msprop:Generator_UserColumnName="idInstituicao" type="xs:int" minOccurs="0" />
+              <xs:element name="Instituicao" msprop:Generator_ColumnVarNameInTable="columnInstituicao" msprop:Generator_ColumnPropNameInRow="Instituicao" msprop:Generator_ColumnPropNameInTable="InstituicaoColumn" msprop:Generator_UserColumnName="Instituicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefoneInstituicao" msprop:Generator_ColumnVarNameInTable="columnTelefoneInstituicao" msprop:Generator_ColumnPropNameInRow="TelefoneInstituicao" msprop:Generator_ColumnPropNameInTable="TelefoneInstituicaoColumn" msprop:Generator_UserColumnName="TelefoneInstituicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="47" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailInstituicao" msprop:Generator_ColumnVarNameInTable="columnEmailInstituicao" msprop:Generator_ColumnPropNameInRow="EmailInstituicao" msprop:Generator_ColumnPropNameInTable="EmailInstituicaoColumn" msprop:Generator_UserColumnName="EmailInstituicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAutorizacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidAutorizacao" msprop:Generator_ColumnPropNameInRow="idAutorizacao" msprop:Generator_ColumnPropNameInTable="idAutorizacaoColumn" msprop:Generator_UserColumnName="idAutorizacao" type="xs:int" minOccurs="0" />
+              <xs:element name="StatusAutorizacao" msprop:Generator_ColumnVarNameInTable="columnStatusAutorizacao" msprop:Generator_ColumnPropNameInRow="StatusAutorizacao" msprop:Generator_ColumnPropNameInTable="StatusAutorizacaoColumn" msprop:Generator_UserColumnName="StatusAutorizacao" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NumeroAutorizacao" msprop:Generator_ColumnVarNameInTable="columnNumeroAutorizacao" msprop:Generator_ColumnPropNameInRow="NumeroAutorizacao" msprop:Generator_ColumnPropNameInTable="NumeroAutorizacaoColumn" msprop:Generator_UserColumnName="NumeroAutorizacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NomeDiretor" msprop:Generator_ColumnVarNameInTable="columnNomeDiretor" msprop:Generator_ColumnPropNameInRow="NomeDiretor" msprop:Generator_ColumnPropNameInTable="NomeDiretorColumn" msprop:Generator_UserColumnName="NomeDiretor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefoneDiretor" msprop:Generator_ColumnVarNameInTable="columnTelefoneDiretor" msprop:Generator_ColumnPropNameInRow="TelefoneDiretor" msprop:Generator_ColumnPropNameInTable="TelefoneDiretorColumn" msprop:Generator_UserColumnName="TelefoneDiretor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="31" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailDiretor" msprop:Generator_ColumnVarNameInTable="columnEmailDiretor" msprop:Generator_ColumnPropNameInRow="EmailDiretor" msprop:Generator_ColumnPropNameInTable="EmailDiretorColumn" msprop:Generator_UserColumnName="EmailDiretor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Validade" msprop:Generator_ColumnVarNameInTable="columnValidade" msprop:Generator_ColumnPropNameInRow="Validade" msprop:Generator_ColumnPropNameInTable="ValidadeColumn" msprop:Generator_UserColumnName="Validade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataExpedicao" msprop:Generator_ColumnVarNameInTable="columnDataExpedicao" msprop:Generator_ColumnPropNameInRow="DataExpedicao" msprop:Generator_ColumnPropNameInTable="DataExpedicaoColumn" msprop:Generator_UserColumnName="DataExpedicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idMantenedor" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMantenedor" msprop:Generator_ColumnPropNameInRow="idMantenedor" msprop:Generator_ColumnPropNameInTable="idMantenedorColumn" msprop:Generator_UserColumnName="idMantenedor" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

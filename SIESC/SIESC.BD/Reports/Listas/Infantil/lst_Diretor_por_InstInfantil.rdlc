@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.33583cm</Width>
+              <Width>1.17679cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>7.89278cm</Width>
@@ -27,7 +27,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox14">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -45,7 +45,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -302,7 +302,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -320,7 +320,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -352,7 +352,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -364,7 +363,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= IIf(Fields!Instituicao.Value.Equals("CENTRO ED. TÉC. ARTES PROFISSIONAIS"),Fields!Instituicao.Value, "E M. "&amp;Fields!Instituicao.Value) &amp; VbCRLF &amp;"Tel.: "&amp;Fields!TelefoneInstituicao.Value &amp; VbCRLF &amp; "E-mail :"&amp;Fields!EmailInstituicao.Value</Value>
+                              <Value>= Fields!Instituicao.Value &amp; VbCRLF &amp;"Tel.: "&amp;Fields!TelefoneInstituicao.Value &amp; VbCRLF &amp; "E-mail :"&amp;Fields!EmailInstituicao.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -593,7 +592,7 @@
         <Top>1.10202cm</Top>
         <Left>0.49953cm</Left>
         <Height>1.46458cm</Height>
-        <Width>27.87672cm</Width>
+        <Width>27.71766cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -607,7 +606,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>LISTA DE DIRETORES</Value>
+                <Value>=IIF(First(Fields!idMantenedor.Value.Equals(3), "dsListas"),"LISTA DE DIRETORES DE CENTROS INFANTIS MUNICIPAIS","LISTA DE COORDENADORES ADMINISTRATIVOS")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -620,9 +619,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>0.32563cm</Top>
-        <Left>10.30584cm</Left>
+        <Left>7.07792cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.73333cm</Width>
+        <Width>14.2475cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -638,7 +637,7 @@
     <Height>1.14247in</Height>
     <Style />
   </Body>
-  <Width>11.29675in</Width>
+  <Width>11.18216in</Width>
   <Page>
     <PageHeader>
       <Height>2.18474cm</Height>

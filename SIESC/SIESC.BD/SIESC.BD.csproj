@@ -257,10 +257,13 @@
     <EmbeddedResource Include="Reports\Infantil\rpt_Solicitacoes_Dia_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_Solicitacoes_Mes_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_solicitacoes_por_motivo_infantil.rdlc" />
+    <EmbeddedResource Include="Reports\Listas\Infantil\lst_Diretor_por_InstInfantil.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Escolas\rpt_listafuncionarios.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Escolas\rpt_listabase.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_lista_Diretores.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_listabase.rdlc" />
+    <EmbeddedResource Include="Reports\Listas\Infantil\lst_Diretor_Infantil.rdlc" />
+    <EmbeddedResource Include="Reports\Listas\lst_Gestores.rdlc" />
     <EmbeddedResource Include="Reports\lst_base.rdlc" />
     <EmbeddedResource Include="Reports\lst_Contatos_Escolas1.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Escolas\lst_Diretor_por_Escola.rdlc" />
@@ -408,6 +411,7 @@
   <ItemGroup>
     <Content Include="Reports\Web\Heatmap.html" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

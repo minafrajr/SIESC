@@ -651,7 +651,7 @@ namespace SIESC.UI
                     }
                 }
 
-                Listas listas = new Listas(2);
+                Listas listas = new Listas(2, null, null);
 
                 listas.MdiParent = this;
                 listas.Show();
@@ -887,17 +887,7 @@ namespace SIESC.UI
             }
         }
 
-        /// <summary>
-        /// Abre a lista de diretores
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void diretoraPorEscolaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GerarListaFuncionarios(4);
-        }
-
-        /// <summary>
+       /// <summary>
         /// Abre o formulário de zoneamento
         /// </summary>
         /// <param name="sender"></param>
@@ -1953,6 +1943,7 @@ namespace SIESC.UI
         }
 
         #endregion
+
         /// <summary>
         /// 
         /// </summary>
@@ -2079,7 +2070,7 @@ namespace SIESC.UI
             }
         }
         /// <summary>
-        /// 
+        /// Gera a lista de Auxiliares Administrativos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2526,6 +2517,49 @@ namespace SIESC.UI
 
             frm_gerenciarSindicanciaCadastrada.MdiParent = this;
             frm_gerenciarSindicanciaCadastrada.Show();
+        }
+        
+        private void GeraListaDiretores(int codigoRelatorio ,int? mantenedor, bool? ativa)
+        {
+            var t = CarregaProgressoThread(); //inicia thread para form carregando
+            try
+            {
+               Listas frm_Listas = new Listas(codigoRelatorio, mantenedor, ativa);
+                frm_Listas.MdiParent = this;
+                frm_Listas.Show();
+
+                if (t.IsAlive) t.Abort();
+            }
+            catch (Exception ex)
+            {
+                if (t.IsAlive) t.Abort();
+                Mensageiro.MensagemErro(ex, this);
+            }
+        }
+
+        private void edInfantilCIMsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GeraListaDiretores(4,3, true);
+        }
+
+        private void ensinoFundamentalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GeraListaDiretores(4, 1, true);
+        }
+
+        private void edInfantilParceirasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GeraListaDiretores(4,4,true);
+        }
+
+        private void edInfantilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GeraListaDiretores(10,null,true);
+        }
+
+        private void todosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GeraListaDiretores(11, null, true);
         }
     }
 }

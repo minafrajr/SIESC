@@ -33,16 +33,18 @@
 			this.vw_instituicoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter();
 			this.vw_autorizacoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter();
 			this.vw_funcionariosTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter();
+			this.vw_diretoresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dsListas1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// rpt_viewer_listas
 			// 
 			this.rpt_viewer_listas.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rpt_viewer_listas.Location = new System.Drawing.Point(2, 3);
+			this.rpt_viewer_listas.Location = new System.Drawing.Point(0, 0);
 			this.rpt_viewer_listas.Margin = new System.Windows.Forms.Padding(0);
 			this.rpt_viewer_listas.Name = "rpt_viewer_listas";
-			this.rpt_viewer_listas.Size = new System.Drawing.Size(800, 551);
+			this.rpt_viewer_listas.ServerReport.BearerToken = null;
+			this.rpt_viewer_listas.Size = new System.Drawing.Size(804, 557);
 			this.rpt_viewer_listas.TabIndex = 0;
 			// 
 			// dsListas1
@@ -62,14 +64,16 @@
 			// 
 			this.vw_funcionariosTableAdapter1.ClearBeforeFill = true;
 			// 
+			// vw_diretoresTableAdapter1
+			// 
+			this.vw_diretoresTableAdapter1.ClearBeforeFill = true;
+			// 
 			// Listas
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.ClientSize = new System.Drawing.Size(804, 557);
 			this.Controls.Add(this.rpt_viewer_listas);
 			this.Name = "Listas";
 			this.Text = "SIESC - Listas";
-			this.Load += new System.EventHandler(this.Listas_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dsListas1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -82,5 +86,6 @@
 		private SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter vw_instituicoesTableAdapter1;
 		private SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter vw_autorizacoesTableAdapter1;
 		private SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter vw_funcionariosTableAdapter1;
+		private BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter vw_diretoresTableAdapter1;
 	}
 }
