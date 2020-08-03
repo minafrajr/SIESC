@@ -379,6 +379,45 @@ ORDER BY idMantenedor, Instituicao</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_secretarios_escolaresTableAdapter" GeneratorDataComponentClassName="vw_secretarios_escolaresTableAdapter" Name="vw_secretarios_escolares" UserDataComponentName="vw_secretarios_escolaresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_secretarios_escolares" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idInstituicao`, `Instituicao`, `TelefoneInstituicao`, `EmailInstituicao`, `idAutorizacao`, `StatusAutorizacao`, `NumeroAutorizacao`, `NomeSecretario`, `TelefoneSecretario`, `EmailSecretario`, `Validade`, `DataExpedicao`, `Usuario` FROM `siesc`.`vw_secretarios_escolares`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idInstituicao" DataSetColumn="idInstituicao" />
+              <Mapping SourceColumn="Instituicao" DataSetColumn="Instituicao" />
+              <Mapping SourceColumn="TelefoneInstituicao" DataSetColumn="TelefoneInstituicao" />
+              <Mapping SourceColumn="EmailInstituicao" DataSetColumn="EmailInstituicao" />
+              <Mapping SourceColumn="idAutorizacao" DataSetColumn="idAutorizacao" />
+              <Mapping SourceColumn="StatusAutorizacao" DataSetColumn="StatusAutorizacao" />
+              <Mapping SourceColumn="NumeroAutorizacao" DataSetColumn="NumeroAutorizacao" />
+              <Mapping SourceColumn="NomeSecretario" DataSetColumn="NomeSecretario" />
+              <Mapping SourceColumn="TelefoneSecretario" DataSetColumn="TelefoneSecretario" />
+              <Mapping SourceColumn="EmailSecretario" DataSetColumn="EmailSecretario" />
+              <Mapping SourceColumn="Validade" DataSetColumn="Validade" />
+              <Mapping SourceColumn="DataExpedicao" DataSetColumn="DataExpedicao" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_secretarios_escolares" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSecretariosEscolares" GetMethodModifier="Public" GetMethodName="GetSecretariosEscolares" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSecretariosEscolares" UserSourceName="GetSecretariosEscolares">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, Instituicao, TelefoneInstituicao, EmailInstituicao, idAutorizacao, StatusAutorizacao, NumeroAutorizacao, NomeSecretario, TelefoneSecretario, EmailSecretario, Validade, DataExpedicao, Usuario
+FROM            vw_secretarios_escolares
+WHERE        (StatusAutorizacao = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -807,6 +846,85 @@ ORDER BY idMantenedor, Instituicao</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vw_secretarios_escolares" msprop:Generator_TableClassName="vw_secretarios_escolaresDataTable" msprop:Generator_TableVarName="tablevw_secretarios_escolares" msprop:Generator_RowChangedName="vw_secretarios_escolaresRowChanged" msprop:Generator_TablePropName="vw_secretarios_escolares" msprop:Generator_RowDeletingName="vw_secretarios_escolaresRowDeleting" msprop:Generator_RowChangingName="vw_secretarios_escolaresRowChanging" msprop:Generator_RowEvHandlerName="vw_secretarios_escolaresRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_secretarios_escolaresRowDeleted" msprop:Generator_RowClassName="vw_secretarios_escolaresRow" msprop:Generator_UserTableName="vw_secretarios_escolares" msprop:Generator_RowEvArgName="vw_secretarios_escolaresRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idInstituicao" msprop:Generator_ColumnVarNameInTable="columnidInstituicao" msprop:Generator_ColumnPropNameInRow="idInstituicao" msprop:Generator_ColumnPropNameInTable="idInstituicaoColumn" msprop:Generator_UserColumnName="idInstituicao" type="xs:int" />
+              <xs:element name="Instituicao" msprop:Generator_ColumnVarNameInTable="columnInstituicao" msprop:Generator_ColumnPropNameInRow="Instituicao" msprop:Generator_ColumnPropNameInTable="InstituicaoColumn" msprop:Generator_UserColumnName="Instituicao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefoneInstituicao" msprop:Generator_ColumnVarNameInTable="columnTelefoneInstituicao" msprop:Generator_ColumnPropNameInRow="TelefoneInstituicao" msprop:Generator_ColumnPropNameInTable="TelefoneInstituicaoColumn" msprop:Generator_UserColumnName="TelefoneInstituicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="47" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailInstituicao" msprop:Generator_ColumnVarNameInTable="columnEmailInstituicao" msprop:Generator_ColumnPropNameInRow="EmailInstituicao" msprop:Generator_ColumnPropNameInTable="EmailInstituicaoColumn" msprop:Generator_UserColumnName="EmailInstituicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAutorizacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidAutorizacao" msprop:Generator_ColumnPropNameInRow="idAutorizacao" msprop:Generator_ColumnPropNameInTable="idAutorizacaoColumn" msprop:Generator_UserColumnName="idAutorizacao" type="xs:int" />
+              <xs:element name="StatusAutorizacao" msprop:Generator_ColumnVarNameInTable="columnStatusAutorizacao" msprop:Generator_ColumnPropNameInRow="StatusAutorizacao" msprop:Generator_ColumnPropNameInTable="StatusAutorizacaoColumn" msprop:Generator_UserColumnName="StatusAutorizacao" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NumeroAutorizacao" msprop:Generator_ColumnVarNameInTable="columnNumeroAutorizacao" msprop:Generator_ColumnPropNameInRow="NumeroAutorizacao" msprop:Generator_ColumnPropNameInTable="NumeroAutorizacaoColumn" msprop:Generator_UserColumnName="NumeroAutorizacao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NomeSecretario" msprop:Generator_ColumnVarNameInTable="columnNomeSecretario" msprop:Generator_ColumnPropNameInRow="NomeSecretario" msprop:Generator_ColumnPropNameInTable="NomeSecretarioColumn" msprop:Generator_UserColumnName="NomeSecretario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefoneSecretario" msprop:Generator_ColumnVarNameInTable="columnTelefoneSecretario" msprop:Generator_ColumnPropNameInRow="TelefoneSecretario" msprop:Generator_ColumnPropNameInTable="TelefoneSecretarioColumn" msprop:Generator_UserColumnName="TelefoneSecretario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="31" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailSecretario" msprop:Generator_ColumnVarNameInTable="columnEmailSecretario" msprop:Generator_ColumnPropNameInRow="EmailSecretario" msprop:Generator_ColumnPropNameInTable="EmailSecretarioColumn" msprop:Generator_UserColumnName="EmailSecretario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Validade" msprop:Generator_ColumnVarNameInTable="columnValidade" msprop:Generator_ColumnPropNameInRow="Validade" msprop:Generator_ColumnPropNameInTable="ValidadeColumn" msprop:Generator_UserColumnName="Validade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataExpedicao" msprop:Generator_ColumnVarNameInTable="columnDataExpedicao" msprop:Generator_ColumnPropNameInRow="DataExpedicao" msprop:Generator_ColumnPropNameInTable="DataExpedicaoColumn" msprop:Generator_UserColumnName="DataExpedicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -816,6 +934,10 @@ ORDER BY idMantenedor, Instituicao</CommandText>
     <xs:unique name="vw_autorizacoes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vw_autorizacoes" />
       <xs:field xpath="mstns:Codigo_x0020_Autorizacao" />
+    </xs:unique>
+    <xs:unique name="vw_secretarios_escolares_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_secretarios_escolares" />
+      <xs:field xpath="mstns:idAutorizacao" />
     </xs:unique>
   </xs:element>
 </xs:schema>

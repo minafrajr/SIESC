@@ -107,40 +107,34 @@ namespace SIESC.UI.UI.Relatorios
 				pg.Landscape = false;
 
 				DataTable dt = new DataTable();
-
 				ReportDataSource datasource = new ReportDataSource();
+				datasource.Name = "dsListas";
 
 				switch (codigorelatorio)
 				{
 					case 1:
 						rpt_viewer_listas.SetPageSettings(pg); //configura a folha do relatório para paisagem
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\lst_Contatos_Escolas1.rdlc";
 						dt = this.vw_instituicoesTableAdapter1.GetData();
-						datasource.Value = dt;
 						break;
 					case 2:
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\rpt_Carteirinha_Autorizacao.rdlc";
 						dt = this.vw_autorizacoesTableAdapter1.GetData();
-						datasource.Value = dt;
 						break;
 					case 3:
 						
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
 						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosMunicipais();
-						datasource.Value = dt;
 						break;
 
 					case 4:
 						pg.Landscape = true;
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
+						
 
 						rpt_viewer_listas.LocalReport.ReportPath = mantenedor.Equals(1)
 							? PathRelatorio + @"\\Listas\\Escolas\\lst_Diretor_por_Escola.rdlc"
@@ -148,70 +142,57 @@ namespace SIESC.UI.UI.Relatorios
 
 
 						dt = this.vw_diretoresTableAdapter1.GetDiretoresAtivosByMantenedor(mantenedor, true);
-						datasource.Value = dt;
 						break;
 					//E:\Projects\SIESC\SIESC\SIESC.BD\Reports\
 					case 5:
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_DiretoresEI.rdlc";
 						dt = this.vw_funcionariosTableAdapter1.GetDiretoresEI();
-						datasource.Value = dt;
 						break;
 					case 6:
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_Secretarios.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetSecretarios();
-						datasource.Value = dt;
+						dt = this.vw_secretarios_escolaresTableAdapter1.GetSecretariosEscolares();
 						break;
 
 					case 7:
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_AuxAdm.rdlc";
 						dt = this.vw_funcionariosTableAdapter1.GetAuxiliarAdministrativo();
-						datasource.Value = dt;
 						break;
 					case 8:
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
 						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCIMS();
-						datasource.Value = dt;
 						break;
 					case 9:
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
 						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCreches();
-						datasource.Value = dt;
 						break;
 					case 10:
 						pg.Landscape = true;
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + @"\\Listas\\Infantil\\lst_Diretor_Infantil.rdlc";
 						dt = this.vw_diretoresTableAdapter1.GetDiretoresEdInfantil(ativa);
-						datasource.Value = dt;
 						break;
 					case 11:
 						pg.Landscape = true;
 						rpt_viewer_listas.SetPageSettings(pg);
-						datasource.Name = "dsListas";
 
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + @"\\Listas\\lst_Gestores.rdlc";
 						dt = this.vw_diretoresTableAdapter1.GetTodosDiretores(ativa);
-						datasource.Value = dt;
 						break;
-
 				}
+				
+				datasource.Value = dt;
+
 				rpt_viewer_listas.LocalReport.DataSources.Add(datasource);
 				rpt_viewer_listas.RefreshReport();
 			}

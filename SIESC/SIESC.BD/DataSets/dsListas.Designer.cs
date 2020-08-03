@@ -36,6 +36,8 @@ namespace SIESC.BD.DataSets {
         
         private vw_diretoresDataTable tablevw_diretores;
         
+        private vw_secretarios_escolaresDataTable tablevw_secretarios_escolares;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +83,9 @@ namespace SIESC.BD.DataSets {
                 }
                 if ((ds.Tables["vw_diretores"] != null)) {
                     base.Tables.Add(new vw_diretoresDataTable(ds.Tables["vw_diretores"]));
+                }
+                if ((ds.Tables["vw_secretarios_escolares"] != null)) {
+                    base.Tables.Add(new vw_secretarios_escolaresDataTable(ds.Tables["vw_secretarios_escolares"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +162,16 @@ namespace SIESC.BD.DataSets {
         public vw_diretoresDataTable vw_diretores {
             get {
                 return this.tablevw_diretores;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vw_secretarios_escolaresDataTable vw_secretarios_escolares {
+            get {
+                return this.tablevw_secretarios_escolares;
             }
         }
         
@@ -245,6 +260,9 @@ namespace SIESC.BD.DataSets {
                 if ((ds.Tables["vw_diretores"] != null)) {
                     base.Tables.Add(new vw_diretoresDataTable(ds.Tables["vw_diretores"]));
                 }
+                if ((ds.Tables["vw_secretarios_escolares"] != null)) {
+                    base.Tables.Add(new vw_secretarios_escolaresDataTable(ds.Tables["vw_secretarios_escolares"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +332,12 @@ namespace SIESC.BD.DataSets {
                     this.tablevw_diretores.InitVars();
                 }
             }
+            this.tablevw_secretarios_escolares = ((vw_secretarios_escolaresDataTable)(base.Tables["vw_secretarios_escolares"]));
+            if ((initTable == true)) {
+                if ((this.tablevw_secretarios_escolares != null)) {
+                    this.tablevw_secretarios_escolares.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +360,8 @@ namespace SIESC.BD.DataSets {
             base.Tables.Add(this.tablevw_lista_autorizacoes);
             this.tablevw_diretores = new vw_diretoresDataTable();
             base.Tables.Add(this.tablevw_diretores);
+            this.tablevw_secretarios_escolares = new vw_secretarios_escolaresDataTable();
+            base.Tables.Add(this.tablevw_secretarios_escolares);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +397,12 @@ namespace SIESC.BD.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializevw_diretores() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializevw_secretarios_escolares() {
             return false;
         }
         
@@ -446,6 +478,9 @@ namespace SIESC.BD.DataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void vw_diretoresRowChangeEventHandler(object sender, vw_diretoresRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void vw_secretarios_escolaresRowChangeEventHandler(object sender, vw_secretarios_escolaresRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2894,6 +2929,449 @@ namespace SIESC.BD.DataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vw_secretarios_escolaresDataTable : global::System.Data.TypedTableBase<vw_secretarios_escolaresRow> {
+            
+            private global::System.Data.DataColumn columnidInstituicao;
+            
+            private global::System.Data.DataColumn columnInstituicao;
+            
+            private global::System.Data.DataColumn columnTelefoneInstituicao;
+            
+            private global::System.Data.DataColumn columnEmailInstituicao;
+            
+            private global::System.Data.DataColumn columnidAutorizacao;
+            
+            private global::System.Data.DataColumn columnStatusAutorizacao;
+            
+            private global::System.Data.DataColumn columnNumeroAutorizacao;
+            
+            private global::System.Data.DataColumn columnNomeSecretario;
+            
+            private global::System.Data.DataColumn columnTelefoneSecretario;
+            
+            private global::System.Data.DataColumn columnEmailSecretario;
+            
+            private global::System.Data.DataColumn columnValidade;
+            
+            private global::System.Data.DataColumn columnDataExpedicao;
+            
+            private global::System.Data.DataColumn columnUsuario;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresDataTable() {
+                this.TableName = "vw_secretarios_escolares";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal vw_secretarios_escolaresDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected vw_secretarios_escolaresDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idInstituicaoColumn {
+                get {
+                    return this.columnidInstituicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn InstituicaoColumn {
+                get {
+                    return this.columnInstituicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TelefoneInstituicaoColumn {
+                get {
+                    return this.columnTelefoneInstituicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmailInstituicaoColumn {
+                get {
+                    return this.columnEmailInstituicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idAutorizacaoColumn {
+                get {
+                    return this.columnidAutorizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StatusAutorizacaoColumn {
+                get {
+                    return this.columnStatusAutorizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumeroAutorizacaoColumn {
+                get {
+                    return this.columnNumeroAutorizacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NomeSecretarioColumn {
+                get {
+                    return this.columnNomeSecretario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TelefoneSecretarioColumn {
+                get {
+                    return this.columnTelefoneSecretario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmailSecretarioColumn {
+                get {
+                    return this.columnEmailSecretario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValidadeColumn {
+                get {
+                    return this.columnValidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataExpedicaoColumn {
+                get {
+                    return this.columnDataExpedicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UsuarioColumn {
+                get {
+                    return this.columnUsuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRow this[int index] {
+                get {
+                    return ((vw_secretarios_escolaresRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_secretarios_escolaresRowChangeEventHandler vw_secretarios_escolaresRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_secretarios_escolaresRowChangeEventHandler vw_secretarios_escolaresRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_secretarios_escolaresRowChangeEventHandler vw_secretarios_escolaresRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event vw_secretarios_escolaresRowChangeEventHandler vw_secretarios_escolaresRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addvw_secretarios_escolaresRow(vw_secretarios_escolaresRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRow Addvw_secretarios_escolaresRow(int idInstituicao, string Instituicao, string TelefoneInstituicao, string EmailInstituicao, bool StatusAutorizacao, string NumeroAutorizacao, string NomeSecretario, string TelefoneSecretario, string EmailSecretario, string Validade, string DataExpedicao, string Usuario) {
+                vw_secretarios_escolaresRow rowvw_secretarios_escolaresRow = ((vw_secretarios_escolaresRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        idInstituicao,
+                        Instituicao,
+                        TelefoneInstituicao,
+                        EmailInstituicao,
+                        null,
+                        StatusAutorizacao,
+                        NumeroAutorizacao,
+                        NomeSecretario,
+                        TelefoneSecretario,
+                        EmailSecretario,
+                        Validade,
+                        DataExpedicao,
+                        Usuario};
+                rowvw_secretarios_escolaresRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvw_secretarios_escolaresRow);
+                return rowvw_secretarios_escolaresRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRow FindByidAutorizacao(int idAutorizacao) {
+                return ((vw_secretarios_escolaresRow)(this.Rows.Find(new object[] {
+                            idAutorizacao})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vw_secretarios_escolaresDataTable cln = ((vw_secretarios_escolaresDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vw_secretarios_escolaresDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnidInstituicao = base.Columns["idInstituicao"];
+                this.columnInstituicao = base.Columns["Instituicao"];
+                this.columnTelefoneInstituicao = base.Columns["TelefoneInstituicao"];
+                this.columnEmailInstituicao = base.Columns["EmailInstituicao"];
+                this.columnidAutorizacao = base.Columns["idAutorizacao"];
+                this.columnStatusAutorizacao = base.Columns["StatusAutorizacao"];
+                this.columnNumeroAutorizacao = base.Columns["NumeroAutorizacao"];
+                this.columnNomeSecretario = base.Columns["NomeSecretario"];
+                this.columnTelefoneSecretario = base.Columns["TelefoneSecretario"];
+                this.columnEmailSecretario = base.Columns["EmailSecretario"];
+                this.columnValidade = base.Columns["Validade"];
+                this.columnDataExpedicao = base.Columns["DataExpedicao"];
+                this.columnUsuario = base.Columns["Usuario"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnidInstituicao = new global::System.Data.DataColumn("idInstituicao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidInstituicao);
+                this.columnInstituicao = new global::System.Data.DataColumn("Instituicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstituicao);
+                this.columnTelefoneInstituicao = new global::System.Data.DataColumn("TelefoneInstituicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefoneInstituicao);
+                this.columnEmailInstituicao = new global::System.Data.DataColumn("EmailInstituicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmailInstituicao);
+                this.columnidAutorizacao = new global::System.Data.DataColumn("idAutorizacao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidAutorizacao);
+                this.columnStatusAutorizacao = new global::System.Data.DataColumn("StatusAutorizacao", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusAutorizacao);
+                this.columnNumeroAutorizacao = new global::System.Data.DataColumn("NumeroAutorizacao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroAutorizacao);
+                this.columnNomeSecretario = new global::System.Data.DataColumn("NomeSecretario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeSecretario);
+                this.columnTelefoneSecretario = new global::System.Data.DataColumn("TelefoneSecretario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefoneSecretario);
+                this.columnEmailSecretario = new global::System.Data.DataColumn("EmailSecretario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmailSecretario);
+                this.columnValidade = new global::System.Data.DataColumn("Validade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValidade);
+                this.columnDataExpedicao = new global::System.Data.DataColumn("DataExpedicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataExpedicao);
+                this.columnUsuario = new global::System.Data.DataColumn("Usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuario);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidAutorizacao}, true));
+                this.columnidInstituicao.AllowDBNull = false;
+                this.columnInstituicao.AllowDBNull = false;
+                this.columnInstituicao.MaxLength = 80;
+                this.columnTelefoneInstituicao.MaxLength = 47;
+                this.columnEmailInstituicao.MaxLength = 90;
+                this.columnidAutorizacao.AutoIncrement = true;
+                this.columnidAutorizacao.AutoIncrementSeed = -1;
+                this.columnidAutorizacao.AutoIncrementStep = -1;
+                this.columnidAutorizacao.AllowDBNull = false;
+                this.columnidAutorizacao.Unique = true;
+                this.columnNumeroAutorizacao.AllowDBNull = false;
+                this.columnNumeroAutorizacao.MaxLength = 10;
+                this.columnNomeSecretario.AllowDBNull = false;
+                this.columnNomeSecretario.MaxLength = 45;
+                this.columnTelefoneSecretario.MaxLength = 31;
+                this.columnEmailSecretario.MaxLength = 45;
+                this.columnValidade.MaxLength = 7;
+                this.columnDataExpedicao.MaxLength = 10;
+                this.columnUsuario.MaxLength = 20;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRow Newvw_secretarios_escolaresRow() {
+                return ((vw_secretarios_escolaresRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vw_secretarios_escolaresRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vw_secretarios_escolaresRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vw_secretarios_escolaresRowChanged != null)) {
+                    this.vw_secretarios_escolaresRowChanged(this, new vw_secretarios_escolaresRowChangeEvent(((vw_secretarios_escolaresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vw_secretarios_escolaresRowChanging != null)) {
+                    this.vw_secretarios_escolaresRowChanging(this, new vw_secretarios_escolaresRowChangeEvent(((vw_secretarios_escolaresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vw_secretarios_escolaresRowDeleted != null)) {
+                    this.vw_secretarios_escolaresRowDeleted(this, new vw_secretarios_escolaresRowChangeEvent(((vw_secretarios_escolaresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vw_secretarios_escolaresRowDeleting != null)) {
+                    this.vw_secretarios_escolaresRowDeleting(this, new vw_secretarios_escolaresRowChangeEvent(((vw_secretarios_escolaresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removevw_secretarios_escolaresRow(vw_secretarios_escolaresRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsListas ds = new dsListas();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vw_secretarios_escolaresDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class vw_instituicoesRow : global::System.Data.DataRow {
@@ -4543,6 +5021,305 @@ namespace SIESC.BD.DataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vw_secretarios_escolaresRow : global::System.Data.DataRow {
+            
+            private vw_secretarios_escolaresDataTable tablevw_secretarios_escolares;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal vw_secretarios_escolaresRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevw_secretarios_escolares = ((vw_secretarios_escolaresDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idInstituicao {
+                get {
+                    return ((int)(this[this.tablevw_secretarios_escolares.idInstituicaoColumn]));
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.idInstituicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Instituicao {
+                get {
+                    return ((string)(this[this.tablevw_secretarios_escolares.InstituicaoColumn]));
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.InstituicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TelefoneInstituicao {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.TelefoneInstituicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TelefoneInstituicao\' na tabela \'vw_secretarios_escolares\' é DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.TelefoneInstituicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EmailInstituicao {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.EmailInstituicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EmailInstituicao\' na tabela \'vw_secretarios_escolares\' é DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.EmailInstituicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idAutorizacao {
+                get {
+                    return ((int)(this[this.tablevw_secretarios_escolares.idAutorizacaoColumn]));
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.idAutorizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool StatusAutorizacao {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_secretarios_escolares.StatusAutorizacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'StatusAutorizacao\' na tabela \'vw_secretarios_escolares\' é DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.StatusAutorizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NumeroAutorizacao {
+                get {
+                    return ((string)(this[this.tablevw_secretarios_escolares.NumeroAutorizacaoColumn]));
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.NumeroAutorizacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NomeSecretario {
+                get {
+                    return ((string)(this[this.tablevw_secretarios_escolares.NomeSecretarioColumn]));
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.NomeSecretarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TelefoneSecretario {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.TelefoneSecretarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TelefoneSecretario\' na tabela \'vw_secretarios_escolares\' é DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.TelefoneSecretarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EmailSecretario {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.EmailSecretarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EmailSecretario\' na tabela \'vw_secretarios_escolares\' é DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.EmailSecretarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Validade {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.ValidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Validade\' na tabela \'vw_secretarios_escolares\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.ValidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DataExpedicao {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.DataExpedicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DataExpedicao\' na tabela \'vw_secretarios_escolares\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.DataExpedicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Usuario {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_secretarios_escolares.UsuarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Usuario\' na tabela \'vw_secretarios_escolares\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_secretarios_escolares.UsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTelefoneInstituicaoNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.TelefoneInstituicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTelefoneInstituicaoNull() {
+                this[this.tablevw_secretarios_escolares.TelefoneInstituicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEmailInstituicaoNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.EmailInstituicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEmailInstituicaoNull() {
+                this[this.tablevw_secretarios_escolares.EmailInstituicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusAutorizacaoNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.StatusAutorizacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusAutorizacaoNull() {
+                this[this.tablevw_secretarios_escolares.StatusAutorizacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTelefoneSecretarioNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.TelefoneSecretarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTelefoneSecretarioNull() {
+                this[this.tablevw_secretarios_escolares.TelefoneSecretarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEmailSecretarioNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.EmailSecretarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEmailSecretarioNull() {
+                this[this.tablevw_secretarios_escolares.EmailSecretarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValidadeNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.ValidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValidadeNull() {
+                this[this.tablevw_secretarios_escolares.ValidadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataExpedicaoNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.DataExpedicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataExpedicaoNull() {
+                this[this.tablevw_secretarios_escolares.DataExpedicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUsuarioNull() {
+                return this.IsNull(this.tablevw_secretarios_escolares.UsuarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUsuarioNull() {
+                this[this.tablevw_secretarios_escolares.UsuarioColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4732,6 +5509,40 @@ namespace SIESC.BD.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_diretoresRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class vw_secretarios_escolaresRowChangeEvent : global::System.EventArgs {
+            
+            private vw_secretarios_escolaresRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRowChangeEvent(vw_secretarios_escolaresRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_secretarios_escolaresRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6269,6 +7080,202 @@ ORDER BY idMantenedor, Instituicao";
                 this.Adapter.SelectCommand.Parameters[0].Value = ((object)(statusAutorizacao));
             }
             dsListas.vw_diretoresDataTable dataTable = new dsListas.vw_diretoresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vw_secretarios_escolaresTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public vw_secretarios_escolaresTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vw_secretarios_escolares";
+            tableMapping.ColumnMappings.Add("idInstituicao", "idInstituicao");
+            tableMapping.ColumnMappings.Add("Instituicao", "Instituicao");
+            tableMapping.ColumnMappings.Add("TelefoneInstituicao", "TelefoneInstituicao");
+            tableMapping.ColumnMappings.Add("EmailInstituicao", "EmailInstituicao");
+            tableMapping.ColumnMappings.Add("idAutorizacao", "idAutorizacao");
+            tableMapping.ColumnMappings.Add("StatusAutorizacao", "StatusAutorizacao");
+            tableMapping.ColumnMappings.Add("NumeroAutorizacao", "NumeroAutorizacao");
+            tableMapping.ColumnMappings.Add("NomeSecretario", "NomeSecretario");
+            tableMapping.ColumnMappings.Add("TelefoneSecretario", "TelefoneSecretario");
+            tableMapping.ColumnMappings.Add("EmailSecretario", "EmailSecretario");
+            tableMapping.ColumnMappings.Add("Validade", "Validade");
+            tableMapping.ColumnMappings.Add("DataExpedicao", "DataExpedicao");
+            tableMapping.ColumnMappings.Add("Usuario", "Usuario");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SIESC.BD.Properties.Settings.Default.siescConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT `idInstituicao`, `Instituicao`, `TelefoneInstituicao`, `EmailInstituicao`, `idAutorizacao`, `StatusAutorizacao`, `NumeroAutorizacao`, `NomeSecretario`, `TelefoneSecretario`, `EmailSecretario`, `Validade`, `DataExpedicao`, `Usuario` FROM `siesc`.`vw_secretarios_escolares`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        idInstituicao, Instituicao, TelefoneInstituicao, EmailInstituicao, idAutorizacao, StatusAutorizacao, NumeroAutorizacao, NomeSecretario, TelefoneSecretario, EmailSecretario, Validade, DataExpedicao, Usuario
+FROM            vw_secretarios_escolares
+WHERE        (StatusAutorizacao = 1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsListas.vw_secretarios_escolaresDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsListas.vw_secretarios_escolaresDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsListas.vw_secretarios_escolaresDataTable dataTable = new dsListas.vw_secretarios_escolaresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsListas.vw_secretarios_escolaresDataTable GetSecretariosEscolares() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            dsListas.vw_secretarios_escolaresDataTable dataTable = new dsListas.vw_secretarios_escolaresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
