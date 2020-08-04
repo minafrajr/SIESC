@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using SIESC.BD.DataSets.dsListasTableAdapters;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
@@ -43,6 +44,7 @@ namespace SIESC.UI.UI.Relatorios
 		/// <param name="codigorelatorio"></param>
 		public Listas(int codigorelatorio)
 		{
+			
 			try
 			{
 				this.InitializeComponent();
@@ -120,15 +122,15 @@ namespace SIESC.UI.UI.Relatorios
 						break;
 					case 2:
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\rpt_Carteirinha_Autorizacao.rdlc";
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\rpt_Carteirinha_Autorizacao.rdlc";
 						dt = this.vw_autorizacoesTableAdapter1.GetData();
 						break;
 					case 3:
 						
 						rpt_viewer_listas.SetPageSettings(pg);
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosMunicipais();
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_AuxAdm.rdlc";
+						dt = this.vw_funcionariosTableAdapter1.GetAuxiliaresAdministrativosByMantenedor((int)mantenedor);
 						break;
 
 					case 4:
@@ -147,8 +149,8 @@ namespace SIESC.UI.UI.Relatorios
 					case 5:
 						rpt_viewer_listas.SetPageSettings(pg);
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_DiretoresEI.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetDiretoresEI();
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
+						dt = this.vw_funcionariosTableAdapter1.GetData();
 						break;
 					case 6:
 						rpt_viewer_listas.SetPageSettings(pg);
@@ -156,25 +158,25 @@ namespace SIESC.UI.UI.Relatorios
 						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_Secretarios.rdlc";
 						dt = this.vw_secretarios_escolaresTableAdapter1.GetSecretariosEscolares();
 						break;
-
+						
 					case 7:
 						rpt_viewer_listas.SetPageSettings(pg);
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_AuxAdm.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetAuxiliarAdministrativo();
+						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Funcionarios\\rpt_lista_AuxAdm_Todos.rdlc";
+						dt = this.vw_funcionariosTableAdapter1.GetAuxiliaresAdministrativos();
 						break;
-					case 8:
-						rpt_viewer_listas.SetPageSettings(pg);
+					//case 8:
+					//	rpt_viewer_listas.SetPageSettings(pg);
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCIMS();
-						break;
-					case 9:
-						rpt_viewer_listas.SetPageSettings(pg);
+					//	rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
+					//	dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCims();
+					//	break;
+					//case 9:
+					//	rpt_viewer_listas.SetPageSettings(pg);
 
-						rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
-						dt = this.vw_funcionariosTableAdapter1.GetFuncionariosCreches();
-						break;
+					//	rpt_viewer_listas.LocalReport.ReportPath = PathRelatorio + "\\Listas\\Escolas\\rpt_listafuncionarios.rdlc";
+					//	dt = this.vw_funcionariosTableAdapter1.GetFuncionariosParceiras();
+					//	break;
 					case 10:
 						pg.Landscape = true;
 						rpt_viewer_listas.SetPageSettings(pg);

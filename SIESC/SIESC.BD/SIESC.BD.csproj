@@ -257,6 +257,7 @@
     <EmbeddedResource Include="Reports\Infantil\rpt_Solicitacoes_Dia_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_Solicitacoes_Mes_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_solicitacoes_por_motivo_infantil.rdlc" />
+    <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_lista_AuxAdm_Todos.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_lista_AuxAdm.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_lista_DiretoresEI.rdlc" />
     <EmbeddedResource Include="Reports\Listas\Funcionarios\rpt_lista_Secretarios.rdlc" />

@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Relatorios
+﻿using SIESC.BD.DataSets.dsListasTableAdapters;
+
+namespace SIESC.UI.UI.Relatorios
 {
 	partial class Listas
 	{
@@ -32,9 +34,9 @@
             this.dsListas1 = new SIESC.BD.DataSets.dsListas();
             this.vw_instituicoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter();
             this.vw_autorizacoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter();
-            this.vw_funcionariosTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter();
             this.vw_diretoresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter();
             this.vw_secretarios_escolaresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_secretarios_escolaresTableAdapter();
+            this.vw_funcionariosTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsListas1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +63,6 @@
             // 
             this.vw_autorizacoesTableAdapter1.ClearBeforeFill = true;
             // 
-            // vw_funcionariosTableAdapter1
-            // 
-            this.vw_funcionariosTableAdapter1.ClearBeforeFill = true;
-            // 
             // vw_diretoresTableAdapter1
             // 
             this.vw_diretoresTableAdapter1.ClearBeforeFill = true;
@@ -90,8 +88,8 @@
 		private SIESC.BD.DataSets.dsListas dsListas1;
 		private SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter vw_instituicoesTableAdapter1;
 		private SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter vw_autorizacoesTableAdapter1;
-		private SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter vw_funcionariosTableAdapter1;
 		private BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter vw_diretoresTableAdapter1;
-        private BD.DataSets.dsListasTableAdapters.vw_secretarios_escolaresTableAdapter vw_secretarios_escolaresTableAdapter1;
-    }
+		private BD.DataSets.dsListasTableAdapters.vw_secretarios_escolaresTableAdapter vw_secretarios_escolaresTableAdapter1;
+		private BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter vw_funcionariosTableAdapter1;
+	}
 }

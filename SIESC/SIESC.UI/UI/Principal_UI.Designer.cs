@@ -153,35 +153,46 @@
             this.nºDeAutorizaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_listaDiretores = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listaDiretoresFundamental = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_GestoresInfantil = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarDiretoresCims = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarCoordParceiras = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarTodosGestores = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarFuncSecreatariosEscolares = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarFuncAuxilaresCims = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarFuncAuxiliaresParceiras = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarTodosFuncAuxiliares = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarTodosFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox12 = new System.Windows.Forms.ToolStripTextBox();
-            this.funcionáriosPorCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionáriosPorEscolaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionariosPorCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionariosPorEscolaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instituiçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.municipaisToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contatoDasEscolasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ofertaAnoEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarEscolas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarDiretoresEscolas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_OfertaAnoEnsinoEscolas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarSecretarios = new System.Windows.Forms.ToolStripMenuItem();
             this.estaduaisToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ofertaAnoEnsinoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarEscolasEstaduais = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ofertaAnoEnsinoEstaduais = new System.Windows.Forms.ToolStripMenuItem();
             this.edInfantilConveniadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contatoDasInstituiçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarInstituicoesParceiras = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarCoordAdms = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarAuxiliaresAdmsParceiras = new System.Windows.Forms.ToolStripMenuItem();
             this.ofertaAnoEnsinoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.edInfantilMunicipaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contatoDasInstituiçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ofertaAnoEnsinoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarInstituicoesMunicipais = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarDiretoresMunicipais = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarAuxiliaresAdmsCims = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ofertaAnoEnsinoCims = new System.Windows.Forms.ToolStripMenuItem();
             this.edInfantilParticularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_listarParticulares = new System.Windows.Forms.ToolStripMenuItem();
             this.todasAsInstituiçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listagemToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
-            this.instituiçoesPorNívelDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_num_instituicoes_mantenedor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.outrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -207,13 +218,6 @@
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.regionaisTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
-            this.ensinoFundamentalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.edInfantilCIMsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edInfantilParceirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edInfantilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIMsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parceirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.tsm_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -1284,56 +1288,112 @@
             // 
             this.funcionáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsm_listaDiretores,
-            this.toolStripMenuItem4,
+            this.tsm_listarFuncSecreatariosEscolares,
             this.toolStripMenuItem3,
-            this.toolStripMenuItem5,
+            this.tsm_listarTodosFuncionarios,
             this.toolStripTextBox12,
-            this.funcionáriosPorCargoToolStripMenuItem,
-            this.funcionáriosPorEscolaToolStripMenuItem});
+            this.funcionariosPorCargoToolStripMenuItem,
+            this.funcionariosPorEscolaToolStripMenuItem});
             this.funcionáriosToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431654656_people;
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cIMsToolStripMenuItem,
-            this.parceirasToolStripMenuItem});
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(254, 22);
-            this.toolStripMenuItem3.Text = "Lista de Auxiliares Administrativos";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
             // tsm_listaDiretores
             // 
             this.tsm_listaDiretores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ensinoFundamentalToolStripMenuItem1,
-            this.edInfantilToolStripMenuItem,
-            this.edInfantilCIMsToolStripMenuItem,
-            this.edInfantilParceirasToolStripMenuItem,
-            this.todosToolStripMenuItem});
+            this.tsm_listaDiretoresFundamental,
+            this.tsm_GestoresInfantil,
+            this.tsm_listarDiretoresCims,
+            this.tsm_listarCoordParceiras,
+            this.tsm_listarTodosGestores});
             this.tsm_listaDiretores.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tsm_listaDiretores.Name = "tsm_listaDiretores";
             this.tsm_listaDiretores.Size = new System.Drawing.Size(254, 22);
             this.tsm_listaDiretores.Text = "Lista de Diretores";
             // 
-            // toolStripMenuItem4
+            // tsm_listaDiretoresFundamental
             // 
-            this.toolStripMenuItem4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(254, 22);
-            this.toolStripMenuItem4.Text = "Lista de Secretários Escolares";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            this.tsm_listaDiretoresFundamental.Name = "tsm_listaDiretoresFundamental";
+            this.tsm_listaDiretoresFundamental.Size = new System.Drawing.Size(185, 22);
+            this.tsm_listaDiretoresFundamental.Text = "Ensino Fundamental";
+            this.tsm_listaDiretoresFundamental.Click += new System.EventHandler(this.tsm_listaDiretoresFundamental_Click);
             // 
-            // toolStripMenuItem5
+            // tsm_GestoresInfantil
             // 
-            this.toolStripMenuItem5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(254, 22);
-            this.toolStripMenuItem5.Text = "Lista Geral de Funcionários";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            this.tsm_GestoresInfantil.Name = "tsm_GestoresInfantil";
+            this.tsm_GestoresInfantil.Size = new System.Drawing.Size(185, 22);
+            this.tsm_GestoresInfantil.Text = "Ed. Infantil";
+            this.tsm_GestoresInfantil.Click += new System.EventHandler(this.tsm_GestoresInfantil_Click);
+            // 
+            // tsm_listarDiretoresCims
+            // 
+            this.tsm_listarDiretoresCims.Name = "tsm_listarDiretoresCims";
+            this.tsm_listarDiretoresCims.Size = new System.Drawing.Size(185, 22);
+            this.tsm_listarDiretoresCims.Text = "Ed. Infantil - CIMs";
+            this.tsm_listarDiretoresCims.Click += new System.EventHandler(this.tsm_listarDiretoresCims_Click);
+            // 
+            // tsm_listarCoordParceiras
+            // 
+            this.tsm_listarCoordParceiras.Name = "tsm_listarCoordParceiras";
+            this.tsm_listarCoordParceiras.Size = new System.Drawing.Size(185, 22);
+            this.tsm_listarCoordParceiras.Text = "Ed.Infantil - Parceiras";
+            this.tsm_listarCoordParceiras.Click += new System.EventHandler(this.tsm_listarCoordParceiras_Click);
+            // 
+            // tsm_listarTodosGestores
+            // 
+            this.tsm_listarTodosGestores.Name = "tsm_listarTodosGestores";
+            this.tsm_listarTodosGestores.Size = new System.Drawing.Size(185, 22);
+            this.tsm_listarTodosGestores.Text = "Todos";
+            this.tsm_listarTodosGestores.Click += new System.EventHandler(this.tsm_listarTodosGestores_Click);
+            // 
+            // tsm_listarFuncSecreatariosEscolares
+            // 
+            this.tsm_listarFuncSecreatariosEscolares.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tsm_listarFuncSecreatariosEscolares.Name = "tsm_listarFuncSecreatariosEscolares";
+            this.tsm_listarFuncSecreatariosEscolares.Size = new System.Drawing.Size(254, 22);
+            this.tsm_listarFuncSecreatariosEscolares.Text = "Lista de Secretários Escolares";
+            this.tsm_listarFuncSecreatariosEscolares.Click += new System.EventHandler(this.tsm_listarFuncSecreatariosEscolares_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_listarFuncAuxilaresCims,
+            this.tsm_listarFuncAuxiliaresParceiras,
+            this.tsm_listarTodosFuncAuxiliares});
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(254, 22);
+            this.toolStripMenuItem3.Text = "Lista de Auxiliares Administrativos";
+            // 
+            // tsm_listarFuncAuxilaresCims
+            // 
+            this.tsm_listarFuncAuxilaresCims.Name = "tsm_listarFuncAuxilaresCims";
+            this.tsm_listarFuncAuxilaresCims.Size = new System.Drawing.Size(206, 22);
+            this.tsm_listarFuncAuxilaresCims.Text = "Listar Auxiliares CIMs";
+            this.tsm_listarFuncAuxilaresCims.Click += new System.EventHandler(this.tsm_listarFuncAuxilaresCims_Click);
+            // 
+            // tsm_listarFuncAuxiliaresParceiras
+            // 
+            this.tsm_listarFuncAuxiliaresParceiras.Name = "tsm_listarFuncAuxiliaresParceiras";
+            this.tsm_listarFuncAuxiliaresParceiras.Size = new System.Drawing.Size(206, 22);
+            this.tsm_listarFuncAuxiliaresParceiras.Text = "Listar Auxiliares Parceiras";
+            this.tsm_listarFuncAuxiliaresParceiras.Click += new System.EventHandler(this.tsm_listarFuncAuxiliaresParceiras_Click);
+            // 
+            // tsm_listarTodosFuncAuxiliares
+            // 
+            this.tsm_listarTodosFuncAuxiliares.Name = "tsm_listarTodosFuncAuxiliares";
+            this.tsm_listarTodosFuncAuxiliares.Size = new System.Drawing.Size(206, 22);
+            this.tsm_listarTodosFuncAuxiliares.Text = "Listar Todos Auxiliares";
+            this.tsm_listarTodosFuncAuxiliares.Click += new System.EventHandler(this.tsm_listarTodosFuncAuxiliares_Click);
+            // 
+            // tsm_listarTodosFuncionarios
+            // 
+            this.tsm_listarTodosFuncionarios.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tsm_listarTodosFuncionarios.Name = "tsm_listarTodosFuncionarios";
+            this.tsm_listarTodosFuncionarios.Size = new System.Drawing.Size(254, 22);
+            this.tsm_listarTodosFuncionarios.Text = "Lista Geral de Funcionários";
+            this.tsm_listarTodosFuncionarios.Click += new System.EventHandler(this.tsm_listarTodosFuncionarios_Click);
             // 
             // toolStripTextBox12
             // 
@@ -1344,18 +1404,18 @@
             this.toolStripTextBox12.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox12.Text = "NUMÉRICOS";
             // 
-            // funcionáriosPorCargoToolStripMenuItem
+            // funcionariosPorCargoToolStripMenuItem
             // 
-            this.funcionáriosPorCargoToolStripMenuItem.Name = "funcionáriosPorCargoToolStripMenuItem";
-            this.funcionáriosPorCargoToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.funcionáriosPorCargoToolStripMenuItem.Text = "Funcionários por cargo";
+            this.funcionariosPorCargoToolStripMenuItem.Name = "funcionariosPorCargoToolStripMenuItem";
+            this.funcionariosPorCargoToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.funcionariosPorCargoToolStripMenuItem.Text = "Funcionários por cargo";
             // 
-            // funcionáriosPorEscolaToolStripMenuItem
+            // funcionariosPorEscolaToolStripMenuItem
             // 
-            this.funcionáriosPorEscolaToolStripMenuItem.Name = "funcionáriosPorEscolaToolStripMenuItem";
-            this.funcionáriosPorEscolaToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.funcionáriosPorEscolaToolStripMenuItem.Text = "Funcionários por escola";
-            this.funcionáriosPorEscolaToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosPorEscolaToolStripMenuItem_Click);
+            this.funcionariosPorEscolaToolStripMenuItem.Name = "funcionariosPorEscolaToolStripMenuItem";
+            this.funcionariosPorEscolaToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.funcionariosPorEscolaToolStripMenuItem.Text = "Funcionários por escola";
+            this.funcionariosPorEscolaToolStripMenuItem.Click += new System.EventHandler(this.funcionariosPorEscolaToolStripMenuItem_Click);
             // 
             // instituiçõesToolStripMenuItem
             // 
@@ -1367,7 +1427,7 @@
             this.edInfantilParticularesToolStripMenuItem,
             this.todasAsInstituiçõesToolStripMenuItem1,
             this.toolStripTextBox10,
-            this.instituiçoesPorNívelDeEnsinoToolStripMenuItem,
+            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem,
             this.tsm_num_instituicoes_mantenedor});
             this.instituiçõesToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Home_128;
             this.instituiçõesToolStripMenuItem.Name = "instituiçõesToolStripMenuItem";
@@ -1377,133 +1437,154 @@
             // municipaisToolStripMenuItem2
             // 
             this.municipaisToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemToolStripMenuItem,
-            this.contatoDasEscolasToolStripMenuItem,
-            this.ofertaAnoEnsinoToolStripMenuItem});
+            this.tsm_listarEscolas,
+            this.tsm_listarDiretoresEscolas,
+            this.tsm_OfertaAnoEnsinoEscolas,
+            this.tsm_listarSecretarios});
             this.municipaisToolStripMenuItem2.Name = "municipaisToolStripMenuItem2";
             this.municipaisToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
             this.municipaisToolStripMenuItem2.Text = "Municipais";
             // 
-            // listagemToolStripMenuItem
+            // tsm_listarEscolas
             // 
-            this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
-            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.listagemToolStripMenuItem.Text = "Listagem";
-            this.listagemToolStripMenuItem.Click += new System.EventHandler(this.listagemToolStripMenuItem_Click);
+            this.tsm_listarEscolas.Name = "tsm_listarEscolas";
+            this.tsm_listarEscolas.Size = new System.Drawing.Size(172, 22);
+            this.tsm_listarEscolas.Text = "Listar Escolas";
+            this.tsm_listarEscolas.Click += new System.EventHandler(this.tsm_listarEscolas_Click);
             // 
-            // contatoDasEscolasToolStripMenuItem
+            // tsm_listarDiretoresEscolas
             // 
-            this.contatoDasEscolasToolStripMenuItem.Name = "contatoDasEscolasToolStripMenuItem";
-            this.contatoDasEscolasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.contatoDasEscolasToolStripMenuItem.Text = "Contato das Escolas";
-            this.contatoDasEscolasToolStripMenuItem.Click += new System.EventHandler(this.contatoDasEscolasToolStripMenuItem_Click);
+            this.tsm_listarDiretoresEscolas.Name = "tsm_listarDiretoresEscolas";
+            this.tsm_listarDiretoresEscolas.Size = new System.Drawing.Size(172, 22);
+            this.tsm_listarDiretoresEscolas.Text = "Listar Diretores";
+            this.tsm_listarDiretoresEscolas.Click += new System.EventHandler(this.tsm_listarDiretoresEscolas_Click);
             // 
-            // ofertaAnoEnsinoToolStripMenuItem
+            // tsm_OfertaAnoEnsinoEscolas
             // 
-            this.ofertaAnoEnsinoToolStripMenuItem.Name = "ofertaAnoEnsinoToolStripMenuItem";
-            this.ofertaAnoEnsinoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.ofertaAnoEnsinoToolStripMenuItem.Text = "Oferta Ano-Ensino";
-            this.ofertaAnoEnsinoToolStripMenuItem.Click += new System.EventHandler(this.ofertaAnoEnsinoToolStripMenuItem_Click);
+            this.tsm_OfertaAnoEnsinoEscolas.Name = "tsm_OfertaAnoEnsinoEscolas";
+            this.tsm_OfertaAnoEnsinoEscolas.Size = new System.Drawing.Size(172, 22);
+            this.tsm_OfertaAnoEnsinoEscolas.Text = "Oferta Ano-Ensino";
+            this.tsm_OfertaAnoEnsinoEscolas.Click += new System.EventHandler(this.tsm_OfertaAnoEnsinoEscolas_Click);
+            // 
+            // tsm_listarSecretarios
+            // 
+            this.tsm_listarSecretarios.Name = "tsm_listarSecretarios";
+            this.tsm_listarSecretarios.Size = new System.Drawing.Size(172, 22);
+            this.tsm_listarSecretarios.Text = "Listar Secretários";
             // 
             // estaduaisToolStripMenuItem2
             // 
             this.estaduaisToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemToolStripMenuItem1,
-            this.ofertaAnoEnsinoToolStripMenuItem1});
+            this.tsm_listarEscolasEstaduais,
+            this.tsm_ofertaAnoEnsinoEstaduais});
             this.estaduaisToolStripMenuItem2.Name = "estaduaisToolStripMenuItem2";
             this.estaduaisToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
             this.estaduaisToolStripMenuItem2.Text = "Estaduais";
             // 
-            // listagemToolStripMenuItem1
+            // tsm_listarEscolasEstaduais
             // 
-            this.listagemToolStripMenuItem1.Name = "listagemToolStripMenuItem1";
-            this.listagemToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.listagemToolStripMenuItem1.Text = "Listagem";
-            this.listagemToolStripMenuItem1.Click += new System.EventHandler(this.listagemToolStripMenuItem1_Click);
+            this.tsm_listarEscolasEstaduais.Name = "tsm_listarEscolasEstaduais";
+            this.tsm_listarEscolasEstaduais.Size = new System.Drawing.Size(172, 22);
+            this.tsm_listarEscolasEstaduais.Text = "Listar Escolas";
+            this.tsm_listarEscolasEstaduais.Click += new System.EventHandler(this.tsm_listarEscolasEstaduais_Click);
             // 
-            // ofertaAnoEnsinoToolStripMenuItem1
+            // tsm_ofertaAnoEnsinoEstaduais
             // 
-            this.ofertaAnoEnsinoToolStripMenuItem1.Name = "ofertaAnoEnsinoToolStripMenuItem1";
-            this.ofertaAnoEnsinoToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.ofertaAnoEnsinoToolStripMenuItem1.Text = "Oferta Ano-Ensino";
-            this.ofertaAnoEnsinoToolStripMenuItem1.Click += new System.EventHandler(this.ofertaAnoEnsinoToolStripMenuItem1_Click);
+            this.tsm_ofertaAnoEnsinoEstaduais.Name = "tsm_ofertaAnoEnsinoEstaduais";
+            this.tsm_ofertaAnoEnsinoEstaduais.Size = new System.Drawing.Size(172, 22);
+            this.tsm_ofertaAnoEnsinoEstaduais.Text = "Oferta Ano-Ensino";
+            this.tsm_ofertaAnoEnsinoEstaduais.Click += new System.EventHandler(this.tsm_ofertaAnoEnsinoEstaduais_Click);
             // 
             // edInfantilConveniadasToolStripMenuItem
             // 
             this.edInfantilConveniadasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemToolStripMenuItem2,
-            this.contatoDasInstituiçõesToolStripMenuItem,
+            this.tsm_listarInstituicoesParceiras,
+            this.tsm_listarCoordAdms,
+            this.tsm_listarAuxiliaresAdmsParceiras,
             this.ofertaAnoEnsinoToolStripMenuItem2});
             this.edInfantilConveniadasToolStripMenuItem.Name = "edInfantilConveniadasToolStripMenuItem";
             this.edInfantilConveniadasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.edInfantilConveniadasToolStripMenuItem.Text = "Ed. Infantil - Conveniadas";
             // 
-            // listagemToolStripMenuItem2
+            // tsm_listarInstituicoesParceiras
             // 
-            this.listagemToolStripMenuItem2.Name = "listagemToolStripMenuItem2";
-            this.listagemToolStripMenuItem2.Size = new System.Drawing.Size(201, 22);
-            this.listagemToolStripMenuItem2.Text = "Listagem";
-            this.listagemToolStripMenuItem2.Click += new System.EventHandler(this.listagemToolStripMenuItem2_Click);
+            this.tsm_listarInstituicoesParceiras.Name = "tsm_listarInstituicoesParceiras";
+            this.tsm_listarInstituicoesParceiras.Size = new System.Drawing.Size(220, 22);
+            this.tsm_listarInstituicoesParceiras.Text = "Listar Parceiras";
+            this.tsm_listarInstituicoesParceiras.Click += new System.EventHandler(this.tsm_listarInstituicoesParceiras_Click);
             // 
-            // contatoDasInstituiçõesToolStripMenuItem
+            // tsm_listarCoordAdms
             // 
-            this.contatoDasInstituiçõesToolStripMenuItem.Name = "contatoDasInstituiçõesToolStripMenuItem";
-            this.contatoDasInstituiçõesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.contatoDasInstituiçõesToolStripMenuItem.Text = "Contato das Instituições";
-            this.contatoDasInstituiçõesToolStripMenuItem.Click += new System.EventHandler(this.contatoDasInstituiçõesToolStripMenuItem_Click);
+            this.tsm_listarCoordAdms.Name = "tsm_listarCoordAdms";
+            this.tsm_listarCoordAdms.Size = new System.Drawing.Size(220, 22);
+            this.tsm_listarCoordAdms.Text = "Listar Coordenadores Adms";
+            this.tsm_listarCoordAdms.Click += new System.EventHandler(this.tsm_listarCoordAdms_Click);
+            // 
+            // tsm_listarAuxiliaresAdmsParceiras
+            // 
+            this.tsm_listarAuxiliaresAdmsParceiras.Name = "tsm_listarAuxiliaresAdmsParceiras";
+            this.tsm_listarAuxiliaresAdmsParceiras.Size = new System.Drawing.Size(220, 22);
+            this.tsm_listarAuxiliaresAdmsParceiras.Text = "Listar Auxiliares Adms";
             // 
             // ofertaAnoEnsinoToolStripMenuItem2
             // 
             this.ofertaAnoEnsinoToolStripMenuItem2.Name = "ofertaAnoEnsinoToolStripMenuItem2";
-            this.ofertaAnoEnsinoToolStripMenuItem2.Size = new System.Drawing.Size(201, 22);
+            this.ofertaAnoEnsinoToolStripMenuItem2.Size = new System.Drawing.Size(220, 22);
             this.ofertaAnoEnsinoToolStripMenuItem2.Text = "Oferta Ano-Ensino";
             this.ofertaAnoEnsinoToolStripMenuItem2.Click += new System.EventHandler(this.ofertaAnoEnsinoToolStripMenuItem2_Click);
             // 
             // edInfantilMunicipaisToolStripMenuItem
             // 
             this.edInfantilMunicipaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemToolStripMenuItem3,
-            this.contatoDasInstituiçõesToolStripMenuItem1,
-            this.ofertaAnoEnsinoToolStripMenuItem3});
+            this.tsm_listarInstituicoesMunicipais,
+            this.tsm_listarDiretoresMunicipais,
+            this.tsm_listarAuxiliaresAdmsCims,
+            this.tsm_ofertaAnoEnsinoCims});
             this.edInfantilMunicipaisToolStripMenuItem.Name = "edInfantilMunicipaisToolStripMenuItem";
             this.edInfantilMunicipaisToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.edInfantilMunicipaisToolStripMenuItem.Text = "Ed. Infantil - Municipais";
             // 
-            // listagemToolStripMenuItem3
+            // tsm_listarInstituicoesMunicipais
             // 
-            this.listagemToolStripMenuItem3.Name = "listagemToolStripMenuItem3";
-            this.listagemToolStripMenuItem3.Size = new System.Drawing.Size(201, 22);
-            this.listagemToolStripMenuItem3.Text = "Listagem";
-            this.listagemToolStripMenuItem3.Click += new System.EventHandler(this.listagemToolStripMenuItem3_Click);
+            this.tsm_listarInstituicoesMunicipais.Name = "tsm_listarInstituicoesMunicipais";
+            this.tsm_listarInstituicoesMunicipais.Size = new System.Drawing.Size(190, 22);
+            this.tsm_listarInstituicoesMunicipais.Text = "Listar Instituicoes";
+            this.tsm_listarInstituicoesMunicipais.Click += new System.EventHandler(this.tsm_listarInstituicoesMunicipais_Click);
             // 
-            // contatoDasInstituiçõesToolStripMenuItem1
+            // tsm_listarDiretoresMunicipais
             // 
-            this.contatoDasInstituiçõesToolStripMenuItem1.Name = "contatoDasInstituiçõesToolStripMenuItem1";
-            this.contatoDasInstituiçõesToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
-            this.contatoDasInstituiçõesToolStripMenuItem1.Text = "Contato das Instituições";
-            this.contatoDasInstituiçõesToolStripMenuItem1.Click += new System.EventHandler(this.contatoDasInstituiçõesToolStripMenuItem1_Click);
+            this.tsm_listarDiretoresMunicipais.Name = "tsm_listarDiretoresMunicipais";
+            this.tsm_listarDiretoresMunicipais.Size = new System.Drawing.Size(190, 22);
+            this.tsm_listarDiretoresMunicipais.Text = "Listar Diretores CIMS";
+            this.tsm_listarDiretoresMunicipais.Click += new System.EventHandler(this.tsm_listarDiretoresMunicipais_Click);
             // 
-            // ofertaAnoEnsinoToolStripMenuItem3
+            // tsm_listarAuxiliaresAdmsCims
             // 
-            this.ofertaAnoEnsinoToolStripMenuItem3.Name = "ofertaAnoEnsinoToolStripMenuItem3";
-            this.ofertaAnoEnsinoToolStripMenuItem3.Size = new System.Drawing.Size(201, 22);
-            this.ofertaAnoEnsinoToolStripMenuItem3.Text = "Oferta Ano-Ensino";
-            this.ofertaAnoEnsinoToolStripMenuItem3.Click += new System.EventHandler(this.ofertaAnoEnsinoToolStripMenuItem3_Click);
+            this.tsm_listarAuxiliaresAdmsCims.Name = "tsm_listarAuxiliaresAdmsCims";
+            this.tsm_listarAuxiliaresAdmsCims.Size = new System.Drawing.Size(190, 22);
+            this.tsm_listarAuxiliaresAdmsCims.Text = "Listar Auxiliares Adms";
+            // 
+            // tsm_ofertaAnoEnsinoCims
+            // 
+            this.tsm_ofertaAnoEnsinoCims.Name = "tsm_ofertaAnoEnsinoCims";
+            this.tsm_ofertaAnoEnsinoCims.Size = new System.Drawing.Size(190, 22);
+            this.tsm_ofertaAnoEnsinoCims.Text = "Oferta Ano-Ensino";
+            this.tsm_ofertaAnoEnsinoCims.Click += new System.EventHandler(this.tsm_ofertaAnoEnsinoCims_Click);
             // 
             // edInfantilParticularesToolStripMenuItem
             // 
             this.edInfantilParticularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemToolStripMenuItem4});
+            this.tsm_listarParticulares});
             this.edInfantilParticularesToolStripMenuItem.Name = "edInfantilParticularesToolStripMenuItem";
             this.edInfantilParticularesToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.edInfantilParticularesToolStripMenuItem.Text = "Ed. Infantil - Particulares";
             // 
-            // listagemToolStripMenuItem4
+            // tsm_listarParticulares
             // 
-            this.listagemToolStripMenuItem4.Name = "listagemToolStripMenuItem4";
-            this.listagemToolStripMenuItem4.Size = new System.Drawing.Size(122, 22);
-            this.listagemToolStripMenuItem4.Text = "Listagem";
-            this.listagemToolStripMenuItem4.Click += new System.EventHandler(this.listagemToolStripMenuItem4_Click);
+            this.tsm_listarParticulares.Name = "tsm_listarParticulares";
+            this.tsm_listarParticulares.Size = new System.Drawing.Size(143, 22);
+            this.tsm_listarParticulares.Text = "Listar Escolas";
+            this.tsm_listarParticulares.Click += new System.EventHandler(this.tsm_listarParticulares_Click);
             // 
             // todasAsInstituiçõesToolStripMenuItem1
             // 
@@ -1529,11 +1610,11 @@
             this.toolStripTextBox10.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox10.Text = "NUMÉRICOS";
             // 
-            // instituiçoesPorNívelDeEnsinoToolStripMenuItem
+            // instituiçoesPorNivelDeEnsinoToolStripMenuItem
             // 
-            this.instituiçoesPorNívelDeEnsinoToolStripMenuItem.Name = "instituiçoesPorNívelDeEnsinoToolStripMenuItem";
-            this.instituiçoesPorNívelDeEnsinoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.instituiçoesPorNívelDeEnsinoToolStripMenuItem.Text = "Instituiçoes por nível de ensino";
+            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem.Name = "instituiçoesPorNivelDeEnsinoToolStripMenuItem";
+            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem.Text = "Instituiçoes por nível de ensino";
             // 
             // tsm_num_instituicoes_mantenedor
             // 
@@ -1716,53 +1797,6 @@
             // 
             this.regionaisTableAdapter1.ClearBeforeFill = true;
             // 
-            // ensinoFundamentalToolStripMenuItem1
-            // 
-            this.ensinoFundamentalToolStripMenuItem1.Name = "ensinoFundamentalToolStripMenuItem1";
-            this.ensinoFundamentalToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
-            this.ensinoFundamentalToolStripMenuItem1.Text = "Ensino Fundamental";
-            this.ensinoFundamentalToolStripMenuItem1.Click += new System.EventHandler(this.ensinoFundamentalToolStripMenuItem1_Click);
-            // 
-            // edInfantilCIMsToolStripMenuItem
-            // 
-            this.edInfantilCIMsToolStripMenuItem.Name = "edInfantilCIMsToolStripMenuItem";
-            this.edInfantilCIMsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.edInfantilCIMsToolStripMenuItem.Text = "Ed. Infantil - CIMs";
-            this.edInfantilCIMsToolStripMenuItem.Click += new System.EventHandler(this.edInfantilCIMsToolStripMenuItem_Click);
-            // 
-            // edInfantilParceirasToolStripMenuItem
-            // 
-            this.edInfantilParceirasToolStripMenuItem.Name = "edInfantilParceirasToolStripMenuItem";
-            this.edInfantilParceirasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.edInfantilParceirasToolStripMenuItem.Text = "Ed.Infantil - Parceiras";
-            this.edInfantilParceirasToolStripMenuItem.Click += new System.EventHandler(this.edInfantilParceirasToolStripMenuItem_Click);
-            // 
-            // edInfantilToolStripMenuItem
-            // 
-            this.edInfantilToolStripMenuItem.Name = "edInfantilToolStripMenuItem";
-            this.edInfantilToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.edInfantilToolStripMenuItem.Text = "Ed. Infantil";
-            this.edInfantilToolStripMenuItem.Click += new System.EventHandler(this.edInfantilToolStripMenuItem_Click);
-            // 
-            // cIMsToolStripMenuItem
-            // 
-            this.cIMsToolStripMenuItem.Name = "cIMsToolStripMenuItem";
-            this.cIMsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cIMsToolStripMenuItem.Text = "CIMs";
-            // 
-            // parceirasToolStripMenuItem
-            // 
-            this.parceirasToolStripMenuItem.Name = "parceirasToolStripMenuItem";
-            this.parceirasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parceirasToolStripMenuItem.Text = "Parceiras";
-            // 
-            // todosToolStripMenuItem
-            // 
-            this.todosToolStripMenuItem.Name = "todosToolStripMenuItem";
-            this.todosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.todosToolStripMenuItem.Text = "Todos";
-            this.todosToolStripMenuItem.Click += new System.EventHandler(this.todosToolStripMenuItem_Click);
-            // 
             // Principal_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1900,8 +1934,8 @@
 		private System.Windows.Forms.ToolStripMenuItem tsm_geral_pendentes;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
 		private System.Windows.Forms.ToolStripMenuItem tsm_listaDiretores;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarTodosFuncionarios;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarFuncSecreatariosEscolares;
 		private System.Windows.Forms.ToolStripMenuItem tsm_autorizacoes_escola;
 		private System.Windows.Forms.ToolStripMenuItem tsm_autoriz_dirigir_escola;
 		private System.Windows.Forms.ToolStripMenuItem tsm_solicitacoes_encaminhamentos;
@@ -1909,9 +1943,9 @@
 		private System.Windows.Forms.ToolStripMenuItem tsm_fund_num_sol_motivos;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox11;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox12;
-		private System.Windows.Forms.ToolStripMenuItem funcionáriosPorCargoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem funcionariosPorCargoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox10;
-		private System.Windows.Forms.ToolStripMenuItem instituiçoesPorNívelDeEnsinoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem instituiçoesPorNivelDeEnsinoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tsm_num_sol_ano_vs_instituicao;
 		private System.Windows.Forms.ToolStripMenuItem tsm_num_sol_ano_escola;
 		private System.Windows.Forms.ToolStripDropDownButton toolStripSplitButton1;
@@ -1929,30 +1963,30 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
 		private System.Windows.Forms.ToolStripMenuItem nºDeAutorizaçõesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
-		private System.Windows.Forms.ToolStripMenuItem funcionáriosPorEscolaToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem funcionariosPorEscolaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tsm_num_instituicoes_mantenedor;
 		private System.Windows.Forms.ToolStripStatusLabel tssl_versao;
 		private System.Windows.Forms.ToolStripMenuItem solicitaçõesPorOrigemToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem solicitaçõesPorOrigemToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem solicitaçõesPorOrigemToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem municipaisToolStripMenuItem2;
-		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem contatoDasEscolasToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem ofertaAnoEnsinoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarEscolas;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarDiretoresEscolas;
+		private System.Windows.Forms.ToolStripMenuItem tsm_OfertaAnoEnsinoEscolas;
 		private System.Windows.Forms.ToolStripMenuItem estaduaisToolStripMenuItem2;
-		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem ofertaAnoEnsinoToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarEscolasEstaduais;
+		private System.Windows.Forms.ToolStripMenuItem tsm_ofertaAnoEnsinoEstaduais;
 		private System.Windows.Forms.ToolStripMenuItem edInfantilConveniadasToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem2;
-		private System.Windows.Forms.ToolStripMenuItem contatoDasInstituiçõesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarInstituicoesParceiras;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarCoordAdms;
 		private System.Windows.Forms.ToolStripMenuItem ofertaAnoEnsinoToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem edInfantilMunicipaisToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem3;
-		private System.Windows.Forms.ToolStripMenuItem contatoDasInstituiçõesToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem ofertaAnoEnsinoToolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarInstituicoesMunicipais;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarDiretoresMunicipais;
+		private System.Windows.Forms.ToolStripMenuItem tsm_ofertaAnoEnsinoCims;
 		private System.Windows.Forms.ToolStripMenuItem edInfantilParticularesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem todasAsInstituiçõesToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarParticulares;
 		private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem5;
 		private System.Windows.Forms.ToolStripMenuItem localizarSolicitaçãoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem comprovaçãoDeEndereçoToolStripMenuItem;
@@ -1967,14 +2001,18 @@
 		private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem gerenciarToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tsm_gerenciar_cadastrados;
-        private System.Windows.Forms.ToolStripMenuItem ensinoFundamentalToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem edInfantilToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edInfantilCIMsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edInfantilParceirasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cIMsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parceirasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem todosToolStripMenuItem;
-    }
+		private System.Windows.Forms.ToolStripMenuItem tsm_listaDiretoresFundamental;
+		private System.Windows.Forms.ToolStripMenuItem tsm_GestoresInfantil;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarDiretoresCims;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarCoordParceiras;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarFuncAuxilaresCims;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarFuncAuxiliaresParceiras;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarTodosGestores;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarTodosFuncAuxiliares;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarSecretarios;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarAuxiliaresAdmsCims;
+		private System.Windows.Forms.ToolStripMenuItem tsm_listarAuxiliaresAdmsParceiras;
+	}
 }
 
 

@@ -87,7 +87,7 @@ namespace SIESC.UI
 
                 lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
                 lbl_statusStrip.BackColor = Color.OrangeRed;
-                this.BackColor= Color.OrangeRed;
+                this.BackColor = Color.OrangeRed;
 #endif
             }
             catch (Exception ex)
@@ -101,7 +101,7 @@ namespace SIESC.UI
         {
             if (VerificaConexaoBanco())
             {
-                Login frmLogin = new Login(user,this);
+                Login frmLogin = new Login(user, this);
                 frmLogin.ShowDialog(this);
 
                 user = new Usuario();
@@ -861,19 +861,11 @@ namespace SIESC.UI
         /// 5- Diretor EI |
         /// 6- Secretários |
         /// 7- Auxiliar Administrativo</param>
-        private void GerarListaFuncionarios(int codigo)
+        private void GerarLista(int codigo)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
             {
-                foreach (Form mdiChild in this.MdiChildren)
-                {
-                    if (mdiChild.GetType() == typeof(Listas))
-                    {
-                        mdiChild.Focus();
-                        return;
-                    }
-                }
                 Listas frm_Listas = new Listas(codigo);
                 frm_Listas.MdiParent = this;
                 frm_Listas.Show();
@@ -887,7 +879,7 @@ namespace SIESC.UI
             }
         }
 
-       /// <summary>
+        /// <summary>
         /// Abre o formulário de zoneamento
         /// </summary>
         /// <param name="sender"></param>
@@ -1967,18 +1959,7 @@ namespace SIESC.UI
             }
         }
 
-        /// <summary>
-        /// Gera a lista de secretarios escolares por escola
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripMenuItem6_Click(object sender, EventArgs e)
-        {
-            GerarListaFuncionarios(6);
-        }
-
-
-        /// <summary>
+       /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
@@ -2069,39 +2050,31 @@ namespace SIESC.UI
                 Mensageiro.MensagemErro(ex, this);
             }
         }
+
         /// <summary>
-        /// Gera a lista de Auxiliares Administrativos
+        /// Lista todos os secretários escolares
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void tsm_listarFuncSecreatariosEscolares_Click(object sender, EventArgs e)
         {
-            GerarListaFuncionarios(7);
+            GerarLista(6);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        private void tsm_listarTodosFuncionarios_Click(object sender, EventArgs e)
         {
-            GerarListaFuncionarios(6);
+            GerarLista(5);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {
-            GerarListaFuncionarios(3);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void funcionáriosPorEscolaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionariosPorEscolaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -2110,38 +2083,16 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void tsm_listarDiretoresEscolas_Click(object sender, EventArgs e)
         {
-            GerarListaFuncionarios(5);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void contatoDasEscolasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var t = CarregaProgressoThread();
-            try
-            {
-                Listas frm_listas = new Listas(3);
-                frm_listas.MdiParent = this;
-                frm_listas.Show();
-                if (t.IsAlive) t.Abort();
-            }
-            catch (Exception ex)
-            {
-                if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex, this);
-            }
+            GerarLista(4,1,true);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_listarEscolas_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2160,7 +2111,7 @@ namespace SIESC.UI
             }
         }
 
-        private void ofertaAnoEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_OfertaAnoEnsinoEscolas_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2183,7 +2134,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsm_listarEscolasEstaduais_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2206,7 +2157,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ofertaAnoEnsinoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsm_ofertaAnoEnsinoEstaduais_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2229,7 +2180,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void tsm_listarInstituicoesParceiras_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2252,7 +2203,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem4_Click(object sender, EventArgs e)
+        private void tsm_listarParticulares_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2275,21 +2226,10 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contatoDasInstituiçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_listarCoordAdms_Click(object sender, EventArgs e)
         {
-            var t = CarregaProgressoThread();
-            try
-            {
-                Listas frm_listas = new Listas(9);
-                frm_listas.MdiParent = this;
-                frm_listas.Show();
-                if (t.IsAlive) t.Abort();
-            }
-            catch (Exception ex)
-            {
-                if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex, this);
-            }
+            GerarLista(4,4,true);
+            
         }
         /// <summary>
         /// 
@@ -2319,7 +2259,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ofertaAnoEnsinoToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void tsm_ofertaAnoEnsinoCims_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2341,7 +2281,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void tsm_listarInstituicoesMunicipais_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -2361,23 +2301,60 @@ namespace SIESC.UI
         }
 
         /// <summary>
-        /// 
+        /// Gera a lista de Diretores Municipais
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contatoDasInstituiçõesToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsm_listarDiretoresMunicipais_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Listas frm_listas = new Listas(8);
-                frm_listas.MdiParent = this;
-                frm_listas.Show();
-            }
-            catch (Exception ex)
-            {
-                Mensageiro.MensagemErro(ex, this);
-            }
+            GerarLista(4,1,true);
         }
+        /// <summary>
+        /// Gera a lista de Diretoes de CIMS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsm_listarDiretoresCims_Click(object sender, EventArgs e)
+        {
+            GerarLista(4, 3, true);
+        }
+        /// <summary>
+        /// Gera a lista de Diretores do Ens. Fundamental
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsm_listaDiretoresFundamental_Click(object sender, EventArgs e)
+        {
+            GerarLista(4, 1, true);
+        }
+        /// <summary>
+        /// Gera a lista de Coordenadores Administrativos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsm_listarCoordParceiras_Click(object sender, EventArgs e)
+        {
+            GerarLista(4, 4, true);
+        }
+        /// <summary>
+        /// Gera a lista de Gestores da Ed. Infantil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsm_GestoresInfantil_Click(object sender, EventArgs e)
+        {
+            GerarLista(10, null, true);
+        }
+        /// <summary>
+        /// Gera a lista de todos os diretores e coordenadores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsm_listarTodosGestores_Click(object sender, EventArgs e)
+        {
+            GerarLista(11, null, true);
+        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -2513,18 +2490,24 @@ namespace SIESC.UI
 
             if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) return;
 #endif
-            GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada =new GerenciarSindicanciaCadastrada(this);
+            GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada = new GerenciarSindicanciaCadastrada(this);
 
             frm_gerenciarSindicanciaCadastrada.MdiParent = this;
             frm_gerenciarSindicanciaCadastrada.Show();
         }
-        
-        private void GeraListaDiretores(int codigoRelatorio ,int? mantenedor, bool? ativa)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoRelatorio">4 - Diretor</param>
+        /// <param name="mantenedor">1-Escola Municipal | 3-CIMS | 4-Parceiras</param>
+        /// <param name="ativa"></param>
+        private void GerarLista(int codigoRelatorio, int? mantenedor, bool? ativa)
         {
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
             {
-               Listas frm_Listas = new Listas(codigoRelatorio, mantenedor, ativa);
+                Listas frm_Listas = new Listas(codigoRelatorio, mantenedor, ativa);
                 frm_Listas.MdiParent = this;
                 frm_Listas.Show();
 
@@ -2537,29 +2520,19 @@ namespace SIESC.UI
             }
         }
 
-        private void edInfantilCIMsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_listarFuncAuxilaresCims_Click(object sender, EventArgs e)
         {
-            GeraListaDiretores(4,3, true);
+            GerarLista(3,3,null);
         }
 
-        private void ensinoFundamentalToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsm_listarFuncAuxiliaresParceiras_Click(object sender, EventArgs e)
         {
-            GeraListaDiretores(4, 1, true);
+            GerarLista(3, 4, null);
         }
 
-        private void edInfantilParceirasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_listarTodosFuncAuxiliares_Click(object sender, EventArgs e)
         {
-            GeraListaDiretores(4,4,true);
-        }
-
-        private void edInfantilToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GeraListaDiretores(10,null,true);
-        }
-
-        private void todosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GeraListaDiretores(11, null, true);
+            GerarLista(7);
         }
     }
 }
