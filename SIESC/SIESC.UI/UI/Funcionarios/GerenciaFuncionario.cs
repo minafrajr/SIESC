@@ -35,6 +35,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         private FuncionarioControl controleFuncionario;
 
+        private AutorizacaoControl controleAutorizacao;
         /// <summary>
         /// Objeto do formulário principal
         /// </summary>
@@ -101,8 +102,7 @@ namespace SIESC.UI.UI.Funcionarios
                         dgv_gerenciafuncionarios.DataSource = controleFuncionario.GetByNome(txt_nome.Text);
                         break;
                     case Localizar.autorizacao:
-                        dgv_gerenciafuncionarios.DataSource = controleFuncionario.GetByNumAutoriz(txt_autoriz.Text);
-                        break;
+                        throw new Exception("Erro: As autorizações devem ser buscadas através do menu Autorizações.");
                     case Localizar.cargoOrigem:
                         dgv_gerenciafuncionarios.DataSource = controleFuncionario.GetByCargo(cbo_cargoOrigem.Text,true);
                         break;
@@ -156,7 +156,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             limpaCampos();
             _localizar = Localizar.nome;
-            HabilitaControles(true,false,false,false,false,false);
+            HabilitaControles(true,false,false,false,false);
             txt_nome.Focus();
         }
 
@@ -169,24 +169,11 @@ namespace SIESC.UI.UI.Funcionarios
         {
             limpaCampos();
             _localizar = Localizar.cpf;
-            HabilitaControles(false,true,false,false,false,false);
+            HabilitaControles(false,true,false,false,false);
             msk_cpf.Focus();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_numautorização_CheckedChanged(object sender,EventArgs e)
-        {
-            limpaCampos();
-            _localizar = Localizar.autorizacao;
-            HabilitaControles(false,false,true,false,false,false);
-            txt_autoriz.Focus();
-        }
-
-        /// <summary>
+       /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
@@ -195,7 +182,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             limpaCampos();
             _localizar = Localizar.cargoOrigem;
-            HabilitaControles(false,false,false,true,false,false);
+            HabilitaControles(false,false,true,false,false);
             cbo_cargoOrigem.Focus();
         }
 
@@ -208,7 +195,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             limpaCampos();
             _localizar = Localizar.CargoAtual;
-            HabilitaControles(false,false,false,false,false,true);
+            HabilitaControles(false,false,false,false,true);
             cbo_cargoAtual.Focus();
         }
 
@@ -222,7 +209,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             limpaCampos();
             _localizar = Localizar.instituicao;
-            HabilitaControles(false,false,false,false,true,false);
+            HabilitaControles(false,false,false,true,false);
             cbo_instituicao.Focus();
             //cbo_instituicao_DropDown(null, null);
         }
@@ -232,15 +219,13 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="nome">true - habilita | false - desabilita</param>
         /// <param name="cpf">true - habilita | false - desabilita</param>
-        /// <param name="autoriz">true - habilita | false - desabilita</param>
         /// <param name="cargoOrigem">true - habilita | false - desabilita</param>
         /// <param name="escola">true - habilita | false - desabilita</param>
         /// /// <param name="cargoAtual">true - habilita | false - desabilita</param>
-        private void HabilitaControles(bool nome,bool cpf,bool autoriz,bool cargoOrigem,bool escola,bool cargoAtual)
+        private void HabilitaControles(bool nome,bool cpf,bool cargoOrigem,bool escola,bool cargoAtual)
         {
             txt_nome.Enabled = nome;
             msk_cpf.Enabled = cpf;
-            txt_autoriz.Enabled = autoriz;
             cbo_cargoOrigem.Enabled = cargoOrigem;
             cbo_instituicao.Enabled = escola;
             cbo_cargoAtual.Enabled = cargoAtual;
@@ -255,15 +240,14 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
+                controleAutorizacao = new AutorizacaoControl();
                 //verifica se foi selecioando um funcionário
                 if (string.IsNullOrEmpty(lbl_codigofuncionario.Text))
                     throw new Exception("Escolha um funcionário para gerar uma autorização!");
 
                 //verifica se já existe uma autorização para o funcionário
-                if (!string.IsNullOrEmpty(txt_autoriz.Text))
-                    throw new Exception($"O funcionário já possui autorização.{Environment.NewLine}Acesse o menu Gerenciar Autorização para editar");
-
-                //funcionario = this.CriaFuncionario();
+                if (controleAutorizacao.PesquisaAutorizacaoAtiva(Convert.ToInt32(lbl_codigofuncionario.Text)))
+                    throw new Exception($"O funcionário já possui autorização ativa.{Environment.NewLine}Acesse o menu Gerenciar Autorização para editar ou inativar a autorização!");
 
                 foreach (Form mdiChild in principalUi.MdiChildren)
                 {
@@ -332,7 +316,7 @@ namespace SIESC.UI.UI.Funcionarios
                     }
                 }
 
-                CadastroFuncionario frm_cadastrafuncionario = new CadastroFuncionario(funcionario,principalUi,txt_autoriz.Text);
+                CadastroFuncionario frm_cadastrafuncionario = new CadastroFuncionario(funcionario,principalUi);
 
                 frm_cadastrafuncionario.MdiParent = principalUi;
 
@@ -360,22 +344,25 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                lbl_codigofuncionario.Text =
-                    dgv_gerenciafuncionarios[0,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                txt_nome.Text = dgv_gerenciafuncionarios[1,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                dtp_datanasc.Text = dgv_gerenciafuncionarios[13,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                msk_cpf.Text = dgv_gerenciafuncionarios[2,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                cbo_instituicao.Text = dgv_gerenciafuncionarios[3,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                cbo_cargoOrigem.Text = dgv_gerenciafuncionarios[4,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                txt_autoriz.Text = dgv_gerenciafuncionarios[5,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                txt_telefone1.Text = dgv_gerenciafuncionarios[6,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                txt_telefone2.Text = dgv_gerenciafuncionarios[7,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
-                txt_email.Text = dgv_gerenciafuncionarios[8,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString().ToLower();
-                txt_endereco.Text = dgv_gerenciafuncionarios[9,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString() + ", " +
-                                    dgv_gerenciafuncionarios[10,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString() +
-                                    " - B. " + dgv_gerenciafuncionarios[11,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value +
-                                    " - " + dgv_gerenciafuncionarios[12,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value;
-                cbo_cargoAtual.Text = dgv_gerenciafuncionarios[14,dgv_gerenciafuncionarios.CurrentCellAddress.Y].Value.ToString();
+
+                // , , , , CodigoInstituicao, , Mantenedor, , CargoAtual, , , , , , Cep
+
+
+               lbl_codigofuncionario.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CodigoFuncionario"].Value.ToString();
+
+                txt_nome.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Nome"].Value.ToString();
+                dtp_datanasc.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["DatadeNascimento"].Value.ToString();
+                msk_cpf.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CPF"].Value.ToString();
+                cbo_instituicao.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Instituicao"].Value.ToString();
+                cbo_cargoOrigem.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CargodeOrigem"].Value.ToString();
+                cbo_cargoAtual.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CargoAtual"].Value.ToString();
+                txt_telefone1.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["telefone"].Value.ToString();
+                txt_email.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Email"].Value.ToString().ToLower();
+
+                txt_endereco.Text =
+                    $@"{dgv_gerenciafuncionarios.CurrentRow.Cells["Endereco"].Value} - B. {dgv_gerenciafuncionarios.CurrentRow.Cells["Bairro"].Value} - {dgv_gerenciafuncionarios.CurrentRow.Cells["Cidade"].Value} CEP:{dgv_gerenciafuncionarios.CurrentRow.Cells["Cep"].Value}";
+
+                
             }
             catch (Exception ex)
             {
@@ -400,13 +387,11 @@ namespace SIESC.UI.UI.Funcionarios
         private void limpaCampos()
         {
             txt_nome.Clear();
-            txt_autoriz.Clear();
             txt_email.Clear();
             txt_endereco.Clear();
             txt_nome.Clear();
             txt_telefone1.Clear();
             txt_telefone1.Clear();
-            txt_telefone2.Clear();
 
             dtp_datanasc.ResetText();
             cbo_cargoOrigem.ResetText();

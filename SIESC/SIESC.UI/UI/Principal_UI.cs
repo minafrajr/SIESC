@@ -2360,7 +2360,7 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listagemToolStripMenuItem5_Click(object sender, EventArgs e)
+        private void tsm_listarTodasInstituicoes_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -2499,7 +2499,7 @@ namespace SIESC.UI
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="codigoRelatorio">4 - Diretor</param>
+        /// <param name="codigoRelatorio">3-Auxiliar Administrativo | 4 - Diretor</param>
         /// <param name="mantenedor">1-Escola Municipal | 3-CIMS | 4-Parceiras</param>
         /// <param name="ativa"></param>
         private void GerarLista(int codigoRelatorio, int? mantenedor, bool? ativa)
@@ -2534,5 +2534,22 @@ namespace SIESC.UI
         {
             GerarLista(7);
         }
+
+        private void tsm_listarSecretarios_Click(object sender, EventArgs e)
+        {
+            GerarLista(6);
+        }
+
+        private void tsm_listarAuxiliaresAdmsParceiras_Click(object sender, EventArgs e)
+        {
+            GerarLista(3, 4, null);
+        }
+
+        private void tsm_listarAuxiliaresAdmsCims_Click(object sender, EventArgs e)
+        {
+            GerarLista(3, 3, null);
+        }
+
+      
     }
 }

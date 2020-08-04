@@ -26,6 +26,11 @@ namespace SIESC.UI.UI.Funcionarios
         private FuncionarioControl controlFuncionario;
 
         /// <summary>
+        /// Objeto para manipulação no banco de dados
+        /// </summary>
+        private AutorizacaoControl controlAutorizacao;
+
+        /// <summary>
         /// Objeto funcionário
         /// </summary>
         private Funcionario funcionario;
@@ -55,8 +60,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="func"></param>
         /// <param name="principal"></param>
-        /// <param name="numeroautorizacao"></param>
-        public CadastroFuncionario(Funcionario func,Principal_UI principal,string numeroautorizacao)
+        public CadastroFuncionario(Funcionario func,Principal_UI principal)
         {
             PrincipalUi = principal;
             InitializeComponent();
@@ -70,25 +74,7 @@ namespace SIESC.UI.UI.Funcionarios
 
 
             this.RepassaFuncionario(funcionario);
-            lbl_numautoriz.Text = numeroautorizacao;
-        }
-
-        /// <summary>
-        /// Abre o formulário para edição do funcionário
-        /// </summary>
-        /// <param name="func"></param>
-        /// <param name="autoriz"></param>
-        /// <param name="principal"></param>
-        public CadastroFuncionario(Funcionario func,Autorizacao autoriz,Principal_UI principal)
-        {
-            PrincipalUi = principal;
-
-            if (func != null)
-            {
-                this.RepassaFuncionario(func);
-            }
-
-            this.lbl_numautoriz.Text = autoriz.numeroautorizacao;
+            
         }
 
         /// <summary>
@@ -409,7 +395,6 @@ namespace SIESC.UI.UI.Funcionarios
             txt_numresid.ResetText();
             msk_cep.ResetText();
             cbo_cargoatual.SelectedValue = -1;
-            lbl_numautoriz.ResetText();
             txt_email.ResetText();
         }
 
@@ -456,9 +441,10 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                if (!string.IsNullOrEmpty(lbl_numautoriz.Text))
+               controlAutorizacao = new AutorizacaoControl();
+                if (controlAutorizacao.PesquisaAutorizacaoAtiva(idFuncionario: Convert.ToInt32(lbl_codigofunc.Text)))
                 {
-                    throw new Exception($"{Environment.NewLine}O funcionário já possui autorização!{Environment.NewLine}Favor acessar o menu Autorização para editar.");
+                    throw new Exception($"{Environment.NewLine}O funcionário já possui autorização ativa!{Environment.NewLine}Favor acessar o menu Autorização para editar ou inativar a Autorização.");
                 }
 
                 funcionario = CriarFuncionario();

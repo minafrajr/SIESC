@@ -232,26 +232,6 @@ namespace SIESC.BD.Control
 		}
 
 		/// <summary>
-		/// Retorna os dados dos funcionários a partir do numero de autorização
-		/// </summary>
-		/// <param name="numautoriz"></param>
-		/// <returns>DataTable com os dados</returns>
-		public DataTable GetByNumAutoriz(string numautoriz)
-		{
-			try
-			{
-				vw_funcionarios_TA = new vw_funcionariosTableAdapter();
-				DataTable dt = vw_funcionarios_TA.GetDataByAutorizacao(numautoriz);
-
-				return dt;
-			}
-			catch (SqlException exception)
-			{
-				throw exception;
-			}
-		}
-
-		/// <summary>
 		/// Retorna os dados dos funcionários a partir do cargoOrigem
 		/// </summary>
 		/// <param name="cargo"></param>

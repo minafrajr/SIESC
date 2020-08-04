@@ -40,7 +40,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_email = new SIESC.UI.MyTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_telefone2 = new SIESC.UI.MyTextBox();
             this.txt_telefone1 = new SIESC.UI.MyTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_codigofuncionario = new System.Windows.Forms.Label();
@@ -53,8 +52,6 @@
             this.cbo_cargoOrigem = new SIESC.UI.MyComboBox();
             this.lbl_cargo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_autoriz = new SIESC.UI.MyTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_nome = new SIESC.UI.MyTextBox();
             this.msk_cpf = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
@@ -62,7 +59,6 @@
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
             this.rdb_cargoatual = new System.Windows.Forms.RadioButton();
             this.rdb_instituicao = new System.Windows.Forms.RadioButton();
-            this.rdb_numautorização = new System.Windows.Forms.RadioButton();
             this.rdb_cpf = new System.Windows.Forms.RadioButton();
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_cargoorigem = new System.Windows.Forms.RadioButton();
@@ -104,7 +100,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.txt_email);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
-            this.splitContainer1.Panel1.Controls.Add(this.txt_telefone2);
             this.splitContainer1.Panel1.Controls.Add(this.txt_telefone1);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_codigofuncionario);
@@ -116,8 +111,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.cbo_cargoOrigem);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_cargo);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.txt_autoriz);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.txt_nome);
             this.splitContainer1.Panel1.Controls.Add(this.msk_cpf);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_cpf);
@@ -147,7 +140,7 @@
             this.cbo_cargoAtual.FormattingEnabled = true;
             this.cbo_cargoAtual.Location = new System.Drawing.Point(593, 46);
             this.cbo_cargoAtual.Name = "cbo_cargoAtual";
-            this.cbo_cargoAtual.Size = new System.Drawing.Size(205, 22);
+            this.cbo_cargoAtual.Size = new System.Drawing.Size(260, 22);
             this.cbo_cargoAtual.TabIndex = 64;
             this.cbo_cargoAtual.ValueMember = "cargos1.idcargos";
             // 
@@ -186,42 +179,33 @@
             // txt_email
             // 
             this.txt_email.Enabled = false;
-            this.txt_email.Location = new System.Drawing.Point(678, 129);
+            this.txt_email.Location = new System.Drawing.Point(240, 129);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(328, 22);
+            this.txt_email.Size = new System.Drawing.Size(347, 22);
             this.txt_email.TabIndex = 60;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(679, 112);
+            this.label7.Location = new System.Drawing.Point(241, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 14);
             this.label7.TabIndex = 59;
             this.label7.Text = "E-mail:";
             // 
-            // txt_telefone2
-            // 
-            this.txt_telefone2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_telefone2.Enabled = false;
-            this.txt_telefone2.Location = new System.Drawing.Point(561, 129);
-            this.txt_telefone2.Name = "txt_telefone2";
-            this.txt_telefone2.Size = new System.Drawing.Size(108, 22);
-            this.txt_telefone2.TabIndex = 58;
-            // 
             // txt_telefone1
             // 
             this.txt_telefone1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_telefone1.Enabled = false;
-            this.txt_telefone1.Location = new System.Drawing.Point(450, 129);
+            this.txt_telefone1.Location = new System.Drawing.Point(12, 129);
             this.txt_telefone1.Name = "txt_telefone1";
-            this.txt_telefone1.Size = new System.Drawing.Size(108, 22);
+            this.txt_telefone1.Size = new System.Drawing.Size(222, 22);
             this.txt_telefone1.TabIndex = 57;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(447, 112);
+            this.label6.Location = new System.Drawing.Point(13, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 14);
             this.label6.TabIndex = 56;
@@ -249,15 +233,15 @@
             // 
             this.txt_endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_endereco.Enabled = false;
-            this.txt_endereco.Location = new System.Drawing.Point(12, 129);
+            this.txt_endereco.Location = new System.Drawing.Point(12, 87);
             this.txt_endereco.Name = "txt_endereco";
-            this.txt_endereco.Size = new System.Drawing.Size(432, 22);
+            this.txt_endereco.Size = new System.Drawing.Size(575, 22);
             this.txt_endereco.TabIndex = 53;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 112);
+            this.label4.Location = new System.Drawing.Point(13, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 14);
             this.label4.TabIndex = 52;
@@ -270,9 +254,9 @@
             this.cbo_instituicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao.Enabled = false;
             this.cbo_instituicao.FormattingEnabled = true;
-            this.cbo_instituicao.Location = new System.Drawing.Point(13, 88);
+            this.cbo_instituicao.Location = new System.Drawing.Point(593, 129);
             this.cbo_instituicao.Name = "cbo_instituicao";
-            this.cbo_instituicao.Size = new System.Drawing.Size(278, 22);
+            this.cbo_instituicao.Size = new System.Drawing.Size(260, 22);
             this.cbo_instituicao.TabIndex = 51;
             this.cbo_instituicao.ValueMember = "idInstituicoes";
             // 
@@ -284,7 +268,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 70);
+            this.label3.Location = new System.Drawing.Point(593, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 14);
             this.label3.TabIndex = 50;
@@ -297,16 +281,16 @@
             this.cbo_cargoOrigem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_cargoOrigem.Enabled = false;
             this.cbo_cargoOrigem.FormattingEnabled = true;
-            this.cbo_cargoOrigem.Location = new System.Drawing.Point(480, 88);
+            this.cbo_cargoOrigem.Location = new System.Drawing.Point(593, 89);
             this.cbo_cargoOrigem.Name = "cbo_cargoOrigem";
-            this.cbo_cargoOrigem.Size = new System.Drawing.Size(240, 22);
+            this.cbo_cargoOrigem.Size = new System.Drawing.Size(260, 22);
             this.cbo_cargoOrigem.TabIndex = 49;
             this.cbo_cargoOrigem.ValueMember = "cargos.idcargos";
             // 
             // lbl_cargo
             // 
             this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Location = new System.Drawing.Point(477, 70);
+            this.lbl_cargo.Location = new System.Drawing.Point(590, 71);
             this.lbl_cargo.Name = "lbl_cargo";
             this.lbl_cargo.Size = new System.Drawing.Size(95, 14);
             this.lbl_cargo.TabIndex = 48;
@@ -319,24 +303,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 14);
             this.label2.TabIndex = 47;
-            // 
-            // txt_autoriz
-            // 
-            this.txt_autoriz.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_autoriz.Enabled = false;
-            this.txt_autoriz.Location = new System.Drawing.Point(297, 88);
-            this.txt_autoriz.Name = "txt_autoriz";
-            this.txt_autoriz.Size = new System.Drawing.Size(177, 22);
-            this.txt_autoriz.TabIndex = 46;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Nº Autorização";
             // 
             // txt_nome
             // 
@@ -378,13 +344,12 @@
             // 
             this.gpb_localizar.Controls.Add(this.rdb_cargoatual);
             this.gpb_localizar.Controls.Add(this.rdb_instituicao);
-            this.gpb_localizar.Controls.Add(this.rdb_numautorização);
             this.gpb_localizar.Controls.Add(this.rdb_cpf);
             this.gpb_localizar.Controls.Add(this.rdb_nome);
             this.gpb_localizar.Controls.Add(this.rdb_cargoorigem);
-            this.gpb_localizar.Location = new System.Drawing.Point(803, 70);
+            this.gpb_localizar.Location = new System.Drawing.Point(876, 68);
             this.gpb_localizar.Name = "gpb_localizar";
-            this.gpb_localizar.Size = new System.Drawing.Size(510, 43);
+            this.gpb_localizar.Size = new System.Drawing.Size(405, 43);
             this.gpb_localizar.TabIndex = 40;
             this.gpb_localizar.TabStop = false;
             this.gpb_localizar.Text = "Opções de busca";
@@ -392,7 +357,7 @@
             // rdb_cargoatual
             // 
             this.rdb_cargoatual.AutoSize = true;
-            this.rdb_cargoatual.Location = new System.Drawing.Point(341, 22);
+            this.rdb_cargoatual.Location = new System.Drawing.Point(317, 20);
             this.rdb_cargoatual.Name = "rdb_cargoatual";
             this.rdb_cargoatual.Size = new System.Drawing.Size(83, 18);
             this.rdb_cargoatual.TabIndex = 5;
@@ -404,25 +369,13 @@
             // rdb_instituicao
             // 
             this.rdb_instituicao.AutoSize = true;
-            this.rdb_instituicao.Location = new System.Drawing.Point(430, 22);
+            this.rdb_instituicao.Location = new System.Drawing.Point(119, 19);
             this.rdb_instituicao.Name = "rdb_instituicao";
             this.rdb_instituicao.Size = new System.Drawing.Size(78, 18);
             this.rdb_instituicao.TabIndex = 4;
             this.rdb_instituicao.Text = "Instituição";
             this.rdb_instituicao.UseVisualStyleBackColor = true;
             this.rdb_instituicao.CheckedChanged += new System.EventHandler(this.rdb_instituicao_CheckedChanged);
-            // 
-            // rdb_numautorização
-            // 
-            this.rdb_numautorização.AutoSize = true;
-            this.rdb_numautorização.Location = new System.Drawing.Point(118, 20);
-            this.rdb_numautorização.Name = "rdb_numautorização";
-            this.rdb_numautorização.Size = new System.Drawing.Size(100, 18);
-            this.rdb_numautorização.TabIndex = 3;
-            this.rdb_numautorização.TabStop = true;
-            this.rdb_numautorização.Text = "Nº Autorização";
-            this.rdb_numautorização.UseVisualStyleBackColor = true;
-            this.rdb_numautorização.CheckedChanged += new System.EventHandler(this.rdb_numautorização_CheckedChanged);
             // 
             // rdb_cpf
             // 
@@ -452,7 +405,7 @@
             // rdb_cargoorigem
             // 
             this.rdb_cargoorigem.AutoSize = true;
-            this.rdb_cargoorigem.Location = new System.Drawing.Point(224, 22);
+            this.rdb_cargoorigem.Location = new System.Drawing.Point(201, 19);
             this.rdb_cargoorigem.Name = "rdb_cargoorigem";
             this.rdb_cargoorigem.Size = new System.Drawing.Size(110, 18);
             this.rdb_cargoorigem.TabIndex = 0;
@@ -638,7 +591,6 @@
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.DataGridView dgv_gerenciafuncionarios;
 		private System.Windows.Forms.GroupBox gpb_localizar;
-		private System.Windows.Forms.RadioButton rdb_numautorização;
 		private System.Windows.Forms.RadioButton rdb_cpf;
 		private System.Windows.Forms.RadioButton rdb_nome;
 		private System.Windows.Forms.RadioButton rdb_cargoorigem;
@@ -649,8 +601,6 @@
 		private System.Windows.Forms.Button btn_editarAutorizacao;
 		private System.Windows.Forms.Button btn_cancelar;
 		private System.Windows.Forms.Label lbl_nome;
-		private MyTextBox txt_autoriz;
-		private System.Windows.Forms.Label label1;
 		private MyTextBox txt_nome;
 		private MyMaskedTextBox msk_cpf;
 		private System.Windows.Forms.Label lbl_cpf;
@@ -669,7 +619,6 @@
 		private System.Windows.Forms.Label label5;
 		private MyTextBox txt_email;
 		private System.Windows.Forms.Label label7;
-		private MyTextBox txt_telefone2;
 		private MyTextBox txt_telefone1;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.DateTimePicker dtp_datanasc;

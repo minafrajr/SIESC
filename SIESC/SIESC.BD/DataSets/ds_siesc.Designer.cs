@@ -6457,8 +6457,6 @@ namespace SIESC.BD.DataSets {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class vw_funcionariosDataTable : global::System.Data.TypedTableBase<vw_funcionariosRow> {
             
-            private global::System.Data.DataColumn columnCodigo;
-            
             private global::System.Data.DataColumn columnNome;
             
             private global::System.Data.DataColumn columnCPF;
@@ -6467,17 +6465,7 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnCargodeOrigem;
             
-            private global::System.Data.DataColumn columnAutorizacao;
-            
-            private global::System.Data.DataColumn columnTelefone1;
-            
-            private global::System.Data.DataColumn columnTelefone2;
-            
             private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnLogradouro;
-            
-            private global::System.Data.DataColumn columnNumero;
             
             private global::System.Data.DataColumn columnBairro;
             
@@ -6487,9 +6475,17 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnCargoAtual;
             
-            private global::System.Data.DataColumn columnTelefoneEscola;
+            private global::System.Data.DataColumn columnCodigoFuncionario;
             
-            private global::System.Data.DataColumn columnEmailEscola;
+            private global::System.Data.DataColumn columnCodigoInstituicao;
+            
+            private global::System.Data.DataColumn columnMantenedor;
+            
+            private global::System.Data.DataColumn columntelefone;
+            
+            private global::System.Data.DataColumn columnEndereco;
+            
+            private global::System.Data.DataColumn columnCep;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -6526,14 +6522,6 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoColumn {
-                get {
-                    return this.columnCodigo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn NomeColumn {
                 get {
                     return this.columnNome;
@@ -6566,49 +6554,9 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AutorizacaoColumn {
-                get {
-                    return this.columnAutorizacao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Telefone1Column {
-                get {
-                    return this.columnTelefone1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Telefone2Column {
-                get {
-                    return this.columnTelefone2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn EmailColumn {
                 get {
                     return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LogradouroColumn {
-                get {
-                    return this.columnLogradouro;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NumeroColumn {
-                get {
-                    return this.columnNumero;
                 }
             }
             
@@ -6646,17 +6594,49 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TelefoneEscolaColumn {
+            public global::System.Data.DataColumn CodigoFuncionarioColumn {
                 get {
-                    return this.columnTelefoneEscola;
+                    return this.columnCodigoFuncionario;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EmailEscolaColumn {
+            public global::System.Data.DataColumn CodigoInstituicaoColumn {
                 get {
-                    return this.columnEmailEscola;
+                    return this.columnCodigoInstituicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MantenedorColumn {
+                get {
+                    return this.columnMantenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn telefoneColumn {
+                get {
+                    return this.columntelefone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnderecoColumn {
+                get {
+                    return this.columnEndereco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CepColumn {
+                get {
+                    return this.columnCep;
                 }
             }
             
@@ -6697,46 +6677,35 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public vw_funcionariosRow Addvw_funcionariosRow(
-                        int Codigo, 
-                        string Nome, 
-                        string CPF, 
-                        string Instituicao, 
-                        string CargodeOrigem, 
-                        string Autorizacao, 
-                        string Telefone1, 
-                        string Telefone2, 
-                        string Email, 
-                        string Logradouro, 
-                        string Numero, 
-                        string Bairro, 
-                        string Cidade, 
-                        System.DateTime DatadeNascimento, 
-                        string CargoAtual, 
-                        string TelefoneEscola, 
-                        string EmailEscola) {
+            public vw_funcionariosRow Addvw_funcionariosRow(string Nome, string CPF, string Instituicao, string CargodeOrigem, string Email, string Bairro, string Cidade, System.DateTime DatadeNascimento, string CargoAtual, int Mantenedor, string telefone, string Endereco, string Cep) {
                 vw_funcionariosRow rowvw_funcionariosRow = ((vw_funcionariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Codigo,
                         Nome,
                         CPF,
                         Instituicao,
                         CargodeOrigem,
-                        Autorizacao,
-                        Telefone1,
-                        Telefone2,
                         Email,
-                        Logradouro,
-                        Numero,
                         Bairro,
                         Cidade,
                         DatadeNascimento,
                         CargoAtual,
-                        TelefoneEscola,
-                        EmailEscola};
+                        null,
+                        null,
+                        Mantenedor,
+                        telefone,
+                        Endereco,
+                        Cep};
                 rowvw_funcionariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_funcionariosRow);
                 return rowvw_funcionariosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public vw_funcionariosRow FindByCodigoFuncionarioCodigoInstituicao(int CodigoFuncionario, int CodigoInstituicao) {
+                return ((vw_funcionariosRow)(this.Rows.Find(new object[] {
+                            CodigoFuncionario,
+                            CodigoInstituicao})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6756,30 +6725,26 @@ namespace SIESC.BD.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCodigo = base.Columns["Codigo"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnCPF = base.Columns["CPF"];
                 this.columnInstituicao = base.Columns["Instituicao"];
                 this.columnCargodeOrigem = base.Columns["CargodeOrigem"];
-                this.columnAutorizacao = base.Columns["Autorizacao"];
-                this.columnTelefone1 = base.Columns["Telefone1"];
-                this.columnTelefone2 = base.Columns["Telefone2"];
                 this.columnEmail = base.Columns["Email"];
-                this.columnLogradouro = base.Columns["Logradouro"];
-                this.columnNumero = base.Columns["Numero"];
                 this.columnBairro = base.Columns["Bairro"];
                 this.columnCidade = base.Columns["Cidade"];
                 this.columnDatadeNascimento = base.Columns["DatadeNascimento"];
                 this.columnCargoAtual = base.Columns["CargoAtual"];
-                this.columnTelefoneEscola = base.Columns["TelefoneEscola"];
-                this.columnEmailEscola = base.Columns["EmailEscola"];
+                this.columnCodigoFuncionario = base.Columns["CodigoFuncionario"];
+                this.columnCodigoInstituicao = base.Columns["CodigoInstituicao"];
+                this.columnMantenedor = base.Columns["Mantenedor"];
+                this.columntelefone = base.Columns["telefone"];
+                this.columnEndereco = base.Columns["Endereco"];
+                this.columnCep = base.Columns["Cep"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigo);
                 this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNome);
                 this.columnCPF = new global::System.Data.DataColumn("CPF", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6788,18 +6753,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnInstituicao);
                 this.columnCargodeOrigem = new global::System.Data.DataColumn("CargodeOrigem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCargodeOrigem);
-                this.columnAutorizacao = new global::System.Data.DataColumn("Autorizacao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAutorizacao);
-                this.columnTelefone1 = new global::System.Data.DataColumn("Telefone1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTelefone1);
-                this.columnTelefone2 = new global::System.Data.DataColumn("Telefone2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTelefone2);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this.columnLogradouro = new global::System.Data.DataColumn("Logradouro", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLogradouro);
-                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumero);
                 this.columnBairro = new global::System.Data.DataColumn("Bairro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBairro);
                 this.columnCidade = new global::System.Data.DataColumn("Cidade", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6808,28 +6763,44 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnDatadeNascimento);
                 this.columnCargoAtual = new global::System.Data.DataColumn("CargoAtual", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCargoAtual);
-                this.columnTelefoneEscola = new global::System.Data.DataColumn("TelefoneEscola", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTelefoneEscola);
-                this.columnEmailEscola = new global::System.Data.DataColumn("EmailEscola", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmailEscola);
-                this.columnCodigo.AutoIncrementSeed = -1;
-                this.columnCodigo.AutoIncrementStep = -1;
+                this.columnCodigoFuncionario = new global::System.Data.DataColumn("CodigoFuncionario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoFuncionario);
+                this.columnCodigoInstituicao = new global::System.Data.DataColumn("CodigoInstituicao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoInstituicao);
+                this.columnMantenedor = new global::System.Data.DataColumn("Mantenedor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMantenedor);
+                this.columntelefone = new global::System.Data.DataColumn("telefone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefone);
+                this.columnEndereco = new global::System.Data.DataColumn("Endereco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndereco);
+                this.columnCep = new global::System.Data.DataColumn("Cep", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCep);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigoFuncionario,
+                                this.columnCodigoInstituicao}, true));
+                this.columnNome.AllowDBNull = false;
                 this.columnNome.MaxLength = 45;
                 this.columnCPF.MaxLength = 14;
+                this.columnInstituicao.AllowDBNull = false;
                 this.columnInstituicao.MaxLength = 80;
                 this.columnCargodeOrigem.Caption = "Cargo de Origem";
                 this.columnCargodeOrigem.MaxLength = 45;
-                this.columnAutorizacao.MaxLength = 10;
-                this.columnTelefone1.MaxLength = 20;
-                this.columnTelefone2.MaxLength = 20;
                 this.columnEmail.MaxLength = 45;
-                this.columnLogradouro.MaxLength = 61;
-                this.columnNumero.MaxLength = 26;
                 this.columnBairro.MaxLength = 50;
                 this.columnCidade.MaxLength = 30;
                 this.columnCargoAtual.MaxLength = 45;
-                this.columnTelefoneEscola.MaxLength = 15;
-                this.columnEmailEscola.MaxLength = 90;
+                this.columnCodigoFuncionario.AutoIncrement = true;
+                this.columnCodigoFuncionario.AutoIncrementSeed = -1;
+                this.columnCodigoFuncionario.AutoIncrementStep = -1;
+                this.columnCodigoFuncionario.AllowDBNull = false;
+                this.columnCodigoInstituicao.AutoIncrement = true;
+                this.columnCodigoInstituicao.AutoIncrementSeed = -1;
+                this.columnCodigoInstituicao.AutoIncrementStep = -1;
+                this.columnCodigoInstituicao.AllowDBNull = false;
+                this.columnMantenedor.AllowDBNull = false;
+                this.columntelefone.MaxLength = 31;
+                this.columnEndereco.MaxLength = 89;
+                this.columnCep.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12911,30 +12882,9 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Codigo {
-                get {
-                    try {
-                        return ((int)(this[this.tablevw_funcionarios.CodigoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Codigo\' na tabela \'vw_funcionarios\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.CodigoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nome {
                 get {
-                    try {
-                        return ((string)(this[this.tablevw_funcionarios.NomeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Nome\' na tabela \'vw_funcionarios\' é DBNull.", e);
-                    }
+                    return ((string)(this[this.tablevw_funcionarios.NomeColumn]));
                 }
                 set {
                     this[this.tablevw_funcionarios.NomeColumn] = value;
@@ -12961,12 +12911,7 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Instituicao {
                 get {
-                    try {
-                        return ((string)(this[this.tablevw_funcionarios.InstituicaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Instituicao\' na tabela \'vw_funcionarios\' é DBNull.", e);
-                    }
+                    return ((string)(this[this.tablevw_funcionarios.InstituicaoColumn]));
                 }
                 set {
                     this[this.tablevw_funcionarios.InstituicaoColumn] = value;
@@ -12991,54 +12936,6 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Autorizacao {
-                get {
-                    if (this.IsAutorizacaoNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tablevw_funcionarios.AutorizacaoColumn]));
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.AutorizacaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Telefone1 {
-                get {
-                    try {
-                        return ((string)(this[this.tablevw_funcionarios.Telefone1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Telefone1\' na tabela \'vw_funcionarios\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.Telefone1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Telefone2 {
-                get {
-                    if (this.IsTelefone2Null()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tablevw_funcionarios.Telefone2Column]));
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.Telefone2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Email {
                 get {
                     if (this.IsEmailNull()) {
@@ -13050,38 +12947,6 @@ namespace SIESC.BD.DataSets {
                 }
                 set {
                     this[this.tablevw_funcionarios.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Logradouro {
-                get {
-                    if (this.IsLogradouroNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tablevw_funcionarios.LogradouroColumn]));
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.LogradouroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Numero {
-                get {
-                    if (this.IsNumeroNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tablevw_funcionarios.NumeroColumn]));
-                    }
-                }
-                set {
-                    this[this.tablevw_funcionarios.NumeroColumn] = value;
                 }
             }
             
@@ -13151,58 +13016,83 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TelefoneEscola {
+            public int CodigoFuncionario {
+                get {
+                    return ((int)(this[this.tablevw_funcionarios.CodigoFuncionarioColumn]));
+                }
+                set {
+                    this[this.tablevw_funcionarios.CodigoFuncionarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CodigoInstituicao {
+                get {
+                    return ((int)(this[this.tablevw_funcionarios.CodigoInstituicaoColumn]));
+                }
+                set {
+                    this[this.tablevw_funcionarios.CodigoInstituicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Mantenedor {
+                get {
+                    return ((int)(this[this.tablevw_funcionarios.MantenedorColumn]));
+                }
+                set {
+                    this[this.tablevw_funcionarios.MantenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string telefone {
                 get {
                     try {
-                        return ((string)(this[this.tablevw_funcionarios.TelefoneEscolaColumn]));
+                        return ((string)(this[this.tablevw_funcionarios.telefoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TelefoneEscola\' na tabela \'vw_funcionarios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'telefone\' na tabela \'vw_funcionarios\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevw_funcionarios.TelefoneEscolaColumn] = value;
+                    this[this.tablevw_funcionarios.telefoneColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EmailEscola {
+            public string Endereco {
                 get {
                     try {
-                        return ((string)(this[this.tablevw_funcionarios.EmailEscolaColumn]));
+                        return ((string)(this[this.tablevw_funcionarios.EnderecoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EmailEscola\' na tabela \'vw_funcionarios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Endereco\' na tabela \'vw_funcionarios\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevw_funcionarios.EmailEscolaColumn] = value;
+                    this[this.tablevw_funcionarios.EnderecoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCodigoNull() {
-                return this.IsNull(this.tablevw_funcionarios.CodigoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCodigoNull() {
-                this[this.tablevw_funcionarios.CodigoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNomeNull() {
-                return this.IsNull(this.tablevw_funcionarios.NomeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNomeNull() {
-                this[this.tablevw_funcionarios.NomeColumn] = global::System.Convert.DBNull;
+            public string Cep {
+                get {
+                    try {
+                        return ((string)(this[this.tablevw_funcionarios.CepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Cep\' na tabela \'vw_funcionarios\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_funcionarios.CepColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13219,18 +13109,6 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInstituicaoNull() {
-                return this.IsNull(this.tablevw_funcionarios.InstituicaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInstituicaoNull() {
-                this[this.tablevw_funcionarios.InstituicaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCargodeOrigemNull() {
                 return this.IsNull(this.tablevw_funcionarios.CargodeOrigemColumn);
             }
@@ -13243,42 +13121,6 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAutorizacaoNull() {
-                return this.IsNull(this.tablevw_funcionarios.AutorizacaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAutorizacaoNull() {
-                this[this.tablevw_funcionarios.AutorizacaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTelefone1Null() {
-                return this.IsNull(this.tablevw_funcionarios.Telefone1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTelefone1Null() {
-                this[this.tablevw_funcionarios.Telefone1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTelefone2Null() {
-                return this.IsNull(this.tablevw_funcionarios.Telefone2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTelefone2Null() {
-                this[this.tablevw_funcionarios.Telefone2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEmailNull() {
                 return this.IsNull(this.tablevw_funcionarios.EmailColumn);
             }
@@ -13287,30 +13129,6 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEmailNull() {
                 this[this.tablevw_funcionarios.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLogradouroNull() {
-                return this.IsNull(this.tablevw_funcionarios.LogradouroColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLogradouroNull() {
-                this[this.tablevw_funcionarios.LogradouroColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNumeroNull() {
-                return this.IsNull(this.tablevw_funcionarios.NumeroColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNumeroNull() {
-                this[this.tablevw_funcionarios.NumeroColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13363,26 +13181,38 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTelefoneEscolaNull() {
-                return this.IsNull(this.tablevw_funcionarios.TelefoneEscolaColumn);
+            public bool IstelefoneNull() {
+                return this.IsNull(this.tablevw_funcionarios.telefoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTelefoneEscolaNull() {
-                this[this.tablevw_funcionarios.TelefoneEscolaColumn] = global::System.Convert.DBNull;
+            public void SettelefoneNull() {
+                this[this.tablevw_funcionarios.telefoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEmailEscolaNull() {
-                return this.IsNull(this.tablevw_funcionarios.EmailEscolaColumn);
+            public bool IsEnderecoNull() {
+                return this.IsNull(this.tablevw_funcionarios.EnderecoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEmailEscolaNull() {
-                this[this.tablevw_funcionarios.EmailEscolaColumn] = global::System.Convert.DBNull;
+            public void SetEnderecoNull() {
+                this[this.tablevw_funcionarios.EnderecoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCepNull() {
+                return this.IsNull(this.tablevw_funcionarios.CepColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCepNull() {
+                this[this.tablevw_funcionarios.CepColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21304,7 +21134,7 @@ WHERE        (Mae LIKE @nomemae) AND (status = 1)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[12];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[13];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idAutorizacao, idFuncionario, idInstituicao, numeroAutorizacao, dataValida" +
@@ -21700,8 +21530,21 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             this._commandCollection[9].Parameters.Add(param);
             this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "SELECT idAutorizacao FROM autorizacoes WHERE (numeroAutorizacao = @numautoriz)";
+            this._commandCollection[10].CommandText = "SELECT        1 AS Expr1\r\nFROM            autorizacoes\r\nWHERE        (idFuncionar" +
+                "io = @idFuncionario) AND (statusAutorizacao = 1)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idFuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            this._commandCollection[11] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "SELECT idAutorizacao FROM autorizacoes WHERE (numeroAutorizacao = @numautoriz)";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@numautoriz";
             param.DbType = global::System.Data.DbType.String;
@@ -21710,11 +21553,11 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.IsNullable = true;
             param.SourceColumn = "numeroAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[10].Parameters.Add(param);
-            this._commandCollection[11] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "SELECT        MAX(idAutorizacao) AS UltimaAutoriz\r\nFROM            autorizacoes";
-            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].Parameters.Add(param);
+            this._commandCollection[12] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "SELECT        MAX(idAutorizacao) AS UltimaAutoriz\r\nFROM            autorizacoes";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22107,8 +21950,37 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> PesquisaID(string numautoriz) {
+        public virtual global::System.Nullable<long> PesquisaAutorizacaoAtiva(int idFuncionario) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[10];
+            command.Parameters[0].Value = ((int)(idFuncionario));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<long>();
+            }
+            else {
+                return new global::System.Nullable<long>(((long)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> PesquisaID(string numautoriz) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[11];
             if ((numautoriz == null)) {
                 throw new global::System.ArgumentNullException("numautoriz");
             }
@@ -22142,7 +22014,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> PesquisaUltimaID() {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[11];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[12];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27108,22 +26980,20 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
             tableMapping.ColumnMappings.Add("CPF", "CPF");
             tableMapping.ColumnMappings.Add("Instituicao", "Instituicao");
             tableMapping.ColumnMappings.Add("Cargo", "CargodeOrigem");
-            tableMapping.ColumnMappings.Add("Autorizacao", "Autorizacao");
-            tableMapping.ColumnMappings.Add("Telefone1", "Telefone1");
-            tableMapping.ColumnMappings.Add("Telefone2", "Telefone2");
             tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Logradouro", "Logradouro");
-            tableMapping.ColumnMappings.Add("Numero", "Numero");
             tableMapping.ColumnMappings.Add("Bairro", "Bairro");
             tableMapping.ColumnMappings.Add("Cidade", "Cidade");
-            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("Nome", "Nome");
             tableMapping.ColumnMappings.Add("Cargo de Origem", "CargodeOrigem");
             tableMapping.ColumnMappings.Add("CargodeOrigem", "CargodeOrigem");
             tableMapping.ColumnMappings.Add("CargoAtual", "CargoAtual");
             tableMapping.ColumnMappings.Add("DatadeNascimento", "DatadeNascimento");
-            tableMapping.ColumnMappings.Add("TelefoneEscola", "TelefoneEscola");
-            tableMapping.ColumnMappings.Add("EmailEscola", "EmailEscola");
+            tableMapping.ColumnMappings.Add("CodigoFuncionario", "CodigoFuncionario");
+            tableMapping.ColumnMappings.Add("CodigoInstituicao", "CodigoInstituicao");
+            tableMapping.ColumnMappings.Add("Mantenedor", "Mantenedor");
+            tableMapping.ColumnMappings.Add("telefone", "telefone");
+            tableMapping.ColumnMappings.Add("Endereco", "Endereco");
+            tableMapping.ColumnMappings.Add("Cep", "Cep");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -27137,37 +27007,20 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[8];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[7];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Codigo, Nome, CPF, Instituicao, CargodeOrigem, CargoAtual, Autoriza" +
-                "cao, Telefone1, Telefone2, Email, Logradouro, Numero, Bairro, Cidade, DatadeNasc" +
-                "imento, TelefoneEscola, EmailEscola\r\nFROM            vw_funcionarios";
+            this._commandCollection[0].CommandText = "SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, " +
+                "Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, B" +
+                "airro, Cidade, Cep\r\nFROM            vw_funcionarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (Autorizacao LIKE @autor" +
-                "izacao)";
+            this._commandCollection[1].CommandText = @"SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, Bairro, Cidade, Cep
+FROM            vw_funcionarios
+WHERE        (CargoAtual LIKE @cargoAtual)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@autorizacao";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "Autorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (`CargoAtual` LIKE @carg" +
-                "oAtual)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cargoAtual";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -27175,13 +27028,13 @@ VALUES        (@nome, @sexo, @datanasc, @tipologra, @logradouro, @numresid, @com
             param.IsNullable = true;
             param.SourceColumn = "CargoAtual";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, DatadeNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone1, Telefone2, TelefoneEscola
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, Bairro, Cidade, Cep
 FROM            vw_funcionarios
 WHERE        (CargodeOrigem LIKE @cargoOrigem)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cargoOrigem";
             param.DbType = global::System.Data.DbType.String;
@@ -27190,13 +27043,14 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
             param.IsNullable = true;
             param.SourceColumn = "CargodeOrigem";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[3].Parameters.Add(param);
-            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (CPF LIKE @CPF)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, " +
+                "Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, B" +
+                "airro, Cidade, Cep\r\nFROM            vw_funcionarios\r\nWHERE        (CPF LIKE @CPF" +
+                ")";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@CPF";
             param.DbType = global::System.Data.DbType.String;
@@ -27205,14 +27059,13 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
             param.IsNullable = true;
             param.SourceColumn = "CPF";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (Instituicao LIKE @insti" +
-                "tuicao)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, Bairro, Cidade, Cep
+FROM            vw_funcionarios
+WHERE        (Instituicao LIKE @instituicao)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@instituicao";
             param.DbType = global::System.Data.DbType.String;
@@ -27221,13 +27074,14 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
             param.IsNullable = true;
             param.SourceColumn = "Instituicao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios WHERE (Nome LIKE @nome)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, " +
+                "Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, B" +
+                "airro, Cidade, Cep\r\nFROM            vw_funcionarios\r\nWHERE        (Nome LIKE @no" +
+                "me)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nome";
             param.DbType = global::System.Data.DbType.String;
@@ -27236,13 +27090,13 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
             param.IsNullable = true;
             param.SourceColumn = "Nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[6].Parameters.Add(param);
-            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT Autorizacao, Bairro, CPF, CargoAtual, CargodeOrigem, Cidade, Codigo, Datad" +
-                "eNascimento, Email, EmailEscola, Instituicao, Logradouro, Nome, Numero, Telefone" +
-                "1, Telefone2, TelefoneEscola FROM vw_funcionarios";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, Institu" +
+                "icao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, Bairro, " +
+                "Cidade, Cep\r\n FROM vw_funcionarios";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27273,25 +27127,8 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ds_siesc.vw_funcionariosDataTable GetDataByAutorizacao(string autorizacao) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((autorizacao == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(autorizacao));
-            }
-            ds_siesc.vw_funcionariosDataTable dataTable = new ds_siesc.vw_funcionariosDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable GetDataByCargoAtual(string cargoAtual) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((cargoAtual == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -27308,7 +27145,7 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable GetDataByCargoOrigem(string cargoOrigem) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((cargoOrigem == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -27325,7 +27162,7 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable GetDataByCPF(string CPF) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((CPF == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -27342,9 +27179,9 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable GetDataByInstituicao(string instituicao) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((instituicao == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("instituicao");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(instituicao));
@@ -27359,9 +27196,9 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable GetDataByNome(string nome) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((nome == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("nome");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nome));
@@ -27376,7 +27213,7 @@ WHERE        (CargodeOrigem LIKE @cargoOrigem)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_funcionariosDataTable listaTodos() {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             ds_siesc.vw_funcionariosDataTable dataTable = new ds_siesc.vw_funcionariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

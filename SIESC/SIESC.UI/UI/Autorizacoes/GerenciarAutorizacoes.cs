@@ -506,7 +506,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
                 if (!funcionario.Equals(null))
                 {
-                    CadastroFuncionario frmCadstrafuncionario = new CadastroFuncionario(funcionario,principalUi,txt_numautorizacao.Text);
+                    CadastroFuncionario frmCadstrafuncionario = new CadastroFuncionario(funcionario,principalUi);
 
                     frmCadstrafuncionario.MdiParent = principalUi;
 

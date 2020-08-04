@@ -151,6 +151,19 @@ namespace SIESC.BD.Control
 		}
 
 
+		public bool PesquisaAutorizacaoAtiva(int idFuncionario)
+		{
+			try
+			{
+				autorizacoes_TA = new autorizacoesTableAdapter();
+				return autorizacoes_TA.PesquisaAutorizacaoAtiva(idFuncionario) > 0 ;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
 		/// <summary>
 		/// Retorna o último ID da autorização
 		/// </summary>
