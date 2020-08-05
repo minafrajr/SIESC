@@ -6969,16 +6969,17 @@ WHERE        (StatusAutorizacao = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        CodigoFuncionario, Nome, Instituicao, Mantenedor, CargodeOrigem, Ca" +
-                "rgoAtual, telefone, Email, Cep, Endereco, Cidade, Bairro, CodigoInstituicao\r\nFRO" +
-                "M            vw_funcionarios\r\nWHERE        (CargoAtual = \'AUXILIAR ADMINISTRATIV" +
-                "O\')";
+            this._commandCollection[1].CommandText = @"SELECT        CodigoFuncionario, Nome, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Cep, Endereco, Cidade, Bairro, CodigoInstituicao
+FROM            vw_funcionarios
+WHERE        (CargoAtual = 'AUXILIAR ADMINISTRATIVO')
+ORDER BY Instituicao";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        CodigoFuncionario, Nome, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Cep, Endereco, Cidade, Bairro, CodigoInstituicao
 FROM            vw_funcionarios
-WHERE        (CargoAtual = 'AUXILIAR ADMINISTRATIVO') AND (Mantenedor = @mantenedor)";
+WHERE        (CargoAtual = 'AUXILIAR ADMINISTRATIVO') AND (Mantenedor = @mantenedor)
+ORDER BY Instituicao";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@mantenedor";
@@ -6990,10 +6991,10 @@ WHERE        (CargoAtual = 'AUXILIAR ADMINISTRATIVO') AND (Mantenedor = @mantene
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, " +
-                "Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, B" +
-                "airro, Cidade, Cep\r\nFROM            vw_funcionarios\r\nWHERE        (Mantenedor = " +
-                "@mantenedor)";
+            this._commandCollection[3].CommandText = @"SELECT        CodigoFuncionario, Nome, DatadeNascimento, CPF, CodigoInstituicao, Instituicao, Mantenedor, CargodeOrigem, CargoAtual, telefone, Email, Endereco, Bairro, Cidade, Cep
+FROM            vw_funcionarios
+WHERE        (Mantenedor = @mantenedor)
+ORDER BY Instituicao";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@mantenedor";

@@ -2305,9 +2305,9 @@ namespace SIESC.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsm_listarDiretoresMunicipais_Click(object sender, EventArgs e)
+        private void tsm_listarDiretoresCIM_Click(object sender, EventArgs e)
         {
-            GerarLista(4,1,true);
+            GerarLista(4,3,true);
         }
         /// <summary>
         /// Gera a lista de Diretoes de CIMS
