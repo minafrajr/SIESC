@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.rpt_viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.vw_ficha_solicitacaoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_ficha_solicitacaoTableAdapter();
             this.dsRelatorios1 = new SIESC.BD.DataSets.dsRelatorios();
+            this.vw_transporteTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_transporteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsRelatorios1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,14 +43,14 @@
             this.rpt_viewer.Size = new System.Drawing.Size(935, 557);
             this.rpt_viewer.TabIndex = 0;
             // 
-            // vw_ficha_solicitacaoTableAdapter1
-            // 
-            this.vw_ficha_solicitacaoTableAdapter1.ClearBeforeFill = true;
-            // 
             // dsRelatorios1
             // 
             this.dsRelatorios1.DataSetName = "dsRelatorios";
             this.dsRelatorios1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_transporteTableAdapter1
+            // 
+            this.vw_transporteTableAdapter1.ClearBeforeFill = true;
             // 
             // frm_encaminhamento_transporte
             // 
@@ -68,7 +68,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer rpt_viewer;
-        private BD.DataSets.dsRelatoriosTableAdapters.vw_ficha_solicitacaoTableAdapter vw_ficha_solicitacaoTableAdapter1;
         private BD.DataSets.dsRelatorios dsRelatorios1;
+        private BD.DataSets.dsRelatoriosTableAdapters.vw_transporteTableAdapter vw_transporteTableAdapter1;
     }
 }

@@ -34,9 +34,12 @@ namespace SIESC.UI.UI.Relatorios
         public frm_encaminhamento_transporte(int codigoSolicitacao)
         {
             InitializeComponent();
+            if (!vw_transporteTableAdapter1.HasIdSolicitacao(codigoSolicitacao).HasValue)
+                throw new Exception("O aluno selecionado não possui solicitação de transporte!");
+
             ConfiguraRelatorio();
 
-            _dtEncaminhaTransporte = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigoSolicitacao);
+            _dtEncaminhaTransporte = this.vw_transporteTableAdapter1.GetDataByIdSolicitacao(codigoSolicitacao);
 
             FinalizaRelatorio();
 

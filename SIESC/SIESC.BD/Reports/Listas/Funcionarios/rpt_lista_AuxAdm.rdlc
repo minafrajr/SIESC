@@ -99,13 +99,13 @@
                   <Width>1.11438cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.55397cm</Width>
+                  <Width>5.98273cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.84701cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.84701cm</Width>
+                  <Width>3.41826cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.84701cm</Width>
@@ -150,6 +150,7 @@
                             <WritingMode>Horizontal</WritingMode>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -338,7 +339,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -496,7 +496,10 @@
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
-                <TablixMember />
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
                 <TablixMember>
                   <Group Name="Detalhes" />
                 </TablixMember>
@@ -660,6 +663,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0cm</Top>
               <Left>15.32149cm</Left>
               <Height>0.6cm</Height>
               <Width>5.11938cm</Width>
