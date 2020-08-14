@@ -93,6 +93,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,6 +102,10 @@
             this.gpb_localizar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -159,8 +164,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel2.Controls.Add(this.dgv_solicitacoes);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1289, 628);
             this.splitContainer1.SplitterDistance = 267;
             this.splitContainer1.TabIndex = 33;
@@ -754,7 +758,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbl_num_registros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 3);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1289, 22);
             this.statusStrip1.TabIndex = 19;
@@ -775,9 +779,9 @@
             this.dgv_solicitacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_solicitacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_solicitacoes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_solicitacoes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_solicitacoes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgv_solicitacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_solicitacoes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_solicitacoes.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dgv_solicitacoes.Location = new System.Drawing.Point(0, 0);
@@ -787,11 +791,29 @@
             this.dgv_solicitacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_solicitacoes.ShowEditingIcon = false;
             this.dgv_solicitacoes.ShowRowErrors = false;
-            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 332);
+            this.dgv_solicitacoes.Size = new System.Drawing.Size(1289, 328);
             this.dgv_solicitacoes.TabIndex = 18;
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
             this.dgv_solicitacoes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseDoubleClick);
             this.dgv_solicitacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_solicitacoes_DataBindingComplete);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgv_solicitacoes);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.statusStrip1);
+            this.splitContainer2.Size = new System.Drawing.Size(1289, 357);
+            this.splitContainer2.SplitterDistance = 328;
+            this.splitContainer2.TabIndex = 20;
             // 
             // GerenciaSolicitacao
             // 
@@ -810,7 +832,6 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.gpb_sindicados.ResumeLayout(false);
@@ -820,6 +841,11 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -885,6 +911,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
+        private System.Windows.Forms.SplitContainer splitContainer2;
 
         private enum Localizar
         {
