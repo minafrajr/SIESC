@@ -117,7 +117,7 @@ namespace SIESC.WEB
 			{
 				
 				if (string.IsNullOrEmpty(origemLatitude) || string.IsNullOrEmpty(origemLongitude))
-					return 0;
+					return -1;
 
 				string json;
 				

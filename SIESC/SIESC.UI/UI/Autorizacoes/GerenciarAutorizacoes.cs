@@ -609,14 +609,17 @@ namespace SIESC.UI.UI.Autorizacoes
                 if (Mensageiro.MensagemPergunta($"Deseja Excluir a solicitação nº {txt_numautorizacao.Text}",principalUi).Equals(DialogResult.Yes))
                 {
                     controleAutorizacao = new AutorizacaoControl();
-                    if (controleAutorizacao.Excluir(
-                        Convert.ToInt16(dgv_autorizacoes[12,dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString()),
+                    
+             if (controleAutorizacao.Excluir(
+                        Convert.ToInt16(dgv_autorizacoes.CurrentRow.Cells["Codigo Funcionario"].Value.ToString()),
                         txt_numautorizacao.Text))
                     {
                         Mensageiro.MensagemConfirmaExclusao(principalUi);
 
-                        btn_localizar_Click(null,null);
+                        CarregaGridView();
+                        LimpaCampos();
                     }
+
                 }
             }
             catch (Exception ex)

@@ -93,8 +93,8 @@ namespace SIESC.BD.Control
 		/// <summary>
 		/// Exclui uma autorização do banco
 		/// </summary>
-		/// <param name="id"></param>
-		/// <param name="autorizacao"></param>
+		/// <param name="id">Id do funcionário</param>
+		/// <param name="autorizacao">Número de Autorização</param>
 		/// <returns>True - excluiu | False - não exluiu</returns>
 		public bool Excluir(int id, string autorizacao)
 		{

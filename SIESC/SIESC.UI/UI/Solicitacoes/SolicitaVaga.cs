@@ -1699,7 +1699,8 @@ namespace SIESC.UI.UI.Solicitacoes
 
             var distancia = Metrics.CalculaDistanciaCaminhando(solicitacao.Coordenadas[0],solicitacao.Coordenadas[1],coordEscola[0],coordEscola[1]);
 
-            _controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo,aluno.Id,solicitacao.InstituicaoEncaminhada,distancia);
+            _controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id,
+                    solicitacao.InstituicaoEncaminhada, distancia);
         }
 
 
