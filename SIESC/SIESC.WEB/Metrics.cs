@@ -128,10 +128,10 @@ namespace SIESC.WEB
 					parent = JsonConvert.DeserializeObject<Rootobject>(json);
 
 					if (parent.Equals(null))
-						throw new Exception("Não foram encontrados caminhos");
+						return -1;
 
-					if (parent.rows[0].elements[0].status.Equals("ZERO RESULTS"))
-						throw new Exception("Não foram encontrados caminhos");
+					if (parent.rows[0].elements[0].status.Equals("ZERO_RESULTS"))
+						return -1;
 
 
 					return parent.rows[0].elements[0].distance.value ;

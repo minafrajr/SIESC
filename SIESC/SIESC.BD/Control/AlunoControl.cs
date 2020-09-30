@@ -7,6 +7,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.MODEL.Classes;
 
@@ -39,7 +40,7 @@ namespace SIESC.BD.Control
 		///<param name="confirma">true - salvar | false - atualizar</param>
 		///<param name="aluno">O objeto aluno</param>
 		///<returns>true - para a operação feita corretamente</returns>
-		public bool Salvar(Aluno aluno, bool confirma)
+		public async Task<bool> Salvar(Aluno aluno, bool confirma)
 		{
 			try
 			{
@@ -47,7 +48,7 @@ namespace SIESC.BD.Control
 
 				if (confirma)
 				{
-					return
+					return 
 						(aluno_TA.Inserir(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
 							 aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia ) > 0);
 				}

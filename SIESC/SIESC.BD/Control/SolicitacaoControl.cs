@@ -6,6 +6,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using SIESC.MODEL;
@@ -41,13 +42,13 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="solicitacao"></param>
         /// <returns></returns>
-        public bool Salvar(Solicitacao solicitacao)
+        public async Task<bool> Salvar(Solicitacao solicitacao)
         {
             try
             {
                 solicitacao_TA = new solicitacoesvagasTableAdapter();
 
-                return
+                return 
                     (solicitacao_TA.Inserir(solicitacao.Aluno, solicitacao.InstituicaoSolicitada, solicitacao.DataSolicitacao,
                         solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem,
                         solicitacao.InstituicaoEncaminhada, solicitacao.DataEncaminhamento, solicitacao.Observacoes,

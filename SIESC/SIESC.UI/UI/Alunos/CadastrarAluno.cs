@@ -224,10 +224,11 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_salvar_Click(object sender,EventArgs e)
+        private async void btn_salvar_Click(object sender,EventArgs e)
         {
             try
             {
+                btn_salvar.Enabled = false;
                 if (!CamposObrigatoriosEmBranco(listaControlsObrigatorios))
                 {
                     throw new Exception("Existem campos obrigatórios sem preencher!");
@@ -238,11 +239,11 @@ namespace SIESC.UI.UI
 
                 if (string.IsNullOrEmpty(lbl_codigoAluno.Text))
                 {
-                    if (controleAluno.Salvar(aluno,true))
+                    if (await controleAluno.Salvar(aluno, true))
                     {
                         aluno.Id = controleAluno.PesquisaID(aluno);
 
-                        Mensageiro.MensagemAviso($"Aluno {aluno} foi salvo com sucesso!",this);
+                        Mensageiro.MensagemAviso($"Aluno {aluno} foi salvo com sucesso!", this);
 
                         LimpaControles();
                     }
@@ -251,9 +252,9 @@ namespace SIESC.UI.UI
                 {
                     aluno.Id = Convert.ToInt32(lbl_codigoAluno.Text);
 
-                    if (controleAluno.Salvar(aluno,false))
+                    if (await controleAluno.Salvar(aluno, false))
                     {
-                        Mensageiro.MensagemAviso($"Aluno {aluno} Código: {aluno.Id} foi atualizado com sucesso!",this);
+                        Mensageiro.MensagemAviso($"Aluno {aluno} Código: {aluno.Id} foi atualizado com sucesso!", this);
                         LimpaControles();
                     }
                 }
@@ -261,6 +262,10 @@ namespace SIESC.UI.UI
             catch (Exception exception)
             {
                 Mensageiro.MensagemErro(exception, principalUi);
+            }
+            finally
+            {
+                btn_salvar.Enabled = true;
             }
         }
 

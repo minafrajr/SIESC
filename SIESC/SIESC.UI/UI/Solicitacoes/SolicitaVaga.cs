@@ -14,6 +14,7 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SIESC.UI.ConsultaWeb;
@@ -652,11 +653,11 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_salvar_Click(object sender,EventArgs e)
+        private async void btn_salvar_Click(object sender,EventArgs e)
         {
             string tag = null;
 
-            var t = CarregaProgressoThread();
+            var t= CarregaProgressoThread();
 
             try
             {
@@ -677,13 +678,13 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
                     {
-                        _controleAluno.Salvar(alunoCriado,true); //salva o aluno no banco de dados 
+                        await _controleAluno.Salvar(alunoCriado,true); //salva o aluno no banco de dados 
                         alunoCriado.Id = _controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
                     }
                     else
                     {
                         alunoCriado.Id = Convert.ToInt32(txt_codigoAluno.Text); //repassa o id do aluno ao objeto aluno
-                        _controleAluno.Salvar(alunoCriado,false); //atualiza os dados do aluno no banco de dados 
+                       await _controleAluno.Salvar(alunoCriado,false); //atualiza os dados do aluno no banco de dados 
                     }
 
                     codInstituicaoOrigem = CriaInstituicaoOrigem();
@@ -692,7 +693,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     _controleSolicitacao = new SolicitacaoControl();
 
-                    if (_controleSolicitacao.Salvar(_solicitacao))
+                    if (await _controleSolicitacao.Salvar(_solicitacao))
                     {
                         _solicitacao.Codigo = Convert.ToInt32(_controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
 
@@ -1646,6 +1647,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private static Thread CarregaProgressoThread()
         {
             var progress = new Progresso();
+            
             var t = new Thread(progress.ShowDiag);
 
             t.Start();
