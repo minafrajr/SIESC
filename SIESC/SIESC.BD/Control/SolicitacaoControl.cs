@@ -42,7 +42,7 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="solicitacao"></param>
         /// <returns></returns>
-        public async Task<bool> Salvar(Solicitacao solicitacao)
+        public bool Salvar(Solicitacao solicitacao)
         {
             try
             {
