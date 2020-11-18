@@ -338,5 +338,15 @@ namespace SIESC.UI.UI.Zoneamento
         {
             Clipboard.SetText($"{lbl_latitude.Text},{lbl_longitude.Text}");
         }
+     
+        /// <summary>
+        /// Seleciona o texto quando se torna o controle ativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_cep_Click(object sender, EventArgs e)
+        {
+            msk_cep.SelectAll();
+        }
     }
 }
