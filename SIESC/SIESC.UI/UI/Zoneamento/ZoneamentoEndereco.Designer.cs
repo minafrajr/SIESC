@@ -32,9 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_copiar_coordenadas = new System.Windows.Forms.Button();
             this.btn_imprimir = new System.Windows.Forms.Button();
             this.btn_maps = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_aviso_coordenadas = new System.Windows.Forms.Label();
             this.lbl_latitude = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_longitude = new System.Windows.Forms.Label();
@@ -48,7 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nud_raioBusca = new System.Windows.Forms.NumericUpDown();
             this.gpb_endereço = new System.Windows.Forms.GroupBox();
-            this.lbl_aviso_coordenadas = new System.Windows.Forms.Label();
             this.btn_localizar_coord = new System.Windows.Forms.Button();
             this.cbo_bairro = new SIESC.UI.MyComboBox();
             this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -63,11 +64,11 @@
             this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.lbl_tipologradouro = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_zoneamento = new System.Windows.Forms.DataGridView();
             this.bairrosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.bairrosTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,8 +80,8 @@
             this.gpb_endereço.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bairrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -100,11 +101,12 @@
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_zoneamento);
             this.splitContainer1.Size = new System.Drawing.Size(984, 547);
-            this.splitContainer1.SplitterDistance = 187;
+            this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_copiar_coordenadas);
             this.panel1.Controls.Add(this.btn_imprimir);
             this.panel1.Controls.Add(this.btn_maps);
             this.panel1.Controls.Add(this.groupBox1);
@@ -113,20 +115,32 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.nud_raioBusca);
-            this.panel1.Location = new System.Drawing.Point(11, 102);
+            this.panel1.Location = new System.Drawing.Point(5, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 82);
+            this.panel1.Size = new System.Drawing.Size(976, 92);
             this.panel1.TabIndex = 44;
+            // 
+            // btn_copiar_coordenadas
+            // 
+            this.btn_copiar_coordenadas.Image = global::SIESC.UI.Properties.Resources.if_compass_24x24;
+            this.btn_copiar_coordenadas.Location = new System.Drawing.Point(749, 3);
+            this.btn_copiar_coordenadas.Name = "btn_copiar_coordenadas";
+            this.btn_copiar_coordenadas.Size = new System.Drawing.Size(119, 38);
+            this.btn_copiar_coordenadas.TabIndex = 49;
+            this.btn_copiar_coordenadas.Text = "Copiar Coord";
+            this.btn_copiar_coordenadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_copiar_coordenadas.UseVisualStyleBackColor = true;
+            this.btn_copiar_coordenadas.Click += new System.EventHandler(this.btn_copiar_coordenadas_Click);
             // 
             // btn_imprimir
             // 
             this.btn_imprimir.Image = global::SIESC.UI.Properties.Resources._9854_128x128;
-            this.btn_imprimir.Location = new System.Drawing.Point(883, 15);
+            this.btn_imprimir.Location = new System.Drawing.Point(874, 3);
             this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(65, 53);
+            this.btn_imprimir.Size = new System.Drawing.Size(95, 38);
             this.btn_imprimir.TabIndex = 48;
             this.btn_imprimir.Text = "Imprimir";
-            this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_imprimir.UseVisualStyleBackColor = true;
             this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
@@ -135,27 +149,41 @@
             this.btn_maps.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_maps.FlatAppearance.BorderSize = 3;
             this.btn_maps.Image = global::SIESC.UI.Properties.Resources.geofence_32;
-            this.btn_maps.Location = new System.Drawing.Point(829, 15);
+            this.btn_maps.Location = new System.Drawing.Point(749, 43);
             this.btn_maps.Name = "btn_maps";
-            this.btn_maps.Size = new System.Drawing.Size(48, 53);
+            this.btn_maps.Size = new System.Drawing.Size(80, 38);
             this.btn_maps.TabIndex = 47;
             this.btn_maps.Text = "Mapa";
-            this.btn_maps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_maps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_maps.UseVisualStyleBackColor = true;
             this.btn_maps.Click += new System.EventHandler(this.btn_maps_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_aviso_coordenadas);
             this.groupBox1.Controls.Add(this.lbl_latitude);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lbl_longitude);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(304, 17);
+            this.groupBox1.Font = new System.Drawing.Font("Candara", 11F);
+            this.groupBox1.Location = new System.Drawing.Point(263, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 50);
+            this.groupBox1.Size = new System.Drawing.Size(465, 72);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coordenadas";
+            // 
+            // lbl_aviso_coordenadas
+            // 
+            this.lbl_aviso_coordenadas.AutoSize = true;
+            this.lbl_aviso_coordenadas.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aviso_coordenadas.ForeColor = System.Drawing.Color.Red;
+            this.lbl_aviso_coordenadas.Location = new System.Drawing.Point(6, 42);
+            this.lbl_aviso_coordenadas.Name = "lbl_aviso_coordenadas";
+            this.lbl_aviso_coordenadas.Size = new System.Drawing.Size(309, 19);
+            this.lbl_aviso_coordenadas.TabIndex = 20;
+            this.lbl_aviso_coordenadas.Text = "Coordenadas localizadas somente pelo CEP. ";
+            this.lbl_aviso_coordenadas.Visible = false;
             // 
             // lbl_latitude
             // 
@@ -205,9 +233,9 @@
             this.btn_zonearAluno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_zonearAluno.FlatAppearance.BorderSize = 3;
             this.btn_zonearAluno.Image = global::SIESC.UI.Properties.Resources.coordinates32x32;
-            this.btn_zonearAluno.Location = new System.Drawing.Point(240, 9);
+            this.btn_zonearAluno.Location = new System.Drawing.Point(158, 28);
             this.btn_zonearAluno.Name = "btn_zonearAluno";
-            this.btn_zonearAluno.Size = new System.Drawing.Size(60, 59);
+            this.btn_zonearAluno.Size = new System.Drawing.Size(58, 53);
             this.btn_zonearAluno.TabIndex = 45;
             this.btn_zonearAluno.Text = "Zonear";
             this.btn_zonearAluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -219,16 +247,16 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.rdb_ed_infantil);
             this.panel3.Controls.Add(this.rdb_ens_fundamental);
-            this.panel3.Location = new System.Drawing.Point(3, 4);
+            this.panel3.Location = new System.Drawing.Point(3, 7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(121, 66);
+            this.panel3.Size = new System.Drawing.Size(127, 74);
             this.panel3.TabIndex = 44;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara", 11F);
-            this.label4.Location = new System.Drawing.Point(7, 5);
+            this.label4.Location = new System.Drawing.Point(7, 1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 18);
             this.label4.TabIndex = 2;
@@ -237,7 +265,7 @@
             // rdb_ed_infantil
             // 
             this.rdb_ed_infantil.AutoSize = true;
-            this.rdb_ed_infantil.Location = new System.Drawing.Point(6, 46);
+            this.rdb_ed_infantil.Location = new System.Drawing.Point(6, 50);
             this.rdb_ed_infantil.Name = "rdb_ed_infantil";
             this.rdb_ed_infantil.Size = new System.Drawing.Size(81, 18);
             this.rdb_ed_infantil.TabIndex = 1;
@@ -263,7 +291,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(123, 29);
+            this.label2.Location = new System.Drawing.Point(137, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 23);
             this.label2.TabIndex = 41;
@@ -274,7 +302,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(183, 29);
+            this.label5.Location = new System.Drawing.Point(197, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 23);
             this.label5.TabIndex = 43;
@@ -286,7 +314,7 @@
             this.nud_raioBusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nud_raioBusca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_raioBusca.ForeColor = System.Drawing.Color.Blue;
-            this.nud_raioBusca.Location = new System.Drawing.Point(173, 31);
+            this.nud_raioBusca.Location = new System.Drawing.Point(187, 7);
             this.nud_raioBusca.Maximum = new decimal(new int[] {
             8,
             0,
@@ -309,7 +337,6 @@
             // 
             // gpb_endereço
             // 
-            this.gpb_endereço.Controls.Add(this.lbl_aviso_coordenadas);
             this.gpb_endereço.Controls.Add(this.btn_localizar_coord);
             this.gpb_endereço.Controls.Add(this.cbo_bairro);
             this.gpb_endereço.Controls.Add(this._bairro);
@@ -328,18 +355,6 @@
             this.gpb_endereço.TabIndex = 6;
             this.gpb_endereço.TabStop = false;
             this.gpb_endereço.Text = "Endereço";
-            // 
-            // lbl_aviso_coordenadas
-            // 
-            this.lbl_aviso_coordenadas.AutoSize = true;
-            this.lbl_aviso_coordenadas.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aviso_coordenadas.ForeColor = System.Drawing.Color.Red;
-            this.lbl_aviso_coordenadas.Location = new System.Drawing.Point(407, 22);
-            this.lbl_aviso_coordenadas.Name = "lbl_aviso_coordenadas";
-            this.lbl_aviso_coordenadas.Size = new System.Drawing.Size(309, 19);
-            this.lbl_aviso_coordenadas.TabIndex = 20;
-            this.lbl_aviso_coordenadas.Text = "Coordenadas localizadas somente pelo CEP. ";
-            this.lbl_aviso_coordenadas.Visible = false;
             // 
             // btn_localizar_coord
             // 
@@ -491,6 +506,22 @@
             this.lbl_tipologradouro.TabIndex = 8;
             this.lbl_tipologradouro.Text = "Tipo Logradouro:";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 325);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
+            this.lbl_num_registros.Text = "Total de registros:";
+            // 
             // dgv_zoneamento
             // 
             this.dgv_zoneamento.AllowUserToAddRows = false;
@@ -526,22 +557,6 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_num_registros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 334);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lbl_num_registros
-            // 
-            this.lbl_num_registros.Name = "lbl_num_registros";
-            this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
-            this.lbl_num_registros.Text = "Total de registros:";
-            // 
             // ZoneamentoEndereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -565,9 +580,9 @@
             this.gpb_endereço.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bairrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_zoneamento)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -612,5 +627,6 @@
 		private System.Windows.Forms.Label lbl_aviso_coordenadas;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
+        private System.Windows.Forms.Button btn_copiar_coordenadas;
     }
 }

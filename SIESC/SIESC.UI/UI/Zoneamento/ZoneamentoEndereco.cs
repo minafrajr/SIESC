@@ -329,5 +329,14 @@ namespace SIESC.UI.UI.Zoneamento
         {
             lbl_num_registros.Text = $"Total de registros: {dgv_zoneamento.RowCount}";
         }
+        /// <summary>
+        /// Copia a latitude e longitude para a área de transferência
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_copiar_coordenadas_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText($"{lbl_latitude.Text},{lbl_longitude.Text}");
+        }
     }
 }

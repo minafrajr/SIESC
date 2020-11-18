@@ -533,6 +533,16 @@ namespace SIESC.UI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_compass_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("if_compass_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_location_718953 {
             get {
                 object obj = ResourceManager.GetObject("if_location_718953", resourceCulture);
