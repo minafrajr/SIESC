@@ -137,14 +137,17 @@ namespace SIESC.UI.UI.Zoneamento
                 //}
 
                 coordenadas = Zoneador.Georrefencia(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                lbl_aviso_coordenadas.Visible = true;
+                lbl_aviso_coordenadas.Text = "Coordenadas localizadas pelo SISGEO!";
+                lbl_aviso_coordenadas.ForeColor = Color.Navy;
 
                 if (coordenadas[0] == null || coordenadas[0].Equals("0"))
                 {
                     //Georreferencia o aluno pelo GOOGLE
                     coordenadas = Zoneador.Locate($"{txt_mumresidencia.Text}+{txt_logradouro.Text.Replace(" ","+")},+{cbo_bairro.Text.Replace(" ","+")},+betim,+brasil");
+                    lbl_aviso_coordenadas.Text = "Coordenadas localizadas pelo GOOGLE!";
+                    lbl_aviso_coordenadas.ForeColor = Color.Firebrick;
                 }
-
-                lbl_aviso_coordenadas.Visible = false;
 
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];
