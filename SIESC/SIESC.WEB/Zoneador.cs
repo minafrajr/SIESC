@@ -140,9 +140,9 @@ namespace SIESC.WEB
 			try
 			{
 				WebRequest request = WebRequest
-					.Create(
-						"https://maps.googleapis.com/maps/api/geocode/xml?address=@endereco&sensor=false&key="+Settings.Default.geocodeKey
-							.Replace("@endereco", endereco));
+					.Create($"https://maps.googleapis.com/maps/api/geocode/xml" +
+					        $"?address={endereco}" +
+					        $"&sensor=false&key={Settings.Default.geocodeKey}");
 
 				using (WebResponse response = request.GetResponse())
 				{
@@ -154,29 +154,27 @@ namespace SIESC.WEB
 
 						if (statusElement.Value == "OK")
 						{
-
 							XElement longitudeElement = document.Descendants("lng").FirstOrDefault();
 							XElement latitudeElement = document.Descendants("lat").FirstOrDefault();
 							
-							//XElement location_type = document.Descendants("location_type").First(); //se não quiser coordenada aproximada
-															
-							//if (location_type.Value != "APPROXIMATE") //se deixar
-							//{
+							XElement location_type = document.Descendants("location_type").First(); //se não quiser coordenada aproximada
+
+							if (location_type.Value != "APPROXIMATE") ///se não quiser coordenada aproximada
+							{
 								if (longitudeElement != null && latitudeElement != null)
 								{
 									coordenada[0] = latitudeElement.Value;
 									coordenada[1] = longitudeElement.Value;
 								}
-								else
-								{
-									coordenada[0] = string.Empty; //LATITUDE
-									coordenada[1] = string.Empty; //LONGITUDE
 							}
-							//}
+							else
+							{
+								coordenada[0] = "0"; //LATITUDE
+								coordenada[1] = "0"; //LONGITUDE
+							}
 						}
 					}
 				}
-				//	return coordenada;
 			}
 			catch (WebException exception)
 			{
