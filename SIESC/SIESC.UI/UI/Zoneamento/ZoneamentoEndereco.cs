@@ -1,7 +1,6 @@
 ﻿using SIESC.BD.Control;
 using SIESC.WEB;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
