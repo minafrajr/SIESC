@@ -351,5 +351,24 @@ namespace SIESC.UI.UI.Zoneamento
         {
             msk_cep.SelectAll();
         }
+        /// <summary>
+        /// Seleciona o texto quando se torna o controle ativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_mumresidencia_Enter(object sender, EventArgs e)
+        {
+            txt_mumresidencia.SelectAll();
+        }
+        /// <summary>
+        /// Seleciona o texto quando se torna o controle ativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_mumresidencia_Click(object sender, EventArgs e)
+        {
+            txt_mumresidencia.SelectAll();
+
+        }
     }
 }
