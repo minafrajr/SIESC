@@ -1,7 +1,6 @@
 ﻿using SIESC.BD.Control;
 using SIESC.WEB;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -12,7 +11,10 @@ using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Zoneamento
 {
-    public partial class ZoneamentoEndereco : SIESC.UI.base_UI
+    /// <summary>
+    /// Formulário para zoneamento a partir de um endereço qualquer
+    /// </summary>
+    public partial class ZoneamentoEndereco : base_UI
     {
         /// <summary>
         /// Array de coordenadas
@@ -22,16 +24,12 @@ namespace SIESC.UI.UI.Zoneamento
         /// <summary>
         /// Objeto de acesso ao banco
         /// </summary>
-        private ZoneamentoControl ZoneamentoControl;
-        /// <summary>
-        /// Lista de campos obrigatórios
-        /// </summary>
-        private List<Control> camposObrigatoriosList;
+        private ZoneamentoControl zoneamentoControl;
 
         /// <summary>
         /// 
         /// </summary>
-        private Bitmap memoryImage = null;
+        private Bitmap memoryImage;
 
         /// <summary>
         /// Construtor da classe
@@ -39,28 +37,19 @@ namespace SIESC.UI.UI.Zoneamento
         public ZoneamentoEndereco()
         {
             InitializeComponent();
-            AdicionaCamposObrigatorios();
             this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
             cbo_bairro.SelectedIndex = -1;
         }
         /// <summary>
         /// Construtor da classe
         /// </summary>
-        /// <param name="_cep">O Cep</param>
-        public ZoneamentoEndereco(string _cep)
+        /// <param name="cep">O Cep</param>
+        public ZoneamentoEndereco(string cep)
         {
             InitializeComponent();
-            AdicionaCamposObrigatorios();
-            msk_cep.Text = _cep;
+            msk_cep.Text = cep;
             btn_buscarcep_Click(null,null);
 
-        }
-        /// <summary>
-        /// Adiciona os campos obrigatorios para lista
-        /// </summary>
-        private void AdicionaCamposObrigatorios()
-        {
-            camposObrigatoriosList = new List<Control> { txt_logradouro,txt_mumresidencia,msk_cep,cbo_bairro };
         }
 
         /// <summary>
@@ -130,34 +119,31 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 LimpaGridView();
 
-                //foreach (Control control in camposObrigatoriosList)
-                //{
-                //if (string.IsNullOrEmpty(control.Text))
-                //    throw new Exception("Um dos campos de endereço está vazio");
-                //}
-
                 coordenadas = Zoneador.Georrefencia(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                lbl_aviso_coordenadas.Visible = true;
+                lbl_aviso_coordenadas.Text = $@"Coordenadas localizadas pelo SISGEO!";
+                lbl_aviso_coordenadas.ForeColor = Color.Navy;
 
                 if (coordenadas[0] == null || coordenadas[0].Equals("0"))
                 {
                     //Georreferencia o aluno pelo GOOGLE
                     coordenadas = Zoneador.Locate($"{txt_mumresidencia.Text}+{txt_logradouro.Text.Replace(" ","+")},+{cbo_bairro.Text.Replace(" ","+")},+betim,+brasil");
+                    lbl_aviso_coordenadas.Text = @"Coordenadas localizadas pelo GOOGLE!";
+                    lbl_aviso_coordenadas.ForeColor = Color.Firebrick;
                 }
-
-                lbl_aviso_coordenadas.Visible = false;
 
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];
 
-                ZoneamentoControl = new ZoneamentoControl();
+                zoneamentoControl = new ZoneamentoControl();
 
                 if (rdb_ens_fundamental.Checked)
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaEscolasEndereco(coordenadas[0],coordenadas[1],mantenedor: 1,raio: Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaEscolasEndereco(coordenadas[0],coordenadas[1],mantenedor: 1,raio: Convert.ToInt32(nud_raioBusca.Value));
                 }
                 else
                 {
-                    dgv_zoneamento.DataSource = ZoneamentoControl.RetornaCrechesEndereco(coordenadas[0],coordenadas[1],Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaCrechesEndereco(coordenadas[0],coordenadas[1],Convert.ToInt32(nud_raioBusca.Value));
                 }
 
                 for (int i = 0; i < dgv_zoneamento.Rows.Count; i++)
@@ -235,7 +221,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void printDocument1_PrintPage(object sender,System.Drawing.Printing.PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender,PrintPageEventArgs e)
         {
             //var image = new Bitmap(this.Width, this.Height);
             //var graphics = Graphics.FromImage(image);
@@ -327,7 +313,7 @@ namespace SIESC.UI.UI.Zoneamento
 
         private void dgv_zoneamento_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            lbl_num_registros.Text = $"Total de registros: {dgv_zoneamento.RowCount}";
+            lbl_num_registros.Text = $@"Total de registros: {dgv_zoneamento.RowCount}";
         }
         /// <summary>
         /// Copia a latitude e longitude para a área de transferência
@@ -347,6 +333,25 @@ namespace SIESC.UI.UI.Zoneamento
         private void msk_cep_Click(object sender, EventArgs e)
         {
             msk_cep.SelectAll();
+        }
+        /// <summary>
+        /// Seleciona o texto quando se torna o controle ativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_mumresidencia_Enter(object sender, EventArgs e)
+        {
+            txt_mumresidencia.SelectAll();
+        }
+        /// <summary>
+        /// Seleciona o texto quando se torna o controle ativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_mumresidencia_Click(object sender, EventArgs e)
+        {
+            txt_mumresidencia.SelectAll();
+
         }
     }
 }
