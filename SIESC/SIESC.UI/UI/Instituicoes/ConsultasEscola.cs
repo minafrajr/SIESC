@@ -72,7 +72,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ConsultasEscola_Load(object sender,EventArgs e)
+        private void ConsultasEscola_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'siescDataSet.mantenedor'. Você pode movê-la ou removê-la conforme necessário.
             this.mantenedorTableAdapter.Fill(this.siescDataSet.mantenedor);
@@ -98,7 +98,7 @@ namespace SIESC.UI.UI
 
                     lbl_nomeescola.Text = dt_escola.Rows[0]["nome"].ToString();
                     lbl_telefone.Text = dt_escola.Rows[0]["telefone"].ToString();
-                    lbl_endereco.Text = string.Format("{0} {1}, nº {2}. {3} - {4}",dt_escola.Rows[0]["tipologradouro"],dt_escola.Rows[0]["logradouro"],dt_escola.Rows[0]["numeroEdificio"],dt_escola.Rows[0]["complemento"],dt_escola.Rows[0]["Cep"]);
+                    lbl_endereco.Text = string.Format("{0} {1}, nº {2}. {3} - {4}", dt_escola.Rows[0]["tipologradouro"], dt_escola.Rows[0]["logradouro"], dt_escola.Rows[0]["numeroEdificio"], dt_escola.Rows[0]["complemento"], dt_escola.Rows[0]["Cep"]);
 
                     lbl_bairro.Text = dt_escola.Rows[0]["nomeBairro"].ToString();
                     lbl_regional.Text = dt_escola.Rows[0]["nomeRegional"].ToString();
@@ -144,7 +144,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                var dt_diretor = controleInstituicao.GetDiretorMunicipais(mantenedor,idInstituicao);
+                var dt_diretor = controleInstituicao.GetDiretorMunicipais(mantenedor, idInstituicao);
 
                 if (dt_diretor.Rows.Count > 0 && mantenedor != 0)
                 {
@@ -164,7 +164,7 @@ namespace SIESC.UI.UI
             catch (Exception ex)
             {
                 LimpaCamposDiretor();
-                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como DIRETOR.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descriçã do erro: {1}",Environment.NewLine,ex.Message));
+                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como DIRETOR.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descriçã do erro: {1}", Environment.NewLine, ex.Message));
             }
         }
 
@@ -194,7 +194,7 @@ namespace SIESC.UI.UI
                 else
                     lbl_secretario2.Text = "Secretario(a):";
 
-                var dt_secretario = controleInstituicao.GetSecretarioMunicipais(mantenedor,idescola);
+                var dt_secretario = controleInstituicao.GetSecretarioMunicipais(mantenedor, idescola);
 
                 if (dt_secretario.Rows.Count > 0 && mantenedor != 0)
                 {
@@ -209,7 +209,7 @@ namespace SIESC.UI.UI
             catch (Exception ex)
             {
                 LimpaCamposSecretario();
-                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como SECRETÁRIO.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descrição do erro: {1}",Environment.NewLine,ex.Message));
+                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como SECRETÁRIO.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descrição do erro: {1}", Environment.NewLine, ex.Message));
             }
         }
         /// <summary>
@@ -242,7 +242,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lstb_escolas_SelectedIndexChanged(object sender,EventArgs e)
+        private void lstb_escolas_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -256,7 +256,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
 
         }
@@ -268,7 +268,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_escolasmunicipais_CheckedChanged(object sender,EventArgs e)
+        private void rdb_escolasmunicipais_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
@@ -278,7 +278,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -287,7 +287,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_escolasestaduais_CheckedChanged(object sender,EventArgs e)
+        private void rdb_escolasestaduais_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
@@ -298,7 +298,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -306,18 +306,18 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_crechesconveniadas_CheckedChanged(object sender,EventArgs e)
+        private void rdb_crechesconveniadas_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes,mantenedor);//4 Infantil Conveniada
+                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, mantenedor);//4 Infantil Conveniada
 
                 lstb_escolas.Refresh();
                 lstb_escolas.Update();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -326,18 +326,18 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_crechemunicipal_CheckedChanged(object sender,EventArgs e)
+        private void rdb_crechemunicipal_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes,mantenedor);//3 Infantil Municipal
+                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, mantenedor);//3 Infantil Municipal
 
                 lstb_escolas.Refresh();
                 lstb_escolas.Update();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -345,18 +345,18 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_infantil_particular_CheckedChanged(object sender,EventArgs e)
+        private void rdb_infantil_particular_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes,mantenedor);//5 Infantil particular
+                this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, mantenedor);//5 Infantil particular
 
                 lstb_escolas.Refresh();
                 lstb_escolas.Update();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -364,7 +364,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_copiarEmail_Click(object sender,EventArgs e)
+        private void btn_copiarEmail_Click(object sender, EventArgs e)
         {
             try
             {
@@ -372,7 +372,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -381,7 +381,7 @@ namespace SIESC.UI.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_editarescola_Click(object sender,EventArgs e)
+        private void btn_editarescola_Click(object sender, EventArgs e)
         {
             try
             {
@@ -394,20 +394,20 @@ namespace SIESC.UI.UI
                         if (mdiChild.GetType() == typeof(CadastrarEscola))
                             mdiChild.Close();
                     }
-                    CadastrarEscola frm_cadastraescola = new CadastrarEscola(id.ToString(),principalUi);
+                    CadastrarEscola frm_cadastraescola = new CadastrarEscola(id.ToString(), principalUi);
                     frm_cadastraescola.MdiParent = principalUi;
                     frm_cadastraescola.Show();
                 }
                 else
-                    Mensageiro.MensagemPergunta("Não é possível editar os dados!\nSelecione uma escola!",principalUi);
+                    Mensageiro.MensagemPergunta("Não é possível editar os dados!\nSelecione uma escola!", principalUi);
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void btn_mapa_Click(object sender,EventArgs e)
+        private void btn_mapa_Click(object sender, EventArgs e)
         {
             try
             {
@@ -416,11 +416,11 @@ namespace SIESC.UI.UI
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
-        private void fillByToolStripButton_Click(object sender,EventArgs e)
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {

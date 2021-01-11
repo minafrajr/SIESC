@@ -120,7 +120,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!_localiza.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2020"))
+                if (!_localiza.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2021"))
                 {
                     controleSolicitacoes = new SolicitacaoControl();
 
@@ -230,7 +230,7 @@ namespace SIESC.UI.UI
         /// </summary>
         private void RepassaDadosControles()
         {
-            if (!cbo_anoreferencia.Text.Equals("2020")) return;
+            if (!cbo_anoreferencia.Text.Equals("2021")) return;
 
             controleSindicancia = new SindicanciaControl();
 

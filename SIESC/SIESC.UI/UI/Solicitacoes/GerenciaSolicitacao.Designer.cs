@@ -90,22 +90,22 @@
             this.rdb_mae = new System.Windows.Forms.RadioButton();
             this.rdb_nome = new System.Windows.Forms.RadioButton();
             this.rdb_codigo = new System.Windows.Forms.RadioButton();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.gpb_sindicados.SuspendLayout();
             this.gpb_localizar.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -308,6 +308,7 @@
             this.cbo_anoreferencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_anoreferencia.FormattingEnabled = true;
             this.cbo_anoreferencia.Items.AddRange(new object[] {
+            "2021",
             "2020",
             "2019",
             "2018",
@@ -754,22 +755,23 @@
             this.rdb_codigo.CheckedChanged += new System.EventHandler(this.rdb_codigo_CheckedChanged);
             this.rdb_codigo.Click += new System.EventHandler(this.rdb_codigo_Click);
             // 
-            // statusStrip1
+            // splitContainer2
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_num_registros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 3);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1289, 22);
-            this.statusStrip1.TabIndex = 19;
-            this.statusStrip1.Text = "statusStrip1";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // lbl_num_registros
+            // splitContainer2.Panel1
             // 
-            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
-            this.lbl_num_registros.Name = "lbl_num_registros";
-            this.lbl_num_registros.Size = new System.Drawing.Size(102, 17);
-            this.lbl_num_registros.Text = "Total de registros: ";
+            this.splitContainer2.Panel1.Controls.Add(this.dgv_solicitacoes);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.statusStrip1);
+            this.splitContainer2.Size = new System.Drawing.Size(1289, 357);
+            this.splitContainer2.SplitterDistance = 328;
+            this.splitContainer2.TabIndex = 20;
             // 
             // dgv_solicitacoes
             // 
@@ -797,23 +799,22 @@
             this.dgv_solicitacoes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseDoubleClick);
             this.dgv_solicitacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_solicitacoes_DataBindingComplete);
             // 
-            // splitContainer2
+            // statusStrip1
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 3);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1289, 22);
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // splitContainer2.Panel1
+            // lbl_num_registros
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dgv_solicitacoes);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.statusStrip1);
-            this.splitContainer2.Size = new System.Drawing.Size(1289, 357);
-            this.splitContainer2.SplitterDistance = 328;
-            this.splitContainer2.TabIndex = 20;
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(102, 17);
+            this.lbl_num_registros.Text = "Total de registros: ";
             // 
             // GerenciaSolicitacao
             // 
@@ -838,14 +839,14 @@
             this.gpb_sindicados.PerformLayout();
             this.gpb_localizar.ResumeLayout(false);
             this.gpb_localizar.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
