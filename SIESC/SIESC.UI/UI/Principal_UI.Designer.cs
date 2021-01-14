@@ -172,8 +172,8 @@
             this.municipaisToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_listarEscolas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_listarDiretoresEscolas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_OfertaAnoEnsinoEscolas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_listarSecretarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_OfertaAnoEnsinoEscolas = new System.Windows.Forms.ToolStripMenuItem();
             this.estaduaisToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_listarEscolasEstaduais = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_ofertaAnoEnsinoEstaduais = new System.Windows.Forms.ToolStripMenuItem();
@@ -1448,30 +1448,30 @@
             // tsm_listarEscolas
             // 
             this.tsm_listarEscolas.Name = "tsm_listarEscolas";
-            this.tsm_listarEscolas.Size = new System.Drawing.Size(180, 22);
+            this.tsm_listarEscolas.Size = new System.Drawing.Size(172, 22);
             this.tsm_listarEscolas.Text = "Listar Escolas";
             this.tsm_listarEscolas.Click += new System.EventHandler(this.tsm_listarEscolas_Click);
             // 
             // tsm_listarDiretoresEscolas
             // 
             this.tsm_listarDiretoresEscolas.Name = "tsm_listarDiretoresEscolas";
-            this.tsm_listarDiretoresEscolas.Size = new System.Drawing.Size(180, 22);
+            this.tsm_listarDiretoresEscolas.Size = new System.Drawing.Size(172, 22);
             this.tsm_listarDiretoresEscolas.Text = "Listar Diretores";
             this.tsm_listarDiretoresEscolas.Click += new System.EventHandler(this.tsm_listarDiretoresEscolas_Click);
-            // 
-            // tsm_OfertaAnoEnsinoEscolas
-            // 
-            this.tsm_OfertaAnoEnsinoEscolas.Name = "tsm_OfertaAnoEnsinoEscolas";
-            this.tsm_OfertaAnoEnsinoEscolas.Size = new System.Drawing.Size(180, 22);
-            this.tsm_OfertaAnoEnsinoEscolas.Text = "Oferta Ano-Ensino";
-            this.tsm_OfertaAnoEnsinoEscolas.Click += new System.EventHandler(this.tsm_OfertaAnoEnsinoEscolas_Click);
             // 
             // tsm_listarSecretarios
             // 
             this.tsm_listarSecretarios.Name = "tsm_listarSecretarios";
-            this.tsm_listarSecretarios.Size = new System.Drawing.Size(180, 22);
+            this.tsm_listarSecretarios.Size = new System.Drawing.Size(172, 22);
             this.tsm_listarSecretarios.Text = "Listar Secretários";
             this.tsm_listarSecretarios.Click += new System.EventHandler(this.tsm_listarSecretarios_Click);
+            // 
+            // tsm_OfertaAnoEnsinoEscolas
+            // 
+            this.tsm_OfertaAnoEnsinoEscolas.Name = "tsm_OfertaAnoEnsinoEscolas";
+            this.tsm_OfertaAnoEnsinoEscolas.Size = new System.Drawing.Size(172, 22);
+            this.tsm_OfertaAnoEnsinoEscolas.Text = "Oferta Ano-Ensino";
+            this.tsm_OfertaAnoEnsinoEscolas.Click += new System.EventHandler(this.tsm_OfertaAnoEnsinoEscolas_Click);
             // 
             // estaduaisToolStripMenuItem2
             // 
@@ -2015,7 +2015,7 @@
 		private System.Windows.Forms.ToolStripMenuItem tsm_listarSecretarios;
 		private System.Windows.Forms.ToolStripMenuItem tsm_listarAuxiliaresAdmsCims;
 		private System.Windows.Forms.ToolStripMenuItem tsm_listarAuxiliaresAdmsParceiras;
-	}
+    }
 }
 
 
