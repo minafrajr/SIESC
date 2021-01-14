@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
@@ -16,33 +17,55 @@ namespace SIESC.UI.UI.Solicitacoes
     /// </summary>
     public partial class GerenciaSindicancia : SIESC.UI.base_UI
     {
+        /// <summary>
+        /// Objeto da UI da tela principal do sistema
+        /// </summary>
         private Principal_UI principalUi;
-
+        /// <summary>
+        /// Enum do tipo de consulta
+        /// </summary>
         private TipoConsulta tipoConsulta;
-
+        /// <summary>
+        /// Objeto de acesso ao banco de dados 
+        /// </summary>
         private SindicanciaControl sindicanciaControl;
-
+        /// <summary>
+        /// Objeto sindicância
+        /// </summary>
         private Sindicancia sindicancia;
-
+        /// <summary>
+        /// Objeto de acesso ao banco de dados
+        /// </summary>
         private SolicitacaoControl solicitacaoControl;
-
+        /// <summary>
+        /// Lista de solicitações com possibilidade de sindicancia
+        /// </summary>
         private List<Sindicancia> listaOfSindicancias;
 
-
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
+        /// <param name="principal"></param>
         public GerenciaSindicancia(Principal_UI principal)
         {
             InitializeComponent();
             listaOfSindicancias = new List<Sindicancia>();
             principalUi = principal;
         }
-
-        private void GerenciaSindicancia_Load(object sender,EventArgs e)
+        /// <summary>
+        /// Evento load do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GerenciaSindicancia_Load(object sender, EventArgs e)
         {
             tipoConsulta = TipoConsulta.geral;
             AtualizaUltimaSindicancia();
             CarregaGridView();
         }
-
+        /// <summary>
+        /// Atualiza a última solicitação de vaga quer foi analisada para a sindicância
+        /// </summary>
         private void AtualizaUltimaSindicancia()
         {
             try
@@ -53,30 +76,46 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-
-                Mensageiro.MensagemErro(ex.Message,principalUi);
+                Mensageiro.MensagemErro(ex.Message, principalUi);
             }
         }
-
-        private void cbo_regionais_DropDown(object sender,EventArgs e)
+        /// <summary>
+        /// Carrega o controle DropDownBox com as regionais
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbo_regionais_DropDown(object sender, EventArgs e)
         {
             this.regionaisTableAdapter.Fill(this.siescDataSet.regionais);
 
         }
-
-        private void cbo_anoensino_DropDown(object sender,EventArgs e)
+        /// <summary>
+        /// Carrega o controle DropDownBox com os anos de ensino
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbo_anoensino_DropDown(object sender, EventArgs e)
         {
             this.anoTableAdapter.FillByFundamental(this.siescDataSet.ano);
 
         }
-
-        private void cbo_escola_DropDown(object sender,EventArgs e)
+        /// <summary>
+        /// Carrega o controle DropDownBox com as escolas municipais
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbo_escola_DropDown(object sender, EventArgs e)
         {
             this.instituicoesTableAdapter.FillByMunicipais(this.siescDataSet.instituicoes);
 
         }
-
-        private void DefineConsulta(bool regional,bool ano,bool escola)
+        /// <summary>
+        /// Define o tipo de consulta
+        /// </summary>
+        /// <param name="regional"></param>
+        /// <param name="ano"></param>
+        /// <param name="escola"></param>
+        private void DefineConsulta(bool regional, bool ano, bool escola)
         {
             if (regional && ano && escola)
             {
@@ -118,7 +157,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 tipoConsulta = TipoConsulta.regional_escola;
             }
         }
-
+        /// <summary>
+        /// Carrega a GridView com as sindicancias
+        /// </summary>
         private async void CarregaGridView()
         {
             try
@@ -126,7 +167,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 DataTable dt = null;
                 sindicanciaControl = new SindicanciaControl();
 
-                DefineConsulta(cbo_regionais.SelectedValue != null,cbo_anoensino.SelectedValue != null,
+                DefineConsulta(cbo_regionais.SelectedValue != null, cbo_anoensino.SelectedValue != null,
                     cbo_escola.SelectedValue != null);
 
                 switch (tipoConsulta)
@@ -134,73 +175,75 @@ namespace SIESC.UI.UI.Solicitacoes
                     case TipoConsulta.ano:
                         if (cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByAnoEnsino(cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.escola:
                         if (cbo_escola.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByInstituicao(cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByInstituicao(cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.regional:
                         if (cbo_regionais.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegional(cbo_regionais.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegional(cbo_regionais.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.geral:
 
-                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
 
                         break;
                     case TipoConsulta.regional_ano:
                         if (cbo_regionais.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegionalAnoEnsino(cbo_regionais.SelectedValue.ToString(),cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegionalAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.regional_escola:
                         if (cbo_escola.SelectedValue != null && cbo_regionais.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.escola_ano:
                         if (cbo_escola.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByInstituicaoAnoEnsino(cbo_escola.SelectedValue.ToString(),cbo_anoensino.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByInstituicaoAnoEnsino(cbo_escola.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         }
 
                         break;
                     case TipoConsulta.regional_ano_escola:
 
-                        dt = sindicanciaControl.GetByRegionalInstituicaoAnoEnsino(cbo_regionais.SelectedValue.ToString(),cbo_anoensino.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),rdb_sindicadas.Checked,(int)nupd_cod_solicitacao.Value);
+                        dt = sindicanciaControl.GetByRegionalInstituicaoAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
                         break;
                 }
 
                 dgv_dados.DataSource = dt;
 
                 dgv_dados.Refresh();
-
-               
             }
             catch (NullReferenceException ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
-
-       private void btn_concluir_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento do botão concluir a sindicancia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_concluir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -208,26 +251,30 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
             finally
             {
                 CarregaGridView();
-
             }
         }
-
+        /// <summary>
+        /// Rotina para conclusão da sindicância
+        /// </summary>
         private void ConcluirSindicancia()
         {
             sindicancia = CriarSindicancia();
 
-            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia,principalUi);
+            ConcluirSindicancia frm_concluirSindicancia = new ConcluirSindicancia(sindicancia, principalUi);
 
             frm_concluirSindicancia.ShowDialog();
 
-            RadioButtonChecked_Click(null,null);
+            RadioButtonChecked_Click(null, null);
         }
-
+        /// <summary>
+        /// Cria uma nova sindicância
+        /// </summary>
+        /// <returns></returns>
         private Sindicancia CriarSindicancia()
         {
             try
@@ -239,23 +286,23 @@ namespace SIESC.UI.UI.Solicitacoes
                 _sindicancia.codigoAluno = (int)dgv_dados.CurrentRow.Cells["idSindicado"].Value;
 
                 _sindicancia.motivoSindicancia = dgv_dados.CurrentRow.Cells["MotivoSindicancia"].Value.ToString();
-                
+
                 _sindicancia.origemSindicancia = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
-                
-                if(!_sindicancia.origemSindicancia.Equals("CADASTRO"))
+
+                if (!_sindicancia.origemSindicancia.Equals("CADASTRO"))
                     _sindicancia.codigoSolicitacao = (int)dgv_dados.CurrentRow.Cells["idSolicitacao"].Value;
-                
+
                 _sindicancia.nomeSindicado = dgv_dados.CurrentRow.Cells["NomeAluno"].Value.ToString();
                 _sindicancia.observacoes = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
 
                 _sindicancia.origemSindicancia = dgv_dados.CurrentRow.Cells["OrigemSindicancia"].Value.ToString();
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(),out var endereco))
-                    _sindicancia.enderecoConfirmado = (bool?) dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value;
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(), out var endereco))
+                    _sindicancia.enderecoConfirmado = (bool?)dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value;
 
                 if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(),
                     out bool finalizada))
-                    _sindicancia.sindicanciaFinalizada = (bool?) dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value;
+                    _sindicancia.sindicanciaFinalizada = (bool?)dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value;
 
                 _sindicancia.dataSindicancia = dgv_dados.CurrentRow.Cells["DataSindicancia"].Value as DateTime? == null ? null : (DateTime?)dgv_dados.CurrentRow.Cells["DataSindicancia"].Value;
                 _sindicancia.usuarioResponsavel = dgv_dados.CurrentRow.Cells["UsuarioResponsavel"].Value.ToString();
@@ -263,18 +310,18 @@ namespace SIESC.UI.UI.Solicitacoes
                 _sindicancia.EnderecoCompleto = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
                 _sindicancia.usuarioFinalizacao = dgv_dados.CurrentRow.Cells["UsuarioFinalizou"].Value.ToString();
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(),out bool pendente))
-                    _sindicancia.sindicanciaPendente = (bool?) dgv_dados.CurrentRow.Cells["Pendente"].Value;
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(), out bool pendente))
+                    _sindicancia.sindicanciaPendente = (bool?)dgv_dados.CurrentRow.Cells["Pendente"].Value;
 
                 return _sindicancia;
             }
             catch (ArgumentNullException ex)
             {
-                Mensageiro.MensagemAviso(ex.Message + " \n " + ex.StackTrace,principalUi);
+                Mensageiro.MensagemAviso(ex.Message + " \n " + ex.StackTrace, principalUi);
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,principalUi);
+                Mensageiro.MensagemErro(exception, principalUi);
             }
 
             return null;
@@ -284,7 +331,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_sindicar_Click(object sender,EventArgs e)
+        private void btn_sindicar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -301,14 +348,16 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 LimpaCombos();
                 AtualizaUltimaSindicancia();
-                RadioButtonChecked_Click(sender,e);
+                RadioButtonChecked_Click(sender, e);
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
+        /// <summary>
+        /// Limpa as seleções das ComboBox
+        /// </summary>
         private void LimpaCombos()
         {
             foreach (MyComboBox combo in gpb_filtros_de_busca.Controls.OfType<MyComboBox>())
@@ -323,7 +372,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="habilita">Controle dos sindicados</param>
         /// <param name="busca">Controles dos filtros de busca</param>
         /// <param name="sindicados">Detalhes dos sindicados</param>
-        private void HabilitarContoles(bool habilita,bool busca,bool sindicados)
+        private void HabilitarContoles(bool habilita, bool busca, bool sindicados)
         {
             chk_finalizadas.Visible = chk_pendentes.Visible = habilita;
             btn_concluir.Enabled = habilita;
@@ -350,7 +399,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void chk_pendentes_ou_finalizadas_CheckedCanged(object sender,EventArgs e)
+        private void chk_pendentes_ou_finalizadas_CheckedCanged(object sender, EventArgs e)
         {
             dgv_dados.DataSource = null;
             PendentesOuFinalizadas();
@@ -378,7 +427,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
 
         }
@@ -388,7 +437,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_localizar_Click(object sender,EventArgs e)
+        private void btn_localizar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -412,26 +461,38 @@ namespace SIESC.UI.UI.Solicitacoes
                     CarregaGridViewByIdSolicitacao(txt_codigo.Text);
                 }
 
-                if (rdb_nao_sindicadas.Checked || rdb_sindicadas.Checked) 
+                if (rdb_nao_sindicadas.Checked || rdb_sindicadas.Checked)
                     CarregaGridView();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
-        private void btn_cancel_regional_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento para cancelara seleção da regional
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cancel_regional_Click(object sender, EventArgs e)
         {
             cbo_regionais.SelectedIndex = -1;
         }
-
-        private void btn_cancel_ano_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento para cancelara seleção do ano de ensino
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cancel_ano_Click(object sender, EventArgs e)
         {
             cbo_anoensino.SelectedValue = -1;
         }
-
-        private void btn_cancel_escola_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento para cancelara seleção da escola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cancel_escola_Click(object sender, EventArgs e)
         {
             cbo_escola.SelectedValue = -1;
 
@@ -441,7 +502,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_dados_CellContentClick(object sender,DataGridViewCellEventArgs e)
+        private void dgv_dados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -467,30 +528,34 @@ namespace SIESC.UI.UI.Solicitacoes
                             listaOfSindicancias.Remove(sindicado);
                             return;
                         }
-                        
+
                         var solicitacaoControl = new SolicitacaoControl();
 
-                         var solicitacao =  solicitacaoControl.RetornaSolicitacao(codigoSolicitacao);
-                         var sindicancia = ConverteSindicancia(solicitacao);
-                         sindicancia.codigoAluno = (int) dgv_dados.CurrentRow.Cells["idAluno"].Value;
+                        var solicitacao = solicitacaoControl.RetornaSolicitacao(codigoSolicitacao);
+                        var sindicancia = ConverteSindicancia(solicitacao);
+                        sindicancia.codigoAluno = (int)dgv_dados.CurrentRow.Cells["idAluno"].Value;
 
-                         listaOfSindicancias.Add(sindicancia);
+                        listaOfSindicancias.Add(sindicancia);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
+        /// <summary>
+        /// Converte uma solicitação para uma sindicância
+        /// </summary>
+        /// <param name="solicitacao"></param>
+        /// <returns>Objeto Sindicância</returns>
         private Sindicancia ConverteSindicancia(Solicitacao solicitacao)
         {
             Sindicancia sindicancia = new Sindicancia()
             {
                 codigoAluno = solicitacao.Aluno,
                 origemSindicancia = "SOLICITAÇÃO",
-                Bairro =solicitacao.Bairro,
+                Bairro = solicitacao.Bairro,
                 Cep = solicitacao.Cep,
                 Complemento = solicitacao.Complemento,
                 Coordenadas = solicitacao.Coordenadas,
@@ -505,13 +570,45 @@ namespace SIESC.UI.UI.Solicitacoes
                 nomeSindicado = dgv_dados.CurrentRow.Cells["nome"].Value.ToString(),
                 codigoSolicitacao = solicitacao.Codigo,
                 usuarioResponsavel = principalUi.user.nomeusuario,
-                dataSindicancia = solicitacao.DataSolicitacao
+                dataSindicancia = solicitacao.DataSolicitacao,
+                dataSolicitacao = solicitacao.DataSolicitacao,
+
             };
+
+            sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
+            sindicancia.distanciaEscolaEncaminhada = CalculaDistanciaEscola(sindicancia.Coordenadas, (int)sindicancia.instituicaoEncaminhada);
 
             return sindicancia;
         }
 
-        private void dgv_dados_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
+        private int CalculaDistanciaEscola(string[] sindicanciaCoordenadas, int idInstituicao)
+        {
+            if (idInstituicao <= 0)
+                return 0;
+
+            int distancia = 0;
+            try
+            {
+                InstituicaoControl instituicaoControl = new InstituicaoControl();
+
+                string[] coordenadasEscola = instituicaoControl.RetornaCoordenasInstituicao(idInstituicao);
+
+                distancia = Metrics.CalculaDistanciaCaminhando(sindicanciaCoordenadas[0], sindicanciaCoordenadas[1],
+                    coordenadasEscola[0], coordenadasEscola[1]);
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, principalUi);
+            }
+            return distancia;
+        }
+
+        /// <summary>
+        /// Evento de seleção da gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_dados_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (rdb_nao_sindicadas.Checked)
             {
@@ -520,7 +617,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_endereco.Text = dgv_dados.CurrentRow.Cells["Endereco"].Value.ToString();
                 txt_instituicao_solicitada.Text = dgv_dados.CurrentRow.Cells["escolasolicitada"].Value.ToString();
                 txt_ano_ensino.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
-                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["anosolicitado"].Value.ToString();
+                txt_instituicao_encaminhada.Text = dgv_dados.CurrentRow.Cells["escolaencaminhada"].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
                 txt_comprovante_endereco.Text =
                     $@"{dgv_dados.CurrentRow.Cells["Comprovante"].Value} - {
@@ -539,10 +636,10 @@ namespace SIESC.UI.UI.Solicitacoes
                     dgv_dados.CurrentRow.Cells["InstituicaoEncaminhada"].Value.ToString();
                 txt_datasolicitacao.Text = dgv_dados.CurrentRow.Cells["DataSolicitacao"].Value.ToString();
                 txt_observacoes.Text = dgv_dados.CurrentRow.Cells["Observacoes"].Value.ToString();
-                
+
                 bool finalizada, pendente, endereco;
-                
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(),out finalizada))
+
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["SindicanciaFinalizada"].Value.ToString(), out finalizada))
                 {
                     if (finalizada)
                     {
@@ -558,7 +655,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_finalizada.ForeColor = Color.DarkRed;
                 }
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(),out endereco))
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["EnderecoComprovado"].Value.ToString(), out endereco))
                 {
                     if (endereco)
                     {
@@ -577,7 +674,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     lbl_endereco_comprovado.ForeColor = Color.Peru;
                 }
 
-                if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(),out pendente))
+                if (bool.TryParse(dgv_dados.CurrentRow.Cells["Pendente"].Value.ToString(), out pendente))
                 {
                     if (pendente)
                     {
@@ -645,7 +742,10 @@ namespace SIESC.UI.UI.Solicitacoes
 
             dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
         }
-
+        /// <summary>
+        ///  Carrega da GridView conforme o nome do aluno
+        /// </summary>
+        /// <param name="nomeAluno"></param>
         private void CarregaGridViewByNomeAluno(string nomeAluno)
         {
             solicitacaoControl = new SolicitacaoControl();
@@ -654,21 +754,21 @@ namespace SIESC.UI.UI.Solicitacoes
 
             dgv_dados.DataSource = dt;
 
-            dgv_dados.Sort(dgv_dados.Columns[2],ListSortDirection.Ascending);
+            dgv_dados.Sort(dgv_dados.Columns[2], ListSortDirection.Ascending);
 
             dgv_dados.Refresh();
 
             dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
         }
 
-        private void RadioButtonChecked_Click(object sender,EventArgs e)
+        private void RadioButtonChecked_Click(object sender, EventArgs e)
         {
             if (rdb_nao_sindicadas.Checked)
             {
 
                 txt_codigo.Enabled = txt_nomealuno.Enabled = false;
 
-                HabilitarContoles(false,true,false);
+                HabilitarContoles(false, true, false);
 
                 AcrescentarColunaSindicar(true);
 
@@ -687,7 +787,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 LimparCampos();
 
-                HabilitarContoles(true,true,true);
+                HabilitarContoles(true, true, true);
 
                 AcrescentarColunaSindicar(false);
 
@@ -701,7 +801,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 LimparCampos();
                 AcrescentarColunaSindicar(true);
-                HabilitarContoles(false,false,false);
+                HabilitarContoles(false, false, false);
 
                 dgv_dados.DataSource = null;
                 txt_codigo.Enabled = true;
@@ -712,7 +812,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 LimparCampos();
                 AcrescentarColunaSindicar(true);
-                HabilitarContoles(false,false,false);
+                HabilitarContoles(false, false, false);
 
                 dgv_dados.DataSource = null;
                 txt_nomealuno.Enabled = true;
@@ -720,6 +820,10 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
+        /// <summary>
+        /// Acrescenta a coluna Sindicar na Gridview
+        /// </summary>
+        /// <param name="acrescentar"></param>
         private void AcrescentarColunaSindicar(bool acrescentar)
         {
             if (acrescentar)//adiciona um check box na primeira coluna 
@@ -743,41 +847,55 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
             }
         }
-
-        private void chk_pendentes_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento click do checkbox pendentes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chk_pendentes_Click(object sender, EventArgs e)
         {
             chk_finalizadas.Checked = !chk_pendentes.Checked;
         }
-
-        private void chk_finalizadas_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento click do checkbox finalizada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chk_finalizadas_Click(object sender, EventArgs e)
         {
             chk_pendentes.Checked = !chk_finalizadas.Checked;
-
         }
-
-        private void btn_excluir_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento do botão excluir 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_excluir_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Mensageiro.MensagemExclusao($"solicitação nº {(int)dgv_dados.CurrentRow.Cells[1].Value}",principalUi).Equals(DialogResult.Yes))
+                if (Mensageiro.MensagemExclusao($"solicitação nº {(int)dgv_dados.CurrentRow.Cells[1].Value}", principalUi).Equals(DialogResult.Yes))
                 {
                     sindicanciaControl = new SindicanciaControl();
                     if (sindicanciaControl.ExcluirSindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,
                         (int)dgv_dados.CurrentRow.Cells[1].Value))
                     {
                         Mensageiro.MensagemConfirmaExclusao(principalUi);
-                        RadioButtonChecked_Click(null,null);
+                        RadioButtonChecked_Click(null, null);
                     }
                 }
-
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
-        private void dgv_dados_CellMouseDoubleClick(object sender,DataGridViewCellMouseEventArgs e)
+        /// <summary>
+        /// Evento de double click da GridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_dados_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
@@ -788,30 +906,42 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
-        private void btn_imprimir_ficha_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evneto do botão imprimir ficha de sindicância
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_imprimir_ficha_Click(object sender, EventArgs e)
         {
             int.TryParse(dgv_dados.CurrentRow.Cells[2].Value.ToString(), out int idSolicitacao);
-                
-           //if (!dgv_dados.CurrentRow.Cells[2].Value.Equals(null)) 
-           //    idSolicitacao = (int) dgv_dados.CurrentRow.Cells[2].Value;
+
+            //if (!dgv_dados.CurrentRow.Cells[2].Value.Equals(null)) 
+            //    idSolicitacao = (int) dgv_dados.CurrentRow.Cells[2].Value;
 
             int? idSindicado = null;
-            idSindicado = (int?) dgv_dados.CurrentRow.Cells[1].Value;
+            idSindicado = (int?)dgv_dados.CurrentRow.Cells[1].Value;
 
-           frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value,idSolicitacao, idSindicado) { MdiParent = principalUi };
+            frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value, idSolicitacao, idSindicado) { MdiParent = principalUi };
             fichaSindicancia.Show();
         }
-
-        private void GerenciaSindicancia_Enter(object sender,EventArgs e)
+        /// <summary>
+        /// Evento enter do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GerenciaSindicancia_Enter(object sender, EventArgs e)
         {
-            RadioButtonChecked_Click(sender,e);
+            RadioButtonChecked_Click(sender, e);
         }
 
-     
+        /// <summary>
+        /// Evento de finalização de carregamento da GridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_dados_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             lbl_num_linhas.Text = $@"Total de sindicâncias: {dgv_dados.Rows.Count}";

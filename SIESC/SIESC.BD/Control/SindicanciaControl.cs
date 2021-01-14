@@ -25,7 +25,7 @@ namespace SIESC.BD.Control
         {
             sindicancia_TA = new sindicanciaTableAdapter();
 
-            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno, sindicancia.codigoSolicitacao, sindicancia.dataSindicancia, sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro, sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0], sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada, sindicancia.instituicaoEncaminhada, sindicancia.origemSindicancia, sindicancia.anoEnsino, sindicancia.observacoes, sindicancia.status) > 0);
+            return (sindicancia_TA.InserirSindicancia(sindicancia.codigoAluno, sindicancia.codigoSolicitacao, sindicancia.dataSindicancia, sindicancia.usuarioResponsavel, sindicancia.TipoLogradouro, sindicancia.Logradouro, sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0], sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada, sindicancia.instituicaoEncaminhada, sindicancia.origemSindicancia, sindicancia.anoEnsino, sindicancia.observacoes, sindicancia.status,sindicancia.distanciaEscolaSolicitada, sindicancia.dataSolicitacao, sindicancia.distanciaEscolaEncaminhada) > 0);
         }
 
         public bool InserirSindicancias(IEnumerable<Sindicancia> sindicancias)
@@ -40,9 +40,10 @@ namespace SIESC.BD.Control
                      sindicancia.NumResidencia, sindicancia.Complemento, sindicancia.Bairro, sindicancia.Coordenadas[0],
                      sindicancia.Coordenadas[1], sindicancia.Cep, sindicancia.instituicaoSolicitada,
                      sindicancia.instituicaoEncaminhada, sindicancia.origemSindicancia, sindicancia.anoEnsino,
-                     sindicancia.observacoes, true) > 0);
+                     sindicancia.observacoes, true, sindicancia.distanciaEscolaSolicitada, sindicancia.dataSolicitacao, sindicancia.distanciaEscolaEncaminhada) > 0);
             }
             return salvou;
+
         }
 
 

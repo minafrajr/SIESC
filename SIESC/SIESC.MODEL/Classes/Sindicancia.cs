@@ -17,6 +17,11 @@ namespace SIESC.MODEL.Classes
         public string nomeSindicado;
 
         /// <summary>
+        /// A data em que a solicitação foi criada
+        /// </summary>
+        public DateTime? dataSolicitacao;
+
+        /// <summary>
         /// O código da sindicancia
         /// </summary>
         public int codigoSindicancia { get; set; }
@@ -103,9 +108,17 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public int instituicaoSolicitada { get; set; }
         /// <summary>
+        /// A distância para a escola encaminhada
+        /// </summary>
+        public int distanciaEscolaEncaminhada { get; set; }
+        /// <summary>
         /// O código da instituição encaminhada
         /// </summary>
         public int? instituicaoEncaminhada { get; set; }
+        /// <summary>
+        /// A distância para a escola solicitada
+        /// </summary>
+        public int distanciaEscolaSolicitada { get; set; }
         /// <summary>
         /// Se a sindicancia foi efetivada
         /// </summary>

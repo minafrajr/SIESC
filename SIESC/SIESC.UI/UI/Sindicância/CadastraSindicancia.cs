@@ -508,7 +508,32 @@ namespace SIESC.UI.UI.Solicitacoes
 
             sindicancia.Coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_numresidencia.Text);
 
+            sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
+            sindicancia.distanciaEscolaEncaminhada = CalculaDistanciaEscola(sindicancia.Coordenadas, (int)sindicancia.instituicaoEncaminhada);
+
             return sindicancia;
+        }
+
+        private int CalculaDistanciaEscola(string[] sindicanciaCoordenadas, int idInstituicao)
+        {
+            if (idInstituicao <= 0)
+                return 0;
+
+            int distancia = 0;
+            try
+            {
+                InstituicaoControl instituicaoControl = new InstituicaoControl();
+
+                string[] coordenadasEscola = instituicaoControl.RetornaCoordenasInstituicao(idInstituicao);
+
+                distancia = Metrics.CalculaDistanciaCaminhando(sindicanciaCoordenadas[0], sindicanciaCoordenadas[1],
+                    coordenadasEscola[0], coordenadasEscola[1]);
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, principalUi);
+            }
+            return distancia;
         }
 
         /// <summary>

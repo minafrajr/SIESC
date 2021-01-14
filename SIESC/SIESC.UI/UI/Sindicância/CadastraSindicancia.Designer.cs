@@ -665,7 +665,7 @@
             this.cbo_instituicao_encaminhada.DisplayMember = "nome";
             this.cbo_instituicao_encaminhada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao_encaminhada.FormattingEnabled = true;
-            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(3, 120);
+            this.cbo_instituicao_encaminhada.Location = new System.Drawing.Point(6, 120);
             this.cbo_instituicao_encaminhada.Name = "cbo_instituicao_encaminhada";
             this.cbo_instituicao_encaminhada.Size = new System.Drawing.Size(338, 22);
             this.cbo_instituicao_encaminhada.TabIndex = 13;
@@ -743,7 +743,7 @@
             // lbl_instituicaosolicitada
             // 
             this.lbl_instituicaosolicitada.AutoSize = true;
-            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(0, 102);
+            this.lbl_instituicaosolicitada.Location = new System.Drawing.Point(6, 102);
             this.lbl_instituicaosolicitada.Name = "lbl_instituicaosolicitada";
             this.lbl_instituicaosolicitada.Size = new System.Drawing.Size(136, 14);
             this.lbl_instituicaosolicitada.TabIndex = 0;
