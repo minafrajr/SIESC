@@ -1959,7 +1959,7 @@ namespace SIESC.UI
             }
         }
 
-       /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
@@ -2085,7 +2085,7 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_listarDiretoresEscolas_Click(object sender, EventArgs e)
         {
-            GerarLista(4,1,true);
+            GerarLista(4, 1, true);
         }
         /// <summary>
         /// 
@@ -2228,8 +2228,8 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_listarCoordAdms_Click(object sender, EventArgs e)
         {
-            GerarLista(4,4,true);
-            
+            GerarLista(4, 4, true);
+
         }
         /// <summary>
         /// 
@@ -2307,7 +2307,7 @@ namespace SIESC.UI
         /// <param name="e"></param>
         private void tsm_listarDiretoresCIM_Click(object sender, EventArgs e)
         {
-            GerarLista(4,3,true);
+            GerarLista(4, 3, true);
         }
         /// <summary>
         /// Gera a lista de Diretoes de CIMS
@@ -2354,7 +2354,7 @@ namespace SIESC.UI
         {
             GerarLista(11, null, true);
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -2466,14 +2466,22 @@ namespace SIESC.UI
 
         private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+
 #if !DEBUG
 
-            if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) return;
+                if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) throw new Exception("Acesso não permitido!");
 #endif
-            GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
+                GerenciaSindicancia frmSindicancia = new GerenciaSindicancia(this);
 
-            frmSindicancia.MdiParent = this;
-            frmSindicancia.Show();
+                frmSindicancia.MdiParent = this;
+                frmSindicancia.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, this);
+            }
         }
 
         private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -2486,14 +2494,22 @@ namespace SIESC.UI
 
         private void tsm_gerenciar_cadastrados_Click(object sender, EventArgs e)
         {
+            try
+            {
+
 #if !DEBUG
 
-            if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) return;
+                if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("michelle") && !this.user.nomeusuario.Equals("helia")) throw new Exception("Acesso não permitido!");
 #endif
-            GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada = new GerenciarSindicanciaCadastrada(this);
+                GerenciarSindicanciaCadastrada frm_gerenciarSindicanciaCadastrada = new GerenciarSindicanciaCadastrada(this);
 
-            frm_gerenciarSindicanciaCadastrada.MdiParent = this;
-            frm_gerenciarSindicanciaCadastrada.Show();
+                frm_gerenciarSindicanciaCadastrada.MdiParent = this;
+                frm_gerenciarSindicanciaCadastrada.Show();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, this);
+            }
         }
 
         /// <summary>
@@ -2522,7 +2538,7 @@ namespace SIESC.UI
 
         private void tsm_listarFuncAuxilaresCims_Click(object sender, EventArgs e)
         {
-            GerarLista(3,3,null);
+            GerarLista(3, 3, null);
         }
 
         private void tsm_listarFuncAuxiliaresParceiras_Click(object sender, EventArgs e)
@@ -2550,6 +2566,6 @@ namespace SIESC.UI
             GerarLista(3, 3, null);
         }
 
-      
+
     }
 }

@@ -68,11 +68,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private Navegacao statusNavegacao;
 
-        /// <summary>
-        /// Objeto de busca de ceps
-        /// </summary>
-        private BuscaCep buscadorCep;
-
+       
         /// <summary>
         /// Lista de endereços
         /// </summary>
@@ -144,7 +140,6 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Repassa para os controles do formulário os dados do aluno e da solicitação armazenada no banco de dados
         /// </summary>
         /// <param name="aluno">O objeto aluno com os seus dados</param>
-        /// <param name="solicitacao">O objeto solicitação com seus dados</param>
         private void TransfereParaControles(Aluno aluno, Sindicancia sindicancia)
         {
             txt_nomealuno.Text = aluno.Nome;
