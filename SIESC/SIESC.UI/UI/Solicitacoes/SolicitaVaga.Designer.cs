@@ -137,6 +137,7 @@
             this.instorigemTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instorigemTableAdapter();
             this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
             this.origemsolicitacaoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.origemsolicitacaoTableAdapter();
+            this.rdb_declaracao_cemig = new System.Windows.Forms.RadioButton();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -590,6 +591,7 @@
             // 
             // pnl_comprovantes
             // 
+            this.pnl_comprovantes.Controls.Add(this.rdb_declaracao_cemig);
             this.pnl_comprovantes.Controls.Add(this.rdb_telefone_fixo);
             this.pnl_comprovantes.Controls.Add(this.rdb_correspondenciabancaria);
             this.pnl_comprovantes.Controls.Add(this.txt_comprovante);
@@ -616,7 +618,7 @@
             // rdb_correspondenciabancaria
             // 
             this.rdb_correspondenciabancaria.AutoSize = true;
-            this.rdb_correspondenciabancaria.Location = new System.Drawing.Point(80, 6);
+            this.rdb_correspondenciabancaria.Location = new System.Drawing.Point(202, 4);
             this.rdb_correspondenciabancaria.Name = "rdb_correspondenciabancaria";
             this.rdb_correspondenciabancaria.Size = new System.Drawing.Size(115, 18);
             this.rdb_correspondenciabancaria.TabIndex = 6;
@@ -1368,6 +1370,18 @@
             // 
             this.origemsolicitacaoTableAdapter1.ClearBeforeFill = true;
             // 
+            // rdb_declaracao_cemig
+            // 
+            this.rdb_declaracao_cemig.AutoSize = true;
+            this.rdb_declaracao_cemig.Location = new System.Drawing.Point(80, 4);
+            this.rdb_declaracao_cemig.Name = "rdb_declaracao_cemig";
+            this.rdb_declaracao_cemig.Size = new System.Drawing.Size(116, 18);
+            this.rdb_declaracao_cemig.TabIndex = 8;
+            this.rdb_declaracao_cemig.TabStop = true;
+            this.rdb_declaracao_cemig.Tag = "DECLARAÇÃO CEMIG";
+            this.rdb_declaracao_cemig.Text = "Declaração Cemig";
+            this.rdb_declaracao_cemig.UseVisualStyleBackColor = true;
+            // 
             // SolicitaVaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -1524,6 +1538,7 @@
         private System.Windows.Forms.Label lbl_justificativa_transporte;
         private System.Windows.Forms.TextBox txt_justificativa_transporte;
         private MyMaskedTextBox msk_data_nascimento;
+        private System.Windows.Forms.RadioButton rdb_declaracao_cemig;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga

@@ -262,6 +262,9 @@ namespace SIESC.UI.UI.Solicitacoes
                         case "TELEFONE FIXO":
                             rdb_telefone_fixo.Checked = true;
                             break;
+                        case "DECLARAÇÃO CEMIG":
+                            rdb_declaracao_cemig.Checked = true;
+                            break;
                         default:
                             rdb_outroscomprov.Checked = true;
                             txt_comprovante.Visible = true;
