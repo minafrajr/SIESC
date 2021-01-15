@@ -9,6 +9,7 @@
 *.userosscache
 *.sln.docstates
 *.config
+*.csproj
 
 # bloquear as chaves
 /SIESC/SIESC.WEB/Properties/Settings.settings
