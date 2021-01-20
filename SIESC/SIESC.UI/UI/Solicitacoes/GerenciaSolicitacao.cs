@@ -327,7 +327,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2020"))
+                if (!cbo_anoreferencia.Text.Equals("2021"))
                 {
                     throw new Exception("Não é permitido editar solicitações de anos anteriores.");
                 }
@@ -366,7 +366,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2020"))
+                if (!cbo_anoreferencia.Text.Equals("2021"))
                 {
                     throw new Exception("Não é permitido finalizar solicitações de anos anteriores.");
                 }
@@ -404,7 +404,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2020"))
+                if (!cbo_anoreferencia.Text.Equals("2021"))
                 {
                     throw new Exception("Não é permitido excluir solicitações de anos anteriores.");
                 }
@@ -575,7 +575,7 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2020"))
+                if (!cbo_anoreferencia.Text.Equals("2021"))
                 {
                     throw new Exception("Não é permitido editar dados de alunos de anos anteriores.");
                 }
@@ -609,7 +609,7 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
-            if (!cbo_anoreferencia.Text.Equals("2020"))
+            if (!cbo_anoreferencia.Text.Equals("2021"))
             {
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
             }
@@ -682,7 +682,7 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void btn_ficha_encaminhamento_Click(object sender, EventArgs e)
         {
-            if (!cbo_anoreferencia.Text.Equals("2020"))
+            if (!cbo_anoreferencia.Text.Equals("2021"))
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
             
             var t = CarregaProgressoThread();
@@ -718,7 +718,7 @@ namespace SIESC.UI.UI
             var t = CarregaProgressoThread();
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2020"))
+                if (!cbo_anoreferencia.Text.Equals("2021"))
                 {
                     throw new Exception("Não é permitido imprimir encaminhamentos de transporte de anos anteriores.");
                 }
@@ -785,6 +785,8 @@ namespace SIESC.UI.UI
         {
             lbl_num_registros.Text = $"Total de registros: {dgv_solicitacoes.RowCount}";
         }
+
+       
     }
 
 }
