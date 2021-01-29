@@ -78,7 +78,7 @@ namespace SIESC.BD.Control
             {
                 motivoTA = new motivosTableAdapter();
 
-                return (motivoTA.Atualizar(motivo.Descricao, motivo.Codigo) > 0);
+                return (motivoTA.Atualizar(motivo.Descricao, motivo.Codigo, motivo.Codigo) > 0);
             }
             catch (MySqlException ex)
             {

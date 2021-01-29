@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_nomeMotivo = new System.Windows.Forms.Label();
             this.txt_nomemotivo = new SIESC.UI.MyTextBox();
             this.dgv_motivos = new System.Windows.Forms.DataGridView();
-            this.lbl_codigo = new System.Windows.Forms.Label();
-            this.txt_codigo = new SIESC.UI.MyTextBox();
+            this.codigo = new System.Windows.Forms.Label();
             this.lbl_info = new System.Windows.Forms.Label();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txt_codigo = new SIESC.UI.MyTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_motivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -67,20 +67,22 @@
             this.txt_nomemotivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nomemotivo.Enabled = false;
             this.txt_nomemotivo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nomemotivo.Location = new System.Drawing.Point(58, 34);
+            this.txt_nomemotivo.Location = new System.Drawing.Point(65, 34);
             this.txt_nomemotivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_nomemotivo.MaxLength = 80;
             this.txt_nomemotivo.Name = "txt_nomemotivo";
             this.txt_nomemotivo.Size = new System.Drawing.Size(421, 23);
             this.txt_nomemotivo.TabIndex = 2;
+            this.txt_nomemotivo.WordWrap = false;
             // 
             // dgv_motivos
             // 
             this.dgv_motivos.AllowUserToAddRows = false;
             this.dgv_motivos.AllowUserToDeleteRows = false;
             this.dgv_motivos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_motivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_motivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_motivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_motivos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_motivos.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -100,24 +102,15 @@
             this.dgv_motivos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_motivos_CellMouseClick);
             this.dgv_motivos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_motivos_DataBindingComplete);
             // 
-            // lbl_codigo
+            // codigo
             // 
-            this.lbl_codigo.AutoSize = true;
-            this.lbl_codigo.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo.Location = new System.Drawing.Point(3, 9);
-            this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(55, 17);
-            this.lbl_codigo.TabIndex = 7;
-            this.lbl_codigo.Text = "Código:";
-            // 
-            // txt_codigo
-            // 
-            this.txt_codigo.Enabled = false;
-            this.txt_codigo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo.Location = new System.Drawing.Point(58, 7);
-            this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(49, 23);
-            this.txt_codigo.TabIndex = 8;
+            this.codigo.AutoSize = true;
+            this.codigo.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigo.Location = new System.Drawing.Point(3, 9);
+            this.codigo.Name = "codigo";
+            this.codigo.Size = new System.Drawing.Size(55, 17);
+            this.codigo.TabIndex = 7;
+            this.codigo.Text = "Código:";
             // 
             // lbl_info
             // 
@@ -224,7 +217,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.lbl_codigo);
+            this.splitContainer1.Panel1.Controls.Add(this.txt_codigo);
+            this.splitContainer1.Panel1.Controls.Add(this.codigo);
             this.splitContainer1.Panel1.Controls.Add(this.btn_inativar);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_nomeMotivo);
             this.splitContainer1.Panel1.Controls.Add(this.btn_editar);
@@ -234,7 +228,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.btn_cancelar);
             this.splitContainer1.Panel1.Controls.Add(this.btn_excluir);
             this.splitContainer1.Panel1.Controls.Add(this.btn_novo);
-            this.splitContainer1.Panel1.Controls.Add(this.txt_codigo);
             // 
             // splitContainer1.Panel2
             // 
@@ -261,6 +254,14 @@
             this.lbl.Size = new System.Drawing.Size(99, 17);
             this.lbl.Text = "Total de registros:";
             // 
+            // txt_codigo
+            // 
+            this.txt_codigo.Enabled = false;
+            this.txt_codigo.Location = new System.Drawing.Point(65, 9);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(24, 22);
+            this.txt_codigo.TabIndex = 14;
+            // 
             // GerenciaMotivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -284,7 +285,7 @@
 
         #endregion
 
-		private System.Windows.Forms.Label lbl_codigo;
+		private System.Windows.Forms.Label codigo;
 		public System.Windows.Forms.Label lbl_nomeMotivo;
 		public System.Windows.Forms.Label lbl_info;
 		public System.Windows.Forms.DataGridView dgv_motivos;
@@ -294,10 +295,10 @@
 		public System.Windows.Forms.Button btn_novo;
 		public System.Windows.Forms.Button btn_cancelar;
 		public System.Windows.Forms.Button btn_editar;
-		public MyTextBox txt_codigo;
         public System.Windows.Forms.Button btn_inativar;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl;
+        public MyTextBox txt_codigo;
     }
 }

@@ -30116,7 +30116,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "UPDATE       motivos\r\nSET                descricaoMotivo = @descricaoMotivo, stat" +
-                "usMotivo = @statusMotivo";
+                "usMotivo = @statusMotivo\r\nWHERE        (idMotivos = @idMotivo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@descricaoMotivo";
@@ -30135,6 +30135,14 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             param.IsNullable = true;
             param.SourceColumn = "statusMotivo";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idMotivo";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idMotivos";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -30177,8 +30185,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE       motivos\r\nSET              statusMotivo = false\r\nWHERE idMotivos = @i" +
-                "dMotivos";
+            this._commandCollection[5].CommandText = "UPDATE motivos\r\nSET statusMotivo = 0\r\nWHERE idMotivos = @idMotivos";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idMotivos";
@@ -30348,7 +30355,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Atualizar(string descricaoMotivo, object statusMotivo) {
+        public virtual int Atualizar(string descricaoMotivo, object statusMotivo, int idMotivo) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
             if ((descricaoMotivo == null)) {
                 throw new global::System.ArgumentNullException("descricaoMotivo");
@@ -30362,6 +30369,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             else {
                 command.Parameters[1].Value = ((object)(statusMotivo));
             }
+            command.Parameters[2].Value = ((int)(idMotivo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
