@@ -16,13 +16,13 @@ namespace SIESC.BD.Control
     {
         private motivosTableAdapter motivoTA;
 
-        public bool Salvar(Motivo motivo, bool salvar)
+        public bool Salvar(Motivo motivo)
         {
             try
             {
                 motivoTA = new motivosTableAdapter();
 
-                return (motivoTA.Inserir(motivo.Descricao, motivo.Status) > 0);
+                return (motivoTA.Inserir(motivo.Descricao, true) > 0);
             }
             catch (MySqlException ex)
             {

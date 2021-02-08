@@ -62,6 +62,8 @@
             this.siescDataSet1 = new SIESC.UI.siescDataSet();
             this.cbo_anos_ensino = new SIESC.UI.MyComboBox();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_raioBusca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // anoTableAdapter1
@@ -103,6 +106,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_solicitacoes);
             this.splitContainer1.Size = new System.Drawing.Size(1119, 588);
             this.splitContainer1.SplitterDistance = 222;
@@ -429,7 +433,7 @@
             this.dgv_solicitacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_solicitacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_solicitacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_solicitacoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_solicitacoes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_solicitacoes.Location = new System.Drawing.Point(0, 0);
             this.dgv_solicitacoes.MultiSelect = false;
@@ -438,9 +442,27 @@
             this.dgv_solicitacoes.RowTemplate.ReadOnly = true;
             this.dgv_solicitacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_solicitacoes.ShowEditingIcon = false;
-            this.dgv_solicitacoes.Size = new System.Drawing.Size(1119, 362);
+            this.dgv_solicitacoes.Size = new System.Drawing.Size(1119, 337);
             this.dgv_solicitacoes.TabIndex = 0;
             this.dgv_solicitacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_solicitacoes_CellMouseClick);
+            this.dgv_solicitacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_solicitacoes_DataBindingComplete);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbl_num_registros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 340);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1119, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbl_num_registros
+            // 
+            this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_num_registros.Name = "lbl_num_registros";
+            this.lbl_num_registros.Size = new System.Drawing.Size(105, 17);
+            this.lbl_num_registros.Text = "Total de Registros: ";
             // 
             // LocalizarSolicitacao
             // 
@@ -452,6 +474,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -460,6 +483,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_raioBusca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_solicitacoes)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -499,5 +524,7 @@
         private MyTextBox txt_endereco;
         private MyTextBox txt_mae;
         private System.Windows.Forms.Label lbl_datasolicitacao;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
     }
 }

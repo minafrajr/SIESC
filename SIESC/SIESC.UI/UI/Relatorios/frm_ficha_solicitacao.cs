@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// 
         /// </summary>
-        private Margins margins = new Margins(10,2,2,6); //Configurando as margens
+        private readonly Margins margins = new Margins(10,2,2,6); //Configurando as margens
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +38,6 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// Construtor da classe
         /// </summary>
-        public frm_ficha_solicitacao()
-        {
-            InitializeComponent();
-        }
-        /// <summary>
-        /// Construtor da classe
-        /// </summary>
         /// <param name="latitude">A latitude do aluno</param>
         /// <param name="longitude">A longitude do aluno</param>
         /// <param name="idaluno">O código do aluno</param>
@@ -64,8 +57,7 @@ namespace SIESC.UI.UI.Relatorios
             dtZoneamento = zoneamentoTableAdapter1.RetornaUnidadesAnoEnsino(latitude,longitude,2,anoensino); //2 distancia
 
             CalculaDistancia(latitude,longitude);
-
-
+            
             FinalizaRelatorio();
         }
 
@@ -77,29 +69,29 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="idaluno">O Código do aluno</param>
         /// <param name="anoensino">O ano de ensino ao qual o aluno pertence</param>
         /// <param name="codigosolicitacao">O código da solicitação</param>
-        public frm_ficha_solicitacao(string latitude,string longitude,int idaluno,string anoensino,int codigosolicitacao)
-        {
-            InitializeComponent();
+        //public frm_ficha_solicitacao(string latitude,string longitude,int idaluno,string anoensino,int codigosolicitacao)
+        //{
+        //    InitializeComponent();
 
-            ConfiguraRelatorio();
+        //    ConfiguraRelatorio();
 
-            try
-            {
-                /*PREENCHENDO O DATATABLE*/
-                dtSolicitacao = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigosolicitacao);
+        //    try
+        //    {
+        //        /*PREENCHENDO O DATATABLE*/
+        //        dtSolicitacao = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigosolicitacao);
 
-                dtZoneamento = anoensino.Contains("Ano") ? this.zoneamentoTableAdapter1.RetornaEscolas(idaluno,2) : this.zoneamentoTableAdapter1.RetornaCreches(idaluno,2);
+        //        dtZoneamento = anoensino.Contains("Ano") ? this.zoneamentoTableAdapter1.RetornaEscolas(idaluno,2) : this.zoneamentoTableAdapter1.RetornaCreches(idaluno,2);
 
 
-                CalculaDistancia(latitude,longitude);
+        //        CalculaDistancia(latitude,longitude);
 
-            }
-            catch (MySqlException exception)
-            {
-                Mensageiro.MensagemAviso("Erro: " + exception.Message + exception.InnerException,this);
-            }
-            FinalizaRelatorio();
-        }
+        //    }
+        //    catch (MySqlException exception)
+        //    {
+        //        Mensageiro.MensagemAviso("Erro: " + exception.Message + exception.InnerException,this);
+        //    }
+        //    FinalizaRelatorio();
+        //}
         /// <summary>
         /// Calcula a distancia em rela
         /// </summary>
@@ -107,10 +99,6 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="longitude"></param>
         private void CalculaDistancia(string latitude,string longitude)
         {
-            datasource = new ReportDataSource("dsRelatorios");
-
-            datasource2 = new ReportDataSource("ds_siesc");
-
             //if (Conexao.IsConnected())
             //{
             foreach (DataRow row in dtZoneamento.Rows)
@@ -169,6 +157,10 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private void FinalizaRelatorio()
         {
+            datasource = new ReportDataSource("dsRelatorios");
+
+            datasource2 = new ReportDataSource("ds_siesc");
+
             datasource.Value = dtSolicitacao;
             datasource2.Value = dtZoneamento;
 
@@ -176,6 +168,5 @@ namespace SIESC.UI.UI.Relatorios
             rpt_viewer.LocalReport.DataSources.Add(datasource2);
             rpt_viewer.RefreshReport();
         }
-
     }
 }

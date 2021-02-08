@@ -283,5 +283,14 @@ namespace SIESC.UI.UI.Solicitacoes
 
             return t;
         }
+        /// <summary>
+        /// Exibe a quantidade de registros no DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_solicitacoes_DataBindingComplete(object sender, System.Windows.Forms.DataGridViewBindingCompleteEventArgs e)
+        {
+            lbl_num_registros.Text = $@"Total de registros: {dgv_solicitacoes.Rows.Count}";
+        }
     }
 }

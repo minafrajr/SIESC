@@ -124,7 +124,7 @@ namespace SIESC.UI.UI
 
                 if (string.IsNullOrEmpty(txt_codigo.Text))
                 {
-                    if (controleMotivo.Salvar(motivo, true))
+                    if (controleMotivo.Salvar(motivo))
                     {
                         MessageBox.Show(@"Salvo com sucesso!", @"SIESC", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -212,7 +212,11 @@ namespace SIESC.UI.UI
                 MensagemErro(ex);
             }
         }
-
+        /// <summary>
+        /// Exibe o total de registros no data gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_motivos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             lbl.Text = $@"Total de registros: {dgv_motivos.Rows.Count}";
