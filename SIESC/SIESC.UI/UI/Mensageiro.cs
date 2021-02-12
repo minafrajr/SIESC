@@ -21,8 +21,8 @@ namespace SIESC.UI.UI
         /// <param name="form">O formulário proprietário</param>
         public static void MensagemErro(Exception exception, IWin32Window form)
         {
-            System.Media.SystemSounds.Beep.Play();
-            MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            System.Media.SystemSounds.Exclamation.Play();
+            MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}{Environment.NewLine}{exception.StackTrace}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace SIESC.UI.UI
         /// <param name="form">O formulário proprietário</param>
         public static void MensagemErro(string msg, IWin32Window form)
         {
-            System.Media.SystemSounds.Beep.Play();
+            System.Media.SystemSounds.Exclamation.Play();
             MessageBox.Show(form, $@"Houve o seguinte erro: {msg}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

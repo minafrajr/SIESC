@@ -35,12 +35,12 @@ namespace SIESC.UI.UI.Relatorios
         /// 
         /// </summary>
         private ReportDataSource datasource2;
+
         /// <summary>
         /// Construtor da classe
         /// </summary>
         /// <param name="latitude">A latitude do aluno</param>
         /// <param name="longitude">A longitude do aluno</param>
-        /// <param name="idaluno">O código do aluno</param>
         /// <param name="anoensino">O ano Ensino ao qual o aluno pertence</param>
         /// <param name="codigosolicitacao">O código da solicitação</param>
         public frm_ficha_solicitacao(string latitude,string longitude,int anoensino,int codigosolicitacao)
@@ -59,39 +59,10 @@ namespace SIESC.UI.UI.Relatorios
             CalculaDistancia(latitude,longitude);
             
             FinalizaRelatorio();
+            
         }
 
-        /// <summary>
-        /// Construtor da classe
-        /// </summary>
-        /// <param name="latitude">A latitude do aluno</param>
-        /// <param name="longitude">A longitude do aluno</param>
-        /// <param name="idaluno">O Código do aluno</param>
-        /// <param name="anoensino">O ano de ensino ao qual o aluno pertence</param>
-        /// <param name="codigosolicitacao">O código da solicitação</param>
-        //public frm_ficha_solicitacao(string latitude,string longitude,int idaluno,string anoensino,int codigosolicitacao)
-        //{
-        //    InitializeComponent();
-
-        //    ConfiguraRelatorio();
-
-        //    try
-        //    {
-        //        /*PREENCHENDO O DATATABLE*/
-        //        dtSolicitacao = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigosolicitacao);
-
-        //        dtZoneamento = anoensino.Contains("Ano") ? this.zoneamentoTableAdapter1.RetornaEscolas(idaluno,2) : this.zoneamentoTableAdapter1.RetornaCreches(idaluno,2);
-
-
-        //        CalculaDistancia(latitude,longitude);
-
-        //    }
-        //    catch (MySqlException exception)
-        //    {
-        //        Mensageiro.MensagemAviso("Erro: " + exception.Message + exception.InnerException,this);
-        //    }
-        //    FinalizaRelatorio();
-        //}
+       
         /// <summary>
         /// Calcula a distancia em rela
         /// </summary>
@@ -128,7 +99,7 @@ namespace SIESC.UI.UI.Relatorios
             }
         }
         /// <summary>
-        /// 
+        /// Configurações do formato do relatório
         /// </summary>
         private void ConfiguraRelatorio()
         {
@@ -153,7 +124,7 @@ namespace SIESC.UI.UI.Relatorios
 
         }
         /// <summary>
-        /// 
+        /// Finaliza o relatório
         /// </summary>
         private void FinalizaRelatorio()
         {
