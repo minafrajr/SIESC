@@ -40,7 +40,7 @@ namespace SIESC.WEB
 				//por padrão a porta é 465, mas por algulm motivo não funionou, somente na porta 587
 				SmtpClient SMTPClient = new SmtpClient("smtp.gmail.com", 587);
 				SMTPClient.EnableSsl = true;
-				NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", "sistemasiesc");
+				NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", Properties.Settings.Default.recuperaSenha);
 				SMTPClient.Timeout = 30000;
 				SMTPClient.Credentials = credenciais;
 
@@ -92,7 +92,7 @@ namespace SIESC.WEB
 				//por padrão a porta é 465, mas por algulm motivo não funionou, somente na porta 587
 				SmtpClient client = new SmtpClient("smtp.oi.com.br", 465);
 				client.EnableSsl = true;
-				NetworkCredential cred = new NetworkCredential("minafra@oi.com.br", "581339");
+				NetworkCredential cred = new NetworkCredential("minafra@oi.com.br", "*******");
 				client.Credentials = cred;
 
 				// Inclui as credenciais
