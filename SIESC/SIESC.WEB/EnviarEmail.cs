@@ -8,6 +8,7 @@ using System.Collections;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Net.Configuration;
+using Google.Protobuf;
 
 
 namespace SIESC.WEB
@@ -166,7 +167,7 @@ namespace SIESC.WEB
 					mensagem.Body = TextoMensagem;
 					mensagem.Subject = Assunto;
 
-					NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", /* login */"sistemasiesc", /* senha */"");
+					NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", /* login */Properties.Settings.Default.recuperaSenha, /* senha */"");
 
 					cliente.Credentials = credenciais;
 
