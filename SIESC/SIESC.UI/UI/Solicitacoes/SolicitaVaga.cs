@@ -610,44 +610,24 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 lbl_idade.Text = string.Empty;
                 
-                if (!(control is RadioButton))
-                {
-                    control.Text = string.Empty;
-                }
+                if (!(control is RadioButton)) control.Text = string.Empty;
 
-                if (control is MyTextBox)
-                {
-                    ((MyTextBox)control).ResetText();
-                }
+                if (control is MyTextBox) ((MyTextBox) control).ResetText();
 
                 if (control is MyComboBox)
-                {
                     //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox)control).SelectedIndex = -1;
-                }
+                    ((MyComboBox) control).SelectedIndex = -1;
 
-                if (control is MyMaskedTextBox)
-                {
-                    ((MyMaskedTextBox)control).ResetText();
-                }
+                if (control is MyMaskedTextBox) ((MyMaskedTextBox) control).ResetText();
 
-                if (control is RadioButton)
-                {
-                    ((RadioButton)control).Checked = false;
-                }
+                if (control is RadioButton) ((RadioButton) control).Checked = false;
 
-                if (control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).Text = DateTime.Now.ToShortDateString();
-                }
+                if (control is DateTimePicker) ((DateTimePicker) control).Text = DateTime.Now.ToShortDateString();
             }
             //limpa os tipos de comprovantes de endereço
             foreach (Control control in pnl_comprovantes.Controls)
             {
-                if (control is RadioButton)
-                {
-                    ((RadioButton)control).Checked = false;
-                }
+                if (control is RadioButton) ((RadioButton) control).Checked = false;
             }
         }
 
@@ -660,7 +640,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             string tag = null;
 
-           // var t= CarregaProgressoThread();
+            var t= CarregaProgressoThread();
 
             try
             {
@@ -707,7 +687,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(_solicitacao.Coordenadas[0],_solicitacao.Coordenadas[1],_solicitacao.AnoEnsino,_solicitacao.Codigo)
                         { MdiParent = this._principalUi };
 
-                        //if (t.IsAlive) { t.Abort(); }
+                        if (t.IsAlive) { t.Abort(); }
 
                         frmSolicitacao.Show();
                     }
@@ -743,7 +723,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                     _solicitacao.Codigo); //exclui a dist se o encaminhamento foi cancelado
                             }
 
-                            //if (t.IsAlive) { t.Abort(); }
+                            if (t.IsAlive) { t.Abort(); }
 
                             if (Mensageiro
                                 .MensagemPergunta(
@@ -762,7 +742,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     else if (_controleSolicitacao.AtualizarSolicitacao(alunoCriado,_solicitacao,false)
                     ) //atualiza sem novo encaminhamento
                     {
-                       // if (t.IsAlive) { t.Abort(); }
+                        if (t.IsAlive) { t.Abort(); }
 
                         if (Mensageiro.MensagemPergunta(
                                 $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?",this)
@@ -785,19 +765,18 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (MySqlException ex)
             {
-               // if (t.IsAlive) { t.Abort(); }
+                if (t.IsAlive) { t.Abort(); }
                 Mensageiro.MensagemErro($"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}",_principalUi);
             }
             catch (Exception ex)
             {
-               // if (t.IsAlive) { t.Abort(); }
-               Mensageiro.MensagemAviso(ex.StackTrace,this._principalUi);
+                if (t.IsAlive) { t.Abort(); }
                 Mensageiro.MensagemErro(ex,this._principalUi);
             }
-            //finally
-            //{
-            //    if (t.IsAlive) { t.Abort(); }
-            //}
+            finally
+            {
+                if (t.IsAlive) { t.Abort(); }
+            }
         }
 
         /// <summary>
@@ -819,9 +798,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (cod == null)
                 {
                     if (_controleInstiOrigem.Salvar(_instituicaoOrigem))
-                    {
                         cod = _controleInstiOrigem.PesquisaInst(_instituicaoOrigem);
-                    }
                 }
             }
             return cod;

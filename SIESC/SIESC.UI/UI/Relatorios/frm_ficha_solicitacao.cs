@@ -53,14 +53,12 @@ namespace SIESC.UI.UI.Relatorios
 
             //dtZoneamento = anoensino >= 10 ? this.zoneamentoTableAdapter1.RetornaCreches(idaluno, 2) : this.zoneamentoTableAdapter1.RetornaEscolas(idaluno, 2);
 
-
             dtZoneamento = zoneamentoTableAdapter1.RetornaUnidadesAnoEnsino(latitude,longitude,2,anoensino); //2 distancia
 
             CalculaDistancia(latitude,longitude);
             
             FinalizaRelatorio();
-            
-        }
+         }
 
        
         /// <summary>
@@ -113,9 +111,10 @@ namespace SIESC.UI.UI.Relatorios
             pg.Margins = margins;
             rpt_viewer.SetPageSettings(pg);
             pg.Margins = margins; //repassa as margens para o relatório
+            rpt_viewer.Padding = new Padding(0,0,0,0);
+
             string PathRelatorio = Settings.Default.RemoteReports;
             //PODE ALTERAR local onde se encontram os arquivos RDLC para montagem dos relatórios LocalReports - na máquina local | RemoteReports - no servidor (deixar essa config ao publicar o executável)
-            rpt_viewer.Padding = new Padding(0,0,0,0);
 
 #if DEBUG
             PathRelatorio = Settings.Default.LocalReports;

@@ -226,7 +226,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.71316cm</Top>
+                <Top>2.55441cm</Top>
                 <Left>0.37042cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>2.36772cm</Width>
@@ -871,7 +871,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox43</rd:DefaultName>
-                <Top>2.73108cm</Top>
+                <Top>2.57233cm</Top>
                 <Left>2.42846cm</Left>
                 <Height>0.62646cm</Height>
                 <Width>15.54557cm</Width>
