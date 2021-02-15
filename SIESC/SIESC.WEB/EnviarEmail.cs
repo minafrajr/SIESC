@@ -8,6 +8,7 @@ using System.Collections;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Net.Configuration;
+using Google.Protobuf;
 
 
 namespace SIESC.WEB
@@ -39,7 +40,7 @@ namespace SIESC.WEB
 				//por padrão a porta é 465, mas por algulm motivo não funionou, somente na porta 587
 				SmtpClient SMTPClient = new SmtpClient("smtp.gmail.com", 587);
 				SMTPClient.EnableSsl = true;
-				NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", "sistemasiesc");
+				NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", Properties.Settings.Default.recuperaSenha);
 				SMTPClient.Timeout = 30000;
 				SMTPClient.Credentials = credenciais;
 
@@ -91,7 +92,7 @@ namespace SIESC.WEB
 				//por padrão a porta é 465, mas por algulm motivo não funionou, somente na porta 587
 				SmtpClient client = new SmtpClient("smtp.oi.com.br", 465);
 				client.EnableSsl = true;
-				NetworkCredential cred = new NetworkCredential("minafra@oi.com.br", "581339");
+				NetworkCredential cred = new NetworkCredential("minafra@oi.com.br", "*******");
 				client.Credentials = cred;
 
 				// Inclui as credenciais
@@ -166,7 +167,7 @@ namespace SIESC.WEB
 					mensagem.Body = TextoMensagem;
 					mensagem.Subject = Assunto;
 
-					NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", /* login */"sistemasiesc", /* senha */"");
+					NetworkCredential credenciais = new NetworkCredential("siesc.recuperasenha@gmail.com", /* login */Properties.Settings.Default.recuperaSenha, /* senha */"");
 
 					cliente.Credentials = credenciais;
 
