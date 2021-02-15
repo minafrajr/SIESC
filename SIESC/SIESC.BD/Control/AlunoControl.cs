@@ -24,12 +24,12 @@ namespace SIESC.BD.Control
 		/// <summary>
 		/// Objeto de conexão com o banco
 		/// </summary>
-		private alunosTableAdapter aluno_TA;
+		private alunosTableAdapter alunoTa;
 
 		/// <summary>
 		/// Obejto de conexão com o banco de dados
 		/// </summary>
-		private vw_alunosTableAdapter vw_aluno;
+		private vw_alunosTableAdapter vwAluno;
 
 
 
@@ -42,24 +42,17 @@ namespace SIESC.BD.Control
 		///<returns>true - para a operação feita corretamente</returns>
 		public async Task<bool> Salvar(Aluno aluno, bool confirma)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
+			alunoTa = new alunosTableAdapter();
 
-				if (confirma)
-				{
-					return
-						(aluno_TA.Inserir(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
-							 aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia ) > 0);
-				}
-				return
-					(aluno_TA.Atualizar(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
-						aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia, (int)aluno.Id) > 0);
-			}
-			catch (Exception ex)
+			if (confirma)
 			{
-				throw ex;
+				return
+					(alunoTa.Inserir(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
+						aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia ) > 0);
 			}
+			return
+				(alunoTa.Atualizar(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
+					aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia, (int)aluno.Id) > 0);
 		}
 
 		/// <summary>
@@ -68,11 +61,11 @@ namespace SIESC.BD.Control
 		/// <returns></returns>
 		public DataTable Listar()
 		{
-		    vw_aluno = new vw_alunosTableAdapter();
+			vwAluno = new vw_alunosTableAdapter();
 
-		    vw_aluno = new vw_alunosTableAdapter();
+			vwAluno = new vw_alunosTableAdapter();
 
-		    return this.vw_aluno.GetData();
+			return this.vwAluno.GetData();
 		}
 
 		/// <summary>
@@ -82,15 +75,8 @@ namespace SIESC.BD.Control
 		/// <returns>true - para a operação feita corretamente</returns>
 		public bool Deletar(int idAluno)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
-			    return aluno_TA.Excluir(idAluno) > 0;
-			}
-			catch (Exception e)
-			{
-				throw e;
-			}
+			alunoTa = new alunosTableAdapter();
+			return alunoTa.Excluir(idAluno) > 0;
 		}
 
 		/// <summary>
@@ -100,17 +86,10 @@ namespace SIESC.BD.Control
 		/// <returns></returns>
 		public bool Alterar(Aluno aluno)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
+			alunoTa = new alunosTableAdapter();
 
-				return (aluno_TA.Atualizar(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
-						aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia, aluno.Id) > 0);
-			}
-			catch (Exception exception)
-			{
-				throw exception;
-			}
+			return (alunoTa.Atualizar(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
+				aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia, aluno.Id) > 0);
 		}
 
 		/// <summary>
@@ -118,19 +97,11 @@ namespace SIESC.BD.Control
 		/// </summary>
 		/// <param name="aluno">O objeto Aluno</param>
 		/// <returns>Retorna o ID do aluno</returns>
-		public int PesquisaID(Aluno aluno)
+		public int PesquisaId(Aluno aluno)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
+			alunoTa = new alunosTableAdapter();
 
-				return (int)aluno_TA.PesquisaID(aluno.Nome, aluno.DataNascimento, aluno.NomeMae);
-			}
-			catch (SqlException exception)
-			{
-
-				throw exception;
-			}
+			return (int)alunoTa.PesquisaID(aluno.Nome, aluno.DataNascimento, aluno.NomeMae);
 		}
 		/// <summary>
 		/// Localiza o aluno pelo nome
@@ -139,17 +110,9 @@ namespace SIESC.BD.Control
 		/// <returns></returns>
 		public string PesquisaNome(Aluno aluno)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
+			alunoTa = new alunosTableAdapter();
 
-				return aluno_TA.PesquisaNome((int)aluno.Id);
-			}
-			catch (SqlException exception)
-			{
-
-				throw exception;
-			}
+			return alunoTa.PesquisaNome((int)aluno.Id);
 		}
 		/// <summary>
 		/// Verifica se já existe o aluno no banco de dados
@@ -160,19 +123,9 @@ namespace SIESC.BD.Control
 		/// <returns>True ou false</returns>
 		public int? ContemAluno(string nomealuno, DateTime dtanasc, string nomemae)
 		{
-			try
-			{
-				aluno_TA = new alunosTableAdapter();
+			alunoTa = new alunosTableAdapter();
 
-				return (int?)aluno_TA.PesquisaID(nomealuno, dtanasc, nomemae) ;
-			}
-			catch (SqlException exception)
-			{
-
-				throw exception;
-
-			}
-
+			return (int?)alunoTa.PesquisaID(nomealuno, dtanasc, nomemae) ;
 		}
 		/// <summary>
 		/// Cria um objeto aluno completo
@@ -183,11 +136,11 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				aluno_TA = new alunosTableAdapter();
+				alunoTa = new alunosTableAdapter();
 				Aluno aluno = new Aluno();
 				DataTable dt = new DataTable();
 
-				dt = aluno_TA.RetornaAluno(id);
+				dt = alunoTa.RetornaAluno(id);
 
 				aluno = RetornaAluno(dt);
 				aluno.Id = id;
@@ -206,17 +159,17 @@ namespace SIESC.BD.Control
 		/// <returns></returns>
 		private static Aluno RetornaAluno(DataTable dt)
 		{
-		    Aluno aluno = new Aluno();
-		    aluno.Nome = dt.Rows[0]["nomeAluno"].ToString();
-		    aluno.Sexo = dt.Rows[0]["sexo"].ToString();
-		    aluno.NomeMae = dt.Rows[0]["nomeMaeAluno"].ToString();
-		    aluno.Nomepai = dt.Rows[0]["nomePaiAluno"].ToString();
-		    aluno.Tel1 = dt.Rows[0]["telefone1Aluno"].ToString();
-		    aluno.Tel2 = dt.Rows[0]["telefone2Aluno"].ToString();
-		    aluno.Tel3 = dt.Rows[0]["telefone3Aluno"].ToString();
-		    aluno.DataNascimento = (DateTime)dt.Rows[0]["dataNascimentoAluno"];
-		    aluno.Deficiencia = dt.Rows[0]["deficiencia"] as int?;
-		    return aluno;
+			Aluno aluno = new Aluno();
+			aluno.Nome = dt.Rows[0]["nomeAluno"].ToString();
+			aluno.Sexo = dt.Rows[0]["sexo"].ToString();
+			aluno.NomeMae = dt.Rows[0]["nomeMaeAluno"].ToString();
+			aluno.Nomepai = dt.Rows[0]["nomePaiAluno"].ToString();
+			aluno.Tel1 = dt.Rows[0]["telefone1Aluno"].ToString();
+			aluno.Tel2 = dt.Rows[0]["telefone2Aluno"].ToString();
+			aluno.Tel3 = dt.Rows[0]["telefone3Aluno"].ToString();
+			aluno.DataNascimento = (DateTime)dt.Rows[0]["dataNascimentoAluno"];
+			aluno.Deficiencia = dt.Rows[0]["deficiencia"] as int?;
+			return aluno;
 		}
 
 		
@@ -229,8 +182,8 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
-				return vw_aluno.ViewByNomeAluno('%' + nome + '%');
+				vwAluno = new vw_alunosTableAdapter();
+				return vwAluno.ViewByNomeAluno('%' + nome + '%');
 			}
 			catch (Exception exception)
 			{
@@ -247,8 +200,8 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
-				return vw_aluno.ViewByNomeMae('%' + nomeMae + '%');
+				vwAluno = new vw_alunosTableAdapter();
+				return vwAluno.ViewByNomeMae('%' + nomeMae + '%');
 			}
 			catch (Exception exception)
 			{
@@ -265,8 +218,8 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
-				return vw_aluno.ViewByIdAluno(codigoAluno);
+				vwAluno = new vw_alunosTableAdapter();
+				return vwAluno.ViewByIdAluno(codigoAluno);
 			}
 			catch (Exception exception)
 			{
@@ -283,8 +236,8 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
-				return vw_aluno.GetBynomePai('%' + nomePai + '%');
+				vwAluno = new vw_alunosTableAdapter();
+				return vwAluno.GetBynomePai('%' + nomePai + '%');
 			}
 			catch (Exception exception)
 			{
@@ -301,8 +254,8 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
-				return vw_aluno.ViewByDataNascimento(data);
+				vwAluno = new vw_alunosTableAdapter();
+				return vwAluno.ViewByDataNascimento(data);
 			}
 			catch (Exception exception)
 			{
@@ -319,9 +272,9 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
+				vwAluno = new vw_alunosTableAdapter();
 
-				return vw_aluno.ViewByNomeAluno("%" + nome + "%");
+				return vwAluno.ViewByNomeAluno("%" + nome + "%");
 			}
 			catch (Exception exception)
 			{
@@ -338,9 +291,9 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
+				vwAluno = new vw_alunosTableAdapter();
 
-				return vw_aluno.ViewByDataNascimento(data);
+				return vwAluno.ViewByDataNascimento(data);
 			}
 			catch (Exception exception)
 			{
@@ -357,9 +310,9 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
+				vwAluno = new vw_alunosTableAdapter();
 
-				return vw_aluno.ViewByIdAluno(idaluno);
+				return vwAluno.ViewByIdAluno(idaluno);
 			}
 			catch (Exception exception)
 			{
@@ -376,9 +329,9 @@ namespace SIESC.BD.Control
 		{
 			try
 			{
-				vw_aluno = new vw_alunosTableAdapter();
+				vwAluno = new vw_alunosTableAdapter();
 
-				return vw_aluno.VeiwByIdSolicitacao(idSolicitacao);
+				return vwAluno.VeiwByIdSolicitacao(idSolicitacao);
 			}
 			catch (Exception exception)
 			{
@@ -400,10 +353,10 @@ namespace SIESC.BD.Control
 			if (disposing)
 			{
 				// free managed resources
-				if (aluno_TA != null)
+				if (alunoTa != null)
 				{
-					aluno_TA.Dispose();
-					aluno_TA = null;
+					alunoTa.Dispose();
+					alunoTa = null;
 				}
 			}
 			if (nativeResource != IntPtr.Zero)

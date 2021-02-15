@@ -5,17 +5,13 @@
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.UI.CEP;
-using SIESC.UI.UI.Relatorios;
 using SIESC.WEB;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Solicitacoes
@@ -134,6 +130,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Repassa para os controles do formulário os dados do aluno e da solicitação armazenada no banco de dados
         /// </summary>
         /// <param name="aluno">O objeto aluno com os seus dados</param>
+        /// <param name="sindicancia">O objeto sindicância</param>
         private void TransfereParaControles(Aluno aluno, Sindicancia sindicancia)
         {
             txt_nomealuno.Text = aluno.Nome;
@@ -404,7 +401,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     using (controleAluno.Salvar(alunoCriado, true))
                     {
-                        alunoCriado.Id = controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                        alunoCriado.Id = controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
                     } //salva o aluno no banco de dados 
 
 
@@ -470,11 +467,11 @@ namespace SIESC.UI.UI.Solicitacoes
             };
             return aluno;
         }
+
         /// <summary>
         /// Cria uma nova Sindicância
         /// </summary>
-        /// <param name="codigoAluno"></param>
-        /// <returns></returns>
+        /// <returns>O Objeto sindicância</returns>
         private Sindicancia CriarSindicancia()
         {
             var sindicancia = new Sindicancia()
@@ -754,7 +751,7 @@ namespace SIESC.UI.UI.Solicitacoes
             if (DateTime.Now.Month < data_nascimento.Month ||
                 (DateTime.Now.Month == data_nascimento.Month && DateTime.Now.Day < data_nascimento.Day)) anos--;
 
-            lbl_idade.Text = $"{anos} anos";
+            lbl_idade.Text = $@"{anos} anos";
 
             if (anos >= 15)
                 Mensageiro.MensagemAviso($"O aluno possui {anos} anos.{Environment.NewLine} Favor Verificar!",

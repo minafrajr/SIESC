@@ -662,7 +662,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
                     {
                          _controleAluno.Salvar(alunoCriado,true); //salva o aluno no banco de dados 
-                        alunoCriado.Id = _controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                        alunoCriado.Id = _controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
                     }
                     else
                     {

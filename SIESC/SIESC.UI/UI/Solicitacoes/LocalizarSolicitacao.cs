@@ -10,6 +10,9 @@ using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
+    /// <summary>
+    /// Formulário para localizar as solicitações próximas a uma unidade escolar
+    /// </summary>
     public partial class LocalizarSolicitacao : SIESC.UI.base_UI
     {
         /// <summary>

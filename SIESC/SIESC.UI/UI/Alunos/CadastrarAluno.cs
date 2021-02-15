@@ -241,7 +241,7 @@ namespace SIESC.UI.UI
                 {
                     if (await controleAluno.Salvar(aluno, true))
                     {
-                        aluno.Id = controleAluno.PesquisaID(aluno);
+                        aluno.Id = controleAluno.PesquisaId(aluno);
 
                         Mensageiro.MensagemAviso($"Aluno {aluno} foi salvo com sucesso!", this);
 
