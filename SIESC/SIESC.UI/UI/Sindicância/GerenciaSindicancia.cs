@@ -160,7 +160,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <summary>
         /// Carrega a GridView com as sindicancias
         /// </summary>
-        private async void CarregaGridView()
+        private void CarregaGridView()
         {
             try
             {

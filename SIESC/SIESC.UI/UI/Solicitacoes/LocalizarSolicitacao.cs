@@ -48,11 +48,6 @@ namespace SIESC.UI.UI.Solicitacoes
         private AlunoControl controleAluno;
 
         /// <summary>
-        /// Objeto para zoneamento
-        /// </summary>
-        private ZoneamentoControl zoneamentoControl;
-
-        /// <summary>
         /// Array com as coordenadas das instituições
         /// </summary>
         private string[] coordenadasInstituicao;

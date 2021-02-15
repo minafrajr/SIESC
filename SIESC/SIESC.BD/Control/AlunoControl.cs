@@ -48,7 +48,7 @@ namespace SIESC.BD.Control
 
 				if (confirma)
 				{
-					return 
+					return
 						(aluno_TA.Inserir(aluno.Nome, aluno.Sexo, aluno.DataNascimento, aluno.NomeMae, aluno.Nomepai,
 							 aluno.Tel1, aluno.Tel2, aluno.Tel3, aluno.Deficiencia ) > 0);
 				}

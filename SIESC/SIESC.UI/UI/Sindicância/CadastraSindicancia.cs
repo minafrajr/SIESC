@@ -67,13 +67,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// editando - o usuário irá alterar um solicitação salva.
         /// </summary>
         private Navegacao statusNavegacao;
-
-       
-        /// <summary>
-        /// Lista de endereços
-        /// </summary>
-        private List<tecnologia1.Endereco> listOfEnderecos;
-
+        
         /// <inheritdoc />
         /// <summary>
         /// Contrutor do formulário
@@ -407,10 +401,12 @@ namespace SIESC.UI.UI.Solicitacoes
                     var alunoCriado = CriarAluno();
 
                     //if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
-                   
-                    controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
-                    alunoCriado.Id = controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
-                   
+
+                    using (controleAluno.Salvar(alunoCriado, true))
+                    {
+                        alunoCriado.Id = controleAluno.PesquisaID(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                    } //salva o aluno no banco de dados 
+
 
                     sindicancia.codigoAluno = alunoCriado.Id;
                     if (sindicanciaControl.InserirSindicancia(sindicancia))
