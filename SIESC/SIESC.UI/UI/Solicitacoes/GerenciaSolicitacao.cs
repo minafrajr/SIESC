@@ -367,20 +367,17 @@ namespace SIESC.UI.UI
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2021"))
-                {
                     throw new Exception("Não é permitido finalizar solicitações de anos anteriores.");
-                }
 
                 if (Mensageiro.MensagemPergunta($"Deseja finalizar a Solicitação?{Environment.NewLine}A solicitação será considerada como encaminhada.", this).Equals(DialogResult.Yes))
                 {
                     controleSolicitacoes = new SolicitacaoControl();
 
-
                     int codigoSolicitacao;
 
-                    if (int.TryParse(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString(), out codigoSolicitacao))
+                    if (int.TryParse(dgv_solicitacoes.CurrentRow.Cells["Solicitacao"].Value.ToString(), out codigoSolicitacao))
                     {
-                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao, DateTime.Now, PrincipalUI.user.nomeusuario.ToUpper(), this.dgv_solicitacoes[18, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "- SOLICITAÇÃO FINALIZADA"))
+                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao, DateTime.Now, PrincipalUI.user.nomeusuario.ToUpper(), this.dgv_solicitacoes.CurrentRow.Cells["Observacoes"].Value.ToString() + "- SOLICITAÇÃO FINALIZADA"))
                         {
                             Mensageiro.MensagemAviso("A solicitação foi finalizada com sucesso!", this);
                         }
