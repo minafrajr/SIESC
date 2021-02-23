@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\AlunoControl.cs" />
+    <Compile Include="Control\AnoEnsinoControl.cs" />
     <Compile Include="Control\AnosAnterioresControl.cs" />
     <Compile Include="Control\AutorizacaoControl.cs" />
     <Compile Include="Control\BairroControl.cs" />

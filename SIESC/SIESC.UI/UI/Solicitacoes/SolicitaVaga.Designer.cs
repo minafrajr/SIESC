@@ -1118,6 +1118,7 @@
             this.cbo_anosolicitado.Tag = "Ano solicitado";
             this.cbo_anosolicitado.ValueMember = "idAno";
             this.cbo_anosolicitado.DropDown += new System.EventHandler(this.cbo_anosolicitado_DropDown);
+            this.cbo_anosolicitado.DropDownClosed += new System.EventHandler(this.cbo_anosolicitado_DropDownClosed);
             // 
             // anoBindingSource
             // 

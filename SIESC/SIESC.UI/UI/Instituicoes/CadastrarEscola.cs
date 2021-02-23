@@ -757,7 +757,7 @@ namespace SIESC.UI.UI
 
 						if (node_filho.Checked && node_filho.Text.Equals(row["AnoEF"].ToString()))
 						{
-							anoEnsino.idanoensino = Convert.ToInt32(row["idAno"].ToString());
+							anoEnsino.idAnoEnsino = Convert.ToInt32(row["idAno"].ToString());
 
 							foreach (TreeNode node_neto in node_filho.Nodes)
 							{

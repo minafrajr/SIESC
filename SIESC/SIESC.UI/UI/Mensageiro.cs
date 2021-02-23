@@ -120,5 +120,16 @@ namespace SIESC.UI.UI
             System.Media.SystemSounds.Beep.Play();
             MessageBox.Show(form, $@"{text}", @"Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        /// <summary>
+        /// Mensagem de atenção
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="form"></param>
+
+        public static void MensagemExclamacao(string text, IWin32Window form)
+        {
+            System.Media.SystemSounds.Beep.Play();
+            MessageBox.Show(form, $@"{text}", @"Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
     }
 }

@@ -13,7 +13,13 @@ namespace SIESC.MODEL.Classes {
 		/// <summary>
 		/// O ano de ensino
 		/// </summary>
-		public int idanoensino { get; set; }
+		public int idAnoEnsino { get; set; }
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		public string descricaoAno { get; set; }
+
 		/// <summary>
 		/// Turno integral
 		/// </summary>
@@ -30,5 +36,14 @@ namespace SIESC.MODEL.Classes {
 		/// turno noite
 		/// </summary>
 		public int? noite { get; set; }
+		/// <summary>
+		/// A data de ingresso para o ano de ensino
+		/// </summary>
+		public DateTime dataIngresso { get; set; }
+		/// <summary>
+		/// A data de saída do ano de ensino
+		/// </summary>
+		public DateTime dataSaida { get; set; }
+
 	}
 }

@@ -34,7 +34,7 @@ namespace SIESC.BD.Control
 
 				foreach (AnoEnsino anoEnsino in listaAnosEnsino)
 				{
-					if (ofertaensino_TA.InserirAnoEnsino(idInstituicao, anoEnsino.idanoensino, anoEnsino.integral,anoEnsino.manha, anoEnsino.tarde, anoEnsino.noite) < 0)
+					if (ofertaensino_TA.InserirAnoEnsino(idInstituicao, anoEnsino.idAnoEnsino, anoEnsino.integral,anoEnsino.manha, anoEnsino.tarde, anoEnsino.noite) < 0)
 						return false;
 				}
 				return true;
