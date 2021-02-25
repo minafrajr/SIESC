@@ -52,7 +52,7 @@ namespace SIESC.BD.Control
                     (solicitacao_TA.Inserir(solicitacao.Aluno, solicitacao.InstituicaoSolicitada, solicitacao.DataSolicitacao,
                         solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem,
                         solicitacao.InstituicaoEncaminhada, solicitacao.DataEncaminhamento, solicitacao.Observacoes,
-                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte,solicitacao.JustificativaTransporte) > 0);
+                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte,solicitacao.JustificativaTransporte,solicitacao.possuiIrmao, solicitacao.anoIrmao1,solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2) > 0);
             }
             catch (Exception exception)
             {
@@ -322,10 +322,10 @@ namespace SIESC.BD.Control
         /// Atualiza a Solicitação
         /// </summary>
         /// <param name="aluno">O objeto aluno</param>
-        /// <param name="solicita">O objeto Solicitação</param>
+        /// <param name="solicitacao">O objeto Solicitação</param>
         /// <param name="encaminhado">true - alteração no encaminhamento | false - sem alteração no encaminhamento</param>
         /// <returns></returns>
-        public bool AtualizarSolicitacao(Aluno aluno, Solicitacao solicita, bool encaminhado)
+        public bool AtualizarSolicitacao(Aluno aluno, Solicitacao solicitacao, bool encaminhado)
         {
             try
             {
@@ -333,9 +333,9 @@ namespace SIESC.BD.Control
 
                 if (encaminhado)
                 {
-                    return solicitacao_TA.AtualizarSolicitacao(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.InstituicaoEncaminhada, solicita.Observacoes, solicita.Motivo, solicita.AnoEnsino, solicita.DataEncaminhamento, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.usuarioEncaminhou, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.OrigemSolicitacao, solicita.Transporte,solicita.JustificativaTransporte,aluno.Id, solicita.Codigo) > 0;
+                    return solicitacao_TA.AtualizarSolicitacao(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.InstituicaoEncaminhada, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.DataEncaminhamento, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte,solicitacao.JustificativaTransporte,solicitacao.possuiIrmao,solicitacao.anoIrmao1,solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,aluno.Id, solicitacao.Codigo) > 0;
                 }
-                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicita.InstituicaoSolicitada, true, solicita.instituicaoOrigem, solicita.CidadeOrigem, solicita.EstadoOrigem, solicita.Observacoes, solicita.Motivo, solicita.AnoEnsino, solicita.CodigoExpInt, solicita.Solicitante, solicita.TipoSolicitante, solicita.TipoLogradouro, solicita.Logradouro, solicita.NumResidencia, solicita.Complemento, solicita.Bairro, solicita.ComprovanteResponsavel, solicita.TipoComprovante, solicita.Coordenadas[0], solicita.Coordenadas[1], solicita.Cep, solicita.OrigemSolicitacao,solicita.Transporte, solicita.JustificativaTransporte,aluno.Id, solicita.Codigo) > 0;
+                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte, solicitacao.JustificativaTransporte,solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,aluno.Id, solicitacao.Codigo) > 0;
             }
             catch (SqlException exception)
             {

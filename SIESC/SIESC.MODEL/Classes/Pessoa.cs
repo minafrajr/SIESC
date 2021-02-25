@@ -5,14 +5,14 @@
 #endregion
 using System;
 
-namespace SIESC.MODEL
+namespace SIESC.MODEL.Classes
 {
     /// <summary>
     /// Classe que representa uma pessoa no sistema
     /// </summary>
     public class Pessoa
     {
-     /// <summary>
+        /// <summary>
         /// O nome da pessoa
         /// </summary>
         public string Nome
@@ -92,7 +92,5 @@ namespace SIESC.MODEL
             get;
             set;
         }
-
     }
-
 }
