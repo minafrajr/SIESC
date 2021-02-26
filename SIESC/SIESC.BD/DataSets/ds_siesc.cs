@@ -4,6 +4,9 @@
 
     partial class ds_siesc
     {
+        partial class solicitacoesvagasDataTable
+        {
+        }
     }
 }
 

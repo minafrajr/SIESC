@@ -206,7 +206,7 @@ namespace SIESC.BD.Control
                 solicita.Solicitante = dt.Rows[0]["solicitante"].ToString();
                 solicita.TipoSolicitante = dt.Rows[0]["grauSolicitante"].ToString();
                 solicita.usuarioEncaminhou = dt.Rows[0]["usuarioEncaminhou"].ToString();
-                solicita.OrigemSolicitacao = Convert.ToInt16(dt.Rows[0]["origemSolicitacao"].ToString());
+                solicita.OrigemSolicitacao = Convert.ToInt32(dt.Rows[0]["origemSolicitacao"].ToString());
                 solicita.Bairro = Convert.ToInt32(dt.Rows[0]["idBairro"].ToString());
                 solicita.TipoLogradouro = dt.Rows[0]["tipoLogradouro"].ToString();
                 solicita.Logradouro = dt.Rows[0]["logradouro"].ToString();
@@ -429,7 +429,6 @@ namespace SIESC.BD.Control
             }
             catch (SqlException ex)
             {
-
                 throw ex;
             }
         }

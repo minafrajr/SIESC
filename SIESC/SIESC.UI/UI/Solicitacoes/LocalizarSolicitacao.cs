@@ -1,10 +1,10 @@
-﻿using SIESC.BD.Control;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Threading;
-using SIESC;
+using System.Windows.Forms;
+using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.WEB;
 
@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário para localizar as solicitações próximas a uma unidade escolar
     /// </summary>
-    public partial class LocalizarSolicitacao : SIESC.UI.base_UI
+    public partial class LocalizarSolicitacao : base_UI
     {
         /// <summary>
         /// Objeto de acesso as instituições no banco
@@ -72,7 +72,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.anoTableAdapter1.FillBySolicitavaga(this.siescDataSet1.ano);
+                anoTableAdapter1.FillBySolicitavaga(siescDataSet1.ano);
 
                 cbo_anos_ensino.SelectedIndex = -1;
             }
@@ -90,13 +90,13 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if (((SIESC.UI.siescDataSet.anoRow)((System.Data.DataRowView)cbo_anos_ensino.SelectedItem).Row).nivelensino.Equals(1))
+                if (((siescDataSet.anoRow)((DataRowView)cbo_anos_ensino.SelectedItem).Row).nivelensino.Equals(1))
                 {
-                    this.instituicoesTableAdapter1.FillByInfantil(this.siescDataSet1.instituicoes);
+                    instituicoesTableAdapter1.FillByInfantil(siescDataSet1.instituicoes);
                 }
                 else
                 {
-                    this.instituicoesTableAdapter1.FillByEstadoMunicipio(this.siescDataSet1.instituicoes);
+                    instituicoesTableAdapter1.FillByEstadoMunicipio(siescDataSet1.instituicoes);
                 }
 
                 cbo_instituicao.SelectedIndex = -1;
@@ -162,7 +162,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                Process.Start("https://maps.google.com/?q=@" + dgv_solicitacoes["latitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "," + dgv_solicitacoes["longitude",dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString());
+                Process.Start("https://maps.google.com/?q=@" + dgv_solicitacoes["latitude",dgv_solicitacoes.CurrentCellAddress.Y].Value + "," + dgv_solicitacoes["longitude",dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
             }
             catch (Exception ex)
@@ -187,7 +187,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 txt_endereco.Text = controleSolicitacao.RetornaEndereco((int)dgv_solicitacoes["CodigoSolicitacao",dgv_solicitacoes.CurrentCellAddress.Y].Value);
                 txt_motivo.Text = dt_solicitacao.Rows[0]["Motivo"].ToString();
                 txt_origem_solicitacao.Text = dt_solicitacao.Rows[0]["Origem Solicitacao"].ToString();
-                txt_telefone.Text = $"{dt_solicitacao.Rows[0]["Telefone 1"].ToString()}  {dt_solicitacao.Rows[0]["Telefone 2"].ToString()}";
+                txt_telefone.Text = $"{dt_solicitacao.Rows[0]["Telefone 1"]}  {dt_solicitacao.Rows[0]["Telefone 2"]}";
             }
             catch (Exception exception)
             {
@@ -215,7 +215,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 frm_solicitavaga.Show();
 
-                this.Close();
+                Close();
             }
             catch (Exception exception)
             {
@@ -227,7 +227,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_solicitacoes_CellMouseClick(object sender,System.Windows.Forms.DataGridViewCellMouseEventArgs e)
+        private void dgv_solicitacoes_CellMouseClick(object sender,DataGridViewCellMouseEventArgs e)
         {
             try
             {
@@ -286,7 +286,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_solicitacoes_DataBindingComplete(object sender, System.Windows.Forms.DataGridViewBindingCompleteEventArgs e)
+        private void dgv_solicitacoes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             lbl_num_registros.Text = $@"Total de registros: {dgv_solicitacoes.Rows.Count}";
         }

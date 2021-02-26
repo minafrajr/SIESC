@@ -2,11 +2,6 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 
-using SIESC.BD.Control;
-using SIESC.MODEL.Classes;
-using SIESC.UI.UI.CEP;
-using SIESC.UI.UI.Relatorios;
-using SIESC.WEB;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,11 +9,15 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Bcpg.OpenPgp;
+using SIESC.BD.Control;
+using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.tecnologia1;
+using SIESC.UI.UI.CEP;
+using SIESC.UI.UI.Relatorios;
+using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
@@ -91,7 +90,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <summary>
         /// Lista de endereços
         /// </summary>
-        private List<tecnologia1.Endereco> _listOfEnderecos;
+        private List<Endereco> _listOfEnderecos;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga.
@@ -165,10 +164,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void SolicitaVaga_Load(object sender, EventArgs e)
         {
-            if (statusNavegacao.Equals(Navegacao.salvando))
-            {
-                cbo_instituicao_encaminhada.SelectedValue = -1;
-            }
+            if (statusNavegacao.Equals(Navegacao.salvando)) cbo_instituicao_encaminhada.SelectedValue = -1;
         }
 
         /// <summary>
@@ -207,13 +203,9 @@ namespace SIESC.UI.UI.Solicitacoes
             msk_data_nascimento.Text = aluno.DataNascimento.ToString();
 
             if (aluno.Sexo == "F")
-            {
                 rdb_feminino.Checked = true;
-            }
             else
-            {
                 rdb_masculino.Checked = true;
-            }
 
             msk_telefone1.Text = aluno.Tel1;
             msk_telefone2.Text = aluno.Tel2;
@@ -255,13 +247,9 @@ namespace SIESC.UI.UI.Solicitacoes
 
 
                     if (solicitacao.ComprovanteResponsavel.Equals(true))
-                    {
                         rdb_comprovanteresponsavel_sim.Checked = true;
-                    }
                     else
-                    {
                         rdb_comprovanteresponsavel_nao.Checked = true;
-                    }
 
                     switch (solicitacao.TipoComprovante)
                     {
@@ -308,9 +296,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         chk_transporte.Visible = true;
                     }
                     else
-                    {
                         cbo_instituicao_encaminhada.SelectedIndex = -1;
-                    }
 
                     if (solicitacao.Transporte)
                     {
@@ -343,21 +329,18 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void InicializaDataSets()
         {
-            this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
-            this.instituicoesTableAdapter.Fill(this.siescDataSet.instituicoes);
+            bairrosTableAdapter.Fill(siescDataSet.bairros);
+            instituicoesTableAdapter.Fill(siescDataSet.instituicoes);
 
-            if (statusNavegacao == Navegacao.editando)
-            {
-                this.instituicoes1TableAdapter.Fill(this.siescDataSet.instituicoes1);
-            }
+            if (statusNavegacao == Navegacao.editando) instituicoes1TableAdapter.Fill(siescDataSet.instituicoes1);
 
-            this.motivosTableAdapter.FillByAtivas(this.siescDataSet.motivos);
+            motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
 
-            this.anoTableAdapter.Fill(this.siescDataSet.ano);
+            anoTableAdapter.Fill(siescDataSet.ano);
 
-            this.instorigemTableAdapter.Fill(this.siescDataSet.instorigem);
-            this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
-            this.origemsolicitacaoTableAdapter1.Fill(this.siescDataSet.origemsolicitacao);
+            instorigemTableAdapter.Fill(siescDataSet.instorigem);
+            deficienciasTableAdapter1.Fill(siescDataSet.deficiencias);
+            origemsolicitacaoTableAdapter1.Fill(siescDataSet.origemsolicitacao);
 
             
 
@@ -384,9 +367,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 foreach (DataRowView item in cbo_anosolicitado.Items)
                 {
                     if (item["idAno"].ToString() == solicitacao.AnoEnsino.ToString())
-                    {
                         cbo_anosolicitado.SelectedIndex = cbo_anosolicitado.Items.IndexOf(item);
-                    }
                 }
             }
             else
@@ -406,9 +387,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 foreach (DataRowView item in cbo_motivo.Items)
                 {
                     if (item["idMotivos"].ToString() == solicitacao.Motivo.ToString())
-                    {
                         cbo_motivo.SelectedIndex = cbo_motivo.Items.IndexOf(item);
-                    }
                 }
             }
 
@@ -424,9 +403,7 @@ namespace SIESC.UI.UI.Solicitacoes
             foreach (DataRowView item in cbo_origem_solicitacao.Items)
             {
                 if (item["idOrigemSolicitacao"].ToString() == solicitacao.OrigemSolicitacao.ToString())
-                {
                     cbo_origem_solicitacao.SelectedIndex = cbo_origem_solicitacao.Items.IndexOf(item);
-                }
 
             }
         }
@@ -442,9 +419,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 foreach (DataRowView item in cbo_instituicao_solicitada.Items)
                 {
                     if (item["idInstituicoes"].ToString() == solicitacao.InstituicaoSolicitada.ToString())
-                    {
                         cbo_instituicao_solicitada.SelectedItem = item;
-                    }
                 }
 
                 cbo_instituicao_solicitada.Refresh();
@@ -725,7 +700,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                         frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
                                 solicitacao.Coordenadas[1], solicitacao.AnoEnsino, solicitacao.Codigo)
-                        { MdiParent = this.principalUi };
+                        { MdiParent = principalUi };
 
                         if (t.IsAlive)
                         {
@@ -780,7 +755,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                 frm_ficha_solicitacao frmSolicitacao =
                                     new frm_ficha_solicitacao(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1],
                                             solicitacao.AnoEnsino, solicitacao.Codigo)
-                                    { MdiParent = this.principalUi };
+                                    { MdiParent = principalUi };
 
                                 frmSolicitacao.Show();
                             }
@@ -804,13 +779,13 @@ namespace SIESC.UI.UI.Solicitacoes
                                     solicitacao.Coordenadas[1],
                                     solicitacao.AnoEnsino,
                                     solicitacao.Codigo)
-                            { MdiParent = this.principalUi };
+                            { MdiParent = principalUi };
 
                             frmSolicitacao.Show();
                         }
                     }
 
-                    this.Close();
+                    Close();
                 }
 
                 LimpaControles();
@@ -834,7 +809,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     t.Abort();
                 }
 
-                Mensageiro.MensagemErro(ex, this.principalUi);
+                Mensageiro.MensagemErro(ex, principalUi);
             }
             finally
             {
@@ -855,7 +830,7 @@ namespace SIESC.UI.UI.Solicitacoes
             //se a escola de origem foi digitada
             if (!string.IsNullOrEmpty(cbo_instituicao_origem.Text))
             {
-                instituicaoOrigem = new InstituicaoOrigem()
+                instituicaoOrigem = new InstituicaoOrigem
                 {
                     NomeInstituicao = cbo_instituicao_origem.Text
                 };
@@ -888,20 +863,20 @@ namespace SIESC.UI.UI.Solicitacoes
                     codexint = Convert.ToInt32(msk_codexpint.Text);
                 }
 
-                this.solicitacao = new Solicitacao()
+                solicitacao = new Solicitacao
                 {
                     Aluno = aluno.Id,
                     Status = true,
                     DataSolicitacao = DateTime.Now,
                     CidadeOrigem = cbo_cidades.Text,
                     instituicaoOrigem = cod,
-                    EstadoOrigem = this.cbo_estado.Text,
-                    AnoEnsino = (int)this.cbo_anosolicitado.SelectedValue,
-                    InstituicaoSolicitada = (int)this.cbo_instituicao_solicitada.SelectedValue,
-                    Motivo = (int)this.cbo_motivo.SelectedValue,
-                    Observacoes = this.txt_observacoes.Text,
-                    InstituicaoEncaminhada = ((int?)this.cbo_instituicao_encaminhada.SelectedValue) > 0
-                        ? (int?)this.cbo_instituicao_encaminhada.SelectedValue
+                    EstadoOrigem = cbo_estado.Text,
+                    AnoEnsino = (int)cbo_anosolicitado.SelectedValue,
+                    InstituicaoSolicitada = (int)cbo_instituicao_solicitada.SelectedValue,
+                    Motivo = (int)cbo_motivo.SelectedValue,
+                    Observacoes = txt_observacoes.Text,
+                    InstituicaoEncaminhada = ((int?)cbo_instituicao_encaminhada.SelectedValue) > 0
+                        ? (int?)cbo_instituicao_encaminhada.SelectedValue
                         : null,
                     CodigoExpInt = codexint,
                     Solicitante = txt_solicitante.Text,
@@ -915,7 +890,8 @@ namespace SIESC.UI.UI.Solicitacoes
                     TipoLogradouro = cbo_tipologradouro.Text,
                     OrigemSolicitacao = (int)cbo_origem_solicitacao.SelectedValue,
                     Transporte = chk_transporte.Checked,
-                    JustificativaTransporte = txt_justificativa_transporte.Text
+                    JustificativaTransporte = txt_justificativa_transporte.Text,
+                    possuiIrmao = chk_irmaos.Checked
                 };
 
                 if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou
@@ -925,6 +901,19 @@ namespace SIESC.UI.UI.Solicitacoes
                     solicitacao.usuarioEncaminhou = principalUi.user.nomeusuario.ToUpper();
                     solicitacao.Transporte = chk_transporte.Checked;
                     solicitacao.JustificativaTransporte = txt_justificativa_transporte.Text;
+                }
+
+                if (chk_irmaos.Checked)
+                {
+                    solicitacao.anoIrmao1 = (int) cbo_ano_irmao1.SelectedValue;
+                    solicitacao.escolaIrmao1 =(int) cbo_escola_irmao1.SelectedValue;
+
+
+                    if (cbo_ano_irmao2.SelectedIndex != -1 && cbo_escola_irmao2.SelectedIndex!=-1)
+                    {
+                        solicitacao.anoIrmao2 = (int)cbo_ano_irmao2.SelectedValue;
+                        solicitacao.escolaIrmao2 = (int)cbo_ano_irmao2.SelectedValue; 
+                    }
                 }
 
                 if (statusNavegacao == Navegacao.salvando)
@@ -977,7 +966,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <returns>O objeto Aluno</returns>
         private Aluno CriarAluno()
         {
-            aluno = new Aluno()
+            aluno = new Aluno
             {
                 Nome = txt_nomealuno.Text,
                 NomeMae = txt_mae.Text,
@@ -987,7 +976,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 Tel1 = msk_telefone1.Text,
                 Tel2 = msk_telefone2.Text,
                 Tel3 = msk_telefone3.Text,
-                Deficiencia = (int?)cbo_deficiencia.SelectedValue,
+                Deficiencia = (int?)cbo_deficiencia.SelectedValue
             };
             return aluno;
         }
@@ -1000,16 +989,14 @@ namespace SIESC.UI.UI.Solicitacoes
         private bool CamposObrigatoriosEmBranco(ref string tag)
         {
             if (cbo_solicitante.Text.Equals("MÃE") || cbo_solicitante.Text.Equals("PAI"))
-            {
                 listControlsObrigatorios.Remove(txt_solicitante);
-            }
 
             if (!rdb_comprovanteresponsavel_sim.Checked && !rdb_comprovanteresponsavel_nao.Checked)
             {
                 tag = "COMPROVANTE DE ENDEREÇO";
                 return true;
             }
-
+            
             foreach (Control control in listControlsObrigatorios)
             {
                 if (string.IsNullOrEmpty(control.Text))
@@ -1019,11 +1006,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
             }
 
-            if (!VerificaComprovantes(pnl_comprovantes.Controls, ref tag)
-            ) //verifica se existe pelo menos um comprovante marcado
-            {
+            //verifica se existe pelo menos um comprovante marcado
+            if (!VerificaComprovantes(pnl_comprovantes.Controls, ref tag))
                 return true;
-            }
 
             return false;
         }
@@ -1069,7 +1054,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             try
             {
-                this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
+                bairrosTableAdapter.Fill(siescDataSet.bairros);
                 BuscaCep cep = new BuscaCep();
 
                 cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
@@ -1095,7 +1080,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             if (Mensageiro.MensagemCancelamento(this).Equals(DialogResult.Yes))
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -1144,7 +1129,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
+                bairrosTableAdapter.Fill(siescDataSet.bairros);
             }
             catch (Exception ex)
             {
@@ -1161,7 +1146,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.instorigemTableAdapter.Fill(this.siescDataSet.instorigem);
+                instorigemTableAdapter.Fill(siescDataSet.instorigem);
             }
             catch (Exception exception)
             {
@@ -1182,7 +1167,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 cbo_instituicao_solicitada.SelectedIndex = -1;
 
                 //carrega dados na tabela 'siescDataSet.ano'.
-                this.anoTableAdapter.FillBySolicitavaga(this.siescDataSet.ano);
+                anoTableAdapter.FillBySolicitavaga(siescDataSet.ano);
             }
             catch (Exception exception)
             {
@@ -1206,11 +1191,11 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if ((int)cbo_anosolicitado.SelectedValue >= 10)
                 {
-                    this.instituicoesTableAdapter.FillByInfantil(this.siescDataSet.instituicoes);
+                    instituicoesTableAdapter.FillByInfantil(siescDataSet.instituicoes);
                 }
                 else
                 {
-                    this.instituicoesTableAdapter.FillByMunicipais(this.siescDataSet.instituicoes);
+                    instituicoesTableAdapter.FillByMunicipais(siescDataSet.instituicoes);
                 }
             }
             catch (Exception exception)
@@ -1229,7 +1214,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.motivosTableAdapter.FillByAtivas(this.siescDataSet.motivos);
+                motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
             }
             catch (Exception exception)
             {
@@ -1246,7 +1231,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.origemsolicitacaoTableAdapter1.Fill(this.siescDataSet.origemsolicitacao);
+                origemsolicitacaoTableAdapter1.Fill(siescDataSet.origemsolicitacao);
             }
             catch (Exception ex)
             {
@@ -1277,7 +1262,6 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_instituicao_encaminhada.SelectedValue = -1;
             chk_transporte.Checked = false;
             gpb_justificativa.Visible = false;
-            // lbl_justificativa_transporte.Visible = false;
             HabilitaEncaminhamento(false);
             encaminhou = true;
         }
@@ -1287,14 +1271,10 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void HabilitaTransporte(bool habilita)
         {
-            if (!habilita)
-            {
-                txt_justificativa_transporte.ResetText();
-            }
+            if (!habilita) txt_justificativa_transporte.ResetText();
 
-            gpb_justificativa.Visible = habilita;
-            // lbl_justificativa_transporte.Visible = habilita;
-            txt_justificativa_transporte.Visible = habilita;
+            gpb_justificativa.Enabled = habilita;
+            txt_justificativa_transporte.Enabled = habilita;
         }
 
         /// <summary>
@@ -1303,14 +1283,20 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="habilita"></param>
         private void HabilitaPossuiIrmaos(bool habilita)
         {
-            cbo_ano_irmao1.Visible = habilita;
-            cbo_ano_irmao2.Visible = habilita;
-            cbo_escola_irmao1.Visible = habilita;
-            cbo_escola_irmao2.Visible = habilita;
-            lbl_ano_irmao1.Visible = habilita;
-            lbl_ano_irmao2.Visible = habilita;
-            lbl_escola_irmao1.Visible = habilita;
-            lbl_escola_irmao2.Visible = habilita;
+            cbo_ano_irmao1.Enabled = habilita;
+            cbo_ano_irmao2.Enabled = habilita;
+            cbo_escola_irmao1.Enabled = habilita;
+            cbo_escola_irmao2.Enabled = habilita;
+            lbl_ano_irmao1.Enabled = habilita;
+            lbl_ano_irmao2.Enabled = habilita;
+            lbl_escola_irmao1.Enabled = habilita;
+            lbl_escola_irmao2.Enabled = habilita;
+            button1.Enabled = habilita;
+            button2.Enabled = habilita;
+            button3.Enabled = habilita;
+            button4.Enabled = habilita;
+            listControlsObrigatorios.Add(cbo_ano_irmao1);
+            listControlsObrigatorios.Add(cbo_escola_irmao1);
 
             if (!habilita)
             {
@@ -1318,8 +1304,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 cbo_ano_irmao2.SelectedIndex = -1;
                 cbo_escola_irmao1.SelectedIndex = -1;
                 cbo_escola_irmao2.SelectedIndex = -1;
+                listControlsObrigatorios.Remove(cbo_ano_irmao1);
+                listControlsObrigatorios.Remove(cbo_escola_irmao1);
             }
-
         }
         /// <summary>
         /// Evento da combobox escola encaminhada
@@ -1334,11 +1321,11 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if ((int)cbo_anosolicitado.SelectedValue >= 10)
                 {
-                    this.instituicoes1TableAdapter.FillByInfantil1(this.siescDataSet.instituicoes1);
+                    instituicoes1TableAdapter.FillByInfantil1(siescDataSet.instituicoes1);
                 }
                 else
                 {
-                    this.instituicoes1TableAdapter.FillByEstadoMunicipio1(this.siescDataSet.instituicoes1);
+                    instituicoes1TableAdapter.FillByEstadoMunicipio1(siescDataSet.instituicoes1);
                 }
             }
             catch (Exception exception)
@@ -1356,7 +1343,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
+                deficienciasTableAdapter1.Fill(siescDataSet.deficiencias);
             }
             catch (Exception exception)
             {
@@ -1496,7 +1483,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                base.SetMask(msk_telefone1);
+                SetMask(msk_telefone1);
             }
             catch (Exception exception)
             {
@@ -1513,7 +1500,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                base.SetMask(msk_telefone2);
+                SetMask(msk_telefone2);
             }
             catch (Exception exception)
             {
@@ -1530,7 +1517,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                base.SetMask(msk_telefone3);
+                SetMask(msk_telefone3);
             }
             catch (Exception exception)
             {
@@ -1597,11 +1584,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     int? codexint = Convert.ToInt32(msk_codexpint.Text);
 
-                    aluno = new Aluno()
+                    aluno = new Aluno
                     {
-                        Id = Convert.ToInt32(this.txt_codigoAluno.Text)
+                        Id = Convert.ToInt32(txt_codigoAluno.Text)
                     };
-                    solicitacao = new Solicitacao()
+                    solicitacao = new Solicitacao
                     {
                         Codigo = Convert.ToInt32(txt_codigoSolicitacao.Text),
                         CodigoExpInt = codexint
@@ -1612,7 +1599,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     if (controleSolicitacao.GravarCodigoEi(solicitacao, aluno))
                     {
                         Mensageiro.MensagemAviso("Código de Expediente Interno gravado com sucesso!", principalUi);
-                        this.Close();
+                        Close();
                     }
                 }
             }
@@ -1908,13 +1895,12 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                this.anoTableAdapter.Fill(this.siescDataSet.ano);
+                anoTableAdapter.Fill(siescDataSet.ano);
 
                 VerificaExistencia();
                 CalculaIdade(Convert.ToDateTime(msk_data_nascimento.Text));
 
-                var anoEnsino = DefineAnoEnsino(Convert.ToDateTime(msk_data_nascimento.Text), listaAnoEnsino)
-                    .ToString();
+                var anoEnsino = DefineAnoEnsino(Convert.ToDateTime(msk_data_nascimento.Text), listaAnoEnsino);
 
                 cbo_anosolicitado.SelectedIndex = !string.IsNullOrEmpty(anoEnsino)
                     ? cbo_anosolicitado.FindStringExact(anoEnsino)
@@ -1991,15 +1977,16 @@ namespace SIESC.UI.UI.Solicitacoes
         private void chk_irmaos_CheckedChanged(object sender, EventArgs e)
         {
             HabilitaPossuiIrmaos(chk_irmaos.Checked);
+
         }
         private void cbo_ano_irmao1_DropDown(object sender, EventArgs e)
         {
-            this.anoIrmao1TableAdapter.Fill(this.siescDataSet.anoIrmao1);
+            anoIrmao1TableAdapter.FillByAnoEnsino(siescDataSet.anoIrmao1);
             cbo_escola_irmao1.SelectedIndex = -1;
         }
         private void cbo_ano_irmao2_DropDown(object sender, EventArgs e)
         {
-            this.anoIrmao2TableAdapter.Fill(this.siescDataSet.anoIrmao2);
+            anoIrmao2TableAdapter.FillByAnoEnsino(siescDataSet.anoIrmao2);
             cbo_escola_irmao2.SelectedIndex = -1;
         }
         private void cbo_escola_irmao1_DropDown(object sender, EventArgs e)
@@ -2025,18 +2012,12 @@ namespace SIESC.UI.UI.Solicitacoes
             try
             {
                 if (cbo_ano_irmao2.SelectedValue == null)
-                {
                     throw new Exception("ATENÇÃO!!!\nEscolha o ano de ensino antes e selecionar a escola solicitada!");
-                }
 
-                if ((int)cbo_ano_irmao2.SelectedValue >= 10)
-                {
-                    this.instituicaoIrmao2.FillByInfantil(this.siescDataSet.escolaIrmao2);
-                }
+                if ((int) cbo_ano_irmao2.SelectedValue >= 10)
+                    instituicaoIrmao2.FillByInfantil(siescDataSet.escolaIrmao2);
                 else
-                {
-                    this.instituicaoIrmao2.FillByMunicipais(this.siescDataSet.escolaIrmao2);
-                }
+                    instituicaoIrmao2.FillByMunicipais(siescDataSet.escolaIrmao2);
             }
             catch (Exception exception)
             {
@@ -2044,7 +2025,45 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cbo_ano_irmao1.SelectedIndex = -1;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cbo_escola_irmao1.SelectedIndex = -1;
+            cbo_ano_irmao1.SelectedIndex = -1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cbo_ano_irmao2.SelectedIndex = -1;
+            listControlsObrigatorios.Remove(cbo_ano_irmao2);
+            listControlsObrigatorios.Remove(cbo_escola_irmao2);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cbo_escola_irmao2.SelectedIndex = -1;
+            cbo_ano_irmao2.SelectedIndex = -1;
+            listControlsObrigatorios.Remove(cbo_ano_irmao2);
+            listControlsObrigatorios.Remove(cbo_escola_irmao2);
+        }
+
+        private void cbo_ano_irmao2_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbo_ano_irmao2.SelectedIndex != -1)
+            {
+                listControlsObrigatorios.Add(cbo_ano_irmao2);
+                listControlsObrigatorios.Add(cbo_escola_irmao2);
+            }
+            else
+            {
+                listControlsObrigatorios.Remove(cbo_ano_irmao2);
+                listControlsObrigatorios.Remove(cbo_escola_irmao2);
+            }
+        }
     }
 }
 

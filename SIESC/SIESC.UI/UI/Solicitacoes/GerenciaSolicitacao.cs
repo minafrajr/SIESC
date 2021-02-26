@@ -3,14 +3,15 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-using SIESC.BD.Control;
-using SIESC.MODEL.Classes;
-using SIESC.UI.UI.Relatorios;
-using SIESC.UI.UI.Solicitacoes;
+
 using System;
 using System.Collections;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC.BD.Control;
+using SIESC.MODEL.Classes;
+using SIESC.UI.UI.Relatorios;
+using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI
 
@@ -18,7 +19,7 @@ namespace SIESC.UI.UI
     public partial class GerenciaSolicitacao
     {
         /// <summary>
-        /// Enumeração de estaod de busca
+        /// Enumeração de estado de busca
         /// </summary>
         private Localizar _localiza;
         /// <summary>
@@ -221,7 +222,14 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void dgv_solicitacoes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            RepassaDadosControles();
+            try
+            {
+                RepassaDadosControles();
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception,PrincipalUI);
+            }
         }
 
 
@@ -238,36 +246,36 @@ namespace SIESC.UI.UI
 
             DesabilitaTextBox(true);
 
-            this.txt_nomealuno.Text = this.dgv_solicitacoes[1, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            this.txt_codigo.Text = this.dgv_solicitacoes[2, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            this.lbl_anoensino.Text = this.dgv_solicitacoes[3, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            this.txt_mae.Text = this.dgv_solicitacoes[4, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_codigo.Text = dgv_solicitacoes[2, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            lbl_anoensino.Text = dgv_solicitacoes[3, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_mae.Text = dgv_solicitacoes[4, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.controleAluno = new AlunoControl();
+            controleAluno = new AlunoControl();
 
-            this.txt_endereco.Text = this.controleSolicitacoes.RetornaEndereco((int)this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value);
+            txt_endereco.Text = controleSolicitacoes.RetornaEndereco((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
-            this.txt_origem_solicitacao.Text = this.dgv_solicitacoes[8, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_origem_solicitacao.Text = dgv_solicitacoes[8, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.txt_instituicao_solicitada.Text = this.dgv_solicitacoes[9, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_instituicao_solicitada.Text = dgv_solicitacoes[9, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.txt_instituicao_encaminhada.Text = this.dgv_solicitacoes[11, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_instituicao_encaminhada.Text = dgv_solicitacoes[11, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.txt_dataencaminhamento.Text = this.dgv_solicitacoes[12, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() != "01/01/0001 00:00:00" ? this.dgv_solicitacoes[12, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() : string.Empty;
+            txt_dataencaminhamento.Text = dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() != "01/01/0001 00:00:00" ? dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() : string.Empty;
 
-            this.txt_datasolicitacao.Text = this.dgv_solicitacoes[10, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_datasolicitacao.Text = dgv_solicitacoes[10, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.txt_motivo.Text = this.dgv_solicitacoes[7, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_motivo.Text = dgv_solicitacoes[7, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-            this.txt_observacoes.Text = this.dgv_solicitacoes[18, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " - " + this.dgv_solicitacoes[13, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_observacoes.Text = dgv_solicitacoes[18, dgv_solicitacoes.CurrentCellAddress.Y].Value + " - " + dgv_solicitacoes[13, dgv_solicitacoes.CurrentCellAddress.Y].Value;
 
-            this.txt_datanasc.Text = this.dgv_solicitacoes[19, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString().Substring(0, 10);
+            txt_datanasc.Text = dgv_solicitacoes[19, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString().Substring(0, 10);
 
-            this.txt_telefone.Text = this.dgv_solicitacoes[5, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + "  " + this.dgv_solicitacoes[6, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_telefone.Text = dgv_solicitacoes[5, dgv_solicitacoes.CurrentCellAddress.Y].Value + "  " + dgv_solicitacoes[6, dgv_solicitacoes.CurrentCellAddress.Y].Value;
 
-            this.lbl_idade.Text = this.dgv_solicitacoes[15, this.dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() + " anos";
+            lbl_idade.Text = dgv_solicitacoes[15, dgv_solicitacoes.CurrentCellAddress.Y].Value + " anos";
 
-            txt_usuario.Text = this.dgv_solicitacoes[17, this.dgv_solicitacoes.CurrentCellAddress.Y].Value
+            txt_usuario.Text = dgv_solicitacoes[17, dgv_solicitacoes.CurrentCellAddress.Y].Value
                 .ToString();
 
             if (txt_observacoes.Text.Contains("SOLICITAÇÃO FINALIZADA"))
@@ -276,12 +284,12 @@ namespace SIESC.UI.UI
             }
 
            
-            if (controleSindicancia.ContemSindicado(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value)))
+            if (controleSindicancia.ContemSindicado(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)))
             {
                 gpb_sindicados.Visible = true;
 
                 ArrayList listaStatusSindicancia =
-                    controleSindicancia.StatusSindicancia(Convert.ToInt32(this.dgv_solicitacoes[0, this.dgv_solicitacoes.CurrentCellAddress.Y].Value));
+                    controleSindicancia.StatusSindicancia(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value));
 
                 if(bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
                 {
@@ -377,7 +385,7 @@ namespace SIESC.UI.UI
 
                     if (int.TryParse(dgv_solicitacoes.CurrentRow.Cells["Solicitacao"].Value.ToString(), out codigoSolicitacao))
                     {
-                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao, DateTime.Now, PrincipalUI.user.nomeusuario.ToUpper(), this.dgv_solicitacoes.CurrentRow.Cells["Observacoes"].Value.ToString() + "- SOLICITAÇÃO FINALIZADA"))
+                        if (controleSolicitacoes.FinalizarSolicitacao(codigoSolicitacao, DateTime.Now, PrincipalUI.user.nomeusuario.ToUpper(), dgv_solicitacoes.CurrentRow.Cells["Observacoes"].Value + "- SOLICITAÇÃO FINALIZADA"))
                         {
                             Mensageiro.MensagemAviso("A solicitação foi finalizada com sucesso!", this);
                         }
