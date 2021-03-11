@@ -288,15 +288,16 @@ namespace SIESC.UI.UI.Solicitacoes
 
                     if (solicitacao.possuiIrmao)
                     {
-                        HabilitaPossuiIrmaos(true); 
+                        //HabilitaPossuiIrmaos(true); 
                         Preenche_cbo_Ano_Irmao1(solicitacao);
                         Preenche_cbo_EscolaIrmao1(solicitacao);
                         Preenche_cbo_Ano_Irmao2(solicitacao);
                         Preenche_cbo_EscolaIrmao2(solicitacao);
+
                     }
                     else
                     {
-                        HabilitaPossuiIrmaos(false); 
+                        HabilitaPossuiIrmaos(false);
                     }
 
 
@@ -420,7 +421,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             if (solicitacao.Equals(null)) return;
 
-            if (solicitacao.anoIrmao2.Equals(0))
+            if (solicitacao.anoIrmao2.Equals(null))
             {
                 cbo_ano_irmao2.SelectedIndex = -1;
                 return;
@@ -507,7 +508,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private void Preenche_cbo_EscolaIrmao2(Solicitacao solicitacao)
         {
             if (solicitacao.Equals(null)) return;
-            if (solicitacao.escolaIrmao2.Equals(0))
+            if (solicitacao.escolaIrmao2.Equals(null))
             {
                 cbo_escola_irmao2.SelectedIndex = -1;
                 return;
@@ -1376,8 +1377,6 @@ namespace SIESC.UI.UI.Solicitacoes
             lbl_escola_irmao2.Enabled = habilita;
             btn_limpa_irmao2.Enabled = habilita;
             btn_limpa_irmao1.Enabled = habilita;
-            listControlsObrigatorios.Add(cbo_ano_irmao1);
-            listControlsObrigatorios.Add(cbo_escola_irmao1);
 
             if (!habilita)
             {
@@ -1387,6 +1386,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 cbo_escola_irmao2.SelectedIndex = -1;
                 listControlsObrigatorios.Remove(cbo_ano_irmao1);
                 listControlsObrigatorios.Remove(cbo_escola_irmao1);
+            }
+            else
+            {
+                listControlsObrigatorios.Add(cbo_ano_irmao1);
+                listControlsObrigatorios.Add(cbo_escola_irmao1);
             }
         }
         /// <summary>
@@ -2106,7 +2110,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-      private void btn_limpa_irmao1_Click(object sender, EventArgs e)
+        private void btn_limpa_irmao1_Click(object sender, EventArgs e)
         {
             cbo_escola_irmao1.SelectedIndex = -1;
             cbo_ano_irmao1.SelectedIndex = -1;
@@ -2114,7 +2118,7 @@ namespace SIESC.UI.UI.Solicitacoes
             listControlsObrigatorios.Remove(cbo_escola_irmao1);
         }
 
-       
+
         private void btn_limpa_irmao2_Click(object sender, EventArgs e)
         {
             cbo_escola_irmao2.SelectedIndex = -1;

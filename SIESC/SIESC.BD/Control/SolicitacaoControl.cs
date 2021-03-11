@@ -220,7 +220,7 @@ namespace SIESC.BD.Control
                 solicitacao.Complemento = dt.Rows[0]["complementoEndereco"].ToString();
                 solicitacao.Cep = dt.Rows[0]["cep"].ToString();
                 solicitacao.ComprovanteResponsavel = Convert.ToBoolean(dt.Rows[0]["responsavelcomprovante"].ToString());
-                solicitacao.TipoComprovante = dt.Rows[0]["tipocomprovante"].ToString();
+                solicitacao.TipoComprovante = dt.Rows[0]["tipoComprovante"].ToString();
                 solicitacao.Coordenadas = new string[2];
                 solicitacao.Transporte = Convert.ToBoolean(dt.Rows[0]["transporte"].ToString());
                 solicitacao.JustificativaTransporte = dt.Rows[0]["justificativaTransporte"].ToString();
