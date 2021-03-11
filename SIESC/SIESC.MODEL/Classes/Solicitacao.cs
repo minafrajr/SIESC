@@ -167,22 +167,22 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// O ano ensino do primeiro irmão
         /// </summary>
-        public int anoIrmao1 { get; set; }
+        public int? anoIrmao1 { get; set; }
 
         /// <summary>
         /// A escola em que o primeiro irmão está matriculado
         /// </summary>
-        public int escolaIrmao1 { get;  set; }
+        public int? escolaIrmao1 { get;  set; }
 
         /// <summary>
         /// O ano ensino do segundo irmão
         /// </summary>
-        public int anoIrmao2 { get;  set; }
+        public int? anoIrmao2 { get;  set; }
 
         /// <summary>
         /// A escola em que o segundo irmão está matriculado
         /// </summary>
-        public int escolaIrmao2 { get;  set; }
+        public int? escolaIrmao2 { get;  set; }
 
     }
 }

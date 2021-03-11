@@ -99,10 +99,8 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_limpa_irmao2 = new System.Windows.Forms.Button();
+            this.btn_limpa_irmao1 = new System.Windows.Forms.Button();
             this.gpb_justificativa = new System.Windows.Forms.GroupBox();
             this.txt_justificativa_transporte = new System.Windows.Forms.TextBox();
             this.lbl_escola_irmao2 = new System.Windows.Forms.Label();
@@ -899,10 +897,8 @@ namespace SIESC.UI.UI.Solicitacoes
             // 
             // gpb_solicitacao
             // 
-            this.gpb_solicitacao.Controls.Add(this.button3);
-            this.gpb_solicitacao.Controls.Add(this.button4);
-            this.gpb_solicitacao.Controls.Add(this.button2);
-            this.gpb_solicitacao.Controls.Add(this.button1);
+            this.gpb_solicitacao.Controls.Add(this.btn_limpa_irmao2);
+            this.gpb_solicitacao.Controls.Add(this.btn_limpa_irmao1);
             this.gpb_solicitacao.Controls.Add(this.gpb_justificativa);
             this.gpb_solicitacao.Controls.Add(this.lbl_escola_irmao2);
             this.gpb_solicitacao.Controls.Add(this.lbl_ano_irmao2);
@@ -945,53 +941,29 @@ namespace SIESC.UI.UI.Solicitacoes
             this.gpb_solicitacao.TabStop = false;
             this.gpb_solicitacao.Text = "Solicitação";
             // 
-            // button3
+            // btn_limpa_irmao2
             // 
-            this.button3.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(569, 186);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 22);
-            this.button3.TabIndex = 43;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_limpa_irmao2.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_limpa_irmao2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_limpa_irmao2.Enabled = false;
+            this.btn_limpa_irmao2.Location = new System.Drawing.Point(543, 186);
+            this.btn_limpa_irmao2.Name = "btn_limpa_irmao2";
+            this.btn_limpa_irmao2.Size = new System.Drawing.Size(22, 22);
+            this.btn_limpa_irmao2.TabIndex = 43;
+            this.btn_limpa_irmao2.UseVisualStyleBackColor = true;
+            this.btn_limpa_irmao2.Click += new System.EventHandler(this.btn_limpa_irmao2_Click);
             // 
-            // button4
+            // btn_limpa_irmao1
             // 
-            this.button4.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(569, 158);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 22);
-            this.button4.TabIndex = 42;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(154, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 22);
-            this.button2.TabIndex = 41;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(154, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 22);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_limpa_irmao1.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_limpa_irmao1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_limpa_irmao1.Enabled = false;
+            this.btn_limpa_irmao1.Location = new System.Drawing.Point(543, 158);
+            this.btn_limpa_irmao1.Name = "btn_limpa_irmao1";
+            this.btn_limpa_irmao1.Size = new System.Drawing.Size(22, 22);
+            this.btn_limpa_irmao1.TabIndex = 42;
+            this.btn_limpa_irmao1.UseVisualStyleBackColor = true;
+            this.btn_limpa_irmao1.Click += new System.EventHandler(this.btn_limpa_irmao1_Click);
             // 
             // gpb_justificativa
             // 
@@ -1018,7 +990,7 @@ namespace SIESC.UI.UI.Solicitacoes
             // lbl_escola_irmao2
             // 
             this.lbl_escola_irmao2.AutoSize = true;
-            this.lbl_escola_irmao2.Location = new System.Drawing.Point(179, 189);
+            this.lbl_escola_irmao2.Location = new System.Drawing.Point(153, 189);
             this.lbl_escola_irmao2.Name = "lbl_escola_irmao2";
             this.lbl_escola_irmao2.Size = new System.Drawing.Size(42, 14);
             this.lbl_escola_irmao2.TabIndex = 38;
@@ -1036,7 +1008,7 @@ namespace SIESC.UI.UI.Solicitacoes
             // lbl_escola_irmao1
             // 
             this.lbl_escola_irmao1.AutoSize = true;
-            this.lbl_escola_irmao1.Location = new System.Drawing.Point(179, 163);
+            this.lbl_escola_irmao1.Location = new System.Drawing.Point(153, 163);
             this.lbl_escola_irmao1.Name = "lbl_escola_irmao1";
             this.lbl_escola_irmao1.Size = new System.Drawing.Size(42, 14);
             this.lbl_escola_irmao1.TabIndex = 36;
@@ -1049,7 +1021,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.cbo_escola_irmao2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_escola_irmao2.Enabled = false;
             this.cbo_escola_irmao2.FormattingEnabled = true;
-            this.cbo_escola_irmao2.Location = new System.Drawing.Point(222, 186);
+            this.cbo_escola_irmao2.Location = new System.Drawing.Point(196, 186);
             this.cbo_escola_irmao2.Name = "cbo_escola_irmao2";
             this.cbo_escola_irmao2.Size = new System.Drawing.Size(341, 22);
             this.cbo_escola_irmao2.TabIndex = 35;
@@ -1069,7 +1041,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.cbo_escola_irmao1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_escola_irmao1.Enabled = false;
             this.cbo_escola_irmao1.FormattingEnabled = true;
-            this.cbo_escola_irmao1.Location = new System.Drawing.Point(222, 158);
+            this.cbo_escola_irmao1.Location = new System.Drawing.Point(196, 158);
             this.cbo_escola_irmao1.Name = "cbo_escola_irmao1";
             this.cbo_escola_irmao1.Size = new System.Drawing.Size(341, 22);
             this.cbo_escola_irmao1.TabIndex = 34;
@@ -1798,10 +1770,8 @@ namespace SIESC.UI.UI.Solicitacoes
         private BindingSource escolaIrmao1BindingSource;
         private BindingSource anoIrmao2BindingSource;
         private BindingSource anoIrmao1BindingSource;
-        private Button button3;
-        private Button button4;
-        private Button button2;
-        private Button button1;
+        private Button btn_limpa_irmao2;
+        private Button btn_limpa_irmao1;
 
         /// <summary>
         /// Status de navegação do formulário de solicitação de vaga

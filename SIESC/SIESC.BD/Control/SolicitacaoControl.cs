@@ -36,7 +36,7 @@ namespace SIESC.BD.Control
         /// 
         /// </summary>
         private vw_ficha_encaminhamentoTableAdapter vw_encaminhamentoTA;
-        
+
         /// <summary>
         /// Salva uma solicitação no banco
         /// </summary>
@@ -48,11 +48,11 @@ namespace SIESC.BD.Control
             {
                 solicitacao_TA = new solicitacoesvagasTableAdapter();
 
-                return 
+                return
                     (solicitacao_TA.Inserir(solicitacao.Aluno, solicitacao.InstituicaoSolicitada, solicitacao.DataSolicitacao,
                         solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem,
                         solicitacao.InstituicaoEncaminhada, solicitacao.DataEncaminhamento, solicitacao.Observacoes,
-                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte,solicitacao.JustificativaTransporte,solicitacao.possuiIrmao, solicitacao.anoIrmao1,solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2) > 0);
+                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte, solicitacao.JustificativaTransporte, solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2) > 0);
             }
             catch (Exception exception)
             {
@@ -72,7 +72,7 @@ namespace SIESC.BD.Control
                 solicitacao_TA = new solicitacoesvagasTableAdapter();
 
                 return (solicitacao_TA.Inativar(id) > 0);
-                }
+            }
             catch (Exception exception)
             {
                 throw exception;
@@ -188,40 +188,53 @@ namespace SIESC.BD.Control
         {
             try
             {
-                Solicitacao solicita = new Solicitacao();
-                solicita.Codigo = (int)dt.Rows[0]["idSolicitacoesVagas"];
-                solicita.CidadeOrigem = dt.Rows[0]["cidadeOrigem"].ToString();
-                solicita.Usuario = dt.Rows[0]["usuarioResposavel"].ToString();
-                solicita.InstituicaoEncaminhada = dt.Rows[0]["instituicaoEncaminhada"] != DBNull.Value ? (int?)(dt.Rows[0]["instituicaoEncaminhada"]) : null;
-                solicita.AnoEnsino = Convert.ToInt16(dt.Rows[0]["anoSolicitado"]);
-                solicita.Motivo = Convert.ToInt16(dt.Rows[0]["motivoSolicitacao"].ToString());
-                solicita.Observacoes = dt.Rows[0]["observacoes"].ToString();
-                solicita.DataEncaminhamento = (DateTime)dt.Rows[0]["dataEncaminhamento"];
-                solicita.DataSolicitacao = (DateTime)dt.Rows[0]["dataSolicitacao"];
-                solicita.InstituicaoSolicitada = (int)dt.Rows[0]["instituicaoSolicitada"];
-                solicita.instituicaoOrigem = dt.Rows[0]["escolaOrigem"] != DBNull.Value ? (int?)dt.Rows[0]["escolaOrigem"] : null;
-                solicita.EstadoOrigem = dt.Rows[0]["estadoOrigem"].ToString();
-                solicita.Status = true;
-                solicita.CodigoExpInt = dt.Rows[0]["codexpint"] != DBNull.Value ? (int?)dt.Rows[0]["codexpint"] : null;
-                solicita.Solicitante = dt.Rows[0]["solicitante"].ToString();
-                solicita.TipoSolicitante = dt.Rows[0]["grauSolicitante"].ToString();
-                solicita.usuarioEncaminhou = dt.Rows[0]["usuarioEncaminhou"].ToString();
-                solicita.OrigemSolicitacao = Convert.ToInt32(dt.Rows[0]["origemSolicitacao"].ToString());
-                solicita.Bairro = Convert.ToInt32(dt.Rows[0]["idBairro"].ToString());
-                solicita.TipoLogradouro = dt.Rows[0]["tipoLogradouro"].ToString();
-                solicita.Logradouro = dt.Rows[0]["logradouro"].ToString();
-                solicita.NumResidencia = dt.Rows[0]["numResidencia"].ToString();
-                solicita.Complemento = dt.Rows[0]["complementoEndereco"].ToString();
-                solicita.ComprovanteResponsavel = Convert.ToBoolean(dt.Rows[0]["responsavelcomprovante"].ToString());
-                solicita.TipoComprovante = dt.Rows[0]["tipocomprovante"].ToString();
-                solicita.Coordenadas = new string[2];
-                solicita.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
-                solicita.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
-                solicita.Cep = dt.Rows[0]["cep"].ToString();
-                solicita.Transporte = Convert.ToBoolean(dt.Rows[0]["transporte"].ToString());
-                solicita.JustificativaTransporte = dt.Rows[0]["justificativaTransporte"].ToString();
+                var solicitacao = new Solicitacao();
 
-                return solicita;
+                
+                solicitacao.Codigo = (int)dt.Rows[0]["idSolicitacoesVagas"];
+                solicitacao.CidadeOrigem = dt.Rows[0]["cidadeOrigem"].ToString();
+                solicitacao.Usuario = dt.Rows[0]["usuarioResposavel"].ToString();
+                solicitacao.InstituicaoEncaminhada = dt.Rows[0]["instituicaoEncaminhada"] != DBNull.Value
+                    ? (int?)(dt.Rows[0]["instituicaoEncaminhada"])
+                    : null;
+                solicitacao.AnoEnsino = Convert.ToInt16(dt.Rows[0]["anoSolicitado"]);
+                solicitacao.Motivo = Convert.ToInt16(dt.Rows[0]["motivoSolicitacao"].ToString());
+                solicitacao.Observacoes = dt.Rows[0]["observacoes"].ToString();
+                solicitacao.DataEncaminhamento = (DateTime)dt.Rows[0]["dataEncaminhamento"];
+                solicitacao.DataSolicitacao = (DateTime)dt.Rows[0]["dataSolicitacao"];
+                solicitacao.InstituicaoSolicitada = (int)dt.Rows[0]["instituicaoSolicitada"];
+                solicitacao.instituicaoOrigem =  dt.Rows[0]["escolaOrigem"] != DBNull.Value
+                    ? (int?)dt.Rows[0]["escolaOrigem"]
+                    :null;
+                solicitacao.EstadoOrigem = dt.Rows[0]["estadoOrigem"].ToString();
+                solicitacao.Status = true;
+                solicitacao.CodigoExpInt = dt.Rows[0]["codexpint"] != DBNull.Value ? (int?)dt.Rows[0]["codexpint"] : null;
+                solicitacao.Solicitante = dt.Rows[0]["solicitante"].ToString();
+                solicitacao.TipoSolicitante = dt.Rows[0]["grauSolicitante"].ToString();
+                solicitacao.usuarioEncaminhou = dt.Rows[0]["usuarioEncaminhou"].ToString();
+                solicitacao.OrigemSolicitacao = Convert.ToInt32(dt.Rows[0]["origemSolicitacao"].ToString());
+                solicitacao.Bairro = Convert.ToInt32(dt.Rows[0]["idBairro"].ToString());
+                solicitacao.TipoLogradouro = dt.Rows[0]["tipoLogradouro"].ToString();
+                solicitacao.Logradouro = dt.Rows[0]["logradouro"].ToString();
+                solicitacao.NumResidencia = dt.Rows[0]["numResidencia"].ToString();
+                solicitacao.Complemento = dt.Rows[0]["complementoEndereco"].ToString();
+                solicitacao.Cep = dt.Rows[0]["cep"].ToString();
+                solicitacao.ComprovanteResponsavel = Convert.ToBoolean(dt.Rows[0]["responsavelcomprovante"].ToString());
+                solicitacao.TipoComprovante = dt.Rows[0]["tipocomprovante"].ToString();
+                solicitacao.Coordenadas = new string[2];
+                solicitacao.Transporte = Convert.ToBoolean(dt.Rows[0]["transporte"].ToString());
+                solicitacao.JustificativaTransporte = dt.Rows[0]["justificativaTransporte"].ToString();
+                solicitacao.possuiIrmao = Convert.ToBoolean(dt.Rows[0]["possuiIrmao"]);
+                solicitacao.escolaIrmao1 = dt.Rows[0]["escolaIrmao1"] != DBNull.Value?  Convert.ToInt32(dt.Rows[0]["escolaIrmao1"].ToString())
+                    :(int?) null;
+                solicitacao.escolaIrmao2 = dt.Rows[0]["escolaIrmao2"] != DBNull.Value?  Convert.ToInt32(dt.Rows[0]["escolaIrmao2"].ToString())
+                    :(int?) null;
+                solicitacao.anoIrmao1 =dt.Rows[0]["anoEnsinoIrmao1"] != DBNull.Value? Convert.ToInt32(dt.Rows[0]["anoEnsinoIrmao1"].ToString()):(int?)null;
+                solicitacao.anoIrmao2 = dt.Rows[0]["anoEnsinoIrmao2"] != DBNull.Value? Convert.ToInt32(dt.Rows[0]["anoEnsinoIrmao2"].ToString()):(int?)null;
+                solicitacao.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
+                solicitacao.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
+
+                return solicitacao;
             }
             catch (Exception ex)
             {
@@ -333,9 +346,9 @@ namespace SIESC.BD.Control
 
                 if (encaminhado)
                 {
-                    return solicitacao_TA.AtualizarSolicitacao(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.InstituicaoEncaminhada, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.DataEncaminhamento, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte,solicitacao.JustificativaTransporte,solicitacao.possuiIrmao,solicitacao.anoIrmao1,solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,aluno.Id, solicitacao.Codigo) > 0;
+                    return solicitacao_TA.AtualizarSolicitacao(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.InstituicaoEncaminhada, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.DataEncaminhamento, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte, solicitacao.JustificativaTransporte, solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2, aluno.Id, solicitacao.Codigo) > 0;
                 }
-                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao,solicitacao.Transporte, solicitacao.JustificativaTransporte,solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,aluno.Id, solicitacao.Codigo) > 0;
+                return solicitacao_TA.AtualizaSolicitacaoSemEncaminhar(solicitacao.InstituicaoSolicitada, true, solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem, solicitacao.Observacoes, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte, solicitacao.JustificativaTransporte, solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2, aluno.Id, solicitacao.Codigo) > 0;
             }
             catch (SqlException exception)
             {
@@ -464,13 +477,13 @@ namespace SIESC.BD.Control
         /// <param name="usuarioFinalizacao">O usuário que finalizou a solicitação</param>
         /// <param name="observacao">SOLICITAÇÃO FINALIZADA</param>
         /// <returns></returns>
-        public bool FinalizarSolicitacao(int codigoSolicitacao, DateTime dataFinalizacao, string usuarioFinalizacao,string observacao)
+        public bool FinalizarSolicitacao(int codigoSolicitacao, DateTime dataFinalizacao, string usuarioFinalizacao, string observacao)
         {
             try
             {
                 solicitacao_TA = new solicitacoesvagasTableAdapter();
 
-                return (solicitacao_TA.FinalizaSolicitacao(dataFinalizacao, usuarioFinalizacao,observacao,codigoSolicitacao) > 0);
+                return (solicitacao_TA.FinalizaSolicitacao(dataFinalizacao, usuarioFinalizacao, observacao, codigoSolicitacao) > 0);
             }
             catch (Exception e)
             {

@@ -615,9 +615,7 @@ namespace SIESC.UI.UI
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
             if (!cbo_anoreferencia.Text.Equals("2021"))
-            {
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
-            }
 
             var t = CarregaProgressoThread();
 
@@ -638,19 +636,13 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
 
                 Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
             }
 
         }

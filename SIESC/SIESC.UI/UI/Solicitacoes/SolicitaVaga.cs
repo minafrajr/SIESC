@@ -284,9 +284,27 @@ namespace SIESC.UI.UI.Solicitacoes
                         cbo_solicitante.Text = solicitacao.TipoSolicitante;
                     }
 
+                    chk_irmaos.Checked = solicitacao.possuiIrmao;
+
+                    if (solicitacao.possuiIrmao)
+                    {
+                        HabilitaPossuiIrmaos(true); 
+                        Preenche_cbo_Ano_Irmao1(solicitacao);
+                        Preenche_cbo_EscolaIrmao1(solicitacao);
+                        Preenche_cbo_Ano_Irmao2(solicitacao);
+                        Preenche_cbo_EscolaIrmao2(solicitacao);
+                    }
+                    else
+                    {
+                        HabilitaPossuiIrmaos(false); 
+                    }
+
+
                     Preenche_cbo_Motivo(solicitacao);
                     Preenche_cbo_EscSolicitada(solicitacao);
                     Preenche_cbo_Ano(solicitacao);
+
+
                     Preenche_cbo_EscOrigem(solicitacao);
                     Preenche_cbo_Origem_Solicitacao(solicitacao);
 
@@ -342,8 +360,10 @@ namespace SIESC.UI.UI.Solicitacoes
             deficienciasTableAdapter1.Fill(siescDataSet.deficiencias);
             origemsolicitacaoTableAdapter1.Fill(siescDataSet.origemsolicitacao);
 
-            
-
+            anoIrmao1TableAdapter.FillByAnoEnsino(siescDataSet.anoIrmao1);
+            anoIrmao2TableAdapter.FillByAnoEnsino(siescDataSet.anoIrmao2);
+            instituicaoIrmao1.Fill(siescDataSet.escolaIrmao1);
+            instituicaoIrmao2.Fill(siescDataSet.escolaIrmao2);
         }
 
         /// <summary>
@@ -376,19 +396,58 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
+        private void Preenche_cbo_Ano_Irmao1(Solicitacao solicitacao)
+        {
+            if (solicitacao.Equals(null)) return;
+
+            if (solicitacao.anoIrmao1.Equals(0))
+            {
+                cbo_ano_irmao1.SelectedItem = -1;
+                return;
+            }
+
+            foreach (DataRowView item in cbo_ano_irmao1.Items)
+            {
+                if (item["idAno"].ToString() == solicitacao.anoIrmao1.ToString())
+                {
+                    cbo_ano_irmao1.SelectedIndex = cbo_ano_irmao1.Items.IndexOf(item);
+                    return;
+                }
+            }
+
+        }
+        private void Preenche_cbo_Ano_Irmao2(Solicitacao solicitacao)
+        {
+            if (solicitacao.Equals(null)) return;
+
+            if (solicitacao.anoIrmao2.Equals(0))
+            {
+                cbo_ano_irmao2.SelectedIndex = -1;
+                return;
+            }
+
+            foreach (DataRowView item in cbo_ano_irmao2.Items)
+            {
+                if (item["idAno"].ToString() == solicitacao.anoIrmao2.ToString())
+                {
+                    cbo_ano_irmao2.SelectedIndex = cbo_ano_irmao2.Items.IndexOf(item);
+                    return;
+                }
+            }
+
+        }
         /// <summary>
         /// Prenche a combobox de motivos com a escola salva no banco
         /// </summary>
         /// <param name="solicitacao"></param>
         private void Preenche_cbo_Motivo(Solicitacao solicitacao)
         {
-            if (!solicitacao.Equals(null))
+            if (solicitacao.Equals(null)) return;
+
+            foreach (DataRowView item in cbo_motivo.Items)
             {
-                foreach (DataRowView item in cbo_motivo.Items)
-                {
-                    if (item["idMotivos"].ToString() == solicitacao.Motivo.ToString())
-                        cbo_motivo.SelectedIndex = cbo_motivo.Items.IndexOf(item);
-                }
+                if (item["idMotivos"].ToString() == solicitacao.Motivo.ToString())
+                    cbo_motivo.SelectedIndex = cbo_motivo.Items.IndexOf(item);
             }
 
         }
@@ -414,17 +473,57 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="solicitacao"></param>
         private void Preenche_cbo_EscSolicitada(Solicitacao solicitacao)
         {
-            if (!solicitacao.Equals(null))
-            {
-                foreach (DataRowView item in cbo_instituicao_solicitada.Items)
-                {
-                    if (item["idInstituicoes"].ToString() == solicitacao.InstituicaoSolicitada.ToString())
-                        cbo_instituicao_solicitada.SelectedItem = item;
-                }
+            if (solicitacao.Equals(null)) return;
 
-                cbo_instituicao_solicitada.Refresh();
+            foreach (DataRowView item in cbo_instituicao_solicitada.Items)
+            {
+                if (item["idInstituicoes"].ToString() == solicitacao.InstituicaoSolicitada.ToString())
+                    cbo_instituicao_solicitada.SelectedItem = item;
+            }
+
+            cbo_instituicao_solicitada.Refresh();
+        }
+
+        private void Preenche_cbo_EscolaIrmao1(Solicitacao solicitacao)
+        {
+            if (solicitacao.Equals(null)) return;
+            if (solicitacao.escolaIrmao1.Equals(0))
+            {
+                cbo_escola_irmao1.SelectedIndex = -1;
+                return;
+            }
+
+            foreach (DataRowView item in cbo_escola_irmao1.Items)
+            {
+                if (item["idInstituicoes"].ToString() == solicitacao.escolaIrmao1.ToString())
+                {
+                    cbo_escola_irmao1.SelectedItem = item;
+                    cbo_escola_irmao1.Refresh();
+                    return;
+                }
             }
         }
+
+        private void Preenche_cbo_EscolaIrmao2(Solicitacao solicitacao)
+        {
+            if (solicitacao.Equals(null)) return;
+            if (solicitacao.escolaIrmao2.Equals(0))
+            {
+                cbo_escola_irmao2.SelectedIndex = -1;
+                return;
+            }
+
+            foreach (DataRowView item in cbo_escola_irmao2.Items)
+            {
+                if (item["idInstituicoes"].ToString() == solicitacao.escolaIrmao2.ToString())
+                {
+                    cbo_escola_irmao2.SelectedItem = item;
+                    cbo_escola_irmao2.Refresh();
+                    return;
+                }
+            }
+        }
+
 
         /// <summary>
         /// preenche a combobox com as escolas de origem
@@ -764,10 +863,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     else if (controleSolicitacao.AtualizarSolicitacao(alunoCriado, solicitacao, false)
                     ) //atualiza sem novo encaminhamento
                     {
-                        if (t.IsAlive)
-                        {
-                            t.Abort();
-                        }
+                        if (t.IsAlive) t.Abort();
 
                         if (Mensageiro.MensagemPergunta(
                                 $"A solicitação do aluno {alunoCriado} foi alterada com sucesso!{Environment.NewLine}Deseja imprimir uma nova ficha de solicitação?",
@@ -794,29 +890,19 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (MySqlException ex)
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
 
-                Mensageiro.MensagemErro(
-                    $"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}", principalUi);
+                Mensageiro.MensagemErro($"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}", principalUi);
             }
             catch (Exception ex)
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
 
                 Mensageiro.MensagemErro(ex, principalUi);
             }
             finally
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -858,10 +944,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 int? codexint = null;
 
-                if (!string.IsNullOrEmpty(msk_codexpint.Text))
-                {
-                    codexint = Convert.ToInt32(msk_codexpint.Text);
-                }
+                if (!string.IsNullOrEmpty(msk_codexpint.Text)) codexint = Convert.ToInt32(msk_codexpint.Text);
 
                 solicitacao = new Solicitacao
                 {
@@ -905,14 +988,14 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (chk_irmaos.Checked)
                 {
-                    solicitacao.anoIrmao1 = (int) cbo_ano_irmao1.SelectedValue;
-                    solicitacao.escolaIrmao1 =(int) cbo_escola_irmao1.SelectedValue;
+                    solicitacao.anoIrmao1 = (int)cbo_ano_irmao1.SelectedValue;
+                    solicitacao.escolaIrmao1 = (int)cbo_escola_irmao1.SelectedValue;
 
 
-                    if (cbo_ano_irmao2.SelectedIndex != -1 && cbo_escola_irmao2.SelectedIndex!=-1)
+                    if (cbo_ano_irmao2.SelectedIndex != -1 && cbo_escola_irmao2.SelectedIndex != -1)
                     {
                         solicitacao.anoIrmao2 = (int)cbo_ano_irmao2.SelectedValue;
-                        solicitacao.escolaIrmao2 = (int)cbo_ano_irmao2.SelectedValue; 
+                        solicitacao.escolaIrmao2 = (int)cbo_escola_irmao2.SelectedValue;
                     }
                 }
 
@@ -996,7 +1079,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 tag = "COMPROVANTE DE ENDEREÇO";
                 return true;
             }
-            
+
             foreach (Control control in listControlsObrigatorios)
             {
                 if (string.IsNullOrEmpty(control.Text))
@@ -1291,10 +1374,8 @@ namespace SIESC.UI.UI.Solicitacoes
             lbl_ano_irmao2.Enabled = habilita;
             lbl_escola_irmao1.Enabled = habilita;
             lbl_escola_irmao2.Enabled = habilita;
-            button1.Enabled = habilita;
-            button2.Enabled = habilita;
-            button3.Enabled = habilita;
-            button4.Enabled = habilita;
+            btn_limpa_irmao2.Enabled = habilita;
+            btn_limpa_irmao1.Enabled = habilita;
             listControlsObrigatorios.Add(cbo_ano_irmao1);
             listControlsObrigatorios.Add(cbo_escola_irmao1);
 
@@ -1996,7 +2077,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (cbo_ano_irmao1.SelectedValue == null)
                     throw new Exception("ATENÇÃO!!!\nEscolha o ano de ensino antes e selecionar a escola solicitada!");
 
-                if ((int) cbo_ano_irmao1.SelectedValue >= 10)
+                if ((int)cbo_ano_irmao1.SelectedValue >= 10)
                     instituicaoIrmao1.FillByInfantil(siescDataSet.escolaIrmao1);
                 else
                     instituicaoIrmao1.FillByMunicipais(siescDataSet.escolaIrmao1);
@@ -2014,7 +2095,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (cbo_ano_irmao2.SelectedValue == null)
                     throw new Exception("ATENÇÃO!!!\nEscolha o ano de ensino antes e selecionar a escola solicitada!");
 
-                if ((int) cbo_ano_irmao2.SelectedValue >= 10)
+                if ((int)cbo_ano_irmao2.SelectedValue >= 10)
                     instituicaoIrmao2.FillByInfantil(siescDataSet.escolaIrmao2);
                 else
                     instituicaoIrmao2.FillByMunicipais(siescDataSet.escolaIrmao2);
@@ -2025,25 +2106,16 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cbo_ano_irmao1.SelectedIndex = -1;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+      private void btn_limpa_irmao1_Click(object sender, EventArgs e)
         {
             cbo_escola_irmao1.SelectedIndex = -1;
             cbo_ano_irmao1.SelectedIndex = -1;
+            listControlsObrigatorios.Remove(cbo_ano_irmao1);
+            listControlsObrigatorios.Remove(cbo_escola_irmao1);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            cbo_ano_irmao2.SelectedIndex = -1;
-            listControlsObrigatorios.Remove(cbo_ano_irmao2);
-            listControlsObrigatorios.Remove(cbo_escola_irmao2);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+       
+        private void btn_limpa_irmao2_Click(object sender, EventArgs e)
         {
             cbo_escola_irmao2.SelectedIndex = -1;
             cbo_ano_irmao2.SelectedIndex = -1;
