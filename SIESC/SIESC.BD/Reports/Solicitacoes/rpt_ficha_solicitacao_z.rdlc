@@ -148,10 +148,30 @@
           <DataField>origemsolicitacao</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="possuiIrmao">
+          <DataField>possuiIrmao</DataField>
+          <rd:TypeName>System.SByte</rd:TypeName>
+        </Field>
+        <Field Name="anoIrmao1">
+          <DataField>anoIrmao1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="escolaIrmao1">
+          <DataField>escolaIrmao1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="anoIrmao2">
+          <DataField>anoIrmao2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="escolaIrmao2">
+          <DataField>escolaIrmao2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\minaf\Documents\Visual Studio 2017\Projects\Git\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_ficha_solicitacao</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -2969,11 +2989,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!anoIrmao1.Value, "dsRelatorios")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -2987,6 +3011,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -3000,11 +3025,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!anoIrmao2.Value, "dsRelatorios")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox108</rd:DefaultName>
@@ -3018,6 +3047,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -3065,11 +3095,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!escolaIrmao1.Value, "dsRelatorios")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -3083,6 +3117,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -3096,11 +3131,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!escolaIrmao2.Value, "dsRelatorios")</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox108</rd:DefaultName>
@@ -3114,6 +3153,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
