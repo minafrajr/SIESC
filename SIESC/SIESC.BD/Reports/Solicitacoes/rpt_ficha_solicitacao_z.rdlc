@@ -3175,7 +3175,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=First(Fields!distanciaIrmao1.Value, "dsRelatorios") &amp; " m"</Value>
+                        <Value>=IIf(First(Fields!distanciaIrmao1.Value, "dsRelatorios") is nothing,"",First(Fields!distanciaIrmao1.Value, "dsRelatorios") &amp; " m")</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                         </Style>
@@ -3211,7 +3211,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=First(Fields!distanciaIrmao2.Value, "dsRelatorios") &amp; " m"</Value>
+                        <Value>=IIf(First(Fields!distanciaIrmao1.Value, "dsRelatorios") is nothing,"",First(Fields!distanciaIrmao2.Value, "dsRelatorios") &amp; " m")</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                         </Style>
@@ -3421,7 +3421,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                       <TextRun>
                         <Value>Assinatura do Responsável:</Value>
                         <Style>
-                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -3432,7 +3432,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Top>0.60882cm</Top>
                 <Left>0.12019cm</Left>
                 <Height>0.6cm</Height>
-                <Width>3.82802cm</Width>
+                <Width>5.20469cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -3560,9 +3560,9 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
               </Textbox>
               <Line Name="Line5">
                 <Top>0.98834cm</Top>
-                <Left>4.01213cm</Left>
+                <Left>5.11321cm</Left>
                 <Height>0cm</Height>
-                <Width>13.7215cm</Width>
+                <Width>12.62042cm</Width>
                 <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
