@@ -128,7 +128,7 @@ namespace SIESC.UI.ConsultaWeb
         {
             ServicoCEP srv = new ServicoCEP();
 
-            srv.Timeout = 5000;
+            srv.Timeout = 20000;
             
             
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);

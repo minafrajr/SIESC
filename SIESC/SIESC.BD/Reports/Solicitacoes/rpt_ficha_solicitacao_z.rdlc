@@ -168,6 +168,14 @@
           <DataField>escolaIrmao2</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="distanciaIrmao1">
+          <DataField>distanciaIrmao1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="distanciaIrmao2">
+          <DataField>distanciaIrmao2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
@@ -3004,7 +3012,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Top>3.5676cm</Top>
                 <Left>2.82794cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.10069cm</Width>
+                <Width>2.19519cm</Width>
                 <ZIndex>19</ZIndex>
                 <Style>
                   <Border>
@@ -3040,7 +3048,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Top>4.30871cm</Top>
                 <Left>2.82794cm</Left>
                 <Height>0.6cm</Height>
-                <Width>2.10069cm</Width>
+                <Width>2.19519cm</Width>
                 <ZIndex>20</ZIndex>
                 <Style>
                   <Border>
@@ -3167,11 +3175,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!distanciaIrmao1.Value, "dsRelatorios") &amp; " m"</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -3185,6 +3197,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -3198,11 +3211,15 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value />
-                        <Style />
+                        <Value>=First(Fields!distanciaIrmao2.Value, "dsRelatorios") &amp; " m"</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox108</rd:DefaultName>
@@ -3216,6 +3233,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                     <Style>None</Style>
                   </Border>
                   <BackgroundColor>Gainsboro</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>

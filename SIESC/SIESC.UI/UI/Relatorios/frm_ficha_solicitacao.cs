@@ -51,6 +51,8 @@ namespace SIESC.UI.UI.Relatorios
 
             dtSolicitacao = this.vw_ficha_solicitacaoTableAdapter1.GetDataByIdSolicitacao(codigosolicitacao);
 
+
+
             //dtZoneamento = anoensino >= 10 ? this.zoneamentoTableAdapter1.RetornaCreches(idaluno, 2) : this.zoneamentoTableAdapter1.RetornaEscolas(idaluno, 2);
 
             dtZoneamento = zoneamentoTableAdapter1.RetornaUnidadesAnoEnsino(latitude,longitude,2,anoensino); //2 distancia

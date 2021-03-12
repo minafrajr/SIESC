@@ -143,6 +143,7 @@ namespace SIESC.WEB
 					.Create($"https://maps.googleapis.com/maps/api/geocode/xml" +
 					        $"?address={endereco}" +
 					        $"&sensor=false&key={Settings.Default.geocodeKey}");
+				request.Timeout = 300;
 
 				using (WebResponse response = request.GetResponse())
 				{
@@ -243,9 +244,9 @@ namespace SIESC.WEB
 					}
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-				//throw new WebException("Não foi possível acessar o WebService para georreferenciar o aluno!\n"+"Erro: " + exception.Message );
+				throw new WebException("Não foi possível acessar o WebService para georreferenciar o aluno!\n"+"Erro: " + exception.Message );
 				return coordenada;
 			}
 			return coordenada;

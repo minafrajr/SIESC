@@ -987,18 +987,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     solicitacao.JustificativaTransporte = txt_justificativa_transporte.Text;
                 }
 
-                if (chk_irmaos.Checked)
-                {
-                    solicitacao.anoIrmao1 = (int)cbo_ano_irmao1.SelectedValue;
-                    solicitacao.escolaIrmao1 = (int)cbo_escola_irmao1.SelectedValue;
 
-
-                    if (cbo_ano_irmao2.SelectedIndex != -1 && cbo_escola_irmao2.SelectedIndex != -1)
-                    {
-                        solicitacao.anoIrmao2 = (int)cbo_ano_irmao2.SelectedValue;
-                        solicitacao.escolaIrmao2 = (int)cbo_escola_irmao2.SelectedValue;
-                    }
-                }
 
                 if (statusNavegacao == Navegacao.salvando)
                 {
@@ -1035,6 +1024,24 @@ namespace SIESC.UI.UI.Solicitacoes
                         solicitacao.Coordenadas[1] = string.Empty;
                     }
                 }
+
+                if (chk_irmaos.Checked)
+                {
+                    solicitacao.anoIrmao1 = (int)cbo_ano_irmao1.SelectedValue;
+                    solicitacao.escolaIrmao1 = (int)cbo_escola_irmao1.SelectedValue;
+
+                    solicitacao.distanciaIrmao1 = Distancia((int)solicitacao.escolaIrmao1, solicitacao.Coordenadas);
+
+                    if (cbo_ano_irmao2.SelectedIndex != -1 && cbo_escola_irmao2.SelectedIndex != -1)
+                    {
+                        solicitacao.anoIrmao2 = (int)cbo_ano_irmao2.SelectedValue;
+                        solicitacao.escolaIrmao2 = (int)cbo_escola_irmao2.SelectedValue;
+
+                        solicitacao.distanciaIrmao2 = Distancia((int)solicitacao.escolaIrmao2, solicitacao.Coordenadas);
+                    }
+                    else solicitacao.distanciaIrmao2 = null;
+                }
+                else solicitacao.distanciaIrmao1 = null;
 
                 return solicitacao;
             }
@@ -1864,16 +1871,22 @@ namespace SIESC.UI.UI.Solicitacoes
             if (!encaminhou || solicitacao.Coordenadas[0].StartsWith("0")) return;
 
             controleSolicitacao = new SolicitacaoControl();
-            controleInstituicao = new InstituicaoControl();
 
-            string[] coordEscola =
-                controleInstituicao.RetornaCoordenasInstituicao((int)solicitacao.InstituicaoEncaminhada);
 
-            var distancia = Metrics.CalculaDistanciaCaminhando(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1],
-                coordEscola[0], coordEscola[1]);
+            var distancia = Distancia((int)solicitacao.InstituicaoEncaminhada, solicitacao.Coordenadas);
 
             controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id,
                 solicitacao.InstituicaoEncaminhada, distancia);
+        }
+
+        private int Distancia(int idInstituicao, string[] coordenadasOrigem)
+        {
+            controleInstituicao = new InstituicaoControl();
+            var coordenadasDestino = controleInstituicao.RetornaCoordenasInstituicao(idInstituicao);
+
+            var distancia = Metrics.CalculaDistanciaCaminhando(coordenadasOrigem[0], coordenadasOrigem[1],
+                coordenadasDestino[0], coordenadasDestino[1]);
+            return distancia;
         }
 
 
