@@ -224,7 +224,8 @@ namespace SIESC.BD.Control
                 solicitacao.Coordenadas = new string[2];
                 solicitacao.Transporte = Convert.ToBoolean(dt.Rows[0]["transporte"].ToString());
                 solicitacao.JustificativaTransporte = dt.Rows[0]["justificativaTransporte"].ToString();
-                solicitacao.possuiIrmao = Convert.ToBoolean(dt.Rows[0]["possuiIrmao"].ToString());
+                solicitacao.possuiIrmao = dt.Rows[0]["possuiIrmao"] != DBNull.Value && Convert.ToBoolean(dt.Rows[0]["possuiIrmao"].ToString());
+                
                 solicitacao.escolaIrmao1 = dt.Rows[0]["escolaIrmao1"] != DBNull.Value?  Convert.ToInt32(dt.Rows[0]["escolaIrmao1"].ToString())
                     :(int?) null;
                 solicitacao.escolaIrmao2 = dt.Rows[0]["escolaIrmao2"] != DBNull.Value?  Convert.ToInt32(dt.Rows[0]["escolaIrmao2"].ToString())

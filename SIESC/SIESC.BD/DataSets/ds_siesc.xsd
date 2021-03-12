@@ -957,7 +957,11 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)</CommandTe
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao` FROM vw_solicitacoes WHERE (status = 1) ORDER BY `Solicitacao` DESC LIMIT 25</CommandText>
+                    <CommandText>SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
+                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`, `possuiIrmao`
+FROM            vw_solicitacoes
+WHERE        (status = 1)
+ORDER BY `Solicitacao` DESC LIMIT 25</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -984,13 +988,14 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)</CommandTe
               <Mapping SourceColumn="Motivo" DataSetColumn="Motivo" />
               <Mapping SourceColumn="DataNasc" DataSetColumn="DataNasc" />
               <Mapping SourceColumn="Origem Solicitacao" DataSetColumn="Origem Solicitacao" />
+              <Mapping SourceColumn="possuiIrmao" DataSetColumn="possuiIrmao" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="ListarSolicitacoes" GetMethodModifier="Public" GetMethodName="ListarSolicitacoes" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ListarSolicitacoes" UserSourceName="ListarSolicitacoes">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
-                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`
+                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
 FROM            vw_solicitacoes
 WHERE        (status = 1) AND (finalizada = 0)
 ORDER BY `Solicitacao` DESC LIMIT 25</CommandText>
@@ -3201,6 +3206,7 @@ WHERE        (idAno = 1) OR
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DataNasc" msdata:Caption="DtNasc" msprop:Generator_ColumnVarNameInTable="columnDataNasc" msprop:Generator_ColumnPropNameInRow="DataNasc" msprop:Generator_ColumnPropNameInTable="DataNascColumn" msprop:Generator_UserColumnName="DataNasc" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="possuiIrmao" msprop:Generator_ColumnVarNameInTable="columnpossuiIrmao" msprop:Generator_ColumnPropNameInRow="possuiIrmao" msprop:Generator_ColumnPropNameInTable="possuiIrmaoColumn" msprop:Generator_UserColumnName="possuiIrmao" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.BD.Control;
@@ -283,7 +284,17 @@ namespace SIESC.UI.UI
                 txt_instituicao_encaminhada.Text = "SOLICITAÇÃO FINALIZADA";
             }
 
-           
+            if (dgv_solicitacoes.CurrentRow.Cells["possuiIrmao"].Value.Equals(true))
+            {
+                lbl_irmao_boolean.Text = "SIM";
+                lbl_irmao_boolean.ForeColor = Color.Firebrick;
+            }
+            else
+            {
+                lbl_irmao_boolean.Text = "NÃO";
+                lbl_irmao_boolean.ForeColor = Color.Navy;
+            }
+
             if (controleSindicancia.ContemSindicado(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)))
             {
                 gpb_sindicados.Visible = true;

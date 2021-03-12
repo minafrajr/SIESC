@@ -3479,6 +3479,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnDataNasc;
             
+            private global::System.Data.DataColumn columnpossuiIrmao;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_solicitacoesDataTable() {
@@ -3674,6 +3676,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn possuiIrmaoColumn {
+                get {
+                    return this.columnpossuiIrmao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3727,7 +3737,8 @@ namespace SIESC.BD.DataSets {
                         string solicitante, 
                         string Encaminhado_Por, 
                         string Deficiencia, 
-                        System.DateTime DataNasc) {
+                        System.DateTime DataNasc, 
+                        bool possuiIrmao) {
                 vw_solicitacoesRow rowvw_solicitacoesRow = ((vw_solicitacoesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3749,7 +3760,8 @@ namespace SIESC.BD.DataSets {
                         solicitante,
                         Encaminhado_Por,
                         Deficiencia,
-                        DataNasc};
+                        DataNasc,
+                        possuiIrmao};
                 rowvw_solicitacoesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_solicitacoesRow);
                 return rowvw_solicitacoesRow;
@@ -3800,6 +3812,7 @@ namespace SIESC.BD.DataSets {
                 this.columnEncaminhado_Por = base.Columns["Encaminhado Por"];
                 this.columnDeficiencia = base.Columns["Deficiencia"];
                 this.columnDataNasc = base.Columns["DataNasc"];
+                this.columnpossuiIrmao = base.Columns["possuiIrmao"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3845,6 +3858,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnDeficiencia);
                 this.columnDataNasc = new global::System.Data.DataColumn("DataNasc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataNasc);
+                this.columnpossuiIrmao = new global::System.Data.DataColumn("possuiIrmao", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpossuiIrmao);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSolicitacao,
                                 this.columnIdAluno}, true));
@@ -11937,6 +11952,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool possuiIrmao {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevw_solicitacoes.possuiIrmaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'possuiIrmao\' na tabela \'vw_solicitacoes\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_solicitacoes.possuiIrmaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNome_do_AlunoNull() {
                 return this.IsNull(this.tablevw_solicitacoes.Nome_do_AlunoColumn);
             }
@@ -12137,6 +12168,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDataNascNull() {
                 this[this.tablevw_solicitacoes.DataNascColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspossuiIrmaoNull() {
+                return this.IsNull(this.tablevw_solicitacoes.possuiIrmaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpossuiIrmaoNull() {
+                this[this.tablevw_solicitacoes.possuiIrmaoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21865,6 +21908,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             tableMapping.ColumnMappings.Add("Motivo", "Motivo");
             tableMapping.ColumnMappings.Add("DataNasc", "DataNasc");
             tableMapping.ColumnMappings.Add("Origem Solicitacao", "Origem Solicitacao");
+            tableMapping.ColumnMappings.Add("possuiIrmao", "possuiIrmao");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21881,12 +21925,16 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[8];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao` FROM vw_solicitacoes WHERE (status = 1) ORDER BY `Solicitacao` DESC LIMIT 25";
+            this._commandCollection[0].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
+                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`, `possuiIrmao`
+FROM            vw_solicitacoes
+WHERE        (status = 1)
+ORDER BY `Solicitacao` DESC LIMIT 25";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
-                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`
+                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
 FROM            vw_solicitacoes
 WHERE        (status = 1) AND (finalizada = 0)
 ORDER BY `Solicitacao` DESC LIMIT 25";
