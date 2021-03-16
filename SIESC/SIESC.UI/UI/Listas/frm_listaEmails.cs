@@ -13,18 +13,19 @@ namespace SIESC.UI.UI.Listas
     public partial class frm_listaEmails : base_UI
     {
         /// <summary>
-        /// 
+        /// Table adapter de acesso
         /// </summary>
         private instituicoesTableAdapter ta_instituicoes;
+
         /// <summary>
-        /// 
-        /// </summary>
-        private List<string> listaList;
-        /// <summary>
-        /// 
+        /// DataTable 
         /// </summary>
         private DataTable ds;
 
+        internal enum Mantenedor { fundamental, municipal, parceiras, particular, todas };
+
+
+        private Mantenedor? mantenedor;
 
         /// <summary>
         /// Construtor da classe
@@ -32,10 +33,7 @@ namespace SIESC.UI.UI.Listas
         public frm_listaEmails()
         {
             InitializeComponent();
-            //ta_instituicoes = new instituicoesTableAdapter();
-            //ds = new DataTable();
-            //ds = ta_instituicoes.GetEmailsTodos();
-            //LerEmails(ds);
+            mantenedor = null;
 
         }
 
@@ -44,8 +42,10 @@ namespace SIESC.UI.UI.Listas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_municipais_CheckedChanged(object sender,EventArgs e)
+        private void rdb_municipais_CheckedChanged(object sender, EventArgs e)
         {
+            if(!rdb_municipais.Checked) return;
+            mantenedor = Mantenedor.fundamental;
             CarregaEmails();
 
         }
@@ -54,8 +54,11 @@ namespace SIESC.UI.UI.Listas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_crechesmunicipais_CheckedChanged(object sender,EventArgs e)
+        private void rdb_crechesmunicipais_CheckedChanged(object sender, EventArgs e)
         {
+            if(!rdb_instituicoes_municipais.Checked) return;
+
+            mantenedor = Mantenedor.municipal;
             CarregaEmails();
         }
         /// <summary>
@@ -63,8 +66,11 @@ namespace SIESC.UI.UI.Listas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_todas_CheckedChanged(object sender,EventArgs e)
+        private void rdb_todas_CheckedChanged(object sender, EventArgs e)
         {
+            if(!rdb_todas.Checked) return;
+
+            mantenedor = Mantenedor.todas;
             CarregaEmails();
         }
         /// <summary>
@@ -72,8 +78,21 @@ namespace SIESC.UI.UI.Listas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_crechesConveniadas_CheckedChanged(object sender,EventArgs e)
+        private void rdb_crechesConveniadas_CheckedChanged(object sender, EventArgs e)
         {
+            if (!rdb_instituicoes_conveniadas.Checked) return;
+            mantenedor = Mantenedor.parceiras;
+            CarregaEmails();
+        }
+        /// <summary>
+        /// Evento do radiobutton instituições particulares
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rdb_particulares_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rdb_particulares.Checked) return;
+            mantenedor = Mantenedor.particular;
             CarregaEmails();
         }
         /// <summary>
@@ -81,20 +100,19 @@ namespace SIESC.UI.UI.Listas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_copiarEmails_Click(object sender,EventArgs e)
+        private void btn_copiarEmails_Click(object sender, EventArgs e)
         {
             try
             {
                 Clipboard.SetText(txt_email.Text);
 
-                Mensageiro.MensagemAviso("Copiado os E-mails!",this);
+                Mensageiro.MensagemAviso("Os E-mails foram copiados para a memória! ;) ", this);
 
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
-
         }
 
         /// <summary>
@@ -106,39 +124,35 @@ namespace SIESC.UI.UI.Listas
             {
                 ds = new DataTable();
                 ta_instituicoes = new instituicoesTableAdapter();
-                listaList = new List<string>();
 
-                if (rdb_instituicoes_conveniadas.Checked)
+                switch (mantenedor)
                 {
-                    ds = ta_instituicoes.GetEmailsCrechesConveniadas();
-
-                    LerEmails(ds);
+                    case Mantenedor.fundamental:
+                        ds = ta_instituicoes.GetEmailsMunicipais();
+                        break;
+                    case Mantenedor.municipal:
+                        ds = ta_instituicoes.GetEmailCrechesMunicipais();
+                        break;
+                    case Mantenedor.parceiras:
+                        ds = ta_instituicoes.GetEmailsCrechesConveniadas();
+                        break;
+                    case Mantenedor.particular:
+                        ds = ta_instituicoes.GetEmailsParticulares();
+                        break;
+                    case Mantenedor.todas:
+                        ds = ta_instituicoes.GetEmailsTodos();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
-                if (rdb_instituicoes_municipais.Checked)
-                {
-                    ds = ta_instituicoes.GetEmailCrechesMunicipais();
-
-
-                    LerEmails(ds);
-                }
-                if (rdb_todas.Checked)
-                {
-                    ds = ta_instituicoes.GetEmailsTodos();
-                    LerEmails(ds);
-
-                }
-                if (rdb_municipais.Checked)
-                {
-                    ds = ta_instituicoes.GetEmailsMunicipais();
-                    LerEmails(ds);
-                }
-
+                LerEmails(ds);
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
+        
         /// <summary>
         /// Transfere os emails 
         /// </summary>
@@ -150,20 +164,16 @@ namespace SIESC.UI.UI.Listas
             {
                 txt_email.ResetText();
 
-                foreach (DataRow rowView in ds.Rows)
-                {
-                    listaList.Add(rowView["email"].ToString());
-                }
+                foreach (DataRow rowView in ds.Rows) txt_email.Text += rowView["email"].ToString() + ", ";
 
-                foreach (string email in listaList)
-                {
-                    txt_email.Text += email + ", ";
-                }
+                txt_email.Text = txt_email.Text.TrimEnd(' ').TrimEnd(',');
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
+
+       
     }
 }

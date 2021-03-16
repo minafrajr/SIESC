@@ -10894,7 +10894,7 @@ namespace SIESC.UI.siescDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[18];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[19];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        INEP, bairro, complemento, email, idInstituicoes, logradouro, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro, cep
@@ -11020,15 +11020,22 @@ ORDER BY instituicoes.nome";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[14] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 1 OR mantenedor = 3 OR mantenedor = 4) AND (status = 1)  AND (email IS NOT NULL)";
+            this._commandCollection[14].CommandText = "SELECT INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantene" +
+                "dor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, te" +
+                "lefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 5) AND (status = 1" +
+                ") ";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[15] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[15].Connection = this.Connection;
-            this._commandCollection[15].CommandText = "SELECT INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantene" +
+            this._commandCollection[15].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (mantenedor = 1 OR mantenedor = 3 OR mantenedor = 4) AND (status = 1)  AND (email IS NOT NULL)";
+            this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[16] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[16].Connection = this.Connection;
+            this._commandCollection[16].CommandText = "SELECT INEP, bairro, cep, complemento, email, idInstituicoes, logradouro, mantene" +
                 "dor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, te" +
                 "lefone3, tipologradouro FROM instituicoes WHERE (nome = @nome) AND (status = 1) " +
                 "";
-            this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[16].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nome";
             param.DbType = global::System.Data.DbType.String;
@@ -11037,12 +11044,12 @@ ORDER BY instituicoes.nome";
             param.IsNullable = true;
             param.SourceColumn = "nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[15].Parameters.Add(param);
-            this._commandCollection[16] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[16].Connection = this.Connection;
-            this._commandCollection[16].CommandText = "SELECT nome FROM instituicoes WHERE (idInstituicoes = @idInstituicao) AND (status" +
+            this._commandCollection[16].Parameters.Add(param);
+            this._commandCollection[17] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[17].Connection = this.Connection;
+            this._commandCollection[17].CommandText = "SELECT nome FROM instituicoes WHERE (idInstituicoes = @idInstituicao) AND (status" +
                 " = 1) ";
-            this._commandCollection[16].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[17].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idInstituicao";
             param.DbType = global::System.Data.DbType.Int32;
@@ -11050,11 +11057,11 @@ ORDER BY instituicoes.nome";
             param.IsNullable = true;
             param.SourceColumn = "idInstituicoes";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[16].Parameters.Add(param);
-            this._commandCollection[17] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[17].Connection = this.Connection;
-            this._commandCollection[17].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome) AND (status = 1) ";
-            this._commandCollection[17].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[17].Parameters.Add(param);
+            this._commandCollection[18] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[18].Connection = this.Connection;
+            this._commandCollection[18].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome) AND (status = 1) ";
+            this._commandCollection[18].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nome";
             param.DbType = global::System.Data.DbType.String;
@@ -11063,7 +11070,7 @@ ORDER BY instituicoes.nome";
             param.IsNullable = true;
             param.SourceColumn = "nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[17].Parameters.Add(param);
+            this._commandCollection[18].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11382,7 +11389,7 @@ ORDER BY instituicoes.nome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual siescDataSet.instituicoesDataTable GetEmailsTodos() {
+        public virtual siescDataSet.instituicoesDataTable GetEmailsParticulares() {
             this.Adapter.SelectCommand = this.CommandCollection[14];
             siescDataSet.instituicoesDataTable dataTable = new siescDataSet.instituicoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -11393,8 +11400,19 @@ ORDER BY instituicoes.nome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual siescDataSet.instituicoesDataTable PesquisaID(string nome) {
+        public virtual siescDataSet.instituicoesDataTable GetEmailsTodos() {
             this.Adapter.SelectCommand = this.CommandCollection[15];
+            siescDataSet.instituicoesDataTable dataTable = new siescDataSet.instituicoesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual siescDataSet.instituicoesDataTable PesquisaID(string nome) {
+            this.Adapter.SelectCommand = this.CommandCollection[16];
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }
@@ -11439,7 +11457,7 @@ ORDER BY instituicoes.nome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object PesquisaNome(int idInstituicao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[16];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[17];
             command.Parameters[0].Value = ((int)(idInstituicao));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11468,7 +11486,7 @@ ORDER BY instituicoes.nome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object PesquisarIDbyNome(string nome) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[17];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[18];
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }
