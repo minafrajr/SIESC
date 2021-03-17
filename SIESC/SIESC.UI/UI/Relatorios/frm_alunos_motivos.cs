@@ -9,43 +9,61 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_alunos_motivos : SIESC.UI.base_UI
+    /// <summary>
+    /// Formulário do relatório de alunos por motivo
+    /// </summary>
+    public partial class FrmAlunosMotivos : SIESC.UI.base_UI
     {
-        private Principal_UI frm_Principal;
+        /// <summary>
+        /// Objeto do formulário principal
+        /// </summary>
+        private readonly Principal_UI frmPrincipal;
+        /// <summary>
+        /// O nível de ensino
+        /// </summary>
+        private readonly byte nivelEnsino;
 
-        private byte nivelensino;
+        /// <summary>
+        /// O código do relatório
+        /// </summary>
+        private byte codigoRelatorio;
 
-        private byte codigo_relatorio;
-
-        public frm_alunos_motivos(Principal_UI frm_Principal,byte _nivelensino)
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
+        /// <param name="frm_Principal"></param>
+        /// <param name="nivelEnsino"></param>
+        public FrmAlunosMotivos(Principal_UI frm_Principal, byte nivelEnsino)
         {
             InitializeComponent();
-            this.frm_Principal = frm_Principal;
-            nivelensino = _nivelensino;
+            this.frmPrincipal = frm_Principal;
+            this.nivelEnsino = nivelEnsino;
             motivosTableAdapter1.Fill(this.siescDataSet.motivos);
         }
-
-        private void btn_gerar_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Evento do botão gerar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_gerar_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
             {
-                switch (nivelensino)
+                switch (nivelEnsino)
                 {
                     case 1:
-                        codigo_relatorio = 23;
+                        codigoRelatorio = 23;
                         break;
                     case 2:
-                        codigo_relatorio = 24;
-
+                        codigoRelatorio = 24;
                         break;
                     case 3:
-                        codigo_relatorio = 18;
+                        codigoRelatorio = 18;
                         break;
                 }
 
-
-                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(codigo_relatorio,cbo_motivo.SelectedValue.ToString(),frm_Principal);
+                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(codigoRelatorio, cbo_motivo.SelectedValue.ToString(), frmPrincipal);
                 frmRelatorioGeral.Show();
                 if (t.IsAlive) t.Abort();
                 this.Close();
@@ -53,18 +71,22 @@ namespace SIESC.UI.UI.Relatorios
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex,frm_Principal); ;
+                Mensageiro.MensagemErro(ex, frmPrincipal); ;
             }
-
         }
 
-        private void btn_cancelar_Click(object sender,EventArgs e)
+        /// <summary>
+        /// Botão cancelar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         /// <summary>
-        /// Carrega form com gif enquenao é aberto o relatório 
+        /// Carrega form com gif em que não é aberto o relatório 
         /// </summary>
         /// <returns></returns>
         private static Thread CarregaProgressoThread()
@@ -72,11 +94,8 @@ namespace SIESC.UI.UI.Relatorios
             var progress = new Progresso();
             var t = new Thread(progress.ShowDiag);
             t.Start();
-            while (progress.Started)
-            {
-            }
+            while (progress.Started) { }
             return t;
         }
-
     }
 }

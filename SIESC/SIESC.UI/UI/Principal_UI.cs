@@ -43,9 +43,9 @@ namespace SIESC.UI
         public Usuario user;
 
         /// <summary>
-        /// 
+        /// A versão do software
         /// </summary>
-        private Version myversion;
+        private Version softwareVersion;
 
         /// <summary>
         /// Construtor
@@ -55,13 +55,16 @@ namespace SIESC.UI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// A versão em uso do sistema
+        /// </summary>
         private void Versao()
         {
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                myversion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                softwareVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
 
-                tssl_versao.Text = $@"Versão {myversion}";
+                tssl_versao.Text = $@"Versão {softwareVersion}";
             }
             else
             {
@@ -87,7 +90,22 @@ namespace SIESC.UI
 
                 lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
                 lbl_statusStrip.BackColor = Color.OrangeRed;
+                BackColor = Color.DarkRed;
                 this.BackColor = Color.OrangeRed;
+                foreach (Control control in this.Controls)
+                {
+                    // #2
+                    MdiClient client = control as MdiClient;
+                    if (!(client == null))
+                    {
+                        // #3
+                        client.BackColor = Color.DarkRed;
+                        // 4#
+                        break;
+                    }
+                }
+
+
 #endif
             }
             catch (Exception ex)
@@ -1236,7 +1254,7 @@ namespace SIESC.UI
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this, 1);
+                FrmAlunosMotivos frm = new FrmAlunosMotivos(this, 1);
                 frm.MdiParent = this;
                 frm.Show();
 
@@ -1398,7 +1416,7 @@ namespace SIESC.UI
             var t = CarregaProgressoThread(); //inicia thread para form carregando 
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this, 2);
+                FrmAlunosMotivos frm = new FrmAlunosMotivos(this, 2);
                 frm.MdiParent = this;
                 frm.Show();
                 if (t.IsAlive) t.Abort();
@@ -1829,7 +1847,7 @@ namespace SIESC.UI
             var t = CarregaProgressoThread(); //inicia thread para form carregando
             try
             {
-                frm_alunos_motivos frm = new frm_alunos_motivos(this, 3);
+                FrmAlunosMotivos frm = new FrmAlunosMotivos(this, 3);
                 frm.MdiParent = this;
                 frm.Show();
 
