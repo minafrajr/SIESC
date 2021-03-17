@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Listas
 {
-	partial class frm_listaEmails
+	partial class FrmListaEmails
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -181,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.ClientSize = new System.Drawing.Size(835, 458);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frm_listaEmails";
+            this.Name = "FrmListaEmails";
             this.Text = "Gerar Lista de E-mails";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

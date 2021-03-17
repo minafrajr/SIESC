@@ -842,13 +842,13 @@ namespace SIESC.UI
         {
             foreach (Form mdiChild in this.MdiChildren)
             {
-                if (mdiChild.GetType() == typeof(frm_listaEmails))
+                if (mdiChild.GetType() == typeof(FrmListaEmails))
                 {
                     mdiChild.Close();
                     return;
                 }
             }
-            frm_listaEmails frm_Emails = new frm_listaEmails();
+            FrmListaEmails frm_Emails = new FrmListaEmails();
             frm_Emails.MdiParent = this;
             frm_Emails.Show();
         }
