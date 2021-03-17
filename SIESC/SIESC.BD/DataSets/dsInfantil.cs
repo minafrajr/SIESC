@@ -2,9 +2,9 @@
 {
 
 
-    public partial class dsInfantil
-    {
-    }
+	public partial class dsInfantil
+	{
+	}
 }
 namespace SIESC_BD.DataSets {
     

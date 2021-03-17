@@ -17030,7 +17030,7 @@ ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.Ano
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `descricaoMotivo`, `numero` FROM `siesc`.`vw_motivos`";
+            this._commandCollection[0].CommandText = "SELECT        descricaoMotivo, numero\r\nFROM            vw_motivos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
