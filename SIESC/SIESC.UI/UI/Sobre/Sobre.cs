@@ -4,48 +4,56 @@
 // Criado em: 05/04/2015
 #endregion
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Deployment.Application;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
 
 namespace SIESC.UI.UI.Sobre
 {
+    /// <summary>
+    /// Formulário para exibição das informações do sistema.
+    /// </summary>
     partial class Sobre : Form
     {
-        private Version myversion;
-
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public Sobre()
         {
             InitializeComponent();
-            this.Text = String.Format("Sobre {0}", AssemblyTitle);
+            Text = $@"Sobre {AssemblyTitle}";
             this.labelProductName.Text = AssemblyProduct;
 
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                myversion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                var myversion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
 
-                this.labelVersion.Text = String.Format("Versão {0}", myversion);
+                this.labelVersion.Text = $@"Versão {myversion}";
             }
             else
             {
-                this.labelVersion.Text = String.Format("Versão {0}", AssemblyVersion);
+                this.labelVersion.Text = $@"Versão { AssemblyVersion}";
 
             }
 
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
-            
+        }
+
+        public sealed override string Text
+        {
+            get { return base.Text; }
+            set { base.Text = value; }
         }
 
         #region Acessório de Atributos do Assembly
 
-        public string AssemblyTitle
+        /// <summary>
+        /// O Título do Assembly
+        /// </summary>
+        private static string AssemblyTitle
         {
             get
             {
@@ -54,75 +62,67 @@ namespace SIESC.UI.UI.Sobre
                 {
                     AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
                     if (titleAttribute.Title != "")
-                    {
                         return titleAttribute.Title;
-                    }
                 }
                 return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
             }
         }
 
-        public string AssemblyVersion
-        {
-           get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+        /// <summary>
+        /// A versão do Assembly
+        /// </summary>
+        private static string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        public string AssemblyDescription
+        /// <summary>
+        /// Descrição do Assembly
+        /// </summary>
+        private static string AssemblyDescription
         {
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+                return attributes.Length == 0 ? "" : ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }
         }
-
-        public string AssemblyProduct
+        /// <summary>
+        /// O o nome do Software
+        /// </summary>
+        private static string AssemblyProduct
         {
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyProductAttribute)attributes[0]).Product;
+                return attributes.Length == 0 ? "" : ((AssemblyProductAttribute)attributes[0]).Product;
             }
         }
-
-        public string AssemblyCopyright
+        /// <summary>
+        /// Os direitos autorais do Assembly
+        /// </summary>
+        private static string AssemblyCopyright
         {
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+                return attributes.Length == 0 ? "" : ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
         }
-
-        public string AssemblyCompany
+        /// <summary>
+        /// A empresa responsável pelo Assembly
+        /// </summary>
+        private static string AssemblyCompany
         {
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+                return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
         #endregion
-
+        /// <summary>
+        /// Evento do botão OK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close();
