@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI
 {
+    /// <summary>
+    /// Classe de exibição do carregamento das solicitações ao servidor
+    /// </summary>
     public partial class Progresso : Form
     {
         /// <summary>
