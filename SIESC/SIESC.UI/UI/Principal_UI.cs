@@ -1955,7 +1955,7 @@ namespace SIESC.UI
         #endregion
 
         /// <summary>
-        /// 
+        /// Evento para abrir o formulário de lista das autorizações
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

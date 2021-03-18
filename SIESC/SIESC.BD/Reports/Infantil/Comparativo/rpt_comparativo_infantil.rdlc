@@ -606,26 +606,9 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
+                              <Style>None</Style>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -820,6 +803,7 @@
                   </TablixMembers>
                   <KeepWithGroup>After</KeepWithGroup>
                   <RepeatOnNewPage>true</RepeatOnNewPage>
+                  <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="EscolaSolicitada">
@@ -890,11 +874,12 @@
                                 <Value>TOTAL</Value>
                                 <Style>
                                   <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Right</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -903,6 +888,9 @@
                           <Border>
                             <Style>Solid</Style>
                           </Border>
+                          <RightBorder>
+                            <Style>None</Style>
+                          </RightBorder>
                           <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
@@ -918,9 +906,9 @@
             </TablixRowHierarchy>
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>dsRelatorios</DataSetName>
-            <Top>0.53798cm</Top>
-            <Left>0.60854cm</Left>
-            <Height>2.47978cm</Height>
+            <Top>0.10583cm</Top>
+            <Left>0.27594cm</Left>
+            <Height>2.47979cm</Height>
             <Width>13.58604cm</Width>
             <Style>
               <Border>
@@ -929,13 +917,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.34088in</Height>
-        <Style />
+        <Height>1.09088in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>5.71217in</Width>
+      <Width>5.55431in</Width>
       <Page>
         <PageHeader>
-          <Height>2.88259cm</Height>
+          <Height>2.80322cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1033,9 +1025,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox15</rd:DefaultName>
-              <Top>2.04447cm</Top>
-              <Left>0.60854cm</Left>
-              <Height>0.73229cm</Height>
+              <Top>1.8678cm</Top>
+              <Height>0.61763cm</Height>
               <Width>13.58604cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
@@ -1078,7 +1069,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>0.10583cm</Top>
-              <Left>9.31333cm</Left>
+              <Left>8.99583cm</Left>
               <Height>0.6cm</Height>
               <Width>4.88125cm</Width>
               <Style>

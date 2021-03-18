@@ -608,22 +608,17 @@
                             </Border>
                             <TopBorder>
                               <Color>Black</Color>
-                              <Style>Solid</Style>
                               <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
-                              <Style>Solid</Style>
                               <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
+                              <Style>None</Style>
                             </LeftBorder>
                             <RightBorder>
                               <Color>Black</Color>
-                              <Style>Solid</Style>
                               <Width>1pt</Width>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
@@ -895,7 +890,7 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Right</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -904,6 +899,9 @@
                           <Border>
                             <Style>Solid</Style>
                           </Border>
+                          <RightBorder>
+                            <Style>None</Style>
+                          </RightBorder>
                           <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
@@ -930,7 +928,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.22977in</Height>
+        <Height>1.28185in</Height>
         <Style />
       </Body>
       <Width>6.46217in</Width>

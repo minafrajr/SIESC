@@ -449,7 +449,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -592,6 +591,9 @@
                             <TopBorder>
                               <Style>Double</Style>
                             </TopBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -870,11 +872,12 @@
                                 <Value>TOTAL</Value>
                                 <Style>
                                   <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Right</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -897,8 +900,7 @@
                             <Width>1pt</Width>
                           </LeftBorder>
                           <RightBorder>
-                            <Color>Black</Color>
-                            <Width>1pt</Width>
+                            <Style>None</Style>
                           </RightBorder>
                           <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
