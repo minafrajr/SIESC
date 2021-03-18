@@ -89,9 +89,8 @@ namespace SIESC.UI
                 this.user = new Usuario() { nomeusuario = "MINAFRA" };
 
                 lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
-                lbl_statusStrip.BackColor = Color.OrangeRed;
-                BackColor = Color.DarkRed;
-                this.BackColor = Color.OrangeRed;
+                lbl_statusStrip.BackColor = Color.DarkSlateGray;
+                this.BackColor = Color.DarkSlateGray;
                 foreach (Control control in this.Controls)
                 {
                     // #2
@@ -99,7 +98,7 @@ namespace SIESC.UI
                     if (!(client == null))
                     {
                         // #3
-                        client.BackColor = Color.DarkRed;
+                        client.BackColor = Color.DarkSlateGray;
                         // 4#
                         break;
                     }

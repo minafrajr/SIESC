@@ -280,7 +280,6 @@
     <EmbeddedResource Include="Reports\rpt_alunos_pendentes.rdlc" />
     <EmbeddedResource Include="Reports\rpt_base.rdlc" />
     <EmbeddedResource Include="Reports\rpt_Controle_Solicitacoes.rdlc" />
-    <EmbeddedResource Include="Reports\rpt_ficha.rdlc" />
     <EmbeddedResource Include="Reports\rpt_listabase.rdlc" />
     <EmbeddedResource Include="Reports\Infantil\rpt_solicitacoes_escola_pivot_ano_infantil.rdlc" />
     <EmbeddedResource Include="Reports\Fundamental\rpt_solicitacoes_escola_pivot_ano.rdlc" />
@@ -300,7 +299,6 @@
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_Solicitacoes_Motivo.rdlc" />
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_Solicitacoes_Dia.rdlc" />
     <EmbeddedResource Include="Reports\rpt_Solicitacoes_Por_Motivos.rdlc" />
-    <EmbeddedResource Include="Reports\rpt_Ficha_Solicitacao.rdlc" />
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_solicitacoes_dias_param.rdlc" />
     <EmbeddedResource Include="Reports\Solicitacoes\rpt_Solicitacoes_Mes.rdlc" />
     <EmbeddedResource Include="Reports\Transporte\rpt_encaminhamento_transporte.rdlc" />

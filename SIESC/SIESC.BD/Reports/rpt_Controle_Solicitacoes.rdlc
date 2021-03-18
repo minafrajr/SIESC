@@ -1701,7 +1701,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nº de Solicitações Pendentes do Ensino Fundamental</Value>
+                    <Value>Nº de Solicitações Pendentes</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
