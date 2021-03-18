@@ -6,41 +6,48 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    partial class GerenciaSolicitacao : base_UI { 
-       
-    
-        ///<summary>
-        /// Variável de designer necessária.
-        /// </summary>
-        private IContainer components = null;
+	/// <summary>
+	/// 
+	/// </summary>
+	partial class GerenciaSolicitacao : base_UI { 
+	   
+	
+		///<summary>
+		/// Variável de designer necessária.
+		/// </summary>
+		private IContainer components = null;
 
-        /// <summary>
-        /// Limpar os recursos que estão sendo usados.
-        /// </summary>
-        /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Limpar os recursos que estão sendo usados.
+		/// </summary>
+		/// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Código gerado pelo Windows Form Designer
+		#region Código gerado pelo Windows Form Designer
 
-        /// <summary>
-        /// Método necessário para suporte do Designer - não modifique
-        /// o conteúdo deste método com o editor de código.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Método necessário para suporte do Designer - não modifique
+		/// o conteúdo deste método com o editor de código.
+		/// </summary>
+		private void InitializeComponent()
+		{
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaSolicitacao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbo_motivos = new SIESC.UI.MyComboBox();
+            this.motivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siescDataSet = new SIESC.UI.siescDataSet();
+            this.lbl_tipo_motivos = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbo_tipoBusca = new SIESC.UI.MyComboBox();
             this.lbl7 = new System.Windows.Forms.Label();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,23 +98,19 @@ namespace SIESC.UI.UI
             this.btn_finaliza_solicitacao = new System.Windows.Forms.Button();
             this.txt_mae = new SIESC.UI.MyTextBox();
             this.lbl_aluno = new System.Windows.Forms.Label();
-            this.gpb_localizar = new System.Windows.Forms.GroupBox();
-            this.rdb_codigoEI = new System.Windows.Forms.RadioButton();
-            this.rdb_codigoAluno = new System.Windows.Forms.RadioButton();
-            this.rdb_mae = new System.Windows.Forms.RadioButton();
-            this.rdb_nome = new System.Windows.Forms.RadioButton();
-            this.rdb_codigo = new System.Windows.Forms.RadioButton();
             this.lbl_irmao_boolean = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgv_solicitacoes = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.motivosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.motivosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.motivosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             this.gpb_sindicados.SuspendLayout();
-            this.gpb_localizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -125,6 +128,10 @@ namespace SIESC.UI.UI
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cbo_motivos);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_tipo_motivos);
+            this.splitContainer1.Panel1.Controls.Add(this.label7);
+            this.splitContainer1.Panel1.Controls.Add(this.cbo_tipoBusca);
             this.splitContainer1.Panel1.Controls.Add(this.lbl7);
             this.splitContainer1.Panel1.Controls.Add(this.gpb_sindicados);
             this.splitContainer1.Panel1.Controls.Add(this.btn_ficha_encaminhamento);
@@ -169,7 +176,6 @@ namespace SIESC.UI.UI
             this.splitContainer1.Panel1.Controls.Add(this.btn_finaliza_solicitacao);
             this.splitContainer1.Panel1.Controls.Add(this.txt_mae);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_aluno);
-            this.splitContainer1.Panel1.Controls.Add(this.gpb_localizar);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_irmao_boolean);
             // 
             // splitContainer1.Panel2
@@ -178,6 +184,66 @@ namespace SIESC.UI.UI
             this.splitContainer1.Size = new System.Drawing.Size(1289, 628);
             this.splitContainer1.SplitterDistance = 267;
             this.splitContainer1.TabIndex = 33;
+            // 
+            // cbo_motivos
+            // 
+            this.cbo_motivos.DataSource = this.motivosBindingSource;
+            this.cbo_motivos.DisplayMember = "descricaoMotivo";
+            this.cbo_motivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_motivos.FormattingEnabled = true;
+            this.cbo_motivos.Location = new System.Drawing.Point(1009, 78);
+            this.cbo_motivos.Name = "cbo_motivos";
+            this.cbo_motivos.Size = new System.Drawing.Size(264, 22);
+            this.cbo_motivos.TabIndex = 96;
+            this.cbo_motivos.ValueMember = "descricaoMotivo";
+            this.cbo_motivos.Visible = false;
+            // 
+            // motivosBindingSource
+            // 
+            this.motivosBindingSource.DataMember = "motivos";
+            this.motivosBindingSource.DataSource = this.siescDataSet;
+            // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lbl_tipo_motivos
+            // 
+            this.lbl_tipo_motivos.AutoSize = true;
+            this.lbl_tipo_motivos.Location = new System.Drawing.Point(955, 83);
+            this.lbl_tipo_motivos.Name = "lbl_tipo_motivos";
+            this.lbl_tipo_motivos.Size = new System.Drawing.Size(52, 14);
+            this.lbl_tipo_motivos.TabIndex = 95;
+            this.lbl_tipo_motivos.Text = "Motivos:";
+            this.lbl_tipo_motivos.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(719, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 14);
+            this.label7.TabIndex = 94;
+            this.label7.Text = "Buscar por:";
+            // 
+            // cbo_tipoBusca
+            // 
+            this.cbo_tipoBusca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_tipoBusca.FormattingEnabled = true;
+            this.cbo_tipoBusca.Items.AddRange(new object[] {
+            "",
+            "CÓDIGO DO ALUNO",
+            "CÓDIGO DE EXPEDIENTE INTERNO",
+            "CÓDIGO DA SOLICITAÇÃO",
+            "MOTIVO",
+            "NOME DO ALUNO",
+            "NOME DA MÃE"});
+            this.cbo_tipoBusca.Location = new System.Drawing.Point(785, 78);
+            this.cbo_tipoBusca.Name = "cbo_tipoBusca";
+            this.cbo_tipoBusca.Size = new System.Drawing.Size(166, 22);
+            this.cbo_tipoBusca.TabIndex = 93;
+            this.cbo_tipoBusca.TextChanged += new System.EventHandler(this.cbo_tipoBusca_TextChanged);
             // 
             // lbl7
             // 
@@ -204,7 +270,6 @@ namespace SIESC.UI.UI
             this.gpb_sindicados.TabIndex = 90;
             this.gpb_sindicados.TabStop = false;
             this.gpb_sindicados.Text = "Sindicância";
-            this.gpb_sindicados.Visible = false;
             // 
             // label6
             // 
@@ -699,83 +764,6 @@ namespace SIESC.UI.UI
             this.lbl_aluno.TabIndex = 20;
             this.lbl_aluno.Text = "Aluno:";
             // 
-            // gpb_localizar
-            // 
-            this.gpb_localizar.Controls.Add(this.rdb_codigoEI);
-            this.gpb_localizar.Controls.Add(this.rdb_codigoAluno);
-            this.gpb_localizar.Controls.Add(this.rdb_mae);
-            this.gpb_localizar.Controls.Add(this.rdb_nome);
-            this.gpb_localizar.Controls.Add(this.rdb_codigo);
-            this.gpb_localizar.Location = new System.Drawing.Point(722, 62);
-            this.gpb_localizar.Name = "gpb_localizar";
-            this.gpb_localizar.Size = new System.Drawing.Size(467, 38);
-            this.gpb_localizar.TabIndex = 33;
-            this.gpb_localizar.TabStop = false;
-            this.gpb_localizar.Text = "Opções de busca";
-            // 
-            // rdb_codigoEI
-            // 
-            this.rdb_codigoEI.AutoSize = true;
-            this.rdb_codigoEI.Location = new System.Drawing.Point(344, 18);
-            this.rdb_codigoEI.Name = "rdb_codigoEI";
-            this.rdb_codigoEI.Size = new System.Drawing.Size(128, 18);
-            this.rdb_codigoEI.TabIndex = 4;
-            this.rdb_codigoEI.TabStop = true;
-            this.rdb_codigoEI.Text = "Código Exp. Interno";
-            this.rdb_codigoEI.UseVisualStyleBackColor = true;
-            this.rdb_codigoEI.CheckedChanged += new System.EventHandler(this.rdb_codigoEI_CheckedChanged);
-            // 
-            // rdb_codigoAluno
-            // 
-            this.rdb_codigoAluno.AutoSize = true;
-            this.rdb_codigoAluno.Location = new System.Drawing.Point(243, 19);
-            this.rdb_codigoAluno.Name = "rdb_codigoAluno";
-            this.rdb_codigoAluno.Size = new System.Drawing.Size(95, 18);
-            this.rdb_codigoAluno.TabIndex = 3;
-            this.rdb_codigoAluno.TabStop = true;
-            this.rdb_codigoAluno.Text = "Código Aluno";
-            this.rdb_codigoAluno.UseVisualStyleBackColor = true;
-            this.rdb_codigoAluno.Click += new System.EventHandler(this.rdb_codigoAluno_Click);
-            // 
-            // rdb_mae
-            // 
-            this.rdb_mae.AutoSize = true;
-            this.rdb_mae.Location = new System.Drawing.Point(193, 19);
-            this.rdb_mae.Name = "rdb_mae";
-            this.rdb_mae.Size = new System.Drawing.Size(47, 18);
-            this.rdb_mae.TabIndex = 2;
-            this.rdb_mae.TabStop = true;
-            this.rdb_mae.Text = "Mãe";
-            this.rdb_mae.UseVisualStyleBackColor = true;
-            this.rdb_mae.CheckedChanged += new System.EventHandler(this.rdb_mae_CheckedChanged);
-            this.rdb_mae.Click += new System.EventHandler(this.rdb_mae_Click);
-            // 
-            // rdb_nome
-            // 
-            this.rdb_nome.AutoSize = true;
-            this.rdb_nome.Location = new System.Drawing.Point(131, 18);
-            this.rdb_nome.Name = "rdb_nome";
-            this.rdb_nome.Size = new System.Drawing.Size(56, 18);
-            this.rdb_nome.TabIndex = 1;
-            this.rdb_nome.TabStop = true;
-            this.rdb_nome.Text = "Nome";
-            this.rdb_nome.UseVisualStyleBackColor = true;
-            this.rdb_nome.CheckedChanged += new System.EventHandler(this.rdb_nome_CheckedChanged);
-            this.rdb_nome.Click += new System.EventHandler(this.rdb_nome_Click);
-            // 
-            // rdb_codigo
-            // 
-            this.rdb_codigo.AutoSize = true;
-            this.rdb_codigo.Location = new System.Drawing.Point(9, 19);
-            this.rdb_codigo.Name = "rdb_codigo";
-            this.rdb_codigo.Size = new System.Drawing.Size(120, 18);
-            this.rdb_codigo.TabIndex = 0;
-            this.rdb_codigo.TabStop = true;
-            this.rdb_codigo.Text = "Código Solicitação";
-            this.rdb_codigo.UseVisualStyleBackColor = true;
-            this.rdb_codigo.CheckedChanged += new System.EventHandler(this.rdb_codigo_CheckedChanged);
-            this.rdb_codigo.Click += new System.EventHandler(this.rdb_codigo_Click);
-            // 
             // lbl_irmao_boolean
             // 
             this.lbl_irmao_boolean.AutoSize = true;
@@ -848,6 +836,10 @@ namespace SIESC.UI.UI
             this.lbl_num_registros.Size = new System.Drawing.Size(102, 17);
             this.lbl_num_registros.Text = "Total de registros: ";
             // 
+            // motivosTableAdapter
+            // 
+            this.motivosTableAdapter.ClearBeforeFill = true;
+            // 
             // GerenciaSolicitacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -867,10 +859,10 @@ namespace SIESC.UI.UI
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.motivosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             this.gpb_sindicados.ResumeLayout(false);
             this.gpb_sindicados.PerformLayout();
-            this.gpb_localizar.ResumeLayout(false);
-            this.gpb_localizar.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
@@ -881,82 +873,84 @@ namespace SIESC.UI.UI
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private MyTextBox txt_codigo;
-        private Label lbl_endereco;
-        private Label lbl_data_nasc;
-        private Label lbl_mae;
-        private MyTextBox txt_nomealuno;
-        private Label lbl_aluno;
-        private MyTextBox txt_datanasc;
-        private Button btn_editar;
-        private MyTextBox txt_mae;
-        private Button btn_finaliza_solicitacao;
-        private MyTextBox txt_endereco;
-        private Button btn_encam_transp;
-        private Button btn_localizar;
-        private Button btn_excluir;
-        private Button btn_editaraluno;
-        private Label lbl_codigo;
-        private DataGridView dgv_solicitacoes;
-        private SplitContainer splitContainer1;
-        private Label lbl_titulo;
-        private GroupBox gpb_localizar;
-        private RadioButton rdb_mae;
-        private RadioButton rdb_nome;
-        private RadioButton rdb_codigo;
-        private MyTextBox txt_telefone;
-        private Label lbl_telefone;
-        private RadioButton rdb_codigoAluno;
-        private Label lbl_escolaencaminhada;
-        private MyTextBox txt_instituicao_encaminhada;
-        private Label lbl_escolasolicitada;
-        private MyTextBox txt_instituicao_solicitada;
-        private Label lbl_dataencaminha;
-        private Label lbl_datasolicitacao;
-        private MyTextBox txt_dataencaminhamento;
-        private MyTextBox txt_datasolicitacao;
-        private Button btn_imprimir;
-        private Label lbl_motivo;
-        private MyTextBox txt_motivo;
-        private MyTextBox txt_observacoes;
-        private RadioButton rdb_codigoEI;
-        private MyMaskedTextBox msk_codigoEI;
-        private Label label2;
-        private Label lbl_idade;
-        private Label lbl_anoensino;
-        private MyComboBox cbo_anoreferencia;
-        private Label label5;
-        private TextBox txt_usuario;
-        private Label label3;
-        private TextBox txt_origem_solicitacao;
-        private Label label1;
-        private Button btn_ficha_encaminhamento;
-        private GroupBox gpb_sindicados;
-        private Label label6;
-        private Label lbl_finalizada;
-        private Label label4;
-        private Label lbl_pendente;
-        private Label lbl_endereco_comprovado;
-        private Label label8;
-        private StatusStrip statusStrip1;
-        private ToolStripStatusLabel lbl_num_registros;
-        private SplitContainer splitContainer2;
+		private MyTextBox txt_codigo;
+		private Label lbl_endereco;
+		private Label lbl_data_nasc;
+		private Label lbl_mae;
+		private MyTextBox txt_nomealuno;
+		private Label lbl_aluno;
+		private MyTextBox txt_datanasc;
+		private Button btn_editar;
+		private MyTextBox txt_mae;
+		private Button btn_finaliza_solicitacao;
+		private MyTextBox txt_endereco;
+		private Button btn_encam_transp;
+		private Button btn_localizar;
+		private Button btn_excluir;
+		private Button btn_editaraluno;
+		private Label lbl_codigo;
+		private DataGridView dgv_solicitacoes;
+		private SplitContainer splitContainer1;
+		private Label lbl_titulo;
+		private MyTextBox txt_telefone;
+		private Label lbl_telefone;
+		private Label lbl_escolaencaminhada;
+		private MyTextBox txt_instituicao_encaminhada;
+		private Label lbl_escolasolicitada;
+		private MyTextBox txt_instituicao_solicitada;
+		private Label lbl_dataencaminha;
+		private Label lbl_datasolicitacao;
+		private MyTextBox txt_dataencaminhamento;
+		private MyTextBox txt_datasolicitacao;
+		private Button btn_imprimir;
+		private Label lbl_motivo;
+		private MyTextBox txt_motivo;
+		private MyTextBox txt_observacoes;
+		private MyMaskedTextBox msk_codigoEI;
+		private Label label2;
+		private Label lbl_idade;
+		private Label lbl_anoensino;
+		private MyComboBox cbo_anoreferencia;
+		private Label label5;
+		private TextBox txt_usuario;
+		private Label label3;
+		private TextBox txt_origem_solicitacao;
+		private Label label1;
+		private Button btn_ficha_encaminhamento;
+		private GroupBox gpb_sindicados;
+		private Label label6;
+		private Label lbl_finalizada;
+		private Label label4;
+		private Label lbl_pendente;
+		private Label lbl_endereco_comprovado;
+		private Label label8;
+		private StatusStrip statusStrip1;
+		private ToolStripStatusLabel lbl_num_registros;
+		private SplitContainer splitContainer2;
 		private Label lbl7;
 		private Label lbl_irmao_boolean;
+		private Label label7;
+		private MyComboBox cbo_tipoBusca;
+		private MyComboBox cbo_motivos;
+		private Label lbl_tipo_motivos;
+		private siescDataSet siescDataSet;
+		private BindingSource motivosBindingSource;
+		private siescDataSetTableAdapters.motivosTableAdapter motivosTableAdapter;
 
-		private enum Localizar
-        {
-            codigo,
-            nome,
-            mae,
-            aluno,
-            aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
-            expediente,
+		public enum Localizar
+		{
+			codigo,
+			nome,
+			mae,
+			aluno,
+			aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
+			expediente,
+			motivo,
 
-        };
-    }
+		};
+	}
 }
