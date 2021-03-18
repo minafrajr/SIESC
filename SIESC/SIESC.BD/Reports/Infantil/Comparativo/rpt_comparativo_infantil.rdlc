@@ -826,7 +826,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!EscolaSolicitada.Value</Value>
+                                <Value>=IIF(Fields!EscolaSolicitada.Value is nothing,"FINALIZADAS",Fields!EscolaSolicitada.Value)</Value>
                                 <Style>
                                   <FontSize>8pt</FontSize>
                                 </Style>
@@ -849,6 +849,7 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
