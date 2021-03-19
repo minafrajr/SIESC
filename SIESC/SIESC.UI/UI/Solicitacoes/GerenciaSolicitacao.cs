@@ -137,28 +137,28 @@ namespace SIESC.UI.UI
 
                     switch (localizar)
                     {
-                        case Localizar.codigo:
+                        case Localizar.codigoSolcitacao:
                             if (string.IsNullOrEmpty(txt_codigo.Text))
                                 throw new Exception("valor do código não digitado!");
 
                             dgv_solicitacoes.DataSource = controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                             break;
-                        case Localizar.mae:
+                        case Localizar.nomeMae:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text);
                             break;
-                        case Localizar.nome:
+                        case Localizar.nomeAluno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.LocalizarSolicitAluno(txt_nomealuno.Text);
                             break;
-                        case Localizar.aluno:
+                        case Localizar.codigoAluno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
                             break;
-                        case Localizar.expediente:
+                        case Localizar.codigoExpedienteInterno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaCodigoExpedienteInterno(Convert.ToInt32(msk_codigoEI.Text));
                             break;
                         case Localizar.motivo:
                             if (cbo_motivos.Text.Equals(string.Empty)) throw new Exception("Não foi selecionado motivo!");
 
-                          dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text);
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text);
                             break;
                     }
                 }
@@ -192,13 +192,13 @@ namespace SIESC.UI.UI
 
             switch (localizar)
             {
-                case Localizar.codigo:
+                case Localizar.codigoSolcitacao:
                     parametro = txt_codigo.Text;
                     break;
-                case Localizar.mae:
+                case Localizar.nomeMae:
                     parametro = txt_mae.Text;
                     break;
-                case Localizar.nome:
+                case Localizar.nomeAluno:
                     parametro = txt_nomealuno.Text;
                     break;
             }
@@ -233,7 +233,7 @@ namespace SIESC.UI.UI
             msk_codigoEI.Enabled = false;
             cbo_motivos.Visible = false;
             lbl_tipo_motivos.Visible = false;
-            
+
         }
 
         /// <summary>
@@ -474,20 +474,22 @@ namespace SIESC.UI.UI
                 {
 
                     case "CÓDIGO DO ALUNO":
+                        localizar = Localizar.codigoAluno;
+                        break;
                     case "CÓDIGO DA SOLICITAÇÃO":
-                        localizar = Localizar.codigo;
+                        localizar = Localizar.codigoSolcitacao;
                         break;
                     case "CÓDIGO DE EXPEDIENTE INTERNO":
-                        localizar = Localizar.expediente;
+                        localizar = Localizar.codigoExpedienteInterno;
                         break;
                     case "MOTIVO":
                         localizar = Localizar.motivo;
                         break;
                     case "NOME DO ALUNO":
-                        localizar = Localizar.nome;
+                        localizar = Localizar.nomeAluno;
                         break;
                     case "NOME DA MÃE":
-                        localizar = Localizar.mae;
+                        localizar = Localizar.nomeMae;
                         break;
                     case "":
                         localizar = Localizar.aguardando;
@@ -504,37 +506,38 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Habilita as text box para localizar solicitação
         /// </summary>
-      /// <param name="localizar"></param>
+        /// <param name="localizar"></param>
         private void HabilitaTextBox(Localizar localizar)
         {
             LimpaCampos();
-            
+
             switch (localizar)
             {
-                case Localizar.codigo:
-                case Localizar.aluno:
+                case Localizar.codigoSolcitacao:
+                case Localizar.codigoAluno:
                     txt_codigo.Enabled = true;
                     txt_codigo.Focus();
                     break;
-                case Localizar.mae:
+                case Localizar.nomeMae:
                     txt_mae.Enabled = true;
                     txt_mae.Focus();
                     break;
-                case Localizar.nome:
+                case Localizar.nomeAluno:
                     txt_nomealuno.Enabled = true;
                     txt_nomealuno.Focus();
                     break;
-                case Localizar.expediente:
+                case Localizar.codigoExpedienteInterno:
                     msk_codigoEI.Enabled = true;
                     msk_codigoEI.Focus();
-                  break;
+                    break;
                 case Localizar.motivo:
                     cbo_motivos.Visible = true;
                     lbl_tipo_motivos.Visible = true;
                     cbo_tipoBusca.Focus();
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(localizar), localizar, null);
+                   CarregaGridView();
+                    break;
             }
         }
 
@@ -558,9 +561,7 @@ namespace SIESC.UI.UI
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2021"))
-                {
                     throw new Exception("Não é permitido editar dados de alunos de anos anteriores.");
-                }
 
                 controleAluno = new AlunoControl();
 
@@ -568,10 +569,7 @@ namespace SIESC.UI.UI
 
                 foreach (Form mdiChild in PrincipalUI.MdiChildren)
                 {
-                    if (mdiChild.GetType() == typeof(CadastrarAluno))
-                    {
-                        mdiChild.Close();
-                    }
+                    if (mdiChild.GetType() == typeof(CadastrarAluno)) mdiChild.Close();
                 }
 
                 CadastrarAluno frmCadastrarAluno = new CadastrarAluno(aluno, PrincipalUI);
@@ -624,7 +622,7 @@ namespace SIESC.UI.UI
 
         }
 
-      /// <summary>
+        /// <summary>
         /// Carrega form com gif enquenao é aberto o relatório 
         /// </summary>
         /// <returns></returns>
@@ -749,6 +747,6 @@ namespace SIESC.UI.UI
             lbl_num_registros.Text = $"Total de registros: {dgv_solicitacoes.RowCount}";
         }
 
-       
+
     }
 }
