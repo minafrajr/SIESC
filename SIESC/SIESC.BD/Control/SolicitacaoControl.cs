@@ -28,12 +28,12 @@ namespace SIESC.BD.Control
         /// </summary>
         private vw_solicitacoesTableAdapter vw_SolicitacoesTA;
         /// <summary>
-        /// 
+        /// Table Adapter da tabela de distância aluno
         /// </summary>
         private distanciaalunoescolaTableAdapter distancia_aluno_Instituicao_TA;
 
         /// <summary>
-        /// 
+        /// Table Adapter da view encaminhamento
         /// </summary>
         private vw_ficha_encaminhamentoTableAdapter vw_encaminhamentoTA;
 
@@ -147,7 +147,7 @@ namespace SIESC.BD.Control
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaSolictAlunos("%" + nomealuno + "%");
+                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nomealuno + "%");
             }
             catch (SqlException exception)
             {
@@ -248,13 +248,13 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nomemae">O nome da mãe para fazer a busca</param>
         /// <returns>um DataTable</returns>
-        public DataTable PesquisaMae(string nomemae)
+        public DataTable PesquisaMae(string nomeMae)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByMae("%" + nomemae + "%");
+                return vw_SolicitacoesTA.PesquisaByMae("%" + nomeMae + "%");
             }
             catch (SqlException exception)
             {
@@ -281,7 +281,7 @@ namespace SIESC.BD.Control
         }
 
         /// <summary>
-        /// Retorna um DataTable contendo os dados da solicitaçõa
+        /// Retorna um DataTable contendo os dados da solicitação
         /// </summary>
         /// <param name="idSolicitacao"></param>
         /// <returns>DataTable com os dados da solicitação</returns>
@@ -291,6 +291,24 @@ namespace SIESC.BD.Control
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
                 return vw_SolicitacoesTA.PesquisaByIdSolicitacao(idSolicitacao);
+            }
+            catch (SqlException exception)
+            {
+                throw exception;
+            }
+        }
+        /// <summary>
+        /// retorna um data table com as solicitações de um determinado motivo
+        /// </summary>
+        /// <param name="motivo"></param>
+        /// <returns></returns>
+        public DataTable PesquisaMotivo(string motivo)
+        {
+            try
+            {
+                vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
+
+                return vw_SolicitacoesTA.PesquisaByMotivo(motivo);
             }
             catch (SqlException exception)
             {
@@ -324,7 +342,7 @@ namespace SIESC.BD.Control
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
-                return vw_SolicitacoesTA.PesquisaSolictAlunos("%" + nome + "%");
+                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nome + "%");
             }
             catch (SqlException exception)
             {

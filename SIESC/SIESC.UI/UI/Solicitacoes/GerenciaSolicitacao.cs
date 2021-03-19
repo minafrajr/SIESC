@@ -5,6 +5,7 @@
 #endregion
 
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Drawing;
 using System.Threading;
@@ -22,7 +23,7 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Enumeração de estado de busca
         /// </summary>
-        private Localizar _localiza;
+        private Localizar localizar;
         /// <summary>
         /// Objeto do formulário principal
         /// </summary>
@@ -60,7 +61,7 @@ namespace SIESC.UI.UI
         {
             InitializeComponent();
             PrincipalUI = principalUi;
-            _localiza = Localizar.aguardando;
+            localizar = Localizar.aguardando;
 
         }
 
@@ -73,7 +74,12 @@ namespace SIESC.UI.UI
         {
             try
             {
+                // TODO: esta linha de código carrega dados na tabela 'siescDataSet.motivos'. Você pode movê-la ou removê-la conforme necessário.
+                this.motivosTableAdapter.FillByAtivas(this.siescDataSet.motivos);
+
                 cbo_anoreferencia.SelectedIndex = 0;
+                cbo_motivos.SelectedIndex = -1;
+
                 CarregaGridView();
 
             }
@@ -100,6 +106,8 @@ namespace SIESC.UI.UI
         {
             try
             {
+                LimpaCampos();
+
                 controleSolicitacoes = new SolicitacaoControl();
 
                 dgv_solicitacoes.DataSource = controleSolicitacoes.ListarSolicitacoes();
@@ -108,7 +116,6 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-
                 Mensageiro.MensagemErro(exception, this);
             }
         }
@@ -122,43 +129,46 @@ namespace SIESC.UI.UI
         {
             try
             {
-                if (!_localiza.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2021"))
+                if (!localizar.Equals(Localizar.aguardando) && cbo_anoreferencia.Text.Equals("2021"))
                 {
                     controleSolicitacoes = new SolicitacaoControl();
 
                     dgv_solicitacoes.DataSource = null;
 
-                    switch (_localiza)
+                    switch (localizar)
                     {
-                        case Localizar.codigo:
+                        case Localizar.codigoSolcitacao:
                             if (string.IsNullOrEmpty(txt_codigo.Text))
-                            {
                                 throw new Exception("valor do código não digitado!");
-                            }
 
                             dgv_solicitacoes.DataSource = controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                             break;
-                        case Localizar.mae:
+                        case Localizar.nomeMae:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text);
                             break;
-                        case Localizar.nome:
+                        case Localizar.nomeAluno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.LocalizarSolicitAluno(txt_nomealuno.Text);
                             break;
-                        case Localizar.aluno:
+                        case Localizar.codigoAluno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
                             break;
-                        case Localizar.expediente:
+                        case Localizar.codigoExpedienteInterno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaCodigoExpedienteInterno(Convert.ToInt32(msk_codigoEI.Text));
+                            break;
+                        case Localizar.motivo:
+                            if (cbo_motivos.Text.Equals(string.Empty)) throw new Exception("Não foi selecionado motivo!");
+
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text);
                             break;
                     }
                 }
                 else
                 {
-                    if (!_localiza.Equals(Localizar.aguardando))
+                    if (!localizar.Equals(Localizar.aguardando))
                     {
                         anosAnterioresControl = new AnosAnterioresControl();
 
-                        dgv_solicitacoes.DataSource = anosAnterioresControl.carregaDados(cbo_anoreferencia.Text, SelecionaParametros(), _localiza.ToString());
+                        dgv_solicitacoes.DataSource = anosAnterioresControl.carregaDados(cbo_anoreferencia.Text, SelecionaParametros(), localizar.ToString());
                     }
                 }
 
@@ -180,15 +190,15 @@ namespace SIESC.UI.UI
         {
             string parametro = null;
 
-            switch (_localiza)
+            switch (localizar)
             {
-                case Localizar.codigo:
+                case Localizar.codigoSolcitacao:
                     parametro = txt_codigo.Text;
                     break;
-                case Localizar.mae:
+                case Localizar.nomeMae:
                     parametro = txt_mae.Text;
                     break;
-                case Localizar.nome:
+                case Localizar.nomeAluno:
                     parametro = txt_nomealuno.Text;
                     break;
             }
@@ -201,6 +211,7 @@ namespace SIESC.UI.UI
         /// </summary>
         private void LimpaCampos()
         {
+            txt_codigo.ResetText();
             txt_nomealuno.ResetText();
             txt_datanasc.ResetText();
             txt_endereco.ResetText();
@@ -214,6 +225,15 @@ namespace SIESC.UI.UI
             txt_instituicao_solicitada.ResetText();
             txt_datasolicitacao.ResetText();
             msk_codigoEI.ResetText();
+
+
+            txt_codigo.Enabled = false;
+            txt_mae.Enabled = false;
+            txt_nomealuno.Enabled = false;
+            msk_codigoEI.Enabled = false;
+            cbo_motivos.Visible = false;
+            lbl_tipo_motivos.Visible = false;
+
         }
 
         /// <summary>
@@ -229,7 +249,7 @@ namespace SIESC.UI.UI
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,PrincipalUI);
+                Mensageiro.MensagemErro(exception, PrincipalUI);
             }
         }
 
@@ -243,7 +263,7 @@ namespace SIESC.UI.UI
 
             controleSindicancia = new SindicanciaControl();
 
-            _localiza = Localizar.aguardando;
+            localizar = Localizar.aguardando;
 
             DesabilitaTextBox(true);
 
@@ -302,16 +322,16 @@ namespace SIESC.UI.UI
                 ArrayList listaStatusSindicancia =
                     controleSindicancia.StatusSindicancia(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value));
 
-                if(bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
+                if (bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
                 {
                     lbl_pendente.Text = pendente ? "SIM" : "NÃO";
                 }
 
-                if(bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
+                if (bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
                 {
                     lbl_finalizada.Text = finalizada ? "SIM" : "NÃO";
                 }
-                if(bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
+                if (bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
                 {
                     lbl_endereco_comprovado.Text = endereco ? "SIM" : "NÃO";
                 }
@@ -421,9 +441,7 @@ namespace SIESC.UI.UI
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2021"))
-                {
                     throw new Exception("Não é permitido excluir solicitações de anos anteriores.");
-                }
 
                 controleSolicitacoes = new SolicitacaoControl();
 
@@ -442,133 +460,84 @@ namespace SIESC.UI.UI
                 Mensageiro.MensagemErro(exception, this);
             }
         }
+
         /// <summary>
-        /// 
+        /// Define o tipo de busca a ser feita
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigo_CheckedChanged(object sender, EventArgs e)
+        private void cbo_tipoBusca_TextChanged(object sender, EventArgs e)
         {
-            HabilitaTextBox(true, false, false, false);
-            _localiza = Localizar.codigo;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_codigo_Click(object sender, EventArgs e)
-        {
-            HabilitaTextBox(true, false, false, false);
-            _localiza = Localizar.codigo;
+            try
+            {
+                switch (cbo_tipoBusca.Text)
+                {
+
+                    case "CÓDIGO DO ALUNO":
+                        localizar = Localizar.codigoAluno;
+                        break;
+                    case "CÓDIGO DA SOLICITAÇÃO":
+                        localizar = Localizar.codigoSolcitacao;
+                        break;
+                    case "CÓDIGO DE EXPEDIENTE INTERNO":
+                        localizar = Localizar.codigoExpedienteInterno;
+                        break;
+                    case "MOTIVO":
+                        localizar = Localizar.motivo;
+                        break;
+                    case "NOME DO ALUNO":
+                        localizar = Localizar.nomeAluno;
+                        break;
+                    case "NOME DA MÃE":
+                        localizar = Localizar.nomeMae;
+                        break;
+                    case "":
+                        localizar = Localizar.aguardando;
+                        break;
+                }
+                HabilitaTextBox(localizar);
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, PrincipalUI);
+            }
         }
 
         /// <summary>
-        /// 
+        /// Habilita as text box para localizar solicitação
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_nome_CheckedChanged(object sender, EventArgs e)
-        {
-            HabilitaTextBox(false, true, false, false);
-            _localiza = Localizar.nome;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_mae_CheckedChanged(object sender, EventArgs e)
-        {
-            HabilitaTextBox(false, false, true, false);
-            _localiza = Localizar.mae;
-        }
-
-        /// <summary>
-        /// Evento do radio button nome
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_nome_Click(object sender, EventArgs e)
-        {
-            HabilitaTextBox(false, true, false, false);
-            _localiza = Localizar.nome;
-        }
-        /// <summary>
-        /// Evento do radio button mãe
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_mae_Click(object sender, EventArgs e)
-        {
-            HabilitaTextBox(false, false, true, false);
-            _localiza = Localizar.mae;
-        }
-        /// <summary>
-        /// Evento do radio button 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_codigoAluno_Click(object sender, EventArgs e)
-        {
-            HabilitaTextBox(true, false, false, false);
-            _localiza = Localizar.aluno;
-        }
-
-        /// <summary>
-        /// Habilta as text box para localizar solicitação
-        /// </summary>
-        /// <param name="cod">True - Habilita a TextBox código</param>
-        /// <param name="nome">True - Habilita a TextBox nome</param>
-        /// <param name="mae">True - Habilita a TextBox mae</param>
-        public void HabilitaTextBox(bool cod, bool nome, bool mae, bool codigoEI)
+        /// <param name="localizar"></param>
+        private void HabilitaTextBox(Localizar localizar)
         {
             LimpaCampos();
-            if (cod)
-            {
-                txt_codigo.Enabled = true;
-                txt_mae.ResetText();
-                txt_nomealuno.ResetText();
-                txt_mae.Enabled = false;
-                txt_nomealuno.Enabled = false;
-                msk_codigoEI.Enabled = false;
-                txt_codigo.ResetText();
-                txt_codigo.Focus();
-            }
 
-            if (nome)
+            switch (localizar)
             {
-                txt_nomealuno.Enabled = true;
-                txt_codigo.ResetText();
-                txt_mae.ResetText();
-                txt_codigo.Enabled = false;
-                txt_mae.Enabled = false;
-                msk_codigoEI.Enabled = false;
-                txt_nomealuno.ResetText();
-                txt_nomealuno.Focus();
-            }
-            if (mae)
-            {
-                txt_mae.Enabled = true;
-                txt_codigo.ResetText();
-                txt_codigo.Enabled = false;
-                txt_nomealuno.Enabled = false;
-                msk_codigoEI.Enabled = false;
-                txt_nomealuno.ResetText();
-                txt_mae.ResetText();
-                txt_mae.Focus();
-            }
-            if (codigoEI)
-            {
-                txt_mae.Enabled = false;
-                txt_codigo.ResetText();
-                txt_codigo.Enabled = false;
-                txt_nomealuno.Enabled = false;
-                txt_nomealuno.ResetText();
-                txt_mae.ResetText();
-                msk_codigoEI.Enabled = true;
-                msk_codigoEI.Focus();
+                case Localizar.codigoSolcitacao:
+                case Localizar.codigoAluno:
+                    txt_codigo.Enabled = true;
+                    txt_codigo.Focus();
+                    break;
+                case Localizar.nomeMae:
+                    txt_mae.Enabled = true;
+                    txt_mae.Focus();
+                    break;
+                case Localizar.nomeAluno:
+                    txt_nomealuno.Enabled = true;
+                    txt_nomealuno.Focus();
+                    break;
+                case Localizar.codigoExpedienteInterno:
+                    msk_codigoEI.Enabled = true;
+                    msk_codigoEI.Focus();
+                    break;
+                case Localizar.motivo:
+                    cbo_motivos.Visible = true;
+                    lbl_tipo_motivos.Visible = true;
+                    cbo_tipoBusca.Focus();
+                    break;
+                default:
+                   CarregaGridView();
+                    break;
             }
         }
 
@@ -592,9 +561,7 @@ namespace SIESC.UI.UI
             try
             {
                 if (!cbo_anoreferencia.Text.Equals("2021"))
-                {
                     throw new Exception("Não é permitido editar dados de alunos de anos anteriores.");
-                }
 
                 controleAluno = new AlunoControl();
 
@@ -602,10 +569,7 @@ namespace SIESC.UI.UI
 
                 foreach (Form mdiChild in PrincipalUI.MdiChildren)
                 {
-                    if (mdiChild.GetType() == typeof(CadastrarAluno))
-                    {
-                        mdiChild.Close();
-                    }
+                    if (mdiChild.GetType() == typeof(CadastrarAluno)) mdiChild.Close();
                 }
 
                 CadastrarAluno frmCadastrarAluno = new CadastrarAluno(aluno, PrincipalUI);
@@ -659,17 +623,6 @@ namespace SIESC.UI.UI
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_codigoEI_CheckedChanged(object sender, EventArgs e)
-        {
-            HabilitaTextBox(true, false, false, true);
-            _localiza = Localizar.expediente;
-        }
-
-        /// <summary>
         /// Carrega form com gif enquenao é aberto o relatório 
         /// </summary>
         /// <returns></returns>
@@ -692,7 +645,7 @@ namespace SIESC.UI.UI
         {
             if (!cbo_anoreferencia.Text.Equals("2021"))
                 throw new Exception("Não é permitido imprimir fichas de solicitações de anos anteriores.");
-            
+
             var t = CarregaProgressoThread();
 
             try
@@ -700,8 +653,8 @@ namespace SIESC.UI.UI
                 controleSolicitacoes = new SolicitacaoControl();
 
                 frm_ficha_encaminhamento frm_fichaEncaminhamento =
-                    new frm_ficha_encaminhamento((int) dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)
-                        {MdiParent = PrincipalUI};
+                    new frm_ficha_encaminhamento((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)
+                    { MdiParent = PrincipalUI };
 
                 frm_fichaEncaminhamento.Show();
             }
@@ -771,7 +724,7 @@ namespace SIESC.UI.UI
             }
             //}
         }
-        
+
         /// <summary>
         /// Evento de alteração de seleção da linha do gridview
         /// </summary>
@@ -779,7 +732,7 @@ namespace SIESC.UI.UI
         /// <param name="e"></param>
         private void dgv_solicitacoes_SelectionChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (_localiza.Equals(Localizar.aguardando))
+            if (localizar.Equals(Localizar.aguardando))
             {
                 RepassaDadosControles();
             }
@@ -794,7 +747,6 @@ namespace SIESC.UI.UI
             lbl_num_registros.Text = $"Total de registros: {dgv_solicitacoes.RowCount}";
         }
 
-       
-    }
 
+    }
 }
