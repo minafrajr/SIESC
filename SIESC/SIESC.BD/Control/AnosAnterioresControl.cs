@@ -40,18 +40,30 @@ namespace SIESC.BD.Control
 		/// <param name="tipoconsulta"></param>
 		private void GetTipoConsulta(string param, string tipoconsulta)
 		{
+			/*
+			   
+			   CÓDIGO DE EXPEDIENTE INTERNO
+			   */
+			
 			if (!bancodedados.Equals("solicitavaga14"))
 			{
 				switch (tipoconsulta)
 				{
-					case "codigo":
+					case "codigoSolicitacao":
 						parametros = "solicitacoesvagas.idSolicitacoesVagas = " + param;
 						break;
-					case "mae":
+					case "NomeMae":
 						parametros = "alunos.nomeMaeAluno LIKE " + "'%" + param + "%'";
 						break;
-					case "nome":
+					case "nomeAluno":
 						parametros = "alunos.nomeAluno LIKE " + "'%" + param + "%'";
+						break;
+					case "codigoAluno":
+						parametros = "solicitacoesvagas.Aluno = " + param;
+						break;
+
+					case "motivo":
+						parametros = "mot.descricaoMotivo LIKE " + "'%" + param + "%'";
 						break;
 				}
 			}
@@ -59,13 +71,13 @@ namespace SIESC.BD.Control
 			{
 				switch (tipoconsulta)
 				{
-					case "codigo":
+					case "codigoSolicitacao":
 						parametros = "Insc = " + param;
 						break;
-					case "mae":
+					case "NomeMae":
 						parametros = "Respons LIKE " + "'%" + param + "%'";
 						break;
-					case "nome":
+					case "nomeAluno":
 						parametros = "Nome LIKE " + "'%" + param + "%'";
 						break;
 				}
@@ -122,17 +134,19 @@ namespace SIESC.BD.Control
 
 				dados = new DataTable();
 
-				conexao = new MySqlConnection("server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;sslmode=None;database=" + bancodedados);
+				conexao = new MySqlConnection(
+					$"server=netuno;user id=minafra;password=escrita;persistsecurityinfo=True;sslmode=None;database={bancodedados}");
 				
 				conexao.Open();
 
 				if (!bancodedados.Equals("solicitavaga14"))
 				{
-					comando = "SELECT solicitacoesvagas.idSolicitacoesVagas AS CodigoSolicitacao, alunos.nomeAluno AS NomeAluno, alunos.dataNascimentoAluno AS DataNasc, alunos.idAlunos AS CodAluno, ano.AnoEF AS AnoEnsino, alunos.nomeMaeAluno AS Mae, alunos.telefone1Aluno AS Telefone1, alunos.telefone2Aluno AS Telefone2, mot.descricaoMotivo AS Motivo, instituicoes.nome AS EscolaSolicitada, solicitacoesvagas.dataSolicitacao AS DataSolicitacao, IFNULL(enc.nome, '') AS EscolaEncaminhada, solicitacoesvagas.dataEncaminhamento AS DataEncaminhamento, solicitacoesvagas.observacoes AS Observaçoes, solicitacoesvagas.usuarioResposavel AS usuario, FLOOR(((TO_DAYS(NOW()) - TO_DAYS(alunos.dataNascimentoAluno)) / 365.25)) AS idade FROM solicitacoesvagas LEFT JOIN alunos ON alunos.idAlunos = solicitacoesvagas.Aluno LEFT JOIN ano ON ano.idAno = solicitacoesvagas.anoSolicitado LEFT JOIN instituicoes ON instituicoes.idInstituicoes = solicitacoesvagas.instituicaoSolicitada LEFT JOIN instituicoes enc ON enc.idInstituicoes = solicitacoesvagas.instituicaoEncaminhada LEFT JOIN motivos mot ON mot.idMotivos = solicitacoesvagas.motivoSolicitacao WHERE solicitacoesvagas.statusSolicitacao = 1 AND " + parametros + " ;";
+					comando =
+						$"SELECT solicitacoesvagas.idSolicitacoesVagas AS CodigoSolicitacao, alunos.nomeAluno AS NomeAluno, alunos.dataNascimentoAluno AS DataNasc, alunos.idAlunos AS CodAluno, ano.AnoEF AS AnoEnsino, alunos.nomeMaeAluno AS Mae, alunos.telefone1Aluno AS Telefone1, alunos.telefone2Aluno AS Telefone2, mot.descricaoMotivo AS Motivo, instituicoes.nome AS EscolaSolicitada, solicitacoesvagas.dataSolicitacao AS DataSolicitacao, IFNULL(enc.nome, '') AS EscolaEncaminhada, solicitacoesvagas.dataEncaminhamento AS DataEncaminhamento, solicitacoesvagas.observacoes AS Observaçoes, solicitacoesvagas.usuarioResposavel AS usuario, FLOOR(((TO_DAYS(NOW()) - TO_DAYS(alunos.dataNascimentoAluno)) / 365.25)) AS idade FROM solicitacoesvagas LEFT JOIN alunos ON alunos.idAlunos = solicitacoesvagas.Aluno LEFT JOIN ano ON ano.idAno = solicitacoesvagas.anoSolicitado LEFT JOIN instituicoes ON instituicoes.idInstituicoes = solicitacoesvagas.instituicaoSolicitada LEFT JOIN instituicoes enc ON enc.idInstituicoes = solicitacoesvagas.instituicaoEncaminhada LEFT JOIN motivos mot ON mot.idMotivos = solicitacoesvagas.motivoSolicitacao WHERE solicitacoesvagas.statusSolicitacao = 1 AND {parametros} ;";
 				}
 				else
 				{
-					comando = "SELECT * FROM vagas WHERE " + parametros + ";";
+					comando = $"SELECT * FROM vagas WHERE {parametros};";
 				}
 
 				conexaoDataAdapter = new MySqlDataAdapter(comando, conexao);

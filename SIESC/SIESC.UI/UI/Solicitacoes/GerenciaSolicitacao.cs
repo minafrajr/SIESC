@@ -137,7 +137,7 @@ namespace SIESC.UI.UI
 
                     switch (localizar)
                     {
-                        case Localizar.codigoSolcitacao:
+                        case Localizar.codigoSolicitacao:
                             if (string.IsNullOrEmpty(txt_codigo.Text))
                                 throw new Exception("valor do código não digitado!");
 
@@ -183,7 +183,7 @@ namespace SIESC.UI.UI
         }
 
         /// <summary>
-        /// 
+        /// Seleciona o parâmetro de busca
         /// </summary>
         /// <returns></returns>
         private string SelecionaParametros()
@@ -192,7 +192,7 @@ namespace SIESC.UI.UI
 
             switch (localizar)
             {
-                case Localizar.codigoSolcitacao:
+                case Localizar.codigoSolicitacao:
                     parametro = txt_codigo.Text;
                     break;
                 case Localizar.nomeMae:
@@ -200,6 +200,9 @@ namespace SIESC.UI.UI
                     break;
                 case Localizar.nomeAluno:
                     parametro = txt_nomealuno.Text;
+                    break;
+                case Localizar.motivo:
+                    parametro = cbo_motivos.Text;
                     break;
             }
 
@@ -477,7 +480,7 @@ namespace SIESC.UI.UI
                         localizar = Localizar.codigoAluno;
                         break;
                     case "CÓDIGO DA SOLICITAÇÃO":
-                        localizar = Localizar.codigoSolcitacao;
+                        localizar = Localizar.codigoSolicitacao;
                         break;
                     case "CÓDIGO DE EXPEDIENTE INTERNO":
                         localizar = Localizar.codigoExpedienteInterno;
@@ -513,7 +516,7 @@ namespace SIESC.UI.UI
 
             switch (localizar)
             {
-                case Localizar.codigoSolcitacao:
+                case Localizar.codigoSolicitacao:
                 case Localizar.codigoAluno:
                     txt_codigo.Enabled = true;
                     txt_codigo.Focus();
