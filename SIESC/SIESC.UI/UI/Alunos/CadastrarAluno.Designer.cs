@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarAluno));
             this.lbl_tituloform = new System.Windows.Forms.Label();
             this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
+            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.lbl_idade = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_limpacombo = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.msk_telefone2 = new SIESC.UI.MyMaskedTextBox();
             this.msk_telefone1 = new SIESC.UI.MyMaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -107,12 +107,22 @@
             this.gpb_dadospessoais.TabStop = false;
             this.gpb_dadospessoais.Text = "Dados Pessoais";
             // 
+            // msk_data_nascimento
+            // 
+            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 20);
+            this.msk_data_nascimento.Mask = "00/00/0000";
+            this.msk_data_nascimento.Name = "msk_data_nascimento";
+            this.msk_data_nascimento.Size = new System.Drawing.Size(64, 22);
+            this.msk_data_nascimento.TabIndex = 33;
+            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
+            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
+            // 
             // lbl_idade
             // 
             this.lbl_idade.AutoSize = true;
             this.lbl_idade.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_idade.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_idade.Location = new System.Drawing.Point(767, 20);
+            this.lbl_idade.Location = new System.Drawing.Point(787, 20);
             this.lbl_idade.Name = "lbl_idade";
             this.lbl_idade.Size = new System.Drawing.Size(16, 20);
             this.lbl_idade.TabIndex = 32;
@@ -121,7 +131,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(728, 26);
+            this.label4.Location = new System.Drawing.Point(748, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 14);
             this.label4.TabIndex = 31;
@@ -141,11 +151,11 @@
             // txt_pai
             // 
             this.txt_pai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_pai.Location = new System.Drawing.Point(567, 112);
+            this.txt_pai.Location = new System.Drawing.Point(589, 112);
             this.txt_pai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_pai.MaxLength = 60;
             this.txt_pai.Name = "txt_pai";
-            this.txt_pai.Size = new System.Drawing.Size(436, 22);
+            this.txt_pai.Size = new System.Drawing.Size(425, 22);
             this.txt_pai.TabIndex = 5;
             // 
             // label1
@@ -204,21 +214,21 @@
             // txt_mae
             // 
             this.txt_mae.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_mae.Location = new System.Drawing.Point(46, 111);
+            this.txt_mae.Location = new System.Drawing.Point(64, 111);
             this.txt_mae.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_mae.MaxLength = 60;
             this.txt_mae.Name = "txt_mae";
-            this.txt_mae.Size = new System.Drawing.Size(487, 22);
+            this.txt_mae.Size = new System.Drawing.Size(455, 22);
             this.txt_mae.TabIndex = 4;
             // 
             // lbl_pai
             // 
             this.lbl_pai.AutoSize = true;
-            this.lbl_pai.Location = new System.Drawing.Point(539, 114);
+            this.lbl_pai.Location = new System.Drawing.Point(525, 114);
             this.lbl_pai.Name = "lbl_pai";
-            this.lbl_pai.Size = new System.Drawing.Size(26, 14);
+            this.lbl_pai.Size = new System.Drawing.Size(58, 14);
             this.lbl_pai.TabIndex = 5;
-            this.lbl_pai.Text = "Pai:";
+            this.lbl_pai.Text = "Filiação 2:";
             // 
             // gpb_sexo
             // 
@@ -261,11 +271,11 @@
             // lbl_mae
             // 
             this.lbl_mae.AutoSize = true;
-            this.lbl_mae.Location = new System.Drawing.Point(11, 114);
+            this.lbl_mae.Location = new System.Drawing.Point(8, 114);
             this.lbl_mae.Name = "lbl_mae";
-            this.lbl_mae.Size = new System.Drawing.Size(32, 14);
+            this.lbl_mae.Size = new System.Drawing.Size(56, 14);
             this.lbl_mae.TabIndex = 10;
-            this.lbl_mae.Text = "Mãe:";
+            this.lbl_mae.Text = "Filiacao 1:";
             // 
             // lbl_datanasc
             // 
@@ -299,7 +309,7 @@
             // 
             this.btn_limpar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Image = global::SIESC.UI.Properties.Resources._1431669200_eraser;
-            this.btn_limpar.Location = new System.Drawing.Point(810, 196);
+            this.btn_limpar.Location = new System.Drawing.Point(810, 184);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(60, 59);
             this.btn_limpar.TabIndex = 10;
@@ -313,7 +323,7 @@
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SIESC.UI.Properties.Resources.prohibit_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(902, 196);
+            this.btn_cancelar.Location = new System.Drawing.Point(902, 184);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(60, 59);
             this.btn_cancelar.TabIndex = 11;
@@ -327,7 +337,7 @@
             // 
             this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_novo.Image = global::SIESC.UI.Properties.Resources._114;
-            this.btn_novo.Location = new System.Drawing.Point(679, 196);
+            this.btn_novo.Location = new System.Drawing.Point(679, 184);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(60, 59);
             this.btn_novo.TabIndex = 8;
@@ -341,7 +351,7 @@
             // 
             this.btn_salvar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.Image = global::SIESC.UI.Properties.Resources.Tick;
-            this.btn_salvar.Location = new System.Drawing.Point(744, 196);
+            this.btn_salvar.Location = new System.Drawing.Point(744, 184);
             this.btn_salvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(60, 59);
@@ -356,7 +366,7 @@
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
-            this.btn_excluir.Location = new System.Drawing.Point(968, 196);
+            this.btn_excluir.Location = new System.Drawing.Point(968, 184);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(60, 59);
             this.btn_excluir.TabIndex = 12;
@@ -421,20 +431,10 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Telefones:";
             // 
-            // msk_data_nascimento
-            // 
-            this.msk_data_nascimento.Location = new System.Drawing.Point(612, 20);
-            this.msk_data_nascimento.Mask = "00/00/0000";
-            this.msk_data_nascimento.Name = "msk_data_nascimento";
-            this.msk_data_nascimento.Size = new System.Drawing.Size(64, 22);
-            this.msk_data_nascimento.TabIndex = 33;
-            this.msk_data_nascimento.ValidatingType = typeof(System.DateTime);
-            this.msk_data_nascimento.Leave += new System.EventHandler(this.msk_data_nascimento_Leave);
-            // 
             // CadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1044, 266);
+            this.ClientSize = new System.Drawing.Size(1044, 249);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.msk_telefone2);
             this.Controls.Add(this.msk_telefone1);
