@@ -39,6 +39,8 @@ namespace SIESC.UI.ConsultaWeb
 
                 WebRequest request = WebRequest.Create("https://viacep.com.br/ws/@cep/xml/".Replace("@cep", cep));
 
+                request.Timeout = 20000;
+
                 using (WebResponse response = request.GetResponse())
                 {
                     using (Stream stream = response.GetResponseStream())

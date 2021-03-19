@@ -1146,9 +1146,15 @@ namespace SIESC.UI.UI.Solicitacoes
             try
             {
                 bairrosTableAdapter.Fill(siescDataSet.bairros);
+                
                 BuscaCep cep = new BuscaCep();
+#if DEBUG
+                cep.buscadorAlternativo(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipologradouro); 
+#else
+                
+                cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro); 
+#endif
 
-                cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
                 txt_mumresidencia.Focus();
             }
             catch (Exception exception)
