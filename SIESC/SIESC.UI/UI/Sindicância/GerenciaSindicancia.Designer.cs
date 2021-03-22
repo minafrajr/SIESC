@@ -51,11 +51,11 @@ namespace SIESC.UI.UI.Solicitacoes
             this.gpb_filtros_de_busca = new System.Windows.Forms.GroupBox();
             this.lbl_regionais = new System.Windows.Forms.Label();
             this.lbl_instituicoes = new System.Windows.Forms.Label();
-            this.cbo_regionais = new MyComboBox();
+            this.cbo_regionais = new SIESC.UI.Controles.MyComboBox();
             this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.lbl_ano_ensino = new System.Windows.Forms.Label();
-            this.cbo_escola = new MyComboBox();
+            this.cbo_escola = new SIESC.UI.Controles.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbo_anoensino = new System.Windows.Forms.ComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,7 +67,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.pnl_dados = new System.Windows.Forms.Panel();
             this.lbl_observacoes = new System.Windows.Forms.Label();
-            this.txt_observacoes = new MyTextBox();
+            this.txt_observacoes = new SIESC.UI.Controles.MyTextBox();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
             this.lbl_denuncia = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,21 +79,21 @@ namespace SIESC.UI.UI.Solicitacoes
             this.lbl_pendente = new System.Windows.Forms.Label();
             this.lbl_endereco_comprovado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_ano_ensino = new MyTextBox();
+            this.txt_ano_ensino = new SIESC.UI.Controles.MyTextBox();
             this.lbl_cod_solicitacao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_aluno = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_endereco = new MyTextBox();
-            this.txt_comprovante_endereco = new MyTextBox();
-            this.txt_nomealuno = new MyTextBox();
+            this.txt_endereco = new SIESC.UI.Controles.MyTextBox();
+            this.txt_comprovante_endereco = new SIESC.UI.Controles.MyTextBox();
+            this.txt_nomealuno = new SIESC.UI.Controles.MyTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
-            this.txt_instituicao_encaminhada = new MyTextBox();
-            this.txt_codigo = new MyTextBox();
-            this.txt_datasolicitacao = new MyTextBox();
+            this.txt_instituicao_encaminhada = new SIESC.UI.Controles.MyTextBox();
+            this.txt_codigo = new SIESC.UI.Controles.MyTextBox();
+            this.txt_datasolicitacao = new SIESC.UI.Controles.MyTextBox();
             this.lbl_datasolicitacao = new System.Windows.Forms.Label();
-            this.txt_instituicao_solicitada = new MyTextBox();
+            this.txt_instituicao_solicitada = new SIESC.UI.Controles.MyTextBox();
             this.lbl_escolasolicitada = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_linhas = new System.Windows.Forms.ToolStripStatusLabel();
@@ -214,7 +214,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.nupd_cod_solicitacao.TabIndex = 86;
             this.nupd_cod_solicitacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nupd_cod_solicitacao.Value = new decimal(new int[] {
-            1500,
+            1,
             0,
             0,
             0});
@@ -918,7 +918,6 @@ namespace SIESC.UI.UI.Solicitacoes
             this.Name = "GerenciaSindicancia";
             this.Text = "Gerenciamento de Sindicâncias";
             this.Load += new System.EventHandler(this.GerenciaSindicancia_Load);
-            this.Enter += new System.EventHandler(this.GerenciaSindicancia_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
