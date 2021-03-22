@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Autorizacoes
 {

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
+using SIESC.UI.Controles;
 using SIESC.UI.tecnologia1;
 
 namespace SIESC.UI.ConsultaWeb

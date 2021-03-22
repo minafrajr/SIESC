@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC.UI.Controles;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes

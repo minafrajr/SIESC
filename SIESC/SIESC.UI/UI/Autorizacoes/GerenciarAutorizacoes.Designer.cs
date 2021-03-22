@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Autorizacoes
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Autorizacoes
 {
 	partial class GerenciarAutorizacoes
 	{
@@ -32,7 +34,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.cbo_mantenedor = new SIESC.UI.MyComboBox();
+			this.cbo_mantenedor = new MyComboBox();
 			this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet1 = new SIESC.UI.siescDataSet();
 			this.label12 = new System.Windows.Forms.Label();
@@ -46,21 +48,21 @@
 			this.rdb_inativa = new System.Windows.Forms.RadioButton();
 			this.btn_inativar_autorizacao = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.cbo_anoexpdicao = new SIESC.UI.MyComboBox();
+			this.cbo_anoexpdicao = new MyComboBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.btn_emitircarteirinha = new System.Windows.Forms.Button();
-			this.msk_cpf = new SIESC.UI.MyMaskedTextBox();
+			this.msk_cpf = new MyMaskedTextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_cargo = new SIESC.UI.MyComboBox();
+			this.cbo_cargo = new MyComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.cbo_anovencimento = new System.Windows.Forms.ComboBox();
-			this.cbo_instituicoes = new SIESC.UI.MyComboBox();
+			this.cbo_instituicoes = new MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.txt_numautorizacao = new SIESC.UI.MyTextBox();
+			this.txt_numautorizacao = new MyTextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txt_nome = new SIESC.UI.MyTextBox();
+			this.txt_nome = new MyTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lbl_titulo = new System.Windows.Forms.Label();
 			this.btn_editarfuncionario = new System.Windows.Forms.Button();

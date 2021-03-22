@@ -14,6 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Autorizacoes
 {
@@ -628,6 +629,11 @@ namespace SIESC.UI.UI.Autorizacoes
 			foreach (Control control in listaControls)
 			{
 				if (control is MyTextBox)
+				{
+					control.ResetText();
+				}
+
+				if (control is MyMaskedPhoneBox)
 				{
 					control.ResetText();
 				}

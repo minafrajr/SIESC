@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Zoneamento
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Zoneamento
 {
 	partial class ZoneamentoAluno
 	{
@@ -31,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txt_endereço = new SIESC.UI.MyTextBox();
+            this.txt_endereço = new MyTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,9 +57,9 @@
             this.btn_localizarcoordenadas = new System.Windows.Forms.Button();
             this.btn_zonearAluno = new System.Windows.Forms.Button();
             this.btn_localizarAluno = new System.Windows.Forms.Button();
-            this.txt_codigo = new SIESC.UI.MyTextBox();
-            this.txt_nomealuno = new SIESC.UI.MyTextBox();
-            this.txt_datanasc = new SIESC.UI.MyTextBox();
+            this.txt_codigo = new MyTextBox();
+            this.txt_nomealuno = new MyTextBox();
+            this.txt_datanasc = new MyTextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_aluno = new System.Windows.Forms.Label();
             this.lbl_data_nasc = new System.Windows.Forms.Label();

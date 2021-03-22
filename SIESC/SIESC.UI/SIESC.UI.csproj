@@ -206,6 +206,12 @@
     <Compile Include="Controles\MyComboBox.designer.cs">
       <DependentUpon>MyComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\MyMaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyMaskedTextBox.Designer.cs">
+      <DependentUpon>MyMaskedTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -253,11 +259,11 @@
     <Compile Include="UI\FrmBaseUi.Designer.cs">
       <DependentUpon>FrmBaseUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controles\MyMaskedTextBox.cs">
+    <Compile Include="Controles\MyMaskedPhoneBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controles\MyMaskedTextBox.Designer.cs">
-      <DependentUpon>MyMaskedTextBox.cs</DependentUpon>
+    <Compile Include="Controles\MyMaskedPhoneBox.Designer.cs">
+      <DependentUpon>MyMaskedPhoneBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\MyTextBox.cs">
       <SubType>Component</SubType>

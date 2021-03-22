@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Alunos
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Alunos
 {
 	partial class GerenciarAlunos
 	{
@@ -31,18 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAlunos));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txt_deficiencia = new SIESC.UI.MyTextBox();
+            this.txt_deficiencia = new MyTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_telefones = new SIESC.UI.MyTextBox();
+            this.txt_telefones = new MyTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_idade = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_solicitarvaga = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_pai = new SIESC.UI.MyTextBox();
+            this.txt_pai = new MyTextBox();
             this.lbl_pai = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_codigo = new SIESC.UI.MyTextBox();
+            this.txt_codigo = new MyTextBox();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
             this.rdb_datanasc = new System.Windows.Forms.RadioButton();
             this.rdb_pai = new System.Windows.Forms.RadioButton();
@@ -52,8 +54,8 @@
             this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_mae = new SIESC.UI.MyTextBox();
-            this.txt_nomealuno = new SIESC.UI.MyTextBox();
+            this.txt_mae = new MyTextBox();
+            this.txt_nomealuno = new MyTextBox();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_localizar = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();

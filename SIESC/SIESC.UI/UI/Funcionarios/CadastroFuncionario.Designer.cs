@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Funcionarios
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Funcionarios
 {
 	partial class CadastroFuncionario
 	{
@@ -36,45 +38,45 @@
 			this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
 			this.btn_limpar_cbo_cargoAtual = new System.Windows.Forms.Button();
 			this.btn_limpar_cbo_cargoOrigem = new System.Windows.Forms.Button();
-			this.cbo_cargoatual = new SIESC.UI.MyComboBox();
+			this.cbo_cargoatual = new MyComboBox();
 			this.cargos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label4 = new System.Windows.Forms.Label();
-			this.cbo_instituicao = new SIESC.UI.MyComboBox();
+			this.cbo_instituicao = new MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lbl_codigofunc = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.cbo_cargoorigem = new SIESC.UI.MyComboBox();
+			this.cbo_cargoorigem = new MyComboBox();
 			this.cargosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lbl_cargo = new System.Windows.Forms.Label();
-			this.txt_email = new SIESC.UI.MyTextBox();
+			this.txt_email = new MyTextBox();
 			this.lbl_email = new System.Windows.Forms.Label();
-			this.msk_tel3 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel2 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel1 = new SIESC.UI.MyMaskedTextBox();
+			this.msk_tel3 = new MyMaskedPhoneBox();
+			this.msk_tel2 = new MyMaskedPhoneBox();
+			this.msk_tel1 = new MyMaskedPhoneBox();
 			this.lbl_telefones = new System.Windows.Forms.Label();
-			this.txt_cartident = new SIESC.UI.MyTextBox();
+			this.txt_cartident = new MyTextBox();
 			this.lbl_cartident = new System.Windows.Forms.Label();
 			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.msk_cpf = new System.Windows.Forms.MaskedTextBox();
-			this.txt_nome = new SIESC.UI.MyTextBox();
+			this.msk_cpf = new MyMaskedTextBox();
+			this.txt_nome = new MyTextBox();
 			this.gpb_sexo = new System.Windows.Forms.GroupBox();
 			this.rdb_feminino = new System.Windows.Forms.RadioButton();
 			this.rdb_masculino = new System.Windows.Forms.RadioButton();
 			this.gpb_endereco = new System.Windows.Forms.GroupBox();
 			this.btn_saberCep = new System.Windows.Forms.Button();
-			this.txt_bairro = new SIESC.UI.MyTextBox();
-			this.txt_complemento = new SIESC.UI.MyTextBox();
+			this.txt_bairro = new MyTextBox();
+			this.txt_complemento = new MyTextBox();
 			this.lbl_complemento = new System.Windows.Forms.Label();
 			this.btn_buscarcep = new System.Windows.Forms.Button();
-			this.txt_numresid = new SIESC.UI.MyTextBox();
-			this.txt_cidade = new SIESC.UI.MyTextBox();
-			this.txt_logradouro = new SIESC.UI.MyTextBox();
-			this.cbo_tipolograd = new SIESC.UI.MyComboBox();
-			this.msk_cep = new System.Windows.Forms.MaskedTextBox();
+			this.txt_numresid = new MyTextBox();
+			this.txt_cidade = new MyTextBox();
+			this.txt_logradouro = new MyTextBox();
+			this.cbo_tipolograd = new MyComboBox();
+			this.msk_cep = new MyMaskedTextBox();
 			this.lbl_cidade = new System.Windows.Forms.Label();
 			this.lbl_bairro = new System.Windows.Forms.Label();
 			this.lbl_numresid = new System.Windows.Forms.Label();
@@ -772,9 +774,9 @@
 		private System.Windows.Forms.Label lbl_nome;
 		private System.Windows.Forms.Label lbl_cpf;
 		private System.Windows.Forms.GroupBox gpb_dadospessoais;
-		private MyMaskedTextBox msk_tel3;
-		private MyMaskedTextBox msk_tel2;
-		private MyMaskedTextBox msk_tel1;
+		private MyMaskedPhoneBox msk_tel3;
+		private MyMaskedPhoneBox msk_tel2;
+		private MyMaskedPhoneBox msk_tel1;
 		private System.Windows.Forms.Label lbl_telefones;
 		private MyTextBox txt_cartident;
 		private System.Windows.Forms.Label lbl_cartident;

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using SIESC.UI.Controles;
 using SIESC.UI.Properties;
 using SIESC.UI.siescDataSetTableAdapters;
 

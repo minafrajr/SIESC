@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
+using SIESC.UI.Controles;
 using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI.Sindicância

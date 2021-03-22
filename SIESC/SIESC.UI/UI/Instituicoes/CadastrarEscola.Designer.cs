@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI
 {
 	partial class CadastrarEscola
 	{
@@ -32,17 +34,17 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarEscola));
 			this.lbl_tituloform = new System.Windows.Forms.Label();
 			this.gpb_dados_instituicoes = new System.Windows.Forms.GroupBox();
-			this.msk_inep = new System.Windows.Forms.MaskedTextBox();
+			this.msk_inep = new MyMaskedTextBox();
 			this.lbl_tit_codigo = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.lbl_codigo = new System.Windows.Forms.Label();
-			this.txt_nome = new SIESC.UI.MyTextBox();
-			this.cbo_mantenedor = new SIESC.UI.MyComboBox();
+			this.txt_nome = new MyTextBox();
+			this.cbo_mantenedor = new MyComboBox();
 			this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.cbo_regional_adm = new SIESC.UI.MyComboBox();
+			this.cbo_regional_adm = new MyComboBox();
 			this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label4 = new System.Windows.Forms.Label();
 			this.trvw_anoensino = new System.Windows.Forms.TreeView();
@@ -50,27 +52,27 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btn_localizarcoord = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
-			this.msk_longitude = new System.Windows.Forms.MaskedTextBox();
+			this.msk_longitude = new MyMaskedTextBox();
 			this.lbl_longitude = new System.Windows.Forms.Label();
-			this.msk_latitude = new System.Windows.Forms.MaskedTextBox();
+			this.msk_latitude = new MyMaskedTextBox();
 			this.btn_saberCep = new System.Windows.Forms.Button();
-			this.txt_email = new SIESC.UI.MyTextBox();
+			this.txt_email = new MyTextBox();
 			this.btn_buscarcep = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
-			this.msk_cep = new System.Windows.Forms.MaskedTextBox();
+			this.msk_cep = new MyMaskedTextBox();
 			this.lbl_cep = new System.Windows.Forms.Label();
-			this.msk_tel3 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel2 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel1 = new SIESC.UI.MyMaskedTextBox();
+			this.msk_tel3 = new MyMaskedPhoneBox();
+			this.msk_tel2 = new MyMaskedPhoneBox();
+			this.msk_tel1 = new MyMaskedPhoneBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.cbo_bairro = new SIESC.UI.MyComboBox();
+			this.cbo_bairro = new MyComboBox();
 			this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label8 = new System.Windows.Forms.Label();
-			this.txt_numero_resid = new SIESC.UI.MyTextBox();
+			this.txt_numero_resid = new MyTextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.txt_logradouro = new SIESC.UI.MyTextBox();
+			this.txt_logradouro = new MyTextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_tipo_Logradouro = new SIESC.UI.MyComboBox();
+			this.cbo_tipo_Logradouro = new MyComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btn_excluir = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
@@ -706,9 +708,9 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox gpb_endereco;
-		private MyMaskedTextBox msk_tel3;
-		private MyMaskedTextBox msk_tel2;
-		private MyMaskedTextBox msk_tel1;
+		private MyMaskedPhoneBox msk_tel3;
+		private MyMaskedPhoneBox msk_tel2;
+		private MyMaskedPhoneBox msk_tel1;
 		private System.Windows.Forms.Label label9;
 		private MyComboBox cbo_bairro;
 		private System.Windows.Forms.Label label8;
@@ -718,7 +720,7 @@
 		private System.Windows.Forms.Label label6;
 		private MyComboBox cbo_tipo_Logradouro;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.MaskedTextBox msk_inep;
+		private MyMaskedTextBox msk_inep;
 		private System.Windows.Forms.Label label11;
 		private MyTextBox txt_email;
 		private System.Windows.Forms.Label label10;
@@ -738,12 +740,12 @@
 		private System.Windows.Forms.Label lbl_tit_codigo;
 		private System.Windows.Forms.Label lbl_codigo;
 		private System.Windows.Forms.Button btn_limpar;
-		private System.Windows.Forms.MaskedTextBox msk_cep;
+		private MyMaskedTextBox msk_cep;
 		private System.Windows.Forms.Label lbl_cep;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label lbl_longitude;
-		private System.Windows.Forms.MaskedTextBox msk_latitude;
-		private System.Windows.Forms.MaskedTextBox msk_longitude;
+		private MyMaskedTextBox msk_latitude;
+		private MyMaskedTextBox msk_longitude;
 		private System.Windows.Forms.Button btn_saberCep;
 		private System.Windows.Forms.Button btn_buscarcep;
 		private System.Windows.Forms.Button btn_localizarcoord;

@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Autorizacoes
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Autorizacoes
 {
 	partial class AutorizacaoExpressa
 	{
@@ -29,21 +31,21 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.cbo_instituicao = new SIESC.UI.MyComboBox();
+			this.cbo_instituicao = new MyComboBox();
 			this.siescDataSet1 = new SIESC.UI.siescDataSet();
-			this.cbo_cargoAtual = new SIESC.UI.MyComboBox();
+			this.cbo_cargoAtual = new MyComboBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.cbo_cargoOrigem = new SIESC.UI.MyComboBox();
+			this.cbo_cargoOrigem = new MyComboBox();
 			this.lbl_cargo = new System.Windows.Forms.Label();
 			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.txt_nome = new SIESC.UI.MyTextBox();
-			this.cbo_nivelensino = new SIESC.UI.MyComboBox();
-			this.msk_cpf = new SIESC.UI.MyMaskedTextBox();
+			this.txt_nome = new MyTextBox();
+			this.cbo_nivelensino = new MyComboBox();
+			this.msk_cpf = new MyMaskedTextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_disciplina = new SIESC.UI.MyComboBox();
+			this.cbo_disciplina = new MyComboBox();
 			this.lbl_nome = new System.Windows.Forms.Label();
-			this.cbo_tipoautoriz = new SIESC.UI.MyComboBox();
+			this.cbo_tipoautoriz = new MyComboBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();

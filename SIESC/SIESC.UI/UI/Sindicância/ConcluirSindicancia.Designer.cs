@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Solicitacoes
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Solicitacoes
 {
     partial class ConcluirSindicancia
     {
@@ -37,7 +39,7 @@
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.chk_pendente = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_observacoes = new SIESC.UI.MyTextBox();
+            this.txt_observacoes = new MyTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();

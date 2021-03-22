@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI
 {
     partial class GerenciaMotivo
     {
@@ -30,7 +32,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_nomeMotivo = new System.Windows.Forms.Label();
-            this.txt_nomemotivo = new SIESC.UI.MyTextBox();
+            this.txt_nomemotivo = new MyTextBox();
             this.dgv_motivos = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.Label();
             this.lbl_info = new System.Windows.Forms.Label();
@@ -43,7 +45,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.txt_codigo = new SIESC.UI.MyTextBox();
+            this.txt_codigo = new MyTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_motivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();

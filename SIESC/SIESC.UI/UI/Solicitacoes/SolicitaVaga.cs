@@ -14,6 +14,7 @@ using MySql.Data.MySqlClient;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 using SIESC.UI.tecnologia1;
 using SIESC.UI.UI.CEP;
 using SIESC.UI.UI.Relatorios;
@@ -727,6 +728,8 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (control is MyComboBox)
                     //((MyComboBox)control).Text = string.Empty;
                     ((MyComboBox)control).SelectedIndex = -1;
+
+                if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
 
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 

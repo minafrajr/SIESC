@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Autorizacoes
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Autorizacoes
 {
 	partial class SolicitarAutorizacao
 	{
@@ -37,15 +39,15 @@
 			this.btn_autorizar = new System.Windows.Forms.Button();
 			this.gpb_endereco = new System.Windows.Forms.GroupBox();
 			this.btn_saberCep = new System.Windows.Forms.Button();
-			this.txt_bairro = new SIESC.UI.MyTextBox();
-			this.txt_complemento = new SIESC.UI.MyTextBox();
+			this.txt_bairro = new MyTextBox();
+			this.txt_complemento = new MyTextBox();
 			this.lbl_complemento = new System.Windows.Forms.Label();
 			this.btn_buscarcep = new System.Windows.Forms.Button();
-			this.txt_numresid = new SIESC.UI.MyTextBox();
-			this.txt_cidade = new SIESC.UI.MyTextBox();
-			this.txt_logradouro = new SIESC.UI.MyTextBox();
-			this.cbo_tipolograd = new SIESC.UI.MyComboBox();
-			this.msk_cep = new System.Windows.Forms.MaskedTextBox();
+			this.txt_numresid = new MyTextBox();
+			this.txt_cidade = new MyTextBox();
+			this.txt_logradouro = new MyTextBox();
+			this.cbo_tipolograd = new MyComboBox();
+			this.msk_cep = new MyMaskedTextBox();
 			this.lbl_cidade = new System.Windows.Forms.Label();
 			this.lbl_bairro = new System.Windows.Forms.Label();
 			this.lbl_numresid = new System.Windows.Forms.Label();
@@ -53,7 +55,7 @@
 			this.lbl_tipolograd = new System.Windows.Forms.Label();
 			this.lbl_cep = new System.Windows.Forms.Label();
 			this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
-			this.cbo_cargoAtual = new SIESC.UI.MyComboBox();
+			this.cbo_cargoAtual = new MyComboBox();
 			this.cargos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label10 = new System.Windows.Forms.Label();
@@ -64,21 +66,21 @@
 			this.lbl_codigofunc = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.lbl_numautoriz = new System.Windows.Forms.Label();
-			this.cbo_cargoOrigem = new SIESC.UI.MyComboBox();
+			this.cbo_cargoOrigem = new MyComboBox();
 			this.cargosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lbl_cargo = new System.Windows.Forms.Label();
-			this.txt_email = new SIESC.UI.MyTextBox();
+			this.txt_email = new MyTextBox();
 			this.lbl_email = new System.Windows.Forms.Label();
-			this.msk_tel3 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel2 = new SIESC.UI.MyMaskedTextBox();
-			this.msk_tel1 = new SIESC.UI.MyMaskedTextBox();
+			this.msk_tel3 = new MyMaskedPhoneBox();
+			this.msk_tel2 = new MyMaskedPhoneBox();
+			this.msk_tel1 = new MyMaskedPhoneBox();
 			this.lbl_telefones = new System.Windows.Forms.Label();
-			this.txt_cartident = new SIESC.UI.MyTextBox();
+			this.txt_cartident = new MyTextBox();
 			this.lbl_cartident = new System.Windows.Forms.Label();
 			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.msk_cpf = new System.Windows.Forms.MaskedTextBox();
-			this.txt_nome = new SIESC.UI.MyTextBox();
+			this.msk_cpf = new MyMaskedTextBox();
+			this.txt_nome = new MyTextBox();
 			this.gpb_sexo = new System.Windows.Forms.GroupBox();
 			this.rdb_feminino = new System.Windows.Forms.RadioButton();
 			this.rdb_masculino = new System.Windows.Forms.RadioButton();
@@ -90,12 +92,12 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.chk_anosfinais = new System.Windows.Forms.CheckBox();
 			this.chk_anosiniciais = new System.Windows.Forms.CheckBox();
-			this.cbo_nivelensino = new SIESC.UI.MyComboBox();
+			this.cbo_nivelensino = new MyComboBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_disciplina = new SIESC.UI.MyComboBox();
+			this.cbo_disciplina = new MyComboBox();
 			this.disciplinasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.cbo_tipoautoriz = new SIESC.UI.MyComboBox();
-			this.cbo_instituicao = new SIESC.UI.MyComboBox();
+			this.cbo_tipoautoriz = new MyComboBox();
+			this.cbo_instituicao = new MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dtp_datapossecargo = new System.Windows.Forms.DateTimePicker();
 			this.label4 = new System.Windows.Forms.Label();
@@ -103,7 +105,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gpb_documentos = new System.Windows.Forms.GroupBox();
-			this.txt_outrosdocs = new SIESC.UI.MyTextBox();
+			this.txt_outrosdocs = new MyTextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.chk_decreto = new System.Windows.Forms.CheckBox();
 			this.chk_termoposse = new System.Windows.Forms.CheckBox();
@@ -1137,7 +1139,7 @@
 		private MyTextBox txt_cidade;
 		private MyTextBox txt_logradouro;
 		private MyComboBox cbo_tipolograd;
-		private System.Windows.Forms.MaskedTextBox msk_cep;
+		private MyMaskedTextBox msk_cep;
 		private System.Windows.Forms.Label lbl_cidade;
 		private System.Windows.Forms.Label lbl_bairro;
 		private System.Windows.Forms.Label lbl_numresid;
@@ -1149,15 +1151,15 @@
 		private System.Windows.Forms.Label lbl_cargo;
 		private MyTextBox txt_email;
 		private System.Windows.Forms.Label lbl_email;
-		private MyMaskedTextBox msk_tel3;
-		private MyMaskedTextBox msk_tel2;
-		private MyMaskedTextBox msk_tel1;
+		private MyMaskedPhoneBox msk_tel3;
+		private MyMaskedPhoneBox msk_tel2;
+		private MyMaskedPhoneBox msk_tel1;
 		private System.Windows.Forms.Label lbl_telefones;
 		private MyTextBox txt_cartident;
 		private System.Windows.Forms.Label lbl_cartident;
 		private System.Windows.Forms.DateTimePicker dtp_datanasc;
 		private System.Windows.Forms.Label lbl_datanasc;
-		private System.Windows.Forms.MaskedTextBox msk_cpf;
+		private MyMaskedTextBox msk_cpf;
 		private MyTextBox txt_nome;
 		private System.Windows.Forms.GroupBox gpb_sexo;
 		private System.Windows.Forms.RadioButton rdb_feminino;

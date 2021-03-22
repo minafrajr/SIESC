@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI
 {
@@ -399,11 +400,14 @@ namespace SIESC.UI.UI
 					((MyComboBox)control).SelectedValue = -1;
 					((MyComboBox)control).ResetText();
 				}
+				if (control is MyMaskedPhoneBox)
+				{
+					((MyMaskedPhoneBox)control).ResetText();
+				}
 				if (control is MyMaskedTextBox)
 				{
 					((MyMaskedTextBox)control).ResetText();
 				}
-
 				if (control is Label)
 				{
 					((Label)control).ResetText();
