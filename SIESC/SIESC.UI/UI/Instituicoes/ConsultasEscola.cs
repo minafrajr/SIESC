@@ -13,7 +13,7 @@ using SIESC.UI.siescDataSetTableAdapters;
 
 namespace SIESC.UI.UI
 {
-    public partial class ConsultasEscola : SIESC.UI.base_UI
+    public partial class ConsultasEscola : SIESC.UI.FrmBaseUi
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados das instituições

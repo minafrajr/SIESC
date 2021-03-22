@@ -14,7 +14,7 @@ namespace SIESC.UI.UI.Zoneamento
     /// <summary>
     /// Formulário para zoneamento a partir de um endereço qualquer
     /// </summary>
-    public partial class ZoneamentoEndereco : base_UI
+    public partial class ZoneamentoEndereco : FrmBaseUi
     {
         /// <summary>
         /// Array de coordenadas

@@ -3,7 +3,7 @@
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class FrmListarEmailsFuncionarios : base_UI
+	public partial class FrmListarEmailsFuncionarios : FrmBaseUi
 	{
 		/// <summary>
 		/// 

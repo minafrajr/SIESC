@@ -15,7 +15,7 @@ namespace SIESC.UI.UI.Alunos
     /// <summary>
     /// Gerenciamento dos alunos
     /// </summary>
-    public partial class GerenciarAlunos : base_UI
+    public partial class GerenciarAlunos : FrmBaseUi
     {
         /// <summary>
         /// Formulário MDI

@@ -25,7 +25,7 @@ namespace SIESC.UI.UI.Autorizacoes
 	/// <summary>
 	/// Classe do formulário de Solicitar Autorização
 	/// </summary>
-	public partial class SolicitarAutorizacao : base_UI
+	public partial class SolicitarAutorizacao : FrmBaseUi
 	{
 		/// <summary>
 		/// Objeto de acesso ao banco para CRUD Funcionários

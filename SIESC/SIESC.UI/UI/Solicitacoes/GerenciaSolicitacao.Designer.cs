@@ -9,7 +9,7 @@ namespace SIESC.UI.UI
 	/// <summary>
 	/// 
 	/// </summary>
-	partial class GerenciaSolicitacao : base_UI { 
+	partial class GerenciaSolicitacao : FrmBaseUi { 
 	   
 	
 		///<summary>

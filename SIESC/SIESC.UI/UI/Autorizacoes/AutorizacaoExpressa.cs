@@ -9,7 +9,7 @@ namespace SIESC.UI.UI.Autorizacoes
 	/// <summary>
 	/// Classe do formulário de Autorização Expressa
 	/// </summary>
-	public partial class AutorizacaoExpressa : base_UI
+	public partial class AutorizacaoExpressa : FrmBaseUi
 	{
 		/// <summary>
 		/// Objeto da tela principal

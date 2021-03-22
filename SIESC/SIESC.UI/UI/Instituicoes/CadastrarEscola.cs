@@ -17,7 +17,7 @@ using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI
 {
-	public partial class CadastrarEscola : SIESC.UI.base_UI
+	public partial class CadastrarEscola : SIESC.UI.FrmBaseUi
 	{
 		/// <summary>
 		/// Lista de controles do formulário

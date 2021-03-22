@@ -20,7 +20,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class CadastraSindicancia : base_UI
+    public partial class CadastraSindicancia : FrmBaseUi
     {
         /// <summary>
         /// Objeto do formulário principal

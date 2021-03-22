@@ -11,12 +11,12 @@ namespace SIESC.UI
 	/// <summary>
 	/// Formulário base do sistema
 	/// </summary>
-	public partial class base_UI : Form
+	public partial class FrmBaseUi : Form
 	{
 		/// <summary>
 		/// Construtor
 		/// </summary>
-		public base_UI()
+		public FrmBaseUi()
 		{
 			InitializeComponent();
 		}

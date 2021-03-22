@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Solicitacoes
 {
-    partial class CadastraSindicancia : base_UI
+    partial class CadastraSindicancia : FrmBaseUi
     {
         /// <summary>
         /// Variável de designer necessária.

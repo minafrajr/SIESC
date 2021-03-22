@@ -247,11 +247,11 @@
     <Compile Include="UI\Autorizacoes\SolicitarAutorizacao.Designer.cs">
       <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\base_UI.cs">
+    <Compile Include="UI\FrmBaseUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\base_UI.Designer.cs">
-      <DependentUpon>base_UI.cs</DependentUpon>
+    <Compile Include="UI\FrmBaseUi.Designer.cs">
+      <DependentUpon>FrmBaseUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\MyMaskedTextBox.cs">
       <SubType>Component</SubType>
@@ -556,8 +556,8 @@
     <EmbeddedResource Include="UI\Autorizacoes\SolicitarAutorizacao.resx">
       <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\base_UI.resx">
-      <DependentUpon>base_UI.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmBaseUi.resx">
+      <DependentUpon>FrmBaseUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Alunos\CadastrarAluno.resx">
       <DependentUpon>CadastrarAluno.cs</DependentUpon>

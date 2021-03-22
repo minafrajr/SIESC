@@ -11,7 +11,7 @@ using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI.Sindicância
 {
-    public partial class GerenciarSindicanciaCadastrada : SIESC.UI.base_UI
+    public partial class GerenciarSindicanciaCadastrada : SIESC.UI.FrmBaseUi
     {
         private Principal_UI principalUi;
 

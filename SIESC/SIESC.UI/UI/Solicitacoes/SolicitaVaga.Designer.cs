@@ -8,7 +8,7 @@ using SIESC.UI.siescDataSetTableAdapters;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
-    partial class SolicitaVaga :base_UI
+    partial class SolicitaVaga :FrmBaseUi
     {
         /// <summary>
         /// Variável de designer necessária.

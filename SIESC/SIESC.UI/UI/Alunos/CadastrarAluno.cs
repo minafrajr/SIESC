@@ -15,7 +15,7 @@ namespace SIESC.UI.UI
     /// <summary>
     /// formulário para cadastro do aluno
     /// </summary>
-    public partial class CadastrarAluno : SIESC.UI.base_UI
+    public partial class CadastrarAluno : SIESC.UI.FrmBaseUi
     {
         /// <summary>
         /// Lista de controles do formulário
