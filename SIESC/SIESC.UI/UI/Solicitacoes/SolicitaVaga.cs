@@ -1149,15 +1149,15 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 BuscaCep cep = new BuscaCep();
 #if DEBUG
-                //cep.buscadorAlternativo(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipologradouro); 
-                cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
+                cep.buscadorAlternativo(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipologradouro); 
+                //cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
 
-                if (string.IsNullOrEmpty(txt_logradouro.Text))
-                {
-                    if (t.IsAlive) t.Abort();
-                    if (Mensageiro.MensagemPergunta($"o cep {msk_cep.Text} não foi localizado, deseja utilizar um buscador alternativo?", principalUi).Equals(DialogResult.Yes))
-                        cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-                }
+                //if (string.IsNullOrEmpty(txt_logradouro.Text))
+                //{
+                //    if (t.IsAlive) t.Abort();
+                //    if (Mensageiro.MensagemPergunta($"o cep {msk_cep.Text} não foi localizado, deseja utilizar um buscador alternativo?", principalUi).Equals(DialogResult.Yes))
+                //        cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
+                //}
 #else
                 
                 cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro); 
