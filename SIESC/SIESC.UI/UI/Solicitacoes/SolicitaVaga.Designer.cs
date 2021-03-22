@@ -42,7 +42,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigoAluno = new System.Windows.Forms.TextBox();
             this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
-            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
+            this.msk_data_nascimento = new System.Windows.Forms.MaskedTextBox();
             this.btn_limpacombo = new System.Windows.Forms.Button();
             this.cbo_deficiencia = new SIESC.UI.MyComboBox();
             this.deficienciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -96,7 +96,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.btn_buscarcep = new System.Windows.Forms.Button();
             this.lbl_logradouro = new System.Windows.Forms.Label();
             this.cbo_tipologradouro = new SIESC.UI.MyComboBox();
-            this.msk_cep = new SIESC.UI.MyMaskedTextBox();
+            this.msk_cep = new System.Windows.Forms.MaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
             this.btn_limpa_irmao2 = new System.Windows.Forms.Button();
@@ -123,7 +123,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.siescDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.cbo_cidades = new SIESC.UI.MyComboBox();
-            this.msk_codexpint = new SIESC.UI.MyMaskedTextBox();
+            this.msk_codexpint = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_cancelaEnc = new System.Windows.Forms.Button();
             this.cbo_instituicao_encaminhada = new SIESC.UI.MyComboBox();
@@ -312,8 +312,6 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone3.TabIndex = 9;
             this.msk_telefone3.Tag = "Telefone 3";
             this.msk_telefone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone3.Enter += new System.EventHandler(this.msk_telefone3_Enter);
-            this.msk_telefone3.Leave += new System.EventHandler(this.msk_telefone3_Leave);
             // 
             // label4
             // 
@@ -334,8 +332,6 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone2.TabIndex = 8;
             this.msk_telefone2.Tag = "Telefone 2";
             this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
-            this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
             // 
             // msk_telefone1
             // 
@@ -347,8 +343,6 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone1.TabIndex = 7;
             this.msk_telefone1.Tag = "Telefone 1";
             this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
-            this.msk_telefone1.Leave += new System.EventHandler(this.msk_telefone1_Leave);
             // 
             // lbl_codigoSolicitacao
             // 
@@ -1667,7 +1661,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private Button btn_buscarcep;
         private Label lbl_logradouro;
         private MyComboBox cbo_tipologradouro;
-        private MyMaskedTextBox msk_cep;
+        private System.Windows.Forms.MaskedTextBox msk_cep;
         private Label lbl_cep;
         private MyMaskedTextBox msk_telefone3;
         private MyMaskedTextBox msk_telefone2;
@@ -1716,7 +1710,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private TextBox txt_codigoSolicitacao;
         private Label lbl_codigoSolicitacao;
         private Label label1;
-        private MyMaskedTextBox msk_codexpint;
+        private System.Windows.Forms.MaskedTextBox msk_codexpint;
         private Button btn_gravar_codigoEI;
         private MyTextBox txt_solicitante;
         private MyComboBox cbo_solicitante;
@@ -1750,7 +1744,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private Button btn_localizar_instituicao;
         private CheckBox chk_transporte;
         private TextBox txt_justificativa_transporte;
-        private MyMaskedTextBox msk_data_nascimento;
+        private System.Windows.Forms.MaskedTextBox msk_data_nascimento;
         private RadioButton rdb_declaracao_cemig;
         private Label lbl_escola_irmao2;
         private Label lbl_ano_irmao2;

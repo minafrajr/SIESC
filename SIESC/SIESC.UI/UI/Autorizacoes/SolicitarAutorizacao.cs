@@ -740,56 +740,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			}
 		}
 
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel1_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel1);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
-
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel2_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel2);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
-
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel3_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel1);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
 
 		/// <summary>
 		/// Carrega as disciplinas de acordo com o tipo de autorização

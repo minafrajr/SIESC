@@ -20,13 +20,5 @@ namespace SIESC.UI
 		{
 			InitializeComponent();
 		}
-		/// <summary>
-		/// Máscara para o telefone
-		/// </summary>
-		/// <param name="msk"></param>
-		public void SetMask(MaskedTextBox msk)
-		{
-			msk.Mask = msk.Text.Length.Equals(11) ? "(00)00000-0000" : "(00)0000-0000";
-		}
 	}
 }

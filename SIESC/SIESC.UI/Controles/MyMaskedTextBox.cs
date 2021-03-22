@@ -31,6 +31,8 @@ namespace SIESC.UI
 			base.OnGotFocus(e);
 			this.BackColor = Color.Moccasin;
 			this.Font = new Font(this.Font,FontStyle.Bold);
+
+			this.Mask = @"(00)00000-0000";
 		}
 		/// <summary>
 		/// Evento ao perder o foco
@@ -42,6 +44,8 @@ namespace SIESC.UI
 			base.OnLostFocus(e);
 			this.BackColor = Color.White;
 			this.Font = new Font(this.Font,FontStyle.Regular);
+
+			this.Mask = this.Text.Length.Equals(11) ? "(00)00000-0000" : "(00)0000-0000";
 			
 		}
 	}

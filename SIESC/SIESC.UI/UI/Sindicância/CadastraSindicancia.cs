@@ -787,87 +787,8 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone1_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                base.SetMask(msk_telefone1);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone2_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                base.SetMask(msk_telefone2);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone3_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                base.SetMask(msk_telefone3);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone1"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone1_Enter(object sender, EventArgs e)
-        {
-            msk_telefone1.Mask = @"(00)00000-0000";
-        }
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone2"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone2_Enter(object sender, EventArgs e)
-        {
-            msk_telefone2.Mask = @"(00)00000-0000";
-        }
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone3"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone3_Enter(object sender, EventArgs e)
-        {
-            //msk_telefone3.Mask = @"(00)00000-0000";
-            base.SetMask(msk_telefone3);
-        }
-
-
-
-        /// <summary>
+        
+      /// <summary>
         /// Abre a janela de consulta de cep
         /// </summary>
         /// <param name="sender"></param>
