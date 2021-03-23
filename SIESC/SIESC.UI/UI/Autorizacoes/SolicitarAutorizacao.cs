@@ -14,6 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Autorizacoes
 {
@@ -25,7 +26,7 @@ namespace SIESC.UI.UI.Autorizacoes
 	/// <summary>
 	/// Classe do formulário de Solicitar Autorização
 	/// </summary>
-	public partial class SolicitarAutorizacao : base_UI
+	public partial class SolicitarAutorizacao : FrmBaseUi
 	{
 		/// <summary>
 		/// Objeto de acesso ao banco para CRUD Funcionários
@@ -632,6 +633,11 @@ namespace SIESC.UI.UI.Autorizacoes
 					control.ResetText();
 				}
 
+				if (control is MyMaskedPhoneBox)
+				{
+					control.ResetText();
+				}
+
 				if (control is MyMaskedTextBox)
 				{
 					control.ResetText();
@@ -740,56 +746,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			}
 		}
 
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel1_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel1);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
-
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel2_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel2);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
-
-		/// <summary>
-		/// Formato o telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel3_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				SetMask(msk_tel1);
-			}
-			catch (Exception exception)
-			{
-				Mensageiro.MensagemErro(exception,this);
-			}
-		}
 
 		/// <summary>
 		/// Carrega as disciplinas de acordo com o tipo de autorização

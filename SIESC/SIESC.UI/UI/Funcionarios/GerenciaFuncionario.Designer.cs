@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Funcionarios
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Funcionarios
 {
 	partial class GerenciaFuncionario
 	{
@@ -33,27 +35,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaFuncionario));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.cbo_cargoAtual = new SIESC.UI.MyComboBox();
+            this.cbo_cargoAtual = new MyComboBox();
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_email = new SIESC.UI.MyTextBox();
+            this.txt_email = new MyTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_telefone1 = new SIESC.UI.MyTextBox();
+            this.txt_telefone1 = new MyTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_codigofuncionario = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_endereco = new SIESC.UI.MyTextBox();
+            this.txt_endereco = new MyTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbo_instituicao = new SIESC.UI.MyComboBox();
+            this.cbo_instituicao = new MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_cargoOrigem = new SIESC.UI.MyComboBox();
+            this.cbo_cargoOrigem = new MyComboBox();
             this.lbl_cargo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_nome = new SIESC.UI.MyTextBox();
-            this.msk_cpf = new SIESC.UI.MyMaskedTextBox();
+            this.txt_nome = new MyTextBox();
+            this.msk_cpf = new MyMaskedPhoneBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
@@ -602,7 +604,7 @@
 		private System.Windows.Forms.Button btn_cancelar;
 		private System.Windows.Forms.Label lbl_nome;
 		private MyTextBox txt_nome;
-		private MyMaskedTextBox msk_cpf;
+		private MyMaskedPhoneBox msk_cpf;
 		private System.Windows.Forms.Label lbl_cpf;
 		private System.Windows.Forms.Label label2;
 		private MyComboBox cbo_cargoOrigem;

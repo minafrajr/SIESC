@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Escolas
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Escolas
 {
 	partial class GerenciaEscolas
 	{
@@ -36,18 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_endereco = new SIESC.UI.MyTextBox();
+            this.txt_endereco = new MyTextBox();
             this.lbl_endereco = new System.Windows.Forms.Label();
-            this.cbo_mantenedor = new SIESC.UI.MyComboBox();
+            this.cbo_mantenedor = new MyComboBox();
             this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.lbl_mantenedor = new System.Windows.Forms.Label();
-            this.cbo_regional = new SIESC.UI.MyComboBox();
+            this.cbo_regional = new MyComboBox();
             this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_regional = new System.Windows.Forms.Label();
-            this.txt_codigo = new SIESC.UI.MyMaskedTextBox();
+            this.txt_codigo = new MyMaskedTextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
-            this.txt_nome = new SIESC.UI.MyTextBox();
+            this.txt_nome = new MyTextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
             this.rdb_mantenedor = new System.Windows.Forms.RadioButton();

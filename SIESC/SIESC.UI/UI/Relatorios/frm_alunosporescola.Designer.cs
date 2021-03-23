@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI
 {
     partial class frm_alunosporescola
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cbo_escola = new SIESC.UI.MyComboBox();
+            this.cbo_escola = new MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.lbl_escola = new System.Windows.Forms.Label();

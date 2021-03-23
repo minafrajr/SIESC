@@ -1,4 +1,5 @@
 ﻿using System;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Relatorios
 {
@@ -35,8 +36,8 @@ namespace SIESC.UI.UI.Relatorios
 			this.btn_todos = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.msk_datainicial = new System.Windows.Forms.MaskedTextBox();
-			this.msk_datafinal = new System.Windows.Forms.MaskedTextBox();
+			this.msk_datainicial = new MyMaskedTextBox();
+			this.msk_datafinal = new MyMaskedTextBox();
 			this.vw_solicitacoes_por_diaTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_solicitacoes_por_diaTableAdapter();
 			this.vw_solicitacoes_por_dia_infantilTableAdapter1 = new SIESC.BD.DataSets.dsInfantilTableAdapters.vw_solicitacoes_por_dia_infantilTableAdapter();
 			this.vw_solicitacoes_por_dia_fundamentalTableAdapter1 = new SIESC.BD.DataSets.dsFundamentalTableAdapters.vw_solicitacoes_por_dia_fundamentalTableAdapter();
@@ -147,8 +148,8 @@ namespace SIESC.UI.UI.Relatorios
 		private System.Windows.Forms.Button btn_todos;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.MaskedTextBox msk_datainicial;
-		private System.Windows.Forms.MaskedTextBox msk_datafinal;
+		private MyMaskedTextBox msk_datainicial;
+		private MyMaskedTextBox msk_datafinal;
 		private SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_solicitacoes_por_diaTableAdapter vw_solicitacoes_por_diaTableAdapter1;
 		private SIESC.BD.DataSets.dsInfantilTableAdapters.vw_solicitacoes_por_dia_infantilTableAdapter vw_solicitacoes_por_dia_infantilTableAdapter1;
 		private SIESC.BD.DataSets.dsFundamentalTableAdapters.vw_solicitacoes_por_dia_fundamentalTableAdapter vw_solicitacoes_por_dia_fundamentalTableAdapter1;

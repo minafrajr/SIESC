@@ -1,36 +1,37 @@
-﻿namespace SIESC.UI
+﻿
+namespace SIESC.UI.Controles
 {
-    partial class MyMaskedTextBox
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class MyMaskedTextBox
+	{
+		/// <summary>
+		/// Variável de designer necessária.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary> 
+		/// Limpar os recursos que estão sendo usados.
+		/// </summary>
+		/// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Component Designer generated code
+		#region Código gerado pelo Designer de Componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            components = new System.ComponentModel.Container();
-        }
+		/// <summary>
+		/// Método necessário para suporte ao Designer - não modifique 
+		/// o conteúdo deste método com o editor de código.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }
