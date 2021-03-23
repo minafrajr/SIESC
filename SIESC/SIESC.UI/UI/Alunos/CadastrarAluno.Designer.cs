@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI
+﻿namespace SIESC.UI.UI
 {
 	partial class CadastrarAluno
 	{
@@ -457,7 +455,6 @@ namespace SIESC.UI.UI
 			this.gpb_sexo.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		#endregion
@@ -489,9 +486,9 @@ namespace SIESC.UI.UI
 		private System.Windows.Forms.Button btn_limpacombo;
 		private System.Windows.Forms.Label lbl_idade;
 		private System.Windows.Forms.Label label4;
-		private MyMaskedPhoneBox msk_telefone3;
-		private MyMaskedPhoneBox msk_telefone2;
-		private MyMaskedPhoneBox msk_telefone1;
+		private MyMaskedTextBox msk_telefone3;
+		private MyMaskedTextBox msk_telefone2;
+		private MyMaskedTextBox msk_telefone1;
 		private System.Windows.Forms.Label label3;
 		private MyMaskedTextBox msk_data_nascimento;
 	}
