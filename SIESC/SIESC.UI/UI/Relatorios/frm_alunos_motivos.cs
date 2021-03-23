@@ -12,7 +12,7 @@ namespace SIESC.UI.UI.Relatorios
     /// <summary>
     /// Formulário do relatório de alunos por motivo
     /// </summary>
-    public partial class FrmAlunosMotivos : SIESC.UI.FrmBaseUi
+    public partial class FrmAlunosMotivos : SIESC.UI.base_UI
     {
         /// <summary>
         /// Objeto do formulário principal

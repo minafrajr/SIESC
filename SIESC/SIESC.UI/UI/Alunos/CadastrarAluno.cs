@@ -9,13 +9,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+// ReSharper disable All
 
 namespace SIESC.UI.UI
 {
     /// <summary>
     /// formulário para cadastro do aluno
     /// </summary>
-    public partial class CadastrarAluno : SIESC.UI.FrmBaseUi
+    public partial class CadastrarAluno : SIESC.UI.base_UI
     {
         /// <summary>
         /// Lista de controles do formulário
@@ -307,6 +308,36 @@ namespace SIESC.UI.UI
                 throw new NotImplementedException("Ainda a desenvolver...!");
         }
 
+        /// <summary>
+        /// Formata o telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone1_Leave(object sender,EventArgs e)
+        {
+            base.SetMask(msk_telefone1);
+        }
+
+        /// <summary>
+        /// Formata o telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone2_Leave(object sender,EventArgs e)
+        {
+            base.SetMask(msk_telefone2);
+        }
+
+        /// <summary>
+        /// Formata o telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone3_Leave(object sender,EventArgs e)
+        {
+            base.SetMask(msk_telefone3);
+
+        }
         /// <summary>
         /// 
         /// </summary>

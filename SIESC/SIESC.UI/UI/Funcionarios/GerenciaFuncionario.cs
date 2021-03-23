@@ -18,7 +18,7 @@ namespace SIESC.UI.UI.Funcionarios
     /// <summary>
     /// 
     /// </summary>
-    public partial class GerenciaFuncionario : SIESC.UI.FrmBaseUi
+    public partial class GerenciaFuncionario : SIESC.UI.base_UI
     {
         /// <summary>
         /// status da pesquisa

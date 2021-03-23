@@ -3,14 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
-using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Autorizacoes
 {
 	/// <summary>
 	/// Classe do formulário de Autorização Expressa
 	/// </summary>
-	public partial class AutorizacaoExpressa : FrmBaseUi
+	public partial class AutorizacaoExpressa : base_UI
 	{
 		/// <summary>
 		/// Objeto da tela principal

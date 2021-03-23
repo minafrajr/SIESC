@@ -13,7 +13,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.UI.ConsultaWeb;
-using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
@@ -21,7 +20,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class CadastraSindicancia : FrmBaseUi
+    public partial class CadastraSindicancia : base_UI
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -365,8 +364,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (control is MyComboBox)
                     //((MyComboBox)control).Text = string.Empty;
                     ((MyComboBox)control).SelectedIndex = -1;
-
-                if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
 
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
@@ -790,8 +787,87 @@ namespace SIESC.UI.UI.Solicitacoes
             }
         }
 
-        
-      /// <summary>
+        /// <summary>
+        /// Formata o numero do telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                base.SetMask(msk_telefone1);
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception, this);
+            }
+        }
+        /// <summary>
+        /// Formata o numero do telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone2_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                base.SetMask(msk_telefone2);
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception, this);
+            }
+        }
+
+        /// <summary>
+        /// Formata o numero do telefone de acordo com o terceiro dígito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone3_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                base.SetMask(msk_telefone3);
+            }
+            catch (Exception exception)
+            {
+                Mensageiro.MensagemErro(exception, this);
+            }
+        }
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone1"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone1_Enter(object sender, EventArgs e)
+        {
+            msk_telefone1.Mask = @"(00)00000-0000";
+        }
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone2"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone2_Enter(object sender, EventArgs e)
+        {
+            msk_telefone2.Mask = @"(00)00000-0000";
+        }
+        /// <summary>
+        /// Defina a mascara do controle <see cref="msk_telefone3"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone3_Enter(object sender, EventArgs e)
+        {
+            //msk_telefone3.Mask = @"(00)00000-0000";
+            base.SetMask(msk_telefone3);
+        }
+
+
+
+        /// <summary>
         /// Abre a janela de consulta de cep
         /// </summary>
         /// <param name="sender"></param>

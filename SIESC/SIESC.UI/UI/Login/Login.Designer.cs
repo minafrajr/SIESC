@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.Login
+﻿namespace SIESC.UI.UI.Login
 {
 	partial class Login
 	{
@@ -34,8 +32,8 @@ namespace SIESC.UI.UI.Login
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_senha = new MyTextBox();
-            this.txt_usuario = new MyTextBox();
+            this.txt_senha = new SIESC.UI.MyTextBox();
+            this.txt_usuario = new SIESC.UI.MyTextBox();
             this.lbl_login = new System.Windows.Forms.Label();
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.SuspendLayout();

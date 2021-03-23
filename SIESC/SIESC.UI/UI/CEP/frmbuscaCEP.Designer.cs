@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.CEP
+﻿namespace SIESC.UI.UI.CEP
 {
 	partial class FrmBuscaCep
 	{
@@ -37,12 +35,12 @@ namespace SIESC.UI.UI.CEP
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_localizarcep = new System.Windows.Forms.Button();
-            this.cbo_cidades = new MyComboBox();
+            this.cbo_cidades = new SIESC.UI.MyComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_estados = new MyComboBox();
+            this.cbo_estados = new SIESC.UI.MyComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_numlogradouro = new MyTextBox();
-            this.txt_logradouro = new MyTextBox();
+            this.txt_numlogradouro = new SIESC.UI.MyTextBox();
+            this.txt_logradouro = new SIESC.UI.MyTextBox();
             this.dgv_retornaceps = new System.Windows.Forms.DataGridView();
             this.tipoLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();

@@ -14,7 +14,7 @@ using SIESC.WEB;
 
 namespace SIESC.UI.UI.Zoneamento
 {
-    public partial class ZoneamentoAluno : SIESC.UI.FrmBaseUi
+    public partial class ZoneamentoAluno : SIESC.UI.base_UI
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados do aluno

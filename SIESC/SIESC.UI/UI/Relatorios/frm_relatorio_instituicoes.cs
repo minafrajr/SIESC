@@ -11,7 +11,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_relatorio_instituicoes : SIESC.UI.FrmBaseUi
+    public partial class frm_relatorio_instituicoes : SIESC.UI.base_UI
     {
         /// <summary>
         /// 

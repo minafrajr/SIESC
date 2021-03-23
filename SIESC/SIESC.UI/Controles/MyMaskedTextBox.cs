@@ -1,40 +1,31 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
+﻿#region Cabeçalho
+// Projeto:SIESC.UI
+// Autor:Carlos A. Minafra Jr.
+// Criado em: 22/03/2015
+#endregion
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SIESC.UI.Controles
+namespace SIESC.UI
 {
 	/// <summary>
-	/// 
+	/// MaskedtextBox personalizada
 	/// </summary>
 	public partial class MyMaskedTextBox : MaskedTextBox
 	{
 		/// <summary>
-		/// 
+		/// Controle personalizado
 		/// </summary>
 		public MyMaskedTextBox()
 		{
 			InitializeComponent();
 		}
-
 		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="container"></param>
-		public MyMaskedTextBox(IContainer container)
-		{
-			container.Add(this);
-
-			InitializeComponent();
-		}
-
-		/// <summary>
-		/// Evento ao receber foco
+		/// Evento ao recever foco
 		/// </summary>
 		/// <param name="e"></param>
-		[DebuggerNonUserCode()]
+		[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 		protected override void OnGotFocus(EventArgs e)
 		{
 			base.OnGotFocus(e);
@@ -45,12 +36,13 @@ namespace SIESC.UI.Controles
 		/// Evento ao perder o foco
 		/// </summary>
 		/// <param name="e"></param>
-		[DebuggerNonUserCode()]
+		[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 		protected override void OnLostFocus(EventArgs e)
 		{
 			base.OnLostFocus(e);
 			this.BackColor = Color.White;
 			this.Font = new Font(this.Font,FontStyle.Regular);
+			
 		}
 	}
 }

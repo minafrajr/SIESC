@@ -1,8 +1,6 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.Solicitacoes
+﻿namespace SIESC.UI.UI.Solicitacoes
 {
-    partial class CadastraSindicancia : FrmBaseUi
+    partial class CadastraSindicancia : base_UI
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -35,61 +33,61 @@ namespace SIESC.UI.UI.Solicitacoes
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigoAluno = new System.Windows.Forms.TextBox();
             this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
-            this.msk_data_nascimento = new MyMaskedTextBox();
+            this.msk_data_nascimento = new SIESC.UI.MyMaskedTextBox();
             this.btn_limpaComboDeficiencia = new System.Windows.Forms.Button();
-            this.cbo_deficiencia = new MyComboBox();
+            this.cbo_deficiencia = new SIESC.UI.MyComboBox();
             this.deficienciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.lbl_idade = new System.Windows.Forms.Label();
-            this.msk_telefone3 = new MyMaskedPhoneBox();
+            this.msk_telefone3 = new SIESC.UI.MyMaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.msk_telefone2 = new MyMaskedPhoneBox();
+            this.msk_telefone2 = new SIESC.UI.MyMaskedTextBox();
             this.txt_codigoSindicancia = new System.Windows.Forms.TextBox();
-            this.msk_telefone1 = new MyMaskedPhoneBox();
+            this.msk_telefone1 = new SIESC.UI.MyMaskedTextBox();
             this.lbl_codigoSolicitacao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gpb_sexo = new System.Windows.Forms.GroupBox();
             this.rdb_feminino = new System.Windows.Forms.RadioButton();
             this.rdb_masculino = new System.Windows.Forms.RadioButton();
-            this.txt_pai = new MyTextBox();
-            this.txt_mae = new MyTextBox();
+            this.txt_pai = new SIESC.UI.MyTextBox();
+            this.txt_mae = new SIESC.UI.MyTextBox();
             this.lbl_pai = new System.Windows.Forms.Label();
             this.lbl_mae = new System.Windows.Forms.Label();
             this.lbl_datanasc = new System.Windows.Forms.Label();
-            this.txt_nomealuno = new MyTextBox();
+            this.txt_nomealuno = new SIESC.UI.MyTextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_tipologradouro = new System.Windows.Forms.Label();
             this.gpb_endereço = new System.Windows.Forms.GroupBox();
             this.btn_saberCep = new System.Windows.Forms.Button();
             this.btn_limpaEnder = new System.Windows.Forms.Button();
-            this.txt_complemento = new MyTextBox();
+            this.txt_complemento = new SIESC.UI.MyTextBox();
             this.lbl_complemento = new System.Windows.Forms.Label();
-            this.cbo_bairro = new MyComboBox();
+            this.cbo_bairro = new SIESC.UI.MyComboBox();
             this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._bairro = new System.Windows.Forms.Label();
-            this.txt_numresidencia = new MyTextBox();
+            this.txt_numresidencia = new SIESC.UI.MyTextBox();
             this.lbl_num = new System.Windows.Forms.Label();
-            this.txt_logradouro = new MyTextBox();
+            this.txt_logradouro = new SIESC.UI.MyTextBox();
             this.btn_buscarcep = new System.Windows.Forms.Button();
             this.lbl_logradouro = new System.Windows.Forms.Label();
-            this.cbo_tipologradouro = new MyComboBox();
-            this.msk_cep = new MyMaskedTextBox();
+            this.cbo_tipologradouro = new SIESC.UI.MyComboBox();
+            this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
             this.btn_limpaComboInstEnc = new System.Windows.Forms.Button();
-            this.cbo_instituicao_encaminhada = new MyComboBox();
+            this.cbo_instituicao_encaminhada = new SIESC.UI.MyComboBox();
             this.instituicoes1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbo_instituicao_inscricao = new MyComboBox();
+            this.cbo_instituicao_inscricao = new SIESC.UI.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_anosolicitado = new System.Windows.Forms.Label();
-            this.cbo_anosolicitado = new MyComboBox();
+            this.cbo_anosolicitado = new SIESC.UI.MyComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_instituicaoInscricao = new System.Windows.Forms.Label();
             this.lbl_instituicaosolicitada = new System.Windows.Forms.Label();
             this.gpb_observacoes = new System.Windows.Forms.GroupBox();
-            this.txt_observacoes = new MyTextBox();
+            this.txt_observacoes = new SIESC.UI.MyTextBox();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();
@@ -237,6 +235,8 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone3.TabIndex = 7;
             this.msk_telefone3.Tag = "Telefone 3";
             this.msk_telefone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.msk_telefone3.Enter += new System.EventHandler(this.msk_telefone3_Enter);
+            this.msk_telefone3.Leave += new System.EventHandler(this.msk_telefone3_Leave);
             // 
             // label4
             // 
@@ -257,7 +257,8 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone2.TabIndex = 6;
             this.msk_telefone2.Tag = "Telefone 2";
             this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            
+            this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
+            this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
             // 
             // txt_codigoSindicancia
             // 
@@ -283,7 +284,9 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_telefone1.TabIndex = 5;
             this.msk_telefone1.Tag = "Telefone 1";
             this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-           // 
+            this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
+            this.msk_telefone1.Leave += new System.EventHandler(this.msk_telefone1_Leave);
+            // 
             // lbl_codigoSolicitacao
             // 
             this.lbl_codigoSolicitacao.AutoSize = true;
@@ -919,9 +922,9 @@ namespace SIESC.UI.UI.Solicitacoes
         private MyComboBox cbo_tipologradouro;
         private MyMaskedTextBox msk_cep;
         private System.Windows.Forms.Label lbl_cep;
-        private MyMaskedPhoneBox msk_telefone3;
-        private MyMaskedPhoneBox msk_telefone2;
-        private MyMaskedPhoneBox msk_telefone1;
+        private MyMaskedTextBox msk_telefone3;
+        private MyMaskedTextBox msk_telefone2;
+        private MyMaskedTextBox msk_telefone1;
         private System.Windows.Forms.Label label3;
         private MyTextBox txt_complemento;
         private System.Windows.Forms.Label lbl_complemento;

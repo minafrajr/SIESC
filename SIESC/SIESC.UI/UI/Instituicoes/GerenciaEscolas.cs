@@ -10,7 +10,7 @@ using SIESC.BD.DataSets.ds_siescTableAdapters;
 
 namespace SIESC.UI.UI.Escolas
 {
-    public partial class GerenciaEscolas : FrmBaseUi
+    public partial class GerenciaEscolas : base_UI
     {
         /// <summary>
         /// Objeto de conexão com o banco

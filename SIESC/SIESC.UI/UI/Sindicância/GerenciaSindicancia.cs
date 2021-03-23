@@ -8,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using SIESC.UI.Controles;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes
@@ -16,7 +15,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias
     /// </summary>
-    public partial class GerenciaSindicancia : SIESC.UI.FrmBaseUi
+    public partial class GerenciaSindicancia : SIESC.UI.base_UI
     {
         /// <summary>
         /// Objeto da UI da tela principal do sistema
@@ -61,7 +60,9 @@ namespace SIESC.UI.UI.Solicitacoes
         private void GerenciaSindicancia_Load(object sender, EventArgs e)
         {
             tipoConsulta = TipoConsulta.geral;
-         }
+            AtualizaUltimaSindicancia();
+            CarregaGridView();
+        }
         /// <summary>
         /// Atualiza a última solicitação de vaga quer foi analisada para a sindicância
         /// </summary>
@@ -70,18 +71,8 @@ namespace SIESC.UI.UI.Solicitacoes
             try
             {
                 sindicanciaControl = new SindicanciaControl();
-
-                var maxIdSolicitacao = sindicanciaControl.MaximoIdSolicitacao();
-
-                if (!string.IsNullOrEmpty(maxIdSolicitacao))
-                {
-                    lbl_id_ultima_sindicada.Text = maxIdSolicitacao;
-
-                    nupd_cod_solicitacao.Value = Convert.ToDecimal(maxIdSolicitacao);    
-                    return;
-                }
-
-                lbl_id_ultima_sindicada.Text = string.Empty;
+                lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
+                nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
             }
             catch (Exception ex)
             {
@@ -356,7 +347,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 LimpaCombos();
-                
+                AtualizaUltimaSindicancia();
                 RadioButtonChecked_Click(sender, e);
             }
             catch (Exception ex)
@@ -783,9 +774,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 dgv_dados.EditMode = DataGridViewEditMode.EditOnF2;
 
-                
                 AtualizaUltimaSindicancia();
-               
                 CarregaGridView();
 
             }
@@ -938,7 +927,16 @@ namespace SIESC.UI.UI.Solicitacoes
             frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value, idSolicitacao, idSindicado) { MdiParent = principalUi };
             fichaSindicancia.Show();
         }
-        
+        /// <summary>
+        /// Evento enter do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GerenciaSindicancia_Enter(object sender, EventArgs e)
+        {
+            RadioButtonChecked_Click(sender, e);
+        }
+
         /// <summary>
         /// Evento de finalização de carregamento da GridView
         /// </summary>

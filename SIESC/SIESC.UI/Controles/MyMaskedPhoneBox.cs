@@ -8,7 +8,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SIESC.UI.Controles
+namespace SIESC.UI
 {
 	/// <summary>
 	/// MaskedtextBox personalizada

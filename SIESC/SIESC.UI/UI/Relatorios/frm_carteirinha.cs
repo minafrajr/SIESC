@@ -12,7 +12,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-	public partial class frm_carteirinha : SIESC.UI.FrmBaseUi
+	public partial class frm_carteirinha : SIESC.UI.base_UI
 	{
 		/// <summary>
 		/// Objeto de acesso ao banco

@@ -19,7 +19,7 @@ namespace SIESC.UI.UI.Relatorios
     /// </summary>
     enum TipoConsulta { geral, ano, escola, escola_ano, regional, regional_ano, regional_escola, regional_ano_escola, data }
 
-    public partial class frm_alunos_pendentes : SIESC.UI.FrmBaseUi
+    public partial class frm_alunos_pendentes : SIESC.UI.base_UI
     {
         /// <summary>
         /// Tipo de consulta a ser realizada

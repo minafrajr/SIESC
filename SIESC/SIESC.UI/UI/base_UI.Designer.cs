@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI
 {
-    partial class FrmBaseUi
+    partial class base_UI
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.SuspendLayout();
             // 
-            // FrmBaseUi
+            // base_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -41,12 +41,12 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(20, 43);
-            this.Name = "FrmBaseUi";
+            this.Name = "base_UI";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBaseUi";
+            this.Text = "base_UI";
             this.ResumeLayout(false);
 
         }

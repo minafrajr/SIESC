@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.CEP
+﻿namespace SIESC.UI.UI.CEP
 {
 	partial class frmBuscaEndereço
 	{
@@ -34,7 +32,7 @@ namespace SIESC.UI.UI.CEP
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btn_zonear = new System.Windows.Forms.Button();
             this.btn_buscarendereco = new System.Windows.Forms.Button();
-            this.msk_cep = new MyMaskedTextBox();
+            this.msk_cep = new SIESC.UI.MyMaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_endereços = new System.Windows.Forms.DataGridView();
             this.tipoLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();

@@ -14,7 +14,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_ficha_sindicancia : SIESC.UI.FrmBaseUi
+    public partial class frm_ficha_sindicancia : SIESC.UI.base_UI
     {
         /// <summary>
         /// 

@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.Relatorios
+﻿namespace SIESC.UI.UI.Relatorios
 {
 	partial class frm_alunos_pendentes
 	{
@@ -39,9 +37,9 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_anoensino = new System.Windows.Forms.ComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet = new SIESC.UI.siescDataSet();
-            this.cbo_escola = new MyComboBox();
+            this.cbo_escola = new SIESC.UI.MyComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_regionais = new MyComboBox();
+            this.cbo_regionais = new SIESC.UI.MyComboBox();
             this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();

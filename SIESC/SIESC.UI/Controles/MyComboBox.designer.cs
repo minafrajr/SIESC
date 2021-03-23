@@ -1,4 +1,4 @@
-﻿namespace SIESC.UI.Controles
+﻿namespace SIESC.UI
 {
     partial class MyComboBox
     {

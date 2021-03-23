@@ -14,7 +14,7 @@ using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Login
 {
-    public partial class Login : SIESC.UI.FrmBaseUi
+    public partial class Login : SIESC.UI.base_UI
     {
         /// <summary>
         /// 

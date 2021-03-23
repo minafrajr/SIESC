@@ -1,6 +1,4 @@
-﻿using SIESC.UI.Controles;
-
-namespace SIESC.UI.UI.Sindicância
+﻿namespace SIESC.UI.UI.Sindicância
 {
     partial class GerenciarSindicanciaCadastrada
     {
@@ -49,7 +47,7 @@ namespace SIESC.UI.UI.Sindicância
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_observacoes = new System.Windows.Forms.Label();
             this.txt_instituicao_encaminhada = new System.Windows.Forms.TextBox();
-            this.txt_observacoes = new MyTextBox();
+            this.txt_observacoes = new SIESC.UI.MyTextBox();
             this.txt_instituicao_inscricao = new System.Windows.Forms.TextBox();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
             this.lbl_denuncia = new System.Windows.Forms.Label();
@@ -68,7 +66,7 @@ namespace SIESC.UI.UI.Sindicância
             this.lbl_anosolicitado = new System.Windows.Forms.Label();
             this.txt_dataSindicancia = new System.Windows.Forms.TextBox();
             this.lbl_instituicaoInscricao = new System.Windows.Forms.Label();
-            this.txt_nomealuno = new MyTextBox();
+            this.txt_nomealuno = new SIESC.UI.MyTextBox();
             this.lbl_instituicaosolicitada = new System.Windows.Forms.Label();
             this.lbl_data_sindicancia = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
