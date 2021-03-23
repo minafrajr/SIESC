@@ -13,6 +13,7 @@ using System.Xml;
 using System.Xml.Linq;
 using SIESC.UI.Controles;
 using SIESC.UI.tecnologia1;
+using SIESC.UI.UI;
 
 namespace SIESC.UI.ConsultaWeb
 {
@@ -40,6 +41,8 @@ namespace SIESC.UI.ConsultaWeb
 
                 WebRequest request = WebRequest.Create("https://viacep.com.br/ws/@cep/xml/".Replace("@cep", cep));
 
+                request.Timeout = 20000;
+
                 using (WebResponse response = request.GetResponse())
                 {
                     using (Stream stream = response.GetResponseStream())
@@ -51,6 +54,13 @@ namespace SIESC.UI.ConsultaWeb
                             XElement xElementlogradouro = document.Descendants("logradouro").First();
                             XElement xElementbairro = document.Descendants("bairro").First();
 
+                            XElement xElementLocalidade = document.Descendants("localidade").First();
+                            
+                            if(xElementLocalidade.Value != "Betim")
+                                throw new Exception($"CEP {cep} não foi encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
+
+
+
                             bairro.Text = xElementbairro.Value.ToUpper();
 
                             logradouro.Text = xElementlogradouro.Value.ToUpper();
@@ -59,18 +69,18 @@ namespace SIESC.UI.ConsultaWeb
 
                             var pos = logradouro.Text.IndexOf(' ') + 1;
 
-                            logradouro.Text = logradouro.Text.Substring(pos, logradouro.Text.Length -pos);
+                            logradouro.Text = logradouro.Text.Substring(pos, logradouro.Text.Length - pos);
                         }
                         catch (Exception e)
                         {
-                            throw new Exception($"Cep não encontrado!\nPor favor digite o endereço.\n{e.Message}");
+                            throw new Exception($"Cep {cep} não foi encontrado!\nPor favor digite o endereço.\n{e.Message}");
                         }
                     }
                 }
             }
             catch (WebException erro)
             {
-                throw new WebException("Não foi possível acessar o WebService!\n" + erro.Message +"\nVerifique sua conexão de rede.");
+                throw new WebException("Não foi possível acessar o WebService!\n" + erro.Message + "\nVerifique sua conexão de rede.");
             }
             catch (XmlException erro)
             {
@@ -127,32 +137,38 @@ namespace SIESC.UI.ConsultaWeb
         /// <param name="cboTipologradouro"></param>
         public void buscadorCEP(string cep, MyComboBox cboBairro, MyTextBox txtLogradouro, MyComboBox cboTipologradouro)
         {
-            ServicoCEP srv = new ServicoCEP();
-
-            srv.Timeout = 20000;
-            
-            
-            Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
-
-            txtLogradouro.ResetText();
-            cboTipologradouro.ResetText();
-            
-            
-            if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
+            try
             {
-                cboBairro.SelectedIndex = -1;
-                throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
-            }
+                ServicoCEP srv = new ServicoCEP();
 
-            //localiza o item bairro na combo
-            foreach (DataRowView item in cboBairro.Items)
-            {
-                if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
-                    cboBairro.SelectedIndex = cboBairro.Items.IndexOf(item);
+                srv.Timeout = 20000;
+
+                Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
+
+                txtLogradouro.ResetText();
+                cboTipologradouro.ResetText();
+
+
+                if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
+                {
+                    cboBairro.SelectedIndex = -1;
+                    throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
+                }
+                
+                //localiza o item bairro na combo
+                foreach (DataRowView item in cboBairro.Items)
+                {
+                    if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
+                        cboBairro.SelectedIndex = cboBairro.Items.IndexOf(item);
+                }
+
+                txtLogradouro.Text = enderecos[0].Logradouro;
+                cboTipologradouro.Text = enderecos[0].TipoLogradouro;
             }
-            
-            txtLogradouro.Text = enderecos[0].Logradouro;
-            cboTipologradouro.Text = enderecos[0].TipoLogradouro;
+            catch (Exception)
+            {
+
+            }
         }
 
         /// <summary>

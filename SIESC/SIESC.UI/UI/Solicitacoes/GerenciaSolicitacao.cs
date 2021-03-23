@@ -266,9 +266,8 @@ namespace SIESC.UI.UI
 
             controleSindicancia = new SindicanciaControl();
 
-            localizar = Localizar.aguardando;
+            DesabilitaTextBox(localizar);
 
-            DesabilitaTextBox(true);
 
             txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
             txt_codigo.Text = dgv_solicitacoes[2, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
@@ -345,21 +344,40 @@ namespace SIESC.UI.UI
             }
         }
 
-        /// <summary>                                  
-        /// Desabilita as TextBox
+        /// <summary>
+        /// Desabilita Textbox conforme tipo de busca
         /// </summary>
-        /// <param name="b">True - bloqueia as TextBox</param>
-        private void DesabilitaTextBox(bool b)
+        /// <param name="localizar">O enum de tipo de busca</param>
+        private void DesabilitaTextBox(Localizar localizar)
         {
-            if (b)
+            txt_nomealuno.Enabled = false;
+            txt_datanasc.Enabled = false;
+            txt_mae.Enabled = false;
+            txt_endereco.Enabled = false;
+            txt_codigo.Enabled = false;
+
+            switch (localizar)
             {
-                txt_nomealuno.Enabled = false;
-                txt_datanasc.Enabled = false;
-                txt_mae.Enabled = false;
-                txt_endereco.Enabled = false;
-                txt_codigo.Enabled = false;
+                case Localizar.codigoAluno:
+                case Localizar.codigoSolicitacao:
+                    txt_codigo.Enabled = true;
+                    txt_codigo.Focus();
+                    break;
+                case Localizar.nomeAluno:
+                    txt_nomealuno.Enabled = true;
+                    txt_nomealuno.Focus();
+                    break;
+                case Localizar.nomeMae:
+                    txt_mae.Enabled = true;
+                    txt_mae.Focus();
+                    break;
+                case Localizar.codigoExpedienteInterno:
+                    msk_codigoEI.Enabled = true;
+                    msk_codigoEI.Focus();
+                    break;
             }
         }
+
         /// <summary>
         /// Edita solicitação de vaga
         /// </summary>
@@ -539,7 +557,7 @@ namespace SIESC.UI.UI
                     cbo_tipoBusca.Focus();
                     break;
                 default:
-                   CarregaGridView();
+                    CarregaGridView();
                     break;
             }
         }
@@ -749,7 +767,6 @@ namespace SIESC.UI.UI
         {
             lbl_num_registros.Text = $"Total de registros: {dgv_solicitacoes.RowCount}";
         }
-
 
     }
 }

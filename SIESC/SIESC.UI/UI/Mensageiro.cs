@@ -22,7 +22,7 @@ namespace SIESC.UI.UI
         public static void MensagemErro(Exception exception, IWin32Window form)
         {
             System.Media.SystemSounds.Exclamation.Play();
-            MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}{Environment.NewLine}{exception.StackTrace}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(form, $@"Houve o seguinte erro: {exception.Message}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{exception.StackTrace}", @"ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>

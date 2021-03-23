@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsRelatorios">
@@ -53,18 +53,6 @@
           <DataField>bairro</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="telefone1">
-          <DataField>telefone1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="telefone2">
-          <DataField>telefone2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="telefone3">
-          <DataField>telefone3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="motivo">
           <DataField>motivo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -73,22 +61,30 @@
           <DataField>escolasolicitada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="datasolicitacao">
-          <DataField>datasolicitacao</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="diretoria">
-          <DataField>diretoria</DataField>
+        <Field Name="regional">
+          <DataField>regional</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="observacoes">
           <DataField>observacoes</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="idade">
+          <DataField>idade</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="datasolicitacao">
+          <DataField>datasolicitacao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="telefone">
+          <DataField>telefone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>E:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_alunos_pendentes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -608,14 +604,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox50">
+                        <Textbox Name="telefone">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Tel.: "&amp;Fields!telefone1.Value &amp;" " &amp; Fields!telefone2.Value &amp;" " &amp; Fields!telefone3.Value</Value>
+                                  <Value>=Fields!telefone.Value</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                   </Style>
@@ -624,7 +620,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox50</rd:DefaultName>
+                          <rd:DefaultName>telefone</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -903,7 +899,7 @@
             <Top>1.54299cm</Top>
             <Left>0.31086cm</Left>
             <Height>2.4347cm</Height>
-            <Width>27.50914cm</Width>
+            <Width>27.50913cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -917,7 +913,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>RELATÓRIO DE ALUNOS PENDENTES DO ENSINO FUNDAMENTAL</Value>
+                    <Value>RELATÓRIO DE ALUNOS PENDENTES - GERAL</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
