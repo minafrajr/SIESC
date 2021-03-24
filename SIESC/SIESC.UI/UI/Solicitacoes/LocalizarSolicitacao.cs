@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário para localizar as solicitações próximas a uma unidade escolar
     /// </summary>
-    public partial class LocalizarSolicitacao : base_UI
+    public partial class LocalizarSolicitacao : BaseUi
     {
         /// <summary>
         /// Objeto de acesso as instituições no banco

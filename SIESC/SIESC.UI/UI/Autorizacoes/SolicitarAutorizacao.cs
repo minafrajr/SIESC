@@ -14,6 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Autorizacoes
 {
@@ -25,7 +26,7 @@ namespace SIESC.UI.UI.Autorizacoes
 	/// <summary>
 	/// Classe do formulário de Solicitar Autorização
 	/// </summary>
-	public partial class SolicitarAutorizacao : base_UI
+	public partial class SolicitarAutorizacao : BaseUi
 	{
 		/// <summary>
 		/// Objeto de acesso ao banco para CRUD Funcionários

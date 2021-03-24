@@ -3,17 +3,13 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Drawing;
-using System.Net;
 
-namespace SIESC.UI
+using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace SIESC.UI.Controles
 {
 	/// <summary>
 	/// Combobox personalizada
@@ -31,7 +27,7 @@ namespace SIESC.UI
 		/// Evento ao receber foco
 		/// </summary>
 		/// <param name="e"></param>
-		[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+		[DebuggerNonUserCode()]
 		protected override void OnGotFocus(EventArgs e)
 		{
 			base.OnGotFocus(e);
@@ -41,7 +37,7 @@ namespace SIESC.UI
 		/// Evento ao perder o foco
 		/// </summary>
 		/// <param name="e"></param>
-		[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+		[DebuggerNonUserCode()]
 		protected override void OnLostFocus(EventArgs e)
 		{
 			base.OnLostFocus(e);

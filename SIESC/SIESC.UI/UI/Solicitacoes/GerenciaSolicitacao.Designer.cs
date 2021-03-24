@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using SIESC.UI.Controles;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI
@@ -9,7 +10,7 @@ namespace SIESC.UI.UI
 	/// <summary>
 	/// 
 	/// </summary>
-	partial class GerenciaSolicitacao : base_UI { 
+	partial class GerenciaSolicitacao : BaseUi { 
 	   
 	
 		///<summary>

@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC.UI.Controles;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Solicitacoes
@@ -15,7 +16,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias
     /// </summary>
-    public partial class GerenciaSindicancia : SIESC.UI.base_UI
+    public partial class GerenciaSindicancia : SIESC.UI.BaseUi
     {
         /// <summary>
         /// Objeto da UI da tela principal do sistema

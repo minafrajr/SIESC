@@ -1,4 +1,4 @@
-﻿namespace SIESC.UI
+﻿namespace SIESC.UI.Controles
 {
     partial class MyMaskedTextBox
     {

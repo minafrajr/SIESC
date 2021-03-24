@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
@@ -20,7 +21,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class CadastraSindicancia : base_UI
+    public partial class CadastraSindicancia : BaseUi
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -361,11 +362,11 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (control is MyTextBox) ((MyTextBox)control).ResetText();
 
-                if (control is MyComboBox)
-                    //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox)control).SelectedIndex = -1;
+                if (control is MyComboBox) ((MyComboBox)control).SelectedIndex = -1;
 
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
+
+                if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
 
                 if (control is RadioButton) ((RadioButton)control).Checked = false;
 

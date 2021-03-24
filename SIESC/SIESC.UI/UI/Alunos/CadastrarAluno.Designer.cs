@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI
 {
 	partial class CadastrarAluno
 	{

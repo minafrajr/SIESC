@@ -14,10 +14,11 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI
 {
-	public partial class CadastrarEscola : SIESC.UI.base_UI
+	public partial class CadastrarEscola : SIESC.UI.BaseUi
 	{
 		/// <summary>
 		/// Lista de controles do formulário
@@ -452,7 +453,14 @@ namespace SIESC.UI.UI
 				{
 					((MyMaskedTextBox)control).ResetText();
 				}
+				
+				//MyMaskedPhoneBox
 
+				if (control is MyMaskedPhoneBox)
+				{
+					((MyMaskedPhoneBox)control).ResetText();
+				}
+				
 				if (control is Label)
 				{
 					((Label)control).ResetText();

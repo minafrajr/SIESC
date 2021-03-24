@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
-    public partial class ConcluirSindicancia : SIESC.UI.base_UI
+    public partial class ConcluirSindicancia : SIESC.UI.BaseUi
     {
         private Sindicancia sindicancia;
         private Principal_UI PrincipalUi;

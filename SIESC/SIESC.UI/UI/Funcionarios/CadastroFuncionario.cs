@@ -18,7 +18,7 @@ namespace SIESC.UI.UI.Funcionarios
     /// <summary>
     /// 
     /// </summary>
-    public partial class CadastroFuncionario : base_UI
+    public partial class CadastroFuncionario : BaseUi
     {
         /// <summary>
         /// Objeto para manipulação no banco de dados

@@ -8,7 +8,7 @@ namespace SIESC.UI.UI.Listas
     /// <summary>
     /// Formulário de exibição dos e-mails das instituições;
     /// </summary>
-    public partial class FrmListaEmails : base_UI
+    public partial class FrmListaEmails : BaseUi
     {
         /// <summary>
         /// Table adapter de acesso

@@ -14,6 +14,7 @@ using MySql.Data.MySqlClient;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.Controles;
 using SIESC.UI.tecnologia1;
 using SIESC.UI.UI.CEP;
 using SIESC.UI.UI.Relatorios;
@@ -25,7 +26,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class SolicitaVaga : base_UI
+    public partial class SolicitaVaga : BaseUi
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -729,7 +730,9 @@ namespace SIESC.UI.UI.Solicitacoes
                     ((MyComboBox)control).SelectedIndex = -1;
 
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
-
+                
+                if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
+                
                 if (control is RadioButton) ((RadioButton)control).Checked = false;
 
                 if (control is DateTimePicker) ((DateTimePicker)control).Text = DateTime.Now.ToShortDateString();

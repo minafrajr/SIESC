@@ -1,4 +1,6 @@
-﻿namespace SIESC.UI.UI.Relatorios
+﻿using SIESC.UI.Controles;
+
+namespace SIESC.UI.UI.Relatorios
 {
 	partial class FrmAlunosMotivos
 	{
@@ -32,7 +34,7 @@
 			this.motivosTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.motivosTableAdapter();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.cbo_motivo = new SIESC.UI.MyComboBox();
+			this.cbo_motivo = new MyComboBox();
 			this.motivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.btn_gerar = new System.Windows.Forms.Button();

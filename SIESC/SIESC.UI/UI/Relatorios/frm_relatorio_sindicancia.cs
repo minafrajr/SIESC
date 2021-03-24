@@ -8,7 +8,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_relatorio_sindicancia : base_UI
+    public partial class frm_relatorio_sindicancia : BaseUi
     {
         /// <summary>
         /// Objeto do datasource

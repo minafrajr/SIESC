@@ -14,7 +14,7 @@ namespace SIESC.UI.UI
     /// <summary>
     /// Classe do formulário de gerenciamento dos motivos de solicitação de vaga
     /// </summary>
-    public partial class GerenciaMotivo : base_UI
+    public partial class GerenciaMotivo : BaseUi
     {
         private MotivoControl controleMotivo;
         private Motivo motivo;
