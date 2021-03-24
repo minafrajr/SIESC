@@ -3,17 +3,17 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 19/05/2015
 #endregion
+
 using System;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.UI.Properties;
-using SIESC.UI.siescDataSetTableAdapters;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Instituicoes
 {
-    public partial class ConsultasEscola : SIESC.UI.BaseUi
+    public partial class ConsultasEscola : BaseUi
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados das instituições

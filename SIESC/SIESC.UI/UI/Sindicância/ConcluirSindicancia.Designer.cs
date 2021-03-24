@@ -1,6 +1,6 @@
 ﻿using SIESC.UI.Controles;
 
-namespace SIESC.UI.UI.Solicitacoes
+namespace SIESC.UI.UI.Sindicância
 {
     partial class ConcluirSindicancia
     {

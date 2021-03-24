@@ -2,26 +2,26 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 
-using SIESC.BD.Control;
-using SIESC.MODEL.Classes;
-using SIESC.UI.UI.CEP;
-using SIESC.WEB;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using SIESC.BD.Control;
+using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
 using SIESC.UI.Controles;
+using SIESC.UI.UI.CEP;
+using SIESC.WEB;
 
-namespace SIESC.UI.UI.Solicitacoes
+namespace SIESC.UI.UI.Sindicância
 {
     /// <inheritdoc />
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class CadastraSindicancia : BaseUi
+    public partial class CadastraSindicancia
     {
         /// <summary>
         /// Objeto do formulário principal

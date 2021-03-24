@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -14,7 +11,10 @@ using SIESC.WEB;
 
 namespace SIESC.UI.UI.Zoneamento
 {
-    public partial class ZoneamentoAluno : SIESC.UI.BaseUi
+    /// <summary>
+    /// Formulário de zoneamento do aluno cadastrado
+    /// </summary>
+    public partial class ZoneamentoAluno : BaseUi
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados do aluno

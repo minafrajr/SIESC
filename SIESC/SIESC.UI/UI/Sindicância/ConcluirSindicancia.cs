@@ -1,12 +1,15 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-using System;
-using System.Windows.Forms;
 
-namespace SIESC.UI.UI.Solicitacoes
+namespace SIESC.UI.UI.Sindicância
 {
-    public partial class ConcluirSindicancia : SIESC.UI.BaseUi
+    /// <summary>
+    /// Formulário para procedimento de conclusão da sindicância
+    /// </summary>
+    public partial class ConcluirSindicancia : BaseUi
     {
         private Sindicancia sindicancia;
         private Principal_UI PrincipalUi;

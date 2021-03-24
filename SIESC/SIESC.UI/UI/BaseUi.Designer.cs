@@ -1,6 +1,8 @@
-﻿namespace SIESC.UI
+﻿using System.Windows.Forms;
+
+namespace SIESC.UI
 {
-    partial class BaseUi
+    partial class BaseUi:Form
     {
         /// <summary>
         /// Required designer variable.

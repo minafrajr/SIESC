@@ -3,13 +3,17 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 04/06/2015
 #endregion
+
 using System;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 
-namespace SIESC.UI.UI.Escolas
+namespace SIESC.UI.UI.Instituicoes
 {
+    /// <summary>
+    /// Formulário de gerenciamento
+    /// </summary>
     public partial class GerenciaEscolas : BaseUi
     {
         /// <summary>

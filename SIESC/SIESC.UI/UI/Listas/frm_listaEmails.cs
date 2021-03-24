@@ -19,6 +19,7 @@ namespace SIESC.UI.UI.Listas
         /// DataTable 
         /// </summary>
         private DataTable ds;
+
         /// <summary>
         /// Enum para determinar qual o tipo de instituição
         /// </summary>

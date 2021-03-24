@@ -1,6 +1,6 @@
 ﻿using SIESC.UI.Controles;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Alunos
 {
 	partial class CadastrarAluno
 	{

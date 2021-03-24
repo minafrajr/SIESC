@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
-using System.Text.RegularExpressions;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.WEB;
@@ -14,6 +7,9 @@ using SIESC.WEB;
 
 namespace SIESC.UI.UI.Login
 {
+    /// <summary>
+    /// Formulário de recuperação de senha
+    /// </summary>
     public partial class RecuperaSenha : Form
     {
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace SIESC.UI.UI
+﻿namespace SIESC.UI.UI.Instituicoes
 {
 	partial class ConsultasEscola
 	{

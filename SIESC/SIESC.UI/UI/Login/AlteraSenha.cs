@@ -1,19 +1,28 @@
 ﻿using System;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-using SIESC.UI.Security;
 
 namespace SIESC.UI.UI.Login
 {
+    /// <summary>
+    /// Formulário de alteração de senha
+    /// </summary>
     public partial class AlteraSenha : Form
     {
-        private Usuario usuario;
+        /// <summary>
+        /// O usuário do sistema
+        /// </summary>
+        private readonly Usuario usuario;
 
-
+        /// <summary>
+        /// O objeto de aceso ao banco de dados
+        /// </summary>
         private UsuarioControl controleUsuario;
-
+        
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
         public AlteraSenha()
         {
             InitializeComponent();

@@ -3,32 +3,37 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-using SIESC.BD.Control;
-using SIESC.UI.UI.CEP;
-using SIESC.UI.UI.Funcionarios;
-using SIESC.WEB;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
+using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
 using SIESC.UI.Controles;
+using SIESC.UI.UI.CEP;
+using SIESC.UI.UI.Funcionarios;
+using SIESC.WEB;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Instituicoes
 {
-	public partial class CadastrarEscola : SIESC.UI.BaseUi
+	/// <summary>
+	/// Formulário de cadastro de instituições
+	/// </summary>
+	public partial class CadastrarEscola : BaseUi
 	{
 		/// <summary>
 		/// Lista de controles do formulário
 		/// </summary>
-		private List<Control> listacontroles;
+		private List<Control> listaControles;
 
 		/// <summary>
 		/// Objeto de acesso ao banco de dados
 		/// </summary>
 		private InstituicaoControl controleInstituicao;
+
 		/// <summary>
 		/// Objeto de acesso ao banco de dados
 		/// </summary>
@@ -48,15 +53,18 @@ namespace SIESC.UI.UI
 		/// <summary>
 		/// 
 		/// </summary>
-		private DataTable dt_anoensino;
+		private DataTable dtAnoEnsino;
+
 		/// <summary>
 		/// 
 		/// </summary>
-		private DataTable dt_nivelensino;
+		private DataTable dtNivelEnsino;
+
 		/// <summary>
 		/// Lista de inteiros para os códigos de ano de ensino ofertado pela escola
 		/// </summary>
 		private List<AnoEnsino> listaAnosEnsino;
+
 		/// <summary>
 		/// Construtora da classe
 		/// </summary>
@@ -190,7 +198,7 @@ namespace SIESC.UI.UI
 		/// <param name="e"></param>
 		private void btn_novo_Click(object sender,EventArgs e)
 		{
-			this.LimpaControles(listacontroles);
+			this.LimpaControles(listaControles);
 		}
 
 		/// <summary>
@@ -239,7 +247,7 @@ namespace SIESC.UI.UI
 						}
 					}
 				}
-				this.LimpaControles(listacontroles);
+				this.LimpaControles(listaControles);
 				this.Close();
 			}
 			catch (Exception ex)
@@ -300,7 +308,7 @@ namespace SIESC.UI.UI
 		/// <param name="e"></param>
 		private void btn_limpar_Click(object sender,EventArgs e)
 		{
-			LimpaControles(listacontroles);
+			LimpaControles(listaControles);
 		}
 
 		/// <summary>
@@ -340,7 +348,7 @@ namespace SIESC.UI.UI
 							if (controleInstituicao.Excluir(codigoEscola))
 							{
 								Mensageiro.MensagemConfirmaExclusao(principalUi);
-								this.LimpaControles(listacontroles);
+								this.LimpaControles(listaControles);
 							}
 						}
 					}
@@ -410,24 +418,24 @@ namespace SIESC.UI.UI
 		/// </summary>
 		private void AdicionaListaControles()
 		{
-			listacontroles = new List<Control>();
+			listaControles = new List<Control>();
 
-			listacontroles.Add(txt_email);
-			listacontroles.Add(msk_inep);
-			listacontroles.Add(txt_logradouro);
-			listacontroles.Add(txt_nome);
-			listacontroles.Add(txt_numero_resid);
-			listacontroles.Add(msk_tel1);
-			listacontroles.Add(msk_tel2);
-			listacontroles.Add(msk_tel3);
-			listacontroles.Add(cbo_bairro);
-			listacontroles.Add(cbo_mantenedor);
-			listacontroles.Add(cbo_regional_adm);
-			listacontroles.Add(cbo_tipo_Logradouro);
-			listacontroles.Add(msk_cep);
-			listacontroles.Add(lbl_codigo);
-			listacontroles.Add(msk_latitude);
-			listacontroles.Add(msk_longitude);
+			listaControles.Add(txt_email);
+			listaControles.Add(msk_inep);
+			listaControles.Add(txt_logradouro);
+			listaControles.Add(txt_nome);
+			listaControles.Add(txt_numero_resid);
+			listaControles.Add(msk_tel1);
+			listaControles.Add(msk_tel2);
+			listaControles.Add(msk_tel3);
+			listaControles.Add(cbo_bairro);
+			listaControles.Add(cbo_mantenedor);
+			listaControles.Add(cbo_regional_adm);
+			listaControles.Add(cbo_tipo_Logradouro);
+			listaControles.Add(msk_cep);
+			listaControles.Add(lbl_codigo);
+			listaControles.Add(msk_latitude);
+			listaControles.Add(msk_longitude);
 
 		}
 
@@ -667,16 +675,16 @@ namespace SIESC.UI.UI
 		/// </summary>
 		private void CarregaTreeViewAnosEnsino()
 		{
-			dt_anoensino = anoTableAdapter1.GetData();
-			dt_nivelensino = nivelensinoTableAdapter1.GetData();
+			dtAnoEnsino = anoTableAdapter1.GetData();
+			dtNivelEnsino = nivelensinoTableAdapter1.GetData();
 
-			foreach (DataRow row_nivelensino in dt_nivelensino.Rows)
+			foreach (DataRow row_nivelensino in dtNivelEnsino.Rows)
 			{
 				TreeNode node_pai;
 				TreeNode node_filho = new TreeNode();
 				node_pai = trvw_anoensino.Nodes.Add(row_nivelensino["nivel"].ToString());// adiciona o ParentNode de nível de ensino
 
-				foreach (DataRow Row_anoensino in dt_anoensino.Rows)
+				foreach (DataRow Row_anoensino in dtAnoEnsino.Rows)
 				{
 					if (row_nivelensino["idNivelensino"].ToString() == Row_anoensino["nivelensino"].ToString()) //adiciona o childNode com os anos de ensino
 					{
@@ -759,7 +767,7 @@ namespace SIESC.UI.UI
 			{
 				foreach (TreeNode node_filho in node_pai.Nodes)
 				{
-					foreach (DataRow row in dt_anoensino.Rows)
+					foreach (DataRow row in dtAnoEnsino.Rows)
 					{
 						AnoEnsino anoEnsino = new AnoEnsino();
 

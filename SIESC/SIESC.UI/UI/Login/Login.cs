@@ -5,38 +5,33 @@
 #endregion
 using SIESC.BD.Control;
 using System;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using SIESC.MODEL.Classes;
 
 namespace SIESC.UI.UI.Login
 {
+    /// <summary>
+    /// Formulário de login no sistemas
+    /// </summary>
     public partial class Login : SIESC.UI.BaseUi
     {
         /// <summary>
-        /// 
+        /// O usuário do sistema
         /// </summary>
         public Usuario usuario { get; private set; }
+
         /// <summary>
-        /// 
+        /// Objeto de acs
         /// </summary>
         private UsuarioControl usuarioControl;
+
         /// <summary>
-        /// 
-        /// </summary>
-        private Principal_UI principalUi;
-        
-        /// <summary>
-        /// 
+        /// construtor da classe
         /// </summary>
         /// <param name="_usuario"></param>
-        public Login(Usuario _usuario, Principal_UI principalUi)
+        public Login(Usuario _usuario)
         {
             InitializeComponent();
-            this.principalUi = principalUi;
             usuario = _usuario;
         }
 
@@ -50,8 +45,6 @@ namespace SIESC.UI.UI.Login
         {
             try
             {
-                //string novaconexao = string.Empty;
-
                 usuario = new Usuario()
                 {
                     nomeusuario = txt_usuario.Text,
@@ -59,87 +52,14 @@ namespace SIESC.UI.UI.Login
                 };
 
                 usuarioControl = new UsuarioControl();
-
-
-                if (usuarioControl.ValidateUser(usuario))
-                {
-                    //novaconexao = SelecionaUsuarioBanco(usuario);
-                    //AtualizarXMLConectionString(novaconexao);
-                    this.Close();
-                }
+                
+                if (usuarioControl.ValidateUser(usuario)) this.Close();
             }
             catch (Exception)
             {
                 Mensageiro.MensagemErro(new Exception("\nUsuário ou senha incorretos!"), this);
             }
         }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        //private string SelecionaUsuarioBanco(Usuario user)
-        //{
-        //    try
-        //    {
-        //        StringBuilder strbd = new StringBuilder();
-
-        //        strbd.Append("user id=");
-        //        strbd.Append(user.nomeusuario);
-        //        strbd.Append(";password=");
-        //        strbd.Append(user.senhausuario);
-        //        strbd.Append(";persistsecurityinfo=True;database=siesc;server=localhost");
-
-        //        string con = strbd.ToString();
-
-        //        SqlConnection dbConnection = new SqlConnection();
-
-        //        ConfigurationManager.RefreshSection("connectiosStrings");
-
-        //        dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings[3].ToString();
-
-        //        return con;
-        //    }
-        //    catch (ConfigurationException exception)
-        //    {
-        //        throw exception;
-        //    }
-        //    catch (SqlException exception)
-        //    {
-        //        throw exception;
-        //    }
-        //}
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="con"></param>
-        //private void AtualizarXMLConectionString(string con)
-        //{
-        //    try
-        //    {
-        //        XmlDocument documentoXML = new XmlDocument();
-
-        //        documentoXML.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-
-        //        foreach (XmlElement element in documentoXML.DocumentElement)
-        //        {
-        //            if (element.Name == "connectionString")
-        //            {
-        //                element.FirstChild.Attributes[0].Value = con;
-        //            }
-        //        }
-
-        //        documentoXML.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-        //    }
-        //    catch (XmlException exception)
-        //    {
-        //        throw exception;
-        //    }
-
-        //}
 
         /// <summary>
         /// Evento do botão cancelar

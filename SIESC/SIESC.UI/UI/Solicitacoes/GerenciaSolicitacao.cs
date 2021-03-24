@@ -5,19 +5,21 @@
 #endregion
 
 using System;
-using System.CodeDom;
 using System.Collections;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
+using SIESC.UI.UI.Alunos;
 using SIESC.UI.UI.Relatorios;
-using SIESC.UI.UI.Solicitacoes;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Solicitacoes
 
 {
+    /// <summary>
+    /// Formulário de gerenciamento das solicitações
+    /// </summary>
     public partial class GerenciaSolicitacao
     {
         /// <summary>

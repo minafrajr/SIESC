@@ -1,17 +1,17 @@
-﻿using SIESC.BD.Control;
-using SIESC.MODEL.Classes;
-using SIESC.UI.UI.Relatorios;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC.BD.Control;
+using SIESC.MODEL.Classes;
 using SIESC.UI.Controles;
+using SIESC.UI.UI.Relatorios;
 using SIESC.WEB;
 
-namespace SIESC.UI.UI.Solicitacoes
+namespace SIESC.UI.UI.Sindicância
 {
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias

@@ -1,6 +1,4 @@
-﻿using SIESC.BD.DataSets.dsListasTableAdapters;
-
-namespace SIESC.UI.UI.Relatorios
+﻿namespace SIESC.UI.UI.Listas
 {
 	partial class Listas
 	{
@@ -30,55 +28,55 @@ namespace SIESC.UI.UI.Relatorios
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.rpt_viewer_listas = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsListas1 = new SIESC.BD.DataSets.dsListas();
-            this.vw_instituicoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter();
-            this.vw_autorizacoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter();
-            this.vw_diretoresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter();
-            this.vw_secretarios_escolaresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_secretarios_escolaresTableAdapter();
-            this.vw_funcionariosTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsListas1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // rpt_viewer_listas
-            // 
-            this.rpt_viewer_listas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rpt_viewer_listas.Location = new System.Drawing.Point(0, 0);
-            this.rpt_viewer_listas.Margin = new System.Windows.Forms.Padding(0);
-            this.rpt_viewer_listas.Name = "rpt_viewer_listas";
-            this.rpt_viewer_listas.ServerReport.BearerToken = null;
-            this.rpt_viewer_listas.Size = new System.Drawing.Size(804, 557);
-            this.rpt_viewer_listas.TabIndex = 0;
-            // 
-            // dsListas1
-            // 
-            this.dsListas1.DataSetName = "dsListas";
-            this.dsListas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vw_instituicoesTableAdapter1
-            // 
-            this.vw_instituicoesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // vw_autorizacoesTableAdapter1
-            // 
-            this.vw_autorizacoesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // vw_diretoresTableAdapter1
-            // 
-            this.vw_diretoresTableAdapter1.ClearBeforeFill = true;
-            // 
-            // vw_secretarios_escolaresTableAdapter1
-            // 
-            this.vw_secretarios_escolaresTableAdapter1.ClearBeforeFill = true;
-            // 
-            // Listas
-            // 
-            this.ClientSize = new System.Drawing.Size(804, 557);
-            this.Controls.Add(this.rpt_viewer_listas);
-            this.Name = "Listas";
-            this.Text = "SIESC - Listas";
-            ((System.ComponentModel.ISupportInitialize)(this.dsListas1)).EndInit();
-            this.ResumeLayout(false);
+			this.rpt_viewer_listas = new Microsoft.Reporting.WinForms.ReportViewer();
+			this.dsListas1 = new SIESC.BD.DataSets.dsListas();
+			this.vw_instituicoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_instituicoesTableAdapter();
+			this.vw_autorizacoesTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_autorizacoesTableAdapter();
+			this.vw_diretoresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_diretoresTableAdapter();
+			this.vw_secretarios_escolaresTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_secretarios_escolaresTableAdapter();
+			this.vw_funcionariosTableAdapter1 = new SIESC.BD.DataSets.dsListasTableAdapters.vw_funcionariosTableAdapter();
+			((System.ComponentModel.ISupportInitialize)(this.dsListas1)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// rpt_viewer_listas
+			// 
+			this.rpt_viewer_listas.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rpt_viewer_listas.Location = new System.Drawing.Point(0, 0);
+			this.rpt_viewer_listas.Margin = new System.Windows.Forms.Padding(0);
+			this.rpt_viewer_listas.Name = "rpt_viewer_listas";
+			this.rpt_viewer_listas.ServerReport.BearerToken = null;
+			this.rpt_viewer_listas.Size = new System.Drawing.Size(804, 557);
+			this.rpt_viewer_listas.TabIndex = 0;
+			// 
+			// dsListas1
+			// 
+			this.dsListas1.DataSetName = "dsListas";
+			this.dsListas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// vw_instituicoesTableAdapter1
+			// 
+			this.vw_instituicoesTableAdapter1.ClearBeforeFill = true;
+			// 
+			// vw_autorizacoesTableAdapter1
+			// 
+			this.vw_autorizacoesTableAdapter1.ClearBeforeFill = true;
+			// 
+			// vw_diretoresTableAdapter1
+			// 
+			this.vw_diretoresTableAdapter1.ClearBeforeFill = true;
+			// 
+			// vw_secretarios_escolaresTableAdapter1
+			// 
+			this.vw_secretarios_escolaresTableAdapter1.ClearBeforeFill = true;
+			// 
+			// Listas
+			// 
+			this.ClientSize = new System.Drawing.Size(804, 557);
+			this.Controls.Add(this.rpt_viewer_listas);
+			this.Name = "Listas";
+			this.Text = "SIESC - Listas";
+			((System.ComponentModel.ISupportInitialize)(this.dsListas1)).EndInit();
+			this.ResumeLayout(false);
 
 		}
 

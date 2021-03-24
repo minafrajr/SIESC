@@ -3,20 +3,20 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
-using SIESC.BD.Control;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-// ReSharper disable All
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Alunos
 {
     /// <summary>
     /// formulário para cadastro do aluno
     /// </summary>
-    public partial class CadastrarAluno : SIESC.UI.BaseUi
+    public partial class CadastrarAluno : BaseUi
     {
         /// <summary>
         /// Lista de controles do formulário
@@ -50,8 +50,8 @@ namespace SIESC.UI.UI
         }
 
         /// <summary>
-        /// Construtor da classe com parãmetro da Classe aluno para 
-        /// preencimento com os dados do aluno
+        /// Construtor da classe com parâmetro da Classe aluno para 
+        /// preenchimento com os dados do aluno
         /// </summary>
         /// <param name="_aluno">O Objeto Aluno</param>
         /// <param name="principalUi">O formulário MDI pai</param>

@@ -1,18 +1,14 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
+﻿using System.ComponentModel;
 using System.Windows.Forms;
 using SIESC.UI.Controles;
-using SIESC.UI.Properties;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Solicitacoes
 {
 	/// <summary>
 	/// 
 	/// </summary>
-	partial class GerenciaSolicitacao : BaseUi { 
-	   
-	
+	partial class GerenciaSolicitacao : BaseUi
+	{
 		///<summary>
 		/// Variável de designer necessária.
 		/// </summary>
@@ -874,7 +870,7 @@ namespace SIESC.UI.UI
 			this.statusStrip1.PerformLayout();
 			this.ResumeLayout(false);
 
-			
+
 
 		}
 

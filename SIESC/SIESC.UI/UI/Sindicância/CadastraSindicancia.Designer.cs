@@ -1,8 +1,8 @@
 ﻿using SIESC.UI.Controles;
 
-namespace SIESC.UI.UI.Solicitacoes
+namespace SIESC.UI.UI.Sindicância
 {
-    partial class CadastraSindicancia : BaseUi
+    partial class CadastraSindicancia: BaseUi
     {
         /// <summary>
         /// Variável de designer necessária.

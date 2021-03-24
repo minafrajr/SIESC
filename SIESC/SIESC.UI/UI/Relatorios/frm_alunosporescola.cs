@@ -3,11 +3,12 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 05/04/2015
 #endregion
+
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Relatorios
 {
     public partial class frm_alunosporescola : Form
     {

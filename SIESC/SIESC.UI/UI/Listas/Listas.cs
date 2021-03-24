@@ -5,22 +5,20 @@
 #endregion
 
 using System;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using SIESC.BD.DataSets.dsListasTableAdapters;
 using SIESC.UI.Properties;
 
-namespace SIESC.UI.UI.Relatorios
+namespace SIESC.UI.UI.Listas
 {
 	public partial class Listas : Form
 	{
 		/// <summary>
 		/// O código do relatório a ser gerado
 		/// </summary>
-		private int codigorelatorio;
+		private readonly int codigoRelatorio;
 		/// <summary>
 		/// O mantenedor da instituição
 		/// </summary>
@@ -41,15 +39,15 @@ namespace SIESC.UI.UI.Relatorios
 		/// <summary>
 		/// Construtor da classe
 		/// </summary>
-		/// <param name="codigorelatorio"></param>
-		public Listas(int codigorelatorio)
+		/// <param name="codigoRelatorio"></param>
+		public Listas(int codigoRelatorio)
 		{
 			
 			try
 			{
 				this.InitializeComponent();
 
-				this.codigorelatorio = codigorelatorio;
+				this.codigoRelatorio = codigoRelatorio;
 			
 				this.ConfiguraLista();
 			}
@@ -62,14 +60,14 @@ namespace SIESC.UI.UI.Relatorios
 		/// <summary>
 		/// Construtor da classe
 		/// </summary>
-		/// <param name="codigorelatorio"></param>
-		public Listas(int codigorelatorio, int? mantenedor, bool? ativa)
+		/// <param name="codigoRelatorio"></param>
+		public Listas(int codigoRelatorio, int? mantenedor, bool? ativa)
 		{
 			try
 			{
 				this.InitializeComponent();
 
-				this.codigorelatorio = codigorelatorio;
+				this.codigoRelatorio = codigoRelatorio;
 				this.mantenedor = mantenedor;
 				this.ativa = ativa;
 
@@ -112,7 +110,7 @@ namespace SIESC.UI.UI.Relatorios
 				ReportDataSource datasource = new ReportDataSource();
 				datasource.Name = "dsListas";
 
-				switch (codigorelatorio)
+				switch (codigoRelatorio)
 				{
 					case 1:
 						rpt_viewer_listas.SetPageSettings(pg); //configura a folha do relatório para paisagem

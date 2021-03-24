@@ -1,12 +1,9 @@
-﻿using System.Drawing.Printing;
-using System.Windows.Forms.VisualStyles;
-using SIESC.BD.DataSets.dsFundamentalTableAdapters;
-using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
+﻿using SIESC.BD.DataSets.dsRelatoriosTableAdapters;
 using vw_deficientesTableAdapter = SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_deficientesTableAdapter;
 using vw_num_encaminhadosTableAdapter = SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_num_encaminhadosTableAdapter;
 using vw_origem_solicitacaoTableAdapter = SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_origem_solicitacaoTableAdapter;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Relatorios
 {
 	partial class frm_Relatorio_geral
 	{

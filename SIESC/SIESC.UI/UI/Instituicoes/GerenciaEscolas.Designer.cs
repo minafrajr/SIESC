@@ -1,6 +1,6 @@
 ﻿using SIESC.UI.Controles;
 
-namespace SIESC.UI.UI.Escolas
+namespace SIESC.UI.UI.Instituicoes
 {
 	partial class GerenciaEscolas
 	{

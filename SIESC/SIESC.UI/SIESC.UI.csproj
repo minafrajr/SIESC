@@ -253,11 +253,11 @@
     <Compile Include="UI\Autorizacoes\SolicitarAutorizacao.Designer.cs">
       <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\base_UI.cs">
+    <Compile Include="UI\BaseUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\base_UI.Designer.cs">
-      <DependentUpon>base_UI.cs</DependentUpon>
+    <Compile Include="UI\BaseUi.Designer.cs">
+      <DependentUpon>BaseUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\MyMaskedTextBox.cs">
       <SubType>Component</SubType>
@@ -318,12 +318,6 @@
     </Compile>
     <Compile Include="UI\Funcionarios\CadastroFuncionario.Designer.cs">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Funcionarios\FrmListarEmailsFuncionarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Funcionarios\FrmListarEmailsFuncionarios.Designer.cs">
-      <DependentUpon>FrmListarEmailsFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Funcionarios\GerenciaFuncionario.cs">
       <SubType>Form</SubType>
@@ -562,8 +556,8 @@
     <EmbeddedResource Include="UI\Autorizacoes\SolicitarAutorizacao.resx">
       <DependentUpon>SolicitarAutorizacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\base_UI.resx">
-      <DependentUpon>base_UI.cs</DependentUpon>
+    <EmbeddedResource Include="UI\BaseUi.resx">
+      <DependentUpon>BaseUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Alunos\CadastrarAluno.resx">
       <DependentUpon>CadastrarAluno.cs</DependentUpon>
@@ -588,9 +582,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Funcionarios\CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Funcionarios\FrmListarEmailsFuncionarios.resx">
-      <DependentUpon>FrmListarEmailsFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Funcionarios\GerenciaFuncionario.resx">
       <DependentUpon>GerenciaFuncionario.cs</DependentUpon>

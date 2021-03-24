@@ -4,14 +4,14 @@
 // Criado em: 05/04/2015
 #endregion
 
-using Microsoft.Reporting.WinForms;
-using SIESC.UI.Properties;
 using System;
 using System.Data;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+using SIESC.UI.Properties;
 
-namespace SIESC.UI.UI
+namespace SIESC.UI.UI.Relatorios
 {
     public partial class frm_Relatorio_geral : Form
     {

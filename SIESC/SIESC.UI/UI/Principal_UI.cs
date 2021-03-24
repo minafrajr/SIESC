@@ -7,7 +7,6 @@ using SIESC.UI.UI.Alunos;
 using SIESC.UI.UI.Autorizacoes;
 using SIESC.UI.UI.CEP;
 using SIESC.UI.UI.Configurações;
-using SIESC.UI.UI.Escolas;
 using SIESC.UI.UI.Funcionarios;
 using SIESC.UI.UI.Listas;
 using SIESC.UI.UI.Login;
@@ -22,9 +21,9 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
+using SIESC.UI.UI.Instituicoes;
 using SIESC.UI.UI.Sindicância;
 using SIESC.UI.UI.Solicitacoes;
-using ThreadState = System.Threading.ThreadState;
 
 namespace SIESC.UI
 {
@@ -118,7 +117,7 @@ namespace SIESC.UI
         {
             if (VerificaConexaoBanco())
             {
-                Login frmLogin = new Login(user, this);
+                Login frmLogin = new Login(user);
                 frmLogin.ShowDialog(this);
 
                 user = new Usuario();
