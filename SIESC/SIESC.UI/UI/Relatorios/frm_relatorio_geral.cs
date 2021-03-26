@@ -163,7 +163,7 @@ namespace SIESC.UI.UI.Relatorios
             {
                 case 1://Número de solicitações pendentes geral
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Controle_Solicitacoes.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetData();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitadoEncaminhadoPendenteGeral();
                     break;
                 case 2: // Formulário Pendentes turma
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Formularios\\rpt_form_pendencia_turma.rdlc";

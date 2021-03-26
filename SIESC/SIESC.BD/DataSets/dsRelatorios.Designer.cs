@@ -16716,7 +16716,7 @@ namespace SIESC.BD.DataSets.dsRelatoriosTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[9];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[10];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefon" +
@@ -16757,17 +16757,27 @@ namespace SIESC.BD.DataSets.dsRelatoriosTableAdapters {
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT        Regional, Escola, AnoEF, SUM(solicitada) AS solicitada, SUM(encaminhada) AS encaminhada, SUM(Pendente) AS Pendente
+            this._commandCollection[7].CommandText = @"SELECT        vw_controlesolicitacoes.Regional, vw_controlesolicitacoes.Escola, vw_controlesolicitacoes.AnoEF, SUM(vw_controlesolicitacoes.solicitada) AS Solicitada, SUM(vw_controlesolicitacoes.encaminhada) AS Encaminhada, 
+                         SUM(vw_controlesolicitacoes.Pendente) AS Pendente
+FROM            vw_controlesolicitacoes INNER JOIN
+                         ano ON vw_controlesolicitacoes.AnoEF = ano.AnoEF
+GROUP BY vw_controlesolicitacoes.Regional, vw_controlesolicitacoes.Escola, vw_controlesolicitacoes.AnoEF
+HAVING        (SUM(vw_controlesolicitacoes.Pendente) > 0)
+ORDER BY vw_controlesolicitacoes.Escola, vw_controlesolicitacoes.AnoEF";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT        Regional, Escola, AnoEF, SUM(solicitada) AS solicitada, SUM(encaminhada) AS encaminhada, SUM(Pendente) AS Pendente
 FROM            siesc.vw_controlesolicitacoes
 WHERE        (AnoEF LIKE 'Pré-Escola I') OR
                          (AnoEF LIKE 'Pré-Escola II')
 GROUP BY Regional, Escola, AnoEF
 HAVING        (Pendente > 0)
 ORDER BY Escola, AnoEF";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT        siesc.vw_controlesolicitacoes.Regional, siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.AnoEF, SUM(siesc.vw_controlesolicitacoes.solicitada) AS Solicitada, 
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"SELECT        siesc.vw_controlesolicitacoes.Regional, siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.AnoEF, SUM(siesc.vw_controlesolicitacoes.solicitada) AS Solicitada, 
                          SUM(siesc.vw_controlesolicitacoes.encaminhada) AS Encaminhada, SUM(siesc.vw_controlesolicitacoes.Pendente) AS Pendente
 FROM            siesc.vw_controlesolicitacoes INNER JOIN
                          ano ON siesc.vw_controlesolicitacoes.AnoEF = ano.AnoEF
@@ -16775,7 +16785,7 @@ WHERE        (ano.idAno < 10)
 GROUP BY siesc.vw_controlesolicitacoes.Regional, siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.AnoEF
 HAVING        (SUM(siesc.vw_controlesolicitacoes.Pendente) > 0)
 ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.AnoEF";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16872,7 +16882,7 @@ ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.Ano
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.vw_controlesolicitacoesDataTable QtdeSolicitadoEncaminhadoPendenteInfantil() {
+        public virtual dsRelatorios.vw_controlesolicitacoesDataTable QtdeSolicitadoEncaminhadoPendenteGeral() {
             this.Adapter.SelectCommand = this.CommandCollection[7];
             dsRelatorios.vw_controlesolicitacoesDataTable dataTable = new dsRelatorios.vw_controlesolicitacoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -16883,8 +16893,19 @@ ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.Ano
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.vw_controlesolicitacoesDataTable QtdeSolitictadoEncaminhadoPendenteFundamental() {
+        public virtual dsRelatorios.vw_controlesolicitacoesDataTable QtdeSolicitadoEncaminhadoPendenteInfantil() {
             this.Adapter.SelectCommand = this.CommandCollection[8];
+            dsRelatorios.vw_controlesolicitacoesDataTable dataTable = new dsRelatorios.vw_controlesolicitacoesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.vw_controlesolicitacoesDataTable QtdeSolitictadoEncaminhadoPendenteFundamental() {
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             dsRelatorios.vw_controlesolicitacoesDataTable dataTable = new dsRelatorios.vw_controlesolicitacoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

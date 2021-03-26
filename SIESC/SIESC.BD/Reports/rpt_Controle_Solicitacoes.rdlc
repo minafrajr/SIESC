@@ -89,7 +89,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Escola</Value>
+                                  <Value>Instituição</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1282,7 +1282,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Ano EF</Value>
+                                    <Value>Ano de Ensino</Value>
                                     <Style>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
@@ -1701,7 +1701,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nº de Solicitações Pendentes</Value>
+                    <Value>Nº DE SOLICITAÇÕES PENDENTES - GERAL</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1715,7 +1715,7 @@
             <rd:DefaultName>Textbox54</rd:DefaultName>
             <Top>0.82875cm</Top>
             <Left>2.27224cm</Left>
-            <Height>0.75875cm</Height>
+            <Height>0.54708cm</Height>
             <Width>14.37979cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1735,7 +1735,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de Vaga " &amp; Year(Now())</Value>
+                    <Value>="SOLICITAÇÃO DE VAGA " &amp; Year(Now())</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1770,7 +1770,7 @@
       <Width>7.33695in</Width>
       <Page>
         <PageHeader>
-          <Height>2.55889cm</Height>
+          <Height>1.84451cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1879,6 +1879,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
+              <Top>0cm</Top>
               <Left>9.54641cm</Left>
               <Height>0.55591cm</Height>
               <Width>9.00875cm</Width>
