@@ -363,56 +363,7 @@ namespace SIESC.UI.UI.Instituicoes
 
 		#region Controle do formulário
 
-		/// <summary>
-		/// Formata o número do telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel1_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				base.SetMask(msk_tel1);
-			}
-			catch (Exception ex)
-			{
-				Mensageiro.MensagemErro(ex,this);
-			}
-		}
-
-		/// <summary>
-		/// Formata o número do telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel2_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				base.SetMask(msk_tel2);
-			}
-			catch (Exception ex)
-			{
-				Mensageiro.MensagemErro(ex,this);
-			}
-		}
-
-		/// <summary>
-		/// Formata o número do telefone de acordo com o terceiro dígito
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void msk_tel3_Leave(object sender,EventArgs e)
-		{
-			try
-			{
-				base.SetMask(msk_tel3);
-			}
-			catch (Exception ex)
-			{
-				Mensageiro.MensagemErro(ex,this);
-			}
-		}
+		
 		/// <summary>
 		/// Adiciona os controles ao formulário
 		/// </summary>

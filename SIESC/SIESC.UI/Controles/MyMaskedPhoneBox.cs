@@ -39,7 +39,7 @@ namespace SIESC.UI.Controles
 		/// Evento ao perder o foco
 		/// </summary>
 		/// <param name="e"></param>
-		[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+		//[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 		protected override void OnLostFocus(EventArgs e)
 		{
 			base.OnLostFocus(e);

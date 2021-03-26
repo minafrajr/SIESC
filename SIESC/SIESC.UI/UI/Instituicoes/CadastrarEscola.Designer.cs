@@ -408,7 +408,6 @@ namespace SIESC.UI.UI.Instituicoes
 			this.msk_tel3.Size = new System.Drawing.Size(100, 22);
 			this.msk_tel3.TabIndex = 9;
 			this.msk_tel3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel3.Leave += new System.EventHandler(this.msk_tel3_Leave);
 			// 
 			// msk_tel2
 			// 
@@ -419,7 +418,6 @@ namespace SIESC.UI.UI.Instituicoes
 			this.msk_tel2.Size = new System.Drawing.Size(100, 22);
 			this.msk_tel2.TabIndex = 9;
 			this.msk_tel2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel2.Leave += new System.EventHandler(this.msk_tel2_Leave);
 			// 
 			// msk_tel1
 			// 
@@ -429,7 +427,6 @@ namespace SIESC.UI.UI.Instituicoes
 			this.msk_tel1.Size = new System.Drawing.Size(100, 22);
 			this.msk_tel1.TabIndex = 9;
 			this.msk_tel1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel1.Leave += new System.EventHandler(this.msk_tel1_Leave);
 			// 
 			// label9
 			// 

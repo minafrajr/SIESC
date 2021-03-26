@@ -473,56 +473,9 @@ namespace SIESC.UI.UI.Funcionarios
             LimpaCampos(listaControles);
         }
 
-        /// <summary>
-        /// Evento ao configurar a mascara do maskedtextbox de telefone1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_tel1_Leave(object sender,EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_tel1);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception,this);
-            }
-        }
+      
 
-        /// <summary>
-        /// Evento ao configurar a mascara do maskedtextbox de telefone1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_tel2_Leave(object sender,EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_tel2);
-            }
-            catch (Exception ex)
-            {
-                Mensageiro.MensagemErro(ex,this);
-            }
-        }
-
-        /// <summary>
-        /// Evento ao configurar a mascara do maskedtextbox de telefone1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_tel3_Leave(object sender,EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_tel3);
-            }
-            catch (Exception ex)
-            {
-                Mensageiro.MensagemErro(ex,this);
-            }
-        }
+       
 
         /// <summary>
         /// Carrega a lista das escolas

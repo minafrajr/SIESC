@@ -600,7 +600,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.msk_tel3.TabIndex = 7;
 			this.msk_tel3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.msk_tel3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel3.Leave += new System.EventHandler(this.msk_tel3_Leave);
 			// 
 			// msk_tel2
 			// 
@@ -611,7 +610,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.msk_tel2.TabIndex = 6;
 			this.msk_tel2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.msk_tel2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel2.Leave += new System.EventHandler(this.msk_tel2_Leave);
 			// 
 			// msk_tel1
 			// 
@@ -623,7 +621,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.msk_tel1.Tag = "Telefone";
 			this.msk_tel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.msk_tel1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_tel1.Leave += new System.EventHandler(this.msk_tel1_Leave);
 			// 
 			// lbl_telefones
 			// 

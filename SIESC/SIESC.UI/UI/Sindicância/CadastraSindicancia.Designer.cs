@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Sindicância
 {
-    partial class CadastraSindicancia: BaseUi
+    partial class CadastraSindicancia : BaseUi
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -237,8 +237,6 @@ namespace SIESC.UI.UI.Sindicância
             this.msk_telefone3.TabIndex = 7;
             this.msk_telefone3.Tag = "Telefone 3";
             this.msk_telefone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone3.Enter += new System.EventHandler(this.msk_telefone3_Enter);
-            this.msk_telefone3.Leave += new System.EventHandler(this.msk_telefone3_Leave);
             // 
             // label4
             // 
@@ -259,8 +257,6 @@ namespace SIESC.UI.UI.Sindicância
             this.msk_telefone2.TabIndex = 6;
             this.msk_telefone2.Tag = "Telefone 2";
             this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone2.Enter += new System.EventHandler(this.msk_telefone2_Enter);
-            this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
             // 
             // txt_codigoSindicancia
             // 
@@ -286,8 +282,6 @@ namespace SIESC.UI.UI.Sindicância
             this.msk_telefone1.TabIndex = 5;
             this.msk_telefone1.Tag = "Telefone 1";
             this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
-            this.msk_telefone1.Leave += new System.EventHandler(this.msk_telefone1_Leave);
             // 
             // lbl_codigoSolicitacao
             // 

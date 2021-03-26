@@ -1589,86 +1589,7 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_instituicao_origem.Text = cbo_instituicao_origem.Text.ToUpper();
         }
 
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone1_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_telefone1);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone2_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_telefone2);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-
-        /// <summary>
-        /// Formata o numero do telefone de acordo com o terceiro dígito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone3_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                SetMask(msk_telefone3);
-            }
-            catch (Exception exception)
-            {
-                Mensageiro.MensagemErro(exception, this);
-            }
-        }
-
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone1"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone1_Enter(object sender, EventArgs e)
-        {
-            msk_telefone1.Mask = @"(00)00000-0000";
-        }
-
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone2"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone2_Enter(object sender, EventArgs e)
-        {
-            msk_telefone2.Mask = @"(00)00000-0000";
-        }
-
-        /// <summary>
-        /// Defina a mascara do controle <see cref="msk_telefone3"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_telefone3_Enter(object sender, EventArgs e)
-        {
-            msk_telefone3.Mask = @"(00)00000-0000";
-        }
+        
 
         /// <summary>
         /// Grava o código do Expediente interno na solicitação já existente
@@ -2175,6 +2096,52 @@ namespace SIESC.UI.UI.Solicitacoes
                 listControlsObrigatorios.Remove(cbo_ano_irmao2);
                 listControlsObrigatorios.Remove(cbo_escola_irmao2);
             }
+        }
+
+        /// <summary>
+        /// Evento Leave do controle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone1_Leave(object sender, EventArgs e) 
+        {
+            VerificaTelefone(msk_telefone1.Text);
+        }
+        /// <summary>
+        /// Evento Leave do controle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone2_Leave(object sender, EventArgs e)
+        {
+            VerificaTelefone(msk_telefone2.Text);
+
+        }
+        /// <summary>
+        /// Evento Leave do controle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_telefone3_Leave(object sender, EventArgs e)
+        {
+            VerificaTelefone(msk_telefone3.Text);
+        }
+
+        /// <summary>
+        /// Verifica se o número de telefone está correto
+        /// </summary>
+        /// <param name="telefone"></param>
+        private void VerificaTelefone(string telefone)
+        {
+            try
+            {
+                if (telefone.Length < 10 && !string.IsNullOrEmpty(telefone)) throw new Exception("O telefone não está em um formato correto!");
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex, principalUi);
+            }
+            
         }
     }
 }
