@@ -2,10 +2,12 @@
 <xs:schema id="dsRelatorios" targetNamespace="http://tempuri.org/dsRelatorios.xsd" xmlns:mstns="http://tempuri.org/dsRelatorios.xsd" xmlns="http://tempuri.org/dsRelatorios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString2" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_controlesolicitacoesTableAdapter" GeneratorDataComponentClassName="vw_controlesolicitacoesTableAdapter" Name="vw_controlesolicitacoes" UserDataComponentName="vw_controlesolicitacoesTableAdapter">
@@ -1309,6 +1311,141 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ofertaensinopivotTableAdapter" GeneratorDataComponentClassName="ofertaensinopivotTableAdapter" Name="ofertaensinopivot" UserDataComponentName="ofertaensinopivotTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `ofertaensinopivot` (`idInstituicao`, `mantenedor`, `nome`, `anoA`, `anoB`, `anoC`, `anoD`, `anoE`, `anoF`, `anoG`, `anoH`, `anoI`, `anoJ`, `anoK`, `anoL`, `anoM`, `anoN`, `anoO`, `anoP`, `anoQ`, `anoR`, `anoS`, `anoT`, `anoU`, `anoV`, `anoX`, `anoW`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idInstituicao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="mantenedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoB" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoF" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoJ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoK" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoQ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="anoW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idInstituicao`, `mantenedor`, `nome`, `anoA`, `anoB`, `anoC`, `anoD`, `anoE`, `anoF`, `anoG`, `anoH`, `anoI`, `anoJ`, `anoK`, `anoL`, `anoM`, `anoN`, `anoO`, `anoP`, `anoQ`, `anoR`, `anoS`, `anoT`, `anoU`, `anoV`, `anoX`, `anoW` FROM `ofertaensinopivot`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idInstituicao" DataSetColumn="idInstituicao" />
+              <Mapping SourceColumn="mantenedor" DataSetColumn="mantenedor" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="anoA" DataSetColumn="anoA" />
+              <Mapping SourceColumn="anoB" DataSetColumn="anoB" />
+              <Mapping SourceColumn="anoC" DataSetColumn="anoC" />
+              <Mapping SourceColumn="anoD" DataSetColumn="anoD" />
+              <Mapping SourceColumn="anoE" DataSetColumn="anoE" />
+              <Mapping SourceColumn="anoF" DataSetColumn="anoF" />
+              <Mapping SourceColumn="anoG" DataSetColumn="anoG" />
+              <Mapping SourceColumn="anoH" DataSetColumn="anoH" />
+              <Mapping SourceColumn="anoI" DataSetColumn="anoI" />
+              <Mapping SourceColumn="anoJ" DataSetColumn="anoJ" />
+              <Mapping SourceColumn="anoK" DataSetColumn="anoK" />
+              <Mapping SourceColumn="anoL" DataSetColumn="anoL" />
+              <Mapping SourceColumn="anoM" DataSetColumn="anoM" />
+              <Mapping SourceColumn="anoN" DataSetColumn="anoN" />
+              <Mapping SourceColumn="anoO" DataSetColumn="anoO" />
+              <Mapping SourceColumn="anoP" DataSetColumn="anoP" />
+              <Mapping SourceColumn="anoQ" DataSetColumn="anoQ" />
+              <Mapping SourceColumn="anoR" DataSetColumn="anoR" />
+              <Mapping SourceColumn="anoS" DataSetColumn="anoS" />
+              <Mapping SourceColumn="anoT" DataSetColumn="anoT" />
+              <Mapping SourceColumn="anoU" DataSetColumn="anoU" />
+              <Mapping SourceColumn="anoV" DataSetColumn="anoV" />
+              <Mapping SourceColumn="anoX" DataSetColumn="anoX" />
+              <Mapping SourceColumn="anoW" DataSetColumn="anoW" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="`siesc`.`Atualiza_OfertaEnsino`" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Atualiza_OfertaEnsino" Modifier="Public" Name="Atualiza_OfertaEnsino" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Atualiza_OfertaEnsino">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`siesc`.`Atualiza_OfertaEnsino`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoAnosIniciais" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoAnosIniciais" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoAnosIniciais" UserSourceName="GetOfertaEnsinoAnosIniciais">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE
+FROM            ofertaensinopivot
+WHERE        (anoF IS NULL) AND (anoG IS NULL) AND (anoH IS NULL) AND (anoI IS NULL) AND (mantenedor = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoByCims" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoByCims" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoByCims" UserSourceName="GetOfertaEnsinoByCims">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor,nome, anoM, anoN, anoO, anoP, anoV, anoX, anoW
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 3)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoByEstadual" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoByEstadual" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoByEstadual" UserSourceName="GetOfertaEnsinoByEstadual">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI, anoJ, anoK, anoL
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 2)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoByMunicipais" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoByMunicipais" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoByMunicipais" UserSourceName="GetOfertaEnsinoByMunicipais">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI, anoJ, anoK, anoL, anoQ, anoR, anoS, anoT, anoU, anoV
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoByParceiras" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoByParceiras" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoByParceiras" UserSourceName="GetOfertaEnsinoByParceiras">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoM, anoN, anoO, anoP, anoV, anoX, anoW
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 4)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1317,7 +1454,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
   <xs:element name="dsRelatorios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRelatorios" msprop:Generator_UserDSName="dsRelatorios">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_controlesolicitacoes" msprop:Generator_TableClassName="vw_controlesolicitacoesDataTable" msprop:Generator_TableVarName="tablevw_controlesolicitacoes" msprop:Generator_RowChangedName="vw_controlesolicitacoesRowChanged" msprop:Generator_TablePropName="vw_controlesolicitacoes" msprop:Generator_RowDeletingName="vw_controlesolicitacoesRowDeleting" msprop:Generator_RowChangingName="vw_controlesolicitacoesRowChanging" msprop:Generator_RowEvHandlerName="vw_controlesolicitacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_controlesolicitacoesRowDeleted" msprop:Generator_RowClassName="vw_controlesolicitacoesRow" msprop:Generator_UserTableName="vw_controlesolicitacoes" msprop:Generator_RowEvArgName="vw_controlesolicitacoesRowChangeEvent">
+        <xs:element name="vw_controlesolicitacoes" msprop:Generator_TableClassName="vw_controlesolicitacoesDataTable" msprop:Generator_TableVarName="tablevw_controlesolicitacoes" msprop:Generator_TablePropName="vw_controlesolicitacoes" msprop:Generator_RowDeletingName="vw_controlesolicitacoesRowDeleting" msprop:Generator_RowChangingName="vw_controlesolicitacoesRowChanging" msprop:Generator_RowEvHandlerName="vw_controlesolicitacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_controlesolicitacoesRowDeleted" msprop:Generator_UserTableName="vw_controlesolicitacoes" msprop:Generator_RowChangedName="vw_controlesolicitacoesRowChanged" msprop:Generator_RowEvArgName="vw_controlesolicitacoesRowChangeEvent" msprop:Generator_RowClassName="vw_controlesolicitacoesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Regional" msprop:Generator_ColumnVarNameInTable="columnRegional" msprop:Generator_ColumnPropNameInRow="Regional" msprop:Generator_ColumnPropNameInTable="RegionalColumn" msprop:Generator_UserColumnName="Regional" minOccurs="0">
@@ -1355,7 +1492,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_motivos" msprop:Generator_TableClassName="vw_motivosDataTable" msprop:Generator_TableVarName="tablevw_motivos" msprop:Generator_RowChangedName="vw_motivosRowChanged" msprop:Generator_TablePropName="vw_motivos" msprop:Generator_RowDeletingName="vw_motivosRowDeleting" msprop:Generator_RowChangingName="vw_motivosRowChanging" msprop:Generator_RowEvHandlerName="vw_motivosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_motivosRowDeleted" msprop:Generator_RowClassName="vw_motivosRow" msprop:Generator_UserTableName="vw_motivos" msprop:Generator_RowEvArgName="vw_motivosRowChangeEvent">
+        <xs:element name="vw_motivos" msprop:Generator_TableClassName="vw_motivosDataTable" msprop:Generator_TableVarName="tablevw_motivos" msprop:Generator_TablePropName="vw_motivos" msprop:Generator_RowDeletingName="vw_motivosRowDeleting" msprop:Generator_RowChangingName="vw_motivosRowChanging" msprop:Generator_RowEvHandlerName="vw_motivosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_motivosRowDeleted" msprop:Generator_UserTableName="vw_motivos" msprop:Generator_RowChangedName="vw_motivosRowChanged" msprop:Generator_RowEvArgName="vw_motivosRowChangeEvent" msprop:Generator_RowClassName="vw_motivosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="descricaoMotivo" msprop:Generator_ColumnVarNameInTable="columndescricaoMotivo" msprop:Generator_ColumnPropNameInRow="descricaoMotivo" msprop:Generator_ColumnPropNameInTable="descricaoMotivoColumn" msprop:Generator_UserColumnName="descricaoMotivo">
@@ -1369,7 +1506,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_lista_encaminhados" msprop:Generator_TableClassName="vw_lista_encaminhadosDataTable" msprop:Generator_TableVarName="tablevw_lista_encaminhados" msprop:Generator_RowChangedName="vw_lista_encaminhadosRowChanged" msprop:Generator_TablePropName="vw_lista_encaminhados" msprop:Generator_RowDeletingName="vw_lista_encaminhadosRowDeleting" msprop:Generator_RowChangingName="vw_lista_encaminhadosRowChanging" msprop:Generator_RowEvHandlerName="vw_lista_encaminhadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_lista_encaminhadosRowDeleted" msprop:Generator_RowClassName="vw_lista_encaminhadosRow" msprop:Generator_UserTableName="vw_lista_encaminhados" msprop:Generator_RowEvArgName="vw_lista_encaminhadosRowChangeEvent">
+        <xs:element name="vw_lista_encaminhados" msprop:Generator_TableClassName="vw_lista_encaminhadosDataTable" msprop:Generator_TableVarName="tablevw_lista_encaminhados" msprop:Generator_TablePropName="vw_lista_encaminhados" msprop:Generator_RowDeletingName="vw_lista_encaminhadosRowDeleting" msprop:Generator_RowChangingName="vw_lista_encaminhadosRowChanging" msprop:Generator_RowEvHandlerName="vw_lista_encaminhadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_lista_encaminhadosRowDeleted" msprop:Generator_UserTableName="vw_lista_encaminhados" msprop:Generator_RowChangedName="vw_lista_encaminhadosRowChanged" msprop:Generator_RowEvArgName="vw_lista_encaminhadosRowChangeEvent" msprop:Generator_RowClassName="vw_lista_encaminhadosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idsolicitacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidsolicitacao" msprop:Generator_ColumnPropNameInRow="idsolicitacao" msprop:Generator_ColumnPropNameInTable="idsolicitacaoColumn" msprop:Generator_UserColumnName="idsolicitacao" type="xs:int" />
@@ -1483,7 +1620,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_alunos_pendentes" msprop:Generator_TableClassName="vw_alunos_pendentesDataTable" msprop:Generator_TableVarName="tablevw_alunos_pendentes" msprop:Generator_TablePropName="vw_alunos_pendentes" msprop:Generator_RowDeletingName="vw_alunos_pendentesRowDeleting" msprop:Generator_RowChangingName="vw_alunos_pendentesRowChanging" msprop:Generator_RowEvHandlerName="vw_alunos_pendentesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_alunos_pendentesRowDeleted" msprop:Generator_UserTableName="vw_alunos_pendentes" msprop:Generator_RowChangedName="vw_alunos_pendentesRowChanged" msprop:Generator_RowEvArgName="vw_alunos_pendentesRowChangeEvent" msprop:Generator_RowClassName="vw_alunos_pendentesRow">
+        <xs:element name="vw_alunos_pendentes" msprop:Generator_TableClassName="vw_alunos_pendentesDataTable" msprop:Generator_TableVarName="tablevw_alunos_pendentes" msprop:Generator_RowChangedName="vw_alunos_pendentesRowChanged" msprop:Generator_TablePropName="vw_alunos_pendentes" msprop:Generator_RowDeletingName="vw_alunos_pendentesRowDeleting" msprop:Generator_RowChangingName="vw_alunos_pendentesRowChanging" msprop:Generator_RowEvHandlerName="vw_alunos_pendentesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_alunos_pendentesRowDeleted" msprop:Generator_RowClassName="vw_alunos_pendentesRow" msprop:Generator_UserTableName="vw_alunos_pendentes" msprop:Generator_RowEvArgName="vw_alunos_pendentesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigosolicitacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigosolicitacao" msprop:Generator_ColumnPropNameInRow="codigosolicitacao" msprop:Generator_ColumnPropNameInTable="codigosolicitacaoColumn" msprop:Generator_UserColumnName="codigosolicitacao" type="xs:int" />
@@ -1589,7 +1726,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_solicitacoes_por_dia" msprop:Generator_TableClassName="vw_solicitacoes_por_diaDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_dia" msprop:Generator_RowChangedName="vw_solicitacoes_por_diaRowChanged" msprop:Generator_TablePropName="vw_solicitacoes_por_dia" msprop:Generator_RowDeletingName="vw_solicitacoes_por_diaRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_diaRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_diaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_diaRowDeleted" msprop:Generator_RowClassName="vw_solicitacoes_por_diaRow" msprop:Generator_UserTableName="vw_solicitacoes_por_dia" msprop:Generator_RowEvArgName="vw_solicitacoes_por_diaRowChangeEvent">
+        <xs:element name="vw_solicitacoes_por_dia" msprop:Generator_TableClassName="vw_solicitacoes_por_diaDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_dia" msprop:Generator_TablePropName="vw_solicitacoes_por_dia" msprop:Generator_RowDeletingName="vw_solicitacoes_por_diaRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_diaRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_diaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_diaRowDeleted" msprop:Generator_UserTableName="vw_solicitacoes_por_dia" msprop:Generator_RowChangedName="vw_solicitacoes_por_diaRowChanged" msprop:Generator_RowEvArgName="vw_solicitacoes_por_diaRowChangeEvent" msprop:Generator_RowClassName="vw_solicitacoes_por_diaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:dateTime" minOccurs="0" />
@@ -1597,7 +1734,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_infoescolas" msprop:Generator_TableClassName="vw_infoescolasDataTable" msprop:Generator_TableVarName="tablevw_infoescolas" msprop:Generator_TablePropName="vw_infoescolas" msprop:Generator_RowDeletingName="vw_infoescolasRowDeleting" msprop:Generator_RowChangingName="vw_infoescolasRowChanging" msprop:Generator_RowEvHandlerName="vw_infoescolasRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_infoescolasRowDeleted" msprop:Generator_UserTableName="vw_infoescolas" msprop:Generator_RowChangedName="vw_infoescolasRowChanged" msprop:Generator_RowEvArgName="vw_infoescolasRowChangeEvent" msprop:Generator_RowClassName="vw_infoescolasRow">
+        <xs:element name="vw_infoescolas" msprop:Generator_TableClassName="vw_infoescolasDataTable" msprop:Generator_TableVarName="tablevw_infoescolas" msprop:Generator_RowChangedName="vw_infoescolasRowChanged" msprop:Generator_TablePropName="vw_infoescolas" msprop:Generator_RowDeletingName="vw_infoescolasRowDeleting" msprop:Generator_RowChangingName="vw_infoescolasRowChanging" msprop:Generator_RowEvHandlerName="vw_infoescolasRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_infoescolasRowDeleted" msprop:Generator_RowClassName="vw_infoescolasRow" msprop:Generator_UserTableName="vw_infoescolas" msprop:Generator_RowEvArgName="vw_infoescolasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
@@ -1682,7 +1819,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_solicitacoes_por_ano" msprop:Generator_TableClassName="vw_solicitacoes_por_anoDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_ano" msprop:Generator_TablePropName="vw_solicitacoes_por_ano" msprop:Generator_RowDeletingName="vw_solicitacoes_por_anoRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_anoRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_anoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_anoRowDeleted" msprop:Generator_UserTableName="vw_solicitacoes_por_ano" msprop:Generator_RowChangedName="vw_solicitacoes_por_anoRowChanged" msprop:Generator_RowEvArgName="vw_solicitacoes_por_anoRowChangeEvent" msprop:Generator_RowClassName="vw_solicitacoes_por_anoRow">
+        <xs:element name="vw_solicitacoes_por_ano" msprop:Generator_TableClassName="vw_solicitacoes_por_anoDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_ano" msprop:Generator_RowChangedName="vw_solicitacoes_por_anoRowChanged" msprop:Generator_TablePropName="vw_solicitacoes_por_ano" msprop:Generator_RowDeletingName="vw_solicitacoes_por_anoRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_anoRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_anoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_anoRowDeleted" msprop:Generator_RowClassName="vw_solicitacoes_por_anoRow" msprop:Generator_UserTableName="vw_solicitacoes_por_ano" msprop:Generator_RowEvArgName="vw_solicitacoes_por_anoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ano_x0020_do_x0020_Ens__x0020_Fund_" msprop:Generator_ColumnVarNameInTable="columnAno_do_Ens__Fund_" msprop:Generator_ColumnPropNameInRow="Ano_do_Ens__Fund_" msprop:Generator_ColumnPropNameInTable="Ano_do_Ens__Fund_Column" msprop:Generator_UserColumnName="Ano do Ens_ Fund_">
@@ -1696,7 +1833,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_TableClassName="vw_comparativo_solicitacoes_encaminhamentosDataTable" msprop:Generator_TableVarName="tablevw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_TablePropName="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_RowDeletingName="vw_comparativo_solicitacoes_encaminhamentosRowDeleting" msprop:Generator_RowChangingName="vw_comparativo_solicitacoes_encaminhamentosRowChanging" msprop:Generator_RowEvHandlerName="vw_comparativo_solicitacoes_encaminhamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_comparativo_solicitacoes_encaminhamentosRowDeleted" msprop:Generator_UserTableName="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_RowChangedName="vw_comparativo_solicitacoes_encaminhamentosRowChanged" msprop:Generator_RowEvArgName="vw_comparativo_solicitacoes_encaminhamentosRowChangeEvent" msprop:Generator_RowClassName="vw_comparativo_solicitacoes_encaminhamentosRow">
+        <xs:element name="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_TableClassName="vw_comparativo_solicitacoes_encaminhamentosDataTable" msprop:Generator_TableVarName="tablevw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_RowChangedName="vw_comparativo_solicitacoes_encaminhamentosRowChanged" msprop:Generator_TablePropName="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_RowDeletingName="vw_comparativo_solicitacoes_encaminhamentosRowDeleting" msprop:Generator_RowChangingName="vw_comparativo_solicitacoes_encaminhamentosRowChanging" msprop:Generator_RowEvHandlerName="vw_comparativo_solicitacoes_encaminhamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_comparativo_solicitacoes_encaminhamentosRowDeleted" msprop:Generator_RowClassName="vw_comparativo_solicitacoes_encaminhamentosRow" msprop:Generator_UserTableName="vw_comparativo_solicitacoes_encaminhamentos" msprop:Generator_RowEvArgName="vw_comparativo_solicitacoes_encaminhamentosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EscolaSolicitada" msprop:Generator_ColumnVarNameInTable="columnEscolaSolicitada" msprop:Generator_ColumnPropNameInRow="EscolaSolicitada" msprop:Generator_ColumnPropNameInTable="EscolaSolicitadaColumn" msprop:Generator_UserColumnName="EscolaSolicitada" type="xs:string" minOccurs="0" />
@@ -1713,7 +1850,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_diretores_secretarios" msprop:Generator_TableClassName="vw_diretores_secretariosDataTable" msprop:Generator_TableVarName="tablevw_diretores_secretarios" msprop:Generator_RowChangedName="vw_diretores_secretariosRowChanged" msprop:Generator_TablePropName="vw_diretores_secretarios" msprop:Generator_RowDeletingName="vw_diretores_secretariosRowDeleting" msprop:Generator_RowChangingName="vw_diretores_secretariosRowChanging" msprop:Generator_RowEvHandlerName="vw_diretores_secretariosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_diretores_secretariosRowDeleted" msprop:Generator_RowClassName="vw_diretores_secretariosRow" msprop:Generator_UserTableName="vw_diretores_secretarios" msprop:Generator_RowEvArgName="vw_diretores_secretariosRowChangeEvent">
+        <xs:element name="vw_diretores_secretarios" msprop:Generator_TableClassName="vw_diretores_secretariosDataTable" msprop:Generator_TableVarName="tablevw_diretores_secretarios" msprop:Generator_TablePropName="vw_diretores_secretarios" msprop:Generator_RowDeletingName="vw_diretores_secretariosRowDeleting" msprop:Generator_RowChangingName="vw_diretores_secretariosRowChanging" msprop:Generator_RowEvHandlerName="vw_diretores_secretariosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_diretores_secretariosRowDeleted" msprop:Generator_UserTableName="vw_diretores_secretarios" msprop:Generator_RowChangedName="vw_diretores_secretariosRowChanged" msprop:Generator_RowEvArgName="vw_diretores_secretariosRowChangeEvent" msprop:Generator_RowClassName="vw_diretores_secretariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idInstituicoes" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidInstituicoes" msprop:Generator_ColumnPropNameInRow="idInstituicoes" msprop:Generator_ColumnPropNameInTable="idInstituicoesColumn" msprop:Generator_UserColumnName="idInstituicoes" type="xs:int" />
@@ -1756,7 +1893,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_carteirinha" msprop:Generator_TableClassName="vw_carteirinhaDataTable" msprop:Generator_TableVarName="tablevw_carteirinha" msprop:Generator_TablePropName="vw_carteirinha" msprop:Generator_RowDeletingName="vw_carteirinhaRowDeleting" msprop:Generator_RowChangingName="vw_carteirinhaRowChanging" msprop:Generator_RowEvHandlerName="vw_carteirinhaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_carteirinhaRowDeleted" msprop:Generator_UserTableName="vw_carteirinha" msprop:Generator_RowChangedName="vw_carteirinhaRowChanged" msprop:Generator_RowEvArgName="vw_carteirinhaRowChangeEvent" msprop:Generator_RowClassName="vw_carteirinhaRow">
+        <xs:element name="vw_carteirinha" msprop:Generator_TableClassName="vw_carteirinhaDataTable" msprop:Generator_TableVarName="tablevw_carteirinha" msprop:Generator_RowChangedName="vw_carteirinhaRowChanged" msprop:Generator_TablePropName="vw_carteirinha" msprop:Generator_RowDeletingName="vw_carteirinhaRowDeleting" msprop:Generator_RowChangingName="vw_carteirinhaRowChanging" msprop:Generator_RowEvHandlerName="vw_carteirinhaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_carteirinhaRowDeleted" msprop:Generator_RowClassName="vw_carteirinhaRow" msprop:Generator_UserTableName="vw_carteirinha" msprop:Generator_RowEvArgName="vw_carteirinhaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoFuncionario" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigoFuncionario" msprop:Generator_ColumnPropNameInRow="CodigoFuncionario" msprop:Generator_ColumnPropNameInTable="CodigoFuncionarioColumn" msprop:Generator_UserColumnName="CodigoFuncionario" type="xs:int" />
@@ -1828,7 +1965,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_solicitacoes_por_mes" msprop:Generator_TableClassName="vw_solicitacoes_por_mesDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_mes" msprop:Generator_RowChangedName="vw_solicitacoes_por_mesRowChanged" msprop:Generator_TablePropName="vw_solicitacoes_por_mes" msprop:Generator_RowDeletingName="vw_solicitacoes_por_mesRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_mesRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_mesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_mesRowDeleted" msprop:Generator_RowClassName="vw_solicitacoes_por_mesRow" msprop:Generator_UserTableName="vw_solicitacoes_por_mes" msprop:Generator_RowEvArgName="vw_solicitacoes_por_mesRowChangeEvent">
+        <xs:element name="vw_solicitacoes_por_mes" msprop:Generator_TableClassName="vw_solicitacoes_por_mesDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_por_mes" msprop:Generator_TablePropName="vw_solicitacoes_por_mes" msprop:Generator_RowDeletingName="vw_solicitacoes_por_mesRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_por_mesRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_por_mesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_por_mesRowDeleted" msprop:Generator_UserTableName="vw_solicitacoes_por_mes" msprop:Generator_RowChangedName="vw_solicitacoes_por_mesRowChanged" msprop:Generator_RowEvArgName="vw_solicitacoes_por_mesRowChangeEvent" msprop:Generator_RowClassName="vw_solicitacoes_por_mesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Periodo" msprop:Generator_ColumnVarNameInTable="columnPeriodo" msprop:Generator_ColumnPropNameInRow="Periodo" msprop:Generator_ColumnPropNameInTable="PeriodoColumn" msprop:Generator_UserColumnName="Periodo" minOccurs="0">
@@ -1844,7 +1981,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="num_solicitacoes" msprop:Generator_TableClassName="num_solicitacoesDataTable" msprop:Generator_TableVarName="tablenum_solicitacoes" msprop:Generator_RowChangedName="num_solicitacoesRowChanged" msprop:Generator_TablePropName="num_solicitacoes" msprop:Generator_RowDeletingName="num_solicitacoesRowDeleting" msprop:Generator_RowChangingName="num_solicitacoesRowChanging" msprop:Generator_RowEvHandlerName="num_solicitacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="num_solicitacoesRowDeleted" msprop:Generator_RowClassName="num_solicitacoesRow" msprop:Generator_UserTableName="num_solicitacoes" msprop:Generator_RowEvArgName="num_solicitacoesRowChangeEvent">
+        <xs:element name="num_solicitacoes" msprop:Generator_TableClassName="num_solicitacoesDataTable" msprop:Generator_TableVarName="tablenum_solicitacoes" msprop:Generator_TablePropName="num_solicitacoes" msprop:Generator_RowDeletingName="num_solicitacoesRowDeleting" msprop:Generator_RowChangingName="num_solicitacoesRowChanging" msprop:Generator_RowEvHandlerName="num_solicitacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="num_solicitacoesRowDeleted" msprop:Generator_UserTableName="num_solicitacoes" msprop:Generator_RowChangedName="num_solicitacoesRowChanged" msprop:Generator_RowEvArgName="num_solicitacoesRowChangeEvent" msprop:Generator_RowClassName="num_solicitacoesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
@@ -1866,7 +2003,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="num_solicitacoes_infantil" msprop:Generator_TableClassName="num_solicitacoes_infantilDataTable" msprop:Generator_TableVarName="tablenum_solicitacoes_infantil" msprop:Generator_RowChangedName="num_solicitacoes_infantilRowChanged" msprop:Generator_TablePropName="num_solicitacoes_infantil" msprop:Generator_RowDeletingName="num_solicitacoes_infantilRowDeleting" msprop:Generator_RowChangingName="num_solicitacoes_infantilRowChanging" msprop:Generator_RowEvHandlerName="num_solicitacoes_infantilRowChangeEventHandler" msprop:Generator_RowDeletedName="num_solicitacoes_infantilRowDeleted" msprop:Generator_RowClassName="num_solicitacoes_infantilRow" msprop:Generator_UserTableName="num_solicitacoes_infantil" msprop:Generator_RowEvArgName="num_solicitacoes_infantilRowChangeEvent">
+        <xs:element name="num_solicitacoes_infantil" msprop:Generator_TableClassName="num_solicitacoes_infantilDataTable" msprop:Generator_TableVarName="tablenum_solicitacoes_infantil" msprop:Generator_TablePropName="num_solicitacoes_infantil" msprop:Generator_RowDeletingName="num_solicitacoes_infantilRowDeleting" msprop:Generator_RowChangingName="num_solicitacoes_infantilRowChanging" msprop:Generator_RowEvHandlerName="num_solicitacoes_infantilRowChangeEventHandler" msprop:Generator_RowDeletedName="num_solicitacoes_infantilRowDeleted" msprop:Generator_UserTableName="num_solicitacoes_infantil" msprop:Generator_RowChangedName="num_solicitacoes_infantilRowChanged" msprop:Generator_RowEvArgName="num_solicitacoes_infantilRowChangeEvent" msprop:Generator_RowClassName="num_solicitacoes_infantilRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
@@ -1881,7 +2018,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_solicitacoes_motivos" msprop:Generator_TableClassName="vw_solicitacoes_motivosDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_motivos" msprop:Generator_TablePropName="vw_solicitacoes_motivos" msprop:Generator_RowDeletingName="vw_solicitacoes_motivosRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_motivosRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_motivosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_motivosRowDeleted" msprop:Generator_UserTableName="vw_solicitacoes_motivos" msprop:Generator_RowChangedName="vw_solicitacoes_motivosRowChanged" msprop:Generator_RowEvArgName="vw_solicitacoes_motivosRowChangeEvent" msprop:Generator_RowClassName="vw_solicitacoes_motivosRow">
+        <xs:element name="vw_solicitacoes_motivos" msprop:Generator_TableClassName="vw_solicitacoes_motivosDataTable" msprop:Generator_TableVarName="tablevw_solicitacoes_motivos" msprop:Generator_RowChangedName="vw_solicitacoes_motivosRowChanged" msprop:Generator_TablePropName="vw_solicitacoes_motivos" msprop:Generator_RowDeletingName="vw_solicitacoes_motivosRowDeleting" msprop:Generator_RowChangingName="vw_solicitacoes_motivosRowChanging" msprop:Generator_RowEvHandlerName="vw_solicitacoes_motivosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_solicitacoes_motivosRowDeleted" msprop:Generator_RowClassName="vw_solicitacoes_motivosRow" msprop:Generator_UserTableName="vw_solicitacoes_motivos" msprop:Generator_RowEvArgName="vw_solicitacoes_motivosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idAno" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidAno" msprop:Generator_ColumnPropNameInRow="idAno" msprop:Generator_ColumnPropNameInTable="idAnoColumn" msprop:Generator_UserColumnName="idAno" type="xs:int" />
@@ -1952,7 +2089,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_deficientes" msprop:Generator_TableClassName="vw_deficientesDataTable" msprop:Generator_TableVarName="tablevw_deficientes" msprop:Generator_RowChangedName="vw_deficientesRowChanged" msprop:Generator_TablePropName="vw_deficientes" msprop:Generator_RowDeletingName="vw_deficientesRowDeleting" msprop:Generator_RowChangingName="vw_deficientesRowChanging" msprop:Generator_RowEvHandlerName="vw_deficientesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_deficientesRowDeleted" msprop:Generator_RowClassName="vw_deficientesRow" msprop:Generator_UserTableName="vw_deficientes" msprop:Generator_RowEvArgName="vw_deficientesRowChangeEvent">
+        <xs:element name="vw_deficientes" msprop:Generator_TableClassName="vw_deficientesDataTable" msprop:Generator_TableVarName="tablevw_deficientes" msprop:Generator_TablePropName="vw_deficientes" msprop:Generator_RowDeletingName="vw_deficientesRowDeleting" msprop:Generator_RowChangingName="vw_deficientesRowChanging" msprop:Generator_RowEvHandlerName="vw_deficientesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_deficientesRowDeleted" msprop:Generator_UserTableName="vw_deficientes" msprop:Generator_RowChangedName="vw_deficientesRowChanged" msprop:Generator_RowEvArgName="vw_deficientesRowChangeEvent" msprop:Generator_RowClassName="vw_deficientesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodAluno" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodAluno" msprop:Generator_ColumnPropNameInRow="CodAluno" msprop:Generator_ColumnPropNameInTable="CodAlunoColumn" msprop:Generator_UserColumnName="CodAluno" type="xs:int" />
@@ -2025,7 +2162,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_distanciaaluno" msprop:Generator_TableClassName="vw_distanciaalunoDataTable" msprop:Generator_TableVarName="tablevw_distanciaaluno" msprop:Generator_TablePropName="vw_distanciaaluno" msprop:Generator_RowDeletingName="vw_distanciaalunoRowDeleting" msprop:Generator_RowChangingName="vw_distanciaalunoRowChanging" msprop:Generator_RowEvHandlerName="vw_distanciaalunoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_distanciaalunoRowDeleted" msprop:Generator_UserTableName="vw_distanciaaluno" msprop:Generator_RowChangedName="vw_distanciaalunoRowChanged" msprop:Generator_RowEvArgName="vw_distanciaalunoRowChangeEvent" msprop:Generator_RowClassName="vw_distanciaalunoRow">
+        <xs:element name="vw_distanciaaluno" msprop:Generator_TableClassName="vw_distanciaalunoDataTable" msprop:Generator_TableVarName="tablevw_distanciaaluno" msprop:Generator_RowChangedName="vw_distanciaalunoRowChanged" msprop:Generator_TablePropName="vw_distanciaaluno" msprop:Generator_RowDeletingName="vw_distanciaalunoRowDeleting" msprop:Generator_RowChangingName="vw_distanciaalunoRowChanging" msprop:Generator_RowEvHandlerName="vw_distanciaalunoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_distanciaalunoRowDeleted" msprop:Generator_RowClassName="vw_distanciaalunoRow" msprop:Generator_UserTableName="vw_distanciaaluno" msprop:Generator_RowEvArgName="vw_distanciaalunoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoSolicitacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigoSolicitacao" msprop:Generator_ColumnPropNameInRow="CodigoSolicitacao" msprop:Generator_ColumnPropNameInTable="CodigoSolicitacaoColumn" msprop:Generator_UserColumnName="CodigoSolicitacao" type="xs:int" />
@@ -2057,7 +2194,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_num_instituicoes" msprop:Generator_TableClassName="vw_num_instituicoesDataTable" msprop:Generator_TableVarName="tablevw_num_instituicoes" msprop:Generator_RowChangedName="vw_num_instituicoesRowChanged" msprop:Generator_TablePropName="vw_num_instituicoes" msprop:Generator_RowDeletingName="vw_num_instituicoesRowDeleting" msprop:Generator_RowChangingName="vw_num_instituicoesRowChanging" msprop:Generator_RowEvHandlerName="vw_num_instituicoesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_num_instituicoesRowDeleted" msprop:Generator_RowClassName="vw_num_instituicoesRow" msprop:Generator_UserTableName="vw_num_instituicoes" msprop:Generator_RowEvArgName="vw_num_instituicoesRowChangeEvent">
+        <xs:element name="vw_num_instituicoes" msprop:Generator_TableClassName="vw_num_instituicoesDataTable" msprop:Generator_TableVarName="tablevw_num_instituicoes" msprop:Generator_TablePropName="vw_num_instituicoes" msprop:Generator_RowDeletingName="vw_num_instituicoesRowDeleting" msprop:Generator_RowChangingName="vw_num_instituicoesRowChanging" msprop:Generator_RowEvHandlerName="vw_num_instituicoesRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_num_instituicoesRowDeleted" msprop:Generator_UserTableName="vw_num_instituicoes" msprop:Generator_RowChangedName="vw_num_instituicoesRowChanged" msprop:Generator_RowEvArgName="vw_num_instituicoesRowChangeEvent" msprop:Generator_RowClassName="vw_num_instituicoesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Mantenedor" msprop:Generator_ColumnVarNameInTable="columnMantenedor" msprop:Generator_ColumnPropNameInRow="Mantenedor" msprop:Generator_ColumnPropNameInTable="MantenedorColumn" msprop:Generator_UserColumnName="Mantenedor">
@@ -2071,7 +2208,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_num_encaminhados" msprop:Generator_TableClassName="vw_num_encaminhadosDataTable" msprop:Generator_TableVarName="tablevw_num_encaminhados" msprop:Generator_RowChangedName="vw_num_encaminhadosRowChanged" msprop:Generator_TablePropName="vw_num_encaminhados" msprop:Generator_RowDeletingName="vw_num_encaminhadosRowDeleting" msprop:Generator_RowChangingName="vw_num_encaminhadosRowChanging" msprop:Generator_RowEvHandlerName="vw_num_encaminhadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_num_encaminhadosRowDeleted" msprop:Generator_RowClassName="vw_num_encaminhadosRow" msprop:Generator_UserTableName="vw_num_encaminhados" msprop:Generator_RowEvArgName="vw_num_encaminhadosRowChangeEvent">
+        <xs:element name="vw_num_encaminhados" msprop:Generator_TableClassName="vw_num_encaminhadosDataTable" msprop:Generator_TableVarName="tablevw_num_encaminhados" msprop:Generator_TablePropName="vw_num_encaminhados" msprop:Generator_RowDeletingName="vw_num_encaminhadosRowDeleting" msprop:Generator_RowChangingName="vw_num_encaminhadosRowChanging" msprop:Generator_RowEvHandlerName="vw_num_encaminhadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_num_encaminhadosRowDeleted" msprop:Generator_UserTableName="vw_num_encaminhados" msprop:Generator_RowChangedName="vw_num_encaminhadosRowChanged" msprop:Generator_RowEvArgName="vw_num_encaminhadosRowChangeEvent" msprop:Generator_RowClassName="vw_num_encaminhadosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DataEncaminhamento" msprop:Generator_ColumnVarNameInTable="columnDataEncaminhamento" msprop:Generator_ColumnPropNameInRow="DataEncaminhamento" msprop:Generator_ColumnPropNameInTable="DataEncaminhamentoColumn" msprop:Generator_UserColumnName="DataEncaminhamento" type="xs:dateTime" minOccurs="0" />
@@ -2087,7 +2224,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_origem_solicitacao" msprop:Generator_TableClassName="vw_origem_solicitacaoDataTable" msprop:Generator_TableVarName="tablevw_origem_solicitacao" msprop:Generator_RowChangedName="vw_origem_solicitacaoRowChanged" msprop:Generator_TablePropName="vw_origem_solicitacao" msprop:Generator_RowDeletingName="vw_origem_solicitacaoRowDeleting" msprop:Generator_RowChangingName="vw_origem_solicitacaoRowChanging" msprop:Generator_RowEvHandlerName="vw_origem_solicitacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_origem_solicitacaoRowDeleted" msprop:Generator_RowClassName="vw_origem_solicitacaoRow" msprop:Generator_UserTableName="vw_origem_solicitacao" msprop:Generator_RowEvArgName="vw_origem_solicitacaoRowChangeEvent">
+        <xs:element name="vw_origem_solicitacao" msprop:Generator_TableClassName="vw_origem_solicitacaoDataTable" msprop:Generator_TableVarName="tablevw_origem_solicitacao" msprop:Generator_TablePropName="vw_origem_solicitacao" msprop:Generator_RowDeletingName="vw_origem_solicitacaoRowDeleting" msprop:Generator_RowChangingName="vw_origem_solicitacaoRowChanging" msprop:Generator_RowEvHandlerName="vw_origem_solicitacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_origem_solicitacaoRowDeleted" msprop:Generator_UserTableName="vw_origem_solicitacao" msprop:Generator_RowChangedName="vw_origem_solicitacaoRowChanged" msprop:Generator_RowEvArgName="vw_origem_solicitacaoRowChangeEvent" msprop:Generator_RowClassName="vw_origem_solicitacaoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="anoSolicitado" msprop:Generator_ColumnVarNameInTable="columnanoSolicitado" msprop:Generator_ColumnPropNameInRow="anoSolicitado" msprop:Generator_ColumnPropNameInTable="anoSolicitadoColumn" msprop:Generator_UserColumnName="anoSolicitado" type="xs:int" minOccurs="0" />
@@ -2102,7 +2239,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_ficha_solicitacao" msprop:Generator_TableClassName="vw_ficha_solicitacaoDataTable" msprop:Generator_TableVarName="tablevw_ficha_solicitacao" msprop:Generator_TablePropName="vw_ficha_solicitacao" msprop:Generator_RowDeletingName="vw_ficha_solicitacaoRowDeleting" msprop:Generator_RowChangingName="vw_ficha_solicitacaoRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_solicitacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_solicitacaoRowDeleted" msprop:Generator_UserTableName="vw_ficha_solicitacao" msprop:Generator_RowChangedName="vw_ficha_solicitacaoRowChanged" msprop:Generator_RowEvArgName="vw_ficha_solicitacaoRowChangeEvent" msprop:Generator_RowClassName="vw_ficha_solicitacaoRow">
+        <xs:element name="vw_ficha_solicitacao" msprop:Generator_TableClassName="vw_ficha_solicitacaoDataTable" msprop:Generator_TableVarName="tablevw_ficha_solicitacao" msprop:Generator_RowChangedName="vw_ficha_solicitacaoRowChanged" msprop:Generator_TablePropName="vw_ficha_solicitacao" msprop:Generator_RowDeletingName="vw_ficha_solicitacaoRowDeleting" msprop:Generator_RowChangingName="vw_ficha_solicitacaoRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_solicitacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_solicitacaoRowDeleted" msprop:Generator_RowClassName="vw_ficha_solicitacaoRow" msprop:Generator_UserTableName="vw_ficha_solicitacao" msprop:Generator_RowEvArgName="vw_ficha_solicitacaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
@@ -2326,7 +2463,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_ficha_encaminhamento" msprop:Generator_TableClassName="vw_ficha_encaminhamentoDataTable" msprop:Generator_TableVarName="tablevw_ficha_encaminhamento" msprop:Generator_RowChangedName="vw_ficha_encaminhamentoRowChanged" msprop:Generator_TablePropName="vw_ficha_encaminhamento" msprop:Generator_RowDeletingName="vw_ficha_encaminhamentoRowDeleting" msprop:Generator_RowChangingName="vw_ficha_encaminhamentoRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_encaminhamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_encaminhamentoRowDeleted" msprop:Generator_RowClassName="vw_ficha_encaminhamentoRow" msprop:Generator_UserTableName="vw_ficha_encaminhamento" msprop:Generator_RowEvArgName="vw_ficha_encaminhamentoRowChangeEvent">
+        <xs:element name="vw_ficha_encaminhamento" msprop:Generator_TableClassName="vw_ficha_encaminhamentoDataTable" msprop:Generator_TableVarName="tablevw_ficha_encaminhamento" msprop:Generator_TablePropName="vw_ficha_encaminhamento" msprop:Generator_RowDeletingName="vw_ficha_encaminhamentoRowDeleting" msprop:Generator_RowChangingName="vw_ficha_encaminhamentoRowChanging" msprop:Generator_RowEvHandlerName="vw_ficha_encaminhamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ficha_encaminhamentoRowDeleted" msprop:Generator_UserTableName="vw_ficha_encaminhamento" msprop:Generator_RowChangedName="vw_ficha_encaminhamentoRowChanged" msprop:Generator_RowEvArgName="vw_ficha_encaminhamentoRowChangeEvent" msprop:Generator_RowClassName="vw_ficha_encaminhamentoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
@@ -2398,7 +2535,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_comprovacao_endereco" msprop:Generator_TableClassName="vw_comprovacao_enderecoDataTable" msprop:Generator_TableVarName="tablevw_comprovacao_endereco" msprop:Generator_RowChangedName="vw_comprovacao_enderecoRowChanged" msprop:Generator_TablePropName="vw_comprovacao_endereco" msprop:Generator_RowDeletingName="vw_comprovacao_enderecoRowDeleting" msprop:Generator_RowChangingName="vw_comprovacao_enderecoRowChanging" msprop:Generator_RowEvHandlerName="vw_comprovacao_enderecoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_comprovacao_enderecoRowDeleted" msprop:Generator_RowClassName="vw_comprovacao_enderecoRow" msprop:Generator_UserTableName="vw_comprovacao_endereco" msprop:Generator_RowEvArgName="vw_comprovacao_enderecoRowChangeEvent">
+        <xs:element name="vw_comprovacao_endereco" msprop:Generator_TableClassName="vw_comprovacao_enderecoDataTable" msprop:Generator_TableVarName="tablevw_comprovacao_endereco" msprop:Generator_TablePropName="vw_comprovacao_endereco" msprop:Generator_RowDeletingName="vw_comprovacao_enderecoRowDeleting" msprop:Generator_RowChangingName="vw_comprovacao_enderecoRowChanging" msprop:Generator_RowEvHandlerName="vw_comprovacao_enderecoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_comprovacao_enderecoRowDeleted" msprop:Generator_UserTableName="vw_comprovacao_endereco" msprop:Generator_RowChangedName="vw_comprovacao_enderecoRowChanged" msprop:Generator_RowEvArgName="vw_comprovacao_enderecoRowChangeEvent" msprop:Generator_RowClassName="vw_comprovacao_enderecoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
@@ -2475,7 +2612,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_transporte" msprop:Generator_TableClassName="vw_transporteDataTable" msprop:Generator_TableVarName="tablevw_transporte" msprop:Generator_RowChangedName="vw_transporteRowChanged" msprop:Generator_TablePropName="vw_transporte" msprop:Generator_RowDeletingName="vw_transporteRowDeleting" msprop:Generator_RowChangingName="vw_transporteRowChanging" msprop:Generator_RowEvHandlerName="vw_transporteRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_transporteRowDeleted" msprop:Generator_RowClassName="vw_transporteRow" msprop:Generator_UserTableName="vw_transporte" msprop:Generator_RowEvArgName="vw_transporteRowChangeEvent">
+        <xs:element name="vw_transporte" msprop:Generator_TableClassName="vw_transporteDataTable" msprop:Generator_TableVarName="tablevw_transporte" msprop:Generator_TablePropName="vw_transporte" msprop:Generator_RowDeletingName="vw_transporteRowDeleting" msprop:Generator_RowChangingName="vw_transporteRowChanging" msprop:Generator_RowEvHandlerName="vw_transporteRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_transporteRowDeleted" msprop:Generator_UserTableName="vw_transporte" msprop:Generator_RowChangedName="vw_transporteRowChanged" msprop:Generator_RowEvArgName="vw_transporteRowChangeEvent" msprop:Generator_RowClassName="vw_transporteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
@@ -2669,6 +2806,189 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ofertaensinopivot" msprop:Generator_TableClassName="ofertaensinopivotDataTable" msprop:Generator_TableVarName="tableofertaensinopivot" msprop:Generator_TablePropName="ofertaensinopivot" msprop:Generator_RowDeletingName="ofertaensinopivotRowDeleting" msprop:Generator_RowChangingName="ofertaensinopivotRowChanging" msprop:Generator_RowEvHandlerName="ofertaensinopivotRowChangeEventHandler" msprop:Generator_RowDeletedName="ofertaensinopivotRowDeleted" msprop:Generator_UserTableName="ofertaensinopivot" msprop:Generator_RowChangedName="ofertaensinopivotRowChanged" msprop:Generator_RowEvArgName="ofertaensinopivotRowChangeEvent" msprop:Generator_RowClassName="ofertaensinopivotRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idInstituicao" msprop:Generator_ColumnVarNameInTable="columnidInstituicao" msprop:Generator_ColumnPropNameInRow="idInstituicao" msprop:Generator_ColumnPropNameInTable="idInstituicaoColumn" msprop:Generator_UserColumnName="idInstituicao" type="xs:int" minOccurs="0" />
+              <xs:element name="mantenedor" msprop:Generator_ColumnVarNameInTable="columnmantenedor" msprop:Generator_ColumnPropNameInRow="mantenedor" msprop:Generator_ColumnPropNameInTable="mantenedorColumn" msprop:Generator_UserColumnName="mantenedor" type="xs:int" minOccurs="0" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoA" msprop:Generator_ColumnVarNameInTable="columnanoA" msprop:Generator_ColumnPropNameInRow="anoA" msprop:Generator_ColumnPropNameInTable="anoAColumn" msprop:Generator_UserColumnName="anoA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoB" msprop:Generator_ColumnVarNameInTable="columnanoB" msprop:Generator_ColumnPropNameInRow="anoB" msprop:Generator_ColumnPropNameInTable="anoBColumn" msprop:Generator_UserColumnName="anoB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoC" msprop:Generator_ColumnVarNameInTable="columnanoC" msprop:Generator_ColumnPropNameInRow="anoC" msprop:Generator_ColumnPropNameInTable="anoCColumn" msprop:Generator_UserColumnName="anoC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoD" msprop:Generator_ColumnVarNameInTable="columnanoD" msprop:Generator_ColumnPropNameInRow="anoD" msprop:Generator_ColumnPropNameInTable="anoDColumn" msprop:Generator_UserColumnName="anoD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoE" msprop:Generator_ColumnVarNameInTable="columnanoE" msprop:Generator_ColumnPropNameInRow="anoE" msprop:Generator_ColumnPropNameInTable="anoEColumn" msprop:Generator_UserColumnName="anoE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoF" msprop:Generator_ColumnVarNameInTable="columnanoF" msprop:Generator_ColumnPropNameInRow="anoF" msprop:Generator_ColumnPropNameInTable="anoFColumn" msprop:Generator_UserColumnName="anoF" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoG" msprop:Generator_ColumnVarNameInTable="columnanoG" msprop:Generator_ColumnPropNameInRow="anoG" msprop:Generator_ColumnPropNameInTable="anoGColumn" msprop:Generator_UserColumnName="anoG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoH" msprop:Generator_ColumnVarNameInTable="columnanoH" msprop:Generator_ColumnPropNameInRow="anoH" msprop:Generator_ColumnPropNameInTable="anoHColumn" msprop:Generator_UserColumnName="anoH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoI" msprop:Generator_ColumnVarNameInTable="columnanoI" msprop:Generator_ColumnPropNameInRow="anoI" msprop:Generator_ColumnPropNameInTable="anoIColumn" msprop:Generator_UserColumnName="anoI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoJ" msprop:Generator_ColumnVarNameInTable="columnanoJ" msprop:Generator_ColumnPropNameInRow="anoJ" msprop:Generator_ColumnPropNameInTable="anoJColumn" msprop:Generator_UserColumnName="anoJ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoK" msprop:Generator_ColumnVarNameInTable="columnanoK" msprop:Generator_ColumnPropNameInRow="anoK" msprop:Generator_ColumnPropNameInTable="anoKColumn" msprop:Generator_UserColumnName="anoK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoL" msprop:Generator_ColumnVarNameInTable="columnanoL" msprop:Generator_ColumnPropNameInRow="anoL" msprop:Generator_ColumnPropNameInTable="anoLColumn" msprop:Generator_UserColumnName="anoL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoM" msprop:Generator_ColumnVarNameInTable="columnanoM" msprop:Generator_ColumnPropNameInRow="anoM" msprop:Generator_ColumnPropNameInTable="anoMColumn" msprop:Generator_UserColumnName="anoM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoN" msprop:Generator_ColumnVarNameInTable="columnanoN" msprop:Generator_ColumnPropNameInRow="anoN" msprop:Generator_ColumnPropNameInTable="anoNColumn" msprop:Generator_UserColumnName="anoN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoO" msprop:Generator_ColumnVarNameInTable="columnanoO" msprop:Generator_ColumnPropNameInRow="anoO" msprop:Generator_ColumnPropNameInTable="anoOColumn" msprop:Generator_UserColumnName="anoO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoP" msprop:Generator_ColumnVarNameInTable="columnanoP" msprop:Generator_ColumnPropNameInRow="anoP" msprop:Generator_ColumnPropNameInTable="anoPColumn" msprop:Generator_UserColumnName="anoP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoQ" msprop:Generator_ColumnVarNameInTable="columnanoQ" msprop:Generator_ColumnPropNameInRow="anoQ" msprop:Generator_ColumnPropNameInTable="anoQColumn" msprop:Generator_UserColumnName="anoQ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoR" msprop:Generator_ColumnVarNameInTable="columnanoR" msprop:Generator_ColumnPropNameInRow="anoR" msprop:Generator_ColumnPropNameInTable="anoRColumn" msprop:Generator_UserColumnName="anoR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoS" msprop:Generator_ColumnVarNameInTable="columnanoS" msprop:Generator_ColumnPropNameInRow="anoS" msprop:Generator_ColumnPropNameInTable="anoSColumn" msprop:Generator_UserColumnName="anoS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoT" msprop:Generator_ColumnVarNameInTable="columnanoT" msprop:Generator_ColumnPropNameInRow="anoT" msprop:Generator_ColumnPropNameInTable="anoTColumn" msprop:Generator_UserColumnName="anoT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoU" msprop:Generator_ColumnVarNameInTable="columnanoU" msprop:Generator_ColumnPropNameInRow="anoU" msprop:Generator_ColumnPropNameInTable="anoUColumn" msprop:Generator_UserColumnName="anoU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoV" msprop:Generator_ColumnVarNameInTable="columnanoV" msprop:Generator_ColumnPropNameInRow="anoV" msprop:Generator_ColumnPropNameInTable="anoVColumn" msprop:Generator_UserColumnName="anoV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoX" msprop:Generator_ColumnVarNameInTable="columnanoX" msprop:Generator_ColumnPropNameInRow="anoX" msprop:Generator_ColumnPropNameInTable="anoXColumn" msprop:Generator_UserColumnName="anoX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anoW" msprop:Generator_ColumnVarNameInTable="columnanoW" msprop:Generator_ColumnPropNameInRow="anoW" msprop:Generator_ColumnPropNameInTable="anoWColumn" msprop:Generator_UserColumnName="anoW" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
