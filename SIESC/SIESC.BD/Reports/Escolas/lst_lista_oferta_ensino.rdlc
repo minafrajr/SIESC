@@ -59,7 +59,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="SIESC " &amp; Year(Now())</Value>
+                    <Value>="SOLICITAÇÃO DE VAGA - SIESC " &amp; Year(Now())</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -106,8 +106,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>0.98889cm</Top>
-            <Left>5.57953cm</Left>
+            <Top>0.91833cm</Top>
+            <Left>5.02391cm</Left>
             <Height>0.6cm</Height>
             <Width>9.85541cm</Width>
             <ZIndex>1</ZIndex>
@@ -128,12 +128,12 @@
                   <Width>3.83497cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.77cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.46771cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -146,6 +146,7 @@
                                 <TextRun>
                                   <Value>ANO DE ENSINO</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -199,6 +200,7 @@
                                 <TextRun>
                                   <Value>TURNO</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -244,7 +246,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.68005cm</Height>
+                  <Height>0.46838cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -379,6 +381,7 @@
                               <TextRun>
                                 <Value>NOME DA INSTITUIÇÃO</Value>
                                 <Style>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -424,7 +427,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>7.6962cm</Size>
+                        <Size>6.4262cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox22">
                             <CanGrow>true</CanGrow>
@@ -435,6 +438,7 @@
                                   <TextRun>
                                     <Value>NÍVEL DE ENSINO</Value>
                                     <Style>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -564,7 +568,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>7.6962cm</Size>
+                            <Size>6.4262cm</Size>
                             <CellContents>
                               <Textbox Name="nivel1">
                                 <CanGrow>true</CanGrow>
@@ -631,9 +635,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsListas</DataSetName>
-            <Top>1.89465cm</Top>
+            <Top>1.62417cm</Top>
             <Left>0.15557cm</Left>
-            <Height>1.28005cm</Height>
+            <Height>0.93609cm</Height>
             <Width>19.70935cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -643,7 +647,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.24988in</Height>
+        <Height>1.05197in</Height>
         <Style />
       </Body>
       <Width>7.86759in</Width>
@@ -735,7 +739,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.55494cm</Height>
+          <Height>0.46771cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
