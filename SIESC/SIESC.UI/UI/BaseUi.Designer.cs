@@ -2,7 +2,7 @@
 
 namespace SIESC.UI
 {
-    partial class BaseUi:Form
+    partial class BaseUi
     {
         /// <summary>
         /// Required designer variable.

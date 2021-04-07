@@ -173,9 +173,9 @@
       <DependentUpon>dsListas.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\dsListas.Designer.cs">
-      <DependentUpon>dsListas.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dsListas.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\dsRelatorios.cs">
       <DependentUpon>dsRelatorios.xsd</DependentUpon>
@@ -220,6 +220,10 @@
     <EmbeddedResource Include="Reports\Carteirinha\rpt_cart_autori.rdlc" />
     <EmbeddedResource Include="Reports\Encaminhamentos\rpt_distanciaalunos.rdlc" />
     <EmbeddedResource Include="Reports\Encaminhamentos\rpt_estatisticas_encaminhamento.rdlc" />
+    <EmbeddedResource Include="Reports\Escolas\lst_lista_oferta_ensino_eja.rdlc" />
+    <EmbeddedResource Include="Reports\Escolas\lst_lista_oferta_ensino_estadual.rdlc" />
+    <EmbeddedResource Include="Reports\Escolas\lst_lista_oferta_eudcacao_infantil.rdlc" />
+    <EmbeddedResource Include="Reports\Escolas\lst_lista_oferta_ensino_fundamental.rdlc" />
     <EmbeddedResource Include="Reports\Escolas\lst_lista_oferta_ensino.rdlc" />
     <EmbeddedResource Include="Reports\Escolas\rpt_num_intituicoes.rdlc" />
     <EmbeddedResource Include="Reports\Escolas\lst_Contatos_Escolas1.rdlc" />

@@ -5,9 +5,6 @@
       <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString2" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_controlesolicitacoesTableAdapter" GeneratorDataComponentClassName="vw_controlesolicitacoesTableAdapter" Name="vw_controlesolicitacoes" UserDataComponentName="vw_controlesolicitacoesTableAdapter">
@@ -1394,6 +1391,38 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOfertaEnsinoAnosFinais" GetMethodModifier="Public" GetMethodName="GetDataOfertaEnsinoAnosFinais" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOfertaEnsinoAnosFinais" UserSourceName="GetDataOfertaEnsinoAnosFinais">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 1) AND (anoF IS NOT NULL) AND (anoG IS NOT NULL) AND (anoH IS NOT NULL) AND (anoI IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOfertaEnsinoEJA" GetMethodModifier="Public" GetMethodName="GetDataOfertaEnsinoEJA" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOfertaEnsinoEJA" UserSourceName="GetDataOfertaEnsinoEJA">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoQ, anoR, anoS, anoT, anoU, anoV
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 1) AND (anoU IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOfertaEnsinoInfantil" GetMethodModifier="Public" GetMethodName="GetDataOfertaEnsinoInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOfertaEnsinoInfantil" UserSourceName="GetDataOfertaEnsinoInfantil">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoM, anoN, anoO, anoP, anoV, anoX, anoW
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 4) OR
+                         (mantenedor = 3)
+ORDER BY mantenedor, nome</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoAnosIniciais" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoAnosIniciais" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoAnosIniciais" UserSourceName="GetOfertaEnsinoAnosIniciais">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1427,7 +1456,7 @@ WHERE        (mantenedor = 2)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.ofertaensinopivot" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOfertaEnsinoByMunicipais" GetMethodModifier="Public" GetMethodName="GetOfertaEnsinoByMunicipais" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOfertaEnsinoByMunicipais" UserSourceName="GetOfertaEnsinoByMunicipais">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI, anoJ, anoK, anoL, anoQ, anoR, anoS, anoT, anoU, anoV
+                    <CommandText>SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI
 FROM            ofertaensinopivot
 WHERE        (mantenedor = 1)</CommandText>
                     <Parameters />

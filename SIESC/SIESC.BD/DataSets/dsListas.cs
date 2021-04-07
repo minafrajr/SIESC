@@ -2,7 +2,7 @@
 {
 
 
-    partial class dsListas
-    {
-    }
+	partial class dsListas
+	{
+	}
 }

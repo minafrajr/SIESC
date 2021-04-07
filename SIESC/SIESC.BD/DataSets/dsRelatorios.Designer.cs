@@ -24706,7 +24706,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[7];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[10];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT `idInstituicao`, `mantenedor`, `nome`, `anoA`, `anoB`, `anoC`, `anoD`, `anoE`, `anoF`, `anoG`, `anoH`, `anoI`, `anoJ`, `anoK`, `anoL`, `anoM`, `anoN`, `anoO`, `anoP`, `anoQ`, `anoR`, `anoS`, `anoT`, `anoU`, `anoV`, `anoX`, `anoW` FROM `ofertaensinopivot`";
@@ -24717,32 +24717,50 @@ WHERE        (codigo = @idSolicitacao)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE\r\nFROM" +
-                "            ofertaensinopivot\r\nWHERE        (anoF IS NULL) AND (anoG IS NULL) AN" +
-                "D (anoH IS NULL) AND (anoI IS NULL) AND (mantenedor = 1)";
+            this._commandCollection[2].CommandText = @"SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF, anoG, anoH, anoI
+FROM            ofertaensinopivot
+WHERE        (mantenedor = 1) AND (anoF IS NOT NULL) AND (anoG IS NOT NULL) AND (anoH IS NOT NULL) AND (anoI IS NOT NULL)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        idInstituicao, mantenedor,nome, anoM, anoN, anoO, anoP, anoV, anoX," +
-                " anoW\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 3)";
+            this._commandCollection[3].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoQ, anoR, anoS, anoT, anoU, anoV" +
+                "\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 1) AND (anoU IS " +
+                "NOT NULL)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF" +
-                ", anoG, anoH, anoI, anoJ, anoK, anoL\r\nFROM            ofertaensinopivot\r\nWHERE  " +
-                "      (mantenedor = 2)";
+            this._commandCollection[4].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoM, anoN, anoO, anoP, anoV, anoX" +
+                ", anoW\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 4) OR\r\n   " +
+                "                      (mantenedor = 3)\r\nORDER BY mantenedor, nome";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF" +
-                ", anoG, anoH, anoI, anoJ, anoK, anoL, anoQ, anoR, anoS, anoT, anoU, anoV\r\nFROM  " +
-                "          ofertaensinopivot\r\nWHERE        (mantenedor = 1)";
+            this._commandCollection[5].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE\r\nFROM" +
+                "            ofertaensinopivot\r\nWHERE        (anoF IS NULL) AND (anoG IS NULL) AN" +
+                "D (anoH IS NULL) AND (anoI IS NULL) AND (mantenedor = 1)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoM, anoN, anoO, anoP, anoV, anoX" +
-                ", anoW\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 4)";
+            this._commandCollection[6].CommandText = "SELECT        idInstituicao, mantenedor,nome, anoM, anoN, anoO, anoP, anoV, anoX," +
+                " anoW\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 3)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF" +
+                ", anoG, anoH, anoI, anoJ, anoK, anoL\r\nFROM            ofertaensinopivot\r\nWHERE  " +
+                "      (mantenedor = 2)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoA, anoB, anoC, anoD, anoE, anoF" +
+                ", anoG, anoH, anoI\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor " +
+                "= 1)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "SELECT        idInstituicao, mantenedor, nome, anoM, anoN, anoO, anoP, anoV, anoX" +
+                ", anoW\r\nFROM            ofertaensinopivot\r\nWHERE        (mantenedor = 4)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24773,7 +24791,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoAnosIniciais() {
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetDataOfertaEnsinoAnosFinais() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
             this.Adapter.Fill(dataTable);
@@ -24784,7 +24802,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByCims() {
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetDataOfertaEnsinoEJA() {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
             this.Adapter.Fill(dataTable);
@@ -24795,7 +24813,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByEstadual() {
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetDataOfertaEnsinoInfantil() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
             this.Adapter.Fill(dataTable);
@@ -24806,7 +24824,7 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByMunicipais() {
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoAnosIniciais() {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
             this.Adapter.Fill(dataTable);
@@ -24817,8 +24835,41 @@ WHERE        (codigo = @idSolicitacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByParceiras() {
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByCims() {
             this.Adapter.SelectCommand = this.CommandCollection[6];
+            dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByEstadual() {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByMunicipais() {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
+            dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRelatorios.ofertaensinopivotDataTable GetOfertaEnsinoByParceiras() {
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             dsRelatorios.ofertaensinopivotDataTable dataTable = new dsRelatorios.ofertaensinopivotDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

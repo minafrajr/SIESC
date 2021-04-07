@@ -400,11 +400,11 @@
     <Compile Include="UI\Relatorios\frm_comprovante_endereco.Designer.cs">
       <DependentUpon>frm_comprovante_endereco.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Relatorios\frm_lista_oferta.cs">
+    <Compile Include="UI\Relatorios\frm_lista_oferta_ensino.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Relatorios\frm_lista_oferta.Designer.cs">
-      <DependentUpon>frm_lista_oferta.cs</DependentUpon>
+    <Compile Include="UI\Relatorios\frm_lista_oferta_ensino.Designer.cs">
+      <DependentUpon>frm_lista_oferta_ensino.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Relatorios\frm_relatorio_instituicoes.cs">
       <SubType>Form</SubType>
@@ -634,8 +634,8 @@
     <EmbeddedResource Include="UI\Relatorios\frm_comprovante_endereco.resx">
       <DependentUpon>frm_comprovante_endereco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Relatorios\frm_lista_oferta.resx">
-      <DependentUpon>frm_lista_oferta.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Relatorios\frm_lista_oferta_ensino.resx">
+      <DependentUpon>frm_lista_oferta_ensino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Relatorios\frm_relatorio_instituicoes.resx">
       <DependentUpon>frm_relatorio_instituicoes.cs</DependentUpon>
