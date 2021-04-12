@@ -1731,20 +1731,16 @@ namespace SIESC.UI
 		/// <param name="e"></param>
 		private void tsm_geral_alunos_instituicao_Click(object sender, EventArgs e)
 		{
-			var t = CarregaProgressoThread();
 			try
 			{
 				frm_alunosporescola frm = new frm_alunosporescola(this, 3);
 				frm.MdiParent = this;
 				frm.Show();
-				if (t.IsAlive) t.Abort();
 			}
 			catch (Exception ex)
 			{
-				if (t.IsAlive) t.Abort();
 				Mensageiro.MensagemErro(ex, this);
 			}
-
 		}
 		/// <summary>
 		/// Abre o relatório de número de solicitações por dia
