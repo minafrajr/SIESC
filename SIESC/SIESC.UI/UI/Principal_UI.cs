@@ -2599,5 +2599,10 @@ namespace SIESC.UI
 				Mensageiro.MensagemErro(ex, this);
 			}
 		}
+
+		private void toolStripTextBox10_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

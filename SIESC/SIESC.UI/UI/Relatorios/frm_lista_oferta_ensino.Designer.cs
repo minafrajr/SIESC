@@ -88,7 +88,6 @@ namespace SIESC.UI.UI.Relatorios
 			this.lbl_tipo_relatorio.Size = new System.Drawing.Size(99, 14);
 			this.lbl_tipo_relatorio.TabIndex = 4;
 			this.lbl_tipo_relatorio.Text = "Tipo de Relatório:";
-			this.lbl_tipo_relatorio.Visible = false;
 			// 
 			// cbo_tipo_relatorio
 			// 
@@ -98,7 +97,6 @@ namespace SIESC.UI.UI.Relatorios
 			this.cbo_tipo_relatorio.Name = "cbo_tipo_relatorio";
 			this.cbo_tipo_relatorio.Size = new System.Drawing.Size(338, 22);
 			this.cbo_tipo_relatorio.TabIndex = 3;
-			this.cbo_tipo_relatorio.Visible = false;
 			// 
 			// label1
 			// 

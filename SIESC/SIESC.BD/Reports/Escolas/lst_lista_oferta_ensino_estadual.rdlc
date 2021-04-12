@@ -178,43 +178,43 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.01833cm</Width>
+                  <Width>4.16818cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>1.95102cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -232,7 +232,7 @@
                                 <TextRun>
                                   <Value>INSTITUIÇÃO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -268,7 +268,7 @@
                                 <TextRun>
                                   <Value>1º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -304,7 +304,7 @@
                                 <TextRun>
                                   <Value>2º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -340,7 +340,7 @@
                                 <TextRun>
                                   <Value>3º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -376,7 +376,7 @@
                                 <TextRun>
                                   <Value>4º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -412,7 +412,7 @@
                                 <TextRun>
                                   <Value>5º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -448,7 +448,7 @@
                                 <TextRun>
                                   <Value>6º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -484,7 +484,7 @@
                                 <TextRun>
                                   <Value>7º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -520,7 +520,7 @@
                                 <TextRun>
                                   <Value>8º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -556,7 +556,7 @@
                                 <TextRun>
                                   <Value>9º ANO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -592,7 +592,7 @@
                                 <TextRun>
                                   <Value>1º ANO-ENS MÉDIO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -628,7 +628,7 @@
                                 <TextRun>
                                   <Value>2º ANO-ENS MÉDIO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -664,7 +664,7 @@
                                 <TextRun>
                                   <Value>3º ANO-ENS MÉDIO</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -705,7 +705,7 @@
                                 <TextRun>
                                   <Value>=Fields!nome.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -737,7 +737,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoA.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -772,7 +772,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoB.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -807,7 +807,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoC.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -842,7 +842,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoD.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -877,7 +877,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoE.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -912,7 +912,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoF.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -947,7 +947,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoG.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -982,7 +982,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoH.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1017,7 +1017,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoI.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1052,7 +1052,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoJ.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1087,7 +1087,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoK.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1122,7 +1122,7 @@
                                 <TextRun>
                                   <Value>=Fields!anoL.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1171,6 +1171,7 @@
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalhes" />
@@ -1181,7 +1182,7 @@
             <Top>0.9175cm</Top>
             <Left>0.07745cm</Left>
             <Height>1.437cm</Height>
-            <Width>34.11333cm</Width>
+            <Width>27.58041cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1193,7 +1194,7 @@
         <Height>0.92697in</Height>
         <Style />
       </Body>
-      <Width>13.49752in</Width>
+      <Width>10.88892in</Width>
       <Page>
         <PageHeader>
           <Height>2.1503cm</Height>
@@ -1282,7 +1283,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.52832cm</Height>
+          <Height>0.52833cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1305,7 +1306,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.06061cm</Top>
+              <Top>0.06062cm</Top>
               <Height>0.46771cm</Height>
               <Width>5.83375cm</Width>
               <Style>
@@ -1337,7 +1338,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Left>27.78998cm</Left>
+              <Left>21.25706cm</Left>
               <Height>0.46771cm</Height>
               <Width>6.4008cm</Width>
               <ZIndex>1</ZIndex>

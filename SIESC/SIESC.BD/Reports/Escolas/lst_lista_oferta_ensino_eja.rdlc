@@ -161,7 +161,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>0.14111cm</Top>
-            <Left>5.57481cm</Left>
+            <Left>4.99273cm</Left>
             <Height>0.6cm</Height>
             <Width>10.81201cm</Width>
             <Style>
@@ -178,19 +178,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.30187cm</Width>
+                  <Width>6.38875cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.16896cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.16958cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.87791cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.1825cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -475,7 +475,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>nome</rd:DefaultName>
@@ -484,6 +486,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -721,6 +724,7 @@
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalhes" />
@@ -731,7 +735,7 @@
             <Top>0.9175cm</Top>
             <Left>0.07745cm</Left>
             <Height>1.2cm</Height>
-            <Width>22.30187cm</Width>
+            <Width>19.7877cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -743,7 +747,7 @@
         <Height>0.85405in</Height>
         <Style />
       </Body>
-      <Width>8.84127in</Width>
+      <Width>7.85169in</Width>
       <Page>
         <PageHeader>
           <Height>2.1503cm</Height>
@@ -832,7 +836,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.52832cm</Height>
+          <Height>0.58011cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -855,7 +859,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.06061cm</Top>
+              <Top>0.1124cm</Top>
               <Height>0.46771cm</Height>
               <Width>5.83375cm</Width>
               <Style>
@@ -887,8 +891,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0cm</Top>
-              <Left>15.97852cm</Left>
+              <Left>13.46435cm</Left>
               <Height>0.46771cm</Height>
               <Width>6.4008cm</Width>
               <ZIndex>1</ZIndex>

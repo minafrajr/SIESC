@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Drawing.Printing;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using SIESC.MODEL.Classes;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
@@ -17,10 +12,13 @@ namespace SIESC.UI.UI.Relatorios
 	/// </summary>
 	internal enum TipoRelatorio
 	{
-		Eja , AnosIniciais , AnosFinais,EnsinoFundamental,Cims , Parceiras,EducacaoInfantil ,
+		Eja, AnosIniciais, AnosFinais, EnsinoFundamental, Cims, Parceiras, EducacaoInfantil,
 		Estadual
 	}
 
+	/// <summary>
+	/// Formulário de oferta de ano ensino detalhado
+	/// </summary>
 	public partial class frm_lista_oferta_ensino : SIESC.UI.BaseUi
 	{
 		private TipoRelatorio relatorio;
@@ -28,14 +26,14 @@ namespace SIESC.UI.UI.Relatorios
 		private readonly Principal_UI principalUi;
 
 		/// <summary>
-		/// 
+		/// As margens do relatório
 		/// </summary>
 		private Margins margins = new Margins(2, 2, 2, 2);
 
 		//Configurando as margens
 
 		/// <summary>
-		/// 
+		/// O setting da página
 		/// </summary>
 		private PageSettings pg = new PageSettings() { Landscape = true };
 
@@ -52,8 +50,8 @@ namespace SIESC.UI.UI.Relatorios
 		{
 			InitializeComponent();
 			this.principalUi = principalUi;
-
 		}
+
 		/// <summary>
 		/// Evento Load do formulário
 		/// </summary>
@@ -61,15 +59,15 @@ namespace SIESC.UI.UI.Relatorios
 		/// <param name="e"></param>
 		private void frm_lista_oferta_Load(object sender, EventArgs e)
 		{
-
 			this.rpt_viewer.RefreshReport();
+			cbo_tipo_relatorio.Items.AddRange(municipal);
 		}
+
 		/// <summary>
 		/// Define o tipo de relatório entre a Ed. Infantil e o Ens. Fundamental
 		/// </summary>
 		private void DefineTipoRelatorio()
 		{
-			
 			switch (cbo_tipo_relatorio.Text)
 			{
 				case "Anos Iniciais":
@@ -87,12 +85,10 @@ namespace SIESC.UI.UI.Relatorios
 				case "Instituições Parceiras":
 					relatorio = TipoRelatorio.Parceiras;
 					break;
-					
 				case "Todas Instituições":
 					relatorio = TipoRelatorio.EducacaoInfantil;
 					break;
 			}
-
 		}
 		/// <summary>
 		/// Configura o relatório de acordo com os parâmetros
@@ -122,7 +118,7 @@ namespace SIESC.UI.UI.Relatorios
 
 			DataTable dt = new DataTable();
 
-			ReportDataSource datasource = new ReportDataSource {Name = "dsRelatorios"};
+			ReportDataSource datasource = new ReportDataSource { Name = "dsRelatorios" };
 
 			if (ofertaensinopivotTableAdapter1.Atualiza_OfertaEnsino() <= 0) return;
 
@@ -153,7 +149,7 @@ namespace SIESC.UI.UI.Relatorios
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Escolas\\lst_lista_oferta_eudcacao_infantil.rdlc";
 					dt = ofertaensinopivotTableAdapter1.GetOfertaEnsinoByParceiras();
 					break;
-				
+
 				case TipoRelatorio.EducacaoInfantil:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Escolas\\lst_lista_oferta_eudcacao_infantil.rdlc";
 					dt = ofertaensinopivotTableAdapter1.GetDataOfertaEnsinoInfantil();
@@ -171,66 +167,91 @@ namespace SIESC.UI.UI.Relatorios
 			rpt_viewer.RefreshReport();
 		}
 
-
+		/// <summary>
+		/// Exibe a compo de tipo de relatório
+		/// </summary>
+		/// <param name="habilita"></param>
 		private void ExibeCombo(bool habilita)
 		{
 			lbl_tipo_relatorio.Visible = habilita;
 			cbo_tipo_relatorio.Visible = habilita;
 		}
+		/// <summary>
+		/// Evento de check do radio button
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void rdb_municipal_CheckedChanged(object sender, EventArgs e)
 		{
+			if (!rdb_municipal.Checked) return;
+
+			rpt_viewer.Reset();
 			ExibeCombo(rdb_municipal.Checked);
-
 			cbo_tipo_relatorio.Items.Clear();
-
-			if (rdb_municipal.Checked)
-			{
-				cbo_tipo_relatorio.Items.AddRange(municipal);
-
-			}
+			cbo_tipo_relatorio.Items.AddRange(municipal);
 		}
-
+		/// <summary>
+		/// Evento de check do radio button
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void rdb_infantil_CheckedChanged(object sender, EventArgs e)
 		{
+			if (!rdb_infantil.Checked) return;
+			
+			rpt_viewer.Reset();
 			ExibeCombo(rdb_infantil.Checked);
 			cbo_tipo_relatorio.Items.Clear();
-
-			if (rdb_infantil.Checked)
-			{
-				cbo_tipo_relatorio.Items.AddRange(infantil);
-			}
+			cbo_tipo_relatorio.Items.AddRange(infantil);
 		}
-
+		/// <summary>
+		/// Evento de check do radio button
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void rdb_eja_CheckedChanged(object sender, EventArgs e)
 		{
+			if (!rdb_eja.Checked) return;
+
+			rpt_viewer.Reset();
 			ExibeCombo(!rdb_eja.Checked);
 			relatorio = TipoRelatorio.Eja;
 		}
-
+		/// <summary>
+		/// Evento de check do radio button
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void rdb_estadual_CheckedChanged(object sender, EventArgs e)
 		{
+			if (!rdb_estadual.Checked) return;
+			
+			rpt_viewer.Reset();
 			ExibeCombo(!rdb_estadual.Checked);
 			relatorio = TipoRelatorio.Estadual;
 		}
 
-
+		/// <summary>
+		/// Evento do botão gerar relatório
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btn_gerar_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				if (cbo_tipo_relatorio.SelectedIndex == -1 && rdb_municipal.Checked && rdb_infantil.Checked)
-					throw new Exception("Não foi selecionado o tipo de relatório");
+				if (string.IsNullOrEmpty(cbo_tipo_relatorio.Text) && (rdb_municipal.Checked || rdb_infantil.Checked))
+					throw new Exception("Não foi selecionado o tipo de relatório!");
+				
+				if(rdb_municipal.Checked || rdb_infantil.Checked)
+					DefineTipoRelatorio();
 
-				DefineTipoRelatorio();
 				ConfiguraRelatorio();
 			}
 			catch (Exception ex)
 			{
 				Mensageiro.MensagemErro(ex, principalUi);
 			}
-
 		}
 	}
-
-
 }

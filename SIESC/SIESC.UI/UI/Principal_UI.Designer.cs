@@ -191,6 +191,7 @@
 			this.tsm_listarParticulares = new System.Windows.Forms.ToolStripMenuItem();
 			this.todasAsInstituiçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsm_listarTodasInstituicoes = new System.Windows.Forms.ToolStripMenuItem();
+			this.ofertaEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
 			this.instituiçoesPorNivelDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsm_num_instituicoes_mantenedor = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,7 +219,6 @@
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
 			this.regionaisTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
-			this.ofertaEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip.SuspendLayout();
 			this.tsm_Principal.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -228,8 +228,8 @@
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_statusStrip,
-            this.tssl_versao});
+			this.lbl_statusStrip,
+			this.tssl_versao});
 			this.statusStrip.Location = new System.Drawing.Point(0, 539);
 			this.statusStrip.Name = "statusStrip";
 			this.statusStrip.Size = new System.Drawing.Size(957, 22);
@@ -254,20 +254,20 @@
 			// 
 			this.tsm_Principal.ImageScalingSize = new System.Drawing.Size(32, 32);
 			this.tsm_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator2,
-            this.btn_instituicoes,
-            this.btn_alunos,
-            this.toolStripDropDownButton1,
-            this.btn_solicitavaga,
-            this.toolStripButton2,
-            this.toolStripDropDownButton2,
-            this.toolStripDropDownButton4,
-            this.btn_zonear,
-            this.btn_relatorios,
-            this.toolStripSplitButton1,
-            this.toolStripDropDownButton3,
-            this.toolStripButton1});
+			this.toolStripLabel1,
+			this.toolStripSeparator2,
+			this.btn_instituicoes,
+			this.btn_alunos,
+			this.toolStripDropDownButton1,
+			this.btn_solicitavaga,
+			this.toolStripButton2,
+			this.toolStripDropDownButton2,
+			this.toolStripDropDownButton4,
+			this.btn_zonear,
+			this.btn_relatorios,
+			this.toolStripSplitButton1,
+			this.toolStripDropDownButton3,
+			this.toolStripButton1});
 			this.tsm_Principal.Location = new System.Drawing.Point(0, 0);
 			this.tsm_Principal.Name = "tsm_Principal";
 			this.tsm_Principal.Size = new System.Drawing.Size(957, 54);
@@ -290,10 +290,10 @@
 			// btn_instituicoes
 			// 
 			this.btn_instituicoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem,
-            this.consultarToolStripMenuItem,
-            this.gerenciarToolStripMenuItem3,
-            this.tsm_listarEmails});
+			this.cadastrarToolStripMenuItem,
+			this.consultarToolStripMenuItem,
+			this.gerenciarToolStripMenuItem3,
+			this.tsm_listarEmails});
 			this.btn_instituicoes.Image = global::SIESC.UI.Properties.Resources.Home_128;
 			this.btn_instituicoes.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btn_instituicoes.Name = "btn_instituicoes";
@@ -337,8 +337,8 @@
 			// btn_alunos
 			// 
 			this.btn_alunos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_cadastraraluno,
-            this.gerenciarToolStripMenuItem4});
+			this.tsmi_cadastraraluno,
+			this.gerenciarToolStripMenuItem4});
 			this.btn_alunos.Image = ((System.Drawing.Image)(resources.GetObject("btn_alunos.Image")));
 			this.btn_alunos.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btn_alunos.Name = "btn_alunos";
@@ -366,10 +366,10 @@
 			// toolStripDropDownButton1
 			// 
 			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem1,
-            this.autorizarToolStripMenuItem,
-            this.gerenciarToolStripMenuItem2,
-            this.toolStripSeparator5});
+			this.cadastrarToolStripMenuItem1,
+			this.autorizarToolStripMenuItem,
+			this.gerenciarToolStripMenuItem2,
+			this.toolStripSeparator5});
 			this.toolStripDropDownButton1.Image = global::SIESC.UI.Properties.Resources._1431654656_people;
 			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -408,11 +408,11 @@
 			// btn_solicitavaga
 			// 
 			this.btn_solicitavaga.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_solicitar,
-            this.toolStripSeparator1,
-            this.toolStripTextBox3,
-            this.tsm_solicitacoes_,
-            this.tsm_motivos_});
+			this.tsmi_solicitar,
+			this.toolStripSeparator1,
+			this.toolStripTextBox3,
+			this.tsm_solicitacoes_,
+			this.tsm_motivos_});
 			this.btn_solicitavaga.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_solicitavaga.Image = global::SIESC.UI.Properties.Resources.desk_chair__2_;
 			this.btn_solicitavaga.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -466,9 +466,9 @@
 			// toolStripButton2
 			// 
 			this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem2,
-            this.gerenciarToolStripMenuItem,
-            this.tsm_gerenciar_cadastrados});
+			this.cadastrarToolStripMenuItem2,
+			this.gerenciarToolStripMenuItem,
+			this.tsm_gerenciar_cadastrados});
 			this.toolStripButton2.Image = global::SIESC.UI.Properties.Resources.inspector;
 			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton2.Name = "toolStripButton2";
@@ -503,10 +503,10 @@
 			// toolStripDropDownButton2
 			// 
 			this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autorizacaoExpressaToolStripMenuItem,
-            this.autorizarToolStripMenuItem1,
-            this.gerenciarToolStripMenuItem1,
-            this.emitirCarteirinhaToolStripMenuItem});
+			this.autorizacaoExpressaToolStripMenuItem,
+			this.autorizarToolStripMenuItem1,
+			this.gerenciarToolStripMenuItem1,
+			this.emitirCarteirinhaToolStripMenuItem});
 			this.toolStripDropDownButton2.Image = global::SIESC.UI.Properties.Resources._1431672026_check_box;
 			this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
@@ -550,8 +550,8 @@
 			// toolStripDropDownButton4
 			// 
 			this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.locallizarCEPToolStripMenuItem,
-            this.localizarEndereçoToolStripMenuItem});
+			this.locallizarCEPToolStripMenuItem,
+			this.localizarEndereçoToolStripMenuItem});
 			this.toolStripDropDownButton4.Image = global::SIESC.UI.Properties.Resources.email;
 			this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
@@ -578,9 +578,9 @@
 			// btn_zonear
 			// 
 			this.btn_zonear.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zonearAlunoToolStripMenuItem,
-            this.zonearEndereçoToolStripMenuItem,
-            this.localizarSolicitaçãoToolStripMenuItem});
+			this.zonearAlunoToolStripMenuItem,
+			this.zonearEndereçoToolStripMenuItem,
+			this.localizarSolicitaçãoToolStripMenuItem});
 			this.btn_zonear.Image = global::SIESC.UI.Properties.Resources.mapmarker;
 			this.btn_zonear.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btn_zonear.Name = "btn_zonear";
@@ -615,16 +615,16 @@
 			// btn_relatorios
 			// 
 			this.btn_relatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.educaçãoInfantilToolStripMenuItem,
-            this.ensinoFundamentalToolStripMenuItem,
-            this.geralToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.sindicânciaToolStripMenuItem1,
-            this.autorizacoesToolStripMenuItem,
-            this.funcionáriosToolStripMenuItem,
-            this.instituiçõesToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.outrosToolStripMenuItem});
+			this.educaçãoInfantilToolStripMenuItem,
+			this.ensinoFundamentalToolStripMenuItem,
+			this.geralToolStripMenuItem,
+			this.toolStripSeparator3,
+			this.sindicânciaToolStripMenuItem1,
+			this.autorizacoesToolStripMenuItem,
+			this.funcionáriosToolStripMenuItem,
+			this.instituiçõesToolStripMenuItem,
+			this.toolStripSeparator4,
+			this.outrosToolStripMenuItem});
 			this.btn_relatorios.Image = global::SIESC.UI.Properties.Resources._1431655462_document;
 			this.btn_relatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btn_relatorios.Name = "btn_relatorios";
@@ -636,26 +636,26 @@
 			// educaçãoInfantilToolStripMenuItem
 			// 
 			this.educaçãoInfantilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox4,
-            this.tsm_infantial_escola_solicita_encam,
-            this.tsm_infantil_deficientes,
-            this.tsm_infantil_alunos_motivo,
-            this.tsm_infantil_alunos_pendentes,
-            this.comprovaçãoDeEndereçoToolStripMenuItem,
-            this.toolStripTextBox5,
-            this.tsm_num_enca_anoensino_infantil,
-            this.tsm_num_encam_data_infantil,
-            this.tsm_infantil_num_pendentes,
-            this.tsm_infantil_num_sol_instituicao,
-            this.tsm_infantil_num_solic_por_ano,
-            this.tsm_num_sol_ano_vs_instituicao,
-            this.tsm_infantil_num_sol_dia,
-            this.tsm_infantil_num_sol_mes,
-            this.tsm_infantil_num_sol_regional,
-            this.tsm_infantil_num_sol_motivos,
-            this.solicitaçõesPorOrigemToolStripMenuItem,
-            this.toolStripTextBox6,
-            this.tsm_infantil_comp_sol_enc});
+			this.toolStripTextBox4,
+			this.tsm_infantial_escola_solicita_encam,
+			this.tsm_infantil_deficientes,
+			this.tsm_infantil_alunos_motivo,
+			this.tsm_infantil_alunos_pendentes,
+			this.comprovaçãoDeEndereçoToolStripMenuItem,
+			this.toolStripTextBox5,
+			this.tsm_num_enca_anoensino_infantil,
+			this.tsm_num_encam_data_infantil,
+			this.tsm_infantil_num_pendentes,
+			this.tsm_infantil_num_sol_instituicao,
+			this.tsm_infantil_num_solic_por_ano,
+			this.tsm_num_sol_ano_vs_instituicao,
+			this.tsm_infantil_num_sol_dia,
+			this.tsm_infantil_num_sol_mes,
+			this.tsm_infantil_num_sol_regional,
+			this.tsm_infantil_num_sol_motivos,
+			this.solicitaçõesPorOrigemToolStripMenuItem,
+			this.toolStripTextBox6,
+			this.tsm_infantil_comp_sol_enc});
 			this.educaçãoInfantilToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.baby_icon_31207_32;
 			this.educaçãoInfantilToolStripMenuItem.Name = "educaçãoInfantilToolStripMenuItem";
 			this.educaçãoInfantilToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -812,26 +812,26 @@
 			// ensinoFundamentalToolStripMenuItem
 			// 
 			this.ensinoFundamentalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nominalToolStripMenuItem,
-            this.tsm_fund_alunos_esco_sol_enc,
-            this.tsm_fund_alunos_deficientes,
-            this.tsm_fund_alunos_motivo,
-            this.tsm_fund_alunos_pendentes,
-            this.comprovaçãoDeEndereçoToolStripMenuItem1,
-            this.toolStripTextBox1,
-            this.tsm_num_encam_anoensino_fundam,
-            this.tsm_num_encam_data_fundam,
-            this.tsm_fund_num_pend,
-            this.tsm_fund_num_sol_instituicao,
-            this.tsm_fund_num_sol_anoensino,
-            this.tsm_num_sol_ano_escola,
-            this.tsm_fund_num_sol_dia,
-            this.tsm_fund_num_sol_mes,
-            this.tsm_fund_num_sol_regional,
-            this.tsm_fund_num_sol_motivos,
-            this.solicitaçõesPorOrigemToolStripMenuItem1,
-            this.toolStripTextBox2,
-            this.tsm_fund_comp_sol_enc});
+			this.nominalToolStripMenuItem,
+			this.tsm_fund_alunos_esco_sol_enc,
+			this.tsm_fund_alunos_deficientes,
+			this.tsm_fund_alunos_motivo,
+			this.tsm_fund_alunos_pendentes,
+			this.comprovaçãoDeEndereçoToolStripMenuItem1,
+			this.toolStripTextBox1,
+			this.tsm_num_encam_anoensino_fundam,
+			this.tsm_num_encam_data_fundam,
+			this.tsm_fund_num_pend,
+			this.tsm_fund_num_sol_instituicao,
+			this.tsm_fund_num_sol_anoensino,
+			this.tsm_num_sol_ano_escola,
+			this.tsm_fund_num_sol_dia,
+			this.tsm_fund_num_sol_mes,
+			this.tsm_fund_num_sol_regional,
+			this.tsm_fund_num_sol_motivos,
+			this.solicitaçõesPorOrigemToolStripMenuItem1,
+			this.toolStripTextBox2,
+			this.tsm_fund_comp_sol_enc});
 			this.ensinoFundamentalToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.kid_icon_31185_32;
 			this.ensinoFundamentalToolStripMenuItem.Name = "ensinoFundamentalToolStripMenuItem";
 			this.ensinoFundamentalToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -988,25 +988,25 @@
 			// geralToolStripMenuItem
 			// 
 			this.geralToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox7,
-            this.tsm_geral_alunos_instituicao,
-            this.tsm_geral_deficientes,
-            this.tsm_geral_alunos_motivos,
-            this.tsm_geral_pendentes,
-            this.comprovacaoDeEndereçoToolStripMenuItem,
-            this.toolStripTextBox8,
-            this.tsm_num_encam_anoensino,
-            this.tsm_num_encam_data,
-            this.tsm_geral_num_pendentes,
-            this.tsm_geral_num_sol_anoensino,
-            this.tsm_geral_num_sol_dia,
-            this.tsm_geral_num_sol_mes,
-            this.tsm_geral_num_sol_regional,
-            this.tsm_geral_num_sol_motivos,
-            this.tsm_geral_resumo_sol,
-            this.solicitaçõesPorOrigemToolStripMenuItem2,
-            this.toolStripTextBox9,
-            this.tsm_solicitacoes_encaminhamentos});
+			this.toolStripTextBox7,
+			this.tsm_geral_alunos_instituicao,
+			this.tsm_geral_deficientes,
+			this.tsm_geral_alunos_motivos,
+			this.tsm_geral_pendentes,
+			this.comprovacaoDeEndereçoToolStripMenuItem,
+			this.toolStripTextBox8,
+			this.tsm_num_encam_anoensino,
+			this.tsm_num_encam_data,
+			this.tsm_geral_num_pendentes,
+			this.tsm_geral_num_sol_anoensino,
+			this.tsm_geral_num_sol_dia,
+			this.tsm_geral_num_sol_mes,
+			this.tsm_geral_num_sol_regional,
+			this.tsm_geral_num_sol_motivos,
+			this.tsm_geral_resumo_sol,
+			this.solicitaçõesPorOrigemToolStripMenuItem2,
+			this.toolStripTextBox9,
+			this.tsm_solicitacoes_encaminhamentos});
 			this.geralToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.doc_math_97139_48;
 			this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
 			this.geralToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -1162,10 +1162,10 @@
 			// sindicânciaToolStripMenuItem1
 			// 
 			this.sindicânciaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox13,
-            this.sindicadosToolStripMenuItem,
-            this.nUMÉRICOSToolStripMenuItem,
-            this.nºDeSindicadosPorSituaçãoToolStripMenuItem});
+			this.toolStripTextBox13,
+			this.sindicadosToolStripMenuItem,
+			this.nUMÉRICOSToolStripMenuItem,
+			this.nºDeSindicadosPorSituaçãoToolStripMenuItem});
 			this.sindicânciaToolStripMenuItem1.Image = global::SIESC.UI.Properties.Resources.inspector;
 			this.sindicânciaToolStripMenuItem1.Name = "sindicânciaToolStripMenuItem1";
 			this.sindicânciaToolStripMenuItem1.Size = new System.Drawing.Size(198, 38);
@@ -1206,16 +1206,16 @@
 			// autorizacoesToolStripMenuItem
 			// 
 			this.autorizacoesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_autorizacoes_escola,
-            this.toolStripMenuItem8,
-            this.tsm_autoriz_secretariar_escola,
-            this.tsm_autoriz_dirigir_escola,
-            this.listaDeAutorizaçõesToolStripMenuItem,
-            this.toolStripTextBox11,
-            this.toolStripMenuItem9,
-            this.toolStripMenuItem7,
-            this.nºDeAutorizaçõesToolStripMenuItem,
-            this.toolStripMenuItem10});
+			this.tsm_autorizacoes_escola,
+			this.toolStripMenuItem8,
+			this.tsm_autoriz_secretariar_escola,
+			this.tsm_autoriz_dirigir_escola,
+			this.listaDeAutorizaçõesToolStripMenuItem,
+			this.toolStripTextBox11,
+			this.toolStripMenuItem9,
+			this.toolStripMenuItem7,
+			this.nºDeAutorizaçõesToolStripMenuItem,
+			this.toolStripMenuItem10});
 			this.autorizacoesToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431672026_check_box;
 			this.autorizacoesToolStripMenuItem.Name = "autorizacoesToolStripMenuItem";
 			this.autorizacoesToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -1288,13 +1288,13 @@
 			// funcionáriosToolStripMenuItem
 			// 
 			this.funcionáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listaDiretores,
-            this.tsm_listarFuncSecreatariosEscolares,
-            this.toolStripMenuItem3,
-            this.tsm_listarTodosFuncionarios,
-            this.toolStripTextBox12,
-            this.funcionariosPorCargoToolStripMenuItem,
-            this.funcionariosPorEscolaToolStripMenuItem});
+			this.tsm_listaDiretores,
+			this.tsm_listarFuncSecreatariosEscolares,
+			this.toolStripMenuItem3,
+			this.tsm_listarTodosFuncionarios,
+			this.toolStripTextBox12,
+			this.funcionariosPorCargoToolStripMenuItem,
+			this.funcionariosPorEscolaToolStripMenuItem});
 			this.funcionáriosToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431654656_people;
 			this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
 			this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -1303,11 +1303,11 @@
 			// tsm_listaDiretores
 			// 
 			this.tsm_listaDiretores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listaDiretoresFundamental,
-            this.tsm_GestoresInfantil,
-            this.tsm_listarDiretoresCims,
-            this.tsm_listarCoordParceiras,
-            this.tsm_listarTodosGestores});
+			this.tsm_listaDiretoresFundamental,
+			this.tsm_GestoresInfantil,
+			this.tsm_listarDiretoresCims,
+			this.tsm_listarCoordParceiras,
+			this.tsm_listarTodosGestores});
 			this.tsm_listaDiretores.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.tsm_listaDiretores.Name = "tsm_listaDiretores";
 			this.tsm_listaDiretores.Size = new System.Drawing.Size(254, 22);
@@ -1359,9 +1359,9 @@
 			// toolStripMenuItem3
 			// 
 			this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarFuncAuxilaresCims,
-            this.tsm_listarFuncAuxiliaresParceiras,
-            this.tsm_listarTodosFuncAuxiliares});
+			this.tsm_listarFuncAuxilaresCims,
+			this.tsm_listarFuncAuxiliaresParceiras,
+			this.tsm_listarTodosFuncAuxiliares});
 			this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
 			this.toolStripMenuItem3.Size = new System.Drawing.Size(254, 22);
@@ -1421,16 +1421,16 @@
 			// instituiçõesToolStripMenuItem
 			// 
 			this.instituiçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.municipaisToolStripMenuItem2,
-            this.estaduaisToolStripMenuItem2,
-            this.edInfantilConveniadasToolStripMenuItem,
-            this.edInfantilMunicipaisToolStripMenuItem,
-            this.edInfantilParticularesToolStripMenuItem,
-            this.todasAsInstituiçõesToolStripMenuItem1,
-            this.ofertaEnsinoToolStripMenuItem,
-            this.toolStripTextBox10,
-            this.instituiçoesPorNivelDeEnsinoToolStripMenuItem,
-            this.tsm_num_instituicoes_mantenedor});
+			this.municipaisToolStripMenuItem2,
+			this.estaduaisToolStripMenuItem2,
+			this.edInfantilConveniadasToolStripMenuItem,
+			this.edInfantilMunicipaisToolStripMenuItem,
+			this.edInfantilParticularesToolStripMenuItem,
+			this.todasAsInstituiçõesToolStripMenuItem1,
+			this.ofertaEnsinoToolStripMenuItem,
+			this.toolStripTextBox10,
+			this.instituiçoesPorNivelDeEnsinoToolStripMenuItem,
+			this.tsm_num_instituicoes_mantenedor});
 			this.instituiçõesToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Home_128;
 			this.instituiçõesToolStripMenuItem.Name = "instituiçõesToolStripMenuItem";
 			this.instituiçõesToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -1439,10 +1439,10 @@
 			// municipaisToolStripMenuItem2
 			// 
 			this.municipaisToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarEscolas,
-            this.tsm_listarDiretoresEscolas,
-            this.tsm_listarSecretarios,
-            this.tsm_OfertaAnoEnsinoEscolas});
+			this.tsm_listarEscolas,
+			this.tsm_listarDiretoresEscolas,
+			this.tsm_listarSecretarios,
+			this.tsm_OfertaAnoEnsinoEscolas});
 			this.municipaisToolStripMenuItem2.Name = "municipaisToolStripMenuItem2";
 			this.municipaisToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
 			this.municipaisToolStripMenuItem2.Text = "Municipais";
@@ -1478,8 +1478,8 @@
 			// estaduaisToolStripMenuItem2
 			// 
 			this.estaduaisToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarEscolasEstaduais,
-            this.tsm_ofertaAnoEnsinoEstaduais});
+			this.tsm_listarEscolasEstaduais,
+			this.tsm_ofertaAnoEnsinoEstaduais});
 			this.estaduaisToolStripMenuItem2.Name = "estaduaisToolStripMenuItem2";
 			this.estaduaisToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
 			this.estaduaisToolStripMenuItem2.Text = "Estaduais";
@@ -1501,10 +1501,10 @@
 			// edInfantilConveniadasToolStripMenuItem
 			// 
 			this.edInfantilConveniadasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarInstituicoesParceiras,
-            this.tsm_listarCoordAdms,
-            this.tsm_listarAuxiliaresAdmsParceiras,
-            this.ofertaAnoEnsinoToolStripMenuItem2});
+			this.tsm_listarInstituicoesParceiras,
+			this.tsm_listarCoordAdms,
+			this.tsm_listarAuxiliaresAdmsParceiras,
+			this.ofertaAnoEnsinoToolStripMenuItem2});
 			this.edInfantilConveniadasToolStripMenuItem.Name = "edInfantilConveniadasToolStripMenuItem";
 			this.edInfantilConveniadasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
 			this.edInfantilConveniadasToolStripMenuItem.Text = "Ed. Infantil - Parceiras";
@@ -1540,10 +1540,10 @@
 			// edInfantilMunicipaisToolStripMenuItem
 			// 
 			this.edInfantilMunicipaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarInstituicoesMunicipais,
-            this.tsm_listarDiretoresCIM,
-            this.tsm_listarAuxiliaresAdmsCims,
-            this.tsm_ofertaAnoEnsinoCims});
+			this.tsm_listarInstituicoesMunicipais,
+			this.tsm_listarDiretoresCIM,
+			this.tsm_listarAuxiliaresAdmsCims,
+			this.tsm_ofertaAnoEnsinoCims});
 			this.edInfantilMunicipaisToolStripMenuItem.Name = "edInfantilMunicipaisToolStripMenuItem";
 			this.edInfantilMunicipaisToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
 			this.edInfantilMunicipaisToolStripMenuItem.Text = "Ed. Infantil - Municipais";
@@ -1579,7 +1579,7 @@
 			// edInfantilParticularesToolStripMenuItem
 			// 
 			this.edInfantilParticularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarParticulares});
+			this.tsm_listarParticulares});
 			this.edInfantilParticularesToolStripMenuItem.Name = "edInfantilParticularesToolStripMenuItem";
 			this.edInfantilParticularesToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
 			this.edInfantilParticularesToolStripMenuItem.Text = "Ed. Infantil - Particulares";
@@ -1594,7 +1594,7 @@
 			// todasAsInstituiçõesToolStripMenuItem1
 			// 
 			this.todasAsInstituiçõesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_listarTodasInstituicoes});
+			this.tsm_listarTodasInstituicoes});
 			this.todasAsInstituiçõesToolStripMenuItem1.Name = "todasAsInstituiçõesToolStripMenuItem1";
 			this.todasAsInstituiçõesToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
 			this.todasAsInstituiçõesToolStripMenuItem1.Text = "Todas as Instituições";
@@ -1605,6 +1605,13 @@
 			this.tsm_listarTodasInstituicoes.Size = new System.Drawing.Size(165, 22);
 			this.tsm_listarTodasInstituicoes.Text = "Listar Instituições";
 			this.tsm_listarTodasInstituicoes.Click += new System.EventHandler(this.tsm_listarTodasInstituicoes_Click);
+			// 
+			// ofertaEnsinoToolStripMenuItem
+			// 
+			this.ofertaEnsinoToolStripMenuItem.Name = "ofertaEnsinoToolStripMenuItem";
+			this.ofertaEnsinoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+			this.ofertaEnsinoToolStripMenuItem.Text = "Oferta Ensino Detalhado";
+			this.ofertaEnsinoToolStripMenuItem.Click += new System.EventHandler(this.ofertaEnsinoToolStripMenuItem_Click);
 			// 
 			// toolStripTextBox10
 			// 
@@ -1636,8 +1643,8 @@
 			// outrosToolStripMenuItem
 			// 
 			this.outrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapaEndereçoSolicitadosToolStripMenuItem,
-            this.tsm_formulariopendenteturma});
+			this.mapaEndereçoSolicitadosToolStripMenuItem,
+			this.tsm_formulariopendenteturma});
 			this.outrosToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.box_full_products_14639_48;
 			this.outrosToolStripMenuItem.Name = "outrosToolStripMenuItem";
 			this.outrosToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
@@ -1660,7 +1667,7 @@
 			// toolStripSplitButton1
 			// 
 			this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alterarSenhaToolStripMenuItem1});
+			this.alterarSenhaToolStripMenuItem1});
 			this.toolStripSplitButton1.Image = global::SIESC.UI.Properties.Resources.user_32_32;
 			this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -1679,10 +1686,10 @@
 			// toolStripDropDownButton3
 			// 
 			this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenedoresToolStripMenuItem,
-            this.regionaisToolStripMenuItem,
-            this.diretoriasToolStripMenuItem,
-            this.janelasToolStripMenuItem});
+			this.mantenedoresToolStripMenuItem,
+			this.regionaisToolStripMenuItem,
+			this.diretoriasToolStripMenuItem,
+			this.janelasToolStripMenuItem});
 			this.toolStripDropDownButton3.Image = global::SIESC.UI.Properties.Resources._1431655160_kservices;
 			this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
@@ -1715,13 +1722,13 @@
 			// janelasToolStripMenuItem
 			// 
 			this.janelasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascataToolStripMenuItem,
-            this.ladoALadoToolStripMenuItem,
-            this.horizontalToolStripMenuItem,
-            this.minimizarToolStripMenuItem,
-            this.maximizarToolStripMenuItem,
-            this.fecharToolStripMenuItem,
-            this.organizarÍconesToolStripMenuItem});
+			this.cascataToolStripMenuItem,
+			this.ladoALadoToolStripMenuItem,
+			this.horizontalToolStripMenuItem,
+			this.minimizarToolStripMenuItem,
+			this.maximizarToolStripMenuItem,
+			this.fecharToolStripMenuItem,
+			this.organizarÍconesToolStripMenuItem});
 			this.janelasToolStripMenuItem.Name = "janelasToolStripMenuItem";
 			this.janelasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.janelasToolStripMenuItem.Text = "Janelas";
@@ -1801,13 +1808,6 @@
 			// regionaisTableAdapter1
 			// 
 			this.regionaisTableAdapter1.ClearBeforeFill = true;
-			// 
-			// ofertaEnsinoToolStripMenuItem
-			// 
-			this.ofertaEnsinoToolStripMenuItem.Name = "ofertaEnsinoToolStripMenuItem";
-			this.ofertaEnsinoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-			this.ofertaEnsinoToolStripMenuItem.Text = "Oferta Ensino";
-			this.ofertaEnsinoToolStripMenuItem.Click += new System.EventHandler(this.ofertaEnsinoToolStripMenuItem_Click);
 			// 
 			// Principal_UI
 			// 
