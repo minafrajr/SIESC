@@ -76,7 +76,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			camposObrigatorios.Add(cbo_tipoautoriz);
 			camposObrigatorios.Add(msk_cpf);
 			camposObrigatorios.Add(txt_nome);
-			camposObrigatorios.Add(dtp_datanasc);
+			camposObrigatorios.Add(msk_datanasc);
 		}
 		/// <summary>
 		/// Verifica os campos obrigatórios
@@ -220,7 +220,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			Funcionario func = new Funcionario()
 			{
 				CPF = msk_cpf.Text,
-				DataNascimento = dtp_datanasc.Value,
+				DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
 				Nome = txt_nome.Text,
 				Tel1 = "000000000",
 			};

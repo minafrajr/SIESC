@@ -51,7 +51,7 @@ namespace SIESC.UI.UI.Alunos
 			this.rdb_mae = new System.Windows.Forms.RadioButton();
 			this.rdb_nome = new System.Windows.Forms.RadioButton();
 			this.rdb_codigo = new System.Windows.Forms.RadioButton();
-			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new MyMaskedTextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_mae = new MyTextBox();
@@ -95,7 +95,7 @@ namespace SIESC.UI.UI.Alunos
 			this.splitContainer1.Panel1.Controls.Add(this.label3);
 			this.splitContainer1.Panel1.Controls.Add(this.txt_codigo);
 			this.splitContainer1.Panel1.Controls.Add(this.gpb_localizar);
-			this.splitContainer1.Panel1.Controls.Add(this.dtp_datanasc);
+			this.splitContainer1.Panel1.Controls.Add(this.msk_datanasc);
 			this.splitContainer1.Panel1.Controls.Add(this.label2);
 			this.splitContainer1.Panel1.Controls.Add(this.label1);
 			this.splitContainer1.Panel1.Controls.Add(this.txt_mae);
@@ -294,14 +294,14 @@ namespace SIESC.UI.UI.Alunos
 			this.rdb_codigo.UseVisualStyleBackColor = true;
 			this.rdb_codigo.Click += new System.EventHandler(this.rdb_codigo_Click);
 			// 
-			// dtp_datanasc
+			// msk_datanasc
 			// 
-			this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtp_datanasc.Location = new System.Drawing.Point(599, 19);
-			this.dtp_datanasc.Name = "dtp_datanasc";
-			this.dtp_datanasc.Size = new System.Drawing.Size(98, 22);
-			this.dtp_datanasc.TabIndex = 56;
-			this.dtp_datanasc.ValueChanged += new System.EventHandler(this.dtp_datanasc_ValueChanged);
+			this.msk_datanasc.Mask ="__/__/____";
+			this.msk_datanasc.Location = new System.Drawing.Point(599, 19);
+			this.msk_datanasc.Name = "msk_datanasc";
+			this.msk_datanasc.Size = new System.Drawing.Size(98, 22);
+			this.msk_datanasc.TabIndex = 56;
+			
 			// 
 			// label2
 			// 
@@ -479,7 +479,7 @@ namespace SIESC.UI.UI.Alunos
 		private System.Windows.Forms.Button btn_novo;
 		private System.Windows.Forms.Button btn_editar;
 		private System.Windows.Forms.Button btn_cancelar;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
+		private MyMaskedTextBox msk_datanasc;
 		private System.Windows.Forms.Label label1;
 		private MyTextBox txt_nomealuno;
 		private System.Windows.Forms.DataGridView dgv_alunos;

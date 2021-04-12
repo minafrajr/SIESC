@@ -38,7 +38,7 @@ namespace SIESC.UI.UI.Funcionarios
 			this.cbo_cargoAtual = new MyComboBox();
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label9 = new System.Windows.Forms.Label();
-			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new System.Windows.Forms.DateTimePicker();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txt_email = new MyTextBox();
 			this.label7 = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			this.splitContainer1.Panel1.Controls.Add(this.cbo_cargoAtual);
 			this.splitContainer1.Panel1.Controls.Add(this.label9);
-			this.splitContainer1.Panel1.Controls.Add(this.dtp_datanasc);
+			this.splitContainer1.Panel1.Controls.Add(this.msk_datanasc);
 			this.splitContainer1.Panel1.Controls.Add(this.label8);
 			this.splitContainer1.Panel1.Controls.Add(this.txt_email);
 			this.splitContainer1.Panel1.Controls.Add(this.label7);
@@ -160,14 +160,14 @@ namespace SIESC.UI.UI.Funcionarios
 			this.label9.TabIndex = 63;
 			this.label9.Text = "Cargo atual:";
 			// 
-			// dtp_datanasc
+			// msk_datanasc
 			// 
-			this.dtp_datanasc.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtp_datanasc.Location = new System.Drawing.Point(480, 45);
-			this.dtp_datanasc.Name = "dtp_datanasc";
-			this.dtp_datanasc.Size = new System.Drawing.Size(110, 22);
-			this.dtp_datanasc.TabIndex = 62;
+			this.msk_datanasc.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+			this.msk_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.msk_datanasc.Location = new System.Drawing.Point(480, 45);
+			this.msk_datanasc.Name = "msk_datanasc";
+			this.msk_datanasc.Size = new System.Drawing.Size(110, 22);
+			this.msk_datanasc.TabIndex = 62;
 			// 
 			// label8
 			// 
@@ -623,7 +623,7 @@ namespace SIESC.UI.UI.Funcionarios
 		private System.Windows.Forms.Label label7;
 		private MyTextBox txt_telefone1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
+		private System.Windows.Forms.DateTimePicker msk_datanasc;
 		private System.Windows.Forms.Label label8;
 		private MyComboBox cbo_cargoAtual;
 		private System.Windows.Forms.Label label9;

@@ -92,9 +92,9 @@ namespace SIESC.UI.UI.Funcionarios
             this.txt_nome.Text = func.Nome;
             this.txt_numresid.Text = func.NumResidencia;
 
-            if (func.DataNascimento.CompareTo(dtp_datanasc.MinDate) > 0)
+            if (func.DataNascimento.CompareTo(msk_datanasc.MinDate) > 0)
             {
-                this.dtp_datanasc.Text = func.DataNascimento.ToShortDateString();
+                this.msk_datanasc.Text = func.DataNascimento.ToShortDateString();
             }
 
             this.cbo_tipolograd.Text = func.TipoLogradouro;
@@ -179,7 +179,7 @@ namespace SIESC.UI.UI.Funcionarios
                 {
                     if (string.IsNullOrEmpty(msk_cpf.Text))
                     {
-                        if (controlFuncionario.PesquisaID(dtp_datanasc.Value,txt_nome.Text) > 0)
+                        if (controlFuncionario.PesquisaID(msk_datanasc.Value,txt_nome.Text) > 0)
                         {
                             //verifica se já existe o funcionário no banco.
                             throw new Exception($"Não foi possível salvar!{Environment.NewLine}Já existe o funcionário no sistema.{Environment.NewLine}Por favor localize e edite o funcionário através do botão Editar na tela Gerenciar Funcionários.");
@@ -263,7 +263,7 @@ namespace SIESC.UI.UI.Funcionarios
                 CPF = msk_cpf.Text,
                 CartIdentidade = txt_cartident.Text,
 
-                DataNascimento = dtp_datanasc.Value,
+                DataNascimento = msk_datanasc.Value,
 
                 Nome = txt_nome.Text,
                 Sexo = rdb_masculino.Checked ? "M" : "F",
@@ -358,7 +358,7 @@ namespace SIESC.UI.UI.Funcionarios
             listaControles.Add(msk_cep);
             //listaControles.Add(msk_cpf);
             listaControles.Add(msk_tel1);
-            listaControles.Add(dtp_datanasc);
+            listaControles.Add(msk_datanasc);
             listaControles.Add(rdb_feminino);
             listaControles.Add(rdb_masculino);
             listaControles.Add(cbo_instituicao);

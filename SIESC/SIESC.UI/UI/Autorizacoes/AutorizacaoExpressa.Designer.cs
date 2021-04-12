@@ -37,7 +37,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.label10 = new System.Windows.Forms.Label();
 			this.cbo_cargoOrigem = new MyComboBox();
 			this.lbl_cargo = new System.Windows.Forms.Label();
-			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new MyMaskedTextBox();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
 			this.txt_nome = new MyTextBox();
 			this.cbo_nivelensino = new MyComboBox();
@@ -128,14 +128,13 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.lbl_cargo.TabIndex = 38;
 			this.lbl_cargo.Text = "Cargo de Origem:";
 			// 
-			// dtp_datanasc
+			// msk_datanasc
 			// 
-			this.dtp_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtp_datanasc.Location = new System.Drawing.Point(464, 56);
-			this.dtp_datanasc.Name = "dtp_datanasc";
-			this.dtp_datanasc.Size = new System.Drawing.Size(98, 23);
-			this.dtp_datanasc.TabIndex = 1;
+			this.msk_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.msk_datanasc.Location = new System.Drawing.Point(464, 56);
+			this.msk_datanasc.Name = "msk_datanasc";
+			this.msk_datanasc.Size = new System.Drawing.Size(98, 23);
+			this.msk_datanasc.TabIndex = 1;
 			// 
 			// lbl_datanasc
 			// 
@@ -369,7 +368,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.cbo_cargoOrigem);
 			this.Controls.Add(this.lbl_cargo);
-			this.Controls.Add(this.dtp_datanasc);
+			this.Controls.Add(this.msk_datanasc);
 			this.Controls.Add(this.lbl_datanasc);
 			this.Controls.Add(this.txt_nome);
 			this.Controls.Add(this.cbo_nivelensino);
@@ -399,7 +398,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		private System.Windows.Forms.Label label10;
 		private MyComboBox cbo_cargoOrigem;
 		private System.Windows.Forms.Label lbl_cargo;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
+		private MyMaskedTextBox msk_datanasc;
 		private System.Windows.Forms.Label lbl_datanasc;
 		private MyTextBox txt_nome;
 		private MyComboBox cbo_nivelensino;

@@ -124,7 +124,7 @@ namespace SIESC.UI.UI.Alunos
                         dgv_alunos.DataSource = controleAluno.AlunosByNomePai(txt_pai.Text);
                         break;
                     case Localizar.datanascimento:
-                        dgv_alunos.DataSource = controleAluno.AlunosByDataNascimento(dtp_datanasc.Value);
+                        dgv_alunos.DataSource = controleAluno.AlunosByDataNascimento(Convert.ToDateTime(msk_datanasc.Text));
                         break;
 
                 }
@@ -228,13 +228,13 @@ namespace SIESC.UI.UI.Alunos
             txt_mae.Enabled = mae;
             txt_nomealuno.Enabled = nome;
             txt_pai.Enabled = pai;
-            dtp_datanasc.Enabled = datanasc;
+            msk_datanasc.Enabled = datanasc;
             if (codigo)
             {
                 txt_mae.ResetText();
                 txt_nomealuno.ResetText();
                 txt_pai.ResetText();
-                dtp_datanasc.ResetText();
+                msk_datanasc.ResetText();
                 txt_codigo.Focus();
             }
             if (nome)
@@ -242,7 +242,7 @@ namespace SIESC.UI.UI.Alunos
                 txt_mae.ResetText();
                 txt_codigo.ResetText();
                 txt_pai.ResetText();
-                dtp_datanasc.ResetText();
+                msk_datanasc.ResetText();
                 txt_nomealuno.Focus();
             }
             if (mae)
@@ -250,7 +250,7 @@ namespace SIESC.UI.UI.Alunos
                 txt_codigo.ResetText();
                 txt_nomealuno.ResetText();
                 txt_pai.ResetText();
-                dtp_datanasc.ResetText();
+                msk_datanasc.ResetText();
                 txt_mae.Focus();
             }
             if (datanasc)
@@ -259,14 +259,14 @@ namespace SIESC.UI.UI.Alunos
                 txt_nomealuno.ResetText();
                 txt_pai.ResetText();
                 txt_codigo.ResetText();
-                dtp_datanasc.Focus();
+                msk_datanasc.Focus();
             }
             if (pai)
             {
                 txt_mae.ResetText();
                 txt_nomealuno.ResetText();
                 txt_codigo.ResetText();
-                dtp_datanasc.ResetText();
+                msk_datanasc.ResetText();
                 txt_pai.Focus();
             }
         }
@@ -320,7 +320,7 @@ namespace SIESC.UI.UI.Alunos
             {
                 txt_codigo.Text = dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_nomealuno.Text = dgv_alunos[1,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                dtp_datanasc.Value = Convert.ToDateTime(this.dgv_alunos[2,this.dgv_alunos.CurrentCellAddress.Y].Value.ToString());
+                msk_datanasc.Text = this.dgv_alunos[2,this.dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_mae.Text = dgv_alunos[3,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_pai.Text = dgv_alunos[4,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_deficiencia.Text = dgv_alunos[5,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
@@ -398,7 +398,7 @@ namespace SIESC.UI.UI.Alunos
         {
             try
             {
-                dtp_datanasc.Value = DateTime.Parse(dgv_alunos[2,dgv_alunos.CurrentCellAddress.Y].Value.ToString());
+                msk_datanasc.Text = dgv_alunos[2,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
             }
             catch (Exception exception)
             {
@@ -411,7 +411,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dtp_datanasc_ValueChanged(object sender,EventArgs e)
+        private void msk_datanasc_ValueChanged(object sender,EventArgs e)
         {
             CalculaIdade();
         }
@@ -421,10 +421,13 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         private void CalculaIdade()
         {
-            int anos = DateTime.Now.Year - dtp_datanasc.Value.Year;
+            var datanasc = Convert.ToDateTime(msk_datanasc.Text);
 
-            if (DateTime.Now.Month < dtp_datanasc.Value.Month ||
-                (DateTime.Now.Month == dtp_datanasc.Value.Month && DateTime.Now.Day < dtp_datanasc.Value.Day))
+            int anos = DateTime.Now.Year - datanasc.Year;
+
+
+            if (DateTime.Now.Month < datanasc.Month ||
+                (DateTime.Now.Month == datanasc.Month && DateTime.Now.Day < datanasc.Day))
             {
                 anos--;
             }

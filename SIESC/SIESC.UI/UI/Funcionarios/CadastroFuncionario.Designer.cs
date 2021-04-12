@@ -59,7 +59,7 @@ namespace SIESC.UI.UI.Funcionarios
 			this.lbl_telefones = new System.Windows.Forms.Label();
 			this.txt_cartident = new MyTextBox();
 			this.lbl_cartident = new System.Windows.Forms.Label();
-			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new System.Windows.Forms.DateTimePicker();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
 			this.msk_cpf = new MyMaskedTextBox();
 			this.txt_nome = new MyTextBox();
@@ -149,7 +149,7 @@ namespace SIESC.UI.UI.Funcionarios
 			this.gpb_dadospessoais.Controls.Add(this.lbl_telefones);
 			this.gpb_dadospessoais.Controls.Add(this.txt_cartident);
 			this.gpb_dadospessoais.Controls.Add(this.lbl_cartident);
-			this.gpb_dadospessoais.Controls.Add(this.dtp_datanasc);
+			this.gpb_dadospessoais.Controls.Add(this.msk_datanasc);
 			this.gpb_dadospessoais.Controls.Add(this.lbl_datanasc);
 			this.gpb_dadospessoais.Controls.Add(this.msk_cpf);
 			this.gpb_dadospessoais.Controls.Add(this.txt_nome);
@@ -377,14 +377,14 @@ namespace SIESC.UI.UI.Funcionarios
 			this.lbl_cartident.TabIndex = 7;
 			this.lbl_cartident.Text = "Carteira de Identidade:";
 			// 
-			// dtp_datanasc
+			// msk_datanasc
 			// 
-			this.dtp_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtp_datanasc.Location = new System.Drawing.Point(465, 35);
-			this.dtp_datanasc.Name = "dtp_datanasc";
-			this.dtp_datanasc.Size = new System.Drawing.Size(98, 23);
-			this.dtp_datanasc.TabIndex = 2;
+			this.msk_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.msk_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.msk_datanasc.Location = new System.Drawing.Point(465, 35);
+			this.msk_datanasc.Name = "msk_datanasc";
+			this.msk_datanasc.Size = new System.Drawing.Size(98, 23);
+			this.msk_datanasc.TabIndex = 2;
 			// 
 			// lbl_datanasc
 			// 
@@ -780,7 +780,7 @@ namespace SIESC.UI.UI.Funcionarios
 		private System.Windows.Forms.Label lbl_telefones;
 		private MyTextBox txt_cartident;
 		private System.Windows.Forms.Label lbl_cartident;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
+		private System.Windows.Forms.DateTimePicker msk_datanasc;
 		private System.Windows.Forms.Label lbl_datanasc;
 		private MyMaskedTextBox msk_cpf;
 		private MyTextBox txt_nome;

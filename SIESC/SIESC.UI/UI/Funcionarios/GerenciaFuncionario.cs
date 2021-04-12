@@ -351,7 +351,7 @@ namespace SIESC.UI.UI.Funcionarios
                lbl_codigofuncionario.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CodigoFuncionario"].Value.ToString();
 
                 txt_nome.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Nome"].Value.ToString();
-                dtp_datanasc.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["DatadeNascimento"].Value.ToString();
+                msk_datanasc.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["DatadeNascimento"].Value.ToString();
                 msk_cpf.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CPF"].Value.ToString();
                 cbo_instituicao.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Instituicao"].Value.ToString();
                 cbo_cargoOrigem.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CargodeOrigem"].Value.ToString();
@@ -393,7 +393,7 @@ namespace SIESC.UI.UI.Funcionarios
             txt_telefone1.Clear();
             txt_telefone1.Clear();
 
-            dtp_datanasc.ResetText();
+            msk_datanasc.ResetText();
             cbo_cargoOrigem.ResetText();
             cbo_instituicao.ResetText();
         }
