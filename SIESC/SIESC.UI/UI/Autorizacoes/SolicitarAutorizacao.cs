@@ -168,10 +168,8 @@ namespace SIESC.UI.UI.Autorizacoes
 			txt_bairro.Text = funcionario1.sBairro;
 			cbo_tipolograd.SelectedItem = funcionario1.TipoLogradouro;
 
-			if (funcionario1.DataNascimento.CompareTo(dtp_datanasc.MinDate) > 0)
-			{
-				dtp_datanasc.Value = funcionario1.DataNascimento;
-			}
+			//if (funcionario1.DataNascimento.CompareTo(msk_datanasc.MinDate) > 0)
+				msk_datanasc.Text = funcionario1.DataNascimento.ToShortDateString();
 
 			if (funcionario1.Sexo.Equals("F"))
 			{
@@ -469,7 +467,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				CPF = msk_cpf.Text,
 				CartIdentidade = txt_cartident.Text,
 
-				DataNascimento = dtp_datanasc.Value,
+				DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
 
 				Nome = txt_nome.Text,
 				Sexo = null,
@@ -485,25 +483,15 @@ namespace SIESC.UI.UI.Autorizacoes
 				TipoLogradouro = cbo_tipolograd.Text,
 			};
 
-			if (rdb_feminino.Checked || rdb_masculino.Checked)
-			{
-				func.Sexo = rdb_masculino.Checked ? "M" : "F";
-			}
+			if (rdb_feminino.Checked || rdb_masculino.Checked) func.Sexo = rdb_masculino.Checked ? "M" : "F";
 
-			if (!cbo_cargoOrigem.Equals(null))
-			{
-				func.cargoOrigem = (int)cbo_cargoOrigem.SelectedValue;
-			}
+			if (!cbo_cargoOrigem.Equals(null)) func.cargoOrigem = (int) cbo_cargoOrigem.SelectedValue;
 
-			if (!cbo_cargoAtual.Equals(null))
-			{
-				func.cargoAtual = (int)cbo_cargoAtual.SelectedValue;
-			}
+			if (!cbo_cargoAtual.Equals(null)) func.cargoAtual = (int) cbo_cargoAtual.SelectedValue;
 
 			if (!string.IsNullOrEmpty(cbo_instituicao.SelectedValue.ToString()))
-			{
-				func.instituicao = (int)cbo_instituicao.SelectedValue;
-			}
+				func.instituicao = (int) cbo_instituicao.SelectedValue;
+
 			return func;
 		}
 
@@ -533,22 +521,16 @@ namespace SIESC.UI.UI.Autorizacoes
 			criaAutorizacao.nivelensino = this.cbo_nivelensino.Text.ToUpper();
 
 			if (cbo_disciplina.SelectedValue != null)
-			{
 				criaAutorizacao.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
-			}
 
 			criaAutorizacao.outrosdocs = this.txt_outrosdocs.Text;
 
 			if (!cbo_nivelensino.Text.Equals("EDUCACÃO INFANTIL"))
 			{
 				if (chk_anosfinais.Checked && chk_anosiniciais.Checked)
-				{
 					criaAutorizacao.anosdeensino = chk_anosiniciais.Text + " e " + chk_anosfinais.Text;
-				}
 				else
-				{
 					criaAutorizacao.anosdeensino = chk_anosiniciais.Checked ? chk_anosiniciais.Text : chk_anosfinais.Text;
-				}
 			}
 
 			criaAutorizacao.Documentos = new StringBuilder();
@@ -556,18 +538,12 @@ namespace SIESC.UI.UI.Autorizacoes
 			foreach (Control control in listacheks)
 			{
 				if (control is CheckBox)
-				{
-					if (((CheckBox)control).Checked)
-					{
+					if (((CheckBox) control).Checked)
 						criaAutorizacao.Documentos.Append($"{control.Text}, ");
-					}
-				}
 			}
 
 			if (criaAutorizacao.Documentos.Length > 0)
-			{
-				criaAutorizacao.Documentos.Remove(criaAutorizacao.Documentos.Length - 1,1);
-			}
+				criaAutorizacao.Documentos.Remove(criaAutorizacao.Documentos.Length - 1, 1);
 
 			criaAutorizacao.usuario = PrincipalUi.user.nomeusuario.ToUpper();//Get nome do usuario
 
@@ -628,25 +604,13 @@ namespace SIESC.UI.UI.Autorizacoes
 
 			foreach (Control control in listaControls)
 			{
-				if (control is MyTextBox)
-				{
-					control.ResetText();
-				}
+				if (control is MyTextBox) control.ResetText();
 
-				if (control is MyMaskedTextBox)
-				{
-					control.ResetText();
-				}
+				if (control is MyMaskedTextBox) control.ResetText();
 
-				if (control is RadioButton)
-				{
-					((RadioButton)control).Checked = false;
-				}
+				if (control is RadioButton) ((RadioButton) control).Checked = false;
 
-				if (control is CheckBox)
-				{
-					((CheckBox)control).Checked = false;
-				}
+				if (control is CheckBox) ((CheckBox) control).Checked = false;
 
 				if (control is MyComboBox)
 				{
@@ -654,10 +618,7 @@ namespace SIESC.UI.UI.Autorizacoes
 					((MyComboBox)control).SelectedIndex = -1;
 				}
 
-				if (control is DateTimePicker)
-				{
-					control.ResetText();
-				}
+				if (control is DateTimePicker) control.ResetText();
 			}
 		}
 
@@ -668,10 +629,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// <param name="e"></param>
 		private void btn_cancelar_Click(object sender,EventArgs e)
 		{
-			if (Mensageiro.MensagemCancelamento(PrincipalUi).Equals(DialogResult.Yes))
-			{
-				this.Close();
-			}
+			if (Mensageiro.MensagemCancelamento(PrincipalUi).Equals(DialogResult.Yes)) this.Close();
 		}
 
 		/// <summary>
@@ -697,9 +655,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				navegacao = Navegando.Deletando;
 
 				if (Mensageiro.MensagemExclusao(null,PrincipalUi) == DialogResult.Yes)
-				{
 					throw new NotImplementedException("Para excluir a autorização entre em contato com o administrador do sistema!");
-				}
 			}
 			catch (Exception exception)
 			{
@@ -751,14 +707,9 @@ namespace SIESC.UI.UI.Autorizacoes
 		private void cbo_tipoautoriz_SelectedIndexChanged(object sender,EventArgs e)
 		{
 			if (cbo_tipoautoriz.Text.Equals("LECIONAR"))
-			{
-				// TODO: esta linha de código carrega dados na tabela 'siescDataSet.disciplinas'. Você pode movê-la ou removê-la conforme necessário.
 				this.disciplinasTableAdapter.Fill(this.siescDataSet.disciplinas);
-			}
 			else
-			{
 				cbo_disciplina.SelectedIndex = -1;
-			}
 		}
 		/// <summary>
 		/// Evento do botão não sei o CEP
@@ -769,8 +720,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		{
 			try
 			{
-				FrmBuscaCep frmBuscaCep = new FrmBuscaCep();
-				frmBuscaCep.MdiParent = PrincipalUi;
+				FrmBuscaCep frmBuscaCep = new FrmBuscaCep {MdiParent = PrincipalUi};
 				frmBuscaCep.Show();
 			}
 			catch (Exception ex)
@@ -788,13 +738,10 @@ namespace SIESC.UI.UI.Autorizacoes
 		private void cbo_nivelensino_SelectedIndexChanged(object sender,EventArgs e)
 		{
 			if (cbo_nivelensino.Text.Equals("ENSINO FUNDAMENTAL"))
-			{
 				this.instituicoesTableAdapter.FillByMunicipais(this.siescDataSet.instituicoes);
-			}
 			else
-			{
 				this.instituicoesTableAdapter.FillByInfantil(this.siescDataSet.instituicoes);
-			}
+
 			cbo_instituicao.SelectedIndex = -1;
 		}
 	}

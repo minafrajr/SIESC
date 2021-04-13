@@ -91,9 +91,8 @@ namespace SIESC.UI.UI.Alunos
         private void btn_cancelar_Click(object sender,EventArgs e)
         {
             if (Mensageiro.MensagemPergunta("Deseja fechar a janela?",this) == DialogResult.Yes)
-            {
                 this.Close();
-            }
+            
         }
 
         /// <summary>
@@ -374,7 +373,7 @@ namespace SIESC.UI.UI.Alunos
         }
 
         /// <summary>
-        /// 
+        /// Carrega o data source com os dados dos alunos
         /// </summary>
         /// <param name="dataTable"></param>
         private void CarregaDataSource(DataTable dataTable)
@@ -390,7 +389,7 @@ namespace SIESC.UI.UI.Alunos
         }
 
         /// <summary>
-        /// 
+        /// Evento de click no datagridview
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -405,17 +404,7 @@ namespace SIESC.UI.UI.Alunos
                 Mensageiro.MensagemErro(exception,this);
             }
         }
-
-        /// <summary>
-        /// Calcula a idade do aluno
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void msk_datanasc_ValueChanged(object sender,EventArgs e)
-        {
-            CalculaIdade();
-        }
-
+        
         /// <summary>
         /// Calcula a idade do aluno
         /// </summary>
@@ -470,6 +459,15 @@ namespace SIESC.UI.UI.Alunos
         private void dgv_alunos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             lbl_num_registros.Text = $"Total de registros: {dgv_alunos.RowCount}";
+        }
+        /// <summary>
+        /// Evento Leave da maskedTextBox data de nascimento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msk_datanasc_Leave(object sender, EventArgs e)
+        {
+            CalculaIdade();
         }
     }
 }

@@ -2,12 +2,6 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 20/05/2015
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Net;
-using System.Text;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
@@ -34,7 +28,9 @@ namespace SIESC.UI.UI.Funcionarios
         /// Objeto acesso ao banco de dados
         /// </summary>
         private FuncionarioControl controleFuncionario;
-
+        /// <summary>
+        /// 
+        /// </summary>
         private AutorizacaoControl controleAutorizacao;
         /// <summary>
         /// Objeto do formulário principal
@@ -201,7 +197,7 @@ namespace SIESC.UI.UI.Funcionarios
 
 
         /// <summary>
-        /// 
+        /// Evento de check do radiobutton
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -344,11 +340,9 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-
                 // , , , , CodigoInstituicao, , Mantenedor, , CargoAtual, , , , , , Cep
 
-
-               lbl_codigofuncionario.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CodigoFuncionario"].Value.ToString();
+                lbl_codigofuncionario.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["CodigoFuncionario"].Value.ToString();
 
                 txt_nome.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["Nome"].Value.ToString();
                 msk_datanasc.Text = dgv_gerenciafuncionarios.CurrentRow.Cells["DatadeNascimento"].Value.ToString();
@@ -361,8 +355,6 @@ namespace SIESC.UI.UI.Funcionarios
 
                 txt_endereco.Text =
                     $@"{dgv_gerenciafuncionarios.CurrentRow.Cells["Endereco"].Value} - B. {dgv_gerenciafuncionarios.CurrentRow.Cells["Bairro"].Value} - {dgv_gerenciafuncionarios.CurrentRow.Cells["Cidade"].Value} CEP:{dgv_gerenciafuncionarios.CurrentRow.Cells["Cep"].Value}";
-
-                
             }
             catch (Exception ex)
             {
@@ -409,16 +401,10 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 foreach (Form mdiChild in principalUi.MdiChildren)
                 {
-                    if (mdiChild.GetType() == typeof(CadastroFuncionario))
-                    {
-                        mdiChild.Close();
-                    }
+                    if (mdiChild.GetType() == typeof(CadastroFuncionario)) mdiChild.Close();
                 }
 
-                CadastroFuncionario frm_cadastrafuncionario = new CadastroFuncionario
-                {
-                    MdiParent = principalUi
-                };
+                CadastroFuncionario frm_cadastrafuncionario = new CadastroFuncionario {MdiParent = principalUi};
 
                 frm_cadastrafuncionario.Show();
             }
@@ -456,7 +442,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
         }
         /// <summary>
-        /// 
+        /// Conta o número de registros encontrados na gridview
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

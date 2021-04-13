@@ -87,9 +87,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			foreach (Control control in camposObrigatorios)
 			{
 				if (control.Text.Equals(null))
-				{
 					return false;
-				}
 			}
 			return true;
 		}
@@ -172,9 +170,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			autoriz.IdInstituicao = (int)cbo_instituicao.SelectedValue;
 
 			if (cbo_disciplina.SelectedValue != null)
-			{
 				autoriz.Disciplina = Convert.ToInt16(value: this.cbo_disciplina.SelectedValue);
-			}
 
 			autoriz.Dataexpedicao = DateTime.Now;
 			autoriz.Datapossecargo = DateTime.Now;
@@ -222,23 +218,15 @@ namespace SIESC.UI.UI.Autorizacoes
 				CPF = msk_cpf.Text,
 				DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
 				Nome = txt_nome.Text,
-				Tel1 = "000000000",
+				Tel1 = string.Empty,
 			};
 
-			if (!cbo_cargoOrigem.Equals(null))
-			{
-				func.cargoOrigem = (int)cbo_cargoOrigem.SelectedValue;
-			}
+			if (!cbo_cargoOrigem.Equals(null)) func.cargoOrigem = (int) cbo_cargoOrigem.SelectedValue;
 
-			if (!cbo_cargoAtual.Equals(null))
-			{
-				func.cargoAtual = (int)cbo_cargoAtual.SelectedValue;
-			}
+			if (!cbo_cargoAtual.Equals(null)) func.cargoAtual = (int) cbo_cargoAtual.SelectedValue;
 
 			if (!string.IsNullOrEmpty(cbo_instituicao.SelectedValue.ToString()))
-			{
-				func.instituicao = (int)cbo_instituicao.SelectedValue;
-			}
+				func.instituicao = (int) cbo_instituicao.SelectedValue;
 
 			return func;
 		}

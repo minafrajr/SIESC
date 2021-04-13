@@ -35,27 +35,27 @@ namespace SIESC.UI.UI.Funcionarios
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaFuncionario));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.cbo_cargoAtual = new MyComboBox();
+			this.cbo_cargoAtual = new SIESC.UI.Controles.MyComboBox();
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label9 = new System.Windows.Forms.Label();
-			this.msk_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.label8 = new System.Windows.Forms.Label();
-			this.txt_email = new MyTextBox();
+			this.txt_email = new SIESC.UI.Controles.MyTextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.txt_telefone1 = new MyTextBox();
+			this.txt_telefone1 = new SIESC.UI.Controles.MyTextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.lbl_codigofuncionario = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.txt_endereco = new MyTextBox();
+			this.txt_endereco = new SIESC.UI.Controles.MyTextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.cbo_instituicao = new MyComboBox();
+			this.cbo_instituicao = new SIESC.UI.Controles.MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label3 = new System.Windows.Forms.Label();
-			this.cbo_cargoOrigem = new MyComboBox();
+			this.cbo_cargoOrigem = new SIESC.UI.Controles.MyComboBox();
 			this.lbl_cargo = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txt_nome = new MyTextBox();
-			this.msk_cpf = new MyMaskedTextBox();
+			this.txt_nome = new SIESC.UI.Controles.MyTextBox();
+			this.msk_cpf = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_cpf = new System.Windows.Forms.Label();
 			this.lbl_nome = new System.Windows.Forms.Label();
 			this.gpb_localizar = new System.Windows.Forms.GroupBox();
@@ -162,17 +162,16 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_datanasc
 			// 
-			this.msk_datanasc.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.msk_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.msk_datanasc.Location = new System.Drawing.Point(480, 45);
+			this.msk_datanasc.Location = new System.Drawing.Point(517, 45);
+			this.msk_datanasc.Mask = "00/00/0000";
 			this.msk_datanasc.Name = "msk_datanasc";
-			this.msk_datanasc.Size = new System.Drawing.Size(110, 22);
+			this.msk_datanasc.Size = new System.Drawing.Size(73, 22);
 			this.msk_datanasc.TabIndex = 62;
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(477, 28);
+			this.label8.Location = new System.Drawing.Point(514, 28);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(61, 14);
 			this.label8.TabIndex = 61;
@@ -311,23 +310,23 @@ namespace SIESC.UI.UI.Funcionarios
 			this.txt_nome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txt_nome.Location = new System.Drawing.Point(12, 45);
 			this.txt_nome.Name = "txt_nome";
-			this.txt_nome.Size = new System.Drawing.Size(377, 22);
+			this.txt_nome.Size = new System.Drawing.Size(396, 22);
 			this.txt_nome.TabIndex = 44;
 			// 
 			// msk_cpf
 			// 
 			this.msk_cpf.Enabled = false;
-			this.msk_cpf.Location = new System.Drawing.Point(392, 45);
+			this.msk_cpf.Location = new System.Drawing.Point(414, 45);
 			this.msk_cpf.Mask = "000,000,000-00";
 			this.msk_cpf.Name = "msk_cpf";
-			this.msk_cpf.Size = new System.Drawing.Size(82, 22);
+			this.msk_cpf.Size = new System.Drawing.Size(97, 22);
 			this.msk_cpf.TabIndex = 43;
 			this.msk_cpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
 			// 
 			// lbl_cpf
 			// 
 			this.lbl_cpf.AutoSize = true;
-			this.lbl_cpf.Location = new System.Drawing.Point(392, 28);
+			this.lbl_cpf.Location = new System.Drawing.Point(411, 28);
 			this.lbl_cpf.Name = "lbl_cpf";
 			this.lbl_cpf.Size = new System.Drawing.Size(30, 14);
 			this.lbl_cpf.TabIndex = 42;
@@ -504,7 +503,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.lbl_num_registros});
+            this.lbl_num_registros});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 364);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1314, 22);
@@ -623,7 +622,7 @@ namespace SIESC.UI.UI.Funcionarios
 		private System.Windows.Forms.Label label7;
 		private MyTextBox txt_telefone1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DateTimePicker msk_datanasc;
+		private MyMaskedTextBox msk_datanasc;
 		private System.Windows.Forms.Label label8;
 		private MyComboBox cbo_cargoAtual;
 		private System.Windows.Forms.Label label9;

@@ -11,12 +11,13 @@ using System.Data;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
 using SIESC.UI.ConsultaWeb;
+using SIESC.UI.UI.CEP;
 using SIESC.WEB;
 
 namespace SIESC.UI.UI.Funcionarios
 {
     /// <summary>
-    /// 
+    /// Forulário de cadasto do funcionário
     /// </summary>
     public partial class CadastroFuncionario : BaseUi
     {
@@ -60,7 +61,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="func"></param>
         /// <param name="principal"></param>
-        public CadastroFuncionario(Funcionario func,Principal_UI principal)
+        public CadastroFuncionario(Funcionario func, Principal_UI principal)
         {
             PrincipalUi = principal;
             InitializeComponent();
@@ -72,9 +73,7 @@ namespace SIESC.UI.UI.Funcionarios
 
             this.instituicoesTableAdapter.FillByMunicipioCreche(this.siescDataSet.instituicoes);
 
-
             this.RepassaFuncionario(funcionario);
-            
         }
 
         /// <summary>
@@ -92,10 +91,8 @@ namespace SIESC.UI.UI.Funcionarios
             this.txt_nome.Text = func.Nome;
             this.txt_numresid.Text = func.NumResidencia;
 
-            if (func.DataNascimento.CompareTo(msk_datanasc.MinDate) > 0)
-            {
+           // if (func.DataNascimento.CompareTo(Convert.ToDateTime(msk_datanasc.Text)) > 0)
                 this.msk_datanasc.Text = func.DataNascimento.ToShortDateString();
-            }
 
             this.cbo_tipolograd.Text = func.TipoLogradouro;
 
@@ -105,21 +102,16 @@ namespace SIESC.UI.UI.Funcionarios
             this.msk_tel2.Text = func.Tel2;
             this.msk_tel3.Text = func.Tel3;
             this.lbl_codigofunc.Text = func.idFuncionario.ToString();
+
             if (func.Sexo == "F")
-            {
                 rdb_feminino.Checked = true;
-            }
             else
-            {
                 rdb_masculino.Checked = true;
-            }
 
             foreach (DataRowView item in cbo_instituicao.Items)
             {
                 if (func.instituicao.ToString() == item["idInstituicoes"].ToString())
-                {
                     cbo_instituicao.SelectedItem = item;
-                }
             }
             cbo_instituicao.Refresh();
 
@@ -129,11 +121,9 @@ namespace SIESC.UI.UI.Funcionarios
 
                 foreach (DataRowView item in cbo_cargoorigem.Items)
                 {
-                    if (func.cargoOrigem.ToString() == item["idcargos"].ToString())
-                    {
-                        cbo_cargoorigem.SelectedItem = item;
-                    }
+                    if (func.cargoOrigem.ToString() == item["idcargos"].ToString()) cbo_cargoorigem.SelectedItem = item;
                 }
+
                 cbo_cargoorigem.Refresh();
             }
 
@@ -143,10 +133,7 @@ namespace SIESC.UI.UI.Funcionarios
 
                 foreach (DataRowView item in cbo_cargoatual.Items)
                 {
-                    if (func.cargoAtual.ToString() == item["idcargos"].ToString())
-                    {
-                        cbo_cargoatual.SelectedItem = item;
-                    }
+                    if (func.cargoAtual.ToString() == item["idcargos"].ToString()) cbo_cargoatual.SelectedItem = item;
                 }
                 cbo_cargoatual.Refresh();
             }
@@ -157,16 +144,14 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_salvar_Click(object sender,EventArgs e)
+        private void btn_salvar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!cbo_cargoatual.Text.Equals("VICE-DIRETOR"))
                 {
                     if (!VerificaCampos(listaControles))
-                    {
                         throw new Exception("Existem campos sem preenchimento!!!");
-                    }
                 }
 
                 controlFuncionario = new FuncionarioControl();
@@ -179,7 +164,7 @@ namespace SIESC.UI.UI.Funcionarios
                 {
                     if (string.IsNullOrEmpty(msk_cpf.Text))
                     {
-                        if (controlFuncionario.PesquisaID(msk_datanasc.Value,txt_nome.Text) > 0)
+                        if (controlFuncionario.PesquisaID(Convert.ToDateTime(msk_datanasc.Text), txt_nome.Text) > 0)
                         {
                             //verifica se já existe o funcionário no banco.
                             throw new Exception($"Não foi possível salvar!{Environment.NewLine}Já existe o funcionário no sistema.{Environment.NewLine}Por favor localize e edite o funcionário através do botão Editar na tela Gerenciar Funcionários.");
@@ -193,32 +178,25 @@ namespace SIESC.UI.UI.Funcionarios
                         }
                     }
                 }
-                else
-                {
-                    exist = Convert.ToUInt16(lbl_codigofunc.Text);
-                }
+                else { exist = Convert.ToUInt16(lbl_codigofunc.Text); }
 
                 if (exist > 0)
                 {
                     funcionario.idFuncionario = (int)exist;
 
-                    if (controlFuncionario.Salvar(funcionario,false)) //atualiza no banco o objeto
-                    {
+                    if (controlFuncionario.Salvar(funcionario, false)) //atualiza no banco o objeto
                         Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
-                    }
                 }
                 else
                 {
-                    if (controlFuncionario.Salvar(funcionario,true)) //salva no banco o objeto
-                    {
+                    if (controlFuncionario.Salvar(funcionario, true)) //salva no banco o objeto
                         Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
-                    }
                 }
                 LimpaCampos(listaControles);
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -263,7 +241,7 @@ namespace SIESC.UI.UI.Funcionarios
                 CPF = msk_cpf.Text,
                 CartIdentidade = txt_cartident.Text,
 
-                DataNascimento = msk_datanasc.Value,
+                //DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
 
                 Nome = txt_nome.Text,
                 Sexo = rdb_masculino.Checked ? "M" : "F",
@@ -281,15 +259,11 @@ namespace SIESC.UI.UI.Funcionarios
 
             };
 
-            if (cbo_cargoorigem.SelectedValue != null)
-            {
-                func.cargoOrigem = (int)cbo_cargoorigem.SelectedValue;
-            }
+            func.DataNascimento = Convert.ToDateTime(msk_datanasc.Text);
 
-            if (cbo_cargoatual.SelectedValue != null)
-            {
-                func.cargoAtual = (int)cbo_cargoatual.SelectedValue;
-            }
+            if (cbo_cargoorigem.SelectedValue != null) func.cargoOrigem = (int)cbo_cargoorigem.SelectedValue;
+
+            if (cbo_cargoatual.SelectedValue != null) func.cargoAtual = (int)cbo_cargoatual.SelectedValue;
 
             return func;
         }
@@ -299,12 +273,9 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_cancelar_Click(object sender,EventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            if (Mensageiro.MensagemCancelamento(PrincipalUi) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            if (Mensageiro.MensagemCancelamento(PrincipalUi) == DialogResult.Yes) this.Close();
         }
 
         /// <summary>
@@ -312,7 +283,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_excluir_Click(Object sender,EventArgs e)
+        private void btn_excluir_Click(Object sender, EventArgs e)
         {
             try
             {
@@ -325,7 +296,7 @@ namespace SIESC.UI.UI.Funcionarios
 
                 //funcionario = CriarFuncionario();
 
-                if (Mensageiro.MensagemExclusao(funcionario,PrincipalUi) == DialogResult.Yes)
+                if (Mensageiro.MensagemExclusao(funcionario, PrincipalUi) == DialogResult.Yes)
                 {
                     if (controlFuncionario.Deletar(Convert.ToInt16(lbl_codigofunc.Text)))
                     {
@@ -336,7 +307,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -372,13 +343,9 @@ namespace SIESC.UI.UI.Funcionarios
             foreach (Control control in lista)
             {
                 if (!(control is RadioButton))
-                {
                     control.ResetText();
-                }
                 else
-                {
                     ((RadioButton)control).Checked = false;
-                }
             }
             msk_tel2.ResetText();
             msk_tel3.ResetText();
@@ -403,7 +370,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_buscarcep_Click(object sender,EventArgs e)
+        private void btn_buscarcep_Click(object sender, EventArgs e)
         {
             try
             {
@@ -418,7 +385,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -427,7 +394,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_Click(object sender,EventArgs e)
+        private void btn_limpar_Click(object sender, EventArgs e)
         {
             LimpaCampos(listaControles);
         }
@@ -437,11 +404,11 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_autorizar_Click(object sender,EventArgs e)
+        private void btn_autorizar_Click(object sender, EventArgs e)
         {
             try
             {
-               controlAutorizacao = new AutorizacaoControl();
+                controlAutorizacao = new AutorizacaoControl();
                 if (controlAutorizacao.PesquisaAutorizacaoAtiva(idFuncionario: Convert.ToInt32(lbl_codigofunc.Text)))
                 {
                     throw new Exception($"{Environment.NewLine}O funcionário já possui autorização ativa!{Environment.NewLine}Favor acessar o menu Autorização para editar ou inativar a Autorização.");
@@ -449,7 +416,7 @@ namespace SIESC.UI.UI.Funcionarios
 
                 funcionario = CriarFuncionario();
 
-                SolicitarAutorizacao frmSolicitarAutorizacao = new SolicitarAutorizacao(funcionario,PrincipalUi);
+                SolicitarAutorizacao frmSolicitarAutorizacao = new SolicitarAutorizacao(funcionario, PrincipalUi);
 
                 frmSolicitarAutorizacao.MdiParent = PrincipalUi;
 
@@ -459,41 +426,37 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception exception)
             {
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
         /// <summary>
-        /// 
+        /// Evento do botão novo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_novo_Click(object sender,EventArgs e)
+        private void btn_novo_Click(object sender, EventArgs e)
         {
             LimpaCampos(listaControles);
         }
-
-      
-
-       
 
         /// <summary>
         /// Carrega a lista das escolas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_instituicao_DropDown(object sender,EventArgs e)
+        private void cbo_instituicao_DropDown(object sender, EventArgs e)
         {
             //esta linha de código carrega dados na tabela 'siescDataSet.instituicoes'. Você pode movê-la ou removê-la conforme necessário.
             this.instituicoesTableAdapter.FillByMunicipioCreche(this.siescDataSet.instituicoes);
         }
 
         /// <summary>
-        /// 
+        /// Evento de dropdown da combobox de cargos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_cargo_DropDown(object sender,EventArgs e)
+        private void cbo_cargo_DropDown(object sender, EventArgs e)
         {
             try
             {
@@ -501,17 +464,16 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
-
         }
 
         /// <summary>
-        /// 
+        /// Evento de dropdown da combobox de cargo atual
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbo_cargoatual_DropDown(object sender,EventArgs e)
+        private void cbo_cargoatual_DropDown(object sender, EventArgs e)
         {
             try
             {
@@ -520,7 +482,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -528,7 +490,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_cbo_cargoOrigem_Click(object sender,EventArgs e)
+        private void btn_limpar_cbo_cargoOrigem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -536,7 +498,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -545,7 +507,7 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_limpar_cbo_cargoAtual_Click(object sender,EventArgs e)
+        private void btn_limpar_cbo_cargoAtual_Click(object sender, EventArgs e)
         {
             try
             {
@@ -553,7 +515,7 @@ namespace SIESC.UI.UI.Funcionarios
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
 
@@ -562,15 +524,16 @@ namespace SIESC.UI.UI.Funcionarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_saberCep_Click(object sender,EventArgs e)
+        private void btn_saberCep_Click(object sender, EventArgs e)
         {
             try
             {
-
+                FrmBuscaCep frmBuscaCep = new FrmBuscaCep {MdiParent = PrincipalUi};
+                frmBuscaCep.Show();
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
     }

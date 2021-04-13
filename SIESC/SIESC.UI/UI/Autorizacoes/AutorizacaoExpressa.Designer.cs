@@ -31,21 +31,21 @@ namespace SIESC.UI.UI.Autorizacoes
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.cbo_instituicao = new MyComboBox();
+			this.cbo_instituicao = new SIESC.UI.Controles.MyComboBox();
 			this.siescDataSet1 = new SIESC.UI.siescDataSet();
-			this.cbo_cargoAtual = new MyComboBox();
+			this.cbo_cargoAtual = new SIESC.UI.Controles.MyComboBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.cbo_cargoOrigem = new MyComboBox();
+			this.cbo_cargoOrigem = new SIESC.UI.Controles.MyComboBox();
 			this.lbl_cargo = new System.Windows.Forms.Label();
-			this.msk_datanasc = new MyMaskedTextBox();
+			this.msk_datanasc = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.txt_nome = new MyTextBox();
-			this.cbo_nivelensino = new MyComboBox();
-			this.msk_cpf = new MyMaskedTextBox();
+			this.txt_nome = new SIESC.UI.Controles.MyTextBox();
+			this.cbo_nivelensino = new SIESC.UI.Controles.MyComboBox();
+			this.msk_cpf = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_disciplina = new MyComboBox();
+			this.cbo_disciplina = new SIESC.UI.Controles.MyComboBox();
 			this.lbl_nome = new System.Windows.Forms.Label();
-			this.cbo_tipoautoriz = new MyComboBox();
+			this.cbo_tipoautoriz = new SIESC.UI.Controles.MyComboBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -131,10 +131,12 @@ namespace SIESC.UI.UI.Autorizacoes
 			// msk_datanasc
 			// 
 			this.msk_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.msk_datanasc.Location = new System.Drawing.Point(464, 56);
+			this.msk_datanasc.Location = new System.Drawing.Point(467, 56);
+			this.msk_datanasc.Mask = "00/00/0000";
 			this.msk_datanasc.Name = "msk_datanasc";
-			this.msk_datanasc.Size = new System.Drawing.Size(98, 23);
+			this.msk_datanasc.Size = new System.Drawing.Size(95, 23);
 			this.msk_datanasc.TabIndex = 1;
+			this.msk_datanasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lbl_datanasc
 			// 
@@ -382,7 +384,6 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.lbl_cpf);
 			this.Name = "AutorizacaoExpressa";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Autorização Expressa";
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSet1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSet1BindingSource)).EndInit();

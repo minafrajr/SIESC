@@ -39,15 +39,15 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.btn_autorizar = new System.Windows.Forms.Button();
 			this.gpb_endereco = new System.Windows.Forms.GroupBox();
 			this.btn_saberCep = new System.Windows.Forms.Button();
-			this.txt_bairro = new MyTextBox();
-			this.txt_complemento = new MyTextBox();
+			this.txt_bairro = new SIESC.UI.Controles.MyTextBox();
+			this.txt_complemento = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_complemento = new System.Windows.Forms.Label();
 			this.btn_buscarcep = new System.Windows.Forms.Button();
-			this.txt_numresid = new MyTextBox();
-			this.txt_cidade = new MyTextBox();
-			this.txt_logradouro = new MyTextBox();
-			this.cbo_tipolograd = new MyComboBox();
-			this.msk_cep = new MyMaskedTextBox();
+			this.txt_numresid = new SIESC.UI.Controles.MyTextBox();
+			this.txt_cidade = new SIESC.UI.Controles.MyTextBox();
+			this.txt_logradouro = new SIESC.UI.Controles.MyTextBox();
+			this.cbo_tipolograd = new SIESC.UI.Controles.MyComboBox();
+			this.msk_cep = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_cidade = new System.Windows.Forms.Label();
 			this.lbl_bairro = new System.Windows.Forms.Label();
 			this.lbl_numresid = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.lbl_tipolograd = new System.Windows.Forms.Label();
 			this.lbl_cep = new System.Windows.Forms.Label();
 			this.gpb_dadospessoais = new System.Windows.Forms.GroupBox();
-			this.cbo_cargoAtual = new MyComboBox();
+			this.cbo_cargoAtual = new SIESC.UI.Controles.MyComboBox();
 			this.cargos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label10 = new System.Windows.Forms.Label();
@@ -66,21 +66,21 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.lbl_codigofunc = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.lbl_numautoriz = new System.Windows.Forms.Label();
-			this.cbo_cargoOrigem = new MyComboBox();
+			this.cbo_cargoOrigem = new SIESC.UI.Controles.MyComboBox();
 			this.cargosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lbl_cargo = new System.Windows.Forms.Label();
-			this.txt_email = new MyTextBox();
+			this.txt_email = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_email = new System.Windows.Forms.Label();
-			this.msk_tel3 = new MyMaskedPhoneBox();
-			this.msk_tel2 = new MyMaskedPhoneBox();
-			this.msk_tel1 = new MyMaskedPhoneBox();
+			this.msk_tel3 = new SIESC.UI.Controles.MyMaskedPhoneBox();
+			this.msk_tel2 = new SIESC.UI.Controles.MyMaskedPhoneBox();
+			this.msk_tel1 = new SIESC.UI.Controles.MyMaskedPhoneBox();
 			this.lbl_telefones = new System.Windows.Forms.Label();
-			this.txt_cartident = new MyTextBox();
+			this.txt_cartident = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_cartident = new System.Windows.Forms.Label();
-			this.dtp_datanasc = new System.Windows.Forms.DateTimePicker();
+			this.msk_datanasc = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.msk_cpf = new MyMaskedTextBox();
-			this.txt_nome = new MyTextBox();
+			this.msk_cpf = new SIESC.UI.Controles.MyMaskedTextBox();
+			this.txt_nome = new SIESC.UI.Controles.MyTextBox();
 			this.gpb_sexo = new System.Windows.Forms.GroupBox();
 			this.rdb_feminino = new System.Windows.Forms.RadioButton();
 			this.rdb_masculino = new System.Windows.Forms.RadioButton();
@@ -92,12 +92,12 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.chk_anosfinais = new System.Windows.Forms.CheckBox();
 			this.chk_anosiniciais = new System.Windows.Forms.CheckBox();
-			this.cbo_nivelensino = new MyComboBox();
+			this.cbo_nivelensino = new SIESC.UI.Controles.MyComboBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_disciplina = new MyComboBox();
+			this.cbo_disciplina = new SIESC.UI.Controles.MyComboBox();
 			this.disciplinasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.cbo_tipoautoriz = new MyComboBox();
-			this.cbo_instituicao = new MyComboBox();
+			this.cbo_tipoautoriz = new SIESC.UI.Controles.MyComboBox();
+			this.cbo_instituicao = new SIESC.UI.Controles.MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dtp_datapossecargo = new System.Windows.Forms.DateTimePicker();
 			this.label4 = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gpb_documentos = new System.Windows.Forms.GroupBox();
-			this.txt_outrosdocs = new MyTextBox();
+			this.txt_outrosdocs = new SIESC.UI.Controles.MyTextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.chk_decreto = new System.Windows.Forms.CheckBox();
 			this.chk_termoposse = new System.Windows.Forms.CheckBox();
@@ -319,23 +319,23 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.cbo_tipolograd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipolograd.FormattingEnabled = true;
 			this.cbo_tipolograd.Items.AddRange(new object[] {
-			"",
-			"ALAMEDA",
-			"AVENIDA",
-			"BECO",
-			"ESTRADA",
-			"FAZENDA",
-			"FLORESTA",
-			"LOTEAMENTO",
-			"MORRO",
-			"PARQUE",
-			"PRAÇA",
-			"RECANTO",
-			"RODOVIA",
-			"RUA",
-			"TRAVESSA",
-			"VIA",
-			"VILA"});
+            "",
+            "ALAMEDA",
+            "AVENIDA",
+            "BECO",
+            "ESTRADA",
+            "FAZENDA",
+            "FLORESTA",
+            "LOTEAMENTO",
+            "MORRO",
+            "PARQUE",
+            "PRAÇA",
+            "RECANTO",
+            "RODOVIA",
+            "RUA",
+            "TRAVESSA",
+            "VIA",
+            "VILA"});
 			this.cbo_tipolograd.Location = new System.Drawing.Point(9, 68);
 			this.cbo_tipolograd.Name = "cbo_tipolograd";
 			this.cbo_tipolograd.Size = new System.Drawing.Size(121, 22);
@@ -421,7 +421,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.gpb_dadospessoais.Controls.Add(this.lbl_telefones);
 			this.gpb_dadospessoais.Controls.Add(this.txt_cartident);
 			this.gpb_dadospessoais.Controls.Add(this.lbl_cartident);
-			this.gpb_dadospessoais.Controls.Add(this.dtp_datanasc);
+			this.gpb_dadospessoais.Controls.Add(this.msk_datanasc);
 			this.gpb_dadospessoais.Controls.Add(this.lbl_datanasc);
 			this.gpb_dadospessoais.Controls.Add(this.msk_cpf);
 			this.gpb_dadospessoais.Controls.Add(this.txt_nome);
@@ -651,15 +651,15 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.lbl_cartident.TabIndex = 7;
 			this.lbl_cartident.Text = "Carteira de Identidade:";
 			// 
-			// dtp_datanasc
+			// msk_datanasc
 			// 
-			this.dtp_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtp_datanasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtp_datanasc.Location = new System.Drawing.Point(465, 70);
-			this.dtp_datanasc.Name = "dtp_datanasc";
-			this.dtp_datanasc.Size = new System.Drawing.Size(98, 23);
-			this.dtp_datanasc.TabIndex = 1;
-			this.dtp_datanasc.Tag = "Data Nascimento";
+			this.msk_datanasc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.msk_datanasc.Location = new System.Drawing.Point(465, 70);
+			this.msk_datanasc.Mask = "00/00/0000";
+			this.msk_datanasc.Name = "msk_datanasc";
+			this.msk_datanasc.Size = new System.Drawing.Size(98, 23);
+			this.msk_datanasc.TabIndex = 1;
+			this.msk_datanasc.Tag = "Data Nascimento";
 			// 
 			// lbl_datanasc
 			// 
@@ -815,8 +815,8 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.cbo_nivelensino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_nivelensino.FormattingEnabled = true;
 			this.cbo_nivelensino.Items.AddRange(new object[] {
-			"EDUCAÇÃO INFANTIL",
-			"ENSINO FUNDAMENTAL"});
+            "EDUCAÇÃO INFANTIL",
+            "ENSINO FUNDAMENTAL"});
 			this.cbo_nivelensino.Location = new System.Drawing.Point(9, 81);
 			this.cbo_nivelensino.Name = "cbo_nivelensino";
 			this.cbo_nivelensino.Size = new System.Drawing.Size(205, 22);
@@ -856,9 +856,9 @@ namespace SIESC.UI.UI.Autorizacoes
 			this.cbo_tipoautoriz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipoautoriz.FormattingEnabled = true;
 			this.cbo_tipoautoriz.Items.AddRange(new object[] {
-			"DIRIGIR",
-			"LECIONAR",
-			"SECRETARIAR"});
+            "DIRIGIR",
+            "LECIONAR",
+            "SECRETARIAR"});
 			this.cbo_tipoautoriz.Location = new System.Drawing.Point(9, 39);
 			this.cbo_tipoautoriz.Name = "cbo_tipoautoriz";
 			this.cbo_tipoautoriz.Size = new System.Drawing.Size(205, 22);
@@ -1157,7 +1157,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		private System.Windows.Forms.Label lbl_telefones;
 		private MyTextBox txt_cartident;
 		private System.Windows.Forms.Label lbl_cartident;
-		private System.Windows.Forms.DateTimePicker dtp_datanasc;
+		private MyMaskedTextBox msk_datanasc;
 		private System.Windows.Forms.Label lbl_datanasc;
 		private MyMaskedTextBox msk_cpf;
 		private MyTextBox txt_nome;
