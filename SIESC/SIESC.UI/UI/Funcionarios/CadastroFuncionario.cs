@@ -91,8 +91,8 @@ namespace SIESC.UI.UI.Funcionarios
             this.txt_nome.Text = func.Nome;
             this.txt_numresid.Text = func.NumResidencia;
 
-           // if (func.DataNascimento.CompareTo(Convert.ToDateTime(msk_datanasc.Text)) > 0)
-                this.msk_datanasc.Text = func.DataNascimento.ToShortDateString();
+            // if (func.DataNascimento.CompareTo(Convert.ToDateTime(msk_datanasc.Text)) > 0)
+            this.msk_datanasc.Text = func.DataNascimento.ToShortDateString();
 
             this.cbo_tipolograd.Text = func.TipoLogradouro;
 
@@ -241,7 +241,7 @@ namespace SIESC.UI.UI.Funcionarios
                 CPF = msk_cpf.Text,
                 CartIdentidade = txt_cartident.Text,
 
-                //DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
+                DataNascimento = Convert.ToDateTime(msk_datanasc.Text),
 
                 Nome = txt_nome.Text,
                 Sexo = rdb_masculino.Checked ? "M" : "F",
@@ -256,10 +256,7 @@ namespace SIESC.UI.UI.Funcionarios
                 Logradouro = txt_logradouro.Text,
                 NumResidencia = txt_numresid.Text,
                 TipoLogradouro = cbo_tipolograd.Text
-
             };
-
-            func.DataNascimento = Convert.ToDateTime(msk_datanasc.Text);
 
             if (cbo_cargoorigem.SelectedValue != null) func.cargoOrigem = (int)cbo_cargoorigem.SelectedValue;
 
@@ -528,7 +525,7 @@ namespace SIESC.UI.UI.Funcionarios
         {
             try
             {
-                FrmBuscaCep frmBuscaCep = new FrmBuscaCep {MdiParent = PrincipalUi};
+                FrmBuscaCep frmBuscaCep = new FrmBuscaCep { MdiParent = PrincipalUi };
                 frmBuscaCep.Show();
             }
             catch (Exception ex)

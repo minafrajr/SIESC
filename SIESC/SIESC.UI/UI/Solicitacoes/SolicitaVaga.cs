@@ -937,7 +937,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// Fabria o objeto solicitação
+        /// Fabrica o objeto solicitação
         /// </summary>
         /// <param name="aluno"></param>
         /// <param name="cod"></param>
