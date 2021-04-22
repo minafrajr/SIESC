@@ -162,6 +162,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_datanasc
 			// 
+			this.msk_datanasc.Enabled = false;
 			this.msk_datanasc.Location = new System.Drawing.Point(517, 45);
 			this.msk_datanasc.Mask = "00/00/0000";
 			this.msk_datanasc.Name = "msk_datanasc";

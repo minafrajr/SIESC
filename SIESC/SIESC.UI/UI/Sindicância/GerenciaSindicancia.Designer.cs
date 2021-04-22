@@ -918,7 +918,6 @@ namespace SIESC.UI.UI.Sindicância
 			this.Name = "GerenciaSindicancia";
 			this.Text = "Gerenciamento de Sindicâncias";
 			this.Load += new System.EventHandler(this.GerenciaSindicancia_Load);
-			this.Enter += new System.EventHandler(this.GerenciaSindicancia_Enter);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);

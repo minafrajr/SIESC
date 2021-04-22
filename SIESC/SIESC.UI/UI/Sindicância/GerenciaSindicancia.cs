@@ -61,7 +61,6 @@ namespace SIESC.UI.UI.Sindicância
         private void GerenciaSindicancia_Load(object sender, EventArgs e)
         {
             tipoConsulta = TipoConsulta.geral;
-            AtualizaUltimaSindicancia();
             CarregaGridView();
         }
         /// <summary>
@@ -72,8 +71,12 @@ namespace SIESC.UI.UI.Sindicância
             try
             {
                 sindicanciaControl = new SindicanciaControl();
+                
                 lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
-                nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+
+
+                if (!string.IsNullOrEmpty(lbl_id_ultima_sindicada.Text))
+                    nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
             }
             catch (Exception ex)
             {
@@ -911,7 +914,7 @@ namespace SIESC.UI.UI.Sindicância
             }
         }
         /// <summary>
-        /// Evneto do botão imprimir ficha de sindicância
+        /// Evento do botão imprimir ficha de sindicância
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -928,16 +931,7 @@ namespace SIESC.UI.UI.Sindicância
             frm_ficha_sindicancia fichaSindicancia = new frm_ficha_sindicancia((int)dgv_dados.CurrentRow.Cells[0].Value, idSolicitacao, idSindicado) { MdiParent = principalUi };
             fichaSindicancia.Show();
         }
-        /// <summary>
-        /// Evento enter do formulário
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GerenciaSindicancia_Enter(object sender, EventArgs e)
-        {
-            RadioButtonChecked_Click(sender, e);
-        }
-
+      
         /// <summary>
         /// Evento de finalização de carregamento da GridView
         /// </summary>

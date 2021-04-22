@@ -323,7 +323,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_tel3
 			// 
-			this.msk_tel3.Location = new System.Drawing.Point(455, 83);
+			this.msk_tel3.Location = new System.Drawing.Point(465, 82);
 			this.msk_tel3.Mask = "(00)000000000";
 			this.msk_tel3.Name = "msk_tel3";
 			this.msk_tel3.Size = new System.Drawing.Size(100, 22);
@@ -333,7 +333,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_tel2
 			// 
-			this.msk_tel2.Location = new System.Drawing.Point(349, 83);
+			this.msk_tel2.Location = new System.Drawing.Point(359, 82);
 			this.msk_tel2.Mask = "(00)000000000";
 			this.msk_tel2.Name = "msk_tel2";
 			this.msk_tel2.Size = new System.Drawing.Size(100, 22);
@@ -343,7 +343,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_tel1
 			// 
-			this.msk_tel1.Location = new System.Drawing.Point(243, 83);
+			this.msk_tel1.Location = new System.Drawing.Point(253, 82);
 			this.msk_tel1.Mask = "(00)000000000";
 			this.msk_tel1.Name = "msk_tel1";
 			this.msk_tel1.Size = new System.Drawing.Size(100, 22);
@@ -354,7 +354,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// lbl_telefones
 			// 
 			this.lbl_telefones.AutoSize = true;
-			this.lbl_telefones.Location = new System.Drawing.Point(240, 65);
+			this.lbl_telefones.Location = new System.Drawing.Point(250, 65);
 			this.lbl_telefones.Name = "lbl_telefones";
 			this.lbl_telefones.Size = new System.Drawing.Size(56, 14);
 			this.lbl_telefones.TabIndex = 9;
@@ -363,7 +363,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// txt_cartident
 			// 
 			this.txt_cartident.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txt_cartident.Location = new System.Drawing.Point(108, 83);
+			this.txt_cartident.Location = new System.Drawing.Point(122, 82);
 			this.txt_cartident.Name = "txt_cartident";
 			this.txt_cartident.Size = new System.Drawing.Size(125, 22);
 			this.txt_cartident.TabIndex = 5;
@@ -383,8 +383,9 @@ namespace SIESC.UI.UI.Funcionarios
 			this.msk_datanasc.Location = new System.Drawing.Point(470, 35);
 			this.msk_datanasc.Mask = "00/00/0000";
 			this.msk_datanasc.Name = "msk_datanasc";
-			this.msk_datanasc.Size = new System.Drawing.Size(93, 23);
+			this.msk_datanasc.Size = new System.Drawing.Size(85, 23);
 			this.msk_datanasc.TabIndex = 2;
+			this.msk_datanasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lbl_datanasc
 			// 
@@ -397,10 +398,11 @@ namespace SIESC.UI.UI.Funcionarios
 			// 
 			// msk_cpf
 			// 
-			this.msk_cpf.Location = new System.Drawing.Point(6, 83);
+			this.msk_cpf.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.msk_cpf.Location = new System.Drawing.Point(6, 81);
 			this.msk_cpf.Mask = "000,000,000-00";
 			this.msk_cpf.Name = "msk_cpf";
-			this.msk_cpf.Size = new System.Drawing.Size(96, 22);
+			this.msk_cpf.Size = new System.Drawing.Size(110, 23);
 			this.msk_cpf.TabIndex = 4;
 			this.msk_cpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
 			// 

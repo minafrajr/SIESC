@@ -193,6 +193,12 @@ namespace SIESC.BD.Control
         public string MaximoIdSolicitacao()
         {
             vw_sindicancia_TA = new vw_sindicanciaTableAdapter();
+
+            var maxId = vw_sindicancia_TA.GetMaxidSolicitacao();
+
+            if (maxId == null)
+                    return string.Empty;
+
             return vw_sindicancia_TA.GetMaxidSolicitacao().ToString();
         }
 

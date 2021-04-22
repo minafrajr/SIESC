@@ -2,7 +2,7 @@
 {
 
 
-	public partial class dsSindicancia
-	{
-	}
+    public partial class dsSindicancia
+    {
+    }
 }
