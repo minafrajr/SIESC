@@ -38,18 +38,18 @@ namespace SIESC.UI.UI.Instituicoes
 			this.label2 = new System.Windows.Forms.Label();
 			this.txt_telefone = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txt_endereco = new MyTextBox();
+			this.txt_endereco = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_endereco = new System.Windows.Forms.Label();
-			this.cbo_mantenedor = new MyComboBox();
+			this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
 			this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.lbl_mantenedor = new System.Windows.Forms.Label();
-			this.cbo_regional = new MyComboBox();
+			this.cbo_regional = new SIESC.UI.Controles.MyComboBox();
 			this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lbl_regional = new System.Windows.Forms.Label();
-			this.txt_codigo = new MyMaskedTextBox();
+			this.txt_codigo = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_codigo = new System.Windows.Forms.Label();
-			this.txt_nome = new MyTextBox();
+			this.txt_nome = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_nome = new System.Windows.Forms.Label();
 			this.gpb_localizar = new System.Windows.Forms.GroupBox();
 			this.rdb_mantenedor = new System.Windows.Forms.RadioButton();
@@ -61,13 +61,13 @@ namespace SIESC.UI.UI.Instituicoes
 			this.btn_novo = new System.Windows.Forms.Button();
 			this.btn_editar = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
+			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+			this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
 			this.dgv_dadosescolas = new System.Windows.Forms.DataGridView();
 			this.diretoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.regionaisTableAdapter = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
 			this.siescDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.mantenedorTableAdapter = new SIESC.UI.siescDataSetTableAdapters.mantenedorTableAdapter();
-			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -76,10 +76,10 @@ namespace SIESC.UI.UI.Instituicoes
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).BeginInit();
 			this.gpb_localizar.SuspendLayout();
+			this.statusStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_dadosescolas)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.diretoriasBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSetBindingSource)).BeginInit();
-			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// splitContainer1
@@ -175,6 +175,7 @@ namespace SIESC.UI.UI.Instituicoes
 			// 
 			this.cbo_mantenedor.DataSource = this.mantenedorBindingSource;
 			this.cbo_mantenedor.DisplayMember = "tipo";
+			this.cbo_mantenedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_mantenedor.Enabled = false;
 			this.cbo_mantenedor.FormattingEnabled = true;
 			this.cbo_mantenedor.Location = new System.Drawing.Point(301, 34);
@@ -206,6 +207,7 @@ namespace SIESC.UI.UI.Instituicoes
 			// 
 			this.cbo_regional.DataSource = this.regionaisBindingSource;
 			this.cbo_regional.DisplayMember = "nomeRegional";
+			this.cbo_regional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_regional.Enabled = false;
 			this.cbo_regional.FormattingEnabled = true;
 			this.cbo_regional.Location = new System.Drawing.Point(65, 35);
@@ -393,6 +395,23 @@ namespace SIESC.UI.UI.Instituicoes
 			this.btn_cancelar.UseVisualStyleBackColor = true;
 			this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
 			// 
+			// statusStrip1
+			// 
+			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.lbl_num_registros});
+			this.statusStrip1.Location = new System.Drawing.Point(0, 396);
+			this.statusStrip1.Name = "statusStrip1";
+			this.statusStrip1.Size = new System.Drawing.Size(1248, 22);
+			this.statusStrip1.TabIndex = 1;
+			this.statusStrip1.Text = "statusStrip1";
+			// 
+			// lbl_num_registros
+			// 
+			this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
+			this.lbl_num_registros.Name = "lbl_num_registros";
+			this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
+			this.lbl_num_registros.Text = "Total de registros:";
+			// 
 			// dgv_dadosescolas
 			// 
 			this.dgv_dadosescolas.AllowUserToAddRows = false;
@@ -428,23 +447,6 @@ namespace SIESC.UI.UI.Instituicoes
 			// 
 			this.mantenedorTableAdapter.ClearBeforeFill = true;
 			// 
-			// statusStrip1
-			// 
-			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.lbl_num_registros});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 396);
-			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1248, 22);
-			this.statusStrip1.TabIndex = 1;
-			this.statusStrip1.Text = "statusStrip1";
-			// 
-			// lbl_num_registros
-			// 
-			this.lbl_num_registros.BackColor = System.Drawing.SystemColors.Control;
-			this.lbl_num_registros.Name = "lbl_num_registros";
-			this.lbl_num_registros.Size = new System.Drawing.Size(99, 17);
-			this.lbl_num_registros.Text = "Total de registros:";
-			// 
 			// GerenciaEscolas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -466,11 +468,11 @@ namespace SIESC.UI.UI.Instituicoes
 			((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).EndInit();
 			this.gpb_localizar.ResumeLayout(false);
 			this.gpb_localizar.PerformLayout();
+			this.statusStrip1.ResumeLayout(false);
+			this.statusStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_dadosescolas)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.diretoriasBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSetBindingSource)).EndInit();
-			this.statusStrip1.ResumeLayout(false);
-			this.statusStrip1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -517,7 +519,6 @@ namespace SIESC.UI.UI.Instituicoes
 		{
 			codigo,
 			nome,
-			diretoria,
 			mantenedor,
 			regional,
 			aguardando// quando o usuario ainda não selecionou o tipo de busca a ser feita.
