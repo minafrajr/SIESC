@@ -7,6 +7,7 @@ namespace SIESC.UI.UI
     /// <summary>
     /// Classe de exibição do carregamento das solicitações ao servidor
     /// </summary>
+    
     public partial class Progresso : Form
     {
         /// <summary>
@@ -17,6 +18,7 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Construtor da classe
         /// </summary>
+        
         public Progresso()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace SIESC.UI.UI
         /// <summary>
         /// Exibe o form como dialog
         /// </summary>
+        [STAThread]
         public void ShowDiag()
         {
             try
