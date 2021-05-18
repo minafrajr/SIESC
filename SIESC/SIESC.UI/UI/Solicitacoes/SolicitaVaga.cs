@@ -954,7 +954,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     Aluno = aluno.Id,
                     Status = true,
-                    DataSolicitacao = DateTime.Now,
+                   
                     CidadeOrigem = cbo_cidades.Text,
                     instituicaoOrigem = cod,
                     EstadoOrigem = cbo_estado.Text,
@@ -1011,14 +1011,13 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 //Georreferencia o aluno pelo SISGEO - Prefeitura Betim
-                solicitacao.Coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
+                solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
 
                 //caso o SISGEO não encontre as coordenadas do aluno seguir para o zoneamento do GOOGLE
                 if (string.IsNullOrEmpty(solicitacao.Coordenadas[0]) || solicitacao.Coordenadas[0].Equals("0"))
                 {
                     solicitacao.Coordenadas =
-                        Zoneador.Locate(
-                            $"{solicitacao.NumResidencia}+{solicitacao.Logradouro.Replace(" ", "+")},+{cbo_bairro.Text.Replace(" ", "+")},+betim,+brasil"); //utiliza a API do Google
+                        Zoneador.Locate($"{solicitacao.NumResidencia}+{solicitacao.Logradouro.Replace(" ", "+")},+{cbo_bairro.Text.Replace(" ", "+")},+betim,+brasil"); //utiliza a API do Google
 
                     //caso não encontre as coordenadas armazenar vazio no banco e não nulo
                     if (solicitacao.Coordenadas[0] == null)
@@ -1850,7 +1849,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     throw new Exception("CEP,Nº da Residência ou Ano Solicitado estão em branco.");
                 }
 
-                var coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_mumresidencia.Text);
+                var coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
 
                 if (string.IsNullOrEmpty(coordenadas[0]) || coordenadas[0].Equals("0"))
                 {

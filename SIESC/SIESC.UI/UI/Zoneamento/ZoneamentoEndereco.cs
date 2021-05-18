@@ -77,7 +77,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 coordenadas = new string[2];
 
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text,"0"); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,"0"); //Georreferencia o aluno pelo SISGEO
 
                 if (!coordenadas[0].Equals(string.Empty) && !coordenadas[0].Equals("0"))
                 {
@@ -119,7 +119,7 @@ namespace SIESC.UI.UI.Zoneamento
             {
                 LimpaGridView();
 
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
                 lbl_aviso_coordenadas.Visible = true;
                 lbl_aviso_coordenadas.Text = $@"Coordenadas localizadas pelo SISGEO!";
                 lbl_aviso_coordenadas.ForeColor = Color.Navy;
@@ -266,7 +266,7 @@ namespace SIESC.UI.UI.Zoneamento
                 lbl_aviso_coordenadas.Visible = false;
 
                 coordenadas = new string[2];
-                coordenadas = Zoneador.Georrefencia(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
 
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];

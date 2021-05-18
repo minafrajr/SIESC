@@ -198,7 +198,7 @@ namespace SIESC.WEB
 		/// <param name="cep">O cep do aluno</param>
 		/// <param name="numLogradouro">O número de logradouro do aluno</param>
 		/// <returns>[0] - longitude | [1] - latitude</returns>
-		public static string[] Georrefencia(string cep, string numLogradouro)
+		public static string[] Georreferenciar(string cep, string numLogradouro)
 		{
 			string[] coordenada = new string[2];
 			coordenada[0] = string.Empty;
@@ -246,7 +246,8 @@ namespace SIESC.WEB
 			}
 			catch (Exception exception)
 			{
-				throw new WebException("Não foi possível acessar o WebService para georreferenciar o aluno!\n"+"Erro: " + exception.Message );
+				//se lançar exceção será interrompido o fluxo do programa
+				//throw new WebException("Não foi possível acessar o WebService para georreferenciar o aluno!\n"+"Erro: " + exception.Message );
 				return coordenada;
 			}
 			return coordenada;

@@ -381,7 +381,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 string[] coord;
 
-                coord = Zoneador.Georrefencia(dgv_alunos[10,dgv_alunos.CurrentCellAddress.Y].Value.ToString(),
+                coord = Zoneador.Georreferenciar(dgv_alunos[10,dgv_alunos.CurrentCellAddress.Y].Value.ToString(),
                     dgv_alunos[7,dgv_alunos.CurrentCellAddress.Y].Value.ToString());
 
                 if (coord.Equals(null) || coord[0].Equals("0"))

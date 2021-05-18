@@ -577,7 +577,7 @@ namespace SIESC.UI.UI.Instituicoes
 				{
 					string[] coord = new string[2];
 
-					coord = Zoneador.Georrefencia(msk_cep.Text,txt_numero_resid.Text);
+					coord = Zoneador.Georreferenciar(msk_cep.Text,txt_numero_resid.Text);
 
 					msk_latitude.Text = coord[0];
 					msk_longitude.Text = coord[1];

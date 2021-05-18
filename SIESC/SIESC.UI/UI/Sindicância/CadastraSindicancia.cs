@@ -495,7 +495,7 @@ namespace SIESC.UI.UI.Sindicância
                 origemSindicancia = "CADASTRO"
             };
 
-            sindicancia.Coordenadas = Zoneador.Georrefencia(msk_cep.Text, txt_numresidencia.Text);
+            sindicancia.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_numresidencia.Text);
 
             sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
             sindicancia.distanciaEscolaEncaminhada = CalculaDistanciaEscola(sindicancia.Coordenadas, (int)sindicancia.instituicaoEncaminhada);
