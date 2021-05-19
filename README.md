@@ -1,27 +1,19 @@
 # SIESC
 
 # Descrição
-Sistema desenvolvido para a Coordenadoria de Escrituração Escolar da Secretaria Municipal de Educação de Betim
+Sistema desenvolvido para a Coordenadoria de Escrituração Escolar da Secretaria Municipal de Educação de Betim-MG.
 
 # Principais funcionalidades
-
-* [Cadastro das solicitações de vagas]
-* [Cadastro das solicitações de secretariar, dirigir e lecionar disciplina no município]
-* [Armazenamento e busca de informações sobre as unidade escolar]
-
-# Como instalar
+* Armazenamento e busca de informações sobre as unidades municipais, estaduais e particulares escolares do município;
+* Registro das solicitações de vagas;
+* Registro das solicitações de secretariar, dirigir e lecionar disciplinas no município.
 
 # Dependências
 .Net Framework 4.7.1
 MySQL.Data.Framework 8.0.22
-NewtonSoft.Json
+NewtonSoft.Json 12.
 MySQL 8.0
 
-<hr/>
+# Desenvolvimento
+Sistema desenvolvido em C# .NET Framework 4.7.1 Windows Forms em arquitetura semelhante ao padrão MVC - Model-View-Controller.
 
-<ul>
-	<li>Cadastro das solicitações de vagas<li/>
-	<li>Cadastro das solicitações de secretariar, dirigir e lecionar disciplina no município<li/>
-	<li>Armazenamento e busca de informações sobre as unidade escolares<li/>
-	<li><li/>
-<ul/>
