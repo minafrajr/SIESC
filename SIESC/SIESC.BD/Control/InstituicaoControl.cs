@@ -181,6 +181,18 @@ namespace SIESC.BD.Control
             }
         }
 
+        public bool Inativar(int id)
+        {
+            try
+            {
+                instituicoesTA = new instituicoesTableAdapter();
+                return instituicoesTA.Inativar(id) > 0;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         /// <summary>
         /// 

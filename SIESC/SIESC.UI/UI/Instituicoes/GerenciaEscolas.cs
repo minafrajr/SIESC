@@ -163,7 +163,7 @@ namespace SIESC.UI.UI.Instituicoes
 
                     if (Mensageiro.MensagemExclusao(inst, principalUI) == DialogResult.Yes)
                     {
-                        if (controleInstituicao.Excluir(Convert.ToInt32(this.txt_codigo.Text)))
+                        if (controleInstituicao.Inativar(inst.Codigo))
                             Mensageiro.MensagemConfirmaExclusao(principalUI);
                     }
                 }

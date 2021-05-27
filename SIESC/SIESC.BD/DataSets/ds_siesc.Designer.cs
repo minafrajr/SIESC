@@ -17675,7 +17675,7 @@ VALUES        (@nomeAluno, @sexo, @dataNascimentoAluno, @nomeMaeAluno, @nomePaiA
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[15];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[16];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        idInstituicoes, nome, mantenedor, tipologradouro, logradouro, numeroEdificio, complemento, bairro, telefone1, telefone2, telefone3, status, INEP, email, regionalInstituicao, cep, longitude, latitude
@@ -17972,164 +17972,23 @@ WHERE        (instituicoes.nome = @NomeEscola) AND (status = 1)";
             this._commandCollection[11].Parameters.Add(param);
             this._commandCollection[12] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = @"INSERT INTO instituicoes
-                         (nome, mantenedor, tipologradouro, logradouro, numeroEdificio, complemento, bairro, telefone1, telefone2, telefone3, status, INEP, email, regionalInstituicao, cep, latitude, longitude)
-VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio, @complemento, @bairro, @telefone1, @telefone2, @telefone3, @status, @INEP, @email, @regionalInstituicao, 
-                          @cep, @latitude, @longitude)";
+            this._commandCollection[12].CommandText = "UPDATE       instituicoes\r\nSET                status = 0\r\nWHERE        (idInstitu" +
+                "icoes = @idInstituicao)";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nome";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 80;
-            param.IsNullable = true;
-            param.SourceColumn = "nome";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@mantenedor";
+            param.ParameterName = "@idInstituicao";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "mantenedor";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@tipologradouro";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 90;
-            param.IsNullable = true;
-            param.SourceColumn = "tipologradouro";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@logradouro";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
-            param.IsNullable = true;
-            param.SourceColumn = "logradouro";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroEdificio";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroEdificio";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@complemento";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
-            param.IsNullable = true;
-            param.SourceColumn = "complemento";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@bairro";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "bairro";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@telefone1";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 13;
-            param.IsNullable = true;
-            param.SourceColumn = "telefone1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@telefone2";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 13;
-            param.IsNullable = true;
-            param.SourceColumn = "telefone2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@telefone3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 13;
-            param.IsNullable = true;
-            param.SourceColumn = "telefone3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@INEP";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 45;
-            param.IsNullable = true;
-            param.SourceColumn = "INEP";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@email";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 90;
-            param.IsNullable = true;
-            param.SourceColumn = "email";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@regionalInstituicao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "regionalInstituicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cep";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "cep";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@latitude";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 15;
-            param.IsNullable = true;
-            param.SourceColumn = "latitude";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[12].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@longitude";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 15;
-            param.IsNullable = true;
-            param.SourceColumn = "longitude";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            param.SourceColumn = "idInstituicoes";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[12].Parameters.Add(param);
             this._commandCollection[13] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome) AND (status = 1)";
+            this._commandCollection[13].CommandText = @"INSERT INTO instituicoes
+                         (nome, mantenedor, tipologradouro, logradouro, numeroEdificio, complemento, bairro, telefone1, telefone2, telefone3, status, INEP, email, regionalInstituicao, cep, latitude, longitude)
+VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio, @complemento, @bairro, @telefone1, @telefone2, @telefone3, @status, @INEP, @email, @regionalInstituicao, 
+                          @cep, @latitude, @longitude)";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nome";
@@ -18140,10 +17999,164 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
             param.SourceColumn = "nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@mantenedor";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "mantenedor";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@tipologradouro";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 90;
+            param.IsNullable = true;
+            param.SourceColumn = "tipologradouro";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@logradouro";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "logradouro";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroEdificio";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroEdificio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@complemento";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "complemento";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@bairro";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "bairro";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@telefone1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 13;
+            param.IsNullable = true;
+            param.SourceColumn = "telefone1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@telefone2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 13;
+            param.IsNullable = true;
+            param.SourceColumn = "telefone2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@telefone3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 13;
+            param.IsNullable = true;
+            param.SourceColumn = "telefone3";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@status";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@INEP";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "INEP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@email";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 90;
+            param.IsNullable = true;
+            param.SourceColumn = "email";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@regionalInstituicao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "regionalInstituicao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@cep";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "cep";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@latitude";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 15;
+            param.IsNullable = true;
+            param.SourceColumn = "latitude";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@longitude";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 15;
+            param.IsNullable = true;
+            param.SourceColumn = "longitude";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[13].Parameters.Add(param);
             this._commandCollection[14] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (idInstituicoes = @idInstituicao)";
+            this._commandCollection[14].CommandText = "SELECT idInstituicoes FROM instituicoes WHERE (nome = @nome) AND (status = 1)";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nome";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
+            param.IsNullable = true;
+            param.SourceColumn = "nome";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[14].Parameters.Add(param);
+            this._commandCollection[15] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[15].Connection = this.Connection;
+            this._commandCollection[15].CommandText = @"SELECT INEP, bairro, cep, complemento, email, idInstituicoes, latitude, logradouro, longitude, mantenedor, nome, numeroEdificio, regionalInstituicao, status, telefone1, telefone2, telefone3, tipologradouro FROM instituicoes WHERE (idInstituicoes = @idInstituicao)";
+            this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idInstituicao";
             param.DbType = global::System.Data.DbType.Int32;
@@ -18151,7 +18164,7 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
             param.IsNullable = true;
             param.SourceColumn = "idInstituicoes";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[14].Parameters.Add(param);
+            this._commandCollection[15].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18297,7 +18310,7 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.instituicoesDataTable RetornaCoordenadasInstituicao(int idInstituicao) {
-            this.Adapter.SelectCommand = this.CommandCollection[14];
+            this.Adapter.SelectCommand = this.CommandCollection[15];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idInstituicao));
             ds_siesc.instituicoesDataTable dataTable = new ds_siesc.instituicoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -18535,6 +18548,30 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Inativar(int idInstituicao) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[12];
+            command.Parameters[0].Value = ((int)(idInstituicao));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Inserir(
                     string nome, 
@@ -18554,7 +18591,7 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
                     string cep, 
                     string latitude, 
                     string longitude) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[12];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[13];
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }
@@ -18673,7 +18710,7 @@ VALUES        (@nome, @mantenedor, @tipologradouro, @logradouro, @numeroEdificio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object PesquisaID(string nome) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[13];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[14];
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }

@@ -34,45 +34,46 @@ namespace SIESC.UI.UI.Instituicoes
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarEscola));
 			this.lbl_tituloform = new System.Windows.Forms.Label();
 			this.gpb_dados_instituicoes = new System.Windows.Forms.GroupBox();
-			this.msk_inep = new MyMaskedTextBox();
+			this.msk_inep = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_tit_codigo = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.lbl_codigo = new System.Windows.Forms.Label();
-			this.txt_nome = new MyTextBox();
-			this.cbo_mantenedor = new MyComboBox();
+			this.txt_nome = new SIESC.UI.Controles.MyTextBox();
+			this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
 			this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.cbo_regional_adm = new MyComboBox();
+			this.cbo_regional_adm = new SIESC.UI.Controles.MyComboBox();
 			this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label4 = new System.Windows.Forms.Label();
 			this.trvw_anoensino = new System.Windows.Forms.TreeView();
 			this.gpb_endereco = new System.Windows.Forms.GroupBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btn_map = new System.Windows.Forms.Button();
 			this.btn_localizarcoord = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
 			this.msk_longitude = new System.Windows.Forms.MaskedTextBox();
 			this.lbl_longitude = new System.Windows.Forms.Label();
 			this.msk_latitude = new System.Windows.Forms.MaskedTextBox();
 			this.btn_saberCep = new System.Windows.Forms.Button();
-			this.txt_email = new MyTextBox();
+			this.txt_email = new SIESC.UI.Controles.MyTextBox();
 			this.btn_buscarcep = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
-			this.msk_cep = new MyMaskedTextBox();
+			this.msk_cep = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.lbl_cep = new System.Windows.Forms.Label();
-			this.msk_tel3 = new MyMaskedPhoneBox();
-			this.msk_tel2 = new MyMaskedPhoneBox();
-			this.msk_tel1 = new MyMaskedPhoneBox();
+			this.msk_tel3 = new SIESC.UI.Controles.MyMaskedPhoneBox();
+			this.msk_tel2 = new SIESC.UI.Controles.MyMaskedPhoneBox();
+			this.msk_tel1 = new SIESC.UI.Controles.MyMaskedPhoneBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.cbo_bairro = new MyComboBox();
+			this.cbo_bairro = new SIESC.UI.Controles.MyComboBox();
 			this.bairrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label8 = new System.Windows.Forms.Label();
-			this.txt_numero_resid = new MyTextBox();
+			this.txt_numero_resid = new SIESC.UI.Controles.MyTextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.txt_logradouro = new MyTextBox();
+			this.txt_logradouro = new SIESC.UI.Controles.MyTextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbo_tipo_Logradouro = new MyComboBox();
+			this.cbo_tipo_Logradouro = new SIESC.UI.Controles.MyComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btn_excluir = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@ namespace SIESC.UI.UI.Instituicoes
 			this.anoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
 			this.nivelensinoTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.nivelensinoTableAdapter();
 			this.gpb_anosensino = new System.Windows.Forms.GroupBox();
-			this.btn_map = new System.Windows.Forms.Button();
 			this.gpb_dados_instituicoes.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.mantenedorBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -290,6 +290,19 @@ namespace SIESC.UI.UI.Instituicoes
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(245, 89);
 			this.panel1.TabIndex = 26;
+			// 
+			// btn_map
+			// 
+			this.btn_map.Image = global::SIESC.UI.Properties.Resources.geofence_32;
+			this.btn_map.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_map.Location = new System.Drawing.Point(167, 3);
+			this.btn_map.Name = "btn_map";
+			this.btn_map.Size = new System.Drawing.Size(74, 39);
+			this.btn_map.TabIndex = 43;
+			this.btn_map.Text = "Mapa";
+			this.btn_map.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btn_map.UseVisualStyleBackColor = true;
+			this.btn_map.Click += new System.EventHandler(this.btn_map_Click);
 			// 
 			// btn_localizarcoord
 			// 
@@ -503,24 +516,24 @@ namespace SIESC.UI.UI.Instituicoes
 			this.cbo_tipo_Logradouro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cbo_tipo_Logradouro.FormattingEnabled = true;
 			this.cbo_tipo_Logradouro.Items.AddRange(new object[] {
-			"",
-			"ALAMEDA",
-			"AREA",
-			"AVENIDA",
-			"BECO",
-			"ESTRADA",
-			"FAZENDA",
-			"FLORESTA",
-			"LOTEAMENTO",
-			"MORRO",
-			"PARQUE",
-			"PRAÇA",
-			"RECANTO",
-			"RODOVIA",
-			"RUA",
-			"TRAVESSA",
-			"VIA",
-			"VILA"});
+            "",
+            "ALAMEDA",
+            "AREA",
+            "AVENIDA",
+            "BECO",
+            "ESTRADA",
+            "FAZENDA",
+            "FLORESTA",
+            "LOTEAMENTO",
+            "MORRO",
+            "PARQUE",
+            "PRAÇA",
+            "RECANTO",
+            "RODOVIA",
+            "RUA",
+            "TRAVESSA",
+            "VIA",
+            "VILA"});
 			this.cbo_tipo_Logradouro.Location = new System.Drawing.Point(8, 78);
 			this.cbo_tipo_Logradouro.Name = "cbo_tipo_Logradouro";
 			this.cbo_tipo_Logradouro.Size = new System.Drawing.Size(84, 22);
@@ -538,12 +551,12 @@ namespace SIESC.UI.UI.Instituicoes
 			// btn_excluir
 			// 
 			this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
+			this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.circle_red_x;
 			this.btn_excluir.Location = new System.Drawing.Point(909, 411);
 			this.btn_excluir.Name = "btn_excluir";
 			this.btn_excluir.Size = new System.Drawing.Size(60, 59);
 			this.btn_excluir.TabIndex = 17;
-			this.btn_excluir.Text = "Excluir";
+			this.btn_excluir.Text = "Inativar";
 			this.btn_excluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btn_excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.btn_excluir.UseVisualStyleBackColor = true;
@@ -650,19 +663,6 @@ namespace SIESC.UI.UI.Instituicoes
 			this.gpb_anosensino.TabIndex = 19;
 			this.gpb_anosensino.TabStop = false;
 			this.gpb_anosensino.Text = "Anos de ensino ofertado";
-			// 
-			// btn_map
-			// 
-			this.btn_map.Image = global::SIESC.UI.Properties.Resources.geofence_32;
-			this.btn_map.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btn_map.Location = new System.Drawing.Point(167, 3);
-			this.btn_map.Name = "btn_map";
-			this.btn_map.Size = new System.Drawing.Size(74, 39);
-			this.btn_map.TabIndex = 43;
-			this.btn_map.Text = "Mapa";
-			this.btn_map.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btn_map.UseVisualStyleBackColor = true;
-			this.btn_map.Click += new System.EventHandler(this.btn_map_Click);
 			// 
 			// CadastrarEscola
 			// 

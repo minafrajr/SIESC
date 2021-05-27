@@ -345,7 +345,7 @@ namespace SIESC.UI.UI.Instituicoes
 
 						if (controleOfertaEnsino.ExcluirAnosEnsino(codigoEscola))
 						{
-							if (controleInstituicao.Excluir(codigoEscola))
+							if (controleInstituicao.Inativar(codigoEscola))
 							{
 								Mensageiro.MensagemConfirmaExclusao(principalUi);
 								this.LimpaControles(listaControles);

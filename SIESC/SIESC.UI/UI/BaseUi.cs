@@ -4,6 +4,8 @@
 // Criado em: 22/03/2015
 #endregion
 
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SIESC.UI
@@ -20,6 +22,5 @@ namespace SIESC.UI
 		{
 			InitializeComponent();
 		}
-		
 	}
 }

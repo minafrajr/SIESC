@@ -47,7 +47,7 @@ namespace SIESC.MODEL.Classes
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format(" nome: {0}, Data de Nascimento: {1} ", Nome, DataNascimento.ToShortDateString());
+            return $" nome: {Nome}, Data de Nascimento: {DataNascimento.ToShortDateString()} ";
         }
         #endregion
     }

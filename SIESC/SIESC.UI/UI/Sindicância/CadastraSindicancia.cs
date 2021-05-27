@@ -64,7 +64,7 @@ namespace SIESC.UI.UI.Sindicância
         /// editando - o usuário irá alterar um solicitação salva.
         /// </summary>
         private Navegacao statusNavegacao;
-        
+
         /// <inheritdoc />
         /// <summary>
         /// Contrutor do formulário
@@ -261,7 +261,7 @@ namespace SIESC.UI.UI.Sindicância
             }
         }
 
-        
+
 
         private void Preenche_cbo_Bairro(Sindicancia sindicancia)
         {
@@ -391,20 +391,18 @@ namespace SIESC.UI.UI.Sindicância
                     throw new Exception("Por Favor preencha o campo obrigatório: " + tag.ToUpper() + " !!!");
 
                 sindicanciaControl = new SindicanciaControl();
-                
+
                 sindicancia = CriarSindicancia();
 
                 if (statusNavegacao == Navegacao.salvando)
                 {
                     var alunoCriado = CriarAluno();
 
-                    //if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
+                    if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
+                        controleAluno.Salvar(alunoCriado, true);
 
-                    using (controleAluno.Salvar(alunoCriado, true))
-                    {
-                        alunoCriado.Id = controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
-                    } //salva o aluno no banco de dados 
-
+                    alunoCriado.Id = controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                                                                            //salva o aluno no banco de dados 
 
                     sindicancia.codigoAluno = alunoCriado.Id;
                     if (sindicanciaControl.InserirSindicancia(sindicancia))
@@ -788,7 +786,7 @@ namespace SIESC.UI.UI.Sindicância
             }
         }
 
-       
+
         /// <summary>
         /// Abre a janela de consulta de cep
         /// </summary>

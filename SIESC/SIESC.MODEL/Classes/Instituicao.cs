@@ -140,5 +140,10 @@ namespace SIESC.MODEL.Classes
         /// 
         /// </summary>
         public string longitude { get; set; }
+
+        public override string ToString()
+        {
+            return $"instituição: {NomeInstituicao}";
+        }
     }
 }

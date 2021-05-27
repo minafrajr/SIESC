@@ -40,7 +40,7 @@ namespace SIESC.BD.Control
 		///<param name="confirma">true - salvar | false - atualizar</param>
 		///<param name="aluno">O objeto aluno</param>
 		///<returns>true - para a operação feita corretamente</returns>
-		public async Task<bool> Salvar(Aluno aluno, bool confirma)
+		public bool Salvar(Aluno aluno, bool confirma)
 		{
 			alunoTa = new alunosTableAdapter();
 

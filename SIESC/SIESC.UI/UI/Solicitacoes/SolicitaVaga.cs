@@ -978,20 +978,18 @@ namespace SIESC.UI.UI.Solicitacoes
                     OrigemSolicitacao = (int)cbo_origem_solicitacao.SelectedValue,
                     Transporte = chk_transporte.Checked,
                     JustificativaTransporte = txt_justificativa_transporte.Text,
-                    possuiIrmao = chk_irmaos.Checked
+                    possuiIrmao = chk_irmaos.Checked,
+                    DataSolicitacao = DateTime.Now
                 };
 
-                if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou
-                ) // já existe e houve alteração no encaminhamento
+                if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou) // já existe e houve alteração no encaminhamento
                 {
                     solicitacao.DataEncaminhamento = DateTime.Now;
                     solicitacao.usuarioEncaminhou = principalUi.user.nomeusuario.ToUpper();
                     solicitacao.Transporte = chk_transporte.Checked;
                     solicitacao.JustificativaTransporte = txt_justificativa_transporte.Text;
                 }
-
-
-
+                
                 if (statusNavegacao == Navegacao.salvando)
                 {
                     solicitacao.Usuario = principalUi.user.nomeusuario.ToUpper();

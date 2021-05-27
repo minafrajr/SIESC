@@ -2,9 +2,9 @@
 {
 
 
-	public partial class ds_siesc
-	{
-	}
+    public partial class ds_siesc
+    {
+    }
 }
 namespace SIESC.BD.DataSets {
     

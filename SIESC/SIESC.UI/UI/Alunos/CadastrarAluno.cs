@@ -239,7 +239,7 @@ namespace SIESC.UI.UI.Alunos
 
                 if (string.IsNullOrEmpty(lbl_codigoAluno.Text))
                 {
-                    if (await controleAluno.Salvar(aluno, true))
+                    if ( controleAluno.Salvar(aluno, true))
                     {
                         aluno.Id = controleAluno.PesquisaId(aluno);
 
@@ -252,7 +252,7 @@ namespace SIESC.UI.UI.Alunos
                 {
                     aluno.Id = Convert.ToInt32(lbl_codigoAluno.Text);
 
-                    if (await controleAluno.Salvar(aluno, false))
+                    if ( controleAluno.Salvar(aluno, false))
                     {
                         Mensageiro.MensagemAviso($"Aluno {aluno} Código: {aluno.Id} foi atualizado com sucesso!", this);
                         LimpaControles();
