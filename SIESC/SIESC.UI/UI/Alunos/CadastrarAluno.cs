@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
@@ -53,9 +54,9 @@ namespace SIESC.UI.UI.Alunos
         /// Construtor da classe com parâmetro da Classe aluno para 
         /// preenchimento com os dados do aluno
         /// </summary>
-        /// <param name="_aluno">O Objeto Aluno</param>
+        /// <param name="aluno">O Objeto Aluno</param>
         /// <param name="principalUi">O formulário MDI pai</param>
-        public CadastrarAluno(Aluno _aluno,Principal_UI principalUi)
+        public CadastrarAluno(Aluno aluno,Principal_UI principalUi)
         {
             try
             {
@@ -65,7 +66,7 @@ namespace SIESC.UI.UI.Alunos
 
                 this.deficienciasTableAdapter1.Fill(this.siescDataSet.deficiencias);
 
-                TransfereDados(_aluno);
+                TransfereDados(aluno);
                 CalculaIdade(DateTime.Parse(msk_data_nascimento.Text));
             }
             catch (Exception exception)
@@ -77,21 +78,21 @@ namespace SIESC.UI.UI.Alunos
         /// <summary>
         /// Transfere para controles os dados dos alunos
         /// </summary>
-        /// <param name="_aluno"></param>
-        private void TransfereDados(Aluno _aluno)
+        /// <param name="aluno"></param>
+        private void TransfereDados(Aluno aluno)
         {
-            lbl_codigoAluno.Text = _aluno.Id.ToString();
-            txt_mae.Text = _aluno.NomeMae;
-            txt_pai.Text = _aluno.Nomepai;
-            txt_nomealuno.Text = _aluno.Nome;
-            msk_telefone1.Text = _aluno.Tel1;
-            msk_telefone2.Text = _aluno.Tel2;
-            msk_telefone3.Text = _aluno.Tel3;
+            lbl_codigoAluno.Text = aluno.Id.ToString();
+            txt_mae.Text = aluno.NomeMae;
+            txt_pai.Text = aluno.Nomepai;
+            txt_nomealuno.Text = aluno.Nome;
+            msk_telefone1.Text = aluno.Tel1;
+            msk_telefone2.Text = aluno.Tel2;
+            msk_telefone3.Text = aluno.Tel3;
 
 
-            msk_data_nascimento.Text = _aluno.DataNascimento.ToString();
+            msk_data_nascimento.Text = aluno.DataNascimento.ToString(CultureInfo.CurrentCulture);
 
-            if (_aluno.Sexo == "F")
+            if (aluno.Sexo == "F")
             {
                 rdb_feminino.Checked = true;
             }
@@ -100,11 +101,11 @@ namespace SIESC.UI.UI.Alunos
                 rdb_masculino.Checked = true;
             }
 
-            if (!_aluno.Deficiencia.Equals(null))
+            if (!aluno.Deficiencia.Equals(null))
             {
                 foreach (DataRowView item in cbo_deficiencia.Items)
                 {
-                    if (item["idDeficiencia"].ToString() == _aluno.Deficiencia.ToString())
+                    if (item["idDeficiencia"].ToString() == aluno.Deficiencia.ToString())
                     {
                         cbo_deficiencia.SelectedIndex = cbo_deficiencia.Items.IndexOf(item);
                     }
@@ -224,7 +225,7 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void btn_salvar_Click(object sender,EventArgs e)
+        private void btn_salvar_Click(object sender,EventArgs e)
         {
             try
             {
@@ -347,7 +348,7 @@ namespace SIESC.UI.UI.Alunos
                 anos--;
             }
 
-            lbl_idade.Text = $"{anos} anos";
+            lbl_idade.Text = $@"{anos} anos";
         }
 
         private void msk_telefone1_Enter(object sender,EventArgs e)

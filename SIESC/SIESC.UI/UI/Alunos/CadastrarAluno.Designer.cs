@@ -409,7 +409,8 @@ namespace SIESC.UI.UI.Alunos
 			this.msk_telefone1.TabIndex = 0;
 			this.msk_telefone1.Tag = "Telefone 1";
 			this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			
+			this.msk_telefone1.Enter += new System.EventHandler(this.msk_telefone1_Enter);
+
 			// 
 			// label3
 			// 
