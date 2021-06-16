@@ -76,8 +76,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                // TODO: esta linha de código carrega dados na tabela 'siescDataSet.motivos'. Você pode movê-la ou removê-la conforme necessário.
-                this.motivosTableAdapter.FillByAtivas(this.siescDataSet.motivos);
+              this.motivosTableAdapter.FillByAtivas(this.siescDataSet.motivos);
 
                 cbo_anoreferencia.SelectedIndex = 0;
                 cbo_motivos.SelectedIndex = -1;
@@ -98,7 +97,9 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void GerenciaSolicitacao_Enter(object sender, EventArgs e)
         {
-            CarregaGridView();
+            //CarregaGridView();
+            HabilitaTextBox(localizar);
+
             dgv_solicitacoes.Update();
         }
         /// <summary>

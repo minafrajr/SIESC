@@ -10,9 +10,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
-using SIESC.UI.ConsultaWeb;
 using SIESC.UI.UI.CEP;
 using SIESC.WEB;
+using SIESC.WEB.consultaCep;
 
 namespace SIESC.UI.UI.Funcionarios
 {
@@ -373,7 +373,7 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 BuscaCep buscaCep = new BuscaCep();
 
-                tecnologia1.Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text);
+                Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text);
 
                 txt_bairro.Text = endereco[0].Bairro;
                 cbo_tipolograd.Text = endereco[0].TipoLogradouro;

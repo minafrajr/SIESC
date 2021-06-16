@@ -11,7 +11,6 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-using SIESC.UI.ConsultaWeb;
 using SIESC.UI.Controles;
 using SIESC.UI.UI.CEP;
 using SIESC.UI.UI.Funcionarios;
@@ -608,11 +607,20 @@ namespace SIESC.UI.UI.Instituicoes
 		{
 			try
 			{
+				txt_logradouro.ResetText();
+				cbo_tipo_Logradouro.ResetText();
+
 				this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
-				BuscaCep cep = new BuscaCep();
+				BuscaCep buscadorCep = new BuscaCep();
+				var enderecos = buscadorCep.buscadorCEP(msk_cep.Text);
 
-				cep.buscadorCEP(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipo_Logradouro);
-
+				txt_logradouro.Text = enderecos[0].Logradouro;
+				cbo_tipo_Logradouro.Text = enderecos[0].TipoLogradouro;
+				foreach (DataRowView item in cbo_bairro.Items)
+				{
+					if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
+						cbo_bairro.SelectedIndex = cbo_bairro.Items.IndexOf(item);
+				}
 			}
 			catch (Exception ex)
 			{

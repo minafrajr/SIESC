@@ -1,9 +1,9 @@
-﻿using SIESC.UI.tecnologia1;
-using SIESC.UI.UI.Zoneamento;
+﻿using SIESC.UI.UI.Zoneamento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SIESC.UI.ConsultaWeb;
+using SIESC.WEB;
+using SIESC.WEB.consultaCep;
 
 namespace SIESC.UI.UI.CEP
 {

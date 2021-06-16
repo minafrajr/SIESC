@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace SIESC.UI.tecnologia1 {
+namespace SIESC.WEB.consultaCep {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -47,7 +47,7 @@ namespace SIESC.UI.tecnologia1 {
         
         /// <remarks/>
         public ServicoCEP() {
-            this.Url = global::SIESC.UI.Properties.Settings.Default.tecnologia1ServicoCEP;
+            this.Url = global::SIESC.WEB.Properties.Settings.Default.SIESC_WEB_consultaCep_ServicoCEP;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

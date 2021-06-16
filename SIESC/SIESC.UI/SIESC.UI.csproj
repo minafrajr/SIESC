@@ -35,7 +35,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>205</ApplicationRevision>
+    <ApplicationRevision>206</ApplicationRevision>
     <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -199,7 +199,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultaWeb\BuscaCep.cs" />
     <Compile Include="Controles\MyComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -545,11 +544,6 @@
     <Compile Include="UI\Zoneamento\ZoneamentoAluno.Designer.cs">
       <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Web References\tecnologia1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Alunos\GerenciarAlunos.resx">
       <DependentUpon>GerenciarAlunos.cs</DependentUpon>
     </EmbeddedResource>
@@ -708,7 +702,6 @@
     <EmbeddedResource Include="UI\Zoneamento\ZoneamentoAluno.resx">
       <DependentUpon>ZoneamentoAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Diagramas\DiagramaClasses.cd" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -732,14 +725,6 @@
       <DependentUpon>siescDataSet.xsd</DependentUpon>
     </None>
     <None Include="SIESC_UI_ChaveTemporária.pfx" />
-    <None Include="Web References\tecnologia1\Endereco1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\tecnologia1\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\tecnologia1\ServicoCep.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -820,7 +805,6 @@
     <None Include="Resources\Image1.png" />
     <None Include="Resources\delete.bmp" />
     <None Include="Resources\desk-chair %282%29.png" />
-    <None Include="Web References\tecnologia1\ServicoCep.disco" />
     <None Include="Resources\1431655685_text-x-csharp.png" />
     <None Include="Resources\1431655160_kservices.png" />
     <None Include="Resources\1431669200_eraser.png" />
@@ -885,22 +869,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://tecnologia/servicocep/ServicoCep.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\tecnologia1\</RelPath>
-      <UpdateFromURL>http://tecnologia/servicocep/ServicoCep.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>tecnologia1ServicoCEP</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

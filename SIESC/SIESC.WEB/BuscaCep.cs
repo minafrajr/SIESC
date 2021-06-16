@@ -5,22 +5,19 @@
 #endregion
 
 using System;
-using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
-using SIESC.UI.Controles;
-using SIESC.UI.tecnologia1;
-using SIESC.UI.UI;
+using SIESC.WEB.consultaCep;
 
-namespace SIESC.UI.ConsultaWeb
+namespace SIESC.WEB
 {
     /// <summary>
     /// Classe para consulta de CEP
     /// </summary>
-    class BuscaCep
+    public class BuscaCep
     {
         /// <summary>
         /// Faz a pesquisa em um webservice do cep. 
@@ -28,15 +25,14 @@ namespace SIESC.UI.ConsultaWeb
         /// Utiliza os sites republicavirtual.com.br e viacep.com.br
         /// </summary>
         /// <param name="cep">O CEP a ser pesquisado</param>
-        /// <param name="bairro"></param>
-        /// <param name="logradouro"></param>
-        /// <param name="tipologradouro"></param>
-        public void buscadorAlternativo(string cep, MyComboBox bairro, MyTextBox logradouro, MyComboBox tipologradouro)
+       public string[] BuscadorAlternativo(string cep)
         {
             try
             {
+                var endereco = new string[3];
+
                 //alternativo http://cep.republicavirtual.com.br/web_cep.php?cep=32604170cep&formato=xml
-                //ourtro alternativo https://api.postmon.com.br/v1/cep/32605100?format=xml
+                //outro alternativo https://api.postmon.com.br/v1/cep/32605100?format=xml
                 //https://viacep.com.br/ws/32605100/json/
 
                 WebRequest request = WebRequest.Create("https://viacep.com.br/ws/@cep/xml/".Replace("@cep", cep));
@@ -47,7 +43,8 @@ namespace SIESC.UI.ConsultaWeb
                 {
                     using (Stream stream = response.GetResponseStream())
                     {
-                        XDocument document = XDocument.Load(new StreamReader(stream ?? throw new InvalidOperationException("Strema não é válido!")));
+
+                        XDocument document = XDocument.Load(new StreamReader(stream ?? throw new InvalidOperationException("Stream não é válido!")));
 
                         try
                         {
@@ -58,18 +55,18 @@ namespace SIESC.UI.ConsultaWeb
                             
                             if(xElementLocalidade.Value != "Betim")
                                 throw new Exception($"CEP {cep} não foi encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
+                            
+                            endereco[0] = ObterStringSemAcentosECaracteresEspeciais(xElementbairro.Value.ToUpper());
 
+                            var logradouro = xElementlogradouro.Value.ToUpper();
 
+                            var tipo = logradouro.Split(' ');
 
-                            bairro.Text = xElementbairro.Value.ToUpper();
+                            endereco[1] = tipo[0];
 
-                            logradouro.Text = xElementlogradouro.Value.ToUpper();
-                            var tipo = logradouro.Text.Split(' ');
-                            tipologradouro.Text = tipo[0];
+                            var pos = logradouro.IndexOf(' ') + 1;
 
-                            var pos = logradouro.Text.IndexOf(' ') + 1;
-
-                            logradouro.Text = logradouro.Text.Substring(pos, logradouro.Text.Length - pos);
+                            endereco[2] = logradouro.Substring(pos, logradouro.Length - pos);
                         }
                         catch (Exception e)
                         {
@@ -77,6 +74,7 @@ namespace SIESC.UI.ConsultaWeb
                         }
                     }
                 }
+                return endereco;
             }
             catch (WebException erro)
             {
@@ -89,13 +87,33 @@ namespace SIESC.UI.ConsultaWeb
         }
 
         /// <summary>
+        /// Retira os acentos e caracteres especiais
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        private string ObterStringSemAcentosECaracteresEspeciais(string str)
+        {
+            /** Troca os caracteres acentuados por não acentuados
+             * fonte: https://pt.stackoverflow.com/questions/25924/regex-remo%C3%A7%C3%A3o-de-caracteres-especiais-c *
+             */
+            string[] acentos = new string[] { "ç", "Ç", "á", "é", "í", "ó", "ú", "ý", "Á", "É", "Í", "Ó", "Ú", "Ý", "à", "è", "ì", "ò", "ù", "À", "È", "Ì", "Ò", "Ù", "ã", "õ", "ñ", "ä", "ë", "ï", "ö", "ü", "ÿ", "Ä", "Ë", "Ï", "Ö", "Ü", "Ã", "Õ", "Ñ", "â", "ê", "î", "ô", "û", "Â", "Ê", "Î", "Ô", "Û" };
+            string[] semAcento = new string[] { "c", "C", "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y", "a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "a", "o", "n", "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "A", "O", "N", "a", "e", "i", "o", "u", "A", "E", "I", "O", "U" };
+
+            for (int i = 0; i < acentos.Length; i++)
+            {
+                str = str.Replace(acentos[i], semAcento[i]);
+            }
+            return str.Trim();
+        }
+
+        /// <summary>
         /// Faz a pesquisa em um webservice do cep.
         /// retorna a cidade, bairro, logradoruo e o tipo de logradouro na forma de um array
         /// de strings. [0] bairro | [2] logradouro
         /// </summary>
         /// <param name="cep">O cep que se deseja localizar a endereço</param>
         /// <returns>Array de string contendo o endereço. [0] bairro | [2] logradouro </returns>
-        public string[] BuscadorAlternativo(string cep)
+        public string[] BuscadorAlternativo2(string cep)
         {
             string[] saida = new string[6];
 
@@ -128,48 +146,48 @@ namespace SIESC.UI.ConsultaWeb
             return saida;
         }
 
-        /// <summary>
-        /// Consulta de logradouro através do CEP no WebService da PMB
-        /// </summary>
-        /// <param name="cep">O cep para consulta</param>
-        /// <param name="cboBairro"></param>
-        /// <param name="txtLogradouro"></param>
-        /// <param name="cboTipologradouro"></param>
-        public void buscadorCEP(string cep, MyComboBox cboBairro, MyTextBox txtLogradouro, MyComboBox cboTipologradouro)
-        {
-            try
-            {
-                ServicoCEP srv = new ServicoCEP();
-
-                srv.Timeout = 20000;
-
-                Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
-
-                txtLogradouro.ResetText();
-                cboTipologradouro.ResetText();
+        ///// <summary>
+        ///// Consulta de logradouro através do CEP no WebService da PMB
+        ///// </summary>
+        ///// <param name="cep">O cep para consulta</param>
+        ///// <param name="cboBairro"></param>
+        ///// <param name="txtLogradouro"></param>
+        ///// <param name="cboTipologradouro"></param>
+        //public Endereco[]  buscadorCEP(string cep)
+        //{
+        //    try
+        //    {
+        //        ServicoCEP srv = new ServicoCEP {Timeout = 20000};
 
 
-                if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
-                {
-                    cboBairro.SelectedIndex = -1;
-                    throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
-                }
+        //        Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
+
+        //        // txtLogradouro.ResetText();
+        //        // cboTipologradouro.ResetText();
+
+
+        //        if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
+        //        {
+        //            //cboBairro.SelectedIndex = -1;
+        //            throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
+        //        }
                 
-                //localiza o item bairro na combo
-                foreach (DataRowView item in cboBairro.Items)
-                {
-                    if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
-                        cboBairro.SelectedIndex = cboBairro.Items.IndexOf(item);
-                }
+        //        //localiza o item bairro na combo
+        //        //foreach (DataRowView item in cboBairro.Items)
+        //        //{
+        //        //    if (item["nomeBairro"].ToString() == enderecos[0].Bairro)
+        //        //        cboBairro.SelectedIndex = cboBairro.Items.IndexOf(item);
+        //        //}
 
-                txtLogradouro.Text = enderecos[0].Logradouro;
-                cboTipologradouro.Text = enderecos[0].TipoLogradouro;
-            }
-            catch (Exception)
-            {
+        //        return enderecos;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
 
-            }
-        }
+            
+        //}
 
         /// <summary>
         /// Consulta de logradouro através do CEP no WebService da PMB
@@ -181,9 +199,9 @@ namespace SIESC.UI.ConsultaWeb
 
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
-            if (enderecos == null)
-                throw new Exception("CEP não encontrado!Por favor digite o endereço.");
-
+            if (!enderecos[0].Cidade.Equals("BETIM"))
+                throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
+            
             return enderecos;
         }
 
@@ -198,7 +216,7 @@ namespace SIESC.UI.ConsultaWeb
         {
             ServicoCEP srv = new ServicoCEP();
 
-            Endereco[] enderecos = srv.ObterEnderecoPorLogradouro(logradouro, codigoCidade, estado, null);
+            Endereco[] enderecos = srv.ObterEnderecoPorLogradouro(logradouro, codigoCidade,estado, null);
 
             if (enderecos == null)
                 throw new NullReferenceException(

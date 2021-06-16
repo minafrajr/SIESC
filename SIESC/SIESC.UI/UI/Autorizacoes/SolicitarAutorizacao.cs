@@ -13,8 +13,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SIESC.MODEL.Classes;
-using SIESC.UI.ConsultaWeb;
+using SIESC.WEB.consultaCep;
 using SIESC.UI.Controles;
+using SIESC.WEB;
+
 
 namespace SIESC.UI.UI.Autorizacoes
 {
@@ -682,9 +684,10 @@ namespace SIESC.UI.UI.Autorizacoes
 		{
 			try
 			{
-				BuscaCep buscaCep = new BuscaCep();
+				BuscaCep consultacCep = new BuscaCep();
 
-				tecnologia1.Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text);
+				
+				Endereco[] endereco = consultacCep.buscadorCEP(msk_cep.Text);
 
 				txt_cidade.Text = endereco[0].Cidade;
 				txt_bairro.Text = endereco[0].Bairro;

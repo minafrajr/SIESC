@@ -48,7 +48,6 @@ namespace SIESC.BD.Control
 
                     listaAnoEnsinos.Add(anoEnsino);
                 }
-
                 return listaAnoEnsinos;
             }
             catch (Exception exception)
@@ -56,7 +55,5 @@ namespace SIESC.BD.Control
                 throw exception;
             }
         }
-
-
     }
 }

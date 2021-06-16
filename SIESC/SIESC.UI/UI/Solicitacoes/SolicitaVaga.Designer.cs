@@ -25,7 +25,6 @@ namespace SIESC.UI.UI.Solicitacoes
 			if (disposing && (components != null))
 			{
 				components.Dispose();
-				
 			}
 			base.Dispose(disposing);
 		}

@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Threading;
 using System.Windows.Forms;
-using SIESC.UI.ConsultaWeb;
 
 namespace SIESC.UI.UI.Zoneamento
 {
@@ -90,7 +89,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 var cep = new BuscaCep();
 
-                cep.buscadorCEP(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipologradouro);
+                cep.buscadorCEP(msk_cep.Text);
 
                 txt_mumresidencia.ResetText();
                 txt_mumresidencia.Focus();

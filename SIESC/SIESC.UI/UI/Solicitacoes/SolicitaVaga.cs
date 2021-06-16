@@ -13,12 +13,11 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-using SIESC.UI.ConsultaWeb;
 using SIESC.UI.Controles;
-using SIESC.UI.tecnologia1;
 using SIESC.UI.UI.CEP;
 using SIESC.UI.UI.Relatorios;
 using SIESC.WEB;
+using SIESC.WEB.consultaCep;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
@@ -730,9 +729,9 @@ namespace SIESC.UI.UI.Solicitacoes
                     ((MyComboBox)control).SelectedIndex = -1;
 
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
-                
+
                 if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
-                
+
                 if (control is RadioButton) ((RadioButton)control).Checked = false;
 
                 if (control is DateTimePicker) ((DateTimePicker)control).Text = DateTime.Now.ToShortDateString();
@@ -954,7 +953,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     Aluno = aluno.Id,
                     Status = true,
-                   
+
                     CidadeOrigem = cbo_cidades.Text,
                     instituicaoOrigem = cod,
                     EstadoOrigem = cbo_estado.Text,
@@ -989,7 +988,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     solicitacao.Transporte = chk_transporte.Checked;
                     solicitacao.JustificativaTransporte = txt_justificativa_transporte.Text;
                 }
-                
+
                 if (statusNavegacao == Navegacao.salvando)
                 {
                     solicitacao.Usuario = principalUi.user.nomeusuario.ToUpper();
@@ -1130,7 +1129,6 @@ namespace SIESC.UI.UI.Solicitacoes
                     }
                 }
             }
-
             return checado;
         }
 
@@ -1143,42 +1141,85 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             var t = CarregaProgressoThread();
 
+            
             try
             {
                 bairrosTableAdapter.Fill(siescDataSet.bairros);
 
-                BuscaCep cep = new BuscaCep();
+                BuscaCep buscaCep = new BuscaCep();
 #if DEBUG
-                cep.buscadorAlternativo(msk_cep.Text,cbo_bairro,txt_logradouro,cbo_tipologradouro); 
-                //cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-
-                //if (string.IsNullOrEmpty(txt_logradouro.Text))
-                //{
-                //    if (t.IsAlive) t.Abort();
-                //    if (Mensageiro.MensagemPergunta($"o cep {msk_cep.Text} não foi localizado, deseja utilizar um buscador alternativo?", principalUi).Equals(DialogResult.Yes))
-                //        cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-                //}
+                 EnderecoAlternativo(buscaCep);
 #else
-                
-                cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro); 
+                Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text);
 
-                if(string.IsNullOrEmpty(txt_logradouro.Text))
+                if (endereco == null)
                 {
-                    if (Mensageiro.MensagemPergunta($"o cep {msk_cep.Text} não foi localizado, deseja utilizar um buscador alternativo?", principalUi).Equals(DialogResult.Yes))
-                        cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
+                    if (t.IsAlive) t.Abort();
+
+                    if (Mensageiro
+                        .MensagemPergunta(
+                            $"o cep {msk_cep.Text} não foi localizado, deseja utilizar um buscador alternativo?",
+                            principalUi).Equals(DialogResult.Yes))
+                    {
+                        EnderecoAlternativo(buscaCep);
+                    }
+                }
+                else
+                {
+                    foreach (DataRowView item in cbo_bairro.Items)
+                    {
+                        if (item["nomeBairro"].ToString() == endereco[0].Bairro)
+                            cbo_bairro.SelectedIndex = cbo_bairro.Items.IndexOf(item);
+                    }
+
+                    cbo_tipologradouro.Text = endereco[0].TipoLogradouro;
+
+                    txt_logradouro.Text = endereco[0].Logradouro;
+
+                    txt_mumresidencia.Focus();
+
                 }
 #endif
+                if (t.IsAlive) t.Abort();
 
-                txt_mumresidencia.Focus();
             }
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
+                
                 Mensageiro.MensagemErro(exception, this);
             }
-            finally
+        }
+
+        private void EnderecoAlternativo(BuscaCep buscaCep)
+        {
+            var x = CarregaProgressoThread();
+            try
             {
-                if (t.IsAlive) t.Abort();
+                var endereco2 = buscaCep.BuscadorAlternativo(msk_cep.Text);
+
+                if (endereco2 == null)
+                {
+                    if (x.IsAlive) x.Abort(ThreadState.Aborted);
+                    throw new Exception("Endereço não localizado!");
+                }
+
+                foreach (DataRowView item in cbo_bairro.Items)
+                {
+                    if (item["nomeBairro"].ToString() == endereco2[0])
+                        cbo_bairro.SelectedIndex = cbo_bairro.Items.IndexOf(item);
+                }
+
+                cbo_tipologradouro.Text = endereco2[1];
+
+                txt_logradouro.Text = endereco2[2];
+
+                if (x.IsAlive) x.Abort(ThreadState.Aborted);
+            }
+            catch (Exception)
+            {
+                if (x.IsAlive) x.Abort(ThreadState.Aborted);
+                throw;
             }
         }
 
@@ -1535,7 +1576,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             if (idade >= 15)
             {
-                cbo_anosolicitado.SelectedIndex = -1;
+                //cbo_anosolicitado.SelectedIndex = -1;
                 Mensageiro.MensagemAviso($"O aluno possui mais de {idade} anos.{Environment.NewLine} Favor Verificar!",
                     principalUi);
 
@@ -1586,7 +1627,7 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_instituicao_origem.Text = cbo_instituicao_origem.Text.ToUpper();
         }
 
-        
+
 
         /// <summary>
         /// Grava o código do Expediente interno na solicitação já existente
@@ -2100,7 +2141,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void msk_telefone1_Leave(object sender, EventArgs e) 
+        private void msk_telefone1_Leave(object sender, EventArgs e)
         {
             VerificaTelefone(msk_telefone1.Text);
         }
@@ -2138,7 +2179,7 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 Mensageiro.MensagemErro(ex, principalUi);
             }
-            
+
         }
     }
 }

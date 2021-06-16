@@ -10,7 +10,6 @@ using System.Threading;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
-using SIESC.UI.ConsultaWeb;
 using SIESC.UI.Controles;
 using SIESC.UI.UI.CEP;
 using SIESC.WEB;
@@ -554,14 +553,20 @@ namespace SIESC.UI.UI.Sindicância
             {
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
                 BuscaCep cep = new BuscaCep();
-
 #if DEBUG
-                cep.buscadorAlternativo(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-#else
-                cep.buscadorCEP(msk_cep.Text, cbo_bairro, txt_logradouro, cbo_tipologradouro);
-
-#endif
+                var enderecoAlternativo = cep.buscadorAlternativo(msk_cep.Text);
+                cbo_bairro.Text = enderecoAlternativo[0]
+                txt_logradouro.Text = enderecoAlternativo[2];
+                cbo_tipologradouro.Text = enderecoAlternativo[1];
                 txt_numresidencia.Focus();
+#else
+                var endereco = cep.buscadorCEP(msk_cep.Text);
+
+                cbo_bairro.Text = endereco[0].Bairro;
+                txt_logradouro.Text = endereco[0].Logradouro;
+                cbo_tipologradouro.Text = endereco[0].TipoLogradouro;
+                txt_numresidencia.Focus();
+#endif
             }
             catch (Exception exception)
             {
