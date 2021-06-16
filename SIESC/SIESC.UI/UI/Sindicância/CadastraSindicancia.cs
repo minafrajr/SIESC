@@ -553,7 +553,7 @@ namespace SIESC.UI.UI.Sindicância
             {
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
                 BuscaCep cep = new BuscaCep();
-#if DEBUG
+#if !DEBUG
                 var enderecoAlternativo = cep.buscadorAlternativo(msk_cep.Text);
                 cbo_bairro.Text = enderecoAlternativo[0]
                 txt_logradouro.Text = enderecoAlternativo[2];
