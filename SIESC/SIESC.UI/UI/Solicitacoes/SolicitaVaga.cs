@@ -1147,7 +1147,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 bairrosTableAdapter.Fill(siescDataSet.bairros);
 
                 BuscaCep buscaCep = new BuscaCep();
-#if !DEBUG
+#if DEBUG
                  EnderecoAlternativo(buscaCep);
 #else
                var endereco = buscaCep.buscadorCEP(msk_cep.Text);

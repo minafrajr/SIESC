@@ -62,17 +62,28 @@ namespace SIESC.UI.UI.Zoneamento
 
             try
             {
-                LimpaGridView();
-                txt_logradouro.ResetText();
-
                 if (string.IsNullOrEmpty(msk_cep.Text))
-                {
                     throw new Exception("O CEP está vazio!");
-                }
+
+                LimpaGridView();
                 
+                txt_logradouro.ResetText();
+                txt_mumresidencia.ResetText();
+                txt_mumresidencia.Focus();
+
                 lbl_aviso_coordenadas.Visible = false;
                 lbl_latitude.Text = string.Empty;
                 lbl_longitude.Text = string.Empty;
+
+                this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
+
+                var cep = new BuscaCep();
+
+                var endereco =   cep.buscadorCEP(msk_cep.Text);
+
+                txt_logradouro.Text = endereco[0].Logradouro;
+                cbo_bairro.Text = endereco[0].Bairro;
+                cbo_tipologradouro.Text = endereco[0].TipoLogradouro;
 
                 coordenadas = new string[2];
 
@@ -84,24 +95,12 @@ namespace SIESC.UI.UI.Zoneamento
                     lbl_latitude.Text = coordenadas[0];
                     lbl_longitude.Text = coordenadas[1];
                 }
-
-                this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
-
-                var cep = new BuscaCep();
-
-                cep.buscadorCEP(msk_cep.Text);
-
-                txt_mumresidencia.ResetText();
-                txt_mumresidencia.Focus();
+                if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
                 Mensageiro.MensagemErro(exception,this);
-            }
-            finally
-            {
-                if (t.IsAlive) t.Abort();
             }
         }
 

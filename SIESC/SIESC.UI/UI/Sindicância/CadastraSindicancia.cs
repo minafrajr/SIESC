@@ -553,9 +553,9 @@ namespace SIESC.UI.UI.Sindicância
             {
                 this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
                 BuscaCep cep = new BuscaCep();
-#if !DEBUG
-                var enderecoAlternativo = cep.buscadorAlternativo(msk_cep.Text);
-                cbo_bairro.Text = enderecoAlternativo[0]
+#if DEBUG
+                var enderecoAlternativo = cep.BuscadorAlternativo(msk_cep.Text);
+                cbo_bairro.Text = enderecoAlternativo[0];
                 txt_logradouro.Text = enderecoAlternativo[2];
                 cbo_tipologradouro.Text = enderecoAlternativo[1];
                 txt_numresidencia.Focus();
