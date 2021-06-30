@@ -10,7 +10,7 @@ namespace SIESC.UI.UI.CEP
 	/// <summary>
 	/// Classe do formulário de busca de endereço pelo cep
 	/// </summary>
-	public partial class FrmBuscaCep : BaseUi
+	public partial class FrmBuscaCep : Base_UI
 	{
 		/// <summary>
 		/// Objto de acesso á consulta CEP

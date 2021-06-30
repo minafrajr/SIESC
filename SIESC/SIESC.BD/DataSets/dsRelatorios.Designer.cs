@@ -1733,6 +1733,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columndataencaminhamento;
             
+            private global::System.Data.DataColumn columnanoReferencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_lista_encaminhadosDataTable() {
@@ -1912,6 +1914,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn anoReferenciaColumn {
+                get {
+                    return this.columnanoReferencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1964,7 +1974,8 @@ namespace SIESC.BD.DataSets {
                         string observaçoes, 
                         string usuario, 
                         System.DateTime datasolicitacao, 
-                        System.DateTime dataencaminhamento) {
+                        System.DateTime dataencaminhamento, 
+                        int anoReferencia) {
                 vw_lista_encaminhadosRow rowvw_lista_encaminhadosRow = ((vw_lista_encaminhadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1984,7 +1995,8 @@ namespace SIESC.BD.DataSets {
                         observaçoes,
                         usuario,
                         datasolicitacao,
-                        dataencaminhamento};
+                        dataencaminhamento,
+                        anoReferencia};
                 rowvw_lista_encaminhadosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_lista_encaminhadosRow);
                 return rowvw_lista_encaminhadosRow;
@@ -2032,6 +2044,7 @@ namespace SIESC.BD.DataSets {
                 this.columnusuario = base.Columns["usuario"];
                 this.columndatasolicitacao = base.Columns["datasolicitacao"];
                 this.columndataencaminhamento = base.Columns["dataencaminhamento"];
+                this.columnanoReferencia = base.Columns["anoReferencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2073,6 +2086,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columndatasolicitacao);
                 this.columndataencaminhamento = new global::System.Data.DataColumn("dataencaminhamento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndataencaminhamento);
+                this.columnanoReferencia = new global::System.Data.DataColumn("anoReferencia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnanoReferencia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidsolicitacao}, true));
                 this.columnidsolicitacao.AutoIncrement = true;
@@ -11415,6 +11430,22 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int anoReferencia {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_lista_encaminhados.anoReferenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'anoReferencia\' na tabela \'vw_lista_encaminhados\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_lista_encaminhados.anoReferenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IstipologradNull() {
                 return this.IsNull(this.tablevw_lista_encaminhados.tipologradColumn);
             }
@@ -11531,6 +11562,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdataencaminhamentoNull() {
                 this[this.tablevw_lista_encaminhados.dataencaminhamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsanoReferenciaNull() {
+                return this.IsNull(this.tablevw_lista_encaminhados.anoReferenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetanoReferenciaNull() {
+                this[this.tablevw_lista_encaminhados.anoReferenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18723,6 +18766,7 @@ ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.Ano
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("datasolicitacao", "datasolicitacao");
             tableMapping.ColumnMappings.Add("dataencaminhamento", "dataencaminhamento");
+            tableMapping.ColumnMappings.Add("anoReferencia", "anoReferencia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -18739,12 +18783,13 @@ ORDER BY siesc.vw_controlesolicitacoes.Escola, siesc.vw_controlesolicitacoes.Ano
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[5];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        idsolicitacao, nome, ano, mae, tipolograd, logradouro, numres, complem, bairro, telefone1, telefone2, motivo, escolasolicitada, escolaencaminhada, observaçoes, usuario,  datasolicitacao, dataencaminhamento
+            this._commandCollection[0].CommandText = @"SELECT        anoReferencia, idsolicitacao, nome, ano, mae, tipolograd, logradouro, numres, complem, bairro, telefone1, telefone2, motivo, escolasolicitada, escolaencaminhada, observaçoes, usuario, datasolicitacao, 
+                         dataencaminhamento
 FROM            vw_lista_encaminhados";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolaencaminhada = @escolasolicitada)";
+            this._commandCollection[1].CommandText = @"SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolaencaminhada = @escolasolicitada)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@escolasolicitada";
@@ -18757,7 +18802,7 @@ FROM            vw_lista_encaminhados";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada)";
+            this._commandCollection[2].CommandText = @"SELECT  anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@escolasolicitada";
@@ -18770,15 +18815,11 @@ FROM            vw_lista_encaminhados";
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        idsolicitacao, nome, ano, mae, tipolograd, logradouro, numres, complem, bairro, telefone1, telefone2, motivo, escolasolicitada, escolaencaminhada, observaçoes, usuario, datasolicitacao, dataencaminhamento
-FROM            vw_lista_encaminhados
-ORDER BY escolaencaminhada";
+            this._commandCollection[3].CommandText = @"SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolaencaminhada";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        idsolicitacao, nome, ano, mae, tipolograd, logradouro, numres, complem, bairro, telefone1, telefone2, motivo, escolasolicitada, escolaencaminhada, observaçoes, usuario, datasolicitacao, dataencaminhamento
-FROM            vw_lista_encaminhados
-ORDER BY escolasolicitada";
+            this._commandCollection[4].CommandText = @"SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolasolicitada";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         

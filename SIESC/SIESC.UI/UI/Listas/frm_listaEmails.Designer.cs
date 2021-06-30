@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Listas
 {
-	partial class FrmListaEmails
+	partial class FrmListaEmails: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

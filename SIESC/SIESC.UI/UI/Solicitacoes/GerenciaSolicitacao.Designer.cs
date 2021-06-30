@@ -7,7 +7,7 @@ namespace SIESC.UI.UI.Solicitacoes
 	/// <summary>
 	/// 
 	/// </summary>
-	partial class GerenciaSolicitacao : BaseUi
+	partial class GerenciaSolicitacao : Base_UI
 	{
 		///<summary>
 		/// Variável de designer necessária.

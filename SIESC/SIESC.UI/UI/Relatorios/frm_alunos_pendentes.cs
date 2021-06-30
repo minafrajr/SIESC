@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Drawing.Printing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using SIESC.BD.Control;
-using SIESC.BD.DataSets;
 using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
@@ -19,7 +13,7 @@ namespace SIESC.UI.UI.Relatorios
     /// </summary>
     internal enum TipoConsulta { geral, ano, escola, escola_ano, regional, regional_ano, regional_escola, regional_ano_escola, data }
 
-    public partial class frm_alunos_pendentes : SIESC.UI.BaseUi
+    public partial class frm_alunos_pendentes : Base_UI
     {
         /// <summary>
         /// Tipo de consulta a ser realizada
@@ -133,7 +127,6 @@ namespace SIESC.UI.UI.Relatorios
             {
                 case 1:
                     this.anoTableAdapter1.FillByInfantil(siescDataSet.ano);
-
                     break;
                 case 2:
                     this.anoTableAdapter1.FillByFundamental(siescDataSet.ano);

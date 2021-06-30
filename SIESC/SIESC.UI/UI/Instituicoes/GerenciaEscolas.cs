@@ -14,7 +14,7 @@ namespace SIESC.UI.UI.Instituicoes
     /// <summary>
     /// Formulário de gerenciamento
     /// </summary>
-    public partial class GerenciaEscolas : BaseUi
+    public partial class GerenciaEscolas : Base_UI
     {
         /// <summary>
         /// Objeto de conexão com o banco

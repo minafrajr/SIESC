@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Funcionarios
 {
-	partial class CadastroFuncionario
+	partial class CadastroFuncionario: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

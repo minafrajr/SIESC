@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.CEP
 {
-	partial class FrmBuscaCep
+	partial class FrmBuscaCep: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

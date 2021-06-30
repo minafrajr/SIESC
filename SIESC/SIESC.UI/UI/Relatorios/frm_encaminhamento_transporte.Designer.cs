@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Relatorios
 {
-    partial class frm_encaminhamento_transporte
+    partial class frm_encaminhamento_transporte: Base_UI
     {
         /// <summary>
         /// Variável de designer necessária.

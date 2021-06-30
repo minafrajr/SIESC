@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Relatorios
 {
-    partial class frm_relatorio_sindicancia
+    partial class frm_relatorio_sindicancia: Base_UI
     {
         /// <summary>
         /// Variável de designer necessária.

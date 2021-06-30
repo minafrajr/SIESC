@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Alunos
 {
-	partial class GerenciarAlunos
+	partial class GerenciarAlunos: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

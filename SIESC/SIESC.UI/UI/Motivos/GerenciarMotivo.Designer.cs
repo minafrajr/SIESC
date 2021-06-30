@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI
 {
-	partial class GerenciaMotivo
+	partial class GerenciaMotivo: Base_UI
 	{
 		/// <summary>
 		/// Required designer variable.

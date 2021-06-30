@@ -13,7 +13,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Instituicoes
 {
-    public partial class ConsultasEscola : BaseUi
+    public partial class ConsultasEscola : Base_UI
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados das instituições

@@ -17,7 +17,7 @@ namespace SIESC.UI.UI.Autorizacoes
     /// <summary>
     /// Classe Gerenciador das autorizações
     /// </summary>
-    public partial class GerenciarAutorizacoes : BaseUi
+    public partial class GerenciarAutorizacoes : Base_UI
     {
         /// <summary>
         /// 

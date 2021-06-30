@@ -11,13 +11,15 @@ using System.Globalization;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
+using System.ComponentModel;
+using Microsoft;
 
 namespace SIESC.UI.UI.Alunos
 {
     /// <summary>
     /// formulário para cadastro do aluno
     /// </summary>
-    public partial class CadastrarAluno : BaseUi
+    public partial class CadastrarAluno : Base_UI
     {
         /// <summary>
         /// Lista de controles do formulário

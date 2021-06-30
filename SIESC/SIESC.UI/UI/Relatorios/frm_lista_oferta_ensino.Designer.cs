@@ -1,7 +1,7 @@
 ﻿
 namespace SIESC.UI.UI.Relatorios
 {
-	partial class frm_lista_oferta_ensino
+	partial class frm_lista_oferta_ensino: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

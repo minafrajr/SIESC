@@ -1,8 +1,9 @@
-﻿using SIESC.UI.Controles;
+﻿using System.Windows.Forms;
+using SIESC.UI.Controles;
 
 namespace SIESC.UI.UI.Alunos
 {
-	partial class CadastrarAluno
+	partial class CadastrarAluno: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -37,21 +38,21 @@ namespace SIESC.UI.UI.Alunos
 			this.lbl_idade = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btn_limpacombo = new System.Windows.Forms.Button();
-			this.txt_pai = new MyTextBox();
+			this.txt_pai = new TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.cbo_deficiencia = new MyComboBox();
+			this.cbo_deficiencia = new ComboBox();
 			this.deficienciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.lbl_codigoAluno = new System.Windows.Forms.Label();
 			this.lbl_codigo = new System.Windows.Forms.Label();
-			this.txt_mae = new MyTextBox();
+			this.txt_mae = new TextBox();
 			this.lbl_pai = new System.Windows.Forms.Label();
 			this.gpb_sexo = new System.Windows.Forms.GroupBox();
 			this.rdb_feminino = new System.Windows.Forms.RadioButton();
 			this.rdb_masculino = new System.Windows.Forms.RadioButton();
 			this.lbl_mae = new System.Windows.Forms.Label();
 			this.lbl_datanasc = new System.Windows.Forms.Label();
-			this.txt_nomealuno = new MyTextBox();
+			this.txt_nomealuno = new TextBox();
 			this.lbl_nome = new System.Windows.Forms.Label();
 			this.btn_limpar = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
@@ -59,11 +60,11 @@ namespace SIESC.UI.UI.Alunos
 			this.btn_salvar = new System.Windows.Forms.Button();
 			this.btn_excluir = new System.Windows.Forms.Button();
 			this.deficienciasTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.deficienciasTableAdapter();
-			this.msk_telefone3 = new MyMaskedPhoneBox();
-			this.msk_telefone2 = new MyMaskedPhoneBox();
-			this.msk_telefone1 = new MyMaskedPhoneBox();
+			this.msk_telefone3 = new MaskedTextBox();
+			this.msk_telefone2 = new MaskedTextBox();
+			this.msk_telefone1 = new MaskedTextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.msk_data_nascimento = new MyMaskedTextBox();
+			this.msk_data_nascimento = new MaskedTextBox();
 			this.gpb_dadospessoais.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.deficienciasBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
@@ -467,14 +468,14 @@ namespace SIESC.UI.UI.Alunos
 		private System.Windows.Forms.GroupBox gpb_sexo;
 		private System.Windows.Forms.RadioButton rdb_feminino;
 		private System.Windows.Forms.RadioButton rdb_masculino;
-		private MyTextBox txt_pai;
+		private TextBox txt_pai;
 		private System.Windows.Forms.Label lbl_codigoAluno;
 		private System.Windows.Forms.Label lbl_codigo;
-		private MyTextBox txt_mae;
+		private TextBox txt_mae;
 		private System.Windows.Forms.Label lbl_pai;
 		private System.Windows.Forms.Label lbl_mae;
 		private System.Windows.Forms.Label lbl_datanasc;
-		private MyTextBox txt_nomealuno;
+		private TextBox txt_nomealuno;
 		private System.Windows.Forms.Label lbl_nome;
 		private System.Windows.Forms.Button btn_limpar;
 		private System.Windows.Forms.Button btn_cancelar;
@@ -482,17 +483,17 @@ namespace SIESC.UI.UI.Alunos
 		private System.Windows.Forms.Button btn_salvar;
 		private System.Windows.Forms.Button btn_excluir;
 		private siescDataSet siescDataSet;
-		private MyComboBox cbo_deficiencia;
+		private ComboBox cbo_deficiencia;
 		private System.Windows.Forms.BindingSource deficienciasBindingSource;
 		private System.Windows.Forms.Label label1;
 		private siescDataSetTableAdapters.deficienciasTableAdapter deficienciasTableAdapter1;
 		private System.Windows.Forms.Button btn_limpacombo;
 		private System.Windows.Forms.Label lbl_idade;
 		private System.Windows.Forms.Label label4;
-		private MyMaskedPhoneBox msk_telefone3;
-		private MyMaskedPhoneBox msk_telefone2;
-		private MyMaskedPhoneBox msk_telefone1;
+		private MaskedTextBox msk_telefone3;
+		private MaskedTextBox msk_telefone2;
+		private MaskedTextBox msk_telefone1;
 		private System.Windows.Forms.Label label3;
-		private MyMaskedTextBox msk_data_nascimento;
+		private MaskedTextBox msk_data_nascimento;
 	}
 }

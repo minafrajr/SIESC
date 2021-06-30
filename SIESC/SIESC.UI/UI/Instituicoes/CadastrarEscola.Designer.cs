@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Instituicoes
 {
-	partial class CadastrarEscola
+	partial class CadastrarEscola: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

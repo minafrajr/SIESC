@@ -7,18 +7,19 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using SIESC_BD;
 
 namespace SIESC.UI
 {
 	/// <summary>
 	/// Formulário base do sistema
 	/// </summary>
-	public partial class BaseUi : Form
+	public partial class Base_UI : Form
 	{
 		/// <summary>
 		/// Construtor
 		/// </summary>
-		public BaseUi()
+		public Base_UI()
 		{
 			InitializeComponent();
 		}

@@ -20,12 +20,12 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário de gerenciamento das solicitações
     /// </summary>
-    public partial class GerenciaSolicitacao
+    public partial class GerenciaSolicitacao: Base_UI
     {
         /// <summary>
         /// Enumeração de estado de busca
         /// </summary>
-        private Localizar localizar;
+        private Localizar  localizar;
         /// <summary>
         /// Objeto do formulário principal
         /// </summary>
@@ -351,7 +351,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Desabilita Textbox conforme tipo de busca
         /// </summary>
         /// <param name="localizar">O enum de tipo de busca</param>
-        private void DesabilitaTextBox(Localizar localizar)
+        private void DesabilitaTextBox(GerenciaSolicitacao.Localizar localizar)
         {
             txt_nomealuno.Enabled = false;
             txt_datanasc.Enabled = false;
@@ -531,7 +531,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// Habilita as text box para localizar solicitação
         /// </summary>
         /// <param name="localizar"></param>
-        private void HabilitaTextBox(Localizar localizar)
+        private void HabilitaTextBox(GerenciaSolicitacao.Localizar localizar)
         {
             LimpaCampos();
 

@@ -12,7 +12,7 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_comprovante_endereco : SIESC.UI.BaseUi
+    public partial class frm_comprovante_endereco : Base_UI
     {
         /// <summary>
         /// O nível de ensino para abrir o formulário e iniciar a consulta

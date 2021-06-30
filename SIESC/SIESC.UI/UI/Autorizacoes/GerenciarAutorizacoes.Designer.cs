@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Autorizacoes
 {
-	partial class GerenciarAutorizacoes
+	partial class GerenciarAutorizacoes: Base_UI
 	{
 		/// <summary>
 		/// Variável de designer necessária.

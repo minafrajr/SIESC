@@ -2,7 +2,7 @@
 
 namespace SIESC.UI
 {
-    partial class BaseUi
+    partial class Base_UI
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@ namespace SIESC.UI
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(20, 43);
-            this.Name = "BaseUi";
+            this.Name = "Base_UI";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

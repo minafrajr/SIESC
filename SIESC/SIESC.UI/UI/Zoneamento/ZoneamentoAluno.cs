@@ -14,7 +14,7 @@ namespace SIESC.UI.UI.Zoneamento
     /// <summary>
     /// Formulário de zoneamento do aluno cadastrado
     /// </summary>
-    public partial class ZoneamentoAluno : BaseUi
+    public partial class ZoneamentoAluno : Base_UI
     {
         /// <summary>
         /// Objeto de acesso ao banco de dados do aluno

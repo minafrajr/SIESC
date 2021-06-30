@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_ficha_encaminhamento : SIESC.UI.BaseUi
+    public partial class frm_ficha_encaminhamento : Base_UI
     {
         /// <summary>
         /// Settings para as margens do relatório

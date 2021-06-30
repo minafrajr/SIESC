@@ -9,7 +9,7 @@ namespace SIESC.UI.UI.Sindicância
     /// <summary>
     /// Formulário para procedimento de conclusão da sindicância
     /// </summary>
-    public partial class ConcluirSindicancia : BaseUi
+    public partial class ConcluirSindicancia : Base_UI
     {
         private Sindicancia sindicancia;
         private Principal_UI PrincipalUi;
