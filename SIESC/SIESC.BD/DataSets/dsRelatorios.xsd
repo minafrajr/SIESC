@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
+                    <CommandText>SELECT        anoReferencia, Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
 FROM            vw_controlesolicitacoes</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -28,12 +28,13 @@ FROM            vw_controlesolicitacoes</CommandText>
               <Mapping SourceColumn="Pendente" DataSetColumn="Pendente" />
               <Mapping SourceColumn="Telefone" DataSetColumn="Telefone" />
               <Mapping SourceColumn="idano" DataSetColumn="idano" />
+              <Mapping SourceColumn="anoReferencia" DataSetColumn="anoReferencia" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByFormularioPendenteEnsFund" GetMethodModifier="Public" GetMethodName="GetDataByFormularioPendenteEnsFund" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByFormularioPendenteEnsFund" UserSourceName="GetDataByFormularioPendenteEnsFund">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (Pendente &lt;&gt; 0) AND (AnoEF LIKE '%Ano%') ORDER BY Regional, AnoEF</CommandText>
+                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, anoReferencia, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (Pendente &lt;&gt; 0) AND (AnoEF LIKE '%Ano%') ORDER BY Regional, AnoEF</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -41,9 +42,7 @@ FROM            vw_controlesolicitacoes</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByFundamentalRegional" GetMethodModifier="Public" GetMethodName="GetDataByFundamentalRegional" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByFundamentalRegional" UserSourceName="GetDataByFundamentalRegional">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
-FROM            vw_controlesolicitacoes
-WHERE idano &lt; 10</CommandText>
+                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, anoReferencia, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (idano &lt; 10)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -51,9 +50,7 @@ WHERE idano &lt; 10</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInfantilRegional" GetMethodModifier="Public" GetMethodName="GetDataByInfantilRegional" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInfantilRegional" UserSourceName="GetDataByInfantilRegional">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
-FROM            vw_controlesolicitacoes
-WHERE idano BETWEEN 10 AND 15</CommandText>
+                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, anoReferencia, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (idano BETWEEN 10 AND 15)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -61,9 +58,7 @@ WHERE idano BETWEEN 10 AND 15</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="QtdeSolicitacoesFundamental" GetMethodModifier="Public" GetMethodName="QtdeSolicitacoesFundamental" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="QtdeSolicitacoesFundamental" UserSourceName="QtdeSolicitacoesFundamental">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
-FROM            vw_controlesolicitacoes
-WHERE        (idano &lt; 10)</CommandText>
+                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, anoReferencia, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (idano &lt; 10)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -71,9 +66,7 @@ WHERE        (idano &lt; 10)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_controlesolicitacoes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="QtdeSolicitacoesInfantil" GetMethodModifier="Public" GetMethodName="QtdeSolicitacoesInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="QtdeSolicitacoesInfantil" UserSourceName="QtdeSolicitacoesInfantil">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Regional, AnoEF, Escola, solicitada, encaminhada, Pendente, Telefone, idano
-FROM            vw_controlesolicitacoes
-WHERE        (idano BETWEEN 10 AND 15)</CommandText>
+                    <CommandText>SELECT AnoEF, Escola, Pendente, Regional, Telefone, anoReferencia, encaminhada, idano, solicitada FROM vw_controlesolicitacoes WHERE (idano BETWEEN 10 AND 15)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -190,7 +183,7 @@ FROM            vw_lista_encaminhados</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_lista_encaminhados" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEscolaEncaminhada" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEscolaEncaminhada" GeneratorSourceName="FillByEscolaEncaminhada" GetMethodModifier="Public" GetMethodName="GetDataByEscolaEncaminhada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEscolaEncaminhada" UserSourceName="FillByEscolaEncaminhada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolaencaminhada = @escolasolicitada)</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolaencaminhada = @escolasolicitada)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="escolasolicitada" ColumnName="escolaencaminhada" DataSourceName="siesc.vw_lista_encaminhados" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escolasolicitada" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolaencaminhada" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -200,7 +193,7 @@ FROM            vw_lista_encaminhados</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_lista_encaminhados" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEscolaSolicitada" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEscolaSolicitada" GeneratorSourceName="FillByEscolaSolicitada" GetMethodModifier="Public" GetMethodName="GetDataByEscolaSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEscolaSolicitada" UserSourceName="FillByEscolaSolicitada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT  anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada)</CommandText>
+                    <CommandText>SELECT ano, anoReferencia,  bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="escolasolicitada" ColumnName="escolasolicitada" DataSourceName="siesc.vw_lista_encaminhados" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escolasolicitada" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -210,7 +203,7 @@ FROM            vw_lista_encaminhados</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_lista_encaminhados" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOrderByInstituicaoEncaminhada" GetMethodModifier="Public" GetMethodName="GetDataOrderByInstituicaoEncaminhada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOrderByInstituicaoEncaminhada" UserSourceName="GetDataOrderByInstituicaoEncaminhada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolaencaminhada</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolaencaminhada</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -218,7 +211,7 @@ FROM            vw_lista_encaminhados</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_lista_encaminhados" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOrderByInstituicaoSolicitada" GetMethodModifier="Public" GetMethodName="GetDataOrderByInstituicaoSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOrderByInstituicaoSolicitada" UserSourceName="GetDataOrderByInstituicaoSolicitada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT anoReferencia, ano, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolasolicitada</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolasolicitada</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -230,7 +223,7 @@ FROM            vw_lista_encaminhados</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        codigosolicitacao, nome, ano, mae, tipoLogradouroAluno, logradouroAluno, numeroResidenciaAluno, complemento, bairro, telefone, motivo, escolasolicitada, regional, observacoes, idade, datasolicitacao
+                    <CommandText>SELECT        anoReferencia,codigosolicitacao, nome, ano, mae, tipoLogradouroAluno, logradouroAluno, numeroResidenciaAluno, complemento, bairro, telefone, motivo, escolasolicitada, regional, observacoes, idade, datasolicitacao
 FROM            vw_alunos_pendentes</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -254,15 +247,13 @@ FROM            vw_alunos_pendentes</CommandText>
               <Mapping SourceColumn="idade" DataSetColumn="idade" />
               <Mapping SourceColumn="datasolicitacao" DataSetColumn="datasolicitacao" />
               <Mapping SourceColumn="telefone" DataSetColumn="telefone" />
+              <Mapping SourceColumn="anoReferencia" DataSetColumn="anoReferencia" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAno" GetMethodModifier="Public" GetMethodName="GetDataByAno" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAno" UserSourceName="GetDataByAno">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno
-FROM            vw_alunos_pendentes
-WHERE        (ano LIKE @ano)
-ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ano" ColumnName="ano" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@ano" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="ano" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -272,7 +263,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEscola" GetMethodModifier="Public" GetMethodName="GetDataByEscola" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEscola" UserSourceName="GetDataByEscola">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="escola" ColumnName="escolasolicitada" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escola" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -282,7 +273,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEscolaAno" GetMethodModifier="Public" GetMethodName="GetDataByEscolaAno" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEscolaAno" UserSourceName="GetDataByEscolaAno">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ano" ColumnName="ano" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@ano" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="ano" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="escola" ColumnName="escolasolicitada" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escola" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -293,7 +284,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalAno" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataByRegionalAno" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalAno" UserSourceName="GetDataByRegionalAno">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (regional LIKE @regional) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (regional LIKE @regional) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ano" ColumnName="ano" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@ano" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="ano" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -304,7 +295,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalAnoEscola" GetMethodModifier="Public" GetMethodName="GetDataByRegionalAnoEscola" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalAnoEscola" UserSourceName="GetDataByRegionalAnoEscola">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (regional LIKE @regional) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (regional LIKE @regional) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ano" ColumnName="ano" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@ano" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="ano" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -316,7 +307,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalEscola" GetMethodModifier="Public" GetMethodName="GetDataByRegionalEscola" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalEscola" UserSourceName="GetDataByRegionalEscola">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (regional LIKE @regional) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (regional LIKE @regional) AND (escolasolicitada LIKE @escola) ORDER BY codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="escola" ColumnName="escolasolicitada" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escola" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -327,7 +318,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalFundamental" GeneratorSourceName="FillByDiretoria" GetMethodModifier="Public" GetMethodName="GetDataByRegionalFundamental" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalFundamental" UserSourceName="GetDataByRegionalFundamental">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (ano.idAno &lt; 10) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (ano.idAno &lt; 10) ORDER BY vw_alunos_pendentes.codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -337,7 +328,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalGeral" GetMethodModifier="Public" GetMethodName="GetDataByRegionalGeral" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalGeral" UserSourceName="GetDataByRegionalGeral">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) ORDER BY vw_alunos_pendentes.codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -347,8 +338,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalInfantil" GetMethodModifier="Public" GetMethodName="GetDataByRegionalInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalInfantil" UserSourceName="GetDataByRegionalInfantil">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (ano.idAno BETWEEN 10 AND 15)
-ORDER BY codigosolicitacao</CommandText>
+                    <CommandText>SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (ano.idAno BETWEEN 10 AND 15) ORDER BY vw_alunos_pendentes.codigosolicitacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_alunos_pendentes" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -358,9 +348,7 @@ ORDER BY codigosolicitacao</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_alunos_pendentes" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOrderByDataSolicitacao" GetMethodModifier="Public" GetMethodName="GetDataOrderByDataSolicitacao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOrderByDataSolicitacao" UserSourceName="GetDataOrderByDataSolicitacao">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ano, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno
-FROM            vw_alunos_pendentes
-ORDER BY datasolicitacao</CommandText>
+                    <CommandText>SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes ORDER BY datasolicitacao</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -691,7 +679,7 @@ FROM            vw_solicitacoes_por_mes</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_solicitacoes_motivos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idAno, Ano, NumSolicitacao, Nome, DataNasc, Endereco, CEP, InstituicaoSolicitada, InstituicaoEncaminhada, InstituicaoOrigem, motivo
+                    <CommandText>SELECT        idAno, Ano, NumSolicitacao, Nome, DataNasc, Endereco, CEP, InstituicaoSolicitada, InstituicaoEncaminhada, InstituicaoOrigem, motivo, `Ano Referencia`
 FROM            vw_solicitacoes_motivos</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -710,14 +698,13 @@ FROM            vw_solicitacoes_motivos</CommandText>
               <Mapping SourceColumn="InstituicaoEncaminhada" DataSetColumn="InstituicaoEncaminhada" />
               <Mapping SourceColumn="InstituicaoOrigem" DataSetColumn="InstituicaoOrigem" />
               <Mapping SourceColumn="motivo" DataSetColumn="motivo" />
+              <Mapping SourceColumn="Ano Referencia" DataSetColumn="Ano Referencia" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_solicitacoes_motivos" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMotivoFundamental" GetMethodModifier="Public" GetMethodName="GetDataByMotivoFundamental" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMotivoFundamental" UserSourceName="GetDataByMotivoFundamental">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Ano, NumSolicitacao, Nome, DataNasc, Endereco, CEP, InstituicaoSolicitada, InstituicaoEncaminhada, InstituicaoOrigem, motivo
-FROM            vw_solicitacoes_motivos
-WHERE        (motivo = @motivo) AND (idAno &lt; 10)</CommandText>
+                    <CommandText>SELECT Ano, `Ano Referencia`, CEP, DataNasc, Endereco, InstituicaoEncaminhada, InstituicaoOrigem, InstituicaoSolicitada, Nome, NumSolicitacao, idAno, motivo FROM vw_solicitacoes_motivos WHERE (motivo = @motivo) AND (idAno &lt; 10)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="motivo" ColumnName="motivo" DataSourceName="siesc.vw_solicitacoes_motivos" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@motivo" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="motivo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -727,9 +714,7 @@ WHERE        (motivo = @motivo) AND (idAno &lt; 10)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_solicitacoes_motivos" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMotivoGeral" GetMethodModifier="Public" GetMethodName="GetDataByMotivoGeral" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMotivoGeral" UserSourceName="GetDataByMotivoGeral">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idAno, Ano, NumSolicitacao, Nome, DataNasc, Endereco, CEP, InstituicaoSolicitada, InstituicaoEncaminhada, InstituicaoOrigem, motivo
-FROM            vw_solicitacoes_motivos
-WHERE        (motivo = @motivo)</CommandText>
+                    <CommandText>SELECT Ano, `Ano Referencia`, CEP, DataNasc, Endereco, InstituicaoEncaminhada, InstituicaoOrigem, InstituicaoSolicitada, Nome, NumSolicitacao, idAno, motivo FROM vw_solicitacoes_motivos WHERE (motivo = @motivo)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="motivo" ColumnName="motivo" DataSourceName="siesc.vw_solicitacoes_motivos" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@motivo" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="motivo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -739,9 +724,7 @@ WHERE        (motivo = @motivo)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_solicitacoes_motivos" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMotivoInfantil" GetMethodModifier="Public" GetMethodName="GetDataByMotivoInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMotivoInfantil" UserSourceName="GetDataByMotivoInfantil">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Ano, NumSolicitacao, Nome, DataNasc, Endereco, CEP, InstituicaoSolicitada, InstituicaoEncaminhada, InstituicaoOrigem, motivo
-FROM            vw_solicitacoes_motivos
-WHERE        (idAno BETWEEN 10 AND 15) AND (motivo = @motivo)</CommandText>
+                    <CommandText>SELECT Ano, `Ano Referencia`, CEP, DataNasc, Endereco, InstituicaoEncaminhada, InstituicaoOrigem, InstituicaoSolicitada, Nome, NumSolicitacao, idAno, motivo FROM vw_solicitacoes_motivos WHERE (idAno BETWEEN 10 AND 15) AND (motivo = @motivo)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="motivo" ColumnName="motivo" DataSourceName="siesc.vw_solicitacoes_motivos" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@motivo" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="motivo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1491,23 +1474,23 @@ WHERE        (mantenedor = 4)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AnoEF" msprop:Generator_ColumnVarNameInTable="columnAnoEF" msprop:Generator_ColumnPropNameInRow="AnoEF" msprop:Generator_ColumnPropNameInTable="AnoEFColumn" msprop:Generator_UserColumnName="AnoEF" minOccurs="0">
+              <xs:element name="AnoEF" msprop:Generator_ColumnVarNameInTable="columnAnoEF" msprop:Generator_ColumnPropNameInRow="AnoEF" msprop:Generator_ColumnPropNameInTable="AnoEFColumn" msprop:Generator_UserColumnName="AnoEF">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Escola" msprop:Generator_ColumnVarNameInTable="columnEscola" msprop:Generator_ColumnPropNameInRow="Escola" msprop:Generator_ColumnPropNameInTable="EscolaColumn" msprop:Generator_UserColumnName="Escola" minOccurs="0">
+              <xs:element name="Escola" msprop:Generator_ColumnVarNameInTable="columnEscola" msprop:Generator_ColumnPropNameInRow="Escola" msprop:Generator_ColumnPropNameInTable="EscolaColumn" msprop:Generator_UserColumnName="Escola">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="80" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="solicitada" msprop:Generator_ColumnVarNameInTable="columnsolicitada" msprop:Generator_ColumnPropNameInRow="solicitada" msprop:Generator_ColumnPropNameInTable="solicitadaColumn" msprop:Generator_UserColumnName="solicitada" type="xs:long" minOccurs="0" />
-              <xs:element name="encaminhada" msprop:Generator_ColumnVarNameInTable="columnencaminhada" msprop:Generator_ColumnPropNameInRow="encaminhada" msprop:Generator_ColumnPropNameInTable="encaminhadaColumn" msprop:Generator_UserColumnName="encaminhada" type="xs:long" minOccurs="0" />
-              <xs:element name="Pendente" msprop:Generator_ColumnVarNameInTable="columnPendente" msprop:Generator_ColumnPropNameInRow="Pendente" msprop:Generator_ColumnPropNameInTable="PendenteColumn" msprop:Generator_UserColumnName="Pendente" type="xs:long" minOccurs="0" />
+              <xs:element name="solicitada" msprop:Generator_ColumnVarNameInTable="columnsolicitada" msprop:Generator_ColumnPropNameInRow="solicitada" msprop:Generator_ColumnPropNameInTable="solicitadaColumn" msprop:Generator_UserColumnName="solicitada" type="xs:long" />
+              <xs:element name="encaminhada" msprop:Generator_ColumnVarNameInTable="columnencaminhada" msprop:Generator_ColumnPropNameInRow="encaminhada" msprop:Generator_ColumnPropNameInTable="encaminhadaColumn" msprop:Generator_UserColumnName="encaminhada" type="xs:long" />
+              <xs:element name="Pendente" msprop:Generator_ColumnVarNameInTable="columnPendente" msprop:Generator_ColumnPropNameInRow="Pendente" msprop:Generator_ColumnPropNameInTable="PendenteColumn" msprop:Generator_UserColumnName="Pendente" type="xs:long" />
               <xs:element name="Telefone" msprop:Generator_ColumnVarNameInTable="columnTelefone" msprop:Generator_ColumnPropNameInRow="Telefone" msprop:Generator_ColumnPropNameInTable="TelefoneColumn" msprop:Generator_UserColumnName="Telefone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1515,7 +1498,8 @@ WHERE        (mantenedor = 4)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idano" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="idano" msprop:Generator_ColumnVarNameInTable="columnidano" msprop:Generator_ColumnPropNameInTable="idanoColumn" msprop:Generator_UserColumnName="idano" type="xs:int" minOccurs="0" />
+              <xs:element name="idano" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="idano" msprop:Generator_ColumnVarNameInTable="columnidano" msprop:Generator_ColumnPropNameInTable="idanoColumn" msprop:Generator_UserColumnName="idano" type="xs:int" />
+              <xs:element name="anoReferencia" msprop:Generator_ColumnVarNameInTable="columnanoReferencia" msprop:Generator_ColumnPropNameInRow="anoReferencia" msprop:Generator_ColumnPropNameInTable="anoReferenciaColumn" msprop:Generator_UserColumnName="anoReferencia" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1644,7 +1628,7 @@ WHERE        (mantenedor = 4)</CommandText>
               </xs:element>
               <xs:element name="datasolicitacao" msprop:Generator_ColumnVarNameInTable="columndatasolicitacao" msprop:Generator_ColumnPropNameInRow="datasolicitacao" msprop:Generator_ColumnPropNameInTable="datasolicitacaoColumn" msprop:Generator_UserColumnName="datasolicitacao" type="xs:dateTime" />
               <xs:element name="dataencaminhamento" msprop:Generator_ColumnVarNameInTable="columndataencaminhamento" msprop:Generator_ColumnPropNameInRow="dataencaminhamento" msprop:Generator_ColumnPropNameInTable="dataencaminhamentoColumn" msprop:Generator_UserColumnName="dataencaminhamento" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="anoReferencia" msprop:Generator_ColumnVarNameInTable="columnanoReferencia" msprop:Generator_ColumnPropNameInRow="anoReferencia" msprop:Generator_ColumnPropNameInTable="anoReferenciaColumn" msprop:Generator_UserColumnName="anoReferencia" type="xs:int" minOccurs="0" />
+              <xs:element name="anoReferencia" msprop:Generator_ColumnVarNameInTable="columnanoReferencia" msprop:Generator_ColumnPropNameInRow="anoReferencia" msprop:Generator_ColumnPropNameInTable="anoReferenciaColumn" msprop:Generator_UserColumnName="anoReferencia" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1751,6 +1735,7 @@ WHERE        (mantenedor = 4)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="anoReferencia" msprop:Generator_ColumnVarNameInTable="columnanoReferencia" msprop:Generator_ColumnPropNameInRow="anoReferencia" msprop:Generator_ColumnPropNameInTable="anoReferenciaColumn" msprop:Generator_UserColumnName="anoReferencia" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2114,6 +2099,7 @@ WHERE        (mantenedor = 4)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Ano_x0020_Referencia" msprop:Generator_ColumnVarNameInTable="columnAno_Referencia" msprop:Generator_ColumnPropNameInRow="Ano_Referencia" msprop:Generator_ColumnPropNameInTable="Ano_ReferenciaColumn" msprop:Generator_UserColumnName="Ano Referencia" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
