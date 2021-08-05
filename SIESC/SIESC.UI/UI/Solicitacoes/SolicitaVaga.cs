@@ -978,7 +978,8 @@ namespace SIESC.UI.UI.Solicitacoes
                     Transporte = chk_transporte.Checked,
                     JustificativaTransporte = txt_justificativa_transporte.Text,
                     possuiIrmao = chk_irmaos.Checked,
-                    DataSolicitacao = DateTime.Now
+                    DataSolicitacao = DateTime.Now,
+                    anoReferencia = DateTime.Now.Year
                 };
 
                 if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou) // já existe e houve alteração no encaminhamento
