@@ -104,6 +104,7 @@ namespace SIESC.UI.UI.Alunos
         {
             try
             {
+                
                 controleAluno = new AlunoControl();
                 dgv_alunos.DataSource = null;
 
@@ -111,7 +112,7 @@ namespace SIESC.UI.UI.Alunos
                 {
                     case Localizar.codigo:
                         //dgv_alunos.DataSource = controleAluno.AlunosByCodigo(Convert.ToInt16(txt_codigo.Text));
-                        CarregaDataSource(controleAluno.AlunosByCodigo(Convert.ToInt16(txt_codigo.Text)));
+                        CarregaDataSource(controleAluno.AlunosByCodigo(Convert.ToInt32(txt_codigo.Text)));
                         break;
                     case Localizar.nome:
                         dgv_alunos.DataSource = controleAluno.AlunosByNome(txt_nomealuno.Text);
@@ -127,7 +128,9 @@ namespace SIESC.UI.UI.Alunos
                         break;
 
                 }
+
                 dgv_alunos.Refresh();
+
                 if (dgv_alunos.Rows.Count > 0)
                 {
                     RepassaDados();
@@ -268,6 +271,7 @@ namespace SIESC.UI.UI.Alunos
                 msk_datanasc.ResetText();
                 txt_pai.Focus();
             }
+            txt_telefones.ResetText();
         }
 
         /// <summary>
@@ -410,6 +414,9 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         private void CalculaIdade()
         {
+            if(msk_datanasc.Text == @"  /  /")
+                return;
+
             var datanasc = Convert.ToDateTime(msk_datanasc.Text);
 
             int anos = DateTime.Now.Year - datanasc.Year;
@@ -421,7 +428,7 @@ namespace SIESC.UI.UI.Alunos
                 anos--;
             }
 
-            lbl_idade.Text = $"{anos} anos";
+            lbl_idade.Text = $@"{anos} anos";
         }
 
         /// <summary>
