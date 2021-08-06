@@ -3313,14 +3313,10 @@ namespace SIESC.BD.DataSets {
                 this.columnidSolicitacoesVagas.AutoIncrementStep = -1;
                 this.columnidSolicitacoesVagas.AllowDBNull = false;
                 this.columnAluno.AllowDBNull = false;
-                this.columninstituicaoSolicitada.AllowDBNull = false;
-                this.columndataSolicitacao.AllowDBNull = false;
                 this.columncidadeOrigem.MaxLength = 45;
                 this.columnestadoOrigem.MaxLength = 2;
                 this.columnobservacoes.MaxLength = 500;
                 this.columnusuarioResposavel.MaxLength = 45;
-                this.columnmotivoSolicitacao.AllowDBNull = false;
-                this.columnanoSolicitado.AllowDBNull = false;
                 this.columncodexpint.Caption = "Código EI";
                 this.columnusuarioEncaminhou.MaxLength = 45;
                 this.columnjustificativaTransporte.MaxLength = 500;
@@ -10519,7 +10515,13 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int instituicaoSolicitada {
                 get {
-                    return ((int)(this[this.tablesolicitacoesvagas.instituicaoSolicitadaColumn]));
+                    try {
+                        return ((int)(this[this.tablesolicitacoesvagas.instituicaoSolicitadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'instituicaoSolicitada\' na tabela \'solicitacoesvagas\' é DBNull." +
+                                "", e);
+                    }
                 }
                 set {
                     this[this.tablesolicitacoesvagas.instituicaoSolicitadaColumn] = value;
@@ -10530,7 +10532,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dataSolicitacao {
                 get {
-                    return ((global::System.DateTime)(this[this.tablesolicitacoesvagas.dataSolicitacaoColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesolicitacoesvagas.dataSolicitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataSolicitacao\' na tabela \'solicitacoesvagas\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablesolicitacoesvagas.dataSolicitacaoColumn] = value;
@@ -10670,7 +10677,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int motivoSolicitacao {
                 get {
-                    return ((int)(this[this.tablesolicitacoesvagas.motivoSolicitacaoColumn]));
+                    try {
+                        return ((int)(this[this.tablesolicitacoesvagas.motivoSolicitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'motivoSolicitacao\' na tabela \'solicitacoesvagas\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablesolicitacoesvagas.motivoSolicitacaoColumn] = value;
@@ -10681,7 +10693,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int anoSolicitado {
                 get {
-                    return ((int)(this[this.tablesolicitacoesvagas.anoSolicitadoColumn]));
+                    try {
+                        return ((int)(this[this.tablesolicitacoesvagas.anoSolicitadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'anoSolicitado\' na tabela \'solicitacoesvagas\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablesolicitacoesvagas.anoSolicitadoColumn] = value;
@@ -11190,6 +11207,30 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsinstituicaoSolicitadaNull() {
+                return this.IsNull(this.tablesolicitacoesvagas.instituicaoSolicitadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetinstituicaoSolicitadaNull() {
+                this[this.tablesolicitacoesvagas.instituicaoSolicitadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdataSolicitacaoNull() {
+                return this.IsNull(this.tablesolicitacoesvagas.dataSolicitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdataSolicitacaoNull() {
+                this[this.tablesolicitacoesvagas.dataSolicitacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsstatusSolicitacaoNull() {
                 return this.IsNull(this.tablesolicitacoesvagas.statusSolicitacaoColumn);
             }
@@ -11282,6 +11323,30 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetusuarioResposavelNull() {
                 this[this.tablesolicitacoesvagas.usuarioResposavelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmotivoSolicitacaoNull() {
+                return this.IsNull(this.tablesolicitacoesvagas.motivoSolicitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmotivoSolicitacaoNull() {
+                this[this.tablesolicitacoesvagas.motivoSolicitacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsanoSolicitadoNull() {
+                return this.IsNull(this.tablesolicitacoesvagas.anoSolicitadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetanoSolicitadoNull() {
+                this[this.tablesolicitacoesvagas.anoSolicitadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20857,15 +20922,15 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int AtualizarSolicitacao(
-                    int instituicaoSolicitada, 
+                    global::System.Nullable<int> instituicaoSolicitada, 
                     object statusSolicitacao, 
                     global::System.Nullable<int> escolaOrigem, 
                     string cidadeOrigem, 
                     string estadoOrigem, 
                     global::System.Nullable<int> instituicaoEncaminhada, 
                     string observacoes, 
-                    int motivoSolicitacao, 
-                    int anoSolicitado, 
+                    global::System.Nullable<int> motivoSolicitacao, 
+                    global::System.Nullable<int> anoSolicitado, 
                     global::System.Nullable<global::System.DateTime> dataEncaminhamento, 
                     global::System.Nullable<int> codexpint, 
                     string solicitante, 
@@ -20894,7 +20959,12 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
                     int idAluno, 
                     int idSolicitacao) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(instituicaoSolicitada));
+            if ((instituicaoSolicitada.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(instituicaoSolicitada.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((statusSolicitacao == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -20931,8 +21001,18 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             else {
                 command.Parameters[6].Value = ((string)(observacoes));
             }
-            command.Parameters[7].Value = ((int)(motivoSolicitacao));
-            command.Parameters[8].Value = ((int)(anoSolicitado));
+            if ((motivoSolicitacao.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(motivoSolicitacao.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((anoSolicitado.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(anoSolicitado.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
             if ((dataEncaminhamento.HasValue == true)) {
                 command.Parameters[9].Value = ((System.DateTime)(dataEncaminhamento.Value));
             }
@@ -21107,14 +21187,14 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int AtualizaSolicitacaoSemEncaminhar(
-                    int instituicaoSolicitada, 
+                    global::System.Nullable<int> instituicaoSolicitada, 
                     object statusSolicitacao, 
                     global::System.Nullable<int> escolaOrigem, 
                     string cidadeOrigem, 
                     string estadoOrigem, 
                     string observacoes, 
-                    int motivoSolicitacao, 
-                    int anoSolicitado, 
+                    global::System.Nullable<int> motivoSolicitacao, 
+                    global::System.Nullable<int> anoSolicitado, 
                     global::System.Nullable<int> codexpint, 
                     string solicitante, 
                     string parentesco, 
@@ -21141,7 +21221,12 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
                     int idAluno, 
                     int idSolicitacao) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
-            command.Parameters[0].Value = ((int)(instituicaoSolicitada));
+            if ((instituicaoSolicitada.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(instituicaoSolicitada.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((statusSolicitacao == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -21172,8 +21257,18 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             else {
                 command.Parameters[5].Value = ((string)(observacoes));
             }
-            command.Parameters[6].Value = ((int)(motivoSolicitacao));
-            command.Parameters[7].Value = ((int)(anoSolicitado));
+            if ((motivoSolicitacao.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(motivoSolicitacao.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((anoSolicitado.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(anoSolicitado.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
             if ((codexpint.HasValue == true)) {
                 command.Parameters[8].Value = ((int)(codexpint.Value));
             }
@@ -21458,8 +21553,8 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Inserir(
                     int Aluno, 
-                    int instituicaoSolicitada, 
-                    System.DateTime dataSolicitacao, 
+                    global::System.Nullable<int> instituicaoSolicitada, 
+                    global::System.Nullable<global::System.DateTime> dataSolicitacao, 
                     global::System.Nullable<int> escolaOrigem, 
                     string cidadeOrigem, 
                     string estadoOrigem, 
@@ -21467,8 +21562,8 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
                     global::System.Nullable<global::System.DateTime> dataEncaminhamento, 
                     string observacoes, 
                     string usuarioResposavel, 
-                    int motivoSolicitacao, 
-                    int anoSolicitado, 
+                    global::System.Nullable<int> motivoSolicitacao, 
+                    global::System.Nullable<int> anoSolicitado, 
                     global::System.Nullable<int> codexpint, 
                     string solicitantes, 
                     string parentesco, 
@@ -21496,8 +21591,18 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
                     global::System.Nullable<int> anoReferencia) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((int)(Aluno));
-            command.Parameters[1].Value = ((int)(instituicaoSolicitada));
-            command.Parameters[2].Value = ((System.DateTime)(dataSolicitacao));
+            if ((instituicaoSolicitada.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(instituicaoSolicitada.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dataSolicitacao.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(dataSolicitacao.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((escolaOrigem.HasValue == true)) {
                 command.Parameters[3].Value = ((int)(escolaOrigem.Value));
             }
@@ -21540,8 +21645,18 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             else {
                 command.Parameters[9].Value = ((string)(usuarioResposavel));
             }
-            command.Parameters[10].Value = ((int)(motivoSolicitacao));
-            command.Parameters[11].Value = ((int)(anoSolicitado));
+            if ((motivoSolicitacao.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(motivoSolicitacao.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((anoSolicitado.HasValue == true)) {
+                command.Parameters[11].Value = ((int)(anoSolicitado.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
             if ((codexpint.HasValue == true)) {
                 command.Parameters[12].Value = ((int)(codexpint.Value));
             }

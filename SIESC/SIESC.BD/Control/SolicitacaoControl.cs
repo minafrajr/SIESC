@@ -477,7 +477,7 @@ namespace SIESC.BD.Control
 
                 DataTable dt = solicitacao_TA.RetornaEndereco(idSolicitaco);
 
-                string endereco =
+                var endereco =
                     $"{dt.Rows[0]["tipoLogradouro"]} {dt.Rows[0]["logradouro"]}, {dt.Rows[0]["numResidencia"]} {dt.Rows[0]["complementoEndereco"]} - {dt.Rows[0]["nomeBairro"]} {dt.Rows[0]["cep"]} ";
 
                 return endereco;
