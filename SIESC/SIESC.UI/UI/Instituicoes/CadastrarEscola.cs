@@ -21,7 +21,7 @@ namespace SIESC.UI.UI.Instituicoes
 	/// <summary>
 	/// Formulário de cadastro de instituições
 	/// </summary>
-	public partial class CadastrarEscola : Base_UI
+	public partial class CadastrarEscola : BaseUi
 	{
 		/// <summary>
 		/// Lista de controles do formulário

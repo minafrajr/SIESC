@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Instituicoes
 {
-	partial class CadastrarEscola: Base_UI
+	partial class CadastrarEscola
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -516,24 +516,24 @@ namespace SIESC.UI.UI.Instituicoes
 			this.cbo_tipo_Logradouro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cbo_tipo_Logradouro.FormattingEnabled = true;
 			this.cbo_tipo_Logradouro.Items.AddRange(new object[] {
-            "",
-            "ALAMEDA",
-            "AREA",
-            "AVENIDA",
-            "BECO",
-            "ESTRADA",
-            "FAZENDA",
-            "FLORESTA",
-            "LOTEAMENTO",
-            "MORRO",
-            "PARQUE",
-            "PRAÇA",
-            "RECANTO",
-            "RODOVIA",
-            "RUA",
-            "TRAVESSA",
-            "VIA",
-            "VILA"});
+			"",
+			"ALAMEDA",
+			"AREA",
+			"AVENIDA",
+			"BECO",
+			"ESTRADA",
+			"FAZENDA",
+			"FLORESTA",
+			"LOTEAMENTO",
+			"MORRO",
+			"PARQUE",
+			"PRAÇA",
+			"RECANTO",
+			"RODOVIA",
+			"RUA",
+			"TRAVESSA",
+			"VIA",
+			"VILA"});
 			this.cbo_tipo_Logradouro.Location = new System.Drawing.Point(8, 78);
 			this.cbo_tipo_Logradouro.Name = "cbo_tipo_Logradouro";
 			this.cbo_tipo_Logradouro.Size = new System.Drawing.Size(84, 22);

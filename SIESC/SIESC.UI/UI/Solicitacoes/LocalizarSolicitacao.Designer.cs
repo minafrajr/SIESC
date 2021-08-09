@@ -9,7 +9,7 @@ using SIESC.UI.siescDataSetTableAdapters;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
-    partial class LocalizarSolicitacao: Base_UI
+    partial class LocalizarSolicitacao
     {
         /// <summary>
         /// Variável de designer necessária.

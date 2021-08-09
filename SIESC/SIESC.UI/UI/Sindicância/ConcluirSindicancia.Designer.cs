@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Sindicância
 {
-    partial class ConcluirSindicancia: Base_UI
+    partial class ConcluirSindicancia
     {
         /// <summary>
         /// Variável de designer necessária.

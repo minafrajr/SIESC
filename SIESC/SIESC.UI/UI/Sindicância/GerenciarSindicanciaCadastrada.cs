@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.Controles;
 using SIESC.UI.UI.Alunos;
-using SIESC.UI.UI.Solicitacoes;
 
 namespace SIESC.UI.UI.Sindicância
 {
-    public partial class GerenciarSindicanciaCadastrada : Base_UI
+    public partial class GerenciarSindicanciaCadastrada:BaseUi
     {
         private Principal_UI principalUi;
 

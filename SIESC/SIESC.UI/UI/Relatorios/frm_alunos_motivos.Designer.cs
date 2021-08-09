@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Relatorios
 {
-	partial class FrmAlunosMotivos: Base_UI
+	partial class FrmAlunosMotivos
 	{
 		/// <summary>
 		/// Variável de designer necessária.

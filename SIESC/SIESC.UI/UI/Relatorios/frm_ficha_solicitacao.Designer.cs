@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Relatorios
 {
-	partial class frm_ficha_solicitacao: Base_UI
+	partial class frm_ficha_solicitacao
 	{
 		/// <summary>
 		/// Variável de designer necessária.

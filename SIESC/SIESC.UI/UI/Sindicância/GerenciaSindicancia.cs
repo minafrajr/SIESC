@@ -16,7 +16,7 @@ namespace SIESC.UI.UI.Sindicância
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias
     /// </summary>
-    public partial class GerenciaSindicancia  : Base_UI
+    public partial class GerenciaSindicancia  : BaseUi
     {
         /// <summary>
         /// Objeto da UI da tela principal do sistema

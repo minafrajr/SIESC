@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Login
     /// <summary>
     /// Formulário de login no sistemas
     /// </summary>
-    public partial class Login :  Base_UI
+    public partial class Login :  BaseUi
     {
         /// <summary>
         /// O usuário do sistema

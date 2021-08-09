@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Funcionarios
 {
-	partial class GerenciaFuncionario: Base_UI
+	partial class GerenciaFuncionario
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -504,7 +504,7 @@ namespace SIESC.UI.UI.Funcionarios
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_num_registros});
+			this.lbl_num_registros});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 364);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1314, 22);

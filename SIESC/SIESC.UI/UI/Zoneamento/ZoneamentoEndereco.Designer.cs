@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Zoneamento
 {
-	partial class ZoneamentoEndereco: Base_UI
+	partial class ZoneamentoEndereco
 	{
 		/// <summary>
 		/// Variável de designer necessária.

@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Relatorios
 {
-	partial class frm_carteirinha: Base_UI
+	partial class frm_carteirinha
 	{
 		/// <summary>
 		/// Variável de designer necessária.

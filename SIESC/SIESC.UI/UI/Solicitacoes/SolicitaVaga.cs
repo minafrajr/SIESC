@@ -25,7 +25,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Classe solicitação de vaga escolar
     /// </summary>
-    public partial class SolicitaVaga : Base_UI
+    public partial class SolicitaVaga : BaseUi
     {
         /// <summary>
         /// Objeto do formulário principal

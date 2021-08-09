@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_ficha_solicitacao : Base_UI
+    public partial class frm_ficha_solicitacao : BaseUi
     {
         /// <summary>
         /// 

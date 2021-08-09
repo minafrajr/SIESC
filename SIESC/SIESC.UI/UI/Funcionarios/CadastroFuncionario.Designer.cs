@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Funcionarios
 {
-	partial class CadastroFuncionario: Base_UI
+	partial class CadastroFuncionario
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -551,24 +551,24 @@ namespace SIESC.UI.UI.Funcionarios
 			this.cbo_tipolograd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipolograd.FormattingEnabled = true;
 			this.cbo_tipolograd.Items.AddRange(new object[] {
-            "",
-            "ALAMEDA",
-            "AREA",
-            "AVENIDA",
-            "BECO",
-            "ESTRADA",
-            "FAZENDA",
-            "FLORESTA",
-            "LOTEAMENTO",
-            "MORRO",
-            "PARQUE",
-            "PRAÇA",
-            "RECANTO",
-            "RODOVIA",
-            "RUA",
-            "TRAVESSA",
-            "VIA",
-            "VILA"});
+			"",
+			"ALAMEDA",
+			"AREA",
+			"AVENIDA",
+			"BECO",
+			"ESTRADA",
+			"FAZENDA",
+			"FLORESTA",
+			"LOTEAMENTO",
+			"MORRO",
+			"PARQUE",
+			"PRAÇA",
+			"RECANTO",
+			"RODOVIA",
+			"RUA",
+			"TRAVESSA",
+			"VIA",
+			"VILA"});
 			this.cbo_tipolograd.Location = new System.Drawing.Point(9, 80);
 			this.cbo_tipolograd.Name = "cbo_tipolograd";
 			this.cbo_tipolograd.Size = new System.Drawing.Size(121, 22);

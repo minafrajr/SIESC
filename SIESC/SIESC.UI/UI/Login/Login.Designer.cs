@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Login
 {
-	partial class Login: Base_UI
+	partial class Login
 	{
 		/// <summary>
 		/// Variável de designer necessária.

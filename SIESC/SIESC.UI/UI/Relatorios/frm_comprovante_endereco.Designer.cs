@@ -2,7 +2,7 @@
 
 namespace SIESC.UI.UI.Relatorios
 {
-    partial class frm_comprovante_endereco: Base_UI
+    partial class frm_comprovante_endereco
     {
         /// <summary>
         /// Variável de designer necessária.

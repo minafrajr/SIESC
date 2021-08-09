@@ -20,7 +20,7 @@ namespace SIESC.UI.UI.Solicitacoes
     /// <summary>
     /// Formulário de gerenciamento das solicitações
     /// </summary>
-    public partial class GerenciaSolicitacao: Base_UI
+    public partial class GerenciaSolicitacao: BaseUi
     {
         /// <summary>
         /// Enumeração de estado de busca

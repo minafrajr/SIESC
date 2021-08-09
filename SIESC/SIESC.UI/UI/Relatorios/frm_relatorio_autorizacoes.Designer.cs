@@ -1,6 +1,6 @@
 ﻿namespace SIESC.UI.UI.Relatorios
 {
-    partial class frm_relatorio_autorizacoes: Base_UI
+    partial class frm_relatorio_autorizacoes
     {
         /// <summary>
         /// Variável de designer necessária.
