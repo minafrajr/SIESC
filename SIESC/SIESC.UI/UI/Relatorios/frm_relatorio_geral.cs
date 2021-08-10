@@ -16,29 +16,36 @@ namespace SIESC.UI.UI.Relatorios
     public partial class frm_Relatorio_geral : Form
     {
         /// <summary>
-        /// 
+        /// O código do relatório a ser gerado
         /// </summary>
         private int codigorelatorio;
-       
         /// <summary>
-        /// 
+        /// O Ano de referência para consulta
+        /// </summary>
+        private int anoReferencia;
+       
+        //Configurando as margens
+        ///// <summary>
+        /// O tamanho das margins do Relatório
         /// </summary>
         private Margins margins = new Margins(2, 2, 2, 2);
-        //Configurando as margens
+        
+        //Configurando para paisagem
+        
         /// <summary>
-        /// 
+        /// A orientação da página
         /// </summary>
         private PageSettings pg = new PageSettings() { Landscape = true };
-        //Configurando para paisagem
+        
         /// <summary>
-        /// 
+        /// A instituição selecionada
         /// </summary>
         private string instituicaoSelecionada;
         
-        //private string diretoriaselecionada;
+        
         
         /// <summary>
-        /// 
+        /// O motivo da solicitação a ser pesquisada
         /// </summary>
         private string motivo;
 
@@ -67,29 +74,31 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         /// <param name="codigo"></param>
         /// <param name="instituicao"></param>
-        public frm_Relatorio_geral(Principal_UI frm_Principal, int codigo, string instituicao)
+        public frm_Relatorio_geral(Principal_UI formPrincipal, int codigo, string instituicao)
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo;
             this.instituicaoSelecionada = instituicao;
             this.ConfiguraRelatorio();
-            this.MdiParent = frm_Principal;
+            this.MdiParent = formPrincipal;
         }
 
         /// <summary>
-        /// 
+        /// Construtor da classe com parâmetros
         /// </summary>
+        /// <param name="anoReferencia"></param>
         /// <param name="codigo"></param>
         /// <param name="motivo"></param>
-        /// <param name="frm_Principal"></param>
-        public frm_Relatorio_geral(int codigo, string motivo, Principal_UI frm_Principal)
+        /// <param name="formPrincipal"></param>
+        public frm_Relatorio_geral(Principal_UI formPrincipal,int anoReferencia,int codigo, string motivo )
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo;
             this.motivo = motivo;
-            this.MdiParent = frm_Principal;
+            this.anoReferencia = anoReferencia;
+            this.MdiParent = formPrincipal;
             this.ConfiguraRelatorio();
         }
         /// <summary>
@@ -236,7 +245,7 @@ namespace SIESC.UI.UI.Relatorios
                 case 18://relatório geral por motivo da solicitação
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Motivo.rdlc";
-                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoGeral(motivo);
+                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoGeral(motivo, anoReferencia);
                     break;
                 case 19: //numero solicitacoes pivot ano ensino vs instituicao
                     this.num_solicitacoesTableAdapter1.Atualiza_tabela_solicitacoes();
@@ -261,12 +270,12 @@ namespace SIESC.UI.UI.Relatorios
                 case 23://relatório infantil por motivo da solicitação
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Motivo.rdlc";
-                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoInfantil(motivo);
+                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoInfantil(motivo, anoReferencia);
                     break;
                 case 24://relatório fundamental por motivo da solicitação
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Motivo.rdlc";
-                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoFundamental(motivo);
+                    dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoFundamental(motivo,anoReferencia);
                     break;
                 case 25:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\Comparativo\\rpt_comparativo_geral.rdlc";

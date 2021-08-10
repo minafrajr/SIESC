@@ -22049,8 +22049,7 @@ ORDER BY `Solicitacao` DESC LIMIT 25";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
-                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
+            this._commandCollection[1].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`,  Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
 FROM            vw_solicitacoes
 WHERE        (status = 1) AND (finalizada = 0)
 ORDER BY `Solicitacao` DESC LIMIT 25";

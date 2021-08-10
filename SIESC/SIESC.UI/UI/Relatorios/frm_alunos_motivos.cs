@@ -39,6 +39,8 @@ namespace SIESC.UI.UI.Relatorios
             this.frmPrincipal = frm_Principal;
             this.nivelEnsino = nivelEnsino;
             motivosTableAdapter1.Fill(this.siescDataSet.motivos);
+            periodoTableAdapter.FillByPeriodo(this.siescDataSet1.periodo);
+
         }
         /// <summary>
         /// Evento do botão gerar
@@ -63,7 +65,8 @@ namespace SIESC.UI.UI.Relatorios
                         break;
                 }
 
-                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(codigoRelatorio, cbo_motivo.SelectedValue.ToString(), frmPrincipal);
+                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(frmPrincipal, Convert.ToInt32( cbo_periodos.SelectedValue),codigoRelatorio, cbo_motivo.SelectedValue.ToString());
+
                 frmRelatorioGeral.Show();
                 if (t.IsAlive) t.Abort();
                 this.Close();
@@ -71,7 +74,8 @@ namespace SIESC.UI.UI.Relatorios
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex, frmPrincipal); ;
+                Mensageiro.MensagemErro(ex, frmPrincipal);
+
             }
         }
 
