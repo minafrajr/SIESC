@@ -833,6 +833,8 @@
                   <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="ano">
@@ -1068,7 +1070,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.95112cm</Height>
+          <Height>0.70583cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

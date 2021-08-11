@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsInfantil">
@@ -100,7 +100,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.71155cm</Width>
+                  <Width>1.14448cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.5308cm</Width>
@@ -1049,7 +1049,7 @@
             <DataSetName>dsInfantil</DataSetName>
             <Top>1.09361cm</Top>
             <Height>1.67625cm</Height>
-            <Width>28.51829cm</Width>
+            <Width>28.95122cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1124,10 +1124,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.39963in</Height>
+        <Height>1.35796in</Height>
         <Style />
       </Body>
-      <Width>11.28511in</Width>
+      <Width>11.39812in</Width>
       <Page>
         <PageHeader>
           <Height>2.32833cm</Height>
