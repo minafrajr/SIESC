@@ -18847,7 +18847,7 @@ FROM            vw_lista_encaminhados";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ano, anoReferencia,  bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada)";
+            this._commandCollection[2].CommandText = @"SELECT ano, anoReferencia,  bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (escolasolicitada = @escolasolicitada) AND (anoReferencia = @anoReferencia)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@escolasolicitada";
@@ -18858,14 +18858,38 @@ FROM            vw_lista_encaminhados";
             param.SourceColumn = "escolasolicitada";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolaencaminhada";
+            this._commandCollection[3].CommandText = @"SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE  (anoReferencia = @anoReferencia) ORDER BY escolaencaminhada";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados ORDER BY escolasolicitada";
+            this._commandCollection[4].CommandText = @"SELECT ano, anoReferencia, bairro, complem, dataencaminhamento, datasolicitacao, escolaencaminhada, escolasolicitada, idsolicitacao, logradouro, mae, motivo, nome, numres, observaçoes, telefone1, telefone2, tipolograd, usuario FROM vw_lista_encaminhados WHERE (anoReferencia = @anoReferencia) ORDER BY escolasolicitada";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18932,13 +18956,19 @@ FROM            vw_lista_encaminhados";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByEscolaSolicitada(dsRelatorios.vw_lista_encaminhadosDataTable dataTable, string escolasolicitada) {
+        public virtual int FillByEscolaSolicitada(dsRelatorios.vw_lista_encaminhadosDataTable dataTable, string escolasolicitada, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((escolasolicitada == null)) {
                 throw new global::System.ArgumentNullException("escolasolicitada");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(escolasolicitada));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18951,7 +18981,7 @@ FROM            vw_lista_encaminhados";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataByEscolaSolicitada(string escolasolicitada) {
+        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataByEscolaSolicitada(string escolasolicitada, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((escolasolicitada == null)) {
                 throw new global::System.ArgumentNullException("escolasolicitada");
@@ -18959,6 +18989,12 @@ FROM            vw_lista_encaminhados";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(escolasolicitada));
             }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             dsRelatorios.vw_lista_encaminhadosDataTable dataTable = new dsRelatorios.vw_lista_encaminhadosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -18968,8 +19004,14 @@ FROM            vw_lista_encaminhados";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataOrderByInstituicaoEncaminhada() {
+        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataOrderByInstituicaoEncaminhada(global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             dsRelatorios.vw_lista_encaminhadosDataTable dataTable = new dsRelatorios.vw_lista_encaminhadosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -18979,8 +19021,14 @@ FROM            vw_lista_encaminhados";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataOrderByInstituicaoSolicitada() {
+        public virtual dsRelatorios.vw_lista_encaminhadosDataTable GetDataOrderByInstituicaoSolicitada(global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             dsRelatorios.vw_lista_encaminhadosDataTable dataTable = new dsRelatorios.vw_lista_encaminhadosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

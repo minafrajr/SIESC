@@ -185,7 +185,7 @@ namespace SIESC.UI.UI.Relatorios
                 case 4://relatório de alunos encaminhados por instituicao solicitada
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Alunos_Encam_por_Escola_solicitada.rdlc";
-                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataByEscolaSolicitada(instituicaoSelecionada);
+                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataByEscolaSolicitada(instituicaoSelecionada,anoReferencia);
                     break;
                 case 5://relatório de alunos encaminhados por instituicao encaminhada
                     FolhaPaisagem();
@@ -260,12 +260,12 @@ namespace SIESC.UI.UI.Relatorios
                 case 21:
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Alunos_Encam_por_Escola_solicitada.rdlc";
-                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataOrderByInstituicaoSolicitada();
+                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataOrderByInstituicaoSolicitada(anoReferencia);
                     break;
                 case 22:
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Alunos_Encam_por_Escola_Encaminhada.rdlc";
-                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataOrderByInstituicaoEncaminhada();
+                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataOrderByInstituicaoEncaminhada(anoReferencia);
                     break;
                 case 23://relatório infantil por motivo da solicitação
                     FolhaPaisagem();
