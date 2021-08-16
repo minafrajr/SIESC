@@ -163,7 +163,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.rdb_instituicao_encaminhada.AutoSize = true;
             this.rdb_instituicao_encaminhada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_instituicao_encaminhada.Location = new System.Drawing.Point(161, 50);
+            this.rdb_instituicao_encaminhada.Location = new System.Drawing.Point(158, 58);
             this.rdb_instituicao_encaminhada.Name = "rdb_instituicao_encaminhada";
             this.rdb_instituicao_encaminhada.Size = new System.Drawing.Size(181, 19);
             this.rdb_instituicao_encaminhada.TabIndex = 1;
@@ -175,7 +175,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.rdb_instituicao_solicitada.AutoSize = true;
             this.rdb_instituicao_solicitada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_instituicao_solicitada.Location = new System.Drawing.Point(161, 23);
+            this.rdb_instituicao_solicitada.Location = new System.Drawing.Point(158, 31);
             this.rdb_instituicao_solicitada.Name = "rdb_instituicao_solicitada";
             this.rdb_instituicao_solicitada.Size = new System.Drawing.Size(158, 19);
             this.rdb_instituicao_solicitada.TabIndex = 0;

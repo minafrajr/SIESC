@@ -5,8 +5,8 @@
       <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString2" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="siescConnectionString2" IsAppSettingsProperty="true" Modifier="Assembly" Name="siescConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SIESC.BD.Properties.Settings.GlobalReference.Default.siescConnectionString2" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_controlesolicitacoesTableAdapter" GeneratorDataComponentClassName="vw_controlesolicitacoesTableAdapter" Name="vw_controlesolicitacoes" UserDataComponentName="vw_controlesolicitacoesTableAdapter">
@@ -1103,7 +1103,7 @@ WHERE        (codigo = @idSolicitacao)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
+                    <CommandText>SELECT        anoReferencia, regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
 FROM            vw_comprovacao_endereco</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1122,17 +1122,19 @@ FROM            vw_comprovacao_endereco</CommandText>
               <Mapping SourceColumn="escolaencaminhada" DataSetColumn="escolaencaminhada" />
               <Mapping SourceColumn="comprovante" DataSetColumn="comprovante" />
               <Mapping SourceColumn="tipocomprovante" DataSetColumn="tipocomprovante" />
+              <Mapping SourceColumn="anoReferencia" DataSetColumn="anoReferencia" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAnoEnsino" GetMethodModifier="Public" GetMethodName="GetDataByAnoEnsino" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAnoEnsino" UserSourceName="GetDataByAnoEnsino">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante
+                    <CommandText>SELECT        anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante
 FROM            vw_comprovacao_endereco
-WHERE        (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo)</CommandText>
+WHERE        (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="anosolicitado" ColumnName="anosolicitado" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anosolicitado" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anosolicitado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1140,13 +1142,24 @@ WHERE        (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo)</Comman
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAnoEscolaSolicitada" GetMethodModifier="Public" GetMethodName="GetDataByAnoEscolaSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAnoEscolaSolicitada" UserSourceName="GetDataByAnoEscolaSolicitada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE  (escolasolicitada = @escolasolicitada) AND (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (escolasolicitada = @escolasolicitada) AND (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="escolasolicitada" ColumnName="escolasolicitada" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escolasolicitada" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="anosolicitado" ColumnName="anosolicitado" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anosolicitado" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anosolicitado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAnoReferencia" GetMethodModifier="Public" GetMethodName="GetDataByAnoReferencia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAnoReferencia" UserSourceName="GetDataByAnoReferencia">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        anoReferencia, regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
+FROM            vw_comprovacao_endereco
+WHERE        (anoReferencia = @anoReferencia)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1154,10 +1167,11 @@ WHERE  (escolasolicitada = @escolasolicitada) AND (anosolicitado = @anosolicitad
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEscolaSolicitada" GetMethodModifier="Public" GetMethodName="GetDataByEscolaSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEscolaSolicitada" UserSourceName="GetDataByEscolaSolicitada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (escolasolicitada = @escolasolicitada) AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (escolasolicitada = @escolasolicitada) AND (codigo &gt;= @codigo)  AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="escolasolicitada" ColumnName="escolasolicitada" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escolasolicitada" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1165,12 +1179,11 @@ WHERE  (escolasolicitada = @escolasolicitada) AND (anosolicitado = @anosolicitad
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegional" GetMethodModifier="Public" GetMethodName="GetDataByRegional" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegional" UserSourceName="GetDataByRegional">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE (regional  = @regional) AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (regional = @regional) AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1178,13 +1191,12 @@ WHERE (regional  = @regional) AND (codigo &gt;= @codigo)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalAnoEnsino" GetMethodModifier="Public" GetMethodName="GetDataByRegionalAnoEnsino" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalAnoEnsino" UserSourceName="GetDataByRegionalAnoEnsino">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE  (regional = @regional) AND (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (regional = @regional) AND (anosolicitado = @anosolicitado) AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="anosolicitado" ColumnName="anosolicitado" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@anosolicitado" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="anosolicitado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1192,13 +1204,12 @@ WHERE  (regional = @regional) AND (anosolicitado = @anosolicitado) AND (codigo &
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalEscolaSolicitada" GetMethodModifier="Public" GetMethodName="GetDataByRegionalEscolaSolicitada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalEscolaSolicitada" UserSourceName="GetDataByRegionalEscolaSolicitada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE  (regional = @regional) AND (escolasolicitada= @escolasolicitada) AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (regional = @regional) AND (escolasolicitada = @escolasolicitada) AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="escolasolicitada" ColumnName="escolasolicitada" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(80)(80)" DbType="String" Direction="Input" ParameterName="@escolasolicitada" Precision="0" ProviderType="VarChar" Scale="0" Size="80" SourceColumn="escolasolicitada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1206,12 +1217,11 @@ WHERE  (regional = @regional) AND (escolasolicitada= @escolasolicitada) AND (cod
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalFundamental" GetMethodModifier="Public" GetMethodName="GetDataByRegionalFundamental" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalFundamental" UserSourceName="GetDataByRegionalFundamental">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE        (regional = @regional) AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA I') AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA II') AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (regional = @regional) AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA I') AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA II') AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1219,13 +1229,11 @@ WHERE        (regional = @regional) AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA I')
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRegionalInfantil" GetMethodModifier="Public" GetMethodName="GetDataByRegionalInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRegionalInfantil" UserSourceName="GetDataByRegionalInfantil">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE        (anosolicitado = 'PRÉ-ESCOLA I') AND (regional = @regional) OR
-                         (anosolicitado = 'PRÉ-ESCOLA II') AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (anosolicitado = 'PRÉ-ESCOLA I') AND (regional = @regional) OR (anosolicitado = 'PRÉ-ESCOLA II') AND (codigo &gt;= @codigo) AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="regional" ColumnName="regional" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="varchar(45)(45)" DbType="String" Direction="Input" ParameterName="@regional" Precision="0" ProviderType="VarChar" Scale="0" Size="45" SourceColumn="regional" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1233,11 +1241,10 @@ WHERE        (anosolicitado = 'PRÉ-ESCOLA I') AND (regional = @regional) OR
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataFundamental" GetMethodModifier="Public" GetMethodName="GetDataFundamental" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataFundamental" UserSourceName="GetDataFundamental">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE        (anosolicitado &lt;&gt; 'PRÉ-ESCOLA II') AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA I') AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (anosolicitado &lt;&gt; 'PRÉ-ESCOLA II') AND (anosolicitado &lt;&gt; 'PRÉ-ESCOLA I') AND (codigo &gt;= @codigo)  AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1245,12 +1252,10 @@ WHERE        (anosolicitado &lt;&gt; 'PRÉ-ESCOLA II') AND (anosolicitado &lt;&g
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_comprovacao_endereco" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataInfantil" GetMethodModifier="Public" GetMethodName="GetDataInfantil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataInfantil" UserSourceName="GetDataInfantil">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        regional, codigo, nome, mae, telefone, endereco, escolaencaminhada, escolasolicitada, anosolicitado, comprovante, tipocomprovante
-FROM            vw_comprovacao_endereco
-WHERE        (anosolicitado = 'PRÉ-ESCOLA II') OR
-                         (anosolicitado = 'PRÉ-ESCOLA I') AND (codigo &gt;= @codigo)</CommandText>
+                    <CommandText>SELECT anoReferencia, anosolicitado, codigo, comprovante, endereco, escolaencaminhada, escolasolicitada, mae, nome, regional, telefone, tipocomprovante FROM vw_comprovacao_endereco WHERE (anosolicitado = 'PRÉ-ESCOLA II') OR (anosolicitado = 'PRÉ-ESCOLA I') AND (codigo &gt;= @codigo)  AND (anoReferencia = @anoReferencia)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="codigo" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="anoReferencia" ColumnName="anoReferencia" DataSourceName="siesc.vw_comprovacao_endereco" DataTypeServer="int unsigned" DbType="Int32" Direction="Input" ParameterName="@anoReferencia" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="anoReferencia" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -2664,6 +2669,7 @@ WHERE        (mantenedor = 4)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="anoReferencia" msprop:Generator_ColumnVarNameInTable="columnanoReferencia" msprop:Generator_ColumnPropNameInRow="anoReferencia" msprop:Generator_ColumnPropNameInTable="anoReferenciaColumn" msprop:Generator_UserColumnName="anoReferencia" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
