@@ -19,6 +19,9 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private vw_sindicanciaTableAdapter Sindicancia_TA;
 
+        /// <summary>
+        /// 
+        /// </summary>
         private vw_sindicancia_distanciaTableAdapter SindicanciaDistancia_TA;
         /// <summary>
         /// Enum para o tipo de consulta a ser realizada
@@ -32,7 +35,10 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// Configuração da página do relatório
         /// </summary>
-        private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem		/// <summary>
+        private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
+
+        private int anoReferencia { get; set; }
+        
         /// <summary>
         /// Construtor da Classe
         /// </summary>
@@ -45,6 +51,8 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private void ConfigurarRelatorio(bool distancia)
         {
+            anoReferencia = Convert.ToInt32(cbo_anoReferencia);
+
             rpt_viewer.Reset();
 
             rpt_viewer.ProcessingMode = ProcessingMode.Local; //NÃO ALTERAR: renderização do relatório na máquina do cliente
@@ -78,25 +86,25 @@ namespace SIESC.UI.UI.Relatorios
                     switch (_tipoConsulta)
                     {
                         case TipoConsulta.regional_ano_escola:
-                            dt = Sindicancia_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(), cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(), cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.regional_ano:
                             dt = Sindicancia_TA.GetDataByRegionalAnoEnsino(cbo_anoensino.SelectedValue.ToString(), cbo_regionais.SelectedValue.ToString());
                             break;
                         case TipoConsulta.ano:
-                            dt = Sindicancia_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.escola:
-                            dt = Sindicancia_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.escola_ano:
-                            dt = Sindicancia_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.regional:
-                            dt = Sindicancia_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.regional_escola:
-                            dt = Sindicancia_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString());
+                            dt = Sindicancia_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.geral:
                             dt = this.Sindicancia_TA.GetData();
@@ -104,13 +112,13 @@ namespace SIESC.UI.UI.Relatorios
                     }
                 }
                 else if (rdb_pendentes.Checked)
-                    dt = Sindicancia_TA.GetSindicanciasPendentes();
+                    dt = Sindicancia_TA.GetSindicanciasPendentes(anoReferencia);
                 else if (rdb_finalizadas.Checked)
-                    dt = Sindicancia_TA.GetSindicanciasFinalizadas();
+                    dt = Sindicancia_TA.GetSindicanciasFinalizadas(anoReferencia);
                 else if (rdb_denuncia.Checked)
-                    dt = Sindicancia_TA.GetSindicanciaDenuncia();
+                    dt = Sindicancia_TA.GetSindicanciaDenuncia(anoReferencia);
                 else
-                    dt = Sindicancia_TA.GetSindicanciasCadastro();
+                    dt = Sindicancia_TA.GetSindicanciasCadastro(anoReferencia);
 
                 rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Sindicancia\\rpt_controle_sindicancia.rdlc"; 
             }
@@ -252,6 +260,13 @@ namespace SIESC.UI.UI.Relatorios
             btn_cancel_ano.Enabled = !chk_distancia.Checked;
             btn_cancel_escola.Enabled = !chk_distancia.Checked;
             btn_cancel_regional.Enabled = !chk_distancia.Checked;
+        }
+
+        private void frm_relatorio_sindicancia_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'siescDataSet.periodo'. Você pode movê-la ou removê-la conforme necessário.
+            this.periodoTableAdapter.Fill(this.siescDataSet.periodo);
+
         }
     }
 }

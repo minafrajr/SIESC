@@ -32,8 +32,12 @@ namespace SIESC.UI.UI.Relatorios
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbo_anoReferencia = new SIESC.UI.Controles.MyComboBox();
+            this.periodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siescDataSet = new SIESC.UI.siescDataSet();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbo_origem = new MyComboBox();
+            this.cbo_origem = new SIESC.UI.Controles.MyComboBox();
             this.chk_distancia = new System.Windows.Forms.CheckBox();
             this.chk_situação = new System.Windows.Forms.CheckBox();
             this.pnl_situacao = new System.Windows.Forms.Panel();
@@ -47,11 +51,10 @@ namespace SIESC.UI.UI.Relatorios
             this.btn_cancel_regional = new System.Windows.Forms.Button();
             this.cbo_anoensino = new System.Windows.Forms.ComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.siescDataSet = new SIESC.UI.siescDataSet();
-            this.cbo_escola = new MyComboBox();
+            this.cbo_escola = new SIESC.UI.Controles.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_regionais = new MyComboBox();
+            this.cbo_regionais = new SIESC.UI.Controles.MyComboBox();
             this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_titulo_form = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,13 +64,15 @@ namespace SIESC.UI.UI.Relatorios
             this.regionaisTableAdapter = new SIESC.UI.siescDataSetTableAdapters.regionaisTableAdapter();
             this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
+            this.periodoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.periodoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             this.pnl_situacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +87,8 @@ namespace SIESC.UI.UI.Relatorios
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label6);
+            this.splitContainer1.Panel1.Controls.Add(this.cbo_anoReferencia);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.cbo_origem);
             this.splitContainer1.Panel1.Controls.Add(this.chk_distancia);
@@ -107,10 +114,41 @@ namespace SIESC.UI.UI.Relatorios
             this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 14);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Ano Referência:";
+            // 
+            // cbo_anoReferencia
+            // 
+            this.cbo_anoReferencia.DataSource = this.periodoBindingSource;
+            this.cbo_anoReferencia.DisplayMember = "ano";
+            this.cbo_anoReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_anoReferencia.FormattingEnabled = true;
+            this.cbo_anoReferencia.Location = new System.Drawing.Point(9, 37);
+            this.cbo_anoReferencia.Name = "cbo_anoReferencia";
+            this.cbo_anoReferencia.Size = new System.Drawing.Size(100, 22);
+            this.cbo_anoReferencia.TabIndex = 17;
+            this.cbo_anoReferencia.ValueMember = "ano";
+            // 
+            // periodoBindingSource
+            // 
+            this.periodoBindingSource.DataMember = "periodo";
+            this.periodoBindingSource.DataSource = this.siescDataSet;
+            // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(526, 54);
+            this.label1.Location = new System.Drawing.Point(623, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 14);
             this.label1.TabIndex = 16;
@@ -124,7 +162,7 @@ namespace SIESC.UI.UI.Relatorios
             "TODAS",
             "SOLICITAÇÃO",
             "CADASTRO"});
-            this.cbo_origem.Location = new System.Drawing.Point(529, 71);
+            this.cbo_origem.Location = new System.Drawing.Point(626, 71);
             this.cbo_origem.Name = "cbo_origem";
             this.cbo_origem.Size = new System.Drawing.Size(158, 22);
             this.cbo_origem.TabIndex = 15;
@@ -132,7 +170,7 @@ namespace SIESC.UI.UI.Relatorios
             // chk_distancia
             // 
             this.chk_distancia.AutoSize = true;
-            this.chk_distancia.Location = new System.Drawing.Point(529, 31);
+            this.chk_distancia.Location = new System.Drawing.Point(626, 31);
             this.chk_distancia.Name = "chk_distancia";
             this.chk_distancia.Size = new System.Drawing.Size(73, 18);
             this.chk_distancia.TabIndex = 14;
@@ -143,7 +181,7 @@ namespace SIESC.UI.UI.Relatorios
             // chk_situação
             // 
             this.chk_situação.AutoSize = true;
-            this.chk_situação.Location = new System.Drawing.Point(339, 31);
+            this.chk_situação.Location = new System.Drawing.Point(439, 32);
             this.chk_situação.Name = "chk_situação";
             this.chk_situação.Size = new System.Drawing.Size(69, 18);
             this.chk_situação.TabIndex = 13;
@@ -159,7 +197,7 @@ namespace SIESC.UI.UI.Relatorios
             this.pnl_situacao.Controls.Add(this.rdb_pendentes);
             this.pnl_situacao.Controls.Add(this.rdb_finalizadas);
             this.pnl_situacao.Enabled = false;
-            this.pnl_situacao.Location = new System.Drawing.Point(339, 53);
+            this.pnl_situacao.Location = new System.Drawing.Point(439, 54);
             this.pnl_situacao.Name = "pnl_situacao";
             this.pnl_situacao.Size = new System.Drawing.Size(178, 44);
             this.pnl_situacao.TabIndex = 12;
@@ -209,7 +247,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.btn_gerar_relatorio.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gerar_relatorio.Image = global::SIESC.UI.Properties.Resources._1431665945_27_Edit_Text;
-            this.btn_gerar_relatorio.Location = new System.Drawing.Point(747, 57);
+            this.btn_gerar_relatorio.Location = new System.Drawing.Point(797, 62);
             this.btn_gerar_relatorio.Name = "btn_gerar_relatorio";
             this.btn_gerar_relatorio.Size = new System.Drawing.Size(119, 36);
             this.btn_gerar_relatorio.TabIndex = 10;
@@ -222,7 +260,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.btn_cancel_ano.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_ano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_ano.Location = new System.Drawing.Point(300, 37);
+            this.btn_cancel_ano.Location = new System.Drawing.Point(408, 36);
             this.btn_cancel_ano.Name = "btn_cancel_ano";
             this.btn_cancel_ano.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_ano.TabIndex = 9;
@@ -233,7 +271,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.btn_cancel_escola.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_escola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_escola.Location = new System.Drawing.Point(290, 73);
+            this.btn_cancel_escola.Location = new System.Drawing.Point(408, 73);
             this.btn_cancel_escola.Name = "btn_cancel_escola";
             this.btn_cancel_escola.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_escola.TabIndex = 8;
@@ -244,7 +282,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.btn_cancel_regional.BackgroundImage = global::SIESC.UI.Properties.Resources.bullet_delete;
             this.btn_cancel_regional.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_cancel_regional.Location = new System.Drawing.Point(147, 36);
+            this.btn_cancel_regional.Location = new System.Drawing.Point(256, 36);
             this.btn_cancel_regional.Name = "btn_cancel_regional";
             this.btn_cancel_regional.Size = new System.Drawing.Size(22, 24);
             this.btn_cancel_regional.TabIndex = 7;
@@ -257,7 +295,7 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_anoensino.DisplayMember = "AnoEF";
             this.cbo_anoensino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anoensino.FormattingEnabled = true;
-            this.cbo_anoensino.Location = new System.Drawing.Point(178, 38);
+            this.cbo_anoensino.Location = new System.Drawing.Point(286, 37);
             this.cbo_anoensino.Name = "cbo_anoensino";
             this.cbo_anoensino.Size = new System.Drawing.Size(121, 22);
             this.cbo_anoensino.TabIndex = 6;
@@ -269,11 +307,6 @@ namespace SIESC.UI.UI.Relatorios
             this.anoBindingSource.DataMember = "ano";
             this.anoBindingSource.DataSource = this.siescDataSet;
             // 
-            // siescDataSet
-            // 
-            this.siescDataSet.DataSetName = "siescDataSet";
-            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cbo_escola
             // 
             this.cbo_escola.DataSource = this.instituicoesBindingSource;
@@ -282,7 +315,7 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_escola.FormattingEnabled = true;
             this.cbo_escola.Location = new System.Drawing.Point(9, 74);
             this.cbo_escola.Name = "cbo_escola";
-            this.cbo_escola.Size = new System.Drawing.Size(280, 22);
+            this.cbo_escola.Size = new System.Drawing.Size(398, 22);
             this.cbo_escola.TabIndex = 4;
             this.cbo_escola.ValueMember = "nome";
             this.cbo_escola.DropDown += new System.EventHandler(this.cbo_escola_DropDown);
@@ -295,7 +328,7 @@ namespace SIESC.UI.UI.Relatorios
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 23);
+            this.label3.Location = new System.Drawing.Point(283, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 14);
             this.label3.TabIndex = 3;
@@ -307,7 +340,7 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_regionais.DisplayMember = "nomeRegional";
             this.cbo_regionais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_regionais.FormattingEnabled = true;
-            this.cbo_regionais.Location = new System.Drawing.Point(7, 38);
+            this.cbo_regionais.Location = new System.Drawing.Point(115, 37);
             this.cbo_regionais.Name = "cbo_regionais";
             this.cbo_regionais.Size = new System.Drawing.Size(139, 22);
             this.cbo_regionais.TabIndex = 1;
@@ -341,7 +374,7 @@ namespace SIESC.UI.UI.Relatorios
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Location = new System.Drawing.Point(111, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 2;
@@ -351,7 +384,7 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.label5.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(726, 17);
+            this.label5.Location = new System.Drawing.Point(776, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 37);
             this.label5.TabIndex = 11;
@@ -378,6 +411,10 @@ namespace SIESC.UI.UI.Relatorios
             // 
             this.anoTableAdapter.ClearBeforeFill = true;
             // 
+            // periodoTableAdapter
+            // 
+            this.periodoTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_relatorio_sindicancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -385,15 +422,17 @@ namespace SIESC.UI.UI.Relatorios
             this.Controls.Add(this.splitContainer1);
             this.Name = "frm_relatorio_sindicancia";
             this.Text = "Relatório de Sindicância";
+            this.Load += new System.EventHandler(this.frm_relatorio_sindicancia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             this.pnl_situacao.ResumeLayout(false);
             this.pnl_situacao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -432,5 +471,9 @@ namespace SIESC.UI.UI.Relatorios
         private System.Windows.Forms.CheckBox chk_distancia;
         private System.Windows.Forms.Label label1;
         private MyComboBox cbo_origem;
+        private System.Windows.Forms.Label label6;
+        private MyComboBox cbo_anoReferencia;
+        private System.Windows.Forms.BindingSource periodoBindingSource;
+        private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
     }
 }
