@@ -447,7 +447,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=First(Fields!codigo.Value, "dsRelatorios")</Value>
+                        <Value>=Left(First(Fields!codigo.Value, "dsRelatorios"),4)&amp; " / " &amp; Mid(First(Fields!codigo.Value,"dsRelatorios"),5,7)</Value>
                         <Style>
                           <FontSize>12pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -2340,7 +2340,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Ditância:</Value>
+                        <Value>Distância:</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -2354,9 +2354,9 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
                 <Top>3.5676cm</Top>
-                <Left>14.80719cm</Left>
+                <Left>14.45263cm</Left>
                 <Height>0.6cm</Height>
-                <Width>1.36026cm</Width>
+                <Width>1.71482cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2375,7 +2375,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Ditância:</Value>
+                        <Value>Distância:</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -2389,9 +2389,9 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
                 <Top>4.30871cm</Top>
-                <Left>14.80717cm</Left>
+                <Left>14.45261cm</Left>
                 <Height>0.6cm</Height>
-                <Width>1.37791cm</Width>
+                <Width>1.73247cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -3118,7 +3118,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Top>3.5676cm</Top>
                 <Left>6.351cm</Left>
                 <Height>0.6cm</Height>
-                <Width>8.38563cm</Width>
+                <Width>8.00017cm</Width>
                 <ZIndex>22</ZIndex>
                 <Style>
                   <Border>
@@ -3154,7 +3154,7 @@ First(Fields!complem.Value, "dsRelatorios")</Value>
                 <Top>4.30871cm</Top>
                 <Left>6.351cm</Left>
                 <Height>0.6cm</Height>
-                <Width>8.38561cm</Width>
+                <Width>8.00015cm</Width>
                 <ZIndex>23</ZIndex>
                 <Style>
                   <Border>
