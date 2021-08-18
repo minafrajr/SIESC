@@ -724,10 +724,14 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (control is MyTextBox) ((MyTextBox)control).ResetText();
 
-                if (control is MyComboBox)
-                    //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox)control).SelectedIndex = -1;
+                
 
+                if (control is MyComboBox)((MyComboBox) control).SelectedIndex = -1; 
+                   
+                cbo_cidades.ResetText();
+                
+                if (control is MyComboBox)((MyComboBox)control).SelectedIndex = -1;
+                
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
                 if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
