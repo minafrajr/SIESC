@@ -37,7 +37,7 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// O ano de Referência para a sindicância
         /// </summary>
-        public int anoReferencia { get; set; }
+        public int? anoReferencia { get; set; }
 
         /// <summary>
         /// A data em que a sindicancia foi gerada

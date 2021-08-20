@@ -58,7 +58,7 @@ namespace SIESC.BD.Control
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
 
-            return selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao);
+            return selecionarSindicados_TA.GetSelecionarSindicancias(codigoSolicitacao, anoReferencia);
 
         }
 
@@ -83,7 +83,7 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByInstituicao(instituicao, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByInstituicao(instituicao, codigoSolicitacao,anoReferencia);
 
         }
 
@@ -96,7 +96,7 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByAnoSolicitado(anoensino, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByAnoSolicitado(anoensino, codigoSolicitacao,anoReferencia);
 
         }
 
@@ -109,7 +109,7 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByRegionalInstituicao(regional, instituicao, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByRegionalInstituicao(regional, instituicao, codigoSolicitacao,anoReferencia);
 
         }
         public DataTable GetByInstituicaoAnoEnsino(string instituicao, string anoeensino, bool sindicados, int codigoSolicitacao, int anoReferencia)
@@ -121,9 +121,9 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByInstituicaoAnoEnsino(instituicao, anoeensino, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByInstituicaoAnoEnsino(instituicao, anoeensino, codigoSolicitacao,anoReferencia);
         }
-        public DataTable GetByRegionalAnoEnsino(string regional, string anoeensino, bool sindicados, int codigoSolicitacao)
+        public DataTable GetByRegionalAnoEnsino(string regional, string anoeensino, bool sindicados, int codigoSolicitacao,int anoReferencia )
         {
             if (sindicados)
             {
@@ -132,7 +132,7 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByRegionalAnoEnsino(regional, anoeensino, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByRegionalAnoEnsino(regional, anoeensino, codigoSolicitacao,anoReferencia);
         }
 
         public DataTable GetByRegionalInstituicaoAnoEnsino(string regional, string instituicao, string anoeensino, bool sindicados, int codigoSolicitacao, int anoReferencia)
@@ -144,7 +144,7 @@ namespace SIESC.BD.Control
             }
 
             selecionarSindicados_TA = new vw_selecionar_sindicadosTableAdapter();
-            return selecionarSindicados_TA.GetDataByRegionalInstituicaoAnoEnsino(regional, anoeensino, instituicao, codigoSolicitacao);
+            return selecionarSindicados_TA.GetDataByRegionalInstituicaoAnoEnsino(regional, anoeensino, instituicao, codigoSolicitacao,anoReferencia);
         }
 
         public DataTable GetSindicanciasPendentes(int anoReferencia)

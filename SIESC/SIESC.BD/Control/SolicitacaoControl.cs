@@ -157,7 +157,7 @@ namespace SIESC.BD.Control
         }
 
         /// <summary>
-        /// 
+        /// Retorna uma solicitação completa
         /// </summary>
         /// <param name="idSolicitacao"></param>
         /// <returns></returns>
@@ -234,7 +234,7 @@ namespace SIESC.BD.Control
                 solicitacao.anoIrmao2 = dt.Rows[0]["anoEnsinoIrmao2"] != DBNull.Value? Convert.ToInt32(dt.Rows[0]["anoEnsinoIrmao2"].ToString()):(int?)null;
                 solicitacao.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
                 solicitacao.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
-
+                solicitacao.anoReferencia = (int?) dt.Rows[0]["anoReferencia"] ;
                 return solicitacao;
             }
             catch (Exception ex)

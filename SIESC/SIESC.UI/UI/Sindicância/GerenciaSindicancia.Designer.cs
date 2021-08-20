@@ -33,6 +33,11 @@ namespace SIESC.UI.UI.Sindicância
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.label9 = new System.Windows.Forms.Label();
+			this.cbo_anoReferencia = new SIESC.UI.Controles.MyComboBox();
+			this.periodoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.siescDataSet = new SIESC.UI.siescDataSet();
+			this.periodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lbl_id_ultima_sindicada = new System.Windows.Forms.Label();
 			this.lbl_ultima_sol_sindicada = new System.Windows.Forms.Label();
 			this.lbl_apartir_sol = new System.Windows.Forms.Label();
@@ -53,7 +58,6 @@ namespace SIESC.UI.UI.Sindicância
 			this.lbl_instituicoes = new System.Windows.Forms.Label();
 			this.cbo_regionais = new SIESC.UI.Controles.MyComboBox();
 			this.regionaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.lbl_ano_ensino = new System.Windows.Forms.Label();
 			this.cbo_escola = new SIESC.UI.Controles.MyComboBox();
 			this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -103,16 +107,19 @@ namespace SIESC.UI.UI.Sindicância
 			this.anoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.anoTableAdapter();
 			this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
 			this.vw_comprovacao_enderecoTableAdapter1 = new SIESC.BD.DataSets.dsRelatoriosTableAdapters.vw_comprovacao_enderecoTableAdapter();
+			this.periodoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.periodoTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nupd_cod_solicitacao)).BeginInit();
 			this.gpb_localizar.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.gpb_filtros_de_busca.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).BeginInit();
 			this.pnl_dados.SuspendLayout();
@@ -130,6 +137,8 @@ namespace SIESC.UI.UI.Sindicância
 			// 
 			// splitContainer1.Panel1
 			// 
+			this.splitContainer1.Panel1.Controls.Add(this.label9);
+			this.splitContainer1.Panel1.Controls.Add(this.cbo_anoReferencia);
 			this.splitContainer1.Panel1.Controls.Add(this.lbl_id_ultima_sindicada);
 			this.splitContainer1.Panel1.Controls.Add(this.lbl_ultima_sol_sindicada);
 			this.splitContainer1.Panel1.Controls.Add(this.lbl_apartir_sol);
@@ -151,6 +160,44 @@ namespace SIESC.UI.UI.Sindicância
 			this.splitContainer1.Size = new System.Drawing.Size(1313, 626);
 			this.splitContainer1.SplitterDistance = 206;
 			this.splitContainer1.TabIndex = 1;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(1182, 70);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(88, 14);
+			this.label9.TabIndex = 10;
+			this.label9.Text = "Ano Referência:";
+			// 
+			// cbo_anoReferencia
+			// 
+			this.cbo_anoReferencia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.periodoBindingSource1, "ano", true));
+			this.cbo_anoReferencia.DataSource = this.periodoBindingSource;
+			this.cbo_anoReferencia.DisplayMember = "ano";
+			this.cbo_anoReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_anoReferencia.FormattingEnabled = true;
+			this.cbo_anoReferencia.Location = new System.Drawing.Point(1185, 84);
+			this.cbo_anoReferencia.Name = "cbo_anoReferencia";
+			this.cbo_anoReferencia.Size = new System.Drawing.Size(102, 22);
+			this.cbo_anoReferencia.TabIndex = 91;
+			this.cbo_anoReferencia.ValueMember = "ano";
+			this.cbo_anoReferencia.SelectedIndexChanged += new System.EventHandler(this.cbo_anoReferencia_SelectedIndexChanged);
+			// 
+			// periodoBindingSource1
+			// 
+			this.periodoBindingSource1.DataMember = "periodo";
+			this.periodoBindingSource1.DataSource = this.siescDataSet;
+			// 
+			// siescDataSet
+			// 
+			this.siescDataSet.DataSetName = "siescDataSet";
+			this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// periodoBindingSource
+			// 
+			this.periodoBindingSource.DataMember = "periodo";
+			this.periodoBindingSource.DataSource = this.siescDataSet;
 			// 
 			// lbl_id_ultima_sindicada
 			// 
@@ -200,7 +247,7 @@ namespace SIESC.UI.UI.Sindicância
 			this.nupd_cod_solicitacao.Font = new System.Drawing.Font("Candara", 10F);
 			this.nupd_cod_solicitacao.Location = new System.Drawing.Point(1100, 64);
 			this.nupd_cod_solicitacao.Maximum = new decimal(new int[] {
-			5000,
+			20305000,
 			0,
 			0,
 			0});
@@ -359,7 +406,7 @@ namespace SIESC.UI.UI.Sindicância
 			this.gpb_filtros_de_busca.Controls.Add(this.btn_cancel_ano);
 			this.gpb_filtros_de_busca.Location = new System.Drawing.Point(960, 104);
 			this.gpb_filtros_de_busca.Name = "gpb_filtros_de_busca";
-			this.gpb_filtros_de_busca.Size = new System.Drawing.Size(327, 99);
+			this.gpb_filtros_de_busca.Size = new System.Drawing.Size(350, 99);
 			this.gpb_filtros_de_busca.TabIndex = 88;
 			this.gpb_filtros_de_busca.TabStop = false;
 			this.gpb_filtros_de_busca.Text = "Filtros de busca";
@@ -401,11 +448,6 @@ namespace SIESC.UI.UI.Sindicância
 			this.regionaisBindingSource.DataMember = "regionais";
 			this.regionaisBindingSource.DataSource = this.siescDataSet;
 			this.regionaisBindingSource.Sort = "nomeRegional";
-			// 
-			// siescDataSet
-			// 
-			this.siescDataSet.DataSetName = "siescDataSet";
-			this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// lbl_ano_ensino
 			// 
@@ -910,6 +952,10 @@ namespace SIESC.UI.UI.Sindicância
 			// 
 			this.vw_comprovacao_enderecoTableAdapter1.ClearBeforeFill = true;
 			// 
+			// periodoTableAdapter
+			// 
+			this.periodoTableAdapter.ClearBeforeFill = true;
+			// 
 			// GerenciaSindicancia
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -924,6 +970,9 @@ namespace SIESC.UI.UI.Sindicância
 			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nupd_cod_solicitacao)).EndInit();
 			this.gpb_localizar.ResumeLayout(false);
 			this.gpb_localizar.PerformLayout();
@@ -932,7 +981,6 @@ namespace SIESC.UI.UI.Sindicância
 			this.gpb_filtros_de_busca.ResumeLayout(false);
 			this.gpb_filtros_de_busca.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.regionaisBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.anoBindingSource)).EndInit();
 			this.pnl_dados.ResumeLayout(false);
@@ -1019,5 +1067,10 @@ namespace SIESC.UI.UI.Sindicância
 		private System.Windows.Forms.Label lbl_titulo_form;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel lbl_num_linhas;
+		private MyComboBox cbo_anoReferencia;
+		private System.Windows.Forms.BindingSource periodoBindingSource;
+		private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.BindingSource periodoBindingSource1;
 	}
 }

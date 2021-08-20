@@ -19,6 +19,7 @@ namespace SIESC.UI.UI.Sindicância
         private Aluno aluno;
         private Localizar localizar;
         private List<Control> listaControles = new List<Control>();
+        private int anoReferencia;
 
         public GerenciarSindicanciaCadastrada(Principal_UI principalUi)
         {
@@ -28,6 +29,13 @@ namespace SIESC.UI.UI.Sindicância
             localizar = Localizar.aguardando;
             CarregaGridView();
         }
+        private void GerenciarSindicanciaCadastrada_Load(object sender, EventArgs e)
+        {
+            this.periodoTableAdapter.Fill(this.siescDataSet.periodo);
+
+            anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+        }
+
 
         private void AddListaControles()
         {
@@ -55,7 +63,7 @@ namespace SIESC.UI.UI.Sindicância
             try
             {
                 sindicanciaControl = new SindicanciaControl();
-                var dt = sindicanciaControl.GetTodasSindicanciasCadastradas();
+                var dt = sindicanciaControl.GetTodasSindicanciasCadastradas(anoReferencia);
 
                 switch (localizar)
                 {
@@ -70,7 +78,7 @@ namespace SIESC.UI.UI.Sindicância
                         break;
 
                     case Localizar.aguardando:
-                        dt = sindicanciaControl.GetTodasSindicanciasCadastradas();
+                        dt = sindicanciaControl.GetTodasSindicanciasCadastradas(anoReferencia);
                         break;
                 }
                 dt.Columns.Remove("idSolicitacao");
@@ -119,7 +127,6 @@ namespace SIESC.UI.UI.Sindicância
                     lbl_pendente.ResetText();
                 }
             }
-            else
             {
                 lbl_finalizada.Text = "Não";
                 lbl_finalizada.ForeColor = Color.DarkRed;
