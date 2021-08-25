@@ -77,13 +77,18 @@ namespace SIESC.UI.UI.Sindicância
         {
             try
             {
+                anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
                 sindicanciaControl = new SindicanciaControl();
                 
-                lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao(anoReferencia);
+                string ultimaId = sindicanciaControl.MaximoIdSolicitacao(anoReferencia);
 
-
-                if (!string.IsNullOrEmpty(lbl_id_ultima_sindicada.Text))
-                    nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+                if (!string.IsNullOrEmpty(ultimaId))
+                {
+                    lbl_id_ultima_sindicada.Text = $@"{ultimaId.Substring(0, 4)}/{ultimaId.Substring(4, ultimaId.Length - 4)}";
+                    
+                    nupd_cod_solicitacao.Value = Convert.ToDecimal(ultimaId);
+                }
             }
             catch (Exception ex)
             {
@@ -98,7 +103,6 @@ namespace SIESC.UI.UI.Sindicância
         private void cbo_regionais_DropDown(object sender, EventArgs e)
         {
             this.regionaisTableAdapter.Fill(this.siescDataSet.regionais);
-
         }
         /// <summary>
         /// Carrega o controle DropDownBox com os anos de ensino
@@ -956,6 +960,7 @@ namespace SIESC.UI.UI.Sindicância
 
         private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AtualizaUltimaSindicancia();
             CarregaGridView();
         }
     }

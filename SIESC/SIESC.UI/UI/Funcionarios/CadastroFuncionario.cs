@@ -318,17 +318,17 @@ namespace SIESC.UI.UI.Funcionarios
             listaControles.Add(txt_nome);
             //listaControles.Add(txt_cartident);
             //listaControles.Add(txt_email);
-            listaControles.Add(txt_logradouro);
-            listaControles.Add(txt_numresid);
-            listaControles.Add(txt_bairro);
+            //listaControles.Add(txt_logradouro);
+            //listaControles.Add(txt_numresid);
+            //listaControles.Add(txt_bairro);
             //listaControles.Add(cbo_cargo);
-            listaControles.Add(cbo_tipolograd);
-            listaControles.Add(msk_cep);
+            //listaControles.Add(cbo_tipolograd);
+            //listaControles.Add(msk_cep);
             //listaControles.Add(msk_cpf);
             listaControles.Add(msk_tel1);
-            listaControles.Add(msk_datanasc);
-            listaControles.Add(rdb_feminino);
-            listaControles.Add(rdb_masculino);
+           // listaControles.Add(msk_datanasc);
+           // listaControles.Add(rdb_feminino);
+           // listaControles.Add(rdb_masculino);
             listaControles.Add(cbo_instituicao);
         }
 

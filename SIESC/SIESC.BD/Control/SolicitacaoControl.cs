@@ -132,7 +132,6 @@ namespace SIESC.BD.Control
             catch (SqlException exception)
             {
                 throw exception;
-
             }
         }
 
@@ -151,7 +150,6 @@ namespace SIESC.BD.Control
             }
             catch (SqlException exception)
             {
-
                 throw exception;
             }
         }
@@ -234,7 +232,7 @@ namespace SIESC.BD.Control
                 solicitacao.anoIrmao2 = dt.Rows[0]["anoEnsinoIrmao2"] != DBNull.Value? Convert.ToInt32(dt.Rows[0]["anoEnsinoIrmao2"].ToString()):(int?)null;
                 solicitacao.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
                 solicitacao.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
-                solicitacao.anoReferencia = (int?) dt.Rows[0]["anoReferencia"] ;
+                solicitacao.anoReferencia = Convert.ToInt32(dt.Rows[0]["anoReferencia"].ToString()) ;
                 return solicitacao;
             }
             catch (Exception ex)
