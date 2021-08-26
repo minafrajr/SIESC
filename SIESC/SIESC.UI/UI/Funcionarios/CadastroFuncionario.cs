@@ -227,13 +227,13 @@ namespace SIESC.UI.UI.Funcionarios
         /// <returns>Objeto funcionário</returns>
         private Funcionario CriarFuncionario()
         {
-            if (!string.IsNullOrEmpty(txt_email.Text))
-            {
-                if (!EnviarEmail.ValidaEnderecoEmail(txt_email.Text))
-                {
-                    throw new Exception("O e-mail não é válido!");
-                }
-            }
+            //if (!string.IsNullOrEmpty(txt_email.Text))
+            //{
+            //    if (!EnviarEmail.ValidaEnderecoEmail(txt_email.Text))
+            //    {
+            //        throw new Exception("O e-mail não é válido!");
+            //    }
+            //}
 
             Funcionario func = new Funcionario()
             {
@@ -318,17 +318,17 @@ namespace SIESC.UI.UI.Funcionarios
             listaControles.Add(txt_nome);
             //listaControles.Add(txt_cartident);
             //listaControles.Add(txt_email);
-            listaControles.Add(txt_logradouro);
-            listaControles.Add(txt_numresid);
-            listaControles.Add(txt_bairro);
+            //listaControles.Add(txt_logradouro);
+            //listaControles.Add(txt_numresid);
+            //listaControles.Add(txt_bairro);
             //listaControles.Add(cbo_cargo);
-            listaControles.Add(cbo_tipolograd);
-            listaControles.Add(msk_cep);
+            //listaControles.Add(cbo_tipolograd);
+            //listaControles.Add(msk_cep);
             //listaControles.Add(msk_cpf);
             listaControles.Add(msk_tel1);
-            listaControles.Add(msk_datanasc);
-            listaControles.Add(rdb_feminino);
-            listaControles.Add(rdb_masculino);
+            //listaControles.Add(msk_datanasc);
+            //listaControles.Add(rdb_feminino);
+            //listaControles.Add(rdb_masculino);
             listaControles.Add(cbo_instituicao);
         }
 
