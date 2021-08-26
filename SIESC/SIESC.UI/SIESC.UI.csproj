@@ -761,6 +761,7 @@
     <None Include="Resources\school-bus.png" />
     <None Include="Resources\inspector.png" />
     <None Include="Resources\if_compass_24x24.png" />
+    <None Include="Resources\Question2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
