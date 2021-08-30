@@ -38,6 +38,11 @@ namespace SIESC.UI.UI.Relatorios
         private PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
 
         /// <summary>
+        /// O ano letivo para consulta do relatório
+        /// </summary>
+        private int anoReferencia;
+
+        /// <summary>
         /// Construtor da classe
         /// </summary>
         /// <param name="_principalUi"></param>
@@ -45,7 +50,15 @@ namespace SIESC.UI.UI.Relatorios
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Evento load do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frm_relatorio_sindicancia_numerico_Load(object sender, EventArgs e)
+        {
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
+        }
 
         private void btn_cancel_regional_Click(object sender,EventArgs e)
         {
@@ -88,6 +101,8 @@ namespace SIESC.UI.UI.Relatorios
 
         private void ConfigurarRelatorio()
         {
+            anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
             rpt_viewer.Reset();
 
             rpt_viewer.ProcessingMode = ProcessingMode.Local; //NÃO ALTERAR: renderização do relatório na máquina do cliente
@@ -116,34 +131,32 @@ namespace SIESC.UI.UI.Relatorios
             switch (_tipoConsulta)
             {
                 case TipoConsulta.regional_ano_escola:
-                    dt = sindicanciaNumerico_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString());
+                    dt = sindicanciaNumerico_TA.GetDataByRegionalAnoInstituicao(cbo_anoensino.SelectedValue.ToString(),cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.regional_ano:
                     dt = sindicanciaNumerico_TA.GetDataByRegionalAnoEnsino(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_regionais.SelectedValue.ToString());
+                        cbo_regionais.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.ano:
-                    dt = sindicanciaNumerico_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString());
+                    dt = sindicanciaNumerico_TA.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.escola:
-                    dt = sindicanciaNumerico_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString());
+                    dt = sindicanciaNumerico_TA.GetDataByInstituicaoSolicitada(cbo_escola.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.escola_ano:
-                    dt = sindicanciaNumerico_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(),
-                        cbo_escola.SelectedValue.ToString());
+                    dt = sindicanciaNumerico_TA.GetDataByInstituicaoAnoEnsino(cbo_anoensino.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.regional:
 
-                    dt = sindicanciaNumerico_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString());
+                    dt = sindicanciaNumerico_TA.GetDataByRegional(cbo_regionais.SelectedValue.ToString(),anoReferencia);
 
                     break;
                 case TipoConsulta.regional_escola:
                     dt = sindicanciaNumerico_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(),
-                        cbo_escola.SelectedValue.ToString());
+                        cbo_escola.SelectedValue.ToString(),anoReferencia);
                     break;
                 case TipoConsulta.geral:
-                    dt = this.sindicanciaNumerico_TA.GetNumeroGeral();
+                    dt = this.sindicanciaNumerico_TA.GetNumeroGeral(anoReferencia);
                     break;
 
             }
@@ -158,8 +171,7 @@ namespace SIESC.UI.UI.Relatorios
             rpt_viewer.LocalReport.DataSources.Add(dataSource);
             rpt_viewer.RefreshReport();
         }
-
-
+        
         /// <summary>
         /// Define o relatório para impressão em paisagem
         /// </summary>
@@ -169,7 +181,7 @@ namespace SIESC.UI.UI.Relatorios
         }
 
         /// <summary>
-        /// 
+        /// Define o tipo de consulta do relatório
         /// </summary>
         /// <param name="regional"></param>
         /// <param name="ano"></param>
@@ -194,6 +206,5 @@ namespace SIESC.UI.UI.Relatorios
             if (regional && !ano && escola)
                 _tipoConsulta = TipoConsulta.regional_escola;
         }
-
     }
 }

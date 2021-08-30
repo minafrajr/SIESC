@@ -51,7 +51,7 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private void ConfigurarRelatorio(bool distancia)
         {
-            anoReferencia = Convert.ToInt32(cbo_anoReferencia);
+            anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
 
             rpt_viewer.Reset();
 

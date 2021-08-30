@@ -49,7 +49,7 @@ namespace SIESC.UI.UI.Relatorios
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_cancel_escola = new System.Windows.Forms.Button();
             this.btn_cancel_regional = new System.Windows.Forms.Button();
-            this.cbo_anoensino = new System.Windows.Forms.ComboBox();
+            this.cbo_anoensino = new MyComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbo_escola = new SIESC.UI.Controles.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -446,7 +446,7 @@ namespace SIESC.UI.UI.Relatorios
         private System.Windows.Forms.Button btn_cancel_ano;
         private System.Windows.Forms.Button btn_cancel_escola;
         private System.Windows.Forms.Button btn_cancel_regional;
-        private System.Windows.Forms.ComboBox cbo_anoensino;
+        private MyComboBox cbo_anoensino;
         private MyComboBox cbo_escola;
         private System.Windows.Forms.Label label3;
         private MyComboBox cbo_regionais;

@@ -342,7 +342,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.95256cm</Width>
+                  <Width>7.50819cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.05833cm</Width>
@@ -354,7 +354,7 @@
                   <Width>0.87189cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.56917cm</Width>
+                  <Width>5.99005cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1114,7 +1114,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.29981cm</Size>
+                        <Size>3.66482cm</Size>
                         <CellContents>
                           <Textbox Name="InstituicaoSolicitada1">
                             <CanGrow>true</CanGrow>
@@ -1164,7 +1164,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>1.65333cm</Size>
+                                <Size>1.28291cm</Size>
                                 <CellContents>
                                   <Textbox Name="AnoEnsino1">
                                     <CanGrow>true</CanGrow>
@@ -1212,7 +1212,7 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>1.15061cm</Size>
+                                    <Size>1.52103cm</Size>
                                     <CellContents>
                                       <Textbox Name="idSolicitacao">
                                         <CanGrow>true</CanGrow>
@@ -1391,7 +1391,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>4.29981cm</Size>
+                    <Size>3.66482cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox12">
                         <CanGrow>true</CanGrow>
@@ -1474,7 +1474,7 @@
             <Top>1.68355cm</Top>
             <Left>0.36725cm</Left>
             <Height>5.12604cm</Height>
-            <Width>28.57148cm</Width>
+            <Width>28.91298cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
