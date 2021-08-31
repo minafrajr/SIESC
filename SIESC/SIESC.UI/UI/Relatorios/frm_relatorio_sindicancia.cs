@@ -46,6 +46,19 @@ namespace SIESC.UI.UI.Relatorios
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Evento Load do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frm_relatorio_sindicancia_Load(object sender, EventArgs e)
+        {
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
+            cbo_origem.SelectedIndex = 0;
+
+        }
+
         /// <summary>
         /// Configura o relatório
         /// </summary>
@@ -107,7 +120,7 @@ namespace SIESC.UI.UI.Relatorios
                             dt = Sindicancia_TA.GetDataByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(),anoReferencia);
                             break;
                         case TipoConsulta.geral:
-                            dt = this.Sindicancia_TA.GetData();
+                            dt = this.Sindicancia_TA.GetDataByAnoReferencia(anoReferencia);
                             break;
                     }
                 }
@@ -128,11 +141,11 @@ namespace SIESC.UI.UI.Relatorios
 
                 switch (cbo_origem.Text)
                 {
-                    case "TODAS":
-                        dt = SindicanciaDistancia_TA.GetData();
+                    case "":
+                        dt = SindicanciaDistancia_TA.GetDataByAnoReferencia(anoReferencia);
                         break;
                     default:
-                        dt = SindicanciaDistancia_TA.GetDataByOrigem(cbo_origem.Text);
+                        dt = SindicanciaDistancia_TA.GetDataByOrigem(cbo_origem.Text,anoReferencia);
                         break;
                 }
 
@@ -262,11 +275,6 @@ namespace SIESC.UI.UI.Relatorios
             btn_cancel_regional.Enabled = !chk_distancia.Checked;
         }
 
-        private void frm_relatorio_sindicancia_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'siescDataSet.periodo'. Você pode movê-la ou removê-la conforme necessário.
-            this.periodoTableAdapter.Fill(this.siescDataSet.periodo);
-
-        }
+        
     }
 }

@@ -101,10 +101,14 @@
           <DataField>Status</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsSindicancia</rd:DataSetName>
-        <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsSindicancia.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsSindicancia.xsd</rd:SchemaPath>
         <rd:TableName>vw_sindicancia</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -123,7 +127,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Sindicância " &amp; Year(Now())</Value>
+                    <Value>="Sindicância " &amp; First(Fields!anoReferencia.Value, "dsSindicancia")</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1067,7 +1071,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Instituicao Encaminhada</Value>
+                                <Value>INSTITUIÇÃO ENCAMINHADA</Value>
                                 <Style>
                                   <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
@@ -1474,7 +1478,7 @@
             <Top>1.68355cm</Top>
             <Left>0.36725cm</Left>
             <Height>5.12604cm</Height>
-            <Width>28.91298cm</Width>
+            <Width>28.91299cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

@@ -49,7 +49,7 @@ namespace SIESC.UI.UI.Relatorios
             this.btn_cancel_ano = new System.Windows.Forms.Button();
             this.btn_cancel_escola = new System.Windows.Forms.Button();
             this.btn_cancel_regional = new System.Windows.Forms.Button();
-            this.cbo_anoensino = new MyComboBox();
+            this.cbo_anoensino = new SIESC.UI.Controles.MyComboBox();
             this.anoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbo_escola = new SIESC.UI.Controles.MyComboBox();
             this.instituicoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -164,7 +164,7 @@ namespace SIESC.UI.UI.Relatorios
             "CADASTRO"});
             this.cbo_origem.Location = new System.Drawing.Point(626, 71);
             this.cbo_origem.Name = "cbo_origem";
-            this.cbo_origem.Size = new System.Drawing.Size(158, 22);
+            this.cbo_origem.Size = new System.Drawing.Size(121, 22);
             this.cbo_origem.TabIndex = 15;
             // 
             // chk_distancia
@@ -470,10 +470,10 @@ namespace SIESC.UI.UI.Relatorios
         private System.Windows.Forms.RadioButton rdb_cadastrados;
         private System.Windows.Forms.CheckBox chk_distancia;
         private System.Windows.Forms.Label label1;
-        private MyComboBox cbo_origem;
         private System.Windows.Forms.Label label6;
         private MyComboBox cbo_anoReferencia;
         private System.Windows.Forms.BindingSource periodoBindingSource;
         private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
+        private MyComboBox cbo_origem;
     }
 }
