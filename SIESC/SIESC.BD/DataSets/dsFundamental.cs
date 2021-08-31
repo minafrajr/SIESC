@@ -2,7 +2,7 @@
 {
 
 
-	public partial class dsFundamental
-	{
-	}
+    public partial class dsFundamental
+    {
+    }
 }

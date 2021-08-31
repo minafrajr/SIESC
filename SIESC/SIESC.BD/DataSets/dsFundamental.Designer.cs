@@ -1741,6 +1741,8 @@ namespace SIESC.BD.DataSets {
             
             private global::System.Data.DataColumn columnQtde;
             
+            private global::System.Data.DataColumn columnAnoReferencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public vw_solicitacoes_por_dia_fundamentalDataTable() {
@@ -1792,6 +1794,14 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AnoReferenciaColumn {
+                get {
+                    return this.columnAnoReferencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1827,11 +1837,12 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public vw_solicitacoes_por_dia_fundamentalRow Addvw_solicitacoes_por_dia_fundamentalRow(System.DateTime Data, long Qtde) {
+            public vw_solicitacoes_por_dia_fundamentalRow Addvw_solicitacoes_por_dia_fundamentalRow(System.DateTime Data, long Qtde, uint AnoReferencia) {
                 vw_solicitacoes_por_dia_fundamentalRow rowvw_solicitacoes_por_dia_fundamentalRow = ((vw_solicitacoes_por_dia_fundamentalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Data,
-                        Qtde};
+                        Qtde,
+                        AnoReferencia};
                 rowvw_solicitacoes_por_dia_fundamentalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_solicitacoes_por_dia_fundamentalRow);
                 return rowvw_solicitacoes_por_dia_fundamentalRow;
@@ -1856,6 +1867,7 @@ namespace SIESC.BD.DataSets {
             internal void InitVars() {
                 this.columnData = base.Columns["Data"];
                 this.columnQtde = base.Columns["Qtde"];
+                this.columnAnoReferencia = base.Columns["AnoReferencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1865,6 +1877,8 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnData);
                 this.columnQtde = new global::System.Data.DataColumn("Qtde", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQtde);
+                this.columnAnoReferencia = new global::System.Data.DataColumn("AnoReferencia", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnoReferencia);
                 this.columnQtde.AllowDBNull = false;
             }
             
@@ -3557,6 +3571,23 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint AnoReferencia {
+                get {
+                    try {
+                        return ((uint)(this[this.tablevw_solicitacoes_por_dia_fundamental.AnoReferenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'AnoReferencia\' na tabela \'vw_solicitacoes_por_dia_fundamental\'" +
+                                " é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_solicitacoes_por_dia_fundamental.AnoReferenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDataNull() {
                 return this.IsNull(this.tablevw_solicitacoes_por_dia_fundamental.DataColumn);
             }
@@ -3565,6 +3596,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDataNull() {
                 this[this.tablevw_solicitacoes_por_dia_fundamental.DataColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAnoReferenciaNull() {
+                return this.IsNull(this.tablevw_solicitacoes_por_dia_fundamental.AnoReferenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAnoReferenciaNull() {
+                this[this.tablevw_solicitacoes_por_dia_fundamental.AnoReferenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4743,6 +4786,7 @@ ORDER BY datasolicitacao";
             tableMapping.DataSetTable = "vw_solicitacoes_por_dia_fundamental";
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("Qtde", "Qtde");
+            tableMapping.ColumnMappings.Add("AnoReferencia", "AnoReferencia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4759,14 +4803,23 @@ ORDER BY datasolicitacao";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Data`, `Qtde` FROM `siesc`.`vw_solicitacoes_por_dia_fundamental`";
+            this._commandCollection[0].CommandText = "SELECT        Data, Qtde, AnoReferencia\r\nFROM            vw_solicitacoes_por_dia_" +
+                "fundamental\r\nWHERE        (AnoReferencia = @anoReferencia)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "AnoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Data, Qtde\r\nFROM            vw_solicitacoes_por_dia_fundamental\r\nWH" +
-                "ERE        (Data BETWEEN @datainicial AND @datafinal)";
+            this._commandCollection[1].CommandText = "SELECT AnoReferencia, Data, Qtde FROM vw_solicitacoes_por_dia_fundamental WHERE (" +
+                "Data BETWEEN @datainicial AND @datafinal) AND AnoReferencia = @anoReferencia";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@datainicial";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
@@ -4782,14 +4835,28 @@ ORDER BY datasolicitacao";
             param.SourceColumn = "Data";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "AnoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable) {
+        public virtual int Fill(dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -4801,8 +4868,14 @@ ORDER BY datasolicitacao";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable GetData() {
+        public virtual dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable GetData(global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable = new dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4812,7 +4885,7 @@ ORDER BY datasolicitacao";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable, global::System.Nullable<global::System.DateTime> datainicial, global::System.Nullable<global::System.DateTime> datafinal) {
+        public virtual int FillBy(dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable, global::System.Nullable<global::System.DateTime> datainicial, global::System.Nullable<global::System.DateTime> datafinal, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((datainicial.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datainicial.Value));
@@ -4825,6 +4898,12 @@ ORDER BY datasolicitacao";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4837,7 +4916,7 @@ ORDER BY datasolicitacao";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable GetDataByFiltroDia(global::System.Nullable<global::System.DateTime> datainicial, global::System.Nullable<global::System.DateTime> datafinal) {
+        public virtual dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable GetDataByFiltroDia(global::System.Nullable<global::System.DateTime> datainicial, global::System.Nullable<global::System.DateTime> datafinal, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((datainicial.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datainicial.Value));
@@ -4850,6 +4929,12 @@ ORDER BY datasolicitacao";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable dataTable = new dsFundamental.vw_solicitacoes_por_dia_fundamentalDataTable();
             this.Adapter.Fill(dataTable);

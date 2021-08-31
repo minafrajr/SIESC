@@ -200,7 +200,7 @@ namespace SIESC.UI.UI.Relatorios
                 case 7://relatório de solicitações por dia
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Dia.rdlc";
-                    dt = this.vw_solicitacoes_por_diaTableAdapter1.GetData();
+                    dt = this.vw_solicitacoes_por_diaTableAdapter1.GetData(anoReferencia);
                     break;
                 case 8:
                     //disponível
