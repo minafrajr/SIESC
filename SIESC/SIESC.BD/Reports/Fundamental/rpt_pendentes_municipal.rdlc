@@ -81,10 +81,14 @@
           <DataField>observacoes</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsFundamental</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
         <rd:TableName>vw_alunos_pendentes_municipal</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -103,7 +107,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de Vaga" &amp; Year(Now())</Value>
+                    <Value>="Solicitação de Vaga" &amp; First(Fields!anoReferencia.Value, "dsFundamental")</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1147,7 +1151,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.89916cm</Height>
+          <Height>0.78486cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

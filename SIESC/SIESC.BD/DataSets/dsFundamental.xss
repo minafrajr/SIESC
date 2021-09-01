@@ -8,11 +8,11 @@
   <Shapes>
     <Shape ID="DesignTable:vw_solicitacoes_por_mes_fundamental" ZOrder="5" X="394" Y="64" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:vw_alunos_pendentes_municipal" ZOrder="7" X="84" Y="62" Height="478" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="351" />
-    <Shape ID="DesignTable:vw_deficientes" ZOrder="2" X="715" Y="62" Height="438" Width="286" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="311" />
+    <Shape ID="DesignTable:vw_deficientes" ZOrder="3" X="715" Y="62" Height="381" Width="286" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="311" />
     <Shape ID="DesignTable:vw_solicitacoes_por_dia_fundamental" ZOrder="4" X="393" Y="245" Height="153" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:vw_motivos_fundamental" ZOrder="6" X="395" Y="409" Height="134" Width="292" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:vw_num_encaminhados" ZOrder="3" X="717" Y="466" Height="229" Width="282" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:vw_origem_solicitacao" ZOrder="1" X="1024" Y="67" Height="172" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:vw_num_encaminhados" ZOrder="1" X="1005" Y="278" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:vw_origem_solicitacao" ZOrder="2" X="1024" Y="67" Height="172" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

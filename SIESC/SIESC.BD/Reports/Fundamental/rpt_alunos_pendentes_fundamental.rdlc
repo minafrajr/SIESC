@@ -81,10 +81,14 @@
           <DataField>observacoes</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsFundamental</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
         <rd:TableName>vw_alunos_pendentes_municipal</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1095,7 +1099,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Relatório de Alunos Pendentes do Ensino Fundamental</Value>
+                    <Value>="Relatório de Alunos Pendentes do Ensino Fundamental " &amp; First(Fields!anoReferencia.Value, "dsFundamental")</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
