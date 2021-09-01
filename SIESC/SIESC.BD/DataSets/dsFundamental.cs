@@ -1,8 +1,7 @@
 ﻿namespace SIESC.BD.DataSets
 {
+}
 
-
-    public partial class dsFundamental
-    {
-    }
+namespace SIESC.BD.DataSets
+{
 }
