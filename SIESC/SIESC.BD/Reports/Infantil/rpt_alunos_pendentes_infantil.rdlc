@@ -67,7 +67,7 @@
         </Field>
         <Field Name="datasolicitacao">
           <DataField>datasolicitacao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="regional">
           <DataField>regional</DataField>
@@ -81,10 +81,18 @@
           <DataField>idade</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
+        <Field Name="dataSolicitacao">
+          <DataField>dataSolicitacao</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsInfantil</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsInfantil.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsInfantil.xsd</rd:SchemaPath>
         <rd:TableName>vw_alunos_pendentes_infantil</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1095,7 +1103,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Relatório de Alunos Pendentes da Educação Infantil</Value>
+                    <Value>="Relatório de Alunos Pendentes da Educação Infantil - Ano Letivo " &amp; First(Fields!anoReferencia.Value, "dsInfantil")</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>

@@ -1164,24 +1164,18 @@ namespace SIESC.BD.DataSets {
                 this.columncodigosolicitacao.AutoIncrementStep = -1;
                 this.columncodigosolicitacao.AllowDBNull = false;
                 this.columncodigosolicitacao.Unique = true;
-                this.columnnome.AllowDBNull = false;
                 this.columnnome.MaxLength = 60;
-                this.columnano.AllowDBNull = false;
                 this.columnano.MaxLength = 45;
-                this.columnmae.AllowDBNull = false;
                 this.columnmae.MaxLength = 60;
                 this.columntipoLogradouroAluno.MaxLength = 45;
-                this.columnlogradouroAluno.MaxLength = 45;
+                this.columnlogradouroAluno.MaxLength = 60;
                 this.columnnumeroResidenciaAluno.MaxLength = 45;
                 this.columncomplemento.MaxLength = 45;
                 this.columnbairro.MaxLength = 50;
-                this.columntelefone.MaxLength = 47;
-                this.columnmotivo.AllowDBNull = false;
+                this.columntelefone.MaxLength = 56;
                 this.columnmotivo.MaxLength = 80;
-                this.columnescolasolicitada.AllowDBNull = false;
                 this.columnescolasolicitada.MaxLength = 80;
                 this.columndatasolicitacao.MaxLength = 10;
-                this.columnregional.AllowDBNull = false;
                 this.columnregional.MaxLength = 45;
                 this.columnobservacoes.MaxLength = 500;
             }
@@ -3051,7 +3045,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nome {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.nomeColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.nomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'nome\' na tabela \'vw_alunos_pendentes_municipal\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.nomeColumn] = value;
@@ -3078,7 +3077,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ano {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.anoColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.anoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ano\' na tabela \'vw_alunos_pendentes_municipal\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.anoColumn] = value;
@@ -3089,7 +3093,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string mae {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.maeColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.maeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'mae\' na tabela \'vw_alunos_pendentes_municipal\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.maeColumn] = value;
@@ -3200,7 +3209,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string motivo {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.motivoColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.motivoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'motivo\' na tabela \'vw_alunos_pendentes_municipal\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.motivoColumn] = value;
@@ -3211,7 +3225,13 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string escolasolicitada {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.escolasolicitadaColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.escolasolicitadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'escolasolicitada\' na tabela \'vw_alunos_pendentes_municipal\' é " +
+                                "DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.escolasolicitadaColumn] = value;
@@ -3239,7 +3259,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string regional {
                 get {
-                    return ((string)(this[this.tablevw_alunos_pendentes_municipal.regionalColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_alunos_pendentes_municipal.regionalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'regional\' na tabela \'vw_alunos_pendentes_municipal\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_alunos_pendentes_municipal.regionalColumn] = value;
@@ -3282,6 +3307,18 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnomeNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.nomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnomeNull() {
+                this[this.tablevw_alunos_pendentes_municipal.nomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidadeNull() {
                 return this.IsNull(this.tablevw_alunos_pendentes_municipal.idadeColumn);
             }
@@ -3290,6 +3327,30 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidadeNull() {
                 this[this.tablevw_alunos_pendentes_municipal.idadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsanoNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.anoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetanoNull() {
+                this[this.tablevw_alunos_pendentes_municipal.anoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmaeNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.maeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmaeNull() {
+                this[this.tablevw_alunos_pendentes_municipal.maeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3366,6 +3427,30 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmotivoNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.motivoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmotivoNull() {
+                this[this.tablevw_alunos_pendentes_municipal.motivoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsescolasolicitadaNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.escolasolicitadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetescolasolicitadaNull() {
+                this[this.tablevw_alunos_pendentes_municipal.escolasolicitadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsdatasolicitacaoNull() {
                 return this.IsNull(this.tablevw_alunos_pendentes_municipal.datasolicitacaoColumn);
             }
@@ -3374,6 +3459,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdatasolicitacaoNull() {
                 this[this.tablevw_alunos_pendentes_municipal.datasolicitacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsregionalNull() {
+                return this.IsNull(this.tablevw_alunos_pendentes_municipal.regionalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetregionalNull() {
+                this[this.tablevw_alunos_pendentes_municipal.regionalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -45,10 +45,18 @@
           <DataField>Telefone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="idano">
+          <DataField>idano</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_controlesolicitacoes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1142,7 +1150,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de Vaga " &amp; Year(Now())</Value>
+                    <Value>="Solicitação de Vaga " &amp; First(Fields!anoReferencia,"dsRelatorios")</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>

@@ -297,7 +297,7 @@ GROUP BY descricao</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigosolicitacao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigosolicitacao" msprop:Generator_ColumnPropNameInRow="codigosolicitacao" msprop:Generator_ColumnPropNameInTable="codigosolicitacaoColumn" msprop:Generator_UserColumnName="codigosolicitacao" type="xs:int" />
-              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="60" />
@@ -305,14 +305,14 @@ GROUP BY descricao</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="idade" msprop:Generator_ColumnVarNameInTable="columnidade" msprop:Generator_ColumnPropNameInRow="idade" msprop:Generator_ColumnPropNameInTable="idadeColumn" msprop:Generator_UserColumnName="idade" type="xs:long" minOccurs="0" />
-              <xs:element name="ano" msprop:Generator_ColumnVarNameInTable="columnano" msprop:Generator_ColumnPropNameInRow="ano" msprop:Generator_ColumnPropNameInTable="anoColumn" msprop:Generator_UserColumnName="ano">
+              <xs:element name="ano" msprop:Generator_ColumnVarNameInTable="columnano" msprop:Generator_ColumnPropNameInRow="ano" msprop:Generator_ColumnPropNameInTable="anoColumn" msprop:Generator_UserColumnName="ano" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="mae" msprop:Generator_ColumnVarNameInTable="columnmae" msprop:Generator_ColumnPropNameInRow="mae" msprop:Generator_ColumnPropNameInTable="maeColumn" msprop:Generator_UserColumnName="mae">
+              <xs:element name="mae" msprop:Generator_ColumnVarNameInTable="columnmae" msprop:Generator_ColumnPropNameInRow="mae" msprop:Generator_ColumnPropNameInTable="maeColumn" msprop:Generator_UserColumnName="mae" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="60" />
@@ -329,7 +329,7 @@ GROUP BY descricao</CommandText>
               <xs:element name="logradouroAluno" msprop:Generator_ColumnVarNameInTable="columnlogradouroAluno" msprop:Generator_ColumnPropNameInRow="logradouroAluno" msprop:Generator_ColumnPropNameInTable="logradouroAlunoColumn" msprop:Generator_UserColumnName="logradouroAluno" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
+                    <xs:maxLength value="60" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -357,18 +357,18 @@ GROUP BY descricao</CommandText>
               <xs:element name="telefone" msprop:Generator_ColumnVarNameInTable="columntelefone" msprop:Generator_ColumnPropNameInRow="telefone" msprop:Generator_ColumnPropNameInTable="telefoneColumn" msprop:Generator_UserColumnName="telefone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="47" />
+                    <xs:maxLength value="56" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="motivo" msprop:Generator_ColumnVarNameInTable="columnmotivo" msprop:Generator_ColumnPropNameInRow="motivo" msprop:Generator_ColumnPropNameInTable="motivoColumn" msprop:Generator_UserColumnName="motivo">
+              <xs:element name="motivo" msprop:Generator_ColumnVarNameInTable="columnmotivo" msprop:Generator_ColumnPropNameInRow="motivo" msprop:Generator_ColumnPropNameInTable="motivoColumn" msprop:Generator_UserColumnName="motivo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="80" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="escolasolicitada" msprop:Generator_ColumnVarNameInTable="columnescolasolicitada" msprop:Generator_ColumnPropNameInRow="escolasolicitada" msprop:Generator_ColumnPropNameInTable="escolasolicitadaColumn" msprop:Generator_UserColumnName="escolasolicitada">
+              <xs:element name="escolasolicitada" msprop:Generator_ColumnVarNameInTable="columnescolasolicitada" msprop:Generator_ColumnPropNameInRow="escolasolicitada" msprop:Generator_ColumnPropNameInTable="escolasolicitadaColumn" msprop:Generator_UserColumnName="escolasolicitada" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="80" />
@@ -382,7 +382,7 @@ GROUP BY descricao</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="regional" msprop:Generator_ColumnVarNameInTable="columnregional" msprop:Generator_ColumnPropNameInRow="regional" msprop:Generator_ColumnPropNameInTable="regionalColumn" msprop:Generator_UserColumnName="regional">
+              <xs:element name="regional" msprop:Generator_ColumnVarNameInTable="columnregional" msprop:Generator_ColumnPropNameInRow="regional" msprop:Generator_ColumnPropNameInTable="regionalColumn" msprop:Generator_UserColumnName="regional" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />

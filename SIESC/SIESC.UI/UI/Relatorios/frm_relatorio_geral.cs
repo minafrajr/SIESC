@@ -42,8 +42,6 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private string instituicaoSelecionada;
         
-        
-        
         /// <summary>
         /// O motivo da solicitação a ser pesquisada
         /// </summary>
@@ -65,8 +63,6 @@ namespace SIESC.UI.UI.Relatorios
             InitializeComponent();
 
             this.codigorelatorio = codigo;
-
-            this.ConfiguraRelatorio();
         }
 
         /// <summary>
@@ -74,14 +70,12 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         /// <param name="codigo"></param>
         /// <param name="instituicao"></param>
-        public frm_Relatorio_geral(Principal_UI formPrincipal, int codigo, string instituicao)
+        public frm_Relatorio_geral( int codigo, string instituicao)
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo;
             this.instituicaoSelecionada = instituicao;
-            this.ConfiguraRelatorio();
-            this.MdiParent = formPrincipal;
         }
 
         /// <summary>
@@ -91,28 +85,26 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="codigo"></param>
         /// <param name="motivo"></param>
         /// <param name="formPrincipal"></param>
-        public frm_Relatorio_geral(Principal_UI formPrincipal,int anoReferencia,int codigo, string motivo )
+        public frm_Relatorio_geral(Form formPrincipal,int codigo, string motivo )
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo;
             this.motivo = motivo;
-            this.anoReferencia = anoReferencia;
             this.MdiParent = formPrincipal;
-            this.ConfiguraRelatorio();
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="codigo_relatorio"></param>
         /// <param name="principalUi"></param>
-        public frm_Relatorio_geral(int codigo_relatorio, Principal_UI principalUi)
+        public frm_Relatorio_geral(int codigo_relatorio, Form principalUi)
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo_relatorio;
             this.MdiParent = principalUi;
-            this.ConfiguraRelatorio();
+            
         }
         /// <summary>
         /// Evento Load do formulário
@@ -121,7 +113,10 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="e"></param>
         private void Relatorio_Load(object sender, EventArgs e)
         {
-            try
+           this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
+            //this.vw_controlesolicitacoesTableAdapter.Fill(this.dsRelatorios.vw_controlesolicitacoes);
+           
+            /*try
             {
                 this.Invoke(new MethodInvoker(delegate ()
                 {
@@ -134,7 +129,7 @@ namespace SIESC.UI.UI.Relatorios
             catch (Exception exception)
             {
                 throw exception;
-            }
+            }*/
         }
         /// <summary>
         /// Método de configuração do relatório
@@ -172,11 +167,11 @@ namespace SIESC.UI.UI.Relatorios
             {
                 case 1://Número de solicitações pendentes geral
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Controle_Solicitacoes.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitadoEncaminhadoPendenteGeral();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitadoEncaminhadoPendenteGeral(anoReferencia);
                     break;
                 case 2: // Formulário Pendentes turma
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Formularios\\rpt_form_pendencia_turma.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByFormularioPendenteEnsFund();
+                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByFormularioPendenteEnsFund(anoReferencia);
                     break;
                 case 3://relatório de solicitações por motivos
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\rpt_Solicitacoes_Por_Motivos.rdlc";
@@ -212,23 +207,23 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 10://Relatório de nº alunos pendentes da Ed. Infantil
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_Controle_Solicitacoes_Infantil.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitadoEncaminhadoPendenteInfantil();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitadoEncaminhadoPendenteInfantil(anoReferencia);
                     break;
                 case 11: //Nº de Solicitações Pendentes do Ensino Fundamental
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_Controle_Solicitacoes_Fundamental.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolitictadoEncaminhadoPendenteFundamental();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolitictadoEncaminhadoPendenteFundamental(anoReferencia);
                     break;
                 case 12:// número de solicitações do ensino fundamental
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_num_solic_ano_ensino_fundamental.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitacoesFundamental();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitacoesFundamental(anoReferencia);
                     break;
                 case 13://Nº geral de solicitação por ano de ensino
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\rpt_num_solicitacoes_ano_ensino.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetData();
+                    dt = this.vw_controlesolicitacoesTableAdapter.GetData(anoReferencia);
                     break;
                 case 14://número de solicitações por regional
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Controle_Solicitacoes_geral_por_Regional.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetData();
+                    dt = this.vw_controlesolicitacoesTableAdapter.GetData(anoReferencia);
                     break;
                 case 15:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\Comparativo\\rpt_comparativo_fundamental.rdlc";
@@ -283,15 +278,15 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 26:// número de solicitações da educação infantil por ano de ensino
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_solic_ano_ensino_infantil.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitacoesInfantil();
+                    dt = this.vw_controlesolicitacoesTableAdapter.QtdeSolicitacoesInfantil(anoReferencia);
                     break;
                 case 27:// número de solicitações da educação infantil por regional
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_solic_regional_infantil.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByInfantilRegional();
+                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByInfantilRegional(anoReferencia);
                     break;
                 case 28:// número de solicitações do ensino fundamental por regional
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_num_solic_regional_fundamental.rdlc";
-                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByFundamentalRegional();
+                    dt = this.vw_controlesolicitacoesTableAdapter.GetDataByFundamentalRegional(anoReferencia);
                     break;
                 case 29:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\rpt_num_encaminhamento_ano_ensino.rdlc";
@@ -322,6 +317,20 @@ namespace SIESC.UI.UI.Relatorios
         private void FolhaPaisagem()
         {
             rpt_viewer.SetPageSettings(pg); //configura a folha do relatório para paisagem
+        }
+
+
+        /// <summary>
+        /// Evento do botão de gerar o relatório
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_gerar_relatorio_Click(object sender, EventArgs e)
+        {
+            this.anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+            this.ConfiguraRelatorio();
+
+
         }
     }
 }

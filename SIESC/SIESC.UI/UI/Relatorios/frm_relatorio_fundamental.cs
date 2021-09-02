@@ -97,7 +97,7 @@ namespace SIESC.UI.UI.Relatorios
 					break;
 				case 2://Nº de Solicitações Pendentes do Ensino Fundamental
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_Controle_Solicitacoes_Fundamental.rdlc";
-					dt = this.vw_controlesolicitacoesTableAdapter1.QtdeSolitictadoEncaminhadoPendenteFundamental();
+					dt = this.vw_controlesolicitacoesTableAdapter1.QtdeSolitictadoEncaminhadoPendenteFundamental(anoReferencia);
 					break;
 
 				case 3:
@@ -143,5 +143,15 @@ namespace SIESC.UI.UI.Relatorios
 			ConfiguraRelatorio();
 
 		}
-	}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

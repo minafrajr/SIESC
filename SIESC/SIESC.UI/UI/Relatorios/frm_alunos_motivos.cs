@@ -65,7 +65,7 @@ namespace SIESC.UI.UI.Relatorios
                         break;
                 }
 
-                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(frmPrincipal, Convert.ToInt32( cbo_periodos.SelectedValue),codigoRelatorio, cbo_motivo.SelectedValue.ToString());
+                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(frmPrincipal ,codigoRelatorio, cbo_motivo.SelectedValue.ToString());
 
                 frmRelatorioGeral.Show();
                 if (t.IsAlive) t.Abort();

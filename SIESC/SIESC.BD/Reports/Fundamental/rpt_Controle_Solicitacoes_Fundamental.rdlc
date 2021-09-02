@@ -97,7 +97,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Escola</Value>
+                                  <Value>Escola Solicitada</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1152,7 +1152,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de Vaga" &amp; First(Fields!anoReferencia.Value, "dsRelatorios")</Value>
+                    <Value>="Solicitação de Vaga " &amp; First(Fields!anoReferencia.Value, "dsRelatorios")</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
