@@ -264,13 +264,13 @@ namespace SIESC.UI.UI.Zoneamento
 
                     return controleSolicitacao.ViewAlunoByNome(txt_nomealuno.Text);
                 }
-                if (rdb_codigo.Checked)
-                {
-                    if (string.IsNullOrEmpty(txt_codigo.Text))
-                        throw new Exception("Digite o CÓDIGO do aluno para localizá-lo");
+                //if (rdb_codigo.Checked)
+                //{
+                //    if (string.IsNullOrEmpty(txt_codigo.Text))
+                //        throw new Exception("Digite o CÓDIGO do aluno para localizá-lo");
 
-                    return controleSolicitacao.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
-                }
+                //    return controleSolicitacao.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
+                //}
                 if (rdb_data.Checked)
                 {
                     if (string.IsNullOrEmpty(txt_datanasc.Text))
@@ -309,13 +309,13 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_codigo_CheckedChanged(object sender,EventArgs e)
-        {
-            if (!rdb_codigo.Checked) return;
+        //private void rdb_codigo_CheckedChanged(object sender,EventArgs e)
+        //{
+        //    if (!rdb_codigo.Checked) return;
 
-            HabilitaControles(true,false,false);
-            txt_codigo.Focus();
-        }
+        //    HabilitaControles(true,false,false);
+        //    txt_codigo.Focus();
+        //}
         /// <summary>
         /// Evento do radiobutton código da solicitação
         /// </summary>
@@ -424,20 +424,18 @@ namespace SIESC.UI.UI.Zoneamento
                 txt_codigo.Focus();
             }
         }
-        /// <summary>
-        /// Evento do radiobutton código do aluno
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdb_codigo_Click(object sender,EventArgs e)
-        {
-            if (rdb_codigo.Checked)
-            {
-                LimpaControles();
-                HabilitaControles(true,false,false);
-                txt_codigo.Focus();
-            }
-        }
+
+        //private void rdb_codigo_Click(object sender,EventArgs e)
+        //{
+        //    if (rdb_codigo.Checked)
+        //    {
+        //        LimpaControles();
+        //        HabilitaControles(true,false,false);
+        //        txt_codigo.Focus();
+        //    }
+        //}
+
+
         /// <summary>
         /// Evento do radiobutton nome do aluno
         /// </summary>

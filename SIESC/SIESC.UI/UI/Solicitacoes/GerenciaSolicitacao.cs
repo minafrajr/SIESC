@@ -152,9 +152,9 @@ namespace SIESC.UI.UI.Solicitacoes
                         case Localizar.nomeAluno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.LocalizarSolicitAluno(txt_nomealuno.Text);
                             break;
-                        case Localizar.codigoAluno:
-                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
-                            break;
+                        //case Localizar.codigoAluno:
+                        //    dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
+                        //    break;
                         case Localizar.codigoExpedienteInterno:
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaCodigoExpedienteInterno(Convert.ToInt32(msk_codigoEI.Text));
                             break;
@@ -265,7 +265,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void RepassaDadosControles()
         {
-            if (!cbo_anoreferencia.Text.Equals("2021")) return;
+            //if (!cbo_anoreferencia.Text.Equals("2021")) return;
 
             controleSindicancia = new SindicanciaControl();
 
@@ -273,7 +273,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
 
             txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            txt_codigo.Text = dgv_solicitacoes[2, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+            txt_codigo.Text = dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
             lbl_anoensino.Text = dgv_solicitacoes[3, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
             txt_mae.Text = dgv_solicitacoes[4, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
@@ -361,7 +361,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             switch (localizar)
             {
-                case Localizar.codigoAluno:
+                //case Localizar.codigoAluno:
                 case Localizar.codigoSolicitacao:
                     txt_codigo.Enabled = true;
                     txt_codigo.Focus();
@@ -390,10 +390,10 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2021"))
-                {
-                    throw new Exception("Não é permitido editar solicitações de anos anteriores.");
-                }
+                //if (!cbo_anoreferencia.Text.Equals("2021"))
+                //{
+                //    throw new Exception("Não é permitido editar solicitações de anos anteriores.");
+                //}
 
                 solicitacao = controleSolicitacoes.RetornaSolicitacao((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
@@ -497,9 +497,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 switch (cbo_tipoBusca.Text)
                 {
 
-                    case "CÓDIGO DO ALUNO":
-                        localizar = Localizar.codigoAluno;
-                        break;
+                    //case "CÓDIGO DO ALUNO":
+                    //    localizar = Localizar.codigoAluno;
+                    //    break;
                     case "CÓDIGO DA SOLICITAÇÃO":
                         localizar = Localizar.codigoSolicitacao;
                         break;
@@ -538,7 +538,7 @@ namespace SIESC.UI.UI.Solicitacoes
             switch (localizar)
             {
                 case Localizar.codigoSolicitacao:
-                case Localizar.codigoAluno:
+                //case Localizar.codigoAluno:
                     txt_codigo.Enabled = true;
                     txt_codigo.Focus();
                     break;

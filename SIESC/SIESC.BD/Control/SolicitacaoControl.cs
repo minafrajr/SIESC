@@ -264,19 +264,19 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="idAluno">O codigo do aluno para pesquisar</param>
         /// <returns></returns>
-        public DataTable PesquisaIDAluno(int idAluno)
-        {
-            try
-            {
-                vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
+        //public DataTable PesquisaIDAluno(int idAluno)
+        //{
+        //    try
+        //    {
+        //        vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByIdAluno(idAluno);
-            }
-            catch (SqlException exception)
-            {
-                throw exception;
-            }
-        }
+        //        return vw_SolicitacoesTA.PesquisaByIdAluno(idAluno);
+        //    }
+        //    catch (SqlException exception)
+        //    {
+        //        throw exception;
+        //    }
+        //}
 
         /// <summary>
         /// Retorna um DataTable contendo os dados da solicitação
