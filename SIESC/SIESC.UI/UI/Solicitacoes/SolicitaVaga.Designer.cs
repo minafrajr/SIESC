@@ -1773,7 +1773,7 @@ namespace SIESC.UI.UI.Solicitacoes
 		/// <summary>
 		/// Status de navegação do formulário de solicitação de vaga
 		/// </summary>
-		public enum Navegacao
+		private enum Navegacao
 		{
 			/// <summary>
 			/// Aguardando 

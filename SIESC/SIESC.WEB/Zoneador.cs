@@ -181,7 +181,7 @@ namespace SIESC.WEB
 			{
 				if (exception.Status == WebExceptionStatus.NameResolutionFailure)
 				{
-					return null;
+					return coordenada;
 				}
 			}
 			catch (Exception e)

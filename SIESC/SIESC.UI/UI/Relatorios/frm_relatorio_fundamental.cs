@@ -119,7 +119,7 @@ namespace SIESC.UI.UI.Relatorios
 
 				case 7:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_num_solicitaco_origem_fundamental.rdlc";
-				    dt = this.vw_origem_solicitacaoTableAdapter1.GetDataFundamental(anoReferencia);
+					dt = this.vw_origem_solicitacaoTableAdapter1.GetDataFundamental(anoReferencia);
 					break;
 			}
 
@@ -144,14 +144,14 @@ namespace SIESC.UI.UI.Relatorios
 
 		}
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+		private void label1_Click(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
