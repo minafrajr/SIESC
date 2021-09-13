@@ -3753,7 +3753,7 @@ namespace SIESC.BD.DataSets {
                         string Encaminhado_Por, 
                         string Deficiencia, 
                         System.DateTime DataNasc, 
-                        sbyte possuiIrmao) {
+                        bool possuiIrmao) {
                 vw_solicitacoesRow rowvw_solicitacoesRow = ((vw_solicitacoesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3873,7 +3873,7 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnDeficiencia);
                 this.columnDataNasc = new global::System.Data.DataColumn("DataNasc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataNasc);
-                this.columnpossuiIrmao = new global::System.Data.DataColumn("possuiIrmao", typeof(sbyte), null, global::System.Data.MappingType.Element);
+                this.columnpossuiIrmao = new global::System.Data.DataColumn("possuiIrmao", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpossuiIrmao);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSolicitacao,
@@ -11991,10 +11991,10 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sbyte possuiIrmao {
+            public bool possuiIrmao {
                 get {
                     try {
-                        return ((sbyte)(this[this.tablevw_solicitacoes.possuiIrmaoColumn]));
+                        return ((bool)(this[this.tablevw_solicitacoes.possuiIrmaoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'possuiIrmao\' na tabela \'vw_solicitacoes\' é DBNull.", e);
