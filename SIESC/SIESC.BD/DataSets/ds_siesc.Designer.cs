@@ -3753,7 +3753,7 @@ namespace SIESC.BD.DataSets {
                         string Encaminhado_Por, 
                         string Deficiencia, 
                         System.DateTime DataNasc, 
-                        bool possuiIrmao) {
+                        sbyte possuiIrmao) {
                 vw_solicitacoesRow rowvw_solicitacoesRow = ((vw_solicitacoesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3873,7 +3873,7 @@ namespace SIESC.BD.DataSets {
                 base.Columns.Add(this.columnDeficiencia);
                 this.columnDataNasc = new global::System.Data.DataColumn("DataNasc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataNasc);
-                this.columnpossuiIrmao = new global::System.Data.DataColumn("possuiIrmao", typeof(bool), null, global::System.Data.MappingType.Element);
+                this.columnpossuiIrmao = new global::System.Data.DataColumn("possuiIrmao", typeof(sbyte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpossuiIrmao);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSolicitacao,
@@ -3891,6 +3891,7 @@ namespace SIESC.BD.DataSets {
                 this.columnMae.MaxLength = 60;
                 this.columnEscola_Solicitada.MaxLength = 80;
                 this.columnData_Solicitacao.AllowDBNull = false;
+                this.columnEscola_Encaminhada.AllowDBNull = false;
                 this.columnEscola_Encaminhada.MaxLength = 80;
                 this.columnObservacoes.MaxLength = 500;
                 this.columnusuario.Caption = "Usuário";
@@ -11853,12 +11854,7 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Escola_Encaminhada {
                 get {
-                    try {
-                        return ((string)(this[this.tablevw_solicitacoes.Escola_EncaminhadaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Escola Encaminhada\' na tabela \'vw_solicitacoes\' é DBNull.", e);
-                    }
+                    return ((string)(this[this.tablevw_solicitacoes.Escola_EncaminhadaColumn]));
                 }
                 set {
                     this[this.tablevw_solicitacoes.Escola_EncaminhadaColumn] = value;
@@ -11995,10 +11991,10 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool possuiIrmao {
+            public sbyte possuiIrmao {
                 get {
                     try {
-                        return ((bool)(this[this.tablevw_solicitacoes.possuiIrmaoColumn]));
+                        return ((sbyte)(this[this.tablevw_solicitacoes.possuiIrmaoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'possuiIrmao\' na tabela \'vw_solicitacoes\' é DBNull.", e);
@@ -12103,18 +12099,6 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEscola_SolicitadaNull() {
                 this[this.tablevw_solicitacoes.Escola_SolicitadaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEscola_EncaminhadaNull() {
-                return this.IsNull(this.tablevw_solicitacoes.Escola_EncaminhadaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEscola_EncaminhadaNull() {
-                this[this.tablevw_solicitacoes.Escola_EncaminhadaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22038,96 +22022,15 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[9];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[12];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
-                         Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`, `possuiIrmao`
+            this._commandCollection[0].CommandText = @"SELECT        Solicitacao, `Nome do Aluno`, IdAluno, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, 
+                         Telefone1, Telefone2, Motivo, `Origem Solicitacao`, DataNasc, possuiIrmao
 FROM            vw_solicitacoes
-WHERE        (status = 1)
-ORDER BY `Solicitacao` DESC LIMIT 25";
+WHERE        (Motivo = @motivo) AND (status = 1) AND (anoReferencia = @anoReferencia)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`,  Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
-FROM            vw_solicitacoes
-WHERE        (status = 1) AND (finalizada = 0)
-ORDER BY `Solicitacao` DESC LIMIT 25";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, Solicitacao, Telefone1, Telefone2, idade, solicitante, usuario FROM vw_solicitacoes WHERE (status = 1) AND (codexpint = @codexpint) ORDER BY `Solicitacao` DESC";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@codexpint";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "codexpint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, `Origem Solicitacao`,DataNasc 
-FROM vw_solicitacoes
-WHERE (status = 1) AND DataNasc = @dtnasc";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dtnasc";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "DataNasc";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[3].Parameters.Add(param);
-            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT       `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo,`Origem Solicitacao`, DataNasc
-FROM            vw_solicitacoes
-WHERE        (IdAluno = @idaluno) AND (status = 1)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idaluno";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdAluno";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, `Origem Solicitacao`,DataNasc FROM vw_solicitacoes WHERE (`Solicitacao` = @idsolicitacao) AND (status = 1)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idsolicitacao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Solicitacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT       `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, `Origem Solicitacao`,DataNasc
-FROM            vw_solicitacoes
-WHERE        (Mae LIKE @nomemae) AND (status = 1)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nomemae";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 60;
-            param.IsNullable = true;
-            param.SourceColumn = "Mae";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[6].Parameters.Add(param);
-            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT       `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo,`Origem Solicitacao`, DataNasc
-FROM            vw_solicitacoes
-WHERE        (Motivo = @motivo) AND (status = 1)";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@motivo";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -22135,11 +22038,19 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
             param.IsNullable = true;
             param.SourceColumn = "Motivo";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[7].Parameters.Add(param);
-            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT`Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`, Telefone1, Telefone2, Motivo, `Origem Solicitacao`,DataNasc FROM vw_solicitacoes WHERE (`Nome do Aluno` LIKE @nomealuno) AND (status = 1)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (`Nome do Aluno` LIKE @nomealuno) AND (status = 1) AND (anoReferencia = @anoReferencia)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@nomealuno";
             param.DbType = global::System.Data.DbType.String;
@@ -22148,15 +22059,171 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
             param.IsNullable = true;
             param.SourceColumn = "Nome do Aluno";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (Mae LIKE @nomemae) AND (status = 1) AND (anoReferencia = @anoReferencia)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nomemae";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "Mae";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (Motivo = @motivo) AND (status = 1) AND (anoReferencia = @anoReferencia)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@motivo";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
+            param.IsNullable = true;
+            param.SourceColumn = "Motivo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoReferencia";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "anoReferencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        `Solicitacao`, `Nome do Aluno`, `IdAluno`, `Ano de Ensino`, Mae, Deficiencia, `Escola Solicitada`, `Data Solicitacao`, `Escola Encaminhada`, `Data Encaminhamento`, Observacoes, usuario, solicitante, idade, `Encaminhado Por`,  Telefone1, Telefone2, Motivo, DataNasc, `Origem Solicitacao`,`possuiIrmao`
+FROM            vw_solicitacoes
+WHERE        (status = 1) AND (finalizada = 0)
+ORDER BY `Solicitacao` DESC LIMIT 25";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (status = 1) AND (codexpint = @codexpint) ORDER BY Solicitacao DESC";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@codexpint";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "codexpint";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (status = 1) AND (DataNasc = @dtnasc)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dtnasc";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "DataNasc";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (IdAluno = @idaluno) AND (status = 1)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idaluno";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "IdAluno";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (Solicitacao = @idsolicitacao) AND (status = 1)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idsolicitacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Solicitacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (Mae LIKE @nomemae) AND (status = 1)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nomemae";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "Mae";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (Motivo = @motivo) AND (status = 1)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@motivo";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
+            param.IsNullable = true;
+            param.SourceColumn = "Motivo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            this._commandCollection[11] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = @"SELECT `Ano de Ensino`, `Data Encaminhamento`, `Data Solicitacao`, DataNasc, Deficiencia, `Encaminhado Por`, `Escola Encaminhada`, `Escola Solicitada`, IdAluno, Mae, Motivo, `Nome do Aluno`, Observacoes, `Origem Solicitacao`, Solicitacao, Telefone1, Telefone2, idade, possuiIrmao, solicitante, usuario FROM vw_solicitacoes WHERE (`Nome do Aluno` LIKE @nomealuno) AND (status = 1)";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nomealuno";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "Nome do Aluno";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[11].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ds_siesc.vw_solicitacoesDataTable dataTable) {
+        public virtual int Fill(ds_siesc.vw_solicitacoesDataTable dataTable, string motivo, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((motivo == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(motivo));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -22168,8 +22235,89 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ds_siesc.vw_solicitacoesDataTable GetData() {
+        public virtual ds_siesc.vw_solicitacoesDataTable GetData(string motivo, global::System.Nullable<int> anoReferencia) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((motivo == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(motivo));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ds_siesc.vw_solicitacoesDataTable GetByNomeAlunoAnoReferencia(string nomealuno, global::System.Nullable<int> anoReferencia) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((nomealuno == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nomealuno));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ds_siesc.vw_solicitacoesDataTable GetDataByMaeAnoReferencia(string nomemae, global::System.Nullable<int> anoReferencia) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nomemae == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nomemae));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ds_siesc.vw_solicitacoesDataTable GetDataByMotivoAnoReferencia(string motivo, global::System.Nullable<int> anoReferencia) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((motivo == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(motivo));
+            }
+            if ((anoReferencia.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(anoReferencia.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -22180,7 +22328,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable ListarSolicitacoes() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -22191,7 +22339,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByCodigoEI(global::System.Nullable<int> codexpint) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((codexpint.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codexpint.Value));
             }
@@ -22208,7 +22356,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByDataNasc(global::System.Nullable<global::System.DateTime> dtnasc) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((dtnasc.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dtnasc.Value));
             }
@@ -22225,7 +22373,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByIdAluno(global::System.Nullable<int> idaluno) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((idaluno.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idaluno.Value));
             }
@@ -22242,7 +22390,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByIdSolicitacao(int idsolicitacao) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idsolicitacao));
             ds_siesc.vw_solicitacoesDataTable dataTable = new ds_siesc.vw_solicitacoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -22254,7 +22402,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByMae(string nomemae) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             if ((nomemae == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -22271,7 +22419,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByMotivo(string motivo) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((motivo == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -22288,7 +22436,7 @@ WHERE        (Motivo = @motivo) AND (status = 1)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.vw_solicitacoesDataTable PesquisaByNomeAluno(string nomealuno) {
-            this.Adapter.SelectCommand = this.CommandCollection[8];
+            this.Adapter.SelectCommand = this.CommandCollection[11];
             if ((nomealuno == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }

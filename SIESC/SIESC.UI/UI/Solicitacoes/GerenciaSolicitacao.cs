@@ -63,8 +63,8 @@ namespace SIESC.UI.UI.Solicitacoes
 
         /// <summary>
         /// Construtora da classe
+        /// <param name="principalUi"></param>
         /// </summary>
-        /// <param name="principalUiUi">Formulário Principal</param>
         public GerenciaSolicitacao(Principal_UI principalUi)
         {
             InitializeComponent();
@@ -102,12 +102,11 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void GerenciaSolicitacao_Enter(object sender, EventArgs e)
         {
+
             if (navegacao != Navegacao.editando)
             {
                 HabilitaTextBox(localizar);
                 RepassaDadosControles();
-                
-
             }
             else
                 LocalizarSolicitacao();
@@ -168,23 +167,40 @@ namespace SIESC.UI.UI.Solicitacoes
                         dgv_solicitacoes.DataSource =
                             controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                         break;
+
                     case Localizar.nomeMae:
-                        dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text);
+                        if (chk_todoAnosConsulta.Checked)
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text, -1);
+                        else
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text,
+                                Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     case Localizar.nomeAluno:
-                        dgv_solicitacoes.DataSource = controleSolicitacoes.LocalizarSolicitAluno(txt_nomealuno.Text);
+
+                        if (chk_todoAnosConsulta.Checked)
+                            dgv_solicitacoes.DataSource =
+                                controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, -1);
+                        else
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text,
+                                Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     //case Localizar.codigoAluno:
                     //    dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
                     //    break;
                     case Localizar.codigoExpedienteInterno:
                         dgv_solicitacoes.DataSource =
-                            controleSolicitacoes.PesquisaCodigoExpedienteInterno(Convert.ToInt32(msk_codigoEI.Text));
+                            controleSolicitacoes.PesquisaCodigoExpedienteInterno(
+                                Convert.ToInt32(msk_codigoEI.Text));
                         break;
                     case Localizar.motivo:
-                        if (cbo_motivos.Text.Equals(string.Empty)) throw new Exception("Não foi selecionado motivo!");
+                        if (cbo_motivos.Text.Equals(string.Empty))
+                            throw new Exception("Não foi selecionado motivo!");
 
-                        dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text);
+                        if (chk_todoAnosConsulta.Checked)
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text, -1);
+                        else
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMotivo(cbo_motivos.Text,
+                                Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                 }
             }
@@ -232,7 +248,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// 
+        /// Limpa os camposd do formulário
         /// </summary>
         private void LimpaCampos()
         {
@@ -583,7 +599,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// 
+        /// Evento de clique duplo no dataGridView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -593,7 +609,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// 
+        /// Evento do botão de editar dados do aluno
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -601,7 +617,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-              if (!cbo_anoreferencia.Text.Equals(DateTime.Now.Year.ToString())&& !chk_todoAnosConsulta.Checked)
+                if (!cbo_anoreferencia.Text.Equals(DateTime.Now.Year.ToString()) && !chk_todoAnosConsulta.Checked)
                     throw new Exception("Não é permitido editar dados de alunos de anos anteriores.");
 
                 controleAluno = new AlunoControl();
@@ -717,9 +733,7 @@ namespace SIESC.UI.UI.Solicitacoes
             try
             {
                 if (!cbo_anoreferencia.Text.Equals(DateTime.Now.Year.ToString()) && !chk_todoAnosConsulta.Checked)
-                {
                     throw new Exception("Não é permitido imprimir encaminhamentos de transporte de anos anteriores.");
-                }
 
                 frm_encaminhamento_transporte frm_enca_transp =
                     new frm_encaminhamento_transporte((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y]
@@ -731,19 +745,13 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
 
                 Mensageiro.MensagemErro(ex, this);
             }
             finally
             {
-                if (t.IsAlive)
-                {
-                    t.Abort();
-                }
+                if (t.IsAlive) t.Abort();
             }
         }
         /// <summary>
@@ -753,10 +761,7 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void GerenciaSolicitacao_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btn_localizar_Click(sender, e);
-            }
+            if (e.KeyCode == Keys.Enter) btn_localizar_Click(sender, e);
         }
 
         /// <summary>
@@ -786,6 +791,8 @@ namespace SIESC.UI.UI.Solicitacoes
         private void chk_todoAnosConsulta_CheckedChanged(object sender, EventArgs e)
         {
             cbo_anoreferencia.Enabled = !chk_todoAnosConsulta.Checked;
+            LimpaCampos();
+            HabilitaTextBox(localizar);
         }
     }
 }

@@ -770,7 +770,7 @@ namespace SIESC.UI.UI.Sindicância
         {
             solicitacaoControl = new SolicitacaoControl();
 
-            DataTable dt = solicitacaoControl.LocalizarSolicitAluno(nomeAluno);
+            DataTable dt = solicitacaoControl.PesquisaNomeAluno(nomeAluno, -1);
 
             dgv_dados.DataSource = dt;
 

@@ -140,13 +140,16 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nomealuno"></param>
         /// <returns></returns>
-        public DataTable LocalizarSolicitAluno(string nomealuno)
+        public DataTable PesquisaNomeAluno(string nomealuno, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nomealuno + "%");
+                if (anoReferencia < 0)
+                    return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nomealuno + "%");
+               
+                return vw_SolicitacoesTA.GetByNomeAlunoAnoReferencia("%" + nomealuno + "%", anoReferencia);
             }
             catch (SqlException exception)
             {
@@ -246,13 +249,16 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nomemae">O nome da mãe para fazer a busca</param>
         /// <returns>um DataTable</returns>
-        public DataTable PesquisaMae(string nomeMae)
+        public DataTable PesquisaMae(string nomeMae, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByMae("%" + nomeMae + "%");
+                if (anoReferencia < 0)
+                    return vw_SolicitacoesTA.PesquisaByMae("%" + nomeMae + "%");   
+                    
+                return vw_SolicitacoesTA.GetDataByMaeAnoReferencia("%" + nomeMae + "%",anoReferencia);
             }
             catch (SqlException exception)
             {
@@ -300,13 +306,17 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="motivo"></param>
         /// <returns></returns>
-        public DataTable PesquisaMotivo(string motivo)
+        public DataTable PesquisaMotivo(string motivo, int anoReferencia)
         {
             try
-            {
+            {                    
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByMotivo(motivo);
+                if(anoReferencia <0)
+                    return vw_SolicitacoesTA.PesquisaByMotivo(motivo);
+
+                return vw_SolicitacoesTA.GetDataByMotivoAnoReferencia(motivo, anoReferencia);
+
             }
             catch (SqlException exception)
             {
