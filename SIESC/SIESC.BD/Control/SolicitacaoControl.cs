@@ -345,12 +345,12 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public DataTable ViewAlunoByNome(string nome)
+        public DataTable ViewAlunoByNome(string nome, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
-                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nome + "%");
+                return vw_SolicitacoesTA.GetByNomeAlunoAnoReferencia("%" + nome + "%", anoReferencia);
             }
             catch (SqlException exception)
             {

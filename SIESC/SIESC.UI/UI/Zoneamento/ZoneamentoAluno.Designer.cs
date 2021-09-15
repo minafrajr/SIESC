@@ -30,9 +30,14 @@ namespace SIESC.UI.UI.Zoneamento
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbo_anoReferencia = new SIESC.UI.Controles.MyComboBox();
+            this.periodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siescDataSet = new SIESC.UI.siescDataSet();
+            this.label7 = new System.Windows.Forms.Label();
             this.txt_endereço = new SIESC.UI.Controles.MyTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,10 +74,13 @@ namespace SIESC.UI.UI.Zoneamento
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_registros2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_zoneamento = new System.Windows.Forms.DataGridView();
+            this.periodoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.periodoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_raioBusca)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,6 +105,8 @@ namespace SIESC.UI.UI.Zoneamento
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cbo_anoReferencia);
+            this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.txt_endereço);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
@@ -120,6 +130,37 @@ namespace SIESC.UI.UI.Zoneamento
             this.splitContainer1.SplitterDistance = 132;
             this.splitContainer1.TabIndex = 0;
             // 
+            // cbo_anoReferencia
+            // 
+            this.cbo_anoReferencia.DataSource = this.periodoBindingSource;
+            this.cbo_anoReferencia.DisplayMember = "ano";
+            this.cbo_anoReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_anoReferencia.FormattingEnabled = true;
+            this.cbo_anoReferencia.Location = new System.Drawing.Point(552, 26);
+            this.cbo_anoReferencia.Name = "cbo_anoReferencia";
+            this.cbo_anoReferencia.Size = new System.Drawing.Size(69, 22);
+            this.cbo_anoReferencia.TabIndex = 43;
+            this.cbo_anoReferencia.ValueMember = "ano";
+            // 
+            // periodoBindingSource
+            // 
+            this.periodoBindingSource.DataMember = "periodo";
+            this.periodoBindingSource.DataSource = this.siescDataSet;
+            // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(549, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 14);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Ano Referência:";
+            // 
             // txt_endereço
             // 
             this.txt_endereço.Enabled = false;
@@ -142,7 +183,7 @@ namespace SIESC.UI.UI.Zoneamento
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(749, 24);
+            this.label5.Location = new System.Drawing.Point(836, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 23);
             this.label5.TabIndex = 40;
@@ -153,7 +194,7 @@ namespace SIESC.UI.UI.Zoneamento
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.rdb_ed_infantil);
             this.panel3.Controls.Add(this.rdb_ens_fundamental);
-            this.panel3.Location = new System.Drawing.Point(561, 5);
+            this.panel3.Location = new System.Drawing.Point(639, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(131, 72);
             this.panel3.TabIndex = 39;
@@ -195,7 +236,7 @@ namespace SIESC.UI.UI.Zoneamento
             this.nud_raioBusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nud_raioBusca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_raioBusca.ForeColor = System.Drawing.Color.Blue;
-            this.nud_raioBusca.Location = new System.Drawing.Point(739, 26);
+            this.nud_raioBusca.Location = new System.Drawing.Point(826, 24);
             this.nud_raioBusca.Maximum = new decimal(new int[] {
             8,
             0,
@@ -221,7 +262,7 @@ namespace SIESC.UI.UI.Zoneamento
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(689, 24);
+            this.label2.Location = new System.Drawing.Point(776, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 23);
             this.label2.TabIndex = 37;
@@ -232,7 +273,7 @@ namespace SIESC.UI.UI.Zoneamento
             this.panel2.Controls.Add(this.rdb_codigo_sol);
             this.panel2.Controls.Add(this.rdb_data);
             this.panel2.Controls.Add(this.rdb_nome);
-            this.panel2.Location = new System.Drawing.Point(562, 84);
+            this.panel2.Location = new System.Drawing.Point(552, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(308, 38);
             this.panel2.TabIndex = 36;
@@ -336,9 +377,9 @@ namespace SIESC.UI.UI.Zoneamento
             this.panel1.Controls.Add(this.btn_localizarcoordenadas);
             this.panel1.Controls.Add(this.btn_zonearAluno);
             this.panel1.Controls.Add(this.btn_localizarAluno);
-            this.panel1.Location = new System.Drawing.Point(813, 3);
+            this.panel1.Location = new System.Drawing.Point(914, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 75);
+            this.panel1.Size = new System.Drawing.Size(310, 75);
             this.panel1.TabIndex = 34;
             // 
             // btn_maps
@@ -462,14 +503,14 @@ namespace SIESC.UI.UI.Zoneamento
             this.splitContainer2.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer2.Panel2.Controls.Add(this.dgv_zoneamento);
             this.splitContainer2.Size = new System.Drawing.Size(1227, 451);
-            this.splitContainer2.SplitterDistance = 119;
+            this.splitContainer2.SplitterDistance = 123;
             this.splitContainer2.TabIndex = 2;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbl_num_registros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 97);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 101);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1227, 22);
             this.statusStrip1.TabIndex = 2;
@@ -513,7 +554,7 @@ namespace SIESC.UI.UI.Zoneamento
             // 
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbl_num_registros2});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 306);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 302);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(1227, 22);
             this.statusStrip2.TabIndex = 1;
@@ -553,6 +594,10 @@ namespace SIESC.UI.UI.Zoneamento
             this.dgv_zoneamento.TabStop = false;
             this.dgv_zoneamento.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_zoneamento_DataBindingComplete);
             // 
+            // periodoTableAdapter
+            // 
+            this.periodoTableAdapter.ClearBeforeFill = true;
+            // 
             // ZoneamentoAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -566,6 +611,8 @@ namespace SIESC.UI.UI.Zoneamento
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_raioBusca)).EndInit();
@@ -629,5 +676,10 @@ namespace SIESC.UI.UI.Zoneamento
 		private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
 		private System.Windows.Forms.StatusStrip statusStrip2;
 		private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros2;
-	}
+        private MyComboBox cbo_anoReferencia;
+        private System.Windows.Forms.Label label7;
+        private siescDataSet siescDataSet;
+        private System.Windows.Forms.BindingSource periodoBindingSource;
+        private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
+    }
 }

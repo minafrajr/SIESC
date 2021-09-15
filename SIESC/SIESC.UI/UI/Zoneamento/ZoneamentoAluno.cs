@@ -60,6 +60,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// <param name="e"></param>
         private void Zoneamento_Load(object sender,EventArgs e)
         {
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
             txt_codigo.Focus();
         }
         /// <summary>
@@ -262,7 +263,7 @@ namespace SIESC.UI.UI.Zoneamento
                     if (string.IsNullOrEmpty(txt_nomealuno.Text))
                         throw new Exception("Digite o NOME do aluno para localizá-lo");
 
-                    return controleSolicitacao.ViewAlunoByNome(txt_nomealuno.Text);
+                    return controleSolicitacao.ViewAlunoByNome(txt_nomealuno.Text, Convert.ToInt32(cbo_anoReferencia.SelectedValue));
                 }
                 //if (rdb_codigo.Checked)
                 //{

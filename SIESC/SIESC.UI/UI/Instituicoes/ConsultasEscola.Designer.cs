@@ -39,42 +39,42 @@
 			this.btn_copiarEmail = new System.Windows.Forms.Button();
 			this.txt_email = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
-			this.lbl_bairro = new System.Windows.Forms.Label();
+			this.lbl_bairro = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.lbl_regional = new System.Windows.Forms.Label();
+			this.lbl_regional = new System.Windows.Forms.TextBox();
 			this.lbl_escola = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.lbl_endereco = new System.Windows.Forms.Label();
-			this.lbl_telefone = new System.Windows.Forms.Label();
-			this.lbl_nomeescola = new System.Windows.Forms.Label();
+			this.lbl_endereco = new System.Windows.Forms.TextBox();
+			this.lbl_telefone = new System.Windows.Forms.TextBox();
+			this.lbl_nomeescola = new System.Windows.Forms.TextBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.label3 = new System.Windows.Forms.Label();
-			this.lbl_diretor = new System.Windows.Forms.Label();
+			this.lbl_diretor = new System.Windows.Forms.TextBox();
 			this.instituicoesTableAdapter = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
 			this.spct_sub1 = new System.Windows.Forms.SplitContainer();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.lstv_anosensino = new System.Windows.Forms.ListView();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.label19 = new System.Windows.Forms.Label();
-			this.lbl_telefonediretor = new System.Windows.Forms.Label();
-			this.lbl_numautorizacaoDIR = new System.Windows.Forms.Label();
+			this.lbl_telefonediretor = new System.Windows.Forms.TextBox();
+			this.lbl_numautorizacaoDIR = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.lbl_datavalidadeDiretor = new System.Windows.Forms.Label();
 			this.lbl_datavalidadeSecretario = new System.Windows.Forms.Label();
-			this.lbl_numautorizacaoSER = new System.Windows.Forms.Label();
-			this.lbl_telefonesecretario = new System.Windows.Forms.Label();
+			this.lbl_numautorizacaoSER = new System.Windows.Forms.TextBox();
+			this.lbl_telefonesecretario = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.lbl_secretario = new System.Windows.Forms.Label();
+			this.lbl_secretario = new System.Windows.Forms.TextBox();
 			this.lbl_secretario2 = new System.Windows.Forms.Label();
-			this.lbl_responsdiretoria = new System.Windows.Forms.Label();
+			this.lbl_responsdiretoria = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.lbl_teldir = new System.Windows.Forms.Label();
+			this.lbl_teldir = new System.Windows.Forms.TextBox();
 			this.lbl_diretoria = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
@@ -194,17 +194,20 @@
 			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.Location = new System.Drawing.Point(2, 124);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(59, 16);
+			this.label14.Size = new System.Drawing.Size(56, 16);
 			this.label14.TabIndex = 11;
 			this.label14.Text = "E-mail:";
 			// 
 			// lbl_bairro
 			// 
-			this.lbl_bairro.AutoSize = true;
+			this.lbl_bairro.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_bairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_bairro.Location = new System.Drawing.Point(58, 53);
+			this.lbl_bairro.Multiline = true;
 			this.lbl_bairro.Name = "lbl_bairro";
-			this.lbl_bairro.Size = new System.Drawing.Size(14, 15);
+			this.lbl_bairro.ReadOnly = true;
+			this.lbl_bairro.Size = new System.Drawing.Size(371, 20);
 			this.lbl_bairro.TabIndex = 9;
 			this.lbl_bairro.Text = "_";
 			// 
@@ -214,7 +217,7 @@
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(2, 53);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(56, 16);
+			this.label5.Size = new System.Drawing.Size(54, 16);
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Bairro:";
 			// 
@@ -224,7 +227,7 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(2, 30);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(81, 16);
+			this.label1.Size = new System.Drawing.Size(79, 16);
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Endereço:";
 			// 
@@ -234,27 +237,29 @@
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(2, 99);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(83, 16);
+			this.label2.Size = new System.Drawing.Size(82, 16);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Telefones:";
 			// 
 			// lbl_regional
 			// 
-			this.lbl_regional.AutoSize = true;
+			this.lbl_regional.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_regional.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_regional.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_regional.Location = new System.Drawing.Point(77, 76);
+			this.lbl_regional.Multiline = true;
 			this.lbl_regional.Name = "lbl_regional";
-			this.lbl_regional.Size = new System.Drawing.Size(14, 15);
+			this.lbl_regional.ReadOnly = true;
+			this.lbl_regional.Size = new System.Drawing.Size(352, 20);
 			this.lbl_regional.TabIndex = 11;
 			this.lbl_regional.Text = "_";
 			// 
 			// lbl_escola
 			// 
-			this.lbl_escola.AutoSize = true;
 			this.lbl_escola.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_escola.Location = new System.Drawing.Point(2, 7);
 			this.lbl_escola.Name = "lbl_escola";
-			this.lbl_escola.Size = new System.Drawing.Size(84, 16);
+			this.lbl_escola.Size = new System.Drawing.Size(84, 22);
 			this.lbl_escola.TabIndex = 4;
 			this.lbl_escola.Text = "Instituição:";
 			// 
@@ -264,37 +269,46 @@
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.Location = new System.Drawing.Point(2, 76);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(77, 16);
+			this.label8.Size = new System.Drawing.Size(75, 16);
 			this.label8.TabIndex = 10;
 			this.label8.Text = "Regional:";
 			// 
 			// lbl_endereco
 			// 
-			this.lbl_endereco.AutoSize = true;
+			this.lbl_endereco.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_endereco.Location = new System.Drawing.Point(83, 30);
+			this.lbl_endereco.Multiline = true;
 			this.lbl_endereco.Name = "lbl_endereco";
-			this.lbl_endereco.Size = new System.Drawing.Size(14, 15);
+			this.lbl_endereco.ReadOnly = true;
+			this.lbl_endereco.Size = new System.Drawing.Size(346, 20);
 			this.lbl_endereco.TabIndex = 3;
 			this.lbl_endereco.Text = "_";
 			// 
 			// lbl_telefone
 			// 
-			this.lbl_telefone.AutoSize = true;
+			this.lbl_telefone.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_telefone.Location = new System.Drawing.Point(88, 98);
+			this.lbl_telefone.Multiline = true;
 			this.lbl_telefone.Name = "lbl_telefone";
-			this.lbl_telefone.Size = new System.Drawing.Size(14, 15);
+			this.lbl_telefone.ReadOnly = true;
+			this.lbl_telefone.Size = new System.Drawing.Size(341, 20);
 			this.lbl_telefone.TabIndex = 2;
 			this.lbl_telefone.Text = "_";
 			// 
 			// lbl_nomeescola
 			// 
-			this.lbl_nomeescola.AutoSize = true;
+			this.lbl_nomeescola.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_nomeescola.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_nomeescola.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_nomeescola.Location = new System.Drawing.Point(87, 7);
+			this.lbl_nomeescola.Multiline = true;
 			this.lbl_nomeescola.Name = "lbl_nomeescola";
-			this.lbl_nomeescola.Size = new System.Drawing.Size(14, 15);
+			this.lbl_nomeescola.ReadOnly = true;
+			this.lbl_nomeescola.Size = new System.Drawing.Size(342, 20);
 			this.lbl_nomeescola.TabIndex = 0;
 			this.lbl_nomeescola.Text = "_";
 			// 
@@ -325,17 +339,20 @@
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.Location = new System.Drawing.Point(4, 7);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(82, 16);
+			this.label3.Size = new System.Drawing.Size(78, 16);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Diretor(a):";
 			// 
 			// lbl_diretor
 			// 
-			this.lbl_diretor.AutoSize = true;
+			this.lbl_diretor.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_diretor.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_diretor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_diretor.Location = new System.Drawing.Point(83, 7);
+			this.lbl_diretor.Multiline = true;
 			this.lbl_diretor.Name = "lbl_diretor";
-			this.lbl_diretor.Size = new System.Drawing.Size(14, 15);
+			this.lbl_diretor.ReadOnly = true;
+			this.lbl_diretor.Size = new System.Drawing.Size(411, 20);
 			this.lbl_diretor.TabIndex = 1;
 			this.lbl_diretor.Text = "_";
 			// 
@@ -423,27 +440,33 @@
 			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label19.Location = new System.Drawing.Point(4, 106);
 			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(75, 16);
+			this.label19.Size = new System.Drawing.Size(74, 16);
 			this.label19.TabIndex = 20;
 			this.label19.Text = "Telefone:";
 			// 
 			// lbl_telefonediretor
 			// 
-			this.lbl_telefonediretor.AutoSize = true;
+			this.lbl_telefonediretor.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_telefonediretor.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_telefonediretor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_telefonediretor.Location = new System.Drawing.Point(76, 26);
+			this.lbl_telefonediretor.Multiline = true;
 			this.lbl_telefonediretor.Name = "lbl_telefonediretor";
-			this.lbl_telefonediretor.Size = new System.Drawing.Size(14, 15);
+			this.lbl_telefonediretor.ReadOnly = true;
+			this.lbl_telefonediretor.Size = new System.Drawing.Size(418, 20);
 			this.lbl_telefonediretor.TabIndex = 19;
 			this.lbl_telefonediretor.Text = "_";
 			// 
 			// lbl_numautorizacaoDIR
 			// 
-			this.lbl_numautorizacaoDIR.AutoSize = true;
+			this.lbl_numautorizacaoDIR.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_numautorizacaoDIR.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_numautorizacaoDIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_numautorizacaoDIR.Location = new System.Drawing.Point(114, 45);
+			this.lbl_numautorizacaoDIR.Multiline = true;
 			this.lbl_numautorizacaoDIR.Name = "lbl_numautorizacaoDIR";
-			this.lbl_numautorizacaoDIR.Size = new System.Drawing.Size(14, 15);
+			this.lbl_numautorizacaoDIR.ReadOnly = true;
+			this.lbl_numautorizacaoDIR.Size = new System.Drawing.Size(380, 20);
 			this.lbl_numautorizacaoDIR.TabIndex = 1;
 			this.lbl_numautorizacaoDIR.Text = "_";
 			// 
@@ -453,7 +476,7 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(4, 26);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(75, 16);
+			this.label4.Size = new System.Drawing.Size(74, 16);
 			this.label4.TabIndex = 18;
 			this.label4.Text = "Telefone:";
 			// 
@@ -479,21 +502,27 @@
 			// 
 			// lbl_numautorizacaoSER
 			// 
-			this.lbl_numautorizacaoSER.AutoSize = true;
+			this.lbl_numautorizacaoSER.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_numautorizacaoSER.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_numautorizacaoSER.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_numautorizacaoSER.Location = new System.Drawing.Point(114, 126);
+			this.lbl_numautorizacaoSER.Multiline = true;
 			this.lbl_numautorizacaoSER.Name = "lbl_numautorizacaoSER";
-			this.lbl_numautorizacaoSER.Size = new System.Drawing.Size(14, 15);
+			this.lbl_numautorizacaoSER.ReadOnly = true;
+			this.lbl_numautorizacaoSER.Size = new System.Drawing.Size(381, 20);
 			this.lbl_numautorizacaoSER.TabIndex = 1;
 			this.lbl_numautorizacaoSER.Text = "_";
 			// 
 			// lbl_telefonesecretario
 			// 
-			this.lbl_telefonesecretario.AutoSize = true;
+			this.lbl_telefonesecretario.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_telefonesecretario.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_telefonesecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_telefonesecretario.Location = new System.Drawing.Point(79, 106);
+			this.lbl_telefonesecretario.Multiline = true;
 			this.lbl_telefonesecretario.Name = "lbl_telefonesecretario";
-			this.lbl_telefonesecretario.Size = new System.Drawing.Size(14, 15);
+			this.lbl_telefonesecretario.ReadOnly = true;
+			this.lbl_telefonesecretario.Size = new System.Drawing.Size(392, 20);
 			this.lbl_telefonesecretario.TabIndex = 21;
 			this.lbl_telefonesecretario.Text = "_";
 			// 
@@ -503,7 +532,7 @@
 			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label17.Location = new System.Drawing.Point(4, 65);
 			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(116, 16);
+			this.label17.Size = new System.Drawing.Size(112, 16);
 			this.label17.TabIndex = 12;
 			this.label17.Text = "Data Validade:";
 			// 
@@ -513,7 +542,7 @@
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(4, 126);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(115, 16);
+			this.label9.Size = new System.Drawing.Size(112, 16);
 			this.label9.TabIndex = 12;
 			this.label9.Text = "Autorização nº:";
 			// 
@@ -523,7 +552,7 @@
 			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label15.Location = new System.Drawing.Point(4, 146);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(116, 16);
+			this.label15.Size = new System.Drawing.Size(112, 16);
 			this.label15.TabIndex = 12;
 			this.label15.Text = "Data Validade:";
 			// 
@@ -533,39 +562,38 @@
 			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label13.Location = new System.Drawing.Point(4, 45);
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(115, 16);
+			this.label13.Size = new System.Drawing.Size(112, 16);
 			this.label13.TabIndex = 12;
 			this.label13.Text = "Autorização nº:";
 			// 
 			// lbl_secretario
 			// 
-			this.lbl_secretario.AutoSize = true;
+			this.lbl_secretario.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.lbl_secretario.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.lbl_secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_secretario.Location = new System.Drawing.Point(107, 88);
+			this.lbl_secretario.Location = new System.Drawing.Point(106, 88);
+			this.lbl_secretario.Multiline = true;
 			this.lbl_secretario.Name = "lbl_secretario";
-			this.lbl_secretario.Size = new System.Drawing.Size(14, 15);
+			this.lbl_secretario.ReadOnly = true;
+			this.lbl_secretario.Size = new System.Drawing.Size(388, 20);
 			this.lbl_secretario.TabIndex = 14;
 			this.lbl_secretario.Text = "_";
-			this.lbl_secretario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbl_secretario2
 			// 
-			this.lbl_secretario2.AutoSize = true;
 			this.lbl_secretario2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_secretario2.Location = new System.Drawing.Point(4, 88);
 			this.lbl_secretario2.Name = "lbl_secretario2";
-			this.lbl_secretario2.Size = new System.Drawing.Size(107, 16);
+			this.lbl_secretario2.Size = new System.Drawing.Size(107, 22);
 			this.lbl_secretario2.TabIndex = 13;
 			this.lbl_secretario2.Text = "Secretario(a):";
-			this.lbl_secretario2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbl_responsdiretoria
 			// 
-			this.lbl_responsdiretoria.AutoSize = true;
 			this.lbl_responsdiretoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_responsdiretoria.Location = new System.Drawing.Point(793, 240);
 			this.lbl_responsdiretoria.Name = "lbl_responsdiretoria";
-			this.lbl_responsdiretoria.Size = new System.Drawing.Size(15, 16);
+			this.lbl_responsdiretoria.Size = new System.Drawing.Size(15, 22);
 			this.lbl_responsdiretoria.TabIndex = 9;
 			this.lbl_responsdiretoria.Text = "_";
 			this.lbl_responsdiretoria.Visible = false;
@@ -583,11 +611,10 @@
 			// 
 			// lbl_teldir
 			// 
-			this.lbl_teldir.AutoSize = true;
 			this.lbl_teldir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_teldir.Location = new System.Drawing.Point(807, 258);
 			this.lbl_teldir.Name = "lbl_teldir";
-			this.lbl_teldir.Size = new System.Drawing.Size(15, 16);
+			this.lbl_teldir.Size = new System.Drawing.Size(15, 22);
 			this.lbl_teldir.TabIndex = 7;
 			this.lbl_teldir.Text = "_";
 			this.lbl_teldir.Visible = false;
@@ -784,34 +811,34 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.ListBox lstb_escolas;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label lbl_telefone;
-		private System.Windows.Forms.Label lbl_diretor;
-		private System.Windows.Forms.Label lbl_nomeescola;
+		private System.Windows.Forms.TextBox lbl_telefone;
+		private System.Windows.Forms.TextBox lbl_diretor;
+		private System.Windows.Forms.TextBox lbl_nomeescola;
 		private siescDataSet siescDataSet;
 		private System.Windows.Forms.BindingSource instituicoesBindingSource;
 		private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
 		private System.Windows.Forms.SplitContainer spct_sub1;
-		private System.Windows.Forms.Label lbl_endereco;
+		private System.Windows.Forms.TextBox lbl_endereco;
 		private System.Windows.Forms.Label lbl_escola;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.SplitContainer spct_main;
-		private System.Windows.Forms.Label lbl_bairro;
+		private System.Windows.Forms.TextBox lbl_bairro;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label lbl_diretoria;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label lbl_responsdiretoria;
+		private System.Windows.Forms.TextBox lbl_responsdiretoria;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label lbl_regional;
+		private System.Windows.Forms.TextBox lbl_regional;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label lbl_secretario;
+		private System.Windows.Forms.TextBox lbl_secretario;
 		private System.Windows.Forms.Label lbl_secretario2;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label lbl_numautorizacaoSER;
-		private System.Windows.Forms.Label lbl_numautorizacaoDIR;
-		private System.Windows.Forms.Label lbl_teldir;
+		private System.Windows.Forms.TextBox lbl_numautorizacaoSER;
+		private System.Windows.Forms.TextBox lbl_numautorizacaoDIR;
+		private System.Windows.Forms.TextBox lbl_teldir;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label17;
@@ -830,9 +857,9 @@
 		private System.Windows.Forms.Button btn_copiarEmail;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.Button btn_editarescola;
-		private System.Windows.Forms.Label lbl_telefonesecretario;
+		private System.Windows.Forms.TextBox lbl_telefonesecretario;
 		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.Label lbl_telefonediretor;
+		private System.Windows.Forms.TextBox lbl_telefonediretor;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.ListView lstv_anosensino;
