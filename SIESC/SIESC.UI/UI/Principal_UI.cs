@@ -771,8 +771,10 @@ namespace SIESC.UI
 				{
 					if (mdiChild.GetType() == typeof(GerenciaSolicitacao))
 					{
+						if (t.IsAlive) t.Abort();
 						mdiChild.WindowState = FormWindowState.Maximized;
 						mdiChild.Focus();
+						
 						return;
 					}
 				}
