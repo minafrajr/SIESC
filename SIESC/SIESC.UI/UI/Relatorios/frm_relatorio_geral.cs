@@ -298,7 +298,7 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 31:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\rpt_num_solicitaco_origem.rdlc";
-                    dt = this.vw_origem_solicitacaoTableAdapter1.GetDataGeral();
+                    dt = this.vw_origem_solicitacaoTableAdapter1.GetDataGeral(anoReferencia);
                     break;
                     ;
 
