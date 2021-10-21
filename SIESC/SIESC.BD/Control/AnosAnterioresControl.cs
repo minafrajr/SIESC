@@ -52,7 +52,7 @@ namespace SIESC.BD.Control
 					case "codigoSolicitacao":
 						parametros = "solicitacoesvagas.idSolicitacoesVagas = " + param;
 						break;
-					case "NomeMae":
+					case "nomeMae":
 						parametros = "alunos.nomeMaeAluno LIKE " + "'%" + param + "%'";
 						break;
 					case "nomeAluno":
@@ -74,7 +74,7 @@ namespace SIESC.BD.Control
 					case "codigoSolicitacao":
 						parametros = "Insc = " + param;
 						break;
-					case "NomeMae":
+					case "nomeMae":
 						parametros = "Respons LIKE " + "'%" + param + "%'";
 						break;
 					case "nomeAluno":

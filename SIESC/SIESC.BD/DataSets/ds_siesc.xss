@@ -70,7 +70,7 @@
       </RoutePoints>
     </Connector>
     <Connector ID="DesignRelation:instituicoes_regionais" ZOrder="9" LineWidth="11">
-      <RoutePoints>
+     <RoutePoints>
         <Point>
           <X>766</X>
           <Y>589</Y>
@@ -182,7 +182,7 @@
       </RoutePoints>
     </Connector>
     <Connector ID="DesignRelation:fk_SolicitacoesVagas_Ano1" ZOrder="15" LineWidth="11">
-      <RoutePoints>
+     <RoutePoints>
         <Point>
           <X>-1066</X>
           <Y>754</Y>

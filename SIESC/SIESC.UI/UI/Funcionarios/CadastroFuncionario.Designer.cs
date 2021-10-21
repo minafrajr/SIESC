@@ -30,6 +30,7 @@ namespace SIESC.UI.UI.Funcionarios
 		/// </summary>
 		private void InitializeComponent()
 		{
+
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFuncionario));
 			this.lbl_tituloform = new System.Windows.Forms.Label();
@@ -768,6 +769,7 @@ namespace SIESC.UI.UI.Funcionarios
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
+
 		}
 
 		#endregion
@@ -832,5 +834,6 @@ namespace SIESC.UI.UI.Funcionarios
 		private System.Windows.Forms.Button btn_limpar_cbo_cargoOrigem;
 		private System.Windows.Forms.Button btn_limpar_cbo_cargoAtual;
 		private System.Windows.Forms.Button btn_saberCep;
-	}
+        private System.Windows.Forms.Label label5;
+    }
 }
