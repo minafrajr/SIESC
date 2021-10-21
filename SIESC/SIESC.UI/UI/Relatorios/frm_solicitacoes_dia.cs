@@ -30,6 +30,12 @@ namespace SIESC.UI.UI.Relatorios
         /// nivel de ensino
         /// </summary>
         private int nivel_ensino;
+
+        /// <summary>
+        /// O ano letivo para consulta 
+        /// </summary>
+        private int anoReferencia;
+
         /// <summary>
         /// Construtor da classe
         /// </summary>
@@ -51,6 +57,7 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="e"></param>
         private void Relatorio2_Load(object sender,EventArgs e)
         {
+           this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
             msk_datafinal.Text = DateTime.Now.ToShortDateString();
 
         }
@@ -70,13 +77,13 @@ namespace SIESC.UI.UI.Relatorios
                 switch (nivel_ensino)
                 {
                     case 1:
-                        dt = this.vw_solicitacoes_por_dia_infantilTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text));
+                        dt = this.vw_solicitacoes_por_dia_infantilTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text),anoReferencia);
                         break;
                     case 2:
-                        dt = this.vw_solicitacoes_por_dia_fundamentalTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text));
+                        dt = this.vw_solicitacoes_por_dia_fundamentalTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text),anoReferencia);
                         break;
                     case 3:
-                        dt = this.vw_solicitacoes_por_diaTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text));
+                        dt = this.vw_solicitacoes_por_diaTableAdapter1.GetDataByFiltroDia(Convert.ToDateTime(msk_datainicial.Text),Convert.ToDateTime(msk_datafinal.Text),anoReferencia);
                         break;
                 }
 
@@ -169,18 +176,20 @@ namespace SIESC.UI.UI.Relatorios
             var t = CarregaProgressoThread();
             try
             {
+
+                anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
                 DataTable dt = null;
 
                 switch (nivel_ensino)
                 {
                     case 1:
-                        dt = this.vw_solicitacoes_por_dia_infantilTableAdapter1.GetData();
+                        dt = this.vw_solicitacoes_por_dia_infantilTableAdapter1.GetData(anoReferencia);
                         break;
                     case 2:
-                        dt = this.vw_solicitacoes_por_dia_fundamentalTableAdapter1.GetData();
+                        dt = this.vw_solicitacoes_por_dia_fundamentalTableAdapter1.GetData(anoReferencia);
                         break;
                     case 3:
-                        dt = this.vw_solicitacoes_por_diaTableAdapter1.GetData();
+                        dt = this.vw_solicitacoes_por_diaTableAdapter1.GetData(anoReferencia);
                         break;
                 }
 

@@ -306,15 +306,17 @@
             // 
             this.cadastrarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+           this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+           this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
-            this.consultarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources.Question2;
+
+            this.consultarToolStripMenuItem.Image = global::SIESC.UI.Properties.Resources._1431676741_How_to;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -322,7 +324,8 @@
             // 
             this.gerenciarToolStripMenuItem3.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.gerenciarToolStripMenuItem3.Name = "gerenciarToolStripMenuItem3";
-            this.gerenciarToolStripMenuItem3.Size = new System.Drawing.Size(196, 38);
+
+            this.gerenciarToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
             this.gerenciarToolStripMenuItem3.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem3.Click += new System.EventHandler(this.gerenciarToolStripMenuItem3_Click);
             // 
@@ -330,7 +333,9 @@
             // 
             this.tsm_listarEmails.Image = global::SIESC.UI.Properties.Resources.mail;
             this.tsm_listarEmails.Name = "tsm_listarEmails";
-            this.tsm_listarEmails.Size = new System.Drawing.Size(196, 38);
+
+            this.tsm_listarEmails.Size = new System.Drawing.Size(140, 22);
+
             this.tsm_listarEmails.Text = "Lista E-mails";
             this.tsm_listarEmails.Click += new System.EventHandler(this.tsm_listarEmails_Click);
             // 
@@ -426,14 +431,15 @@
             // 
             this.tsmi_solicitar.Image = global::SIESC.UI.Properties.Resources._1431666478_app_48;
             this.tsmi_solicitar.Name = "tsmi_solicitar";
-            this.tsmi_solicitar.Size = new System.Drawing.Size(196, 22);
+           this.tsmi_solicitar.Size = new System.Drawing.Size(212, 38);
             this.tsmi_solicitar.Text = "Solicitar Vaga";
             this.tsmi_solicitar.Click += new System.EventHandler(this.tsmi_solicitar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
+
+            this.toolStripSeparator1.Size = new System.Drawing.Size(209, 6);
             // 
             // toolStripTextBox3
             // 
@@ -450,7 +456,8 @@
             // 
             this.tsm_solicitacoes_.Image = global::SIESC.UI.Properties.Resources.Tools;
             this.tsm_solicitacoes_.Name = "tsm_solicitacoes_";
-            this.tsm_solicitacoes_.Size = new System.Drawing.Size(196, 22);
+
+            this.tsm_solicitacoes_.Size = new System.Drawing.Size(212, 38);
             this.tsm_solicitacoes_.Text = "Gerenciar Solicitações";
             this.tsm_solicitacoes_.Click += new System.EventHandler(this.tsm_solicitacoes__Click);
             // 
@@ -458,7 +465,8 @@
             // 
             this.tsm_motivos_.Image = global::SIESC.UI.Properties.Resources._1431668763_list_alt_32;
             this.tsm_motivos_.Name = "tsm_motivos_";
-            this.tsm_motivos_.Size = new System.Drawing.Size(196, 22);
+
+            this.tsm_motivos_.Size = new System.Drawing.Size(212, 38);
             this.tsm_motivos_.Text = "Motivos";
             this.tsm_motivos_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.tsm_motivos_.Click += new System.EventHandler(this.tsm_motivos_Click);

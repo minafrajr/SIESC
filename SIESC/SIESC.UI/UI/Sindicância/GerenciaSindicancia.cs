@@ -16,7 +16,7 @@ namespace SIESC.UI.UI.Sindicância
     /// <summary>
     /// Formulário de gerenciamento das sindicâncias
     /// </summary>
-    public partial class GerenciaSindicancia : SIESC.UI.BaseUi
+    public partial class GerenciaSindicancia  : BaseUi
     {
         /// <summary>
         /// Objeto da UI da tela principal do sistema
@@ -44,6 +44,11 @@ namespace SIESC.UI.UI.Sindicância
         private List<Sindicancia> listaOfSindicancias;
 
         /// <summary>
+        /// O ano de referencia para consulta
+        /// </summary>
+        private int anoReferencia;
+
+        /// <summary>
         /// Construtor da classe
         /// </summary>
         /// <param name="principal"></param>
@@ -60,7 +65,9 @@ namespace SIESC.UI.UI.Sindicância
         /// <param name="e"></param>
         private void GerenciaSindicancia_Load(object sender, EventArgs e)
         {
-            tipoConsulta = TipoConsulta.geral;
+            
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
+            tipoConsulta = TipoConsulta.geral; 
             CarregaGridView();
         }
         /// <summary>
@@ -70,13 +77,18 @@ namespace SIESC.UI.UI.Sindicância
         {
             try
             {
+                anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
                 sindicanciaControl = new SindicanciaControl();
                 
-                lbl_id_ultima_sindicada.Text = sindicanciaControl.MaximoIdSolicitacao();
+                string ultimaId = sindicanciaControl.MaximoIdSolicitacao(anoReferencia);
 
-
-                if (!string.IsNullOrEmpty(lbl_id_ultima_sindicada.Text))
-                    nupd_cod_solicitacao.Value = Convert.ToDecimal(lbl_id_ultima_sindicada.Text);
+                if (!string.IsNullOrEmpty(ultimaId))
+                {
+                    lbl_id_ultima_sindicada.Text = $@"{ultimaId.Substring(0, 4)}/{ultimaId.Substring(4, ultimaId.Length - 4)}";
+                    
+                    nupd_cod_solicitacao.Value = Convert.ToDecimal(ultimaId);
+                }
             }
             catch (Exception ex)
             {
@@ -91,7 +103,6 @@ namespace SIESC.UI.UI.Sindicância
         private void cbo_regionais_DropDown(object sender, EventArgs e)
         {
             this.regionaisTableAdapter.Fill(this.siescDataSet.regionais);
-
         }
         /// <summary>
         /// Carrega o controle DropDownBox com os anos de ensino
@@ -168,6 +179,8 @@ namespace SIESC.UI.UI.Sindicância
         {
             try
             {
+                anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
                 DataTable dt = null;
                 sindicanciaControl = new SindicanciaControl();
 
@@ -179,53 +192,53 @@ namespace SIESC.UI.UI.Sindicância
                     case TipoConsulta.ano:
                         if (cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByAnoEnsino(cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByAnoEnsino(cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.escola:
                         if (cbo_escola.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByInstituicao(cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByInstituicao(cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.regional:
                         if (cbo_regionais.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegional(cbo_regionais.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegional(cbo_regionais.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.geral:
 
-                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                        dt = sindicanciaControl.GetTodos(rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
 
                         break;
                     case TipoConsulta.regional_ano:
                         if (cbo_regionais.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegionalAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegionalAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.regional_escola:
                         if (cbo_escola.SelectedValue != null && cbo_regionais.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByRegionalInstituicao(cbo_regionais.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.escola_ano:
                         if (cbo_escola.SelectedValue != null && cbo_anoensino.SelectedValue != null)
                         {
-                            dt = sindicanciaControl.GetByInstituicaoAnoEnsino(cbo_escola.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                            dt = sindicanciaControl.GetByInstituicaoAnoEnsino(cbo_escola.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         }
 
                         break;
                     case TipoConsulta.regional_ano_escola:
 
-                        dt = sindicanciaControl.GetByRegionalInstituicaoAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value);
+                        dt = sindicanciaControl.GetByRegionalInstituicaoAnoEnsino(cbo_regionais.SelectedValue.ToString(), cbo_anoensino.SelectedValue.ToString(), cbo_escola.SelectedValue.ToString(), rdb_sindicadas.Checked, (int)nupd_cod_solicitacao.Value,anoReferencia);
                         break;
                 }
 
@@ -423,9 +436,9 @@ namespace SIESC.UI.UI.Sindicância
                 lbl_endereco_comprovado.ResetText();
 
                 if (chk_pendentes.Checked)
-                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasPendentes();
+                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasPendentes(anoReferencia);
                 else if (chk_finalizadas.Checked)
-                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasFinalizadas();
+                    dgv_dados.DataSource = sindicanciaControl.GetSindicanciasFinalizadas(anoReferencia);
 
                 dgv_dados.Refresh();
             }
@@ -576,11 +589,14 @@ namespace SIESC.UI.UI.Sindicância
                 usuarioResponsavel = principalUi.user.nomeusuario,
                 dataSindicancia = solicitacao.DataSolicitacao,
                 dataSolicitacao = solicitacao.DataSolicitacao,
-
+                anoReferencia = solicitacao.anoReferencia
             };
 
-            sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
-            sindicancia.distanciaEscolaEncaminhada = CalculaDistanciaEscola(sindicancia.Coordenadas, (int)sindicancia.instituicaoEncaminhada);
+            if (sindicancia.instituicaoSolicitada !=null)
+                sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
+            
+            if (sindicancia.instituicaoEncaminhada !=null)
+                sindicancia.distanciaEscolaEncaminhada = CalculaDistanciaEscola(sindicancia.Coordenadas, (int) sindicancia.instituicaoEncaminhada);
 
             return sindicancia;
         }
@@ -754,7 +770,7 @@ namespace SIESC.UI.UI.Sindicância
         {
             solicitacaoControl = new SolicitacaoControl();
 
-            DataTable dt = solicitacaoControl.LocalizarSolicitAluno(nomeAluno);
+            DataTable dt = solicitacaoControl.PesquisaNomeAluno(nomeAluno, -1);
 
             dgv_dados.DataSource = dt;
 
@@ -942,5 +958,10 @@ namespace SIESC.UI.UI.Sindicância
             lbl_num_linhas.Text = $@"Total de sindicâncias: {dgv_dados.Rows.Count}";
         }
 
+        private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizaUltimaSindicancia();
+            CarregaGridView();
+        }
     }
 }

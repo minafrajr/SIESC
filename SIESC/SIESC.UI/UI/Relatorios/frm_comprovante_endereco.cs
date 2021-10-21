@@ -12,12 +12,16 @@ using SIESC.UI.Properties;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_comprovante_endereco : SIESC.UI.BaseUi
+    public partial class frm_comprovante_endereco : BaseUi
     {
         /// <summary>
         /// O nível de ensino para abrir o formulário e iniciar a consulta
         /// </summary>
         private int nivel_ensino;
+        /// <summary>
+        /// O ano de referência para consultad o relatório
+        /// </summary>
+        private int anoReferencia;
 
         /// <summary>
         /// 
@@ -29,6 +33,9 @@ namespace SIESC.UI.UI.Relatorios
         /// </summary>
         private PageSettings pg = new PageSettings() { Landscape = true };
 
+        /// <summary>
+        /// O tipo de consulta a ser realizada
+        /// </summary>
         private TipoConsulta _tipoConsulta;
 
         /// <summary>
@@ -52,6 +59,7 @@ namespace SIESC.UI.UI.Relatorios
 
         private void frm_RelatorioComprovanteEndereco_Load(object sender,EventArgs e)
         {
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
             this.rpt_viewer.RefreshReport();
             switch (nivel_ensino)
             {
@@ -139,6 +147,9 @@ namespace SIESC.UI.UI.Relatorios
             var t = CarregaProgressoThread();
             try
             {
+
+                anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
                 rpt_viewer.Reset();
 
                 rpt_viewer.ProcessingMode =
@@ -187,33 +198,33 @@ namespace SIESC.UI.UI.Relatorios
                 switch (_tipoConsulta)
                 {
                     case TipoConsulta.ano:
-                        dt = vw_comprovacao_enderecoTableAdapter1.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                        dt = vw_comprovacao_enderecoTableAdapter1.GetDataByAnoEnsino(cbo_anoensino.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         break;
                     case TipoConsulta.escola:
-                        dt = vw_comprovacao_enderecoTableAdapter1.GetDataByEscolaSolicitada(cbo_escola.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                        dt = vw_comprovacao_enderecoTableAdapter1.GetDataByEscolaSolicitada(cbo_escola.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         break;
                     case TipoConsulta.regional:
                         if (nivel_ensino == 1)
-                            dt = vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalInfantil(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                            dt = vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalInfantil(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         else
                         {
-                            dt = nivel_ensino == 2 ? vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalFundamental(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value) : vw_comprovacao_enderecoTableAdapter1.GetDataByRegional(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                            dt = nivel_ensino == 2 ? vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalFundamental(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia) : vw_comprovacao_enderecoTableAdapter1.GetDataByRegional(cbo_regionais.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         }
                         break;
                     case TipoConsulta.geral:
                         if (nivel_ensino == 1)
-                            dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataInfantil((int)nud_num_solicitacao.Value);
+                            dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataInfantil((int)nud_num_solicitacao.Value, anoReferencia);
                         else
                         {
-                            dt = nivel_ensino == 2 ? this.vw_comprovacao_enderecoTableAdapter1.GetDataFundamental((int)nud_num_solicitacao.Value) : this.vw_comprovacao_enderecoTableAdapter1.GetData();
+                            dt = nivel_ensino == 2 ? this.vw_comprovacao_enderecoTableAdapter1.GetDataFundamental((int)nud_num_solicitacao.Value, anoReferencia) : this.vw_comprovacao_enderecoTableAdapter1.GetDataByAnoReferencia( anoReferencia);
                         }
                         break;
                     case TipoConsulta.regional_ano:
                         dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalAnoEnsino(
-                            cbo_regionais.SelectedValue.ToString(),cbo_anoensino.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                            cbo_regionais.SelectedValue.ToString(),cbo_anoensino.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         break;
                     case TipoConsulta.regional_escola:
-                        dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalEscolaSolicitada(cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),(int)nud_num_solicitacao.Value);
+                        dt = this.vw_comprovacao_enderecoTableAdapter1.GetDataByRegionalEscolaSolicitada(cbo_regionais.SelectedValue.ToString(),cbo_escola.SelectedValue.ToString(),(int)nud_num_solicitacao.Value, anoReferencia);
                         break;
                 }
 

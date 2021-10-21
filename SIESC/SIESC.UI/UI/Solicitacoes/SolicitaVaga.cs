@@ -378,7 +378,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// Prenche a combobox de ano do ensino fundamental com a escola salva no banco
+        /// Preenche a combobox de ano do ensino fundamental com a escola salva no banco
         /// </summary>
         /// <param name="solicitacao"></param>
         private void Preenche_cbo_Ano(Solicitacao solicitacao)
@@ -417,6 +417,11 @@ namespace SIESC.UI.UI.Solicitacoes
             }
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="solicitacao"></param>
         private void Preenche_cbo_Ano_Irmao2(Solicitacao solicitacao)
         {
             if (solicitacao.Equals(null)) return;
@@ -435,8 +440,8 @@ namespace SIESC.UI.UI.Solicitacoes
                     return;
                 }
             }
-
         }
+
         /// <summary>
         /// Prenche a combobox de motivos com a escola salva no banco
         /// </summary>
@@ -450,7 +455,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (item["idMotivos"].ToString() == solicitacao.Motivo.ToString())
                     cbo_motivo.SelectedIndex = cbo_motivo.Items.IndexOf(item);
             }
-
         }
 
         /// <summary>
@@ -464,12 +468,11 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 if (item["idOrigemSolicitacao"].ToString() == solicitacao.OrigemSolicitacao.ToString())
                     cbo_origem_solicitacao.SelectedIndex = cbo_origem_solicitacao.Items.IndexOf(item);
-
             }
         }
 
         /// <summary>
-        /// Prenche a combobox de escola solicitada com a escola salva no banco
+        /// Preenche a combobox de escola solicitada com a escola salva no banco
         /// </summary>
         /// <param name="solicitacao"></param>
         private void Preenche_cbo_EscSolicitada(Solicitacao solicitacao)
@@ -481,10 +484,12 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (item["idInstituicoes"].ToString() == solicitacao.InstituicaoSolicitada.ToString())
                     cbo_instituicao_solicitada.SelectedItem = item;
             }
-
             cbo_instituicao_solicitada.Refresh();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="solicitacao"></param>
         private void Preenche_cbo_EscolaIrmao1(Solicitacao solicitacao)
         {
             if (solicitacao.Equals(null)) return;
@@ -724,10 +729,14 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 if (control is MyTextBox) ((MyTextBox)control).ResetText();
 
-                if (control is MyComboBox)
-                    //((MyComboBox)control).Text = string.Empty;
-                    ((MyComboBox)control).SelectedIndex = -1;
+                
 
+                if (control is MyComboBox)((MyComboBox) control).SelectedIndex = -1; 
+                   
+                cbo_cidades.ResetText();
+                
+                if (control is MyComboBox)((MyComboBox)control).SelectedIndex = -1;
+                
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
                 if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
@@ -978,7 +987,8 @@ namespace SIESC.UI.UI.Solicitacoes
                     Transporte = chk_transporte.Checked,
                     JustificativaTransporte = txt_justificativa_transporte.Text,
                     possuiIrmao = chk_irmaos.Checked,
-                    DataSolicitacao = DateTime.Now
+                    DataSolicitacao = DateTime.Now,
+                    anoReferencia = DateTime.Now.Year
                 };
 
                 if (cbo_instituicao_encaminhada.SelectedValue != null && encaminhou) // já existe e houve alteração no encaminhamento

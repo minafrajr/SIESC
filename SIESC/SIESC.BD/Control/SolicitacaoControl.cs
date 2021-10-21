@@ -52,7 +52,7 @@ namespace SIESC.BD.Control
                     (solicitacao_TA.Inserir(solicitacao.Aluno, solicitacao.InstituicaoSolicitada, solicitacao.DataSolicitacao,
                         solicitacao.instituicaoOrigem, solicitacao.CidadeOrigem, solicitacao.EstadoOrigem,
                         solicitacao.InstituicaoEncaminhada, solicitacao.DataEncaminhamento, solicitacao.Observacoes,
-                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte, solicitacao.JustificativaTransporte, solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,solicitacao.distanciaIrmao1, solicitacao.distanciaIrmao2) > 0);
+                        solicitacao.Usuario, solicitacao.Motivo, solicitacao.AnoEnsino, solicitacao.CodigoExpInt, solicitacao.Solicitante, solicitacao.TipoSolicitante, solicitacao.usuarioEncaminhou, solicitacao.TipoLogradouro, solicitacao.Logradouro, solicitacao.NumResidencia, solicitacao.Complemento, solicitacao.Bairro, solicitacao.ComprovanteResponsavel, solicitacao.TipoComprovante, solicitacao.Coordenadas[0], solicitacao.Coordenadas[1], solicitacao.Cep, solicitacao.OrigemSolicitacao, solicitacao.Transporte, solicitacao.JustificativaTransporte, solicitacao.possuiIrmao, solicitacao.anoIrmao1, solicitacao.escolaIrmao1, solicitacao.anoIrmao2, solicitacao.escolaIrmao2,solicitacao.distanciaIrmao1, solicitacao.distanciaIrmao2,solicitacao.anoReferencia) > 0);
             }
             catch (Exception exception)
             {
@@ -132,7 +132,6 @@ namespace SIESC.BD.Control
             catch (SqlException exception)
             {
                 throw exception;
-
             }
         }
 
@@ -141,23 +140,25 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nomealuno"></param>
         /// <returns></returns>
-        public DataTable LocalizarSolicitAluno(string nomealuno)
+        public DataTable PesquisaNomeAluno(string nomealuno, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nomealuno + "%");
+                if (anoReferencia < 0)
+                    return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nomealuno + "%");
+               
+                return vw_SolicitacoesTA.GetByNomeAlunoAnoReferencia("%" + nomealuno + "%", anoReferencia);
             }
             catch (SqlException exception)
             {
-
                 throw exception;
             }
         }
 
         /// <summary>
-        /// 
+        /// Retorna uma solicitação completa
         /// </summary>
         /// <param name="idSolicitacao"></param>
         /// <returns></returns>
@@ -234,7 +235,7 @@ namespace SIESC.BD.Control
                 solicitacao.anoIrmao2 = dt.Rows[0]["anoEnsinoIrmao2"] != DBNull.Value? Convert.ToInt32(dt.Rows[0]["anoEnsinoIrmao2"].ToString()):(int?)null;
                 solicitacao.Coordenadas[0] = dt.Rows[0]["latitude"].ToString();
                 solicitacao.Coordenadas[1] = dt.Rows[0]["longitude"].ToString();
-
+                solicitacao.anoReferencia = Convert.ToInt32(dt.Rows[0]["anoReferencia"].ToString()) ;
                 return solicitacao;
             }
             catch (Exception ex)
@@ -248,13 +249,16 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nomemae">O nome da mãe para fazer a busca</param>
         /// <returns>um DataTable</returns>
-        public DataTable PesquisaMae(string nomeMae)
+        public DataTable PesquisaMae(string nomeMae, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByMae("%" + nomeMae + "%");
+                if (anoReferencia < 0)
+                    return vw_SolicitacoesTA.PesquisaByMae("%" + nomeMae + "%");   
+                    
+                return vw_SolicitacoesTA.GetDataByMaeAnoReferencia("%" + nomeMae + "%",anoReferencia);
             }
             catch (SqlException exception)
             {
@@ -266,19 +270,19 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="idAluno">O codigo do aluno para pesquisar</param>
         /// <returns></returns>
-        public DataTable PesquisaIDAluno(int idAluno)
-        {
-            try
-            {
-                vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
+        //public DataTable PesquisaIDAluno(int idAluno)
+        //{
+        //    try
+        //    {
+        //        vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByIdAluno(idAluno);
-            }
-            catch (SqlException exception)
-            {
-                throw exception;
-            }
-        }
+        //        return vw_SolicitacoesTA.PesquisaByIdAluno(idAluno);
+        //    }
+        //    catch (SqlException exception)
+        //    {
+        //        throw exception;
+        //    }
+        //}
 
         /// <summary>
         /// Retorna um DataTable contendo os dados da solicitação
@@ -302,13 +306,17 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="motivo"></param>
         /// <returns></returns>
-        public DataTable PesquisaMotivo(string motivo)
+        public DataTable PesquisaMotivo(string motivo, int anoReferencia)
         {
             try
-            {
+            {                    
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
 
-                return vw_SolicitacoesTA.PesquisaByMotivo(motivo);
+                if(anoReferencia <0)
+                    return vw_SolicitacoesTA.PesquisaByMotivo(motivo);
+
+                return vw_SolicitacoesTA.GetDataByMotivoAnoReferencia(motivo, anoReferencia);
+
             }
             catch (SqlException exception)
             {
@@ -337,12 +345,12 @@ namespace SIESC.BD.Control
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public DataTable ViewAlunoByNome(string nome)
+        public DataTable ViewAlunoByNome(string nome, int anoReferencia)
         {
             try
             {
                 vw_SolicitacoesTA = new vw_solicitacoesTableAdapter();
-                return vw_SolicitacoesTA.PesquisaByNomeAluno("%" + nome + "%");
+                return vw_SolicitacoesTA.GetByNomeAlunoAnoReferencia("%" + nome + "%", anoReferencia);
             }
             catch (SqlException exception)
             {
@@ -477,7 +485,7 @@ namespace SIESC.BD.Control
 
                 DataTable dt = solicitacao_TA.RetornaEndereco(idSolicitaco);
 
-                string endereco =
+                var endereco =
                     $"{dt.Rows[0]["tipoLogradouro"]} {dt.Rows[0]["logradouro"]}, {dt.Rows[0]["numResidencia"]} {dt.Rows[0]["complementoEndereco"]} - {dt.Rows[0]["nomeBairro"]} {dt.Rows[0]["cep"]} ";
 
                 return endereco;

@@ -187,13 +187,6 @@ namespace SIESC.UI.UI.Instituicoes
         {
             try
             {
-                var mantenedor = this.mantenedor;
-
-                if (mantenedor != 1 && mantenedor != 2)
-                    lbl_secretario2.Text = "Auxiliar:";
-                else
-                    lbl_secretario2.Text = "Secretario(a):";
-
                 var dt_secretario = controleInstituicao.GetSecretarioMunicipais(mantenedor, idescola);
 
                 if (dt_secretario.Rows.Count > 0 && mantenedor != 0)
@@ -273,6 +266,8 @@ namespace SIESC.UI.UI.Instituicoes
             try
             {
                 this.instituicoesTableAdapter.FillByMunicipais(this.siescDataSet.instituicoes);
+                lbl_secretario2.Text = "Secretario(a):";
+                this.lbl_secretario.Location = new System.Drawing.Point(106, 88);
                 lstb_escolas.Update();
                 lstb_escolas.Refresh();
             }
@@ -311,7 +306,8 @@ namespace SIESC.UI.UI.Instituicoes
             try
             {
                 this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, mantenedor);//4 Infantil Conveniada
-
+                lbl_secretario2.Text = "Auxiliar:";
+                this.lbl_secretario.Location = new System.Drawing.Point(70, 88);
                 lstb_escolas.Refresh();
                 lstb_escolas.Update();
             }
@@ -331,7 +327,8 @@ namespace SIESC.UI.UI.Instituicoes
             try
             {
                 this.instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, mantenedor);//3 Infantil Municipal
-
+                this.lbl_secretario.Location = new System.Drawing.Point(70, 88);
+                lbl_secretario2.Text = "Auxiliar:";
                 lstb_escolas.Refresh();
                 lstb_escolas.Update();
             }

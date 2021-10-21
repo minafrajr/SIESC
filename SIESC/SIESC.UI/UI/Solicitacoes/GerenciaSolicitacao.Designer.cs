@@ -7,7 +7,7 @@ namespace SIESC.UI.UI.Solicitacoes
 	/// <summary>
 	/// 
 	/// </summary>
-	partial class GerenciaSolicitacao : BaseUi
+	partial class GerenciaSolicitacao
 	{
 		///<summary>
 		/// Variável de designer necessária.
@@ -39,12 +39,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaSolicitacao));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.cbo_motivos = new MyComboBox();
+			this.cbo_motivos = new SIESC.UI.Controles.MyComboBox();
 			this.motivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
 			this.lbl_tipo_motivos = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.cbo_tipoBusca = new MyComboBox();
+			this.cbo_tipoBusca = new SIESC.UI.Controles.MyComboBox();
 			this.lbl7 = new System.Windows.Forms.Label();
 			this.gpb_sindicados = new System.Windows.Forms.GroupBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -59,24 +59,24 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.txt_origem_solicitacao = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.cbo_anoreferencia = new MyComboBox();
+			this.cbo_anoreferencia = new SIESC.UI.Controles.MyComboBox();
 			this.lbl_anoensino = new System.Windows.Forms.Label();
 			this.lbl_idade = new System.Windows.Forms.Label();
-			this.msk_codigoEI = new MyMaskedTextBox();
+			this.msk_codigoEI = new SIESC.UI.Controles.MyMaskedTextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txt_observacoes = new MyTextBox();
+			this.txt_observacoes = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_motivo = new System.Windows.Forms.Label();
-			this.txt_motivo = new MyTextBox();
+			this.txt_motivo = new SIESC.UI.Controles.MyTextBox();
 			this.btn_imprimir = new System.Windows.Forms.Button();
 			this.lbl_escolaencaminhada = new System.Windows.Forms.Label();
-			this.txt_instituicao_encaminhada = new MyTextBox();
+			this.txt_instituicao_encaminhada = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_escolasolicitada = new System.Windows.Forms.Label();
-			this.txt_instituicao_solicitada = new MyTextBox();
-			this.txt_telefone = new MyTextBox();
+			this.txt_instituicao_solicitada = new SIESC.UI.Controles.MyTextBox();
+			this.txt_telefone = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_telefone = new System.Windows.Forms.Label();
 			this.lbl_titulo = new System.Windows.Forms.Label();
 			this.lbl_codigo = new System.Windows.Forms.Label();
-			this.txt_codigo = new MyTextBox();
+			this.txt_codigo = new SIESC.UI.Controles.MyTextBox();
 			this.btn_editaraluno = new System.Windows.Forms.Button();
 			this.lbl_endereco = new System.Windows.Forms.Label();
 			this.lbl_dataencaminha = new System.Windows.Forms.Label();
@@ -85,15 +85,15 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.btn_excluir = new System.Windows.Forms.Button();
 			this.lbl_mae = new System.Windows.Forms.Label();
 			this.btn_localizar = new System.Windows.Forms.Button();
-			this.txt_nomealuno = new MyTextBox();
+			this.txt_nomealuno = new SIESC.UI.Controles.MyTextBox();
 			this.btn_encam_transp = new System.Windows.Forms.Button();
-			this.txt_dataencaminhamento = new MyTextBox();
-			this.txt_datasolicitacao = new MyTextBox();
-			this.txt_datanasc = new MyTextBox();
-			this.txt_endereco = new MyTextBox();
+			this.txt_dataencaminhamento = new SIESC.UI.Controles.MyTextBox();
+			this.txt_datasolicitacao = new SIESC.UI.Controles.MyTextBox();
+			this.txt_datanasc = new SIESC.UI.Controles.MyTextBox();
+			this.txt_endereco = new SIESC.UI.Controles.MyTextBox();
 			this.btn_editar = new System.Windows.Forms.Button();
 			this.btn_finaliza_solicitacao = new System.Windows.Forms.Button();
-			this.txt_mae = new MyTextBox();
+			this.txt_mae = new SIESC.UI.Controles.MyTextBox();
 			this.lbl_aluno = new System.Windows.Forms.Label();
 			this.lbl_irmao_boolean = new System.Windows.Forms.Label();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -101,6 +101,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
 			this.motivosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.motivosTableAdapter();
+			this.chk_todoAnosConsulta = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -125,6 +126,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// 
 			// splitContainer1.Panel1
 			// 
+			this.splitContainer1.Panel1.Controls.Add(this.chk_todoAnosConsulta);
 			this.splitContainer1.Panel1.Controls.Add(this.cbo_motivos);
 			this.splitContainer1.Panel1.Controls.Add(this.lbl_tipo_motivos);
 			this.splitContainer1.Panel1.Controls.Add(this.label7);
@@ -188,7 +190,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_motivos.DisplayMember = "descricaoMotivo";
 			this.cbo_motivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_motivos.FormattingEnabled = true;
-			this.cbo_motivos.Location = new System.Drawing.Point(996, 78);
+			this.cbo_motivos.Location = new System.Drawing.Point(1005, 78);
 			this.cbo_motivos.Name = "cbo_motivos";
 			this.cbo_motivos.Size = new System.Drawing.Size(277, 22);
 			this.cbo_motivos.TabIndex = 96;
@@ -208,7 +210,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// lbl_tipo_motivos
 			// 
 			this.lbl_tipo_motivos.AutoSize = true;
-			this.lbl_tipo_motivos.Location = new System.Drawing.Point(946, 83);
+			this.lbl_tipo_motivos.Location = new System.Drawing.Point(955, 83);
 			this.lbl_tipo_motivos.Name = "lbl_tipo_motivos";
 			this.lbl_tipo_motivos.Size = new System.Drawing.Size(52, 14);
 			this.lbl_tipo_motivos.TabIndex = 95;
@@ -229,16 +231,15 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_tipoBusca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipoBusca.FormattingEnabled = true;
 			this.cbo_tipoBusca.Items.AddRange(new object[] {
-			"",
-			"CÓDIGO DO ALUNO",
-			"CÓDIGO DE EXPEDIENTE INTERNO",
 			"CÓDIGO DA SOLICITAÇÃO",
+			"CÓDIGO DE EXPEDIENTE INTERNO",
 			"MOTIVO",
 			"NOME DO ALUNO",
-			"NOME DA MÃE"});
+			"NOME DA MÃE",
+			"EXIBIR TODAS"});
 			this.cbo_tipoBusca.Location = new System.Drawing.Point(779, 78);
 			this.cbo_tipoBusca.Name = "cbo_tipoBusca";
-			this.cbo_tipoBusca.Size = new System.Drawing.Size(166, 22);
+			this.cbo_tipoBusca.Size = new System.Drawing.Size(176, 22);
 			this.cbo_tipoBusca.TabIndex = 93;
 			this.cbo_tipoBusca.TextChanged += new System.EventHandler(this.cbo_tipoBusca_TextChanged);
 			// 
@@ -379,7 +380,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(532, 13);
+			this.label5.Location = new System.Drawing.Point(276, 11);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(80, 14);
 			this.label5.TabIndex = 51;
@@ -399,7 +400,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			"2016",
 			"2015",
 			"2014"});
-			this.cbo_anoreferencia.Location = new System.Drawing.Point(618, 8);
+			this.cbo_anoreferencia.Location = new System.Drawing.Point(362, 4);
 			this.cbo_anoreferencia.Name = "cbo_anoreferencia";
 			this.cbo_anoreferencia.Size = new System.Drawing.Size(54, 24);
 			this.cbo_anoreferencia.TabIndex = 48;
@@ -564,9 +565,9 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.txt_codigo.BackColor = System.Drawing.Color.White;
 			this.txt_codigo.Enabled = false;
 			this.txt_codigo.Font = new System.Drawing.Font("Candara", 9F);
-			this.txt_codigo.Location = new System.Drawing.Point(40, 51);
+			this.txt_codigo.Location = new System.Drawing.Point(40, 50);
 			this.txt_codigo.Name = "txt_codigo";
-			this.txt_codigo.Size = new System.Drawing.Size(56, 22);
+			this.txt_codigo.Size = new System.Drawing.Size(63, 22);
 			this.txt_codigo.TabIndex = 23;
 			// 
 			// btn_editaraluno
@@ -661,9 +662,9 @@ namespace SIESC.UI.UI.Solicitacoes
 			// txt_nomealuno
 			// 
 			this.txt_nomealuno.Enabled = false;
-			this.txt_nomealuno.Location = new System.Drawing.Point(144, 50);
+			this.txt_nomealuno.Location = new System.Drawing.Point(151, 50);
 			this.txt_nomealuno.Name = "txt_nomealuno";
-			this.txt_nomealuno.Size = new System.Drawing.Size(400, 22);
+			this.txt_nomealuno.Size = new System.Drawing.Size(393, 22);
 			this.txt_nomealuno.TabIndex = 25;
 			// 
 			// btn_encam_transp
@@ -755,7 +756,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// lbl_aluno
 			// 
 			this.lbl_aluno.AutoSize = true;
-			this.lbl_aluno.Location = new System.Drawing.Point(104, 53);
+			this.lbl_aluno.Location = new System.Drawing.Point(109, 53);
 			this.lbl_aluno.Name = "lbl_aluno";
 			this.lbl_aluno.Size = new System.Drawing.Size(40, 14);
 			this.lbl_aluno.TabIndex = 20;
@@ -837,6 +838,18 @@ namespace SIESC.UI.UI.Solicitacoes
 			// 
 			this.motivosTableAdapter.ClearBeforeFill = true;
 			// 
+			// chk_todoAnosConsulta
+			// 
+			this.chk_todoAnosConsulta.AutoSize = true;
+			this.chk_todoAnosConsulta.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chk_todoAnosConsulta.Location = new System.Drawing.Point(281, 28);
+			this.chk_todoAnosConsulta.Name = "chk_todoAnosConsulta";
+			this.chk_todoAnosConsulta.Size = new System.Drawing.Size(100, 18);
+			this.chk_todoAnosConsulta.TabIndex = 97;
+			this.chk_todoAnosConsulta.Text = "Todos os anos";
+			this.chk_todoAnosConsulta.UseVisualStyleBackColor = true;
+			this.chk_todoAnosConsulta.CheckedChanged += new System.EventHandler(this.chk_todoAnosConsulta_CheckedChanged);
+			// 
 			// GerenciaSolicitacao
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -869,8 +882,6 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.ResumeLayout(false);
-
-
 
 		}
 
@@ -939,17 +950,24 @@ namespace SIESC.UI.UI.Solicitacoes
 		private siescDataSet siescDataSet;
 		private BindingSource motivosBindingSource;
 		private siescDataSetTableAdapters.motivosTableAdapter motivosTableAdapter;
+		private CheckBox chk_todoAnosConsulta;
 
-		public enum Localizar
+		private enum Localizar
 		{
 			codigoSolicitacao,
 			nomeAluno,
 			nomeMae,
-			codigoAluno,
 			aguardando, // quando o usuario ainda não selecionou o tipo de busca a ser feita.
 			codigoExpedienteInterno,
 			motivo,
-
 		};
+
+		private enum Navegacao
+		{
+			aguardando,
+			editando,
+			consultando
+		}
+
 	}
 }

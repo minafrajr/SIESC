@@ -104,14 +104,15 @@ namespace SIESC.UI.UI.Alunos
         {
             try
             {
+                
                 controleAluno = new AlunoControl();
                 dgv_alunos.DataSource = null;
 
                 switch (_localizar)
                 {
                     case Localizar.codigo:
-                        //dgv_alunos.DataSource = controleAluno.AlunosByCodigo(Convert.ToInt16(txt_codigo.Text));
-                        CarregaDataSource(controleAluno.AlunosByCodigo(Convert.ToInt16(txt_codigo.Text)));
+                        //dgv_alunos.DataSource = controleAluno.AlunosByCodigo(Convert.ToInt32(txt_codigo.Text));
+                        CarregaDataSource(controleAluno.AlunosByCodigo(Convert.ToInt32(txt_codigo.Text)));
                         break;
                     case Localizar.nome:
                         dgv_alunos.DataSource = controleAluno.AlunosByNome(txt_nomealuno.Text);
@@ -127,7 +128,9 @@ namespace SIESC.UI.UI.Alunos
                         break;
 
                 }
+
                 dgv_alunos.Refresh();
+
                 if (dgv_alunos.Rows.Count > 0)
                 {
                     RepassaDados();
@@ -268,6 +271,7 @@ namespace SIESC.UI.UI.Alunos
                 msk_datanasc.ResetText();
                 txt_pai.Focus();
             }
+            txt_telefones.ResetText();
         }
 
         /// <summary>
@@ -323,8 +327,10 @@ namespace SIESC.UI.UI.Alunos
                 txt_mae.Text = dgv_alunos[3,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_pai.Text = dgv_alunos[4,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
                 txt_deficiencia.Text = dgv_alunos[5,dgv_alunos.CurrentCellAddress.Y].Value.ToString();
-                txt_telefones.Text = string.Format("{0} / {1} / {2}",dgv_alunos[6,dgv_alunos.CurrentCellAddress.Y].Value,dgv_alunos[7,dgv_alunos.CurrentCellAddress.Y].Value,dgv_alunos[8,dgv_alunos.CurrentCellAddress.Y].Value);
+                txt_telefones.Text =
+                    $"{dgv_alunos[6, dgv_alunos.CurrentCellAddress.Y].Value} / {dgv_alunos[7, dgv_alunos.CurrentCellAddress.Y].Value} / {dgv_alunos[8, dgv_alunos.CurrentCellAddress.Y].Value}";
 
+                CalculaIdade();
             }
             catch (Exception exception)
             {
@@ -369,7 +375,7 @@ namespace SIESC.UI.UI.Alunos
             {
                 throw new Exception("Selecione um aluno na tabela!");
             }
-            return controleAluno.RetornaAluno(Convert.ToInt16(dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString()));
+            return controleAluno.RetornaAluno(Convert.ToInt32(dgv_alunos[0,dgv_alunos.CurrentCellAddress.Y].Value.ToString()));
         }
 
         /// <summary>
@@ -410,6 +416,13 @@ namespace SIESC.UI.UI.Alunos
         /// </summary>
         private void CalculaIdade()
         {
+            
+            if (msk_datanasc.Text == @"  /  /")
+            {
+                lbl_idade.ResetText();
+                return;
+            }
+
             var datanasc = Convert.ToDateTime(msk_datanasc.Text);
 
             int anos = DateTime.Now.Year - datanasc.Year;
@@ -421,7 +434,7 @@ namespace SIESC.UI.UI.Alunos
                 anos--;
             }
 
-            lbl_idade.Text = $"{anos} anos";
+            lbl_idade.Text = $@"{anos} anos";
         }
 
         /// <summary>

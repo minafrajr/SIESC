@@ -12,7 +12,7 @@ namespace SIESC.UI.UI.Relatorios
     /// <summary>
     /// Formulário do relatório de alunos por motivo
     /// </summary>
-    public partial class FrmAlunosMotivos : SIESC.UI.BaseUi
+    public partial class FrmAlunosMotivos :  BaseUi
     {
         /// <summary>
         /// Objeto do formulário principal
@@ -39,6 +39,8 @@ namespace SIESC.UI.UI.Relatorios
             this.frmPrincipal = frm_Principal;
             this.nivelEnsino = nivelEnsino;
             motivosTableAdapter1.Fill(this.siescDataSet.motivos);
+            periodoTableAdapter.FillByPeriodo(this.siescDataSet1.periodo);
+
         }
         /// <summary>
         /// Evento do botão gerar
@@ -63,7 +65,8 @@ namespace SIESC.UI.UI.Relatorios
                         break;
                 }
 
-                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(codigoRelatorio, cbo_motivo.SelectedValue.ToString(), frmPrincipal);
+                frm_Relatorio_geral frmRelatorioGeral = new frm_Relatorio_geral(frmPrincipal ,codigoRelatorio, cbo_motivo.SelectedValue.ToString());
+
                 frmRelatorioGeral.Show();
                 if (t.IsAlive) t.Abort();
                 this.Close();
@@ -71,7 +74,8 @@ namespace SIESC.UI.UI.Relatorios
             catch (Exception ex)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(ex, frmPrincipal); ;
+                Mensageiro.MensagemErro(ex, frmPrincipal);
+
             }
         }
 

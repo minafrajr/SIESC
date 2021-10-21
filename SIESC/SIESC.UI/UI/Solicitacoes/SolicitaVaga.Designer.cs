@@ -9,7 +9,7 @@ using SIESC.UI.siescDataSetTableAdapters;
 
 namespace SIESC.UI.UI.Solicitacoes
 {
-	partial class SolicitaVaga:BaseUi
+	partial class SolicitaVaga
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -205,12 +205,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.txt_codigoAluno.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txt_codigoAluno.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_codigoAluno.ForeColor = System.Drawing.Color.DarkRed;
-			this.txt_codigoAluno.Location = new System.Drawing.Point(942, 22);
+			this.txt_codigoAluno.Location = new System.Drawing.Point(911, 22);
 			this.txt_codigoAluno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txt_codigoAluno.Multiline = true;
 			this.txt_codigoAluno.Name = "txt_codigoAluno";
 			this.txt_codigoAluno.ReadOnly = true;
-			this.txt_codigoAluno.Size = new System.Drawing.Size(82, 26);
+			this.txt_codigoAluno.Size = new System.Drawing.Size(119, 26);
 			this.txt_codigoAluno.TabIndex = 19;
 			// 
 			// gpb_dadospessoais
@@ -323,6 +323,18 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.label4.TabIndex = 25;
 			this.label4.Text = "Idade:";
 			// 
+			// msk_telefone2
+			// 
+			this.msk_telefone2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.msk_telefone2.Location = new System.Drawing.Point(715, 78);
+			this.msk_telefone2.Mask = "(00)000000000";
+			this.msk_telefone2.Name = "msk_telefone2";
+			this.msk_telefone2.Size = new System.Drawing.Size(100, 21);
+			this.msk_telefone2.TabIndex = 8;
+			this.msk_telefone2.Tag = "Telefone 2";
+			this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+			this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
+			// 
 			// msk_telefone1
 			// 
 			this.msk_telefone1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -335,23 +347,10 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.msk_telefone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
 			this.msk_telefone1.Leave += new System.EventHandler(this.msk_telefone1_Leave);
 			// 
-			// msk_telefone2
-			// 
-			this.msk_telefone2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.msk_telefone2.Location = new System.Drawing.Point(715, 78);
-			this.msk_telefone2.Mask = "(00)000000000";
-			this.msk_telefone2.Name = "msk_telefone2";
-			this.msk_telefone2.Size = new System.Drawing.Size(100, 21);
-			this.msk_telefone2.TabIndex = 8;
-			this.msk_telefone2.Tag = "Telefone 2";
-			this.msk_telefone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-			this.msk_telefone2.Leave += new System.EventHandler(this.msk_telefone2_Leave);
-			
-			// 
 			// lbl_codigoSolicitacao
 			// 
 			this.lbl_codigoSolicitacao.AutoSize = true;
-			this.lbl_codigoSolicitacao.Location = new System.Drawing.Point(810, 12);
+			this.lbl_codigoSolicitacao.Location = new System.Drawing.Point(790, 12);
 			this.lbl_codigoSolicitacao.Name = "lbl_codigoSolicitacao";
 			this.lbl_codigoSolicitacao.Size = new System.Drawing.Size(119, 14);
 			this.lbl_codigoSolicitacao.TabIndex = 20;
@@ -490,12 +489,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.txt_codigoSolicitacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txt_codigoSolicitacao.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_codigoSolicitacao.ForeColor = System.Drawing.Color.MediumBlue;
-			this.txt_codigoSolicitacao.Location = new System.Drawing.Point(836, 23);
+			this.txt_codigoSolicitacao.Location = new System.Drawing.Point(789, 23);
 			this.txt_codigoSolicitacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txt_codigoSolicitacao.Multiline = true;
 			this.txt_codigoSolicitacao.Name = "txt_codigoSolicitacao";
 			this.txt_codigoSolicitacao.ReadOnly = true;
-			this.txt_codigoSolicitacao.Size = new System.Drawing.Size(75, 26);
+			this.txt_codigoSolicitacao.Size = new System.Drawing.Size(112, 26);
 			this.txt_codigoSolicitacao.TabIndex = 21;
 			// 
 			// txt_solicitante
@@ -1774,7 +1773,7 @@ namespace SIESC.UI.UI.Solicitacoes
 		/// <summary>
 		/// Status de navegação do formulário de solicitação de vaga
 		/// </summary>
-		public enum Navegacao
+		private enum Navegacao
 		{
 			/// <summary>
 			/// Aguardando 

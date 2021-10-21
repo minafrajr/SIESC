@@ -192,5 +192,10 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public int? distanciaIrmao2 { get; set; }
 
+        /// <summary>
+        /// A data de referência do ano da solicitação
+        /// </summary>
+        public int? anoReferencia { get; set; }
+
     }
 }

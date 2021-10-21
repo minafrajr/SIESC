@@ -19,7 +19,7 @@ namespace SIESC.UI.UI.Relatorios
 	/// <summary>
 	/// Formulário de oferta de ano ensino detalhado
 	/// </summary>
-	public partial class frm_lista_oferta_ensino : SIESC.UI.BaseUi
+	public partial class frm_lista_oferta_ensino : BaseUi
 	{
 		private TipoRelatorio relatorio;
 

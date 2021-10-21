@@ -22,6 +22,10 @@ namespace SIESC.UI.UI.Relatorios
 		/// Configura o se retrato ou paisagem
 		/// </summary>
 		private readonly PageSettings pg = new PageSettings() { Landscape = true }; //Configurando para paisagem
+		/// <summary>
+		/// O ano letivo para consulta
+		/// </summary>
+		private int anoReferencia;
 		
 		/// <inheritdoc />
 		/// <summary>
@@ -59,7 +63,6 @@ namespace SIESC.UI.UI.Relatorios
 		{
 			InitializeComponent();
 			codigorelatorio = codigoRelatorio;
-			ConfiguraRelatorio();
 		}
 		/// <summary>
 		/// Evento load do formulário
@@ -68,6 +71,8 @@ namespace SIESC.UI.UI.Relatorios
 		/// <param name="e"></param>
 		private void Relatorio_infantil_Load(object sender, EventArgs e)
 		{
+			
+			this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
 
 			this.rpt_viewer.RefreshReport();
 		}
@@ -99,33 +104,32 @@ namespace SIESC.UI.UI.Relatorios
 				case 1:
 					FolhaPaisagem();
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_deficientes_infantil.rdlc";
-					dt = this.vw_deficientesTableAdapter1.GetData();
+					dt = this.vw_deficientesTableAdapter1.GetData(anoReferencia);
 					break;
 				case 2:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_Solicitacoes_Mes_infantil.rdlc";
-					dt = this.vw_solicitacoes_por_mes_infantilTableAdapter1.GetData();
+					dt = this.vw_solicitacoes_por_mes_infantilTableAdapter1.GetData(anoReferencia);
 					break;
 				case 3:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_solicitacoes_por_motivo_infantil.rdlc";
-					dt = this.vw_motivos_infantilTableAdapter1.GetData();
+					dt = this.vw_motivos_infantilTableAdapter1.GetData(anoReferencia);
 					break;
 				case 4:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_encaminhamento_ano_ensino_infantil.rdlc";
-					dt = this.vw_num_encaminhadosTableAdapter1.GetDataInfantil();
+					dt = this.vw_num_encaminhadosTableAdapter1.GetDataInfantil(anoReferencia);
 					break;
 				case 5:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_encaminhamento_data_infantil.rdlc";
-					dt = this.vw_num_encaminhadosTableAdapter1.GetDataByDataEncaminhamentoInfantil();
+					dt = this.vw_num_encaminhadosTableAdapter1.GetDataByDataEncaminhamentoInfantil(anoReferencia);
 					break;
 				case 6:
 					rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_solicitaco_origem_infantil.rdlc";
-					dt = this.vw_origem_solicitacaoTableAdapter1.GetDatainfantil();
+					dt = this.vw_origem_solicitacaoTableAdapter1.GetDatainfantil(anoReferencia);
 					break;
 			}
 
 			datasource.Value = dt;
 			
-
 			rpt_viewer.LocalReport.DataSources.Add(datasource);
 		
 			rpt_viewer.RefreshReport();
@@ -136,6 +140,18 @@ namespace SIESC.UI.UI.Relatorios
 		private void FolhaPaisagem()
 		{
 			rpt_viewer.SetPageSettings(pg); //configura a folha do relatório para paisagem
+		}
+
+		/// <summary>
+		/// Evento do botão gerar
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btn_gerar_relatorio_Click(object sender, EventArgs e)
+		{
+			anoReferencia = Convert.ToInt32(cbo_anoReferencia.SelectedValue);
+
+			ConfiguraRelatorio();
 		}
 	}
 }

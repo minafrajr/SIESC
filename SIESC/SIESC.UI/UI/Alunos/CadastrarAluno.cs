@@ -11,6 +11,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
+using System.ComponentModel;
+using Microsoft;
 
 namespace SIESC.UI.UI.Alunos
 {
@@ -270,16 +272,7 @@ namespace SIESC.UI.UI.Alunos
             }
         }
 
-        /// <summary>
-        /// Evento de mansgem de erro
-        /// </summary>
-        /// <param name="exception"></param>
-        private void MensagemErro(Exception exception)
-        {
-            Mensageiro.MensagemErro(exception,this);
-        }
-
-        /// <summary>
+   /// <summary>
         /// Evento do botão limpar
         /// </summary>
         /// <param name="sender"></param>
