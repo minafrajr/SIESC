@@ -326,9 +326,11 @@ namespace SIESC.UI.UI.Funcionarios
             //listaControles.Add(msk_cep);
             //listaControles.Add(msk_cpf);
             listaControles.Add(msk_tel1);
-            listaControles.Add(msk_datanasc);
-            listaControles.Add(rdb_feminino);
-            listaControles.Add(rdb_masculino);
+
+           // listaControles.Add(msk_datanasc);
+           // listaControles.Add(rdb_feminino);
+           // listaControles.Add(rdb_masculino);
+
             listaControles.Add(cbo_instituicao);
         }
 
