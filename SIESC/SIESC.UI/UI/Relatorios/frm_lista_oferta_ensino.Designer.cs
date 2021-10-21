@@ -208,9 +208,9 @@ namespace SIESC.UI.UI.Relatorios
 
 		private Microsoft.Reporting.WinForms.ReportViewer rpt_viewer;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-        private BD.DataSets.dsRelatoriosTableAdapters.ofertaensinopivotTableAdapter ofertaensinopivotTableAdapter1;
-        private BD.DataSets.ds_siescTableAdapters.ofertaensinoTableAdapter ofertaensinoTableAdapter1;
-        private System.Windows.Forms.Button btn_gerar;
+		private BD.DataSets.dsRelatoriosTableAdapters.ofertaensinopivotTableAdapter ofertaensinopivotTableAdapter1;
+		private BD.DataSets.ds_siescTableAdapters.ofertaensinoTableAdapter ofertaensinoTableAdapter1;
+		private System.Windows.Forms.Button btn_gerar;
 		private System.Windows.Forms.Label lbl_tipo_relatorio;
 		private Controles.MyComboBox cbo_tipo_relatorio;
 		private System.Windows.Forms.Label label1;

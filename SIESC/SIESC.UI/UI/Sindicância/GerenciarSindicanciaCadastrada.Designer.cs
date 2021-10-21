@@ -31,6 +31,7 @@ namespace SIESC.UI.UI.Sindicância
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gpb_localizar = new System.Windows.Forms.GroupBox();
@@ -49,7 +50,7 @@ namespace SIESC.UI.UI.Sindicância
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_observacoes = new System.Windows.Forms.Label();
             this.txt_instituicao_encaminhada = new System.Windows.Forms.TextBox();
-            this.txt_observacoes = new MyTextBox();
+            this.txt_observacoes = new SIESC.UI.Controles.MyTextBox();
             this.txt_instituicao_inscricao = new System.Windows.Forms.TextBox();
             this.gpb_sindicados = new System.Windows.Forms.GroupBox();
             this.lbl_denuncia = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@ namespace SIESC.UI.UI.Sindicância
             this.lbl_anosolicitado = new System.Windows.Forms.Label();
             this.txt_dataSindicancia = new System.Windows.Forms.TextBox();
             this.lbl_instituicaoInscricao = new System.Windows.Forms.Label();
-            this.txt_nomealuno = new MyTextBox();
+            this.txt_nomealuno = new SIESC.UI.Controles.MyTextBox();
             this.lbl_instituicaosolicitada = new System.Windows.Forms.Label();
             this.lbl_data_sindicancia = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
@@ -80,6 +81,11 @@ namespace SIESC.UI.UI.Sindicância
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_num_linhas = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgv_dados = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbo_anoReferencia = new SIESC.UI.Controles.MyComboBox();
+            this.siescDataSet = new SIESC.UI.siescDataSet();
+            this.periodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.periodoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.periodoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +95,8 @@ namespace SIESC.UI.UI.Sindicância
             this.gpb_sindicados.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -166,6 +174,8 @@ namespace SIESC.UI.UI.Sindicância
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbo_anoReferencia);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_dataFinalizacao);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txt_responsável);
@@ -244,7 +254,7 @@ namespace SIESC.UI.UI.Sindicância
             this.txt_codigoSindicancia.BackColor = System.Drawing.Color.White;
             this.txt_codigoSindicancia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigoSindicancia.ForeColor = System.Drawing.Color.MediumBlue;
-            this.txt_codigoSindicancia.Location = new System.Drawing.Point(566, 23);
+            this.txt_codigoSindicancia.Location = new System.Drawing.Point(707, 22);
             this.txt_codigoSindicancia.Margin = new System.Windows.Forms.Padding(1);
             this.txt_codigoSindicancia.Name = "txt_codigoSindicancia";
             this.txt_codigoSindicancia.ReadOnly = true;
@@ -254,7 +264,7 @@ namespace SIESC.UI.UI.Sindicância
             // lbl_codigoSolicitacao
             // 
             this.lbl_codigoSolicitacao.AutoSize = true;
-            this.lbl_codigoSolicitacao.Location = new System.Drawing.Point(540, 7);
+            this.lbl_codigoSolicitacao.Location = new System.Drawing.Point(681, 6);
             this.lbl_codigoSolicitacao.Name = "lbl_codigoSolicitacao";
             this.lbl_codigoSolicitacao.Size = new System.Drawing.Size(118, 14);
             this.lbl_codigoSolicitacao.TabIndex = 103;
@@ -265,7 +275,7 @@ namespace SIESC.UI.UI.Sindicância
             this.txt_codigoAluno.BackColor = System.Drawing.Color.White;
             this.txt_codigoAluno.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigoAluno.ForeColor = System.Drawing.Color.DarkRed;
-            this.txt_codigoAluno.Location = new System.Drawing.Point(672, 22);
+            this.txt_codigoAluno.Location = new System.Drawing.Point(813, 21);
             this.txt_codigoAluno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_codigoAluno.Name = "txt_codigoAluno";
             this.txt_codigoAluno.ReadOnly = true;
@@ -276,7 +286,7 @@ namespace SIESC.UI.UI.Sindicância
             // 
             this.lbl_codigo.AutoSize = true;
             this.lbl_codigo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo.Location = new System.Drawing.Point(658, 7);
+            this.lbl_codigo.Location = new System.Drawing.Point(799, 6);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(107, 14);
             this.lbl_codigo.TabIndex = 101;
@@ -640,6 +650,41 @@ namespace SIESC.UI.UI.Sindicância
             this.dgv_dados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dados_CellContentClick);
             this.dgv_dados.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_dados_DataBindingComplete);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(547, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 14);
+            this.label3.TabIndex = 109;
+            this.label3.Text = "Ano Referência:";
+            // 
+            // cbo_anoReferencia
+            // 
+            this.cbo_anoReferencia.DataSource = this.periodoBindingSource;
+            this.cbo_anoReferencia.DisplayMember = "ano";
+            this.cbo_anoReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_anoReferencia.FormattingEnabled = true;
+            this.cbo_anoReferencia.Location = new System.Drawing.Point(547, 25);
+            this.cbo_anoReferencia.Name = "cbo_anoReferencia";
+            this.cbo_anoReferencia.Size = new System.Drawing.Size(88, 22);
+            this.cbo_anoReferencia.TabIndex = 110;
+            this.cbo_anoReferencia.ValueMember = "ano";
+            // 
+            // siescDataSet
+            // 
+            this.siescDataSet.DataSetName = "siescDataSet";
+            this.siescDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // periodoBindingSource
+            // 
+            this.periodoBindingSource.DataMember = "periodo";
+            this.periodoBindingSource.DataSource = this.siescDataSet;
+            // 
+            // periodoTableAdapter
+            // 
+            this.periodoTableAdapter.ClearBeforeFill = true;
+            // 
             // GerenciarSindicanciaCadastrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -647,6 +692,7 @@ namespace SIESC.UI.UI.Sindicância
             this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciarSindicanciaCadastrada";
             this.Text = "Gerenciar Sindicancias Cadastradas";
+            this.Load += new System.EventHandler(this.GerenciarSindicanciaCadastrada_Load);
             this.Enter += new System.EventHandler(this.GerenciarSindicanciaCadastrada_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -662,6 +708,8 @@ namespace SIESC.UI.UI.Sindicância
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siescDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -716,6 +764,11 @@ namespace SIESC.UI.UI.Sindicância
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_num_linhas;
+        private MyComboBox cbo_anoReferencia;
+        private System.Windows.Forms.Label label3;
+        private siescDataSet siescDataSet;
+        private System.Windows.Forms.BindingSource periodoBindingSource;
+        private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
 
         private enum Localizar
         {

@@ -81,10 +81,14 @@
           <DataField>observacoes</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsFundamental</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
         <rd:TableName>vw_alunos_pendentes_municipal</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -100,7 +104,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.71155cm</Width>
+                  <Width>1.14448cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.5308cm</Width>
@@ -1049,7 +1053,7 @@
             <DataSetName>dsFundamental</DataSetName>
             <Top>1.09361cm</Top>
             <Height>1.67625cm</Height>
-            <Width>28.51829cm</Width>
+            <Width>28.95122cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1074,7 +1078,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>2.80514cm</Top>
-            <Left>21.54683cm</Left>
+            <Left>22.11205cm</Left>
             <Height>0.6cm</Height>
             <Width>6.83917cm</Width>
             <ZIndex>1</ZIndex>
@@ -1095,7 +1099,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Relatório de Alunos Pendentes do Ensino Fundamental</Value>
+                    <Value>="Relatório de Alunos Pendentes do Ensino Fundamental " &amp; First(Fields!anoReferencia.Value, "dsFundamental")</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1127,7 +1131,7 @@
         <Height>1.39963in</Height>
         <Style />
       </Body>
-      <Width>11.28511in</Width>
+      <Width>11.39812in</Width>
       <Page>
         <PageHeader>
           <Height>2.32833cm</Height>

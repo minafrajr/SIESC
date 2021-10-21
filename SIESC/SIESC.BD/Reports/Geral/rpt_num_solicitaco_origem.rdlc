@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Solicitação de vaga " &amp; Year(Now())</Value>
+                <Value>="Solicitação de vaga " &amp; First(Fields!anoReferencia.Value, "dsRelatorios")</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -40,10 +40,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.09292cm</Width>
+              <Width>10.97672cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.50418cm</Width>
+              <Width>3.90987cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -278,10 +278,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsRelatorios</DataSetName>
-        <Top>2.1157cm</Top>
-        <Left>4.50828cm</Left>
+        <Top>2.08042cm</Top>
+        <Left>0.33669cm</Left>
         <Height>1.8cm</Height>
-        <Width>8.5971cm</Width>
+        <Width>14.88659cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -328,7 +328,7 @@
     <Height>1.61458in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.358in</Width>
   <Page>
     <PageHeader>
       <Height>2.1503cm</Height>
@@ -495,14 +495,18 @@
           <DataField>qtde</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
-        <rd:TableName>wv_origem_solicitacao</rd:TableName>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:TableName>vw_origem_solicitacao</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>wv_origem_solicitacaoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>vw_origem_solicitacaoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsFundamental">
@@ -25,10 +25,14 @@
           <DataField>numero</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsFundamental</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
         <rd:TableName>vw_motivos_fundamental</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -44,7 +48,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>9.57602cm</Width>
+                  <Width>11.45456cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.29247cm</Width>
@@ -415,7 +419,7 @@
             <Top>1.82465cm</Top>
             <Left>2.19604cm</Left>
             <Height>1.8cm</Height>
-            <Width>12.86849cm</Width>
+            <Width>14.74703cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -733,7 +737,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de vaga " &amp; Year(Now())</Value>
+                    <Value>="Solicitação de vaga " &amp; First(Fields!anoReferencia.Value, "dsFundamental")</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>

@@ -35,6 +35,11 @@ namespace SIESC.MODEL.Classes
         public int codigoAluno { get; set; }
 
         /// <summary>
+        /// O ano de Referência para a sindicância
+        /// </summary>
+        public int? anoReferencia { get; set; }
+
+        /// <summary>
         /// A data em que a sindicancia foi gerada
         /// </summary>
         public DateTime? dataSindicancia { get; set; }

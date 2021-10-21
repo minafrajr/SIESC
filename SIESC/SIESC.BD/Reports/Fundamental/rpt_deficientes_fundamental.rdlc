@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsFundamental">
@@ -27,7 +27,7 @@
         </Field>
         <Field Name="Idade">
           <DataField>Idade</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="NomeMae">
           <DataField>NomeMae</DataField>
@@ -43,7 +43,7 @@
         </Field>
         <Field Name="CodAluno">
           <DataField>CodAluno</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="Deficiencia">
           <DataField>Deficiencia</DataField>
@@ -51,7 +51,7 @@
         </Field>
         <Field Name="CodSolicitacao">
           <DataField>CodSolicitacao</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="InstituicaoSolicitada">
           <DataField>InstituicaoSolicitada</DataField>
@@ -65,10 +65,18 @@
           <DataField>AnoEnsino</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="anoSolicitado">
+          <DataField>anoSolicitado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsFundamental</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsFundamental.xsd</rd:SchemaPath>
         <rd:TableName>vw_deficientes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -118,7 +126,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Solicitação de Vaga  " &amp; Year(Now())</Value>
+                    <Value>="Solicitação de Vaga " &amp; First(Fields!anoReferencia.Value, "dsFundamental")</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -150,10 +158,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.05833cm</Width>
+                  <Width>1.52371cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.10104cm</Width>
+                  <Width>4.30453cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -168,22 +176,22 @@
                   <Width>3.04537cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.37312cm</Width>
+                  <Width>4.29915cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.37245cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.79642cm</Width>
+                  <Width>1.51303cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.92603cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53741cm</Width>
+                  <Width>3.0347cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.67224cm</Width>
+                  <Width>3.40224cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -202,6 +210,7 @@
                                   <Value>Cod. Aluno</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -239,6 +248,7 @@
                                   <Value>Nome</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -274,6 +284,7 @@
                                   <Value>Deficiencia</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -309,6 +320,7 @@
                                   <Value>Data Nasc</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -344,6 +356,7 @@
                                   <Value>Idade</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -380,6 +393,7 @@
                                   <Value>NomedaMãe</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -415,6 +429,7 @@
                                   <Value>Endereco</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -450,6 +465,7 @@
                                   <Value>Telefones</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -485,6 +501,7 @@
                                   <Value>Cod. Solic</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -521,6 +538,7 @@
                                   <Value>Ano</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -557,6 +575,7 @@
                                   <Value>Instituição Solicitada</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -592,6 +611,7 @@
                                   <Value>Instituição Encaminhada</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1052,6 +1072,7 @@
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalhes" />
@@ -1059,10 +1080,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsFundamental</DataSetName>
-            <Top>1.80729cm</Top>
-            <Left>0.10328cm</Left>
+            <Top>1.99222cm</Top>
+            <Left>0.23083cm</Left>
             <Height>1.57042cm</Height>
-            <Width>28.66398cm</Width>
+            <Width>29.07523cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1087,7 +1108,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>3.41299cm</Top>
+            <Top>3.73903cm</Top>
             <Left>22.52168cm</Left>
             <Height>0.60068cm</Height>
             <Width>6.5598cm</Width>
@@ -1103,13 +1124,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.62174in</Height>
+        <Height>1.77799in</Height>
         <Style />
       </Body>
       <Width>11.53782in</Width>
       <Page>
         <PageHeader>
-          <Height>2.18474cm</Height>
+          <Height>2.39641cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1206,48 +1227,20 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!PageNumber</Value>
+                      <Value>="Página "&amp;Globals!PageNumber &amp; " de "&amp; Globals!OverallPageNumber</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
               <Top>0.07056cm</Top>
               <Left>23.30679cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="OverallPageNumber">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!OverallPageNumber</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>OverallPageNumber</rd:DefaultName>
-              <Top>0.07056cm</Top>
-              <Left>26.58148cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>1</ZIndex>
+              <Width>5.77469cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

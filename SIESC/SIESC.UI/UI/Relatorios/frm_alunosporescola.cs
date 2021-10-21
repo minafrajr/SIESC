@@ -10,16 +10,22 @@ using System.Windows.Forms;
 
 namespace SIESC.UI.UI.Relatorios
 {
-    public partial class frm_alunosporescola : Form
+    public partial class frm_alunosporescola : BaseUi
     {
         /// <summary>
-        /// 
+        /// O formulário principal
         /// </summary>
         private Principal_UI _principalUi;
         /// <summary>
-        /// 
+        /// O tipo de nível de ensino
         /// </summary>
         private int tipo_nivelensino;
+
+        /// <summary>
+        /// O ano referência para consulta
+        /// </summary>
+        private int anoReferencia;
+
 
         /// <inheritdoc />
         /// <summary>
@@ -32,6 +38,8 @@ namespace SIESC.UI.UI.Relatorios
         }
         private void frm_alunosporescola_Load(object sender,EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'siescDataSet.periodo'. Você pode movê-la ou removê-la conforme necessário.
+            this.periodoTableAdapter.FillByPeriodo(this.siescDataSet.periodo);
             switch (tipo_nivelensino)
             {
                 case 1:
@@ -85,6 +93,8 @@ namespace SIESC.UI.UI.Relatorios
         private void btn_ok_Click(object sender,EventArgs e)
         {
             var t = CarregaProgressoThread();
+
+            anoReferencia =Convert.ToInt32( cbo_anoReferencia.SelectedValue);
             try
             {
                 if (!rdb_instituicao_encaminhada.Checked && !rdb_instituicao_solicitada.Checked)
