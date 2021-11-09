@@ -81,7 +81,6 @@ namespace SIESC.UI.UI.Relatorios
         /// <summary>
         /// Construtor da classe com parâmetros
         /// </summary>
-        /// <param name="anoReferencia"></param>
         /// <param name="codigo"></param>
         /// <param name="motivo"></param>
         /// <param name="formPrincipal"></param>
@@ -244,14 +243,14 @@ namespace SIESC.UI.UI.Relatorios
                     dt = this.vw_solicitacoes_motivosTableAdapter1.GetDataByMotivoGeral(motivo, anoReferencia);
                     break;
                 case 19: //numero solicitacoes pivot ano ensino vs instituicao
-                    this.num_solicitacoesTableAdapter1.Atualiza_tabela_solicitacoes();
+                    this.num_solicitacoesTableAdapter1.Atualiza_tabela_solicitacoes();//atualiza a tabela temporário com o número de solicitações
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\rpt_solicitacoes_escola_pivot_ano.rdlc";
-                    dt = this.num_solicitacoesTableAdapter1.GetData();
+                    dt = this.num_solicitacoesTableAdapter1.GetData(anoReferencia);
                     break;
                 case 20:
                     this.num_solicitacoes_infantilTableAdapter1.Atualiza_tabela_solicitacoes_infantil();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_solicitacoes_escola_pivot_ano_infantil.rdlc";
-                    dt = this.num_solicitacoes_infantilTableAdapter1.GetData();
+                    dt = this.num_solicitacoes_infantilTableAdapter1.GetData(anoReferencia);
                     break;
                 case 21:
                     FolhaPaisagem();

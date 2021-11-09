@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsRelatorios">
@@ -29,10 +29,14 @@
           <DataField>anoB</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>num_solicitacoes_infantil</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -529,8 +533,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsRelatorios</DataSetName>
-            <Top>0.89035cm</Top>
-            <Left>0.44198cm</Left>
+            <Top>2.13363cm</Top>
+            <Left>0.33486cm</Left>
             <Height>1.8cm</Height>
             <Width>15.2402cm</Width>
             <Style>
@@ -558,8 +562,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox69</rd:DefaultName>
-            <Top>0.10583cm</Top>
-            <Left>2.98198cm</Left>
+            <Top>1.19062cm</Top>
+            <Left>2.05594cm</Left>
             <Height>0.6cm</Height>
             <Width>11.50047cm</Width>
             <ZIndex>1</ZIndex>
@@ -573,8 +577,43 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="SOLICITAÇÃO DE VAGA - " &amp; First(Fields!anoReferencia.Value, "dsRelatorios")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>0.29917cm</Top>
+            <Left>2.05594cm</Left>
+            <Height>0.6cm</Height>
+            <Width>11.50047cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>1.13895in</Height>
+        <Height>1.61812in</Height>
         <Style />
       </Body>
       <Width>6.22136in</Width>
@@ -588,8 +627,8 @@
               <Source>Embedded</Source>
               <Value>Logocabeçalho1</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.19995cm</Top>
-              <Left>3.96148cm</Left>
+              <Top>0.16383cm</Top>
+              <Left>2.7444cm</Left>
               <Height>1.10312cm</Height>
               <Width>10.81201cm</Width>
               <Style>
@@ -613,8 +652,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.5503cm</Top>
-              <Left>7.00828cm</Left>
+              <Top>1.51418cm</Top>
+              <Left>5.7912cm</Left>
               <Height>0.6cm</Height>
               <Width>3.98167cm</Width>
               <ZIndex>1</ZIndex>
@@ -643,8 +682,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.09141cm</Top>
-              <Left>6.29391cm</Left>
+              <Top>1.05529cm</Top>
+              <Left>5.07683cm</Left>
               <Height>0.6cm</Height>
               <Width>5.64854cm</Width>
               <ZIndex>2</ZIndex>
@@ -666,7 +705,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.89916cm</Height>
+          <Height>0.67056cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -687,7 +726,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>OverallPageNumber</rd:DefaultName>
-              <Top>0.14111cm</Top>
+              <Top>0.07056cm</Top>
               <Left>6.56cm</Left>
               <Height>0.6cm</Height>
               <Width>9.01506cm</Width>
