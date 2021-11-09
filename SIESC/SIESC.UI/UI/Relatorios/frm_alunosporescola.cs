@@ -145,9 +145,7 @@ namespace SIESC.UI.UI.Relatorios
             var progress = new Progresso();
             var t = new Thread(progress.ShowDiag);
             t.Start();
-            while (progress.Started)
-            {
-            }
+            while (progress.Started){}
             return t;
         }
     }

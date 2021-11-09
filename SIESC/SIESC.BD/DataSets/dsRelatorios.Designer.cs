@@ -1311,15 +1311,9 @@ namespace SIESC.BD.DataSets {
                 this.columnanoReferencia = new global::System.Data.DataColumn("anoReferencia", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnanoReferencia);
                 this.columnRegional.MaxLength = 45;
-                this.columnAnoEF.AllowDBNull = false;
                 this.columnAnoEF.MaxLength = 45;
-                this.columnEscola.AllowDBNull = false;
                 this.columnEscola.MaxLength = 80;
-                this.columnsolicitada.AllowDBNull = false;
-                this.columnencaminhada.AllowDBNull = false;
-                this.columnPendente.AllowDBNull = false;
                 this.columnTelefone.MaxLength = 60;
-                this.columnidano.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11044,7 +11038,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AnoEF {
                 get {
-                    return ((string)(this[this.tablevw_controlesolicitacoes.AnoEFColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_controlesolicitacoes.AnoEFColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'AnoEF\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.AnoEFColumn] = value;
@@ -11055,7 +11054,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Escola {
                 get {
-                    return ((string)(this[this.tablevw_controlesolicitacoes.EscolaColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_controlesolicitacoes.EscolaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Escola\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.EscolaColumn] = value;
@@ -11066,7 +11070,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public long solicitada {
                 get {
-                    return ((long)(this[this.tablevw_controlesolicitacoes.solicitadaColumn]));
+                    try {
+                        return ((long)(this[this.tablevw_controlesolicitacoes.solicitadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'solicitada\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.solicitadaColumn] = value;
@@ -11077,7 +11086,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public long encaminhada {
                 get {
-                    return ((long)(this[this.tablevw_controlesolicitacoes.encaminhadaColumn]));
+                    try {
+                        return ((long)(this[this.tablevw_controlesolicitacoes.encaminhadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'encaminhada\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.encaminhadaColumn] = value;
@@ -11088,7 +11102,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public long Pendente {
                 get {
-                    return ((long)(this[this.tablevw_controlesolicitacoes.PendenteColumn]));
+                    try {
+                        return ((long)(this[this.tablevw_controlesolicitacoes.PendenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Pendente\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.PendenteColumn] = value;
@@ -11115,7 +11134,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int idano {
                 get {
-                    return ((int)(this[this.tablevw_controlesolicitacoes.idanoColumn]));
+                    try {
+                        return ((int)(this[this.tablevw_controlesolicitacoes.idanoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idano\' na tabela \'vw_controlesolicitacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_controlesolicitacoes.idanoColumn] = value;
@@ -11152,6 +11176,66 @@ namespace SIESC.BD.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAnoEFNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.AnoEFColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAnoEFNull() {
+                this[this.tablevw_controlesolicitacoes.AnoEFColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEscolaNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.EscolaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEscolaNull() {
+                this[this.tablevw_controlesolicitacoes.EscolaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssolicitadaNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.solicitadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsolicitadaNull() {
+                this[this.tablevw_controlesolicitacoes.solicitadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsencaminhadaNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.encaminhadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetencaminhadaNull() {
+                this[this.tablevw_controlesolicitacoes.encaminhadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPendenteNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.PendenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPendenteNull() {
+                this[this.tablevw_controlesolicitacoes.PendenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTelefoneNull() {
                 return this.IsNull(this.tablevw_controlesolicitacoes.TelefoneColumn);
             }
@@ -11160,6 +11244,18 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTelefoneNull() {
                 this[this.tablevw_controlesolicitacoes.TelefoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidanoNull() {
+                return this.IsNull(this.tablevw_controlesolicitacoes.idanoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidanoNull() {
+                this[this.tablevw_controlesolicitacoes.idanoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
