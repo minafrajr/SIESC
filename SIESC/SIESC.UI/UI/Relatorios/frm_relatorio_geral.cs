@@ -85,12 +85,13 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="codigo"></param>
         /// <param name="motivo"></param>
         /// <param name="formPrincipal"></param>
-        public frm_Relatorio_geral(Form formPrincipal,int codigo, string motivo )
+        public frm_Relatorio_geral(Form formPrincipal,int codigo, string motivo, string instituicaoSelecionada )
         {
             InitializeComponent();
 
             this.codigorelatorio = codigo;
             this.motivo = motivo;
+            this.instituicaoSelecionada = instituicaoSelecionada;
             this.MdiParent = formPrincipal;
         }
         /// <summary>
@@ -235,7 +236,7 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 17://número de solicitações por mês
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Mes.rdlc";
-                    dt = this.vw_solicitacoes_por_mesTableAdapter1.GetData();
+                    dt = this.vw_solicitacoes_por_mesTableAdapter1.GetData(anoReferencia);
                     break;
                 case 18://relatório geral por motivo da solicitação
                     FolhaPaisagem();

@@ -111,7 +111,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// <param name="e"></param>
         private void btn_zonearAluno_Click(object sender,EventArgs e)
         {
-            var t = CarregaProgressoThread();
+           var t = CarregaProgressoThread();
 
             try
             {
@@ -159,7 +159,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
             finally
             {
-                if (t.IsAlive) t.Abort();
+               if (t.IsAlive) t.Abort();
             }
         }
 

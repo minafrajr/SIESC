@@ -36,6 +36,12 @@ namespace SIESC.UI.UI.Relatorios
             InitializeComponent();
             _principalUi = principal_UI;
         }
+
+        /// <summary>
+        /// Evento Load do formulário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frm_alunosporescola_Load(object sender,EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'siescDataSet.periodo'. Você pode movê-la ou removê-la conforme necessário.
@@ -64,7 +70,7 @@ namespace SIESC.UI.UI.Relatorios
         }
 
         /// <summary>
-        /// 
+        /// Construtor da classe
         /// </summary>
         /// <param name="principal_UI"></param>
         /// <param name="nivel_ensino"></param>
@@ -76,7 +82,7 @@ namespace SIESC.UI.UI.Relatorios
         }
 
         /// <summary>
-        /// 
+        /// Evento do botão cancelar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -86,7 +92,7 @@ namespace SIESC.UI.UI.Relatorios
         }
 
         /// <summary>
-        /// 
+        /// Evento do botão OK
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,20 +104,18 @@ namespace SIESC.UI.UI.Relatorios
             try
             {
                 if (!rdb_instituicao_encaminhada.Checked && !rdb_instituicao_solicitada.Checked)
-                {
                     throw new Exception("Selecione um tipo de relatório");
-                }
 
                 if (tipo_nivelensino != 3)
                 {
                     if (rdb_instituicao_solicitada.Checked)
                     {
-                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,4,cbo_escola.SelectedValue.ToString());
+                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,4,null,cbo_escola.SelectedValue.ToString());
                         frm.Show();
                     }
                     else //se escola encaminhada
                     {
-                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,5,cbo_escola.SelectedValue.ToString());
+                        frm_Relatorio_geral frm = new frm_Relatorio_geral(_principalUi,5,null,cbo_escola.SelectedValue.ToString());
                         frm.Show();
                     }
                 }
@@ -122,7 +126,6 @@ namespace SIESC.UI.UI.Relatorios
                         frm_Relatorio_geral frm = new frm_Relatorio_geral(21,_principalUi);
                         frm.Show();
                     }
-
                 }
                 if (t.IsAlive) t.Abort();
                 this.Close();
@@ -134,7 +137,7 @@ namespace SIESC.UI.UI.Relatorios
             }
         }
         /// <summary>
-        /// 
+        /// Janela de carregando processo
         /// </summary>
         /// <returns></returns>
         private static Thread CarregaProgressoThread()
@@ -147,7 +150,5 @@ namespace SIESC.UI.UI.Relatorios
             }
             return t;
         }
-
-
     }
 }
