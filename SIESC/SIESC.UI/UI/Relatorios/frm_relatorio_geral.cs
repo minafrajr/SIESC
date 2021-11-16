@@ -185,7 +185,7 @@ namespace SIESC.UI.UI.Relatorios
                 case 5://relatório de alunos encaminhados por instituicao encaminhada
                     FolhaPaisagem();
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\rpt_Alunos_Encam_por_Escola_Encaminhada.rdlc";
-                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataByEscolaEncaminhada(instituicaoSelecionada);
+                    dt = this.vw_lista_encaminhadosTableAdapter1.GetDataByEscolaEncaminhada(instituicaoSelecionada,anoReferencia);
                     break;
                 case 6: //relatório de alunos deficientes
                     FolhaPaisagem();
