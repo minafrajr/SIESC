@@ -39,6 +39,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciaSolicitacao));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.chk_todoAnosConsulta = new System.Windows.Forms.CheckBox();
 			this.cbo_motivos = new SIESC.UI.Controles.MyComboBox();
 			this.motivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.siescDataSet = new SIESC.UI.siescDataSet();
@@ -101,7 +102,6 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.lbl_num_registros = new System.Windows.Forms.ToolStripStatusLabel();
 			this.motivosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.motivosTableAdapter();
-			this.chk_todoAnosConsulta = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -184,6 +184,18 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.splitContainer1.SplitterDistance = 267;
 			this.splitContainer1.TabIndex = 33;
 			// 
+			// chk_todoAnosConsulta
+			// 
+			this.chk_todoAnosConsulta.AutoSize = true;
+			this.chk_todoAnosConsulta.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chk_todoAnosConsulta.Location = new System.Drawing.Point(464, 24);
+			this.chk_todoAnosConsulta.Name = "chk_todoAnosConsulta";
+			this.chk_todoAnosConsulta.Size = new System.Drawing.Size(200, 23);
+			this.chk_todoAnosConsulta.TabIndex = 97;
+			this.chk_todoAnosConsulta.Text = "TODOS OS ANOS LETIVOS";
+			this.chk_todoAnosConsulta.UseVisualStyleBackColor = true;
+			this.chk_todoAnosConsulta.CheckedChanged += new System.EventHandler(this.chk_todoAnosConsulta_CheckedChanged);
+			// 
 			// cbo_motivos
 			// 
 			this.cbo_motivos.DataSource = this.motivosBindingSource;
@@ -231,12 +243,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_tipoBusca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipoBusca.FormattingEnabled = true;
 			this.cbo_tipoBusca.Items.AddRange(new object[] {
-			"CÓDIGO DA SOLICITAÇÃO",
-			"CÓDIGO DE EXPEDIENTE INTERNO",
-			"MOTIVO",
-			"NOME DO ALUNO",
-			"NOME DA MÃE",
-			"EXIBIR TODAS"});
+            "CÓDIGO DA SOLICITAÇÃO",
+            "CÓDIGO DE EXPEDIENTE INTERNO",
+            "MOTIVO",
+            "NOME DO ALUNO",
+            "NOME DA MÃE",
+            "EXIBIR TODAS"});
 			this.cbo_tipoBusca.Location = new System.Drawing.Point(779, 78);
 			this.cbo_tipoBusca.Name = "cbo_tipoBusca";
 			this.cbo_tipoBusca.Size = new System.Drawing.Size(176, 22);
@@ -379,12 +391,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(276, 11);
+			this.label5.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(292, 25);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(80, 14);
+			this.label5.Size = new System.Drawing.Size(96, 19);
 			this.label5.TabIndex = 51;
-			this.label5.Text = "Ano Consulta:";
+			this.label5.Text = "ANO LETIVO:";
 			// 
 			// cbo_anoreferencia
 			// 
@@ -392,17 +404,17 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_anoreferencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbo_anoreferencia.FormattingEnabled = true;
 			this.cbo_anoreferencia.Items.AddRange(new object[] {
-			"2021",
-			"2020",
-			"2019",
-			"2018",
-			"2017",
-			"2016",
-			"2015",
-			"2014"});
-			this.cbo_anoreferencia.Location = new System.Drawing.Point(362, 4);
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014"});
+			this.cbo_anoreferencia.Location = new System.Drawing.Point(394, 22);
 			this.cbo_anoreferencia.Name = "cbo_anoreferencia";
-			this.cbo_anoreferencia.Size = new System.Drawing.Size(54, 24);
+			this.cbo_anoreferencia.Size = new System.Drawing.Size(64, 24);
 			this.cbo_anoreferencia.TabIndex = 48;
 			this.cbo_anoreferencia.TabStop = false;
 			// 
@@ -820,7 +832,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.lbl_num_registros});
+            this.lbl_num_registros});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 3);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1289, 22);
@@ -837,18 +849,6 @@ namespace SIESC.UI.UI.Solicitacoes
 			// motivosTableAdapter
 			// 
 			this.motivosTableAdapter.ClearBeforeFill = true;
-			// 
-			// chk_todoAnosConsulta
-			// 
-			this.chk_todoAnosConsulta.AutoSize = true;
-			this.chk_todoAnosConsulta.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chk_todoAnosConsulta.Location = new System.Drawing.Point(281, 28);
-			this.chk_todoAnosConsulta.Name = "chk_todoAnosConsulta";
-			this.chk_todoAnosConsulta.Size = new System.Drawing.Size(100, 18);
-			this.chk_todoAnosConsulta.TabIndex = 97;
-			this.chk_todoAnosConsulta.Text = "Todos os anos";
-			this.chk_todoAnosConsulta.UseVisualStyleBackColor = true;
-			this.chk_todoAnosConsulta.CheckedChanged += new System.EventHandler(this.chk_todoAnosConsulta_CheckedChanged);
 			// 
 			// GerenciaSolicitacao
 			// 

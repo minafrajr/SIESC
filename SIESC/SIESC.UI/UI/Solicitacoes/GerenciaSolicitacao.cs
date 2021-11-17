@@ -177,12 +177,7 @@ namespace SIESC.UI.UI.Solicitacoes
                         break;
                     case Localizar.nomeAluno:
 
-                        if (chk_todoAnosConsulta.Checked)
-                            dgv_solicitacoes.DataSource =
-                                controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, -1);
-                        else
-                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text,
-                                Convert.ToInt32(cbo_anoreferencia.Text));
+                        dgv_solicitacoes.DataSource = chk_todoAnosConsulta.Checked ? controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, -1) : controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text,Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     //case Localizar.codigoAluno:
                     //    dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
@@ -203,6 +198,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                 Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                 }
+                
             }
             else
             {
@@ -216,7 +212,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 CarregaGridView();
             }
 
+            if (dgv_solicitacoes.RowCount <= 0) 
+                throw new Exception("Não foram encontrados resultados!");
+
             dgv_solicitacoes.Refresh();
+
             RepassaDadosControles();
         }
 
@@ -301,10 +301,9 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void RepassaDadosControles()
         {
-            controleSindicancia = new SindicanciaControl();
-
             DesabilitaTextBox(localizar);
 
+            controleSindicancia = new SindicanciaControl();
 
             txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
             txt_codigo.Text = dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
