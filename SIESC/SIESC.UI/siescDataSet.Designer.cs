@@ -17275,7 +17275,8 @@ ORDER BY nome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ano, idperiodo\r\nFROM            periodo\r\nORDER BY ano DESC";
+            this._commandCollection[1].CommandText = "SELECT        ano, idperiodo\r\nFROM            periodo\r\nWHERE        (idperiodo < " +
+                "9)\r\nORDER BY ano DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
