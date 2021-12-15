@@ -2598,7 +2598,7 @@ namespace SIESC.UI
 			}
 		}
 
-		private void toolStripTextBox10_Click(object sender, EventArgs e)
+		private void iniciarAnoLetivoToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 
 		}

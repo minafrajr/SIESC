@@ -282,6 +282,12 @@
     <Compile Include="UI\CEP\frmBuscaEndereço.Designer.cs">
       <DependentUpon>frmBuscaEndereço.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Configurações\frm_IniciarAnoLetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configurações\frm_IniciarAnoLetivo.Designer.cs">
+      <DependentUpon>frm_IniciarAnoLetivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Configurações\GerenciarMantenedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CEP\frmBuscaEndereço.resx">
       <DependentUpon>frmBuscaEndereço.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configurações\frm_IniciarAnoLetivo.resx">
+      <DependentUpon>frm_IniciarAnoLetivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Configurações\GerenciarMantenedor.resx">
       <DependentUpon>GerenciarMantenedor.cs</DependentUpon>
