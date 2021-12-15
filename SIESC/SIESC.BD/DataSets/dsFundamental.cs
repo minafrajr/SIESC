@@ -9,7 +9,10 @@ namespace SIESC.BD.DataSets
 {
 
 
-	public partial class dsFundamental
+	partial class dsFundamental
 	{
+		partial class vw_num_encaminhadosDataTable
+		{
+		}
 	}
 }

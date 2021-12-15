@@ -206,7 +206,7 @@ namespace SIESC.UI.UI.Relatorios
 
 				ReportDataSource datasource = new ReportDataSource();
 
-				datasource.Name = "dsRelatorios";//tem q ser o mesmo dataset informado no rdlc
+				//datasource.Name = "dsRelatorios";//tem q ser o mesmo dataset informado no rdlc
 
 				switch (nivel_ensino)
 				{
