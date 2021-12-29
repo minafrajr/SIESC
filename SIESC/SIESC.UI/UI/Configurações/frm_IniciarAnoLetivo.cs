@@ -23,5 +23,10 @@ namespace SIESC.UI.UI.Configurações
 		{
 			this.Close();
 		}
+
+		private void btn_confirmar_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

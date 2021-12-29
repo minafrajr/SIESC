@@ -38,6 +38,7 @@ namespace SIESC.UI.UI.Configurações
 			// 
 			// cbo_anoLetivo
 			// 
+			this.cbo_anoLetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_anoLetivo.FormattingEnabled = true;
 			this.cbo_anoLetivo.Items.AddRange(new object[] {
             "2024",
@@ -65,6 +66,7 @@ namespace SIESC.UI.UI.Configurações
 			this.btn_confirmar.TabIndex = 2;
 			this.btn_confirmar.Text = "Confirmar";
 			this.btn_confirmar.UseVisualStyleBackColor = true;
+			this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
 			// 
 			// btn_cancelar
 			// 
