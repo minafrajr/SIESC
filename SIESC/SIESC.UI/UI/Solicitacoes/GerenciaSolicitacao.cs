@@ -460,7 +460,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2021"))
+                if (!cbo_anoreferencia.Text.Equals(DateTime.Now.Year.ToString()))
                     throw new Exception("Não é permitido finalizar solicitações de anos anteriores.");
 
                 if (Mensageiro.MensagemPergunta($"Deseja finalizar a Solicitação?{Environment.NewLine}A solicitação será considerada como encaminhada.", this).Equals(DialogResult.Yes))
@@ -495,17 +495,18 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if (!cbo_anoreferencia.Text.Equals("2021"))
+                if (!cbo_anoreferencia.Text.Equals(DateTime.Now.Year.ToString()))
                     throw new Exception("Não é permitido excluir solicitações de anos anteriores.");
 
                 controleSolicitacoes = new SolicitacaoControl();
 
-                if (MessageBox.Show(string.Format("Deseja excluir a solicitação de vaga do _aluno {0}?", dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value), "Siesc", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(
+                        $@"Deseja excluir a solicitação de vaga do _aluno {dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value}?", @"Siesc", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (controleSolicitacoes.Excluir((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value))
                     {
                         dgv_solicitacoes.Refresh();
-                        MessageBox.Show("Solicitação excluída com sucesso!!!", "SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(@"Solicitação excluída com sucesso!!!", @"SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 GerenciaSolicitacao_Load(null, null);
