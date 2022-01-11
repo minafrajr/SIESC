@@ -2040,15 +2040,15 @@ namespace SIESC.UI.UI.Solicitacoes
                 switch (cbo_anosolicitado.SelectedValue)
                 {
                     case 1:
-                        if (year.Equals("2015"))
-                            MensagemDeclaracao();
-                        break;
-                    case 11:
                         if (year.Equals("2016"))
                             MensagemDeclaracao();
                         break;
-                    case 10:
+                    case 11:
                         if (year.Equals("2017"))
+                            MensagemDeclaracao();
+                        break;
+                    case 10:
+                        if (year.Equals("2018"))
                             MensagemDeclaracao();
                         break;
                 }
