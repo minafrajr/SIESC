@@ -259,14 +259,23 @@ namespace SIESC.UI.UI.Solicitacoes
                         case "COPASA":
                             rdb_copasa.Checked = true;
                             break;
-                        case "CORRESP. BANCÁRIA":
-                            rdb_correspondenciabancaria.Checked = true;
-                            break;
+                        //case "CORRESP. BANCÁRIA":
+                        //    rdb_correspondenciabancaria.Checked = true;
+                        //    break;
                         case "TELEFONE FIXO":
                             rdb_telefone_fixo.Checked = true;
                             break;
                         case "DECLARAÇÃO CEMIG":
                             rdb_declaracao_cemig.Checked = true;
+                            break; 
+                        case "IPTU":
+                            rdb_iptu.Checked = true;
+                            break;
+                        case "INTERNET FIXA":
+                            rdb_internet_fixa.Checked = true;
+                            break;
+                        case "CONTRATO COMPRA VENDA":
+                            rdb_contrato.Checked = true;
                             break;
                         default:
                             rdb_outroscomprov.Checked = true;
@@ -293,14 +302,12 @@ namespace SIESC.UI.UI.Solicitacoes
                         Preenche_cbo_EscolaIrmao1(solicitacao);
                         Preenche_cbo_Ano_Irmao2(solicitacao);
                         Preenche_cbo_EscolaIrmao2(solicitacao);
-
                     }
                     else
                     {
                         HabilitaPossuiIrmaos(false);
                     }
-
-
+                    
                     Preenche_cbo_Motivo(solicitacao);
                     Preenche_cbo_EscSolicitada(solicitacao);
                     Preenche_cbo_Ano(solicitacao);
@@ -415,7 +422,6 @@ namespace SIESC.UI.UI.Solicitacoes
                     return;
                 }
             }
-
         }
 
         /// <summary>

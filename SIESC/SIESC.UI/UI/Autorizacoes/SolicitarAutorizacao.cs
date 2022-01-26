@@ -337,9 +337,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				string tag = string.Empty;
 
 				if (!VerificaCampos(listaControlesObrigatorios,ref tag))
-				{
 					throw new Exception($"O campo {tag} está sem preencher!");
-				}
 
 				funcionario = this.CriaFuncionario();
 				funcionarioControl = new FuncionarioControl();
@@ -348,13 +346,11 @@ namespace SIESC.UI.UI.Autorizacoes
 				int? idfuncionario; //se o funcionário não existir o id é null
 
 				if (!lbl_codigofunc.Text.Equals("_"))
-				{
-					idfuncionario = Convert.ToInt32(lbl_codigofunc.Text);//pega o cod do funcionario pela label
-				}
+					idfuncionario = Convert.ToInt32(lbl_codigofunc.Text); //pega o cod do funcionario pela label
 				else
-				{
-					idfuncionario = funcionarioControl.PesquisaID(funcionario.DataNascimento,funcionario.Nome);//pega o codigo do funcionário pela pesquisa no banco.
-				}
+					idfuncionario =
+						funcionarioControl.PesquisaID(funcionario.DataNascimento,
+							funcionario.Nome); //pega o codigo do funcionário pela pesquisa no banco.
 
 				string tmpNumeroAutoriz = string.Empty;
 
@@ -364,9 +360,7 @@ namespace SIESC.UI.UI.Autorizacoes
 					funcionarioControl.Salvar(funcionario,false); //false - atualiza o funcionario no banco
 
 					if (!string.IsNullOrEmpty(lbl_numautoriz.Text))//pega o número de autorização do funcionário
-					{
 						tmpNumeroAutoriz = lbl_numautoriz.Text;
-					}
 
 					//tmp_numeroautoriz = autorizacaoControl.PesquisaAutorizacao((int)idfuncionario);
 				}
@@ -609,7 +603,9 @@ namespace SIESC.UI.UI.Autorizacoes
 				if (control is MyTextBox) control.ResetText();
 
 				if (control is MyMaskedTextBox) control.ResetText();
-
+				
+				if (control is MyMaskedPhoneBox) control.ResetText();
+				
 				if (control is RadioButton) ((RadioButton) control).Checked = false;
 
 				if (control is CheckBox) ((CheckBox) control).Checked = false;
