@@ -549,7 +549,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     case "NOME DA MÃE":
                         localizar = Localizar.nomeMae;
                         break;
-                    case "":
+                    case "EXIBIR TODAS":
                         localizar = Localizar.aguardando;
                         break;
                 }

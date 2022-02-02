@@ -243,12 +243,12 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_tipoBusca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_tipoBusca.FormattingEnabled = true;
 			this.cbo_tipoBusca.Items.AddRange(new object[] {
-            "CÓDIGO DA SOLICITAÇÃO",
-            "CÓDIGO DE EXPEDIENTE INTERNO",
-            "MOTIVO",
-            "NOME DO ALUNO",
-            "NOME DA MÃE",
-            "EXIBIR TODAS"});
+			"CÓDIGO DA SOLICITAÇÃO",
+			"CÓDIGO DE EXPEDIENTE INTERNO",
+			"MOTIVO",
+			"NOME DO ALUNO",
+			"NOME DA MÃE",
+			"EXIBIR TODAS"});
 			this.cbo_tipoBusca.Location = new System.Drawing.Point(779, 78);
 			this.cbo_tipoBusca.Name = "cbo_tipoBusca";
 			this.cbo_tipoBusca.Size = new System.Drawing.Size(176, 22);
@@ -357,15 +357,15 @@ namespace SIESC.UI.UI.Solicitacoes
 			// txt_usuario
 			// 
 			this.txt_usuario.Enabled = false;
-			this.txt_usuario.Location = new System.Drawing.Point(1030, 179);
+			this.txt_usuario.Location = new System.Drawing.Point(1049, 180);
 			this.txt_usuario.Name = "txt_usuario";
-			this.txt_usuario.Size = new System.Drawing.Size(219, 22);
+			this.txt_usuario.Size = new System.Drawing.Size(212, 22);
 			this.txt_usuario.TabIndex = 55;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(1027, 162);
+			this.label3.Location = new System.Drawing.Point(1050, 163);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(117, 14);
 			this.label3.TabIndex = 54;
@@ -404,15 +404,15 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.cbo_anoreferencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbo_anoreferencia.FormattingEnabled = true;
 			this.cbo_anoreferencia.Items.AddRange(new object[] {
-            "2022",
-            "2021",
-            "2020",
-            "2019",
-            "2018",
-            "2017",
-            "2016",
-            "2015",
-            "2014"});
+			"2022",
+			"2021",
+			"2020",
+			"2019",
+			"2018",
+			"2017",
+			"2016",
+			"2015",
+			"2014"});
 			this.cbo_anoreferencia.Location = new System.Drawing.Point(394, 22);
 			this.cbo_anoreferencia.Name = "cbo_anoreferencia";
 			this.cbo_anoreferencia.Size = new System.Drawing.Size(64, 24);
@@ -506,7 +506,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// lbl_escolaencaminhada
 			// 
 			this.lbl_escolaencaminhada.AutoSize = true;
-			this.lbl_escolaencaminhada.Location = new System.Drawing.Point(545, 163);
+			this.lbl_escolaencaminhada.Location = new System.Drawing.Point(568, 163);
 			this.lbl_escolaencaminhada.Name = "lbl_escolaencaminhada";
 			this.lbl_escolaencaminhada.Size = new System.Drawing.Size(136, 14);
 			this.lbl_escolaencaminhada.TabIndex = 38;
@@ -515,7 +515,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// txt_instituicao_encaminhada
 			// 
 			this.txt_instituicao_encaminhada.Enabled = false;
-			this.txt_instituicao_encaminhada.Location = new System.Drawing.Point(548, 180);
+			this.txt_instituicao_encaminhada.Location = new System.Drawing.Point(571, 180);
 			this.txt_instituicao_encaminhada.Name = "txt_instituicao_encaminhada";
 			this.txt_instituicao_encaminhada.Size = new System.Drawing.Size(358, 22);
 			this.txt_instituicao_encaminhada.TabIndex = 39;
@@ -534,7 +534,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			this.txt_instituicao_solicitada.Enabled = false;
 			this.txt_instituicao_solicitada.Location = new System.Drawing.Point(5, 180);
 			this.txt_instituicao_solicitada.Name = "txt_instituicao_solicitada";
-			this.txt_instituicao_solicitada.Size = new System.Drawing.Size(421, 22);
+			this.txt_instituicao_solicitada.Size = new System.Drawing.Size(446, 22);
 			this.txt_instituicao_solicitada.TabIndex = 37;
 			// 
 			// txt_telefone
@@ -610,7 +610,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// lbl_dataencaminha
 			// 
 			this.lbl_dataencaminha.AutoSize = true;
-			this.lbl_dataencaminha.Location = new System.Drawing.Point(909, 162);
+			this.lbl_dataencaminha.Location = new System.Drawing.Point(932, 163);
 			this.lbl_dataencaminha.Name = "lbl_dataencaminha";
 			this.lbl_dataencaminha.Size = new System.Drawing.Size(58, 14);
 			this.lbl_dataencaminha.TabIndex = 24;
@@ -619,7 +619,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// lbl_datasolicitacao
 			// 
 			this.lbl_datasolicitacao.AutoSize = true;
-			this.lbl_datasolicitacao.Location = new System.Drawing.Point(429, 163);
+			this.lbl_datasolicitacao.Location = new System.Drawing.Point(452, 163);
 			this.lbl_datasolicitacao.Name = "lbl_datasolicitacao";
 			this.lbl_datasolicitacao.Size = new System.Drawing.Size(64, 14);
 			this.lbl_datasolicitacao.TabIndex = 24;
@@ -698,15 +698,15 @@ namespace SIESC.UI.UI.Solicitacoes
 			// txt_dataencaminhamento
 			// 
 			this.txt_dataencaminhamento.Enabled = false;
-			this.txt_dataencaminhamento.Location = new System.Drawing.Point(912, 179);
+			this.txt_dataencaminhamento.Location = new System.Drawing.Point(933, 180);
 			this.txt_dataencaminhamento.Name = "txt_dataencaminhamento";
-			this.txt_dataencaminhamento.Size = new System.Drawing.Size(111, 22);
+			this.txt_dataencaminhamento.Size = new System.Drawing.Size(112, 22);
 			this.txt_dataencaminhamento.TabIndex = 26;
 			// 
 			// txt_datasolicitacao
 			// 
 			this.txt_datasolicitacao.Enabled = false;
-			this.txt_datasolicitacao.Location = new System.Drawing.Point(432, 180);
+			this.txt_datasolicitacao.Location = new System.Drawing.Point(455, 180);
 			this.txt_datasolicitacao.Name = "txt_datasolicitacao";
 			this.txt_datasolicitacao.Size = new System.Drawing.Size(111, 22);
 			this.txt_datasolicitacao.TabIndex = 26;
@@ -833,7 +833,7 @@ namespace SIESC.UI.UI.Solicitacoes
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_num_registros});
+			this.lbl_num_registros});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 3);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1289, 22);

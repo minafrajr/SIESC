@@ -1285,6 +1285,7 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_instituicao_encaminhada.Visible = valor;
             btn_cancelaEnc.Visible = valor;
             chk_transporte.Visible = valor;
+            txt_justificativa_transporte.Visible = true;
 
         }
 
