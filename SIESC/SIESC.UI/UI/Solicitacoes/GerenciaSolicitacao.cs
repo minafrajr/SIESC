@@ -147,7 +147,6 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 Mensageiro.MensagemErro(exception, this);
             }
-
         }
 
         private void LocalizarSolicitacao()
@@ -161,19 +160,18 @@ namespace SIESC.UI.UI.Solicitacoes
                 switch (localizar)
                 {
                     case Localizar.codigoSolicitacao:
-                        if (string.IsNullOrEmpty(txt_codigo.Text))
-                            throw new Exception("valor do código não digitado!");
+                        if (string.IsNullOrEmpty(txt_codigo.Text)) throw new Exception("valor do código não digitado!");
 
-                        dgv_solicitacoes.DataSource =
-                            controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
+                        if (txt_codigo.Text.Length != 8)
+                            txt_codigo.Text = cbo_anoreferencia.Text + txt_codigo.Text;
+
+                        dgv_solicitacoes.DataSource = controleSolicitacoes.RetornaSolicitacaoById(Convert.ToInt32(txt_codigo.Text));
                         break;
-
                     case Localizar.nomeMae:
                         if (chk_todoAnosConsulta.Checked)
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text, -1);
                         else
-                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text,
-                                Convert.ToInt32(cbo_anoreferencia.Text));
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text,Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     case Localizar.nomeAluno:
 

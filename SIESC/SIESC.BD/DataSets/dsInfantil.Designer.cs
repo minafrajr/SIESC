@@ -4913,13 +4913,13 @@ namespace SIESC.BD.DataSets.dsInfantilTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        anoReferencia, codigosolicitacao, nome, idade, ano, mae, tipoLogradouroAluno, logradouroAluno, numeroResidenciaAluno, complemento, bairro, telefone, motivo, escolasolicitada, regional, observacoes, dataSolicitacao
-FROM            vw_alunos_pendentes_infantil";
+FROM            vw_alunos_pendentes_infantil
+ORDER BY ano, codigosolicitacao";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        anoReferencia, codigosolicitacao, nome, idade, ano, mae, tipoLogradouroAluno, logradouroAluno, numeroResidenciaAluno, complemento, bairro, telefone, motivo, escolasolicitada, regional, observacoes, dataSolicitacao
-FROM            vw_alunos_pendentes_infantil
-WHERE (anoReferencia = @anoReferencia)";
+            this._commandCollection[1].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, dataSolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes_infantil WHERE (anoReferencia = @anoReferencia)
+ORDER BY ano, codigosolicitacao";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoReferencia";
@@ -4931,10 +4931,7 @@ WHERE (anoReferencia = @anoReferencia)";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        ano, anoReferencia, bairro, codigosolicitacao, complemento, dataSolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno
-FROM            vw_alunos_pendentes_infantil
-WHERE        (anoReferencia = @anoReferencia)
-ORDER BY dataSolicitacao";
+            this._commandCollection[2].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, dataSolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes_infantil WHERE (anoReferencia = @anoReferencia) ORDER BY dataSolicitacao";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoReferencia";

@@ -19701,7 +19701,8 @@ FROM            vw_alunos_pendentes";
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        anoReferencia,codigosolicitacao, nome, ano, mae, tipoLogradouroAluno, logradouroAluno, numeroResidenciaAluno, complemento, bairro, telefone, motivo, escolasolicitada, regional, observacoes, idade, datasolicitacao
 FROM            vw_alunos_pendentes
-WHERE (anoReferencia = @anoReferencia)";
+WHERE (anoReferencia = @anoReferencia)
+ORDER BY ano";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoReferencia";
@@ -19716,7 +19717,8 @@ WHERE (anoReferencia = @anoReferencia)";
             this._commandCollection[2].CommandText = @"SELECT        ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno
 FROM            vw_alunos_pendentes
 WHERE        (ano LIKE @ano) AND (anoReferencia = @anoReferencia)
-ORDER BY codigosolicitacao";
+ORDER BY codigosolicitacao
+ORDER BY ano";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@ano";
@@ -19738,7 +19740,7 @@ ORDER BY codigosolicitacao";
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (escolasolicitada LIKE @escola) AND (anoReferencia = @anoReferencia)
- ORDER BY codigosolicitacao";
+ORDER BY ano,codigosolicitacao";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@escola";
@@ -19760,7 +19762,7 @@ ORDER BY codigosolicitacao";
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (ano LIKE @ano) AND (escolasolicitada LIKE @escola)  AND (anoReferencia = @anoReferencia)
-ORDER BY codigosolicitacao";
+ORDER BY ano, codigosolicitacao";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@ano";
@@ -19860,7 +19862,7 @@ ORDER BY codigosolicitacao";
             this._commandCollection[6].Parameters.Add(param);
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (regional LIKE @regional) AND (escolasolicitada LIKE @escola) AND (anoReferencia = @anoReferencia) ORDER BY codigosolicitacao";
+            this._commandCollection[7].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (regional LIKE @regional) AND (escolasolicitada LIKE @escola) AND (anoReferencia = @anoReferencia) ORDER BY ano, codigosolicitacao";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -19890,7 +19892,13 @@ ORDER BY codigosolicitacao";
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (ano.idAno < 10) AND (anoReferencia = @anoReferencia) ORDER BY vw_alunos_pendentes.codigosolicitacao";
+            this._commandCollection[8].CommandText = @"SELECT        vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, 
+                         vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, 
+                         vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno
+FROM            vw_alunos_pendentes INNER JOIN
+                         ano ON vw_alunos_pendentes.ano = ano.AnoEF
+WHERE        (vw_alunos_pendentes.regional = @regional) AND (ano.idAno < 10) AND (vw_alunos_pendentes.anoReferencia = @anoReferencia)
+ORDER BY vw_alunos_pendentes.ano, vw_alunos_pendentes.codigosolicitacao";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -19911,7 +19919,8 @@ ORDER BY codigosolicitacao";
             this._commandCollection[8].Parameters.Add(param);
             this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (anoReferencia = @anoReferencia) ORDER BY vw_alunos_pendentes.codigosolicitacao";
+            this._commandCollection[9].CommandText = @"SELECT vw_alunos_pendentes.ano, vw_alunos_pendentes.anoReferencia, vw_alunos_pendentes.bairro, vw_alunos_pendentes.codigosolicitacao, vw_alunos_pendentes.complemento, vw_alunos_pendentes.datasolicitacao, vw_alunos_pendentes.escolasolicitada, vw_alunos_pendentes.idade, vw_alunos_pendentes.logradouroAluno, vw_alunos_pendentes.mae, vw_alunos_pendentes.motivo, vw_alunos_pendentes.nome, vw_alunos_pendentes.numeroResidenciaAluno, vw_alunos_pendentes.observacoes, vw_alunos_pendentes.regional, vw_alunos_pendentes.telefone, vw_alunos_pendentes.tipoLogradouroAluno FROM vw_alunos_pendentes INNER JOIN ano ON vw_alunos_pendentes.ano = ano.AnoEF WHERE (vw_alunos_pendentes.regional = @regional) AND (anoReferencia = @anoReferencia) ORDER BY vw_alunos_pendentes.codigosolicitacao
+ORDER BY ano, codigosolicitacao";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@regional";
@@ -19953,7 +19962,8 @@ ORDER BY codigosolicitacao";
             this._commandCollection[10].Parameters.Add(param);
             this._commandCollection[11] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (anoReferencia = @anoReferencia) ORDER BY datasolicitacao";
+            this._commandCollection[11].CommandText = @"SELECT ano, anoReferencia, bairro, codigosolicitacao, complemento, datasolicitacao, escolasolicitada, idade, logradouroAluno, mae, motivo, nome, numeroResidenciaAluno, observacoes, regional, telefone, tipoLogradouroAluno FROM vw_alunos_pendentes WHERE (anoReferencia = @anoReferencia) ORDER BY datasolicitacao
+ORDER BY ano, codigosolicitacao";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@anoReferencia";
