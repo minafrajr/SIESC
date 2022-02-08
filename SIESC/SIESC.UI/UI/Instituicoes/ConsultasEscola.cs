@@ -84,6 +84,8 @@ namespace SIESC.UI.UI.Instituicoes
         /// </summary>
         private void PreencheDados()
         {
+            int idescola=0;
+
             try
             {
                 if (lstb_escolas.SelectedValue != null)
@@ -92,13 +94,13 @@ namespace SIESC.UI.UI.Instituicoes
 
                     controleInstituicao = new InstituicaoControl();
 
-                    int idescola = (int)controleInstituicao.PesquisaID(lstb_escolas.SelectedValue.ToString());
+                    idescola = (int)controleInstituicao.PesquisaID(lstb_escolas.SelectedValue.ToString());
 
                     dt_escola = controleInstituicao.PesquisaDadosEscola(lstb_escolas.SelectedValue.ToString());
 
                     lbl_nomeescola.Text = dt_escola.Rows[0]["nome"].ToString();
                     lbl_telefone.Text = dt_escola.Rows[0]["telefone"].ToString();
-                    lbl_endereco.Text = string.Format("{0} {1}, nº {2}. {3} - {4}", dt_escola.Rows[0]["tipologradouro"], dt_escola.Rows[0]["logradouro"], dt_escola.Rows[0]["numeroEdificio"], dt_escola.Rows[0]["complemento"], dt_escola.Rows[0]["Cep"]);
+                    lbl_endereco.Text = $"{dt_escola.Rows[0]["tipologradouro"]} {dt_escola.Rows[0]["logradouro"]}, nº {dt_escola.Rows[0]["numeroEdificio"]}. {dt_escola.Rows[0]["complemento"]} - {dt_escola.Rows[0]["Cep"]}";
 
                     lbl_bairro.Text = dt_escola.Rows[0]["nomeBairro"].ToString();
                     lbl_regional.Text = dt_escola.Rows[0]["nomeRegional"].ToString();
@@ -110,14 +112,19 @@ namespace SIESC.UI.UI.Instituicoes
                     PreencheAnosOfertados(idescola);
 
                     webBrowser1.Url = new Uri("https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:Ak%7C" + coordenadasInstituicao + "&key=" + Settings.Default.mapsApiKey);
-                    RepassaDiretor(idescola);
-                    RepassaSecretario(idescola);
+                   
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            RepassaDiretor(idescola);
+            RepassaSecretario(idescola);
+
+
+
         }
 
         /// <summary>
@@ -164,7 +171,9 @@ namespace SIESC.UI.UI.Instituicoes
             catch (Exception ex)
             {
                 LimpaCamposDiretor();
-                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como DIRETOR.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descriçã do erro: {1}", Environment.NewLine, ex.Message));
+                
+                Mensageiro.MensagemErro(
+                    $"{Environment.NewLine}Possível duplicidade de funcionário como DIRETOR.{Environment.NewLine}Verifique se há mais de uma autorização para esse cargo.{Environment.NewLine}{Environment.NewLine}Descrição do erro: {ex.Message}",this);
             }
         }
 
@@ -202,7 +211,8 @@ namespace SIESC.UI.UI.Instituicoes
             catch (Exception ex)
             {
                 LimpaCamposSecretario();
-                throw new Exception(string.Format("{0}Possível duplicidade de funcionário como SECRETÁRIO.{0}Verifique se há mais de uma autorização para esse cargo.{0}{0}Descrição do erro: {1}", Environment.NewLine, ex.Message));
+                
+                Mensageiro.MensagemErro($"{Environment.NewLine}Possível duplicidade de funcionário como SECRETÁRIO.{Environment.NewLine}Verifique se há mais de uma autorização para esse cargo.{Environment.NewLine}{Environment.NewLine}Descrição do erro: {ex.Message}", this);
             }
         }
         /// <summary>
@@ -251,11 +261,8 @@ namespace SIESC.UI.UI.Instituicoes
             {
                 Mensageiro.MensagemErro(ex, this);
             }
-
         }
-
-
-
+        
         /// <summary>
         /// Evento do radiobutton de escolas municipais
         /// </summary>

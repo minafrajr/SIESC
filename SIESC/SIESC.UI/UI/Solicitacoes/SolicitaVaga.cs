@@ -265,9 +265,9 @@ namespace SIESC.UI.UI.Solicitacoes
                         case "TELEFONE FIXO":
                             rdb_telefone_fixo.Checked = true;
                             break;
-                        case "DECLARAÇÃO CEMIG":
-                            rdb_declaracao_cemig.Checked = true;
-                            break; 
+                        //case "DECLARAÇÃO CEMIG":
+                        //    rdb_declaracao_cemig.Checked = true;
+                        //    break; 
                         case "IPTU":
                             rdb_iptu.Checked = true;
                             break;
@@ -1596,7 +1596,6 @@ namespace SIESC.UI.UI.Solicitacoes
                 //cbo_anosolicitado.SelectedIndex = -1;
                 Mensageiro.MensagemAviso($"O aluno possui mais de {idade} anos.{Environment.NewLine} Favor Verificar!",
                     principalUi);
-
             }
         }
 
@@ -1623,9 +1622,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     //throw new Exception(
                     //    string.Format("ATENÇÃO: o nome digitado JÁ EXISTE no banco de dados!{0}CONTINUAR A OPERAÇÃO PODERÁ CAUSAR DUPLICIDADE DE ALUNOS.{0}ACESSE O GERENCIAMENTO DE ALUNOS E CLICK EM SOLICITAR VAGA.",Environment.NewLine));
 
-                    Mensageiro.MensagemAviso(
-                        $"O aluno {txt_nomealuno.Text.ToUpper()} já existe.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!",
-                        principalUi);
+                            Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe, inscrito sob o nº {txt_codigoAluno.Text}.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!", principalUi);
                 }
             }
             catch (Exception ex)

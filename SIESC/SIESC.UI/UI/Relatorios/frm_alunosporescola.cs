@@ -66,7 +66,6 @@ namespace SIESC.UI.UI.Relatorios
                     cbo_escola.Visible = false;
                     break;
             }
-
         }
 
         /// <summary>
@@ -98,14 +97,14 @@ namespace SIESC.UI.UI.Relatorios
         /// <param name="e"></param>
         private void btn_ok_Click(object sender,EventArgs e)
         {
-            var t = CarregaProgressoThread();
+           // var t = CarregaProgressoThread();
 
             anoReferencia =Convert.ToInt32( cbo_anoReferencia.SelectedValue);
             try
             {
                 if (!rdb_instituicao_encaminhada.Checked && !rdb_instituicao_solicitada.Checked)
                     throw new Exception("Selecione um tipo de relatório");
-
+                
                 if (tipo_nivelensino != 3)
                 {
                     if (rdb_instituicao_solicitada.Checked)
@@ -127,12 +126,11 @@ namespace SIESC.UI.UI.Relatorios
                         frm.Show();
                     }
                 }
-                if (t.IsAlive) t.Abort();
-                this.Close();
+              //  if (t.IsAlive) t.Abort();
             }
             catch (Exception exception)
             {
-                if (t.IsAlive) t.Abort();
+                //if (t.IsAlive) t.Abort();
                 MessageBox.Show(exception.Message,"SIESC",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
