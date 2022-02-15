@@ -102,16 +102,22 @@ namespace SIESC.UI.UI.Solicitacoes
         /// <param name="e"></param>
         private void GerenciaSolicitacao_Enter(object sender, EventArgs e)
         {
-
-            if (navegacao != Navegacao.editando)
+            try
             {
-                HabilitaTextBox(localizar);
-                RepassaDadosControles();
-            }
-            else
-                LocalizarSolicitacao();
+                if (navegacao != Navegacao.editando)
+                {
+                    HabilitaTextBox(localizar);
+                    RepassaDadosControles();
+                }
+                else
+                    LocalizarSolicitacao();
 
-            dgv_solicitacoes.Update();
+                dgv_solicitacoes.Update();
+            }
+            catch (Exception ex)
+            {
+                Mensageiro.MensagemErro(ex,PrincipalUI);
+            }
         }
         /// <summary>
         /// Carrega o GridViewS
@@ -246,7 +252,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// Limpa os camposd do formulário
+        /// Limpa os campos do formulário
         /// </summary>
         private void LimpaCampos()
         {
@@ -273,7 +279,6 @@ namespace SIESC.UI.UI.Solicitacoes
             msk_codigoEI.Enabled = false;
             cbo_motivos.Visible = false;
             lbl_tipo_motivos.Visible = false;
-
         }
 
         /// <summary>
@@ -299,82 +304,100 @@ namespace SIESC.UI.UI.Solicitacoes
         /// </summary>
         private void RepassaDadosControles()
         {
-            DesabilitaTextBox(localizar);
-
-            controleSindicancia = new SindicanciaControl();
-
-            txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            txt_codigo.Text = dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            lbl_anoensino.Text = dgv_solicitacoes[3, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-            txt_mae.Text = dgv_solicitacoes[4, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            controleAluno = new AlunoControl();
-
-            txt_endereco.Text = controleSolicitacoes.RetornaEndereco((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
-
-            txt_origem_solicitacao.Text = dgv_solicitacoes[8, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            txt_instituicao_solicitada.Text = dgv_solicitacoes[9, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            txt_instituicao_encaminhada.Text = dgv_solicitacoes[11, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            txt_dataencaminhamento.Text = dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() != "01/01/0001 00:00:00" ? dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() : string.Empty;
-
-            txt_datasolicitacao.Text = dgv_solicitacoes[10, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            txt_motivo.Text = dgv_solicitacoes[7, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
-
-            txt_observacoes.Text = dgv_solicitacoes[18, dgv_solicitacoes.CurrentCellAddress.Y].Value + " - " + dgv_solicitacoes[13, dgv_solicitacoes.CurrentCellAddress.Y].Value;
-
-            txt_datanasc.Text = dgv_solicitacoes[19, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString().Substring(0, 10);
-
-            txt_telefone.Text = dgv_solicitacoes[5, dgv_solicitacoes.CurrentCellAddress.Y].Value + "  " + dgv_solicitacoes[6, dgv_solicitacoes.CurrentCellAddress.Y].Value;
-
-            lbl_idade.Text = dgv_solicitacoes[15, dgv_solicitacoes.CurrentCellAddress.Y].Value + " anos";
-
-            txt_usuario.Text = dgv_solicitacoes[17, dgv_solicitacoes.CurrentCellAddress.Y].Value
-                .ToString();
-
-            if (txt_observacoes.Text.Contains("SOLICITAÇÃO FINALIZADA"))
+            if (dgv_solicitacoes.Rows.Count > 0)
             {
-                txt_instituicao_encaminhada.Text = "SOLICITAÇÃO FINALIZADA";
-            }
+                DesabilitaTextBox(localizar);
 
-            if (dgv_solicitacoes.CurrentRow.Cells["possuiIrmao"].Value.Equals(true))
-            {
-                lbl_irmao_boolean.Text = "SIM";
-                lbl_irmao_boolean.ForeColor = Color.Firebrick;
-            }
-            else
-            {
-                lbl_irmao_boolean.Text = "NÃO";
-                lbl_irmao_boolean.ForeColor = Color.Navy;
-            }
+                controleSindicancia = new SindicanciaControl();
 
-            if (controleSindicancia.ContemSindicado(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)))
-            {
-                gpb_sindicados.Visible = true;
+                txt_nomealuno.Text = dgv_solicitacoes[1, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                txt_codigo.Text = dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                lbl_anoensino.Text = dgv_solicitacoes[3, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+                txt_mae.Text = dgv_solicitacoes[4, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
 
-                ArrayList listaStatusSindicancia =
-                    controleSindicancia.StatusSindicancia(Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value));
+                controleAluno = new AlunoControl();
 
-                if (bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
+                txt_endereco.Text =
+                    controleSolicitacoes.RetornaEndereco(
+                        (int) dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
+
+                txt_origem_solicitacao.Text =
+                    dgv_solicitacoes[8, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+
+                txt_instituicao_solicitada.Text =
+                    dgv_solicitacoes[9, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+
+                txt_instituicao_encaminhada.Text =
+                    dgv_solicitacoes[11, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+
+                txt_dataencaminhamento.Text =
+                    dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString() !=
+                    "01/01/0001 00:00:00"
+                        ? dgv_solicitacoes[12, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString()
+                        : string.Empty;
+
+                txt_datasolicitacao.Text = dgv_solicitacoes[10, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+
+                txt_motivo.Text = dgv_solicitacoes[7, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
+
+                txt_observacoes.Text = dgv_solicitacoes[18, dgv_solicitacoes.CurrentCellAddress.Y].Value + " - " +
+                                       dgv_solicitacoes[13, dgv_solicitacoes.CurrentCellAddress.Y].Value;
+
+                txt_datanasc.Text = dgv_solicitacoes[19, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString()
+                    .Substring(0, 10);
+
+                txt_telefone.Text = dgv_solicitacoes[5, dgv_solicitacoes.CurrentCellAddress.Y].Value + "  " +
+                                    dgv_solicitacoes[6, dgv_solicitacoes.CurrentCellAddress.Y].Value;
+
+                lbl_idade.Text = dgv_solicitacoes[15, dgv_solicitacoes.CurrentCellAddress.Y].Value + " anos";
+
+                txt_usuario.Text = dgv_solicitacoes[17, dgv_solicitacoes.CurrentCellAddress.Y].Value
+                    .ToString();
+
+                if (txt_observacoes.Text.Contains("SOLICITAÇÃO FINALIZADA"))
                 {
-                    lbl_pendente.Text = pendente ? "SIM" : "NÃO";
+                    txt_instituicao_encaminhada.Text = "SOLICITAÇÃO FINALIZADA";
                 }
 
-                if (bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
+                if (dgv_solicitacoes.CurrentRow.Cells["possuiIrmao"].Value.Equals(true))
                 {
-                    lbl_finalizada.Text = finalizada ? "SIM" : "NÃO";
+                    lbl_irmao_boolean.Text = "SIM";
+                    lbl_irmao_boolean.ForeColor = Color.Firebrick;
                 }
-                if (bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
+                else
                 {
-                    lbl_endereco_comprovado.Text = endereco ? "SIM" : "NÃO";
+                    lbl_irmao_boolean.Text = "NÃO";
+                    lbl_irmao_boolean.ForeColor = Color.Navy;
                 }
-            }
-            else
-            {
-                gpb_sindicados.Visible = false;
+
+                if (controleSindicancia.ContemSindicado(
+                    Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value)))
+                {
+                    gpb_sindicados.Visible = true;
+
+                    ArrayList listaStatusSindicancia =
+                        controleSindicancia.StatusSindicancia(
+                            Convert.ToInt32(dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value));
+
+                    if (bool.TryParse(listaStatusSindicancia[2].ToString(), out bool pendente))
+                    {
+                        lbl_pendente.Text = pendente ? "SIM" : "NÃO";
+                    }
+
+                    if (bool.TryParse(listaStatusSindicancia[3].ToString(), out bool finalizada))
+                    {
+                        lbl_finalizada.Text = finalizada ? "SIM" : "NÃO";
+                    }
+
+                    if (bool.TryParse(listaStatusSindicancia[4].ToString(), out bool endereco))
+                    {
+                        lbl_endereco_comprovado.Text = endereco ? "SIM" : "NÃO";
+                    }
+                }
+                else
+                {
+                    gpb_sindicados.Visible = false;
+                }
             }
         }
 
@@ -791,6 +814,16 @@ namespace SIESC.UI.UI.Solicitacoes
             cbo_anoreferencia.Enabled = !chk_todoAnosConsulta.Checked;
             LimpaCampos();
             HabilitaTextBox(localizar);
+        }
+        /// <summary>
+        /// Limpa os campos após alternar o ano de referência
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbo_anoreferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LimpaCampos();
+            cbo_anoreferencia.Enabled = true;
         }
     }
 }

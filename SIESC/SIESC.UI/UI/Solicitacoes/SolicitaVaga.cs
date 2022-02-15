@@ -677,7 +677,6 @@ namespace SIESC.UI.UI.Solicitacoes
             listControls.Add(cbo_ano_irmao2);
             listControls.Add(cbo_escola_irmao1);
             listControls.Add(cbo_escola_irmao2);
-            listControls.Add(chk_irmaos);
 
             #endregion
 
@@ -731,23 +730,19 @@ namespace SIESC.UI.UI.Solicitacoes
         private void LimpaControles()
         {
             lbl_datanasc.ResetText();
+            lbl_idade.Text = string.Empty;
+            cbo_cidades.ResetText();
+            chk_irmaos.Checked = false;
+
             //limpa os controles do formulário
             foreach (Control control in listControls)
             {
-                lbl_idade.Text = string.Empty;
-
                 if (!(control is RadioButton)) control.Text = string.Empty;
 
                 if (control is MyTextBox) ((MyTextBox)control).ResetText();
-
                 
-
-                if (control is MyComboBox)((MyComboBox) control).SelectedIndex = -1; 
+                if (control is MyComboBox)((MyComboBox)control).SelectedIndex = -1; 
                    
-                cbo_cidades.ResetText();
-                
-                if (control is MyComboBox)((MyComboBox)control).SelectedIndex = -1;
-                
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
                 if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
