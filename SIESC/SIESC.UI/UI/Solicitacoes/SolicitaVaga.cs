@@ -307,7 +307,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     {
                         HabilitaPossuiIrmaos(false);
                     }
-                    
+
                     Preenche_cbo_Motivo(solicitacao);
                     Preenche_cbo_EscSolicitada(solicitacao);
                     Preenche_cbo_Ano(solicitacao);
@@ -740,9 +740,9 @@ namespace SIESC.UI.UI.Solicitacoes
                 if (!(control is RadioButton)) control.Text = string.Empty;
 
                 if (control is MyTextBox) ((MyTextBox)control).ResetText();
-                
-                if (control is MyComboBox)((MyComboBox)control).SelectedIndex = -1; 
-                   
+
+                if (control is MyComboBox) ((MyComboBox)control).SelectedIndex = -1;
+
                 if (control is MyMaskedTextBox) ((MyMaskedTextBox)control).ResetText();
 
                 if (control is MyMaskedPhoneBox) ((MyMaskedPhoneBox)control).ResetText();
@@ -1156,7 +1156,6 @@ namespace SIESC.UI.UI.Solicitacoes
         private void btn_buscarcep_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
-
             
             try
             {
@@ -1164,7 +1163,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 BuscaCep buscaCep = new BuscaCep();
 #if DEBUG
-                 EnderecoAlternativo(buscaCep);
+                EnderecoAlternativo(buscaCep);
 #else
                var endereco = buscaCep.buscadorCEP(msk_cep.Text);
 
@@ -1202,7 +1201,7 @@ namespace SIESC.UI.UI.Solicitacoes
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
-                
+
                 Mensageiro.MensagemErro(exception, this);
             }
         }
@@ -1622,7 +1621,7 @@ namespace SIESC.UI.UI.Solicitacoes
                     //throw new Exception(
                     //    string.Format("ATENÇÃO: o nome digitado JÁ EXISTE no banco de dados!{0}CONTINUAR A OPERAÇÃO PODERÁ CAUSAR DUPLICIDADE DE ALUNOS.{0}ACESSE O GERENCIAMENTO DE ALUNOS E CLICK EM SOLICITAR VAGA.",Environment.NewLine));
 
-                            Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe, inscrito sob o nº {txt_codigoAluno.Text}.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!", principalUi);
+                    Mensageiro.MensagemAviso($"O aluno {txt_nomealuno.Text.ToUpper()} já existe, inscrito sob o nº {txt_codigoAluno.Text}.{Environment.NewLine}Será criado uma nova solicitação e os dados do aluno serão atualizados!", principalUi);
                 }
             }
             catch (Exception ex)
