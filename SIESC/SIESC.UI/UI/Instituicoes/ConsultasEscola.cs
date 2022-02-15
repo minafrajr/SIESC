@@ -112,19 +112,14 @@ namespace SIESC.UI.UI.Instituicoes
                     PreencheAnosOfertados(idescola);
 
                     webBrowser1.Url = new Uri("https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:Ak%7C" + coordenadasInstituicao + "&key=" + Settings.Default.mapsApiKey);
-                   
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
             RepassaDiretor(idescola);
             RepassaSecretario(idescola);
-
-
-
         }
 
         /// <summary>
