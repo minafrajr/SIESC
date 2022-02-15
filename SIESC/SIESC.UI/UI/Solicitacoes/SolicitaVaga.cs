@@ -673,6 +673,11 @@ namespace SIESC.UI.UI.Solicitacoes
             listControls.Add(txt_comprovante);
             listControls.Add(cbo_origem_solicitacao);
             listControls.Add(chk_transporte);
+            listControls.Add(cbo_ano_irmao1);
+            listControls.Add(cbo_ano_irmao2);
+            listControls.Add(cbo_escola_irmao1);
+            listControls.Add(cbo_escola_irmao2);
+            listControls.Add(chk_irmaos);
 
             #endregion
 
