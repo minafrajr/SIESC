@@ -196,6 +196,7 @@ namespace SIESC.WEB
         public Endereco[] buscadorCEP(string cep)
         {
             ServicoCEP srv = new ServicoCEP();
+            srv.Timeout = 15000;
 
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
