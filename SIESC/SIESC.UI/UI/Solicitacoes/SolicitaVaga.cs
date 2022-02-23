@@ -817,7 +817,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                         frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
                                 solicitacao.Coordenadas[1], solicitacao.AnoEnsino, solicitacao.Codigo)
-                        { MdiParent = principalUi };
+                            {MdiParent = principalUi};
 
                         if (t.IsAlive)
                         {
@@ -872,7 +872,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                 frm_ficha_solicitacao frmSolicitacao =
                                     new frm_ficha_solicitacao(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1],
                                             solicitacao.AnoEnsino, solicitacao.Codigo)
-                                    { MdiParent = principalUi };
+                                        {MdiParent = principalUi};
 
                                 frmSolicitacao.Show();
                             }
@@ -893,7 +893,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                     solicitacao.Coordenadas[1],
                                     solicitacao.AnoEnsino,
                                     solicitacao.Codigo)
-                            { MdiParent = principalUi };
+                                {MdiParent = principalUi};
 
                             frmSolicitacao.Show();
                         }
@@ -910,7 +910,13 @@ namespace SIESC.UI.UI.Solicitacoes
             {
                 if (t.IsAlive) t.Abort();
 
-                Mensageiro.MensagemErro($"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}", principalUi);
+                Mensageiro.MensagemErro(
+                    $"Não foi possível conectar com o servidor de banco de dados! Detalhe: {ex.Message}", principalUi);
+            }
+            catch (ThreadInterruptedException ex)
+            {
+                Mensageiro.MensagemErro(ex, principalUi);
+
             }
             catch (Exception ex)
             {

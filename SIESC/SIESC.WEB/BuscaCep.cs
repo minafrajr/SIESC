@@ -216,6 +216,7 @@ namespace SIESC.WEB
         public Endereco[] RetornaCEPS(string logradouro, int codigoCidade, string estado)
         {
             ServicoCEP srv = new ServicoCEP();
+            srv.Timeout = 1500;
 
             Endereco[] enderecos = srv.ObterEnderecoPorLogradouro(logradouro, codigoCidade,estado, null);
 
@@ -235,6 +236,7 @@ namespace SIESC.WEB
         {
             ServicoCEP servicoCep = new ServicoCEP();
 
+            servicoCep.Timeout = 1500;
             if (estado != null)
             {
                 Endereco[] enderecos = servicoCep.ObterCidadesPorEstado(estado);
