@@ -1476,6 +1476,8 @@ namespace SIESC.UI.UI.Solicitacoes
                 cbo_escola_irmao2.SelectedIndex = -1;
                 listControlsObrigatorios.Remove(cbo_ano_irmao1);
                 listControlsObrigatorios.Remove(cbo_escola_irmao1);
+                listControlsObrigatorios.Remove(cbo_ano_irmao2);
+                listControlsObrigatorios.Remove(cbo_escola_irmao2);
             }
             else
             {
