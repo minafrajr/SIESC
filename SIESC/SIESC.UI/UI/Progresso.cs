@@ -34,6 +34,7 @@ namespace SIESC.UI.UI
             {
                 Application.DoEvents();
                 ShowDialog();
+                
 
             }
             catch (ThreadAbortException)

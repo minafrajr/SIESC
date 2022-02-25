@@ -175,7 +175,7 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 3://relatório de solicitações por motivos
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\rpt_Solicitacoes_Por_Motivos.rdlc";
-                    dt = this.vw_motivosTableAdapter1.GetData();
+                    dt = this.vw_motivosTableAdapter1.GetDataByAnoReferencia(anoReferencia);
                     break;
                 case 4://relatório de alunos encaminhados por instituicao solicitada
                     FolhaPaisagem();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsRelatorios">
@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>83308ecc-ee94-4e18-b623-4b04bb8ed780</rd:DataSourceID>
+      <rd:DataSourceID>716b59f7-c18e-4809-aa57-b06af86aa23b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -25,10 +25,14 @@
           <DataField>numero</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="anoReferencia">
+          <DataField>anoReferencia</DataField>
+          <rd:TypeName>System.UInt32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>E:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Município de Betim\Documents\Visual Studio 2019\GitHub\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_motivos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -429,7 +433,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nº de Solicitações por motivo</Value>
+                    <Value>="Nº de Solicitações por Motivo " &amp; First(Fields!anoReferencia.Value, "dsRelatorios")</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -443,9 +447,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>1.2073cm</Top>
-            <Left>4.65349cm</Left>
+            <Left>0.97578cm</Left>
             <Height>0.67938cm</Height>
-            <Width>7.54cm</Width>
+            <Width>14.23396cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -697,7 +701,6 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>dsRelatorios</DataSetName>
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
             </PageBreak>

@@ -1675,7 +1675,6 @@ namespace SIESC.UI
 			}
 			catch (Exception ex)
 			{
-
 				if (t.IsAlive) t.Abort();
 				Mensageiro.MensagemErro(ex, this);
 			}
