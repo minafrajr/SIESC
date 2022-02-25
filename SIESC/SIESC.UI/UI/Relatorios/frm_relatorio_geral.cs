@@ -227,11 +227,11 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 15:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Fundamental\\Comparativo\\rpt_comparativo_fundamental.rdlc";
-                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetComparacaoFundamental();
+                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetComparacaoFundamental(anoReferencia);
                     break;
                 case 16://compartivo de solicitações da educação infantil
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\Comparativo\\rpt_comparativo_infantil.rdlc";
-                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetComparacaoInfantil();
+                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetComparacaoInfantil(anoReferencia);
                     break;
                 case 17://número de solicitações por mês
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Solicitacoes\\rpt_Solicitacoes_Mes.rdlc";
@@ -274,7 +274,7 @@ namespace SIESC.UI.UI.Relatorios
                     break;
                 case 25:
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Geral\\Comparativo\\rpt_comparativo_geral.rdlc";
-                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetData();
+                    dt = this.vw_comparativo_solicitacoes_encaminhamentosTableAdapter1.GetDataBy(anoReferencia);
                     break;
                 case 26:// número de solicitações da educação infantil por ano de ensino
                     rpt_viewer.LocalReport.ReportPath = PathRelatorio + "\\Infantil\\rpt_num_solic_ano_ensino_infantil.rdlc";
