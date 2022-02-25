@@ -50,7 +50,7 @@ namespace SIESC.UI.UI.CEP
 				dgv_endereços.DataSource = null;
 				buscadorCep = new BuscaCep();
 
-				listOfEnderecos = buscadorCep.buscadorCEP(msk_cep.Text).ToList();
+				listOfEnderecos = buscadorCep.buscadorCEP(msk_cep.Text, true).ToList();
 
 				dgv_endereços.DataSource = listOfEnderecos;
 

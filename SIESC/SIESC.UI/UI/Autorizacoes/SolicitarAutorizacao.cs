@@ -683,7 +683,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				BuscaCep consultacCep = new BuscaCep();
 
 				
-				Endereco[] endereco = consultacCep.buscadorCEP(msk_cep.Text);
+				Endereco[] endereco = consultacCep.buscadorCEP(msk_cep.Text,true);
 
 				txt_cidade.Text = endereco[0].Cidade;
 				txt_bairro.Text = endereco[0].Bairro;

@@ -1171,7 +1171,7 @@ namespace SIESC.UI.UI.Solicitacoes
 #if DEBUG
                 EnderecoAlternativo(buscaCep);
 #else
-               var endereco = buscaCep.buscadorCEP(msk_cep.Text);
+               var endereco = buscaCep.buscadorCEP(msk_cep.Text,false);
 
                 if (endereco == null)
                 {

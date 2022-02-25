@@ -560,7 +560,7 @@ namespace SIESC.UI.UI.Sindicância
                 cbo_tipologradouro.Text = enderecoAlternativo[1];
                 txt_numresidencia.Focus();
 #else
-                var endereco = cep.buscadorCEP(msk_cep.Text);
+                var endereco = cep.buscadorCEP(msk_cep.Text,false);
 
                 cbo_bairro.Text = endereco[0].Bairro;
                 txt_logradouro.Text = endereco[0].Logradouro;

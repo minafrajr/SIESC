@@ -79,7 +79,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 var cep = new BuscaCep();
 
-                var endereco =   cep.buscadorCEP(msk_cep.Text);
+                var endereco =   cep.buscadorCEP(msk_cep.Text, false);
 
                 txt_logradouro.Text = endereco[0].Logradouro;
                 cbo_bairro.Text = endereco[0].Bairro;

@@ -612,7 +612,7 @@ namespace SIESC.UI.UI.Instituicoes
 
 				this.bairrosTableAdapter.Fill(this.siescDataSet.bairros);
 				BuscaCep buscadorCep = new BuscaCep();
-				var enderecos = buscadorCep.buscadorCEP(msk_cep.Text);
+				var enderecos = buscadorCep.buscadorCEP(msk_cep.Text,true);
 
 				txt_logradouro.Text = enderecos[0].Logradouro;
 				cbo_tipo_Logradouro.Text = enderecos[0].TipoLogradouro;

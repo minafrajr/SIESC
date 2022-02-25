@@ -379,7 +379,7 @@ namespace SIESC.UI.UI.Funcionarios
             {
                 BuscaCep buscaCep = new BuscaCep();
 
-                Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text);
+                Endereco[] endereco = buscaCep.buscadorCEP(msk_cep.Text,true);
 
                 txt_bairro.Text = endereco[0].Bairro;
                 cbo_tipolograd.Text = endereco[0].TipoLogradouro;

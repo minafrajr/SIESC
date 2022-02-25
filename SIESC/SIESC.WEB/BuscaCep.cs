@@ -193,14 +193,14 @@ namespace SIESC.WEB
         /// Consulta de logradouro através do CEP no WebService da PMB
         /// </summary>
         /// <param name="cep">O cep para consulta</param>
-        public Endereco[] buscadorCEP(string cep)
+        public Endereco[] buscadorCEP(string cep, bool outroMuncipio)
         {
             ServicoCEP srv = new ServicoCEP();
             srv.Timeout = 15000;
 
             Endereco[] enderecos = srv.ObterEnderecoPorCEP(cep);
 
-            if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM"))
+            if (enderecos == null || !enderecos[0].Cidade.Equals("BETIM") && !outroMuncipio)
                 throw new Exception("CEP não encontrado ou não pertence a Betim!\nPor favor digite o endereço.");
             
             return enderecos;
