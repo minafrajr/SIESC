@@ -125,6 +125,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
             this.principalUi = principalUi;
             statusNavegacao = Navegacao.salvando;
+
         }
 
         /// <inheritdoc />
@@ -358,9 +359,14 @@ namespace SIESC.UI.UI.Solicitacoes
             bairrosTableAdapter.Fill(siescDataSet.bairros);
             instituicoesTableAdapter.Fill(siescDataSet.instituicoes);
 
-            if (statusNavegacao == Navegacao.editando) instituicoes1TableAdapter.Fill(siescDataSet.instituicoes1);
+            if (statusNavegacao == Navegacao.editando)
+            {
+                instituicoes1TableAdapter.Fill(siescDataSet.instituicoes1);
 
-            motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
+                motivosTableAdapter.Fill(siescDataSet.motivos);
+            }
+            else
+                motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
 
             anoTableAdapter.Fill(siescDataSet.ano);
 
@@ -1388,7 +1394,11 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
+
+                if (statusNavegacao != Navegacao.editando)
+                    motivosTableAdapter.FillByAtivas(siescDataSet.motivos);
+                else
+                    motivosTableAdapter.Fill(siescDataSet.motivos);
             }
             catch (Exception exception)
             {
