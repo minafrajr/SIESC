@@ -526,11 +526,13 @@ namespace SIESC.UI.UI.Solicitacoes
                 {
                     if (controleSolicitacoes.Excluir((int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value))
                     {
-                        dgv_solicitacoes.Refresh();
                         MessageBox.Show(@"Solicitação excluída com sucesso!!!", @"SIESC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GerenciaSolicitacao_Load(null, null);
+                        LimpaCampos();
+                        CarregaGridView();
                     }
                 }
-                GerenciaSolicitacao_Load(null, null);
+                
             }
             catch (Exception exception)
             {

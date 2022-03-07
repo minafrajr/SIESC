@@ -100,6 +100,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.msk_cep = new SIESC.UI.Controles.MyMaskedTextBox();
             this.lbl_cep = new System.Windows.Forms.Label();
             this.gpb_solicitacao = new System.Windows.Forms.GroupBox();
+            this.btn_limpa_escola_solicitada = new System.Windows.Forms.Button();
             this.btn_limpa_irmao2 = new System.Windows.Forms.Button();
             this.btn_limpa_irmao1 = new System.Windows.Forms.Button();
             this.gpb_justificativa = new System.Windows.Forms.GroupBox();
@@ -908,6 +909,7 @@ namespace SIESC.UI.UI.Solicitacoes
             // 
             // gpb_solicitacao
             // 
+            this.gpb_solicitacao.Controls.Add(this.btn_limpa_escola_solicitada);
             this.gpb_solicitacao.Controls.Add(this.btn_limpa_irmao2);
             this.gpb_solicitacao.Controls.Add(this.btn_limpa_irmao1);
             this.gpb_solicitacao.Controls.Add(this.gpb_justificativa);
@@ -951,6 +953,17 @@ namespace SIESC.UI.UI.Solicitacoes
             this.gpb_solicitacao.TabIndex = 3;
             this.gpb_solicitacao.TabStop = false;
             this.gpb_solicitacao.Text = "Solicitação";
+            // 
+            // btn_limpa_escola_solicitada
+            // 
+            this.btn_limpa_escola_solicitada.BackgroundImage = global::SIESC.UI.Properties.Resources.circle_red_x;
+            this.btn_limpa_escola_solicitada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_limpa_escola_solicitada.Location = new System.Drawing.Point(478, 48);
+            this.btn_limpa_escola_solicitada.Name = "btn_limpa_escola_solicitada";
+            this.btn_limpa_escola_solicitada.Size = new System.Drawing.Size(22, 22);
+            this.btn_limpa_escola_solicitada.TabIndex = 44;
+            this.btn_limpa_escola_solicitada.UseVisualStyleBackColor = true;
+            this.btn_limpa_escola_solicitada.Click += new System.EventHandler(this.btn_limpa_escola_solicitada_Click);
             // 
             // btn_limpa_irmao2
             // 
@@ -1784,11 +1797,12 @@ namespace SIESC.UI.UI.Solicitacoes
 		private RadioButton rdb_contrato;
 		private RadioButton rdb_internet_fixa;
 		private RadioButton rdb_iptu;
+        private Button btn_limpa_escola_solicitada;
 
-		/// <summary>
-		/// Status de navegação do formulário de solicitação de vaga
-		/// </summary>
-		private enum Navegacao
+        /// <summary>
+        /// Status de navegação do formulário de solicitação de vaga
+        /// </summary>
+        private enum Navegacao
 		{
 			/// <summary>
 			/// Aguardando 

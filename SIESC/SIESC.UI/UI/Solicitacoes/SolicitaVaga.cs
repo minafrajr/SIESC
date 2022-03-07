@@ -1364,6 +1364,9 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
+                if(!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
+                    listControlsObrigatorios.Add(cbo_instituicao_solicitada);
+
                 if (cbo_anosolicitado.SelectedValue == null)
                 {
                     throw new Exception("ATENÇÃO!!!\nEscolha o ano de ensino antes e selecionar a escola solicitada!");
@@ -1913,6 +1916,9 @@ namespace SIESC.UI.UI.Solicitacoes
             var t = CarregaProgressoThread();
             try
             {
+                if(!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
+                    listControlsObrigatorios.Add(cbo_instituicao_solicitada);
+
                 if (string.IsNullOrEmpty(msk_cep.Text) || string.IsNullOrEmpty(txt_mumresidencia.Text) ||
                     cbo_anosolicitado.SelectedValue.Equals(null))
                 {
@@ -2211,6 +2217,12 @@ namespace SIESC.UI.UI.Solicitacoes
                 Mensageiro.MensagemErro(ex, principalUi);
             }
 
+        }
+
+        private void btn_limpa_escola_solicitada_Click(object sender, EventArgs e)
+        {
+            cbo_instituicao_solicitada.SelectedValue = -1;
+            listControls.Remove(cbo_instituicao_solicitada);
         }
     }
 }
