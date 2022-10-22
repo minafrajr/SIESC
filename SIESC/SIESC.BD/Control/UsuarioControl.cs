@@ -95,12 +95,31 @@ namespace SIESC.BD.Control
                 throw exception;
             }
         }
+        /// <summary>
+        /// Adiciona o usuário ao sistema
+        /// </summary>
+        /// <param name="usuario">O objeto usuário e seus atributos</param>
+        /// <returns>True - usuário salvo | False -  usuário falso</returns>
+        public bool SalvarUsuario(Usuario usuario)
+        {
+            try
+            {
+                Usuario_TA = new usuariosTableAdapter();
+                criptor = new Criptografia();
+                string senhacriptografada = criptor.criptografaMD5(usuario.senhausuario);
+                return (Usuario_TA.Inserir(usuario.nomeusuario,senhacriptografada, usuario.email) > 0);
+            }
+            catch (Exception exception)
+            {
+                throw exception; 
+            }
+        }
 
         /// <summary>
         /// Gra uma senha aleatória
         /// </summary>
         /// <returns>A nova senha gerada pelo sistema</returns>
-        private string GeraNovaSenha()
+        private string GerarNovaSenha()
         {
             try
             {
@@ -134,7 +153,7 @@ namespace SIESC.BD.Control
 
                 criptor = new Criptografia();
 
-                string novasenha = this.GeraNovaSenha();
+                string novasenha = this.GerarNovaSenha();
 
                 string senhacriptografada = criptor.criptografaMD5(novasenha);
 
@@ -158,7 +177,7 @@ namespace SIESC.BD.Control
         {
             try
             {
-                string novasenha = this.GeraNovaSenha();
+                string novasenha = this.GerarNovaSenha();
 
 
                 if (this.AlteraSenha(usuario,novasenha))
