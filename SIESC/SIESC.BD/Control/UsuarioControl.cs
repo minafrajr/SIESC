@@ -53,7 +53,7 @@ namespace SIESC.BD.Control
         }
 
         /// <summary>
-        /// Verifica se o email digitado pertence ao usuario
+        /// Verifica se o email digitado pertence ao usuário
         /// </summary>
         /// <param name="email">O email digitado pelo usuário</param>
         /// <returns>true - o email é válido | false - não existe o email</returns>
@@ -72,7 +72,7 @@ namespace SIESC.BD.Control
         }
 
         /// <summary>
-        /// Grava a nova senha criptogravada no banco
+        /// Grava a nova senha criptografada no banco
         /// </summary>
         /// <param name="usuario">o objeto usuário</param>
         /// <param name="novasenha"> a nova senha a ser gravada no banco</param>
@@ -208,6 +208,19 @@ namespace SIESC.BD.Control
             catch (Exception exception)
             {
                 throw exception;
+            }
+        }
+
+        public DataTable ListarUsuarios()
+        {
+            try
+            {
+                Usuario_TA = new usuariosTableAdapter();
+                return Usuario_TA.getUsuarios();
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
     }

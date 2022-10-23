@@ -1407,7 +1407,7 @@ WHERE        (idFuncionario = @idFuncionario) AND (statusAutorizacao = 1)</Comma
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="PesquisaUltimaID" Modifier="Public" Name="PesquisaUltimaID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="PesquisaUltimaID">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="PesquisaUltimaID" Modifier="Public" Name="PesquisaUltimaID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="PesquisaUltimaID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MAX(idAutorizacao) AS UltimaAutoriz
@@ -1492,7 +1492,16 @@ WHERE        (usuario = @usuario) AND (senha = @senha)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserir" Modifier="Public" Name="Inserir" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Inserir">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="getUsuarios" GeneratorSourceName="Listar" GetMethodModifier="Public" GetMethodName="getUsuarios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="getUsuarios" UserSourceName="getUsuarios">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idUsuarios, upper(usuario) AS login, status
+FROM            usuarios</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserir" Modifier="Public" Name="Inserir" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Inserir">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `usuarios` (`usuario`, `senha`, `email`) VALUES (@usuario, @senha, @email)</CommandText>
@@ -1504,7 +1513,7 @@ WHERE        (usuario = @usuario) AND (senha = @senha)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="RecuperaSenha" Modifier="Public" Name="RecuperaSenha" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="RecuperaSenha">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="RecuperaSenha" Modifier="Public" Name="RecuperaSenha" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="RecuperaSenha">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `usuarios` SET `senha` = @novasenha WHERE ((`usuario` = @usuario))</CommandText>
@@ -1515,7 +1524,7 @@ WHERE        (usuario = @usuario) AND (senha = @senha)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="Validar" GeneratorSourceName="ValidarUser" Modifier="Public" Name="ValidarUser" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ValidarUser">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="Validar" GeneratorSourceName="ValidarUser" Modifier="Public" Name="ValidarUser" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ValidarUser">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        idUsuarios
@@ -1528,7 +1537,7 @@ WHERE        (usuario = @usuario) AND (senha = @senha)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="VerificaEmail" Modifier="Public" Name="VerificaEmail" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="VerificaEmail">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="VerificaEmail" Modifier="Public" Name="VerificaEmail" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="VerificaEmail">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT usuario FROM usuarios WHERE email = @email</CommandText>
@@ -2556,7 +2565,7 @@ WHERE        (vw_autorizacoes.Status = 1)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdInstituicao" GetMethodModifier="Public" GetMethodName="GetDataByIdInstituicao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdInstituicao" UserSourceName="GetDataByIdInstituicao">
+              <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdInstituicao" GetMethodModifier="Public" GetMethodName="GetDataByIdInstituicao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdInstituicao" UserSourceName="GetDataByIdInstituicao">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ofertaensino.instituicao, ofertaensino.anoensino, ano.AnoEF, ofertaensino.integral, ofertaensino.manha, ofertaensino.tarde, ofertaensino.noite

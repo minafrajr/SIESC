@@ -7,7 +7,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using SIESC.BD.DataSets.ds_siescTableAdapters;
 using SIESC.MODEL.Classes;
 

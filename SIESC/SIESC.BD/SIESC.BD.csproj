@@ -194,7 +194,14 @@
       <DependentUpon>ds_siesc.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\ds_siesc.Designer.cs">
-      <DependentUpon>ds_siesc.cs</DependentUpon>
+      <DependentUpon>ds_siesc.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\ds_siesc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_siesc.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -362,7 +369,7 @@
     <None Include="DataSets\ds_siesc.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds_siesc1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ds_siesc.Designer.cs</LastGenOutput>
     </None>
     <None Include="DataSets\ds_siesc.xss">
       <DependentUpon>ds_siesc.xsd</DependentUpon>

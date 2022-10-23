@@ -6,8 +6,7 @@
 
 using System;
 using System.Windows.Forms;
-using SIESC.UI.UI.Relatorios;
-using SIESC.UI.UI.Solicitacoes;
+using SIESC.UI.UI;
 
 namespace SIESC.UI
 {

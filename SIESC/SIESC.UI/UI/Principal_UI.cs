@@ -1,18 +1,7 @@
 ﻿// Projeto:SIESC.UI
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 02/02/2015
-using MySql.Data.MySqlClient;
-using SIESC.UI.UI;
-using SIESC.UI.UI.Alunos;
-using SIESC.UI.UI.Autorizacoes;
-using SIESC.UI.UI.CEP;
-using SIESC.UI.UI.Configurações;
-using SIESC.UI.UI.Funcionarios;
-using SIESC.UI.UI.Listas;
-using SIESC.UI.UI.Login;
-using SIESC.UI.UI.Relatorios;
-using SIESC.UI.UI.Sobre;
-using SIESC.UI.UI.Zoneamento;
+
 using System;
 using System.Deployment.Application;
 using System.Diagnostics;
@@ -20,12 +9,22 @@ using System.Drawing;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using SIESC.MODEL.Classes;
+using SIESC.UI.UI.Alunos;
+using SIESC.UI.UI.Autorizacoes;
+using SIESC.UI.UI.CEP;
+using SIESC.UI.UI.Configurações;
+using SIESC.UI.UI.Funcionarios;
 using SIESC.UI.UI.Instituicoes;
+using SIESC.UI.UI.Listas;
+using SIESC.UI.UI.Login;
+using SIESC.UI.UI.Relatorios;
 using SIESC.UI.UI.Sindicância;
 using SIESC.UI.UI.Solicitacoes;
+using SIESC.UI.UI.Zoneamento;
 
-namespace SIESC.UI
+namespace SIESC.UI.UI
 {
 	/// <summary>
 	/// Classe do formulário principal
@@ -117,7 +116,7 @@ namespace SIESC.UI
 		{
 			if (VerificaConexaoBanco())
 			{
-				Login frmLogin = new Login(user);
+				Login.Login frmLogin = new Login.Login(user);
 				frmLogin.ShowDialog(this);
 
 				user = new Usuario();
@@ -431,14 +430,14 @@ namespace SIESC.UI
 			{
 				foreach (Form mdiChild in this.MdiChildren)
 				{
-					if (mdiChild.GetType() == typeof(Sobre))
+					if (mdiChild.GetType() == typeof(Sobre.Sobre))
 					{
 						mdiChild.WindowState = FormWindowState.Maximized;
 						mdiChild.Focus();
 						return;
 					}
 				}
-				Sobre frmSobre = new Sobre();
+				Sobre.Sobre frmSobre = new Sobre.Sobre();
 				frmSobre.MdiParent = this;
 				frmSobre.Show();
 			}
@@ -659,7 +658,7 @@ namespace SIESC.UI
 			{
 				foreach (Form mdiChild in MdiChildren)
 				{
-					if (mdiChild.GetType() == typeof(Listas))
+					if (mdiChild.GetType() == typeof(Listas.Listas))
 					{
 						mdiChild.WindowState = FormWindowState.Normal;
 						mdiChild.Focus();
@@ -667,7 +666,7 @@ namespace SIESC.UI
 					}
 				}
 
-				Listas listas = new Listas(2, null, null);
+				Listas.Listas listas = new Listas.Listas(2, null, null);
 
 				listas.MdiParent = this;
 				listas.Show();
@@ -884,7 +883,7 @@ namespace SIESC.UI
 			var t = CarregaProgressoThread(); //inicia thread para form carregando
 			try
 			{
-				Listas frm_Listas = new Listas(codigo);
+				Listas.Listas frm_Listas = new Listas.Listas(codigo);
 				frm_Listas.MdiParent = this;
 				frm_Listas.Show();
 
@@ -2536,7 +2535,7 @@ namespace SIESC.UI
 			var t = CarregaProgressoThread(); //inicia thread para form carregando
 			try
 			{
-				Listas frm_Listas = new Listas(codigoRelatorio, mantenedor, ativa);
+				Listas.Listas frm_Listas = new Listas.Listas(codigoRelatorio, mantenedor, ativa);
 				frm_Listas.MdiParent = this;
 				frm_Listas.Show();
 
@@ -2600,6 +2599,37 @@ namespace SIESC.UI
 		private void iniciarAnoLetivoToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void adicionarUusarioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				NovoUsuario frm_novoUsuario = new NovoUsuario(this);
+
+				frm_novoUsuario.Show();
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex, this);
+
+			}
+
+		}
+
+		private void gerenciarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				GerenciarUsuario frm_gerenciarUsuarios = new GerenciarUsuario();
+
+				frm_gerenciarUsuarios.Show();
+			}
+			catch (Exception ex)
+			{
+				Mensageiro.MensagemErro(ex, this);
+
+			}
 		}
 	}
 }

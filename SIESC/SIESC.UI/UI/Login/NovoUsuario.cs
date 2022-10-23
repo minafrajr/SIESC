@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using SIESC.BD.Control;
 using SIESC.MODEL.Classes;
 using SIESC.UI.Controles;
+using SIESC.WEB;
 
 namespace SIESC.UI.UI.Login
 {
@@ -37,23 +38,13 @@ namespace SIESC.UI.UI.Login
 
         private void btn_confimar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VerificaCamposObrigatorios();
+           VerificaCamposObrigatorios();
+            usuario = CriarUsuario();
 
-                usuario = CriarUsuario();
-
-
-                if (SalvarUsuario(usuario))
+            if (SalvarUsuario(usuario))
                     Mensageiro.MensagemConfirmaGravacao(principalUi);
-                else
-                    new Exception("Não foi possível gravar o usuário!");
-            }
-            catch (Exception exception)
-            {
-
-                throw;
-            }
+            else
+               new Exception("Não foi possível gravar o usuário!");
         }
 
         private void VerificaCamposObrigatorios()
@@ -67,12 +58,20 @@ namespace SIESC.UI.UI.Login
 
         private Usuario CriarUsuario()
         {
-            return new Usuario()
+
+            if (EnviarEmail.ValidaEnderecoEmail(txt_emailUsuario.Text))
             {
-                nomeusuario = txt_usuario.Text,
-                senhausuario = txt_senha.Text,
-                email = txt_emailUsuario.Text
-            };
+                return new Usuario()
+                {
+                    nomeusuario = txt_usuario.Text,
+                    senhausuario = txt_senha.Text,
+                    email = txt_emailUsuario.Text
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
