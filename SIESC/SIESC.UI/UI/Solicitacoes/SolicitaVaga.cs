@@ -1839,7 +1839,7 @@ namespace SIESC.UI.UI.Solicitacoes
         }
 
         /// <summary>
-        /// Carrega form com gif enquenao é aberto o relatório 
+        /// Carrega form com gif enquanto é aberto o relatório 
         /// </summary>
         /// <returns></returns>
         private static Thread CarregaProgressoThread()
@@ -1894,7 +1894,12 @@ namespace SIESC.UI.UI.Solicitacoes
             controleSolicitacao.SalvaDistanciaAlunoEscola(solicitacao.Codigo, aluno.Id,
                 solicitacao.InstituicaoEncaminhada, distancia);
         }
-
+        /// <summary>
+        /// Calcula a distância entre o endereço do aluno e a escola encaminhada
+        /// </summary>
+        /// <param name="idInstituicao"></param>
+        /// <param name="coordenadasOrigem"></param>
+        /// <returns></returns>
         private int Distancia(int idInstituicao, string[] coordenadasOrigem)
         {
             controleInstituicao = new InstituicaoControl();
@@ -1904,8 +1909,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 coordenadasDestino[0], coordenadasDestino[1]);
             return distancia;
         }
-
-
+        
         /// <summary>
         /// Localiza a insituição mais proxima baseada no cep e nº da residência
         /// </summary>
@@ -2222,7 +2226,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private void btn_limpa_escola_solicitada_Click(object sender, EventArgs e)
         {
             cbo_instituicao_solicitada.SelectedValue = -1;
-            listControls.Remove(cbo_instituicao_solicitada);
+            listControlsObrigatorios.Remove(cbo_instituicao_solicitada);
         }
     }
 }

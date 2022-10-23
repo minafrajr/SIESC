@@ -121,7 +121,7 @@ namespace SIESC.UI.UI.Solicitacoes
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,PrincipalUI);
+                Mensageiro.MensagemErro(ex, PrincipalUI);
             }
         }
         /// <summary>
@@ -182,11 +182,11 @@ namespace SIESC.UI.UI.Solicitacoes
                         if (chk_todoAnosConsulta.Checked)
                             dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text, -1);
                         else
-                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text,Convert.ToInt32(cbo_anoreferencia.Text));
+                            dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaMae(txt_mae.Text, Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     case Localizar.nomeAluno:
 
-                        dgv_solicitacoes.DataSource = chk_todoAnosConsulta.Checked ? controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, -1) : controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text,Convert.ToInt32(cbo_anoreferencia.Text));
+                        dgv_solicitacoes.DataSource = chk_todoAnosConsulta.Checked ? controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, -1) : controleSolicitacoes.PesquisaNomeAluno(txt_nomealuno.Text, Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                     //case Localizar.codigoAluno:
                     //    dgv_solicitacoes.DataSource = controleSolicitacoes.PesquisaIDAluno(Convert.ToInt32(txt_codigo.Text));
@@ -207,7 +207,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                 Convert.ToInt32(cbo_anoreferencia.Text));
                         break;
                 }
-                
+
             }
             else
             {
@@ -221,7 +221,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 CarregaGridView();
             }
 
-            if (dgv_solicitacoes.RowCount <= 0) 
+            if (dgv_solicitacoes.RowCount <= 0)
                 throw new Exception("Não foram encontrados resultados!");
 
             dgv_solicitacoes.Refresh();
@@ -324,7 +324,7 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 txt_endereco.Text =
                     controleSolicitacoes.RetornaEndereco(
-                        (int) dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
+                        (int)dgv_solicitacoes[0, dgv_solicitacoes.CurrentCellAddress.Y].Value);
 
                 txt_origem_solicitacao.Text =
                     dgv_solicitacoes[8, dgv_solicitacoes.CurrentCellAddress.Y].Value.ToString();
@@ -537,7 +537,6 @@ namespace SIESC.UI.UI.Solicitacoes
                         CarregaGridView();
                     }
                 }
-                
             }
             catch (Exception exception)
             {
