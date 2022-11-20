@@ -133,7 +133,7 @@ namespace SIESC.WEB
 			}
 			catch (Exception exception)
 			{
-				throw exception;
+				throw new Exception("O endereço de e-mail não é valido!");
 			}
 		}
 

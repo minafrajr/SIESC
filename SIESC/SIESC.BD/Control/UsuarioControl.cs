@@ -43,7 +43,7 @@ namespace SIESC.BD.Control
 
                 user.senhausuario = senhaCriptografada;
 
-                return ((int)Usuario_TA.ValidarUser(user.nomeusuario,user.senhausuario) > 0);
+                return ((int?)Usuario_TA.ValidarUser(user.nomeusuario,user.senhausuario) > 0);
 
             }
             catch (SqlException exception)

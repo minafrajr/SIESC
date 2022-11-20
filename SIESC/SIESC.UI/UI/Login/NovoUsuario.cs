@@ -44,7 +44,7 @@ namespace SIESC.UI.UI.Login
             if (SalvarUsuario(usuario))
                     Mensageiro.MensagemConfirmaGravacao(principalUi);
             else
-               new Exception("Não foi possível gravar o usuário!");
+               Mensageiro.MensagemErro("Não foi possível gravar o usuário! O e-mail pode estar errado!", principalUi);
         }
 
         private void VerificaCamposObrigatorios()
@@ -58,20 +58,12 @@ namespace SIESC.UI.UI.Login
 
         private Usuario CriarUsuario()
         {
-
-            if (EnviarEmail.ValidaEnderecoEmail(txt_emailUsuario.Text))
-            {
-                return new Usuario()
+            return new Usuario()
                 {
                     nomeusuario = txt_usuario.Text,
                     senhausuario = txt_senha.Text,
                     email = txt_emailUsuario.Text
                 };
-            }
-            else
-            {
-                return null;
-            }
         }
 
 
@@ -79,15 +71,16 @@ namespace SIESC.UI.UI.Login
         {
             controleUsuario = new UsuarioControl();
 
-            if (controleUsuario.ValidateUser(user))
+            if (controleUsuario.ValidateUser(user) )
             {
                 Mensageiro.MensagemErro(new Exception("O usuário já existe no sistema. Tente outro!"), principalUi);
                 return false;
             }
-            else
-            {
+
+            if (EnviarEmail.ValidaEnderecoEmail(user.email))
                 return controleUsuario.SalvarUsuario(usuario);
-            }
+            
+            return false;
         }
     }
 }

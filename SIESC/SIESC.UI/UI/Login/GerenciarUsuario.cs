@@ -30,8 +30,8 @@ namespace SIESC.UI.UI.Login
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                throw;
+                
+                throw exception;
             }
 
         }
