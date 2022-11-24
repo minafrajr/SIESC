@@ -34,10 +34,11 @@ namespace SIESC.UI.UI.Login
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_ativar = new System.Windows.Forms.Button();
             this.btn_inativar = new System.Windows.Forms.Button();
             this.btn_pesquisar_usuario = new System.Windows.Forms.Button();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.btn_ativar = new System.Windows.Forms.Button();
+            this.btn_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,6 +81,7 @@ namespace SIESC.UI.UI.Login
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btn_reload);
             this.splitContainer1.Panel1.Controls.Add(this.btn_ativar);
             this.splitContainer1.Panel1.Controls.Add(this.btn_inativar);
             this.splitContainer1.Panel1.Controls.Add(this.btn_pesquisar_usuario);
@@ -93,6 +95,17 @@ namespace SIESC.UI.UI.Login
             this.splitContainer1.Size = new System.Drawing.Size(844, 492);
             this.splitContainer1.SplitterDistance = 101;
             this.splitContainer1.TabIndex = 15;
+            // 
+            // btn_ativar
+            // 
+            this.btn_ativar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_ativar.Location = new System.Drawing.Point(295, 65);
+            this.btn_ativar.Name = "btn_ativar";
+            this.btn_ativar.Size = new System.Drawing.Size(75, 23);
+            this.btn_ativar.TabIndex = 17;
+            this.btn_ativar.Text = "Ativar";
+            this.btn_ativar.UseVisualStyleBackColor = false;
+            this.btn_ativar.Click += new System.EventHandler(this.btn_ativar_Click);
             // 
             // btn_inativar
             // 
@@ -139,16 +152,16 @@ namespace SIESC.UI.UI.Login
             this.dgv_usuarios.TabIndex = 0;
             this.dgv_usuarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_usuarios_CellMouseClick);
             // 
-            // btn_ativar
+            // btn_reload
             // 
-            this.btn_ativar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_ativar.Location = new System.Drawing.Point(295, 65);
-            this.btn_ativar.Name = "btn_ativar";
-            this.btn_ativar.Size = new System.Drawing.Size(75, 23);
-            this.btn_ativar.TabIndex = 17;
-            this.btn_ativar.Text = "Ativar";
-            this.btn_ativar.UseVisualStyleBackColor = false;
-            this.btn_ativar.Click += new System.EventHandler(this.btn_ativar_Click);
+            this.btn_reload.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_reload.Image = global::SIESC.UI.Properties.Resources.refresh;
+            this.btn_reload.Location = new System.Drawing.Point(376, 66);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(30, 22);
+            this.btn_reload.TabIndex = 18;
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // GerenciarUsuario
             // 
@@ -177,5 +190,6 @@ namespace SIESC.UI.UI.Login
         private System.Windows.Forms.DataGridView dgv_usuarios;
         private System.Windows.Forms.Button btn_inativar;
         private System.Windows.Forms.Button btn_ativar;
+        private System.Windows.Forms.Button btn_reload;
     }
 }

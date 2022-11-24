@@ -96,6 +96,8 @@ namespace SIESC.UI.UI.Login
                     if (controle_usuario.AtivarUsuario(idUsuario))
                     {
 
+
+
                         CarregarUsuarios();
                         Mensageiro.MensagemConfirmaGravacao(this);
 
@@ -106,6 +108,11 @@ namespace SIESC.UI.UI.Login
             {
                 Mensageiro.MensagemExclamacao("Não foi possível ativar o usuário! \n Verifique se foi selecionado.", this);
             }
+        }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
         }
     }
 }
