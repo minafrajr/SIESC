@@ -2622,6 +2622,10 @@ namespace SIESC.UI.UI
 		{
 			try
 			{
+#if !DEBUG
+				if (!this.user.nomeusuario.Equals("eliziane") 
+					throw new Exception("Acesso não permitido!");
+#endif
 				GerenciarUsuario frm_gerenciarUsuarios = new GerenciarUsuario(this);
 				frm_gerenciarUsuarios.MdiParent = this;
 
