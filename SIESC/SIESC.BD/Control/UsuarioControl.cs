@@ -43,7 +43,7 @@ namespace SIESC.BD.Control
 
                 user.senhausuario = senhaCriptografada;
 
-                return ((int?)Usuario_TA.ValidarUser(user.nomeusuario,user.senhausuario) > 0);
+                return ((int?)Usuario_TA.ValidarUser(user.nomeusuario, user.senhausuario) > 0);
 
             }
             catch (SqlException exception)
@@ -77,7 +77,7 @@ namespace SIESC.BD.Control
         /// <param name="usuario">o objeto usuário</param>
         /// <param name="novasenha"> a nova senha a ser gravada no banco</param>
         /// <returns>true - salvo no banco | false - ocorreu algum erro ao gravar no banco</returns>
-        public bool AlteraSenha(Usuario usuario,string novasenha)
+        public bool AlteraSenha(Usuario usuario, string novasenha)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace SIESC.BD.Control
                 string senhacriptografada = criptor.criptografaMD5(novasenha);
 
                 //return (Usuario_TA.RecuperaSenha(novasenha, usuario.nomeusuario) > 0);
-                return (Usuario_TA.RecuperaSenha(senhacriptografada,usuario.nomeusuario) > 0);
+                return (Usuario_TA.RecuperaSenha(senhacriptografada, usuario.nomeusuario) > 0);
 
             }
             catch (SqlException exception)
@@ -107,11 +107,11 @@ namespace SIESC.BD.Control
                 Usuario_TA = new usuariosTableAdapter();
                 criptor = new Criptografia();
                 string senhacriptografada = criptor.criptografaMD5(usuario.senhausuario);
-                return (Usuario_TA.Inserir(usuario.nomeusuario,senhacriptografada, usuario.email) > 0);
+                return (Usuario_TA.Inserir(usuario.nomeusuario, senhacriptografada, usuario.email) > 0);
             }
             catch (Exception exception)
             {
-                throw exception; 
+                throw exception;
             }
         }
 
@@ -128,8 +128,8 @@ namespace SIESC.BD.Control
 
                 for (int i = 0; i < 4; i++)
                 {
-                    strb.Append((char)rd.Next(65,90));
-                    strb.Append((char)rd.Next(49,57));
+                    strb.Append((char)rd.Next(65, 90));
+                    strb.Append((char)rd.Next(49, 57));
                 }
 
                 return strb.ToString();
@@ -157,7 +157,7 @@ namespace SIESC.BD.Control
 
                 string senhacriptografada = criptor.criptografaMD5(novasenha);
 
-                if (Usuario_TA.RecuperaSenha(senhacriptografada,usuario.nomeusuario) > 0)
+                if (Usuario_TA.RecuperaSenha(senhacriptografada, usuario.nomeusuario) > 0)
                     return novasenha;
 
                 return null;
@@ -180,11 +180,11 @@ namespace SIESC.BD.Control
                 string novasenha = this.GerarNovaSenha();
 
 
-                if (this.AlteraSenha(usuario,novasenha))
+                if (this.AlteraSenha(usuario, novasenha))
                 {
                     string texto_email = $"A sua nova senha é: {novasenha}.{Environment.NewLine}Utilize-a para um novo acesso";
 
-                    return EnviarEmail.EnviandoEmail(usuario.nomeusuario,usuario.email,"SIESC","siesc@oi.com.br","SIESC - Recuperação de senha",texto_email);
+                    return EnviarEmail.EnviandoEmail(usuario.nomeusuario, usuario.email, "SIESC", "siesc@oi.com.br", "SIESC - Recuperação de senha", texto_email);
                 }
                 return null;
             }
@@ -216,11 +216,54 @@ namespace SIESC.BD.Control
             try
             {
                 Usuario_TA = new usuariosTableAdapter();
-                return Usuario_TA.getUsuarios();
+                return Usuario_TA.GetData();
             }
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+
+        public DataTable LocalizarUsuario(string nomeUsuario)
+        {
+            try
+            {
+                Usuario_TA = new usuariosTableAdapter();
+                return Usuario_TA.ListarUsuario(nomeUsuario);
+            }
+            catch (Exception exception)
+            {
+
+                throw exception;
+            }
+        }
+
+        public bool InativarUsuario(int idUsuario)
+        {
+            try
+            {
+                Usuario_TA = new usuariosTableAdapter();
+
+                return (Usuario_TA.InativarUsuario(idUsuario) > 0);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
+        public bool AtivarUsuario(int idUsuario)
+        {
+            try
+            {
+                Usuario_TA = new usuariosTableAdapter();
+
+                return (Usuario_TA.AtivarUsuario(idUsuario) > 0);
+            }
+            catch (Exception e)
+            {
+                throw;
             }
         }
     }

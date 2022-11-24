@@ -773,7 +773,7 @@ namespace SIESC.UI.UI
 						if (t.IsAlive) t.Abort();
 						mdiChild.WindowState = FormWindowState.Maximized;
 						mdiChild.Focus();
-						
+
 						return;
 					}
 				}
@@ -2583,7 +2583,7 @@ namespace SIESC.UI.UI
 			var t = CarregaProgressoThread(); //inicia thread para form carregando
 			try
 			{
-				frm_lista_oferta_ensino frm = new frm_lista_oferta_ensino(this) {MdiParent = this};
+				frm_lista_oferta_ensino frm = new frm_lista_oferta_ensino(this) { MdiParent = this };
 
 				frm.Show();
 
@@ -2606,6 +2606,7 @@ namespace SIESC.UI.UI
 			try
 			{
 				NovoUsuario frm_novoUsuario = new NovoUsuario(this);
+				frm_novoUsuario.MdiParent = this;
 
 				frm_novoUsuario.Show();
 			}
@@ -2621,7 +2622,8 @@ namespace SIESC.UI.UI
 		{
 			try
 			{
-				GerenciarUsuario frm_gerenciarUsuarios = new GerenciarUsuario();
+				GerenciarUsuario frm_gerenciarUsuarios = new GerenciarUsuario(this);
+				frm_gerenciarUsuarios.MdiParent = this;
 
 				frm_gerenciarUsuarios.Show();
 			}

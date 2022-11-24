@@ -3,6 +3,9 @@
 // Autor:Carlos A. Minafra Jr.
 // Criado em: 22/03/2015
 #endregion
+
+using System;
+
 namespace SIESC.MODEL.Classes
 {
 	/// <summary>
@@ -22,5 +25,7 @@ namespace SIESC.MODEL.Classes
 		/// O e-mail utilizado pelo usuário
 		/// </summary>
 		public string email { get; set; }
+
+		public Boolean status { get; set; }
 	}
 }

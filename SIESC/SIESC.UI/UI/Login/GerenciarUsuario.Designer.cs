@@ -29,12 +29,15 @@ namespace SIESC.UI.UI.Login
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_usuario = new SIESC.UI.Controles.MyTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_inativar = new System.Windows.Forms.Button();
+            this.btn_pesquisar_usuario = new System.Windows.Forms.Button();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
+            this.btn_ativar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -44,7 +47,7 @@ namespace SIESC.UI.UI.Login
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(60, 45);
+            this.txt_usuario.Location = new System.Drawing.Point(8, 65);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(119, 22);
             this.txt_usuario.TabIndex = 13;
@@ -77,7 +80,9 @@ namespace SIESC.UI.UI.Login
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_ativar);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_inativar);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_pesquisar_usuario);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txt_usuario);
@@ -85,35 +90,70 @@ namespace SIESC.UI.UI.Login
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_usuarios);
-            this.splitContainer1.Size = new System.Drawing.Size(577, 370);
-            this.splitContainer1.SplitterDistance = 91;
+            this.splitContainer1.Size = new System.Drawing.Size(844, 492);
+            this.splitContainer1.SplitterDistance = 101;
             this.splitContainer1.TabIndex = 15;
             // 
-            // button1
+            // btn_inativar
             // 
-            this.button1.Location = new System.Drawing.Point(185, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_inativar.BackColor = System.Drawing.Color.Red;
+            this.btn_inativar.Location = new System.Drawing.Point(214, 65);
+            this.btn_inativar.Name = "btn_inativar";
+            this.btn_inativar.Size = new System.Drawing.Size(75, 23);
+            this.btn_inativar.TabIndex = 16;
+            this.btn_inativar.Text = "Inativar";
+            this.btn_inativar.UseVisualStyleBackColor = false;
+            this.btn_inativar.Click += new System.EventHandler(this.btn_inativar_Click);
+            // 
+            // btn_pesquisar_usuario
+            // 
+            this.btn_pesquisar_usuario.Location = new System.Drawing.Point(133, 64);
+            this.btn_pesquisar_usuario.Name = "btn_pesquisar_usuario";
+            this.btn_pesquisar_usuario.Size = new System.Drawing.Size(75, 23);
+            this.btn_pesquisar_usuario.TabIndex = 15;
+            this.btn_pesquisar_usuario.Text = "Pesquisar";
+            this.btn_pesquisar_usuario.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_usuario.Click += new System.EventHandler(this.btn_pesquisar_usuario_Click);
             // 
             // dgv_usuarios
             // 
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
+            this.dgv_usuarios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv_usuarios.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_usuarios.Location = new System.Drawing.Point(0, 0);
+            this.dgv_usuarios.MultiSelect = false;
             this.dgv_usuarios.Name = "dgv_usuarios";
             this.dgv_usuarios.ReadOnly = true;
-            this.dgv_usuarios.Size = new System.Drawing.Size(577, 275);
+            this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_usuarios.ShowEditingIcon = false;
+            this.dgv_usuarios.ShowRowErrors = false;
+            this.dgv_usuarios.Size = new System.Drawing.Size(844, 387);
             this.dgv_usuarios.TabIndex = 0;
+            this.dgv_usuarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_usuarios_CellMouseClick);
+            // 
+            // btn_ativar
+            // 
+            this.btn_ativar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_ativar.Location = new System.Drawing.Point(295, 65);
+            this.btn_ativar.Name = "btn_ativar";
+            this.btn_ativar.Size = new System.Drawing.Size(75, 23);
+            this.btn_ativar.TabIndex = 17;
+            this.btn_ativar.Text = "Ativar";
+            this.btn_ativar.UseVisualStyleBackColor = false;
+            this.btn_ativar.Click += new System.EventHandler(this.btn_ativar_Click);
             // 
             // GerenciarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(583, 376);
+            this.ClientSize = new System.Drawing.Size(850, 498);
             this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciarUsuario";
             this.Text = "Gerenciar Usuários";
@@ -133,7 +173,9 @@ namespace SIESC.UI.UI.Login
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_pesquisar_usuario;
         private System.Windows.Forms.DataGridView dgv_usuarios;
+        private System.Windows.Forms.Button btn_inativar;
+        private System.Windows.Forms.Button btn_ativar;
     }
 }

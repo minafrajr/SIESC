@@ -5,53 +5,21 @@
 namespace SIESC.BD.DataSets
 {
 }
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
-
-namespace SIESC.BD.DataSets
-{
-}
 namespace SIESC.BD.DataSets
 {
 
 
-    public partial class ds_siesc
+    partial class ds_siesc
     {
+        partial class usuariosDataTable
+        {
+        }
     }
 }
-namespace SIESC.BD.DataSets {
+
+namespace SIESC.BD.DataSets.ds_siescTableAdapters {
     
     
-    public partial class ds_siesc {
+    public partial class usuariosTableAdapter {
     }
 }
