@@ -156,7 +156,7 @@ namespace SIESC.BD.Control
 			try
 			{
 				autorizacoes_TA = new autorizacoesTableAdapter();
-				return autorizacoes_TA.PesquisaAutorizacaoAtiva(idFuncionario) > 0 ;
+				return autorizacoes_TA.PesquisaAutorizacaoAtiva(idFuncionario) > 0;
 			}
 			catch (Exception ex)
 			{
@@ -255,21 +255,21 @@ namespace SIESC.BD.Control
 			try
 			{
 				Autorizacao autoriz = new Autorizacao
-					   {
-						   Idfuncionario = (int)dt.Rows[0]["idFuncionario"],
-						   IdAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
-						   IdInstituicao = (int)dt.Rows[0]["idInstituicao"],
-						   numeroautorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
-						   Dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
-						   Datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]),
-						   anosdeensino = dt.Rows[0]["anosdeensino"].ToString(),
-						   Datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
-						   Documentos = new StringBuilder(dt.Rows[0]["documentos"].ToString()),
-						   nivelensino = dt.Rows[0]["nivelensino"].ToString(),
-						   outrosdocs = dt.Rows[0]["outrosdocs"].ToString(),
-						   usuario = dt.Rows[0]["usuario"].ToString(),
-						   datacriacao = Convert.ToDateTime(dt.Rows[0]["datacriacao"])
-					   };
+				{
+					Idfuncionario = (int)dt.Rows[0]["idFuncionario"],
+					IdAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
+					IdInstituicao = (int)dt.Rows[0]["idInstituicao"],
+					numeroautorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
+					Dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
+					Datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]),
+					anosdeensino = dt.Rows[0]["anosdeensino"].ToString(),
+					Datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
+					Documentos = new StringBuilder(dt.Rows[0]["documentos"].ToString()),
+					nivelensino = dt.Rows[0]["nivelensino"].ToString(),
+					outrosdocs = dt.Rows[0]["outrosdocs"].ToString(),
+					usuario = dt.Rows[0]["usuario"].ToString(),
+					datacriacao = Convert.ToDateTime(dt.Rows[0]["datacriacao"])
+				};
 
 				if (dt.Rows[0]["disciplina"] != DBNull.Value)
 				{
@@ -353,7 +353,7 @@ namespace SIESC.BD.Control
 				if (status.Equals(null))
 					return vw_autorizacoes.GetDataByNumAutorizacaoTodas(autorizacao);
 
-				return vw_autorizacoes.GetDataByNumAutorizacao("%"+autorizacao+"%", status);
+				return vw_autorizacoes.GetDataByNumAutorizacao("%" + autorizacao + "%", status);
 			}
 			catch (SqlException exception)
 			{
@@ -459,7 +459,7 @@ namespace SIESC.BD.Control
 				if (status.Equals(null))
 					return vw_autorizacoes.GetDataByMantenedorTodas(mantenedor);
 
-				return vw_autorizacoes.GetDataByMantenedor(status,mantenedor);
+				return vw_autorizacoes.GetDataByMantenedor(status, mantenedor);
 
 			}
 			catch (Exception)
@@ -485,6 +485,20 @@ namespace SIESC.BD.Control
 			{
 				throw exception;
 			}
+		}
+
+		public bool AtivarAutoricacao(int idfuncionario, int idautorizacao, string numeroautorizacao)
+		{
+			try
+			{
+				autorizacoes_TA = new autorizacoesTableAdapter();
+				return (autorizacoes_TA.AtivarAutorizacao(idfuncionario, numeroautorizacao, idautorizacao) > 0);
+			}
+			catch (SqlException exception)
+			{
+				throw exception;
+			}
+
 		}
 	}
 }

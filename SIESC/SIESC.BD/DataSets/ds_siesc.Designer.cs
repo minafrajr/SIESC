@@ -23060,7 +23060,7 @@ ORDER BY `Solicitacao` DESC LIMIT 25";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[13];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[14];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idAutorizacao, idFuncionario, idInstituicao, numeroAutorizacao, dataValida" +
@@ -23070,228 +23070,18 @@ ORDER BY `Solicitacao` DESC LIMIT 25";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE       autorizacoes
-SET                idInstituicao = @idInstituicao, numeroAutorizacao = @numeroAutoriz, dataValidadeAutorizacao = @dataValidadeAutoriz, dataPosseCargo = @dataPosse, tipoAutorizacao = @tipoAutoriz, disciplina = @disciplina, 
-                         documentos = @documentos, nivelensino = @nivelensino, anosdeensino = @anosdeensino, outrosdocs = @outrosdocs, usuario = @usuario, datacriacao = @datacriacao, 
-                         dataExpedicao = @dataExpedicao
-WHERE        (numeroAutorizacao = @numeroAutorizacao) AND (idFuncionario = @idFuncionario)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idInstituicao";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idInstituicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutoriz";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataValidadeAutoriz";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataValidadeAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataPosse";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataPosseCargo";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@tipoAutoriz";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 15;
-            param.IsNullable = true;
-            param.SourceColumn = "tipoAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@disciplina";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "disciplina";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@documentos";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 160;
-            param.IsNullable = true;
-            param.SourceColumn = "documentos";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nivelensino";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "nivelensino";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@anosdeensino";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 30;
-            param.IsNullable = true;
-            param.SourceColumn = "anosdeensino";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@outrosdocs";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 60;
-            param.IsNullable = true;
-            param.SourceColumn = "outrosdocs";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@usuario";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "usuario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@datacriacao";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "datacriacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataExpedicao";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataExpedicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutorizacao";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idFuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM autorizacoes\r\nWHERE        (idFuncionario = @idFuncionario) AND (nume" +
-                "roAutorizacao = @numeroAutorizacao)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idFuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutorizacao";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (idFuncionario = @idFuncionario)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idFuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[3].Parameters.Add(param);
-            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (numeroAutorizacao = @numeroAutoriz)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutoriz";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (idFuncionario = @idfuncionario)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idfuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (numeroAutorizacao = @numeroAutorizacao)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutorizacao";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[6].Parameters.Add(param);
-            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT numeroAutorizacao FROM autorizacoes WHERE (idFuncionario = @idfuncionario)" +
-                "";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idfuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[7].Parameters.Add(param);
-            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE       autorizacoes\r\nSET                statusAutorizacao = 0\r\nWHERE       " +
+            this._commandCollection[1].CommandText = "UPDATE       autorizacoes\r\nSET                statusAutorizacao = 1\r\nWHERE       " +
                 " (idFuncionario = @idfuncionario) AND (numeroAutorizacao = @numautorizacao) AND " +
                 "(idAutorizacao = @idautorizacao)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idfuncionario";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idFuncionario";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[1].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@numautorizacao";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -23299,7 +23089,7 @@ WHERE        (numeroAutorizacao = @numeroAutorizacao) AND (idFuncionario = @idFu
             param.IsNullable = true;
             param.SourceColumn = "numeroAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[1].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idautorizacao";
             param.DbType = global::System.Data.DbType.Int32;
@@ -23307,101 +23097,63 @@ WHERE        (numeroAutorizacao = @numeroAutorizacao) AND (idFuncionario = @idFu
             param.IsNullable = true;
             param.SourceColumn = "idAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[8].Parameters.Add(param);
-            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"INSERT INTO autorizacoes
-                         (idFuncionario, idInstituicao, numeroAutorizacao, dataExpedicao, dataValidadeAutorizacao, dataPosseCargo, tipoAutorizacao, disciplina, outrosdocs, anosdeensino, nivelensino, documentos, usuario, datacriacao,   statusAutorizacao)
-VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedicao, @dataValidadeAutorizacao, @dataPosseCargo, @TipoAutorizacao, @Disciplina, @Outrosdocs, @anoensino, @nivelensino, @documentos, @usuario, @datacriacao,@statusautorizacao)";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"UPDATE       autorizacoes
+SET                idInstituicao = @idInstituicao, numeroAutorizacao = @numeroAutoriz, dataValidadeAutorizacao = @dataValidadeAutoriz, dataPosseCargo = @dataPosse, tipoAutorizacao = @tipoAutoriz, disciplina = @disciplina, 
+                         documentos = @documentos, nivelensino = @nivelensino, anosdeensino = @anosdeensino, outrosdocs = @outrosdocs, usuario = @usuario, datacriacao = @datacriacao, 
+                         dataExpedicao = @dataExpedicao
+WHERE        (numeroAutorizacao = @numeroAutorizacao) AND (idFuncionario = @idFuncionario)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idFuncionario";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idFuncionario";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IdInstituicao";
+            param.ParameterName = "@idInstituicao";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idInstituicao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@numeroAutorizacao";
+            param.ParameterName = "@numeroAutoriz";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 10;
             param.IsNullable = true;
             param.SourceColumn = "numeroAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataExpedicao";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "dataExpedicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataValidadeAutorizacao";
+            param.ParameterName = "@dataValidadeAutoriz";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "dataValidadeAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@dataPosseCargo";
+            param.ParameterName = "@dataPosse";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "dataPosseCargo";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@TipoAutorizacao";
+            param.ParameterName = "@tipoAutoriz";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "tipoAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Disciplina";
+            param.ParameterName = "@disciplina";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "disciplina";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Outrosdocs";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 60;
-            param.IsNullable = true;
-            param.SourceColumn = "outrosdocs";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@anoensino";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 30;
-            param.IsNullable = true;
-            param.SourceColumn = "anosdeensino";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nivelensino";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "nivelensino";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@documentos";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -23409,7 +23161,31 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.IsNullable = true;
             param.SourceColumn = "documentos";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nivelensino";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "nivelensino";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anosdeensino";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "anosdeensino";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@outrosdocs";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "outrosdocs";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@usuario";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -23417,7 +23193,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.IsNullable = true;
             param.SourceColumn = "usuario";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@datacriacao";
             param.DbType = global::System.Data.DbType.DateTime;
@@ -23425,20 +23201,148 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.IsNullable = true;
             param.SourceColumn = "datacriacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataExpedicao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataExpedicao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroAutorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idFuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "DELETE FROM autorizacoes\r\nWHERE        (idFuncionario = @idFuncionario) AND (nume" +
+                "roAutorizacao = @numeroAutorizacao)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idFuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroAutorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (idFuncionario = @idFuncionario)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idFuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (numeroAutorizacao = @numeroAutoriz)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroAutoriz";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (idFuncionario = @idfuncionario)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idfuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT anosdeensino, dataExpedicao, dataPosseCargo, dataValidadeAutorizacao, datacriacao, documentos, idAutorizacao, idFuncionario, idInstituicao, nivelensino, numeroAutorizacao, outrosdocs, statusAutorizacao, tipoAutorizacao, usuario FROM autorizacoes WHERE (numeroAutorizacao = @numeroAutorizacao)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroAutorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT numeroAutorizacao FROM autorizacoes WHERE (idFuncionario = @idfuncionario)" +
+                "";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idfuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE       autorizacoes\r\nSET                statusAutorizacao = 0\r\nWHERE       " +
+                " (idFuncionario = @idfuncionario) AND (numeroAutorizacao = @numautorizacao) AND " +
+                "(idAutorizacao = @idautorizacao)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idfuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[9].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@statusautorizacao";
-            param.DbType = global::System.Data.DbType.Object;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.Size = 1024;
+            param.ParameterName = "@numautorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
             param.IsNullable = true;
-            param.SourceColumn = "statusAutorizacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[9].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idautorizacao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[9].Parameters.Add(param);
             this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "SELECT        1 AS Expr1\r\nFROM            autorizacoes\r\nWHERE        (idFuncionar" +
-                "io = @idFuncionario) AND (statusAutorizacao = 1)";
+            this._commandCollection[10].CommandText = @"INSERT INTO autorizacoes
+                         (idFuncionario, idInstituicao, numeroAutorizacao, dataExpedicao, dataValidadeAutorizacao, dataPosseCargo, tipoAutorizacao, disciplina, outrosdocs, anosdeensino, nivelensino, documentos, usuario, datacriacao,   statusAutorizacao)
+VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedicao, @dataValidadeAutorizacao, @dataPosseCargo, @TipoAutorizacao, @Disciplina, @Outrosdocs, @anoensino, @nivelensino, @documentos, @usuario, @datacriacao,@statusautorizacao)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idFuncionario";
@@ -23448,10 +23352,136 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.SourceColumn = "idFuncionario";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IdInstituicao";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idInstituicao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@numeroAutorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "numeroAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataExpedicao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataExpedicao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataValidadeAutorizacao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataValidadeAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@dataPosseCargo";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dataPosseCargo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@TipoAutorizacao";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 15;
+            param.IsNullable = true;
+            param.SourceColumn = "tipoAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Disciplina";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "disciplina";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Outrosdocs";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 60;
+            param.IsNullable = true;
+            param.SourceColumn = "outrosdocs";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@anoensino";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "anosdeensino";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nivelensino";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "nivelensino";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@documentos";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 160;
+            param.IsNullable = true;
+            param.SourceColumn = "documentos";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@usuario";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "usuario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@datacriacao";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "datacriacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@statusautorizacao";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "statusAutorizacao";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[10].Parameters.Add(param);
             this._commandCollection[11] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "SELECT idAutorizacao FROM autorizacoes WHERE (numeroAutorizacao = @numautoriz)";
+            this._commandCollection[11].CommandText = "SELECT        1 AS Expr1\r\nFROM            autorizacoes\r\nWHERE        (idFuncionar" +
+                "io = @idFuncionario) AND (statusAutorizacao = 1)";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idFuncionario";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idFuncionario";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[11].Parameters.Add(param);
+            this._commandCollection[12] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "SELECT idAutorizacao FROM autorizacoes WHERE (numeroAutorizacao = @numautoriz)";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@numautoriz";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -23459,11 +23489,11 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.IsNullable = true;
             param.SourceColumn = "numeroAutorizacao";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[11].Parameters.Add(param);
-            this._commandCollection[12] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "SELECT        MAX(idAutorizacao) AS UltimaAutoriz\r\nFROM            autorizacoes";
-            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[12].Parameters.Add(param);
+            this._commandCollection[13] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[13].Connection = this.Connection;
+            this._commandCollection[13].CommandText = "SELECT        MAX(idAutorizacao) AS UltimaAutoriz\r\nFROM            autorizacoes";
+            this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23495,7 +23525,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.autorizacoesDataTable GetByIdFuncionario(int idFuncionario) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idFuncionario));
             ds_siesc.autorizacoesDataTable dataTable = new ds_siesc.autorizacoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -23507,7 +23537,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.autorizacoesDataTable GetByNumAutorizacao(string numeroAutoriz) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((numeroAutoriz == null)) {
                 throw new global::System.ArgumentNullException("numeroAutoriz");
             }
@@ -23524,7 +23554,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.autorizacoesDataTable GetDataByIdFuncionario(int idfuncionario) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idfuncionario));
             ds_siesc.autorizacoesDataTable dataTable = new ds_siesc.autorizacoesDataTable();
             this.Adapter.Fill(dataTable);
@@ -23536,7 +23566,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ds_siesc.autorizacoesDataTable GetDataByNumeroAutorizacao(string numeroAutorizacao) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((numeroAutorizacao == null)) {
                 throw new global::System.ArgumentNullException("numeroAutorizacao");
             }
@@ -23581,8 +23611,39 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Atualizar(int idInstituicao, string numeroAutoriz, System.DateTime dataValidadeAutoriz, global::System.Nullable<global::System.DateTime> dataPosse, string tipoAutoriz, global::System.Nullable<int> disciplina, string documentos, string nivelensino, string anosdeensino, string outrosdocs, string usuario, global::System.Nullable<global::System.DateTime> datacriacao, System.DateTime dataExpedicao, string numeroAutorizacao, int idFuncionario) {
+        public virtual int AtivarAutorizacao(int idfuncionario, string numautorizacao, int idautorizacao) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(idfuncionario));
+            if ((numautorizacao == null)) {
+                throw new global::System.ArgumentNullException("numautorizacao");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(numautorizacao));
+            }
+            command.Parameters[2].Value = ((int)(idautorizacao));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Atualizar(int idInstituicao, string numeroAutoriz, System.DateTime dataValidadeAutoriz, global::System.Nullable<global::System.DateTime> dataPosse, string tipoAutoriz, global::System.Nullable<int> disciplina, string documentos, string nivelensino, string anosdeensino, string outrosdocs, string usuario, global::System.Nullable<global::System.DateTime> datacriacao, System.DateTime dataExpedicao, string numeroAutorizacao, int idFuncionario) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(idInstituicao));
             if ((numeroAutoriz == null)) {
                 throw new global::System.ArgumentNullException("numeroAutoriz");
@@ -23675,7 +23736,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int Excluir(int idFuncionario, string numeroAutorizacao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(idFuncionario));
             if ((numeroAutorizacao == null)) {
                 throw new global::System.ArgumentNullException("numeroAutorizacao");
@@ -23704,7 +23765,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual string GetNumAutorizacaoByIdFunc(int idfuncionario) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[7];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((int)(idfuncionario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23734,7 +23795,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int InativaAutorizacao(int idfuncionario, string numautorizacao, int idautorizacao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[8];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((int)(idfuncionario));
             if ((numautorizacao == null)) {
                 throw new global::System.ArgumentNullException("numautorizacao");
@@ -23765,7 +23826,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Inserir(int idFuncionario, int IdInstituicao, string numeroAutorizacao, System.DateTime dataExpedicao, System.DateTime dataValidadeAutorizacao, global::System.Nullable<global::System.DateTime> dataPosseCargo, string TipoAutorizacao, global::System.Nullable<int> Disciplina, string Outrosdocs, string anoensino, string nivelensino, string documentos, string usuario, global::System.Nullable<global::System.DateTime> datacriacao, object statusautorizacao) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[9];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((int)(idFuncionario));
             command.Parameters[1].Value = ((int)(IdInstituicao));
             if ((numeroAutorizacao == null)) {
@@ -23857,7 +23918,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<long> PesquisaAutorizacaoAtiva(int idFuncionario) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[10];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[11];
             command.Parameters[0].Value = ((int)(idFuncionario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23886,7 +23947,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> PesquisaID(string numautoriz) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[11];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[12];
             if ((numautoriz == null)) {
                 throw new global::System.ArgumentNullException("numautoriz");
             }
@@ -23920,7 +23981,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> PesquisaUltimaID() {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[12];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[13];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

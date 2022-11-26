@@ -2613,9 +2613,7 @@ namespace SIESC.UI.UI
 			catch (Exception ex)
 			{
 				Mensageiro.MensagemErro(ex, this);
-
 			}
-
 		}
 
 		private void gerenciarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)

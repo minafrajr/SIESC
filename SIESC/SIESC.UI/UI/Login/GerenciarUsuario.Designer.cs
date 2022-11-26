@@ -29,16 +29,16 @@ namespace SIESC.UI.UI.Login
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_usuario = new SIESC.UI.Controles.MyTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.btn_ativar = new System.Windows.Forms.Button();
             this.btn_inativar = new System.Windows.Forms.Button();
             this.btn_pesquisar_usuario = new System.Windows.Forms.Button();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.btn_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -92,9 +92,20 @@ namespace SIESC.UI.UI.Login
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_usuarios);
-            this.splitContainer1.Size = new System.Drawing.Size(844, 492);
-            this.splitContainer1.SplitterDistance = 101;
+            this.splitContainer1.Size = new System.Drawing.Size(719, 667);
+            this.splitContainer1.SplitterDistance = 99;
             this.splitContainer1.TabIndex = 15;
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_reload.Image = global::SIESC.UI.Properties.Resources.refresh;
+            this.btn_reload.Location = new System.Drawing.Point(376, 66);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(30, 22);
+            this.btn_reload.TabIndex = 18;
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // btn_ativar
             // 
@@ -133,8 +144,8 @@ namespace SIESC.UI.UI.Login
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
             this.dgv_usuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -148,25 +159,14 @@ namespace SIESC.UI.UI.Login
             this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.ShowEditingIcon = false;
             this.dgv_usuarios.ShowRowErrors = false;
-            this.dgv_usuarios.Size = new System.Drawing.Size(844, 387);
+            this.dgv_usuarios.Size = new System.Drawing.Size(719, 564);
             this.dgv_usuarios.TabIndex = 0;
             this.dgv_usuarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_usuarios_CellMouseClick);
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_reload.Image = global::SIESC.UI.Properties.Resources.refresh;
-            this.btn_reload.Location = new System.Drawing.Point(376, 66);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(30, 22);
-            this.btn_reload.TabIndex = 18;
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // GerenciarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(850, 498);
+            this.ClientSize = new System.Drawing.Size(725, 673);
             this.Controls.Add(this.splitContainer1);
             this.Name = "GerenciarUsuario";
             this.Text = "Gerenciar Usuários";

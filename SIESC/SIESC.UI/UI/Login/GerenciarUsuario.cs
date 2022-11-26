@@ -65,21 +65,21 @@ namespace SIESC.UI.UI.Login
             if (!string.IsNullOrEmpty(txt_usuario.Text))
             {
                 if (
-            Mensageiro.MensagemPergunta($"Deseja exclui o usuário {txt_usuario.Text} ? ", this).Equals(DialogResult.Yes))
+            Mensageiro.MensagemPergunta($"Deseja inativar o usuário {txt_usuario.Text} ? ", this).Equals(DialogResult.Yes))
                 {
 
                     if (controle_usuario.InativarUsuario(idUsuario))
                     {
 
                         CarregarUsuarios();
-                        Mensageiro.MensagemConfirmaExclusao(this);
+                        Mensageiro.MensagemExclamacao("Inativado com sucesso!",this);
 
                     }
                 }
             }
             else
             {
-                Mensageiro.MensagemExclamacao("Não foi possível excluir o usuário! \n Verifique se foi selecionado.", this);
+                Mensageiro.MensagemExclamacao("Não foi possível inativar o usuário! \n Verifique se foi selecionado.", this);
             }
         }
 
