@@ -764,6 +764,7 @@
     <None Include="Resources\user_add.png" />
     <None Include="Resources\Tools1.png" />
     <None Include="Resources\refresh.png" />
+    <None Include="Resources\calendar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

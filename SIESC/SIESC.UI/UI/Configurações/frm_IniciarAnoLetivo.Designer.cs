@@ -40,10 +40,6 @@ namespace SIESC.UI.UI.Configurações
 			// 
 			this.cbo_anoLetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbo_anoLetivo.FormattingEnabled = true;
-			this.cbo_anoLetivo.Items.AddRange(new object[] {
-            "2024",
-            "2023",
-            "2022"});
 			this.cbo_anoLetivo.Location = new System.Drawing.Point(237, 55);
 			this.cbo_anoLetivo.Name = "cbo_anoLetivo";
 			this.cbo_anoLetivo.Size = new System.Drawing.Size(72, 22);
@@ -99,6 +95,7 @@ namespace SIESC.UI.UI.Configurações
 			this.Controls.Add(this.cbo_anoLetivo);
 			this.Name = "frm_IniciarAnoLetivo";
 			this.Text = "Iniciar Ano Letivo";
+			this.Load += new System.EventHandler(this.frm_IniciarAnoLetivo_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

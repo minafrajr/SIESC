@@ -141,6 +141,7 @@
     <Compile Include="Control\MantenedorControl.cs" />
     <Compile Include="Control\MotivoControl.cs" />
     <Compile Include="Control\OfertaEnsinoControl.cs" />
+    <Compile Include="Control\IniciaAnoLetivoControl.cs" />
     <Compile Include="Control\RegionalControl.cs" />
     <Compile Include="Control\SindicanciaControl.cs" />
     <Compile Include="Control\SolicitacaoControl.cs" />

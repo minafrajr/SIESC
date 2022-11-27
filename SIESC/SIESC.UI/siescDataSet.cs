@@ -9,7 +9,7 @@ namespace SIESC.UI
 {
 
 
-    public partial class siescDataSet
-    {
-    }
+	public partial class siescDataSet
+	{
+	}
 }
