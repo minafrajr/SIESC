@@ -19,13 +19,15 @@ namespace SIESC.BD.Control
 
 			int ano = Convert.ToInt32(periodo_TA.MaximoAno()) + 1;
 
+            var idSolicitação = ano * 10000;
+            
+            idSolicitação++;
+
 			if (ano != AnoLetivo)
 				return false;
 
-			var idSolicitação = ano * 10000;
-
-			return (anoLetivo_TA.Inicia_AnoNovo(ano, idSolicitação) >= 0);
-
-		}
+            anoLetivo_TA.Inicia_AnoNovo(idSolicitação);
+            return true;
+        }
 	}
 }

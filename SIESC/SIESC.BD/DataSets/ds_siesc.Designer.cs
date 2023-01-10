@@ -33657,15 +33657,7 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
             this._commandCollection[1].CommandText = "`siesc`.`Inicia_AnoNovo`";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "ano";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "idSolicitacao";
+            param.ParameterName = "numero";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.Size = 2147483647;
@@ -33730,35 +33722,35 @@ WHERE        (solicitacoesvagas.idSolicitacoesVagas = @idSolicitacao)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Inicia_AnoNovo(global::System.Nullable<int> ano, global::System.Nullable<int> idSolicitacao) {
+        public virtual object Inicia_AnoNovo(global::System.Nullable<int> numero) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
-            if ((ano.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(ano.Value));
+            if ((numero.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(numero.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((idSolicitacao.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idSolicitacao.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

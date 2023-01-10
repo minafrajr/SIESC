@@ -817,9 +817,8 @@ namespace SIESC.UI.UI.Solicitacoes
                             Convert.ToInt32(controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
 
                         //Verifica se a solicitação já foi encaminhada
-                        if (!solicitacao.InstituicaoEncaminhada.Equals(null) && encaminhou)
-                            GravadistanciaAlunoEscola(solicitacao,
-                                aluno); //grava a distancia do aluno até escola encaminhada 
+                        //if (!solicitacao.InstituicaoEncaminhada.Equals(null) && encaminhou)
+                            //GravadistanciaAlunoEscola(solicitacao,aluno); //grava a distancia do aluno até escola encaminhada 
 
                         frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
                                 solicitacao.Coordenadas[1], solicitacao.AnoEnsino, solicitacao.Codigo)
@@ -1036,8 +1035,12 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 //Georreferencia o aluno pelo SISGEO - Prefeitura Betim
-                solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
-
+                //solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
+                
+                solicitacao.Coordenadas = new string[2];
+                solicitacao.Coordenadas[0] = string.Empty;
+                solicitacao.Coordenadas[1] = string.Empty;
+                
                 //caso o SISGEO não encontre as coordenadas do aluno seguir para o zoneamento do GOOGLE
                 if (string.IsNullOrEmpty(solicitacao.Coordenadas[0]) || solicitacao.Coordenadas[0].Equals("0"))
                 {
