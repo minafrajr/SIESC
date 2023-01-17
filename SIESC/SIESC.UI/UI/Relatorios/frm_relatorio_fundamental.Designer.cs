@@ -115,7 +115,6 @@ namespace SIESC.UI.UI.Relatorios
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Ano Referência:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_gerar_relatorio
             // 
@@ -138,11 +137,11 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_anoReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_anoReferencia.FormattingEnabled = true;
             this.cbo_anoReferencia.Location = new System.Drawing.Point(399, 14);
+            this.cbo_anoReferencia.MaxDropDownItems = 15;
             this.cbo_anoReferencia.Name = "cbo_anoReferencia";
             this.cbo_anoReferencia.Size = new System.Drawing.Size(70, 24);
             this.cbo_anoReferencia.TabIndex = 0;
             this.cbo_anoReferencia.ValueMember = "ano";
-            this.cbo_anoReferencia.SelectedIndexChanged += new System.EventHandler(this.cbo_anoReferencia_SelectedIndexChanged);
             // 
             // periodoBindingSource
             // 

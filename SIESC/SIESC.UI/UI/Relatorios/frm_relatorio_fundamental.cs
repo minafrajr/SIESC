@@ -143,15 +143,5 @@ namespace SIESC.UI.UI.Relatorios
 			ConfiguraRelatorio();
 
 		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void cbo_anoReferencia_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }

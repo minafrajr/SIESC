@@ -116,6 +116,7 @@ namespace SIESC.UI.UI.Relatorios
             this.cbo_anoReferencia.Size = new System.Drawing.Size(85, 22);
             this.cbo_anoReferencia.TabIndex = 14;
             this.cbo_anoReferencia.ValueMember = "ano";
+            
             // 
             // periodoBindingSource
             // 
@@ -289,7 +290,6 @@ namespace SIESC.UI.UI.Relatorios
             this.label5.Size = new System.Drawing.Size(271, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Para gerar o relatório completo click em GERAR";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // rpt_viewer
             // 

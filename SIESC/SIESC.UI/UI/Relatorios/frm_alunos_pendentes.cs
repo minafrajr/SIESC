@@ -378,10 +378,5 @@ namespace SIESC.UI.UI.Relatorios
 
 			}
 		}
-
-		private void label5_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }

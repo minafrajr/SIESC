@@ -1035,11 +1035,11 @@ namespace SIESC.UI.UI.Solicitacoes
                 }
 
                 //Georreferencia o aluno pelo SISGEO - Prefeitura Betim
-                //solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
+                solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
                 
-                solicitacao.Coordenadas = new string[2];
-                solicitacao.Coordenadas[0] = string.Empty;
-                solicitacao.Coordenadas[1] = string.Empty;
+                //solicitacao.Coordenadas = new string[2];
+                //solicitacao.Coordenadas[0] = string.Empty;
+                //solicitacao.Coordenadas[1] = string.Empty;
                 
                 //caso o SISGEO não encontre as coordenadas do aluno seguir para o zoneamento do GOOGLE
                 if (string.IsNullOrEmpty(solicitacao.Coordenadas[0]) || solicitacao.Coordenadas[0].Equals("0"))

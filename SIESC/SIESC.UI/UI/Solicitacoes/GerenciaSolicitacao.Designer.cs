@@ -404,6 +404,7 @@ namespace SIESC.UI.UI.Solicitacoes
             this.cbo_anoreferencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_anoreferencia.FormattingEnabled = true;
             this.cbo_anoreferencia.Items.AddRange(new object[] {
+            "2023",
             "2022",
             "2021",
             "2020",
