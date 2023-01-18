@@ -6722,13 +6722,6 @@ namespace SIESC.UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public periodoRow FindByidperiodo(int idperiodo) {
-                return ((periodoRow)(this.Rows.Find(new object[] {
-                            idperiodo})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 periodoDataTable cln = ((periodoDataTable)(base.Clone()));
                 cln.InitVars();
@@ -6758,13 +6751,10 @@ namespace SIESC.UI {
                 base.Columns.Add(this.columnano);
                 this.columncontagem = new global::System.Data.DataColumn("contagem", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncontagem);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidperiodo}, true));
                 this.columnidperiodo.AutoIncrement = true;
                 this.columnidperiodo.AutoIncrementSeed = -1;
                 this.columnidperiodo.AutoIncrementStep = -1;
                 this.columnidperiodo.AllowDBNull = false;
-                this.columnidperiodo.Unique = true;
                 this.columnano.AllowDBNull = false;
                 this.columnano.MaxLength = 4;
             }
@@ -17169,8 +17159,7 @@ ORDER BY nome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ano, idperiodo\r\nFROM            periodo\r\nWHERE        (idperiodo < " +
-                "11)\r\nORDER BY ano DESC";
+            this._commandCollection[1].CommandText = "SELECT        ano\r\nFROM            periodo\r\nORDER BY ano DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;

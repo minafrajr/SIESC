@@ -2599,12 +2599,12 @@ namespace SIESC.UI.UI
 		private void iniciarAnoLetivoToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			try
-            {
+			{
 #if !DEBUG
 				if (!this.user.nomeusuario.Equals("eliziane") || !this.user.nomeusuario.Equals("polliana"))
 				throw new Exception("Acesso não permitido!");
 #endif
-			
+
 				frm_IniciarAnoLetivo frmIniciarAno = new frm_IniciarAnoLetivo() { MdiParent = this };
 
 				frmIniciarAno.Show();
@@ -2618,7 +2618,7 @@ namespace SIESC.UI.UI
 
 		private void adicionarUusarioToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-            try
+			try
 			{
 #if !DEBUG
 				if (!this.user.nomeusuario.Equals("eliziane") || !this.user.nomeusuario.Equals("polliana"))
