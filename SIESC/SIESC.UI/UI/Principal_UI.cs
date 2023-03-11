@@ -84,6 +84,7 @@ namespace SIESC.UI.UI
 #if !DEBUG
 				Connection();
 #else
+
 				this.user = new Usuario() { nomeusuario = "MINAFRA" };
 
 				lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
@@ -2621,8 +2622,8 @@ namespace SIESC.UI.UI
 			try
 			{
 #if !DEBUG
-				if (!this.user.nomeusuario.Equals("eliziane") || !this.user.nomeusuario.Equals("polliana"))
-				throw new Exception("Acesso não permitido!");
+				if (!this.user.nomeusuario.Equals("eliziane") && !this.user.nomeusuario.Equals("polliana"))
+					throw new Exception("Acesso não permitido!");
 #endif
 
 				NovoUsuario frm_novoUsuario = new NovoUsuario(this);
