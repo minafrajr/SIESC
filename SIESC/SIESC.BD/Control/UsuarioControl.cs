@@ -246,7 +246,7 @@ namespace SIESC.BD.Control
 
                 return (Usuario_TA.InativarUsuario(idUsuario) > 0);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 throw;
             }
@@ -261,7 +261,7 @@ namespace SIESC.BD.Control
 
                 return (Usuario_TA.AtivarUsuario(idUsuario) > 0);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }

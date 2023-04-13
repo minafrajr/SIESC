@@ -244,7 +244,7 @@ namespace SIESC.WEB
 					}
 				}
 			}
-			catch (Exception exception)
+			catch (Exception )
 			{
 				//se lançar exceção será interrompido o fluxo do programa
 				//throw new WebException("Não foi possível acessar o WebService para georreferenciar o aluno!\n"+"Erro: " + exception.Message );

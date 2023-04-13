@@ -131,7 +131,7 @@ namespace SIESC.WEB
 				// o email é inválido
 				return false;
 			}
-			catch (Exception exception)
+			catch (Exception)
 			{
 				throw new Exception("O endereço de e-mail não é valido!");
 			}

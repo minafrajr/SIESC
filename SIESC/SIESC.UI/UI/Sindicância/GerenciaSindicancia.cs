@@ -592,7 +592,7 @@ namespace SIESC.UI.UI.Sindicância
                 anoReferencia = solicitacao.anoReferencia
             };
 
-            if (sindicancia.instituicaoSolicitada !=null)
+            if (sindicancia.instituicaoSolicitada.Equals(null))
                 sindicancia.distanciaEscolaSolicitada = CalculaDistanciaEscola(sindicancia.Coordenadas, sindicancia.instituicaoSolicitada);
             
             if (sindicancia.instituicaoEncaminhada !=null)
