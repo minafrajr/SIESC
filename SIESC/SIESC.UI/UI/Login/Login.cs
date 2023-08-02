@@ -13,7 +13,7 @@ namespace SIESC.UI.UI.Login
     /// <summary>
     /// Formulário de login no sistemas
     /// </summary>
-    public partial class Login :  BaseUi
+    public partial class Login : BaseUi
     {
         /// <summary>
         /// O usuário do sistema
@@ -47,13 +47,21 @@ namespace SIESC.UI.UI.Login
             {
                 usuario = new Usuario()
                 {
-                    nomeusuario = txt_usuario.Text,
-                    senhausuario = txt_senha.Text
+                    nomeusuario = txt_usuario.Text.ToLower(),
+                    senhausuario = txt_senha.Text.ToLower()
                 };
 
                 usuarioControl = new UsuarioControl();
-                
-                if (usuarioControl.ValidateUser(usuario)) this.Close();
+
+                if (usuarioControl.ValidateUser(usuario))
+                {
+                    this.Close();
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
             }
             catch (Exception)
             {
@@ -80,7 +88,7 @@ namespace SIESC.UI.UI.Login
         private void llb_mudarsenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RecuperaSenha frm_RecuperaSenha = new RecuperaSenha();
-            
+
             frm_RecuperaSenha.ShowDialog(this);
         }
         /// <summary>

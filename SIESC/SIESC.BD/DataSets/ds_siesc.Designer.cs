@@ -24731,29 +24731,29 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO `usuarios` (`usuario`, `senha`, `email`) VALUES (@usuario, @senha, @e" +
-                "mail)";
+            this._commandCollection[5].CommandText = "INSERT INTO usuarios\r\n                         (usuario, senha, email, status)\r\nV" +
+                "ALUES        (@usuario, @senha, @email, 1)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@usuario";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
             param.IsNullable = true;
             param.SourceColumn = "usuario";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[5].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@senha";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 32;
             param.IsNullable = true;
             param.SourceColumn = "senha";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[5].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@email";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
             param.IsNullable = true;
             param.SourceColumn = "email";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -25004,25 +25004,25 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserir(object usuario, object senha, object email) {
+        public virtual int Inserir(string usuario, string senha, string email) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
             if ((usuario == null)) {
                 throw new global::System.ArgumentNullException("usuario");
             }
             else {
-                command.Parameters[0].Value = ((object)(usuario));
+                command.Parameters[0].Value = ((string)(usuario));
             }
             if ((senha == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("senha");
             }
             else {
-                command.Parameters[1].Value = ((object)(senha));
+                command.Parameters[1].Value = ((string)(senha));
             }
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
             else {
-                command.Parameters[2].Value = ((object)(email));
+                command.Parameters[2].Value = ((string)(email));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

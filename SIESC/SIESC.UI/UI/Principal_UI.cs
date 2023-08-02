@@ -81,27 +81,27 @@ namespace SIESC.UI.UI
             try
             {
                 Versao();
-#if !DEBUG
+#if DEBUG
                 Connection();
 #else
 
-				this.user = new Usuario() { nomeusuario = "MINAFRA" };
+                this.user = new Usuario() { nomeusuario = "MINAFRA" };
 
-				lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
-				lbl_statusStrip.BackColor = Color.Plum;
-				this.BackColor = Color.Plum;
-				foreach (Control control in this.Controls)
-				{
-					// #2
-					MdiClient client = control as MdiClient;
-					if (!(client == null))
-					{
-						// #3
-						client.BackColor = Color.Plum;
-						// 4#
-						break;
-					}
-				}
+                lbl_statusStrip.Text = "********************** EM DEBUG! ***************************";
+                lbl_statusStrip.BackColor = Color.Plum;
+                this.BackColor = Color.Plum;
+                foreach (Control control in this.Controls)
+                {
+                    // #2
+                    MdiClient client = control as MdiClient;
+                    if (!(client == null))
+                    {
+                        // #3
+                        client.BackColor = Color.Plum;
+                        // 4#
+                        break;
+                    }
+                }
 
 
 #endif

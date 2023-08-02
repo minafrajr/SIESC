@@ -39,11 +39,11 @@ namespace SIESC.BD.Control
                 Usuario_TA = new usuariosTableAdapter();
 
                 criptor = new Criptografia();
-                var senhaCriptografada = criptor.criptografaMD5(user.senhausuario);
+                String senhaCriptografada = criptor.criptografaMD5(user.senhausuario);
 
                 user.senhausuario = senhaCriptografada;
 
-                return ((int?)Usuario_TA.ValidarUser(user.nomeusuario, user.senhausuario) > 0);
+                return (int?)Usuario_TA.ValidarUser(user.nomeusuario, user.senhausuario) > 0;
 
             }
             catch (SqlException exception)
@@ -105,9 +105,8 @@ namespace SIESC.BD.Control
             try
             {
                 Usuario_TA = new usuariosTableAdapter();
-                criptor = new Criptografia();
-                string senhacriptografada = criptor.criptografaMD5(usuario.senhausuario);
-                return (Usuario_TA.Inserir(usuario.nomeusuario, senhacriptografada, usuario.email) > 0);
+
+                return (Usuario_TA.Inserir(usuario.nomeusuario, usuario.senhausuario.ToLower(), usuario.email) > 0);
             }
             catch (Exception exception)
             {
@@ -246,7 +245,7 @@ namespace SIESC.BD.Control
 
                 return (Usuario_TA.InativarUsuario(idUsuario) > 0);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }

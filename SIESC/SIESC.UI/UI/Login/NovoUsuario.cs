@@ -30,7 +30,7 @@ namespace SIESC.UI.UI.Login
             controlesObrigatoriosList.Add(txt_senha);
         }
 
-        
+
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,13 +38,16 @@ namespace SIESC.UI.UI.Login
 
         private void btn_confimar_Click(object sender, EventArgs e)
         {
-           VerificaCamposObrigatorios();
+            VerificaCamposObrigatorios();
             usuario = CriarUsuario();
 
             if (SalvarUsuario(usuario))
-                    Mensageiro.MensagemConfirmaGravacao(principalUi);
+            {
+                Mensageiro.MensagemConfirmaGravacao(principalUi);
+                this.Close();
+            }
             else
-               Mensageiro.MensagemErro("Não foi possível gravar o usuário! O e-mail pode estar errado!", principalUi);
+                Mensageiro.MensagemErro("Não foi possível gravar o usuário! O e-mail pode estar errado!", principalUi);
         }
 
         private void VerificaCamposObrigatorios()
@@ -59,11 +62,11 @@ namespace SIESC.UI.UI.Login
         private Usuario CriarUsuario()
         {
             return new Usuario()
-                {
-                    nomeusuario = txt_usuario.Text,
-                    senhausuario = txt_senha.Text,
-                    email = txt_emailUsuario.Text
-                };
+            {
+                nomeusuario = txt_usuario.Text,
+                senhausuario = txt_senha.Text,
+                email = txt_emailUsuario.Text
+            };
         }
 
 
@@ -71,7 +74,7 @@ namespace SIESC.UI.UI.Login
         {
             controleUsuario = new UsuarioControl();
 
-            if (controleUsuario.ValidateUser(user) )
+            if (controleUsuario.ValidateUser(user))
             {
                 Mensageiro.MensagemErro(new Exception("O usuário já existe no sistema. Tente outro!"), principalUi);
                 return false;
@@ -79,7 +82,7 @@ namespace SIESC.UI.UI.Login
 
             if (EnviarEmail.ValidaEnderecoEmail(user.email))
                 return controleUsuario.SalvarUsuario(usuario);
-            
+
             return false;
         }
     }
