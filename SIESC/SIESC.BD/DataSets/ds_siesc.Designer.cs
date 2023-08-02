@@ -24793,7 +24793,8 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT idUsuarios FROM usuarios WHERE (usuario = @usuario) AND (senha = @senha)";
+            this._commandCollection[8].CommandText = "SELECT        idUsuarios\r\nFROM            usuarios\r\nWHERE        (usuario = @usua" +
+                "rio) AND (senha = @senha) AND (status = 1)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@usuario";
@@ -25088,7 +25089,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
                 command.Parameters[0].Value = ((string)(usuario));
             }
             if ((senha == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("senha");
             }
             else {
                 command.Parameters[1].Value = ((string)(senha));
