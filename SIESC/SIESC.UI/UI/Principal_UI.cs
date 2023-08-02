@@ -81,7 +81,7 @@ namespace SIESC.UI.UI
             try
             {
                 Versao();
-#if DEBUG
+#if !DEBUG
                 Connection();
 #else
 
