@@ -61,10 +61,18 @@
           <DataField>Disciplina</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Mantenedor">
+          <DataField>Mantenedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="possuiValidade">
+          <DataField>possuiValidade</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRelatorios</rd:DataSetName>
-        <rd:SchemaPath>D:\PUC\TCCI\SIESC\SIESC\SIESC_BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Projects\SIESC\SIESC\SIESC.BD\DataSets\dsRelatorios.xsd</rd:SchemaPath>
         <rd:TableName>vw_carteirinha</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -194,7 +202,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO PARA DIRIGIR A TÍTULO PRECÁRIO",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","AUTORIZAÇÃO PARA SECRETARIAR A TÍTULO PRECÁRIO",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO PARA LECIONAR A TÍTULO PRECÁRIO")</Value>
+                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO TEMPORÁRIA PARA DIRIGIR",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","REGISTRO PARA SECRETARIAR",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO TEMPORÁRIA PARA LECIONAR")</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -257,7 +265,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Base Legal: Resolução CEE. Nº 397/94 e Parecer CEE. Nº 688/07</Value>
+                    <Value>Base Legal: Resolução CEE. Nº 488/22 e Parecer CEE. Nº 688/07</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -437,7 +445,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Microsoft.VisualBasic.Interaction.Switch(First(Fields!Tipo.Value, "dsRelatorios") = "DIRIGIR", "AUTORIZAÇÃO PARA DIRIGIR A TÍTULO PRECÁRIO", First(Fields!Tipo.Value, "dsRelatorios") = "SECRETARIAR", "AUTORIZAÇÃO PARA SECRETARIAR A TÍTULO PRECÁRIO", First(Fields!Tipo.Value, "dsRelatorios") = "LECIONAR", "AUTORIZAÇÃO PARA LECIONAR A TÍTULO PRECÁRIO")</Value>
+                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO TEMPORÁRIA PARA DIRIGIR",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","REGISTRO PARA SECRETARIAR",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO TEMPORÁRIA PARA LECIONAR")</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -500,7 +508,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Base Legal: Resolução CEE. Nº 397/94 e Parecer CEE. Nº 688/07</Value>
+                    <Value>Base Legal: Resolução CEE. Nº 488/22 e Parecer CEE. Nº 688/07</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -568,7 +576,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 2 &amp; " / "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios"))</Value>
+                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 2 &amp; " / "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
                     <Style>
                       <FontFamily>times New Roman</FontFamily>
                     </Style>
@@ -634,7 +642,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>19.23133cm</Top>
+            <Top>19.19605cm</Top>
             <Left>0.41012cm</Left>
             <Height>0.6cm</Height>
             <Width>9.5379cm</Width>
