@@ -24793,7 +24793,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT idUsuarios FROM usuarios WHERE (usuario = @usuario) AND (senha = @senha)";
+            this._commandCollection[8].CommandText = "SELECT  idUsuarios FROM usuarios WHERE(usuario = @usuario) AND(senha = @senha) AND(status = 1)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@usuario";
