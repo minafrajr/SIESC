@@ -220,7 +220,6 @@ namespace SIESC.UI.UI.Autorizacoes
 		private void RepassaAutorizacao(Autorizacao autorizacao1)
 		{
 			cbo_tipoautoriz.Text = autorizacao1.Tipoautorizacao.ToString().ToUpper();
-
 			cbo_nivelensino.Text = autorizacao1.nivelensino;
 			txt_outrosdocs.Text = autorizacao1.outrosdocs;
 			dtp_datapossecargo.Value = autorizacao1.Datapossecargo;

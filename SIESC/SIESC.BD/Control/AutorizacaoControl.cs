@@ -268,14 +268,20 @@ namespace SIESC.BD.Control
                     nivelensino = dt.Rows[0]["nivelensino"].ToString(),
                     outrosdocs = dt.Rows[0]["outrosdocs"].ToString(),
                     usuario = dt.Rows[0]["usuario"].ToString(),
-                    datacriacao = Convert.ToDateTime(dt.Rows[0]["datacriacao"]),
-                    possuiValidade = Convert.ToBoolean(dt.Rows[0]["possuiValidade"])
+                    datacriacao = Convert.ToDateTime(dt.Rows[0]["datacriacao"])
+
                 };
 
                 if (dt.Rows[0]["disciplina"] != DBNull.Value)
                 {
                     autoriz.Disciplina = Convert.ToInt16(dt.Rows[0]["disciplina"]);
                 }
+
+                if (dt.Rows[0]["possuiValidade"] != DBNull.Value)
+                {
+                    autoriz.possuiValidade = Convert.ToBoolean(dt.Rows[0]["possuiValidade"]);
+                }
+
 
                 switch (dt.Rows[0]["tipoAutorizacao"].ToString())
                 {
