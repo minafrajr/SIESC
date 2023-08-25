@@ -32,8 +32,9 @@ namespace SIESC.UI.UI.Autorizacoes
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_ativar = new System.Windows.Forms.Button();
             this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
             this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siescDataSet1 = new SIESC.UI.siescDataSet();
@@ -53,7 +54,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.btn_emitircarteirinha = new System.Windows.Forms.Button();
             this.msk_cpf = new SIESC.UI.Controles.MyMaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbo_cargo = new SIESC.UI.Controles.MyComboBox();
+            this.cbo_tipo_autorizacao = new SIESC.UI.Controles.MyComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_anovencimento = new System.Windows.Forms.ComboBox();
             this.cbo_instituicoes = new SIESC.UI.Controles.MyComboBox();
@@ -83,7 +84,6 @@ namespace SIESC.UI.UI.Autorizacoes
             this.dgv_autorizacoes = new System.Windows.Forms.DataGridView();
             this.instituicoesTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.mantenedorTableAdapter = new SIESC.UI.siescDataSetTableAdapters.mantenedorTableAdapter();
-            this.btn_ativar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -123,7 +123,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.splitContainer1.Panel1.Controls.Add(this.btn_emitircarteirinha);
             this.splitContainer1.Panel1.Controls.Add(this.msk_cpf);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.cbo_cargo);
+            this.splitContainer1.Panel1.Controls.Add(this.cbo_tipo_autorizacao);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.cbo_anovencimento);
             this.splitContainer1.Panel1.Controls.Add(this.cbo_instituicoes);
@@ -148,6 +148,19 @@ namespace SIESC.UI.UI.Autorizacoes
             this.splitContainer1.Size = new System.Drawing.Size(1295, 551);
             this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btn_ativar
+            // 
+            this.btn_ativar.AutoSize = true;
+            this.btn_ativar.Image = global::SIESC.UI.Properties.Resources.Tick;
+            this.btn_ativar.Location = new System.Drawing.Point(1062, 53);
+            this.btn_ativar.Name = "btn_ativar";
+            this.btn_ativar.Size = new System.Drawing.Size(77, 59);
+            this.btn_ativar.TabIndex = 74;
+            this.btn_ativar.Text = "Ativar";
+            this.btn_ativar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_ativar.UseVisualStyleBackColor = true;
+            this.btn_ativar.Click += new System.EventHandler(this.btn_ativar_Click);
             // 
             // cbo_mantenedor
             // 
@@ -341,21 +354,21 @@ namespace SIESC.UI.UI.Autorizacoes
             this.label6.TabIndex = 62;
             this.label6.Text = "CPF:";
             // 
-            // cbo_cargo
+            // cbo_tipo_autorizacao
             // 
-            this.cbo_cargo.BackColor = System.Drawing.Color.White;
-            this.cbo_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_cargo.Enabled = false;
-            this.cbo_cargo.FormattingEnabled = true;
-            this.cbo_cargo.Items.AddRange(new object[] {
+            this.cbo_tipo_autorizacao.BackColor = System.Drawing.Color.White;
+            this.cbo_tipo_autorizacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_tipo_autorizacao.Enabled = false;
+            this.cbo_tipo_autorizacao.FormattingEnabled = true;
+            this.cbo_tipo_autorizacao.Items.AddRange(new object[] {
             "",
             "DIRIGIR",
             "SECRETARIAR",
             "LECIONAR"});
-            this.cbo_cargo.Location = new System.Drawing.Point(316, 82);
-            this.cbo_cargo.Name = "cbo_cargo";
-            this.cbo_cargo.Size = new System.Drawing.Size(131, 22);
-            this.cbo_cargo.TabIndex = 61;
+            this.cbo_tipo_autorizacao.Location = new System.Drawing.Point(316, 82);
+            this.cbo_tipo_autorizacao.Name = "cbo_tipo_autorizacao";
+            this.cbo_tipo_autorizacao.Size = new System.Drawing.Size(131, 22);
+            this.cbo_tipo_autorizacao.TabIndex = 61;
             // 
             // label5
             // 
@@ -666,8 +679,8 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dgv_autorizacoes.AllowUserToAddRows = false;
             this.dgv_autorizacoes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_autorizacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_autorizacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_autorizacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -690,19 +703,6 @@ namespace SIESC.UI.UI.Autorizacoes
             // mantenedorTableAdapter
             // 
             this.mantenedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_ativar
-            // 
-            this.btn_ativar.AutoSize = true;
-            this.btn_ativar.Image = global::SIESC.UI.Properties.Resources.Tick;
-            this.btn_ativar.Location = new System.Drawing.Point(1062, 53);
-            this.btn_ativar.Name = "btn_ativar";
-            this.btn_ativar.Size = new System.Drawing.Size(77, 59);
-            this.btn_ativar.TabIndex = 74;
-            this.btn_ativar.Text = "Ativar";
-            this.btn_ativar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_ativar.UseVisualStyleBackColor = true;
-            this.btn_ativar.Click += new System.EventHandler(this.btn_ativar_Click);
             // 
             // GerenciarAutorizacoes
             // 
@@ -761,7 +761,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		private System.Windows.Forms.RadioButton rdb_nome;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox cbo_anovencimento;
-		private MyComboBox cbo_cargo;
+		private MyComboBox cbo_tipo_autorizacao;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.RadioButton rdb_cargo;
 		private System.Windows.Forms.Label label6;

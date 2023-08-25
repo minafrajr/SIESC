@@ -28,9 +28,12 @@ namespace SIESC.BD.DataSets {
     }
 }
 
-namespace SIESC.BD.DataSets.ds_siescTableAdapters {
-    
-    
+namespace SIESC.BD.DataSets.ds_siescTableAdapters
+{
+    partial class autorizacoesTableAdapter
+    {
+    }
+
     public partial class usuariosTableAdapter {
     }
 }

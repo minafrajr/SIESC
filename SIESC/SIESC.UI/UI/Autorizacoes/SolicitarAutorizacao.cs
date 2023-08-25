@@ -107,7 +107,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="funcionario">Objeto funcionário</param>
 		/// <param name="principalUi"></param>
-		public SolicitarAutorizacao(Funcionario funcionario,Principal_UI principalUi)
+		public SolicitarAutorizacao(Funcionario funcionario, Principal_UI principalUi)
 		{
 			this.InitializeComponent();
 			this.PrincipalUi = principalUi;
@@ -130,7 +130,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// <param name="funcionario2">Objeto funcionário</param>
 		/// <param name="autorizacao">Objeto autorização</param>
 		/// <param name="principalUi"></param>
-		public SolicitarAutorizacao(Funcionario funcionario2,Autorizacao autorizacao,Principal_UI principalUi)
+		public SolicitarAutorizacao(Funcionario funcionario2, Autorizacao autorizacao, Principal_UI principalUi)
 		{
 			PrincipalUi = principalUi;
 			this.InitializeComponent();
@@ -171,7 +171,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			cbo_tipolograd.SelectedItem = funcionario1.TipoLogradouro;
 
 			//if (funcionario1.DataNascimento.CompareTo(msk_datanasc.MinDate) > 0)
-				msk_datanasc.Text = funcionario1.DataNascimento.ToShortDateString();
+			msk_datanasc.Text = funcionario1.DataNascimento.ToShortDateString();
 
 			if (funcionario1.Sexo.Equals("F"))
 			{
@@ -220,13 +220,13 @@ namespace SIESC.UI.UI.Autorizacoes
 		private void RepassaAutorizacao(Autorizacao autorizacao1)
 		{
 			cbo_tipoautoriz.Text = autorizacao1.Tipoautorizacao.ToString().ToUpper();
-
 			cbo_nivelensino.Text = autorizacao1.nivelensino;
 			txt_outrosdocs.Text = autorizacao1.outrosdocs;
 			dtp_datapossecargo.Value = autorizacao1.Datapossecargo;
 			dtp_data_expedicao.Value = autorizacao1.Dataexpedicao;
 			lbl_numautoriz.Text = autorizacao1.numeroautorizacao;
 			lbl_idsolicitacao.Text = autorizacao1.IdAutorizacao.ToString();
+			chk_possuiValidade.Checked = autorizacao1.possuiValidade;
 
 			if (!string.IsNullOrEmpty(autorizacao1.Disciplina.ToString()))
 			{
@@ -253,7 +253,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				chk_anosfinais.Checked = true;
 			}
 
-			autorizacao1.Documentos.Replace(" ",string.Empty);//retira os espaços em branco
+			autorizacao1.Documentos.Replace(" ", string.Empty);//retira os espaços em branco
 
 			List<String> listaDeDocumentos = autorizacao1.Documentos.ToString().Split(',').ToList();//cria uma lista de documentos
 
@@ -330,13 +330,13 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_autorizar_Click(object sender,EventArgs e)
+		private void btn_autorizar_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				string tag = string.Empty;
 
-				if (!VerificaCampos(listaControlesObrigatorios,ref tag))
+				if (!VerificaCampos(listaControlesObrigatorios, ref tag))
 					throw new Exception($"O campo {tag} está sem preencher!");
 
 				funcionario = this.CriaFuncionario();
@@ -357,7 +357,7 @@ namespace SIESC.UI.UI.Autorizacoes
 				if (idfuncionario > 0 || (idfuncionario != null))//se existe o funcionario no banco
 				{
 					funcionario.idFuncionario = (int)idfuncionario;
-					funcionarioControl.Salvar(funcionario,false); //false - atualiza o funcionario no banco
+					funcionarioControl.Salvar(funcionario, false); //false - atualiza o funcionario no banco
 
 					if (!string.IsNullOrEmpty(lbl_numautoriz.Text))//pega o número de autorização do funcionário
 						tmpNumeroAutoriz = lbl_numautoriz.Text;
@@ -366,31 +366,31 @@ namespace SIESC.UI.UI.Autorizacoes
 				}
 				else //o funcionário não existe no banco
 				{
-					funcionarioControl.Salvar(funcionario,true); //salva o funcionário no banco
+					funcionarioControl.Salvar(funcionario, true); //salva o funcionário no banco
 					idfuncionario = funcionarioControl.PesquisaID(msk_cpf.Text);//localiza o id do funcionário recém salvo no banco
 				}
 
 				if (idfuncionario != null)
 				{
-					funcionario.idFuncionario = (int) idfuncionario; //determina o id do funcionário se for recém salvo
+					funcionario.idFuncionario = (int)idfuncionario; //determina o id do funcionário se for recém salvo
 					autorizacao = CriaAutorizacao();
 
-					autorizacao.Idfuncionario = (int) idfuncionario;
+					autorizacao.Idfuncionario = (int)idfuncionario;
 				}
 
 				if (!string.IsNullOrEmpty(tmpNumeroAutoriz))
 				{
-					if (Mensageiro.MensagemPergunta($"Já existe a autorização no sistema para este funcionário!{Environment.NewLine}Deseja Atualizar?{Environment.NewLine}SIM - Atualiza {Environment.NewLine}NÃO - Grava uma nova autorização",PrincipalUi) == DialogResult.Yes)
+					if (Mensageiro.MensagemPergunta($"Já existe a autorização no sistema para este funcionário!{Environment.NewLine}Deseja Atualizar?{Environment.NewLine}SIM - Atualiza {Environment.NewLine}NÃO - Grava uma nova autorização", PrincipalUi) == DialogResult.Yes)
 					{
 						this.autorizacao.numeroautorizacao = tmpNumeroAutoriz;
 
-						if (autorizacaoControl.Salvar(this.autorizacao,false)) //atualiza no banco
+						if (autorizacaoControl.Salvar(this.autorizacao, false)) //atualiza no banco
 						{
 							Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
 							ExibirCarteirinha();
 						}
 					}
-					else if (autorizacaoControl.Salvar(this.autorizacao,true)) //salva no banco
+					else if (autorizacaoControl.Salvar(this.autorizacao, true)) //salva no banco
 					{
 						Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
 
@@ -399,7 +399,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
 					this.LimpaControles();
 				}
-				else if (autorizacaoControl.Salvar(this.autorizacao,true)) //salva no banco
+				else if (autorizacaoControl.Salvar(this.autorizacao, true)) //salva no banco
 				{
 					Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
 					ExibirCarteirinha();
@@ -409,7 +409,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception,this);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 
@@ -418,10 +418,10 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		private void ExibirCarteirinha()
 		{
-			if (Mensageiro.MensagemPergunta("Deseja imprimir a Carteirinha?",PrincipalUi).Equals(DialogResult.Yes))
+			if (Mensageiro.MensagemPergunta("Deseja imprimir a Carteirinha?", PrincipalUi).Equals(DialogResult.Yes))
 			{
-				frm_carteirinha formCarteirinha = new frm_carteirinha(funcionario.idFuncionario,autorizacao.numeroautorizacao,
-					autorizacao.nivelensino,PrincipalUi);
+				frm_carteirinha formCarteirinha = new frm_carteirinha(funcionario.idFuncionario, autorizacao.numeroautorizacao,
+					autorizacao.nivelensino, PrincipalUi);
 				formCarteirinha.MdiParent = PrincipalUi;
 				formCarteirinha.Show();
 				formCarteirinha.BringToFront();
@@ -476,17 +476,17 @@ namespace SIESC.UI.UI.Autorizacoes
 				Complemento = txt_complemento.Text,
 				Logradouro = txt_logradouro.Text,
 				NumResidencia = txt_numresid.Text,
-				TipoLogradouro = cbo_tipolograd.Text,
+				TipoLogradouro = cbo_tipolograd.Text
 			};
 
 			if (rdb_feminino.Checked || rdb_masculino.Checked) func.Sexo = rdb_masculino.Checked ? "M" : "F";
 
-			if (!cbo_cargoOrigem.Equals(null)) func.cargoOrigem = (int) cbo_cargoOrigem.SelectedValue;
+			if (!cbo_cargoOrigem.Equals(null)) func.cargoOrigem = (int)cbo_cargoOrigem.SelectedValue;
 
-			if (!cbo_cargoAtual.Equals(null)) func.cargoAtual = (int) cbo_cargoAtual.SelectedValue;
+			if (!cbo_cargoAtual.Equals(null)) func.cargoAtual = (int)cbo_cargoAtual.SelectedValue;
 
 			if (!string.IsNullOrEmpty(cbo_instituicao.SelectedValue.ToString()))
-				func.instituicao = (int) cbo_instituicao.SelectedValue;
+				func.instituicao = (int)cbo_instituicao.SelectedValue;
 
 			return func;
 		}
@@ -498,53 +498,53 @@ namespace SIESC.UI.UI.Autorizacoes
 		private Autorizacao CriaAutorizacao()
 		{
 			DeterminaTipoAutorizacao();
-			Autorizacao criaAutorizacao = new Autorizacao();
+			Autorizacao novaAutorizacao = new Autorizacao();
 
 			switch (navegacao)
 			{
 				case Navegando.Inserindo:
 				case Navegando.Editando:
-					criaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue,funcionario.idFuncionario,dtp_data_expedicao.Value,this.tipoAutoriz);
+					novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, funcionario.idFuncionario, dtp_data_expedicao.Value, this.tipoAutoriz);
 					break;
 				case Navegando.Deletando:
-					criaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue,Convert.ToInt32(lbl_codigofunc.Text),dtp_data_expedicao.Value,this.tipoAutoriz);
+					novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, Convert.ToInt32(lbl_codigofunc.Text), dtp_data_expedicao.Value, this.tipoAutoriz);
 					autorizacaoControl = new AutorizacaoControl();
 					break;
 			}
 
-			criaAutorizacao.Tipoautorizacao = this.tipoAutoriz;
+			novaAutorizacao.Tipoautorizacao = this.tipoAutoriz;
 
-			criaAutorizacao.nivelensino = this.cbo_nivelensino.Text.ToUpper();
+			novaAutorizacao.nivelensino = this.cbo_nivelensino.Text.ToUpper();
 
 			if (cbo_disciplina.SelectedValue != null)
-				criaAutorizacao.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
+				novaAutorizacao.Disciplina = Convert.ToInt16(this.cbo_disciplina.SelectedValue);
 
-			criaAutorizacao.outrosdocs = this.txt_outrosdocs.Text;
+			novaAutorizacao.outrosdocs = this.txt_outrosdocs.Text;
 
 			if (!cbo_nivelensino.Text.Equals("EDUCACÃO INFANTIL"))
 			{
 				if (chk_anosfinais.Checked && chk_anosiniciais.Checked)
-					criaAutorizacao.anosdeensino = chk_anosiniciais.Text + " e " + chk_anosfinais.Text;
+					novaAutorizacao.anosdeensino = chk_anosiniciais.Text + " e " + chk_anosfinais.Text;
 				else
-					criaAutorizacao.anosdeensino = chk_anosiniciais.Checked ? chk_anosiniciais.Text : chk_anosfinais.Text;
+					novaAutorizacao.anosdeensino = chk_anosiniciais.Checked ? chk_anosiniciais.Text : chk_anosfinais.Text;
 			}
 
-			criaAutorizacao.Documentos = new StringBuilder();
+			novaAutorizacao.Documentos = new StringBuilder();
 
 			foreach (Control control in listacheks)
 			{
 				if (control is CheckBox)
-					if (((CheckBox) control).Checked)
-						criaAutorizacao.Documentos.Append($"{control.Text}, ");
+					if (((CheckBox)control).Checked)
+						novaAutorizacao.Documentos.Append($"{control.Text}, ");
 			}
 
-			if (criaAutorizacao.Documentos.Length > 0)
-				criaAutorizacao.Documentos.Remove(criaAutorizacao.Documentos.Length - 1, 1);
+			if (novaAutorizacao.Documentos.Length > 0)
+				novaAutorizacao.Documentos.Remove(novaAutorizacao.Documentos.Length - 1, 1);
 
-			criaAutorizacao.usuario = PrincipalUi.user.nomeusuario.ToUpper();//Get nome do usuario
+			novaAutorizacao.usuario = PrincipalUi.user.nomeusuario.ToUpper();//Get nome do usuario
 
-			criaAutorizacao.Dataexpedicao = dtp_data_expedicao.Value;
-			criaAutorizacao.Datapossecargo = dtp_datapossecargo.Value;
+			novaAutorizacao.Dataexpedicao = dtp_data_expedicao.Value;
+			novaAutorizacao.Datapossecargo = dtp_datapossecargo.Value;
 
 			string num = autorizacaoControl.RetornaUltimaAutorizacao();
 
@@ -553,9 +553,10 @@ namespace SIESC.UI.UI.Autorizacoes
 			// ReSharper disable once PossiblyMistakenUseOfParamsMethod
 			string auttemporia = String.Concat($@"0{num}/{data}");
 
-			criaAutorizacao.numeroautorizacao = auttemporia; //acrescenta o zero na frente do número da autorização
+			novaAutorizacao.numeroautorizacao = auttemporia; //acrescenta o zero na frente do número da autorização
+			novaAutorizacao.possuiValidade = chk_possuiValidade.Checked;
 
-			return criaAutorizacao;
+			return novaAutorizacao;
 		}
 
 		/// <summary>
@@ -564,7 +565,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// <param name="list"></param>
 		/// <param name="campo"></param>
 		/// <returns></returns>
-		private bool VerificaCampos(List<Control> list,ref string campo)
+		private bool VerificaCampos(List<Control> list, ref string campo)
 		{
 			foreach (Control control in list)
 			{
@@ -582,7 +583,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_novo_Click(object sender,EventArgs e)
+		private void btn_novo_Click(object sender, EventArgs e)
 		{
 			LimpaControles();
 			txt_nome.Focus();
@@ -603,12 +604,12 @@ namespace SIESC.UI.UI.Autorizacoes
 				if (control is MyTextBox) control.ResetText();
 
 				if (control is MyMaskedTextBox) control.ResetText();
-				
-				if (control is MyMaskedPhoneBox) control.ResetText();
-				
-				if (control is RadioButton) ((RadioButton) control).Checked = false;
 
-				if (control is CheckBox) ((CheckBox) control).Checked = false;
+				if (control is MyMaskedPhoneBox) control.ResetText();
+
+				if (control is RadioButton) ((RadioButton)control).Checked = false;
+
+				if (control is CheckBox) ((CheckBox)control).Checked = false;
 
 				if (control is MyComboBox)
 				{
@@ -625,7 +626,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_cancelar_Click(object sender,EventArgs e)
+		private void btn_cancelar_Click(object sender, EventArgs e)
 		{
 			if (Mensageiro.MensagemCancelamento(PrincipalUi).Equals(DialogResult.Yes)) this.Close();
 		}
@@ -635,7 +636,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_limpar_Click(object sender,EventArgs e)
+		private void btn_limpar_Click(object sender, EventArgs e)
 		{
 			this.LimpaControles();
 
@@ -646,18 +647,18 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_excluir_Click(object sender,EventArgs e)
+		private void btn_excluir_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				navegacao = Navegando.Deletando;
 
-				if (Mensageiro.MensagemExclusao(null,PrincipalUi) == DialogResult.Yes)
+				if (Mensageiro.MensagemExclusao(null, PrincipalUi) == DialogResult.Yes)
 					throw new NotImplementedException("Para excluir a autorização entre em contato com o administrador do sistema!");
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemAviso(exception.Message,PrincipalUi);
+				Mensageiro.MensagemAviso(exception.Message, PrincipalUi);
 			}
 		}
 
@@ -676,14 +677,14 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_buscarcep_Click(object sender,EventArgs e)
+		private void btn_buscarcep_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				BuscaCep consultacCep = new BuscaCep();
 
-				
-				Endereco[] endereco = consultacCep.buscadorCEP(msk_cep.Text,true);
+
+				Endereco[] endereco = consultacCep.buscadorCEP(msk_cep.Text, true);
 
 				txt_cidade.Text = endereco[0].Cidade;
 				txt_bairro.Text = endereco[0].Bairro;
@@ -692,18 +693,18 @@ namespace SIESC.UI.UI.Autorizacoes
 			}
 			catch (Exception exception)
 			{
-				Mensageiro.MensagemErro(exception,this);
+				Mensageiro.MensagemErro(exception, this);
 			}
 		}
 
-		
+
 
 		/// <summary>
 		/// Carrega as disciplinas de acordo com o tipo de autorização
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void cbo_tipoautoriz_SelectedIndexChanged(object sender,EventArgs e)
+		private void cbo_tipoautoriz_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cbo_tipoautoriz.Text.Equals("LECIONAR"))
 				this.disciplinasTableAdapter.Fill(this.siescDataSet.disciplinas);
@@ -715,16 +716,16 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btn_saberCep_Click(object sender,EventArgs e)
+		private void btn_saberCep_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				FrmBuscaCep frmBuscaCep = new FrmBuscaCep {MdiParent = PrincipalUi};
+				FrmBuscaCep frmBuscaCep = new FrmBuscaCep { MdiParent = PrincipalUi };
 				frmBuscaCep.Show();
 			}
 			catch (Exception ex)
 			{
-				Mensageiro.MensagemErro(ex,this);
+				Mensageiro.MensagemErro(ex, this);
 			}
 		}
 
@@ -734,7 +735,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void cbo_nivelensino_SelectedIndexChanged(object sender,EventArgs e)
+		private void cbo_nivelensino_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cbo_nivelensino.Text.Equals("ENSINO FUNDAMENTAL"))
 				this.instituicoesTableAdapter.FillByMunicipais(this.siescDataSet.instituicoes);

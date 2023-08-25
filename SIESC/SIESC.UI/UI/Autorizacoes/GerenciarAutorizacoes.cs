@@ -191,7 +191,7 @@ namespace SIESC.UI.UI.Autorizacoes
                             dgv_autorizacoes.DataSource = controleAutorizacao.GetByAutorizacao(txt_numautorizacao.Text, statusautorizacao);
                             break;
                         case Localizar.cargo:
-                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByTipo(cbo_cargo.Text.ToLower(), statusautorizacao);
+                            dgv_autorizacoes.DataSource = controleAutorizacao.GetByTipo(cbo_tipo_autorizacao.Text.ToLower(), statusautorizacao);
                             break;
                         case Localizar.anoexpedicao:
                             dgv_autorizacoes.DataSource = controleAutorizacao.GetByAnoExpedicao(cbo_anoexpdicao.Text, statusautorizacao);
@@ -309,7 +309,7 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             localizar = Localizar.cargo;
             this.HabiltaControles(false, false, false, false, true, false, false);
-            cbo_cargo.Focus();
+            cbo_tipo_autorizacao.Focus();
         }
         /// <summary>
         /// Evento ao selecionar o radiobutto data de expedição
@@ -350,7 +350,7 @@ namespace SIESC.UI.UI.Autorizacoes
             txt_numautorizacao.Enabled = numautoriz;
             cbo_anovencimento.Enabled = datavenc;
             cbo_instituicoes.Enabled = escola;
-            cbo_cargo.Enabled = cargo;
+            cbo_tipo_autorizacao.Enabled = cargo;
             cbo_anoexpdicao.Enabled = anoexpedicao;
             cbo_mantenedor.Enabled = tipoinstituicao;
 
@@ -360,7 +360,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -370,7 +370,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.Focus();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -380,7 +380,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.Focus();
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -390,7 +390,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.Focus();
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -400,7 +400,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.ResetText();
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_mantenedor.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
             }
@@ -410,7 +410,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_anoexpdicao.Focus();
                 cbo_mantenedor.SelectedIndex = -1;
             }
@@ -420,7 +420,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
                 cbo_mantenedor.Focus();
             }
@@ -437,7 +437,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
-                cbo_cargo.SelectedIndex = -1;
+                cbo_tipo_autorizacao.SelectedIndex = -1;
                 cbo_anoexpdicao.SelectedIndex = -1;
                 msk_cpf.ResetText();
                 cbo_mantenedor.SelectedIndex = -1;
@@ -539,10 +539,11 @@ namespace SIESC.UI.UI.Autorizacoes
             {
                 txt_nome.Text = dgv_autorizacoes[1, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 txt_numautorizacao.Text = dgv_autorizacoes[4, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                cbo_cargo.Text = dgv_autorizacoes[3, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                cbo_tipo_autorizacao.Text = dgv_autorizacoes[3, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 cbo_instituicoes.Text = dgv_autorizacoes[5, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 cbo_anovencimento.Text = dgv_autorizacoes[6, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 msk_cpf.Text = dgv_autorizacoes[2, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
+                
             }
             catch (Exception ex)
             {
