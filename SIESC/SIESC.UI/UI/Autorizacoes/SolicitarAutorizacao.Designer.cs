@@ -2,34 +2,34 @@
 
 namespace SIESC.UI.UI.Autorizacoes
 {
-	partial class SolicitarAutorizacao
-	{
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class SolicitarAutorizacao
+    {
+        /// <summary>
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Limpar os recursos que estão sendo usados.
-		/// </summary>
-		/// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Código gerado pelo Windows Form Designer
+        #region Código gerado pelo Windows Form Designer
 
-		/// <summary>
-		/// Método necessário para suporte do Designer - não modifique
-		/// o conteúdo deste método com o editor de código.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Método necessário para suporte do Designer - não modifique
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolicitarAutorizacao));
             this.btn_excluir = new System.Windows.Forms.Button();
@@ -87,6 +87,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.gpb_autorizacao = new System.Windows.Forms.GroupBox();
+            this.chk_possuiValidade = new System.Windows.Forms.CheckBox();
             this.dtp_data_expedicao = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -120,7 +121,6 @@ namespace SIESC.UI.UI.Autorizacoes
             this.disciplinasTableAdapter = new SIESC.UI.siescDataSetTableAdapters.disciplinasTableAdapter();
             this.cargosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargosTableAdapter();
             this.cargos1TableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargos1TableAdapter();
-            this.chk_possuiValidade = new System.Windows.Forms.CheckBox();
             this.gpb_endereco.SuspendLayout();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cargos1BindingSource)).BeginInit();
@@ -765,11 +765,22 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_autorizacao.TabStop = false;
             this.gpb_autorizacao.Text = "Autorização";
             // 
+            // chk_possuiValidade
+            // 
+            this.chk_possuiValidade.AutoSize = true;
+            this.chk_possuiValidade.Location = new System.Drawing.Point(231, 39);
+            this.chk_possuiValidade.Name = "chk_possuiValidade";
+            this.chk_possuiValidade.Size = new System.Drawing.Size(106, 18);
+            this.chk_possuiValidade.TabIndex = 11;
+            this.chk_possuiValidade.Text = "Possui validade";
+            this.chk_possuiValidade.UseVisualStyleBackColor = true;
+            this.chk_possuiValidade.Visible = false;
+            // 
             // dtp_data_expedicao
             // 
             this.dtp_data_expedicao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_data_expedicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_data_expedicao.Location = new System.Drawing.Point(338, 126);
+            this.dtp_data_expedicao.Location = new System.Drawing.Point(332, 79);
             this.dtp_data_expedicao.Name = "dtp_data_expedicao";
             this.dtp_data_expedicao.Size = new System.Drawing.Size(83, 23);
             this.dtp_data_expedicao.TabIndex = 10;
@@ -778,17 +789,17 @@ namespace SIESC.UI.UI.Autorizacoes
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(196, 112);
+            this.label9.Location = new System.Drawing.Point(231, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 14);
+            this.label9.Size = new System.Drawing.Size(90, 14);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Data de Posse no Cargo:";
+            this.label9.Text = "Posse no Cargo:";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.chk_anosfinais);
             this.panel1.Controls.Add(this.chk_anosiniciais);
-            this.panel1.Location = new System.Drawing.Point(224, 67);
+            this.panel1.Location = new System.Drawing.Point(225, 113);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(190, 40);
             this.panel1.TabIndex = 3;
@@ -820,7 +831,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_nivelensino.Items.AddRange(new object[] {
             "EDUCAÇÃO INFANTIL",
             "ENSINO FUNDAMENTAL"});
-            this.cbo_nivelensino.Location = new System.Drawing.Point(9, 81);
+            this.cbo_nivelensino.Location = new System.Drawing.Point(9, 124);
             this.cbo_nivelensino.Name = "cbo_nivelensino";
             this.cbo_nivelensino.Size = new System.Drawing.Size(205, 22);
             this.cbo_nivelensino.TabIndex = 2;
@@ -830,7 +841,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 64);
+            this.label6.Location = new System.Drawing.Point(7, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 14);
             this.label6.TabIndex = 8;
@@ -842,9 +853,9 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_disciplina.DisplayMember = "nomeDisciplina";
             this.cbo_disciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_disciplina.FormattingEnabled = true;
-            this.cbo_disciplina.Location = new System.Drawing.Point(224, 39);
+            this.cbo_disciplina.Location = new System.Drawing.Point(9, 80);
             this.cbo_disciplina.Name = "cbo_disciplina";
-            this.cbo_disciplina.Size = new System.Drawing.Size(215, 22);
+            this.cbo_disciplina.Size = new System.Drawing.Size(203, 22);
             this.cbo_disciplina.TabIndex = 1;
             this.cbo_disciplina.Tag = "Disciplina";
             this.cbo_disciplina.ValueMember = "idDisciplinas";
@@ -875,9 +886,9 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_instituicao.DisplayMember = "nome";
             this.cbo_instituicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao.FormattingEnabled = true;
-            this.cbo_instituicao.Location = new System.Drawing.Point(10, 170);
+            this.cbo_instituicao.Location = new System.Drawing.Point(9, 170);
             this.cbo_instituicao.Name = "cbo_instituicao";
-            this.cbo_instituicao.Size = new System.Drawing.Size(330, 22);
+            this.cbo_instituicao.Size = new System.Drawing.Size(429, 22);
             this.cbo_instituicao.TabIndex = 5;
             this.cbo_instituicao.Tag = "Instituição";
             this.cbo_instituicao.ValueMember = "idInstituicoes";
@@ -891,7 +902,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dtp_datapossecargo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_datapossecargo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_datapossecargo.Location = new System.Drawing.Point(198, 126);
+            this.dtp_datapossecargo.Location = new System.Drawing.Point(231, 78);
             this.dtp_datapossecargo.Name = "dtp_datapossecargo";
             this.dtp_datapossecargo.Size = new System.Drawing.Size(83, 23);
             this.dtp_datapossecargo.TabIndex = 4;
@@ -900,7 +911,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 21);
+            this.label4.Location = new System.Drawing.Point(7, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 14);
             this.label4.TabIndex = 3;
@@ -927,11 +938,11 @@ namespace SIESC.UI.UI.Autorizacoes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(335, 112);
+            this.label1.Location = new System.Drawing.Point(332, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 14);
+            this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Data de Expedição:";
+            this.label1.Text = "Expedição:";
             // 
             // gpb_documentos
             // 
@@ -1087,16 +1098,6 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.cargos1TableAdapter.ClearBeforeFill = true;
             // 
-            // chk_possuiValidade
-            // 
-            this.chk_possuiValidade.AutoSize = true;
-            this.chk_possuiValidade.Location = new System.Drawing.Point(9, 126);
-            this.chk_possuiValidade.Name = "chk_possuiValidade";
-            this.chk_possuiValidade.Size = new System.Drawing.Size(106, 18);
-            this.chk_possuiValidade.TabIndex = 11;
-            this.chk_possuiValidade.Text = "Possui validade";
-            this.chk_possuiValidade.UseVisualStyleBackColor = true;
-            // 
             // SolicitarAutorizacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -1135,98 +1136,98 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_documentos.PerformLayout();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.Button btn_excluir;
-		private System.Windows.Forms.Button btn_limpar;
-		private System.Windows.Forms.Button btn_cancelar;
-		private System.Windows.Forms.Button btn_novo;
-		private System.Windows.Forms.Button btn_autorizar;
-		private System.Windows.Forms.GroupBox gpb_endereco;
-		private MyTextBox txt_complemento;
-		private System.Windows.Forms.Label lbl_complemento;
-		private System.Windows.Forms.Button btn_buscarcep;
-		private MyTextBox txt_numresid;
-		private MyTextBox txt_cidade;
-		private MyTextBox txt_logradouro;
-		private MyComboBox cbo_tipolograd;
-		private MyMaskedTextBox msk_cep;
-		private System.Windows.Forms.Label lbl_cidade;
-		private System.Windows.Forms.Label lbl_bairro;
-		private System.Windows.Forms.Label lbl_numresid;
-		private System.Windows.Forms.Label lbl_logradouro;
-		private System.Windows.Forms.Label lbl_tipolograd;
-		private System.Windows.Forms.Label lbl_cep;
-		private System.Windows.Forms.GroupBox gpb_dadospessoais;
-		private MyComboBox cbo_cargoOrigem;
-		private System.Windows.Forms.Label lbl_cargo;
-		private MyTextBox txt_email;
-		private System.Windows.Forms.Label lbl_email;
-		private MyMaskedPhoneBox msk_tel3;
-		private MyMaskedPhoneBox msk_tel2;
-		private MyMaskedPhoneBox msk_tel1;
-		private System.Windows.Forms.Label lbl_telefones;
-		private MyTextBox txt_cartident;
-		private System.Windows.Forms.Label lbl_cartident;
-		private MyMaskedTextBox msk_datanasc;
-		private System.Windows.Forms.Label lbl_datanasc;
-		private MyMaskedTextBox msk_cpf;
-		private MyTextBox txt_nome;
-		private System.Windows.Forms.GroupBox gpb_sexo;
-		private System.Windows.Forms.RadioButton rdb_feminino;
-		private System.Windows.Forms.RadioButton rdb_masculino;
-		private System.Windows.Forms.Label lbl_nome;
-		private System.Windows.Forms.Label lbl_cpf;
-		private System.Windows.Forms.GroupBox gpb_autorizacao;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private MyComboBox cbo_disciplina;
-		private MyComboBox cbo_tipoautoriz;
-		private MyComboBox cbo_instituicao;
-		private System.Windows.Forms.DateTimePicker dtp_datapossecargo;
-		private System.Windows.Forms.Label label4;
-		private MyComboBox cbo_nivelensino;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.GroupBox gpb_documentos;
-		private MyTextBox txt_outrosdocs;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.CheckBox chk_decreto;
-		private System.Windows.Forms.CheckBox chk_termoposse;
-		private System.Windows.Forms.CheckBox chk_certreservista;
-		private System.Windows.Forms.CheckBox chk_historicoescolar;
-		private System.Windows.Forms.CheckBox chk_diploma;
-		private System.Windows.Forms.CheckBox chk_comprovanteinscri;
-		private System.Windows.Forms.CheckBox chk_titeleitor;
-		private System.Windows.Forms.CheckBox chk_cartident;
-		private System.Windows.Forms.CheckBox chk_cpf;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label lbl_codigofunc;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label lbl_numautoriz;
-		private siescDataSet siescDataSet;
-		private System.Windows.Forms.BindingSource instituicoesBindingSource;
-		private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
-		private System.Windows.Forms.BindingSource disciplinasBindingSource;
-		private siescDataSetTableAdapters.disciplinasTableAdapter disciplinasTableAdapter;
-		private System.Windows.Forms.CheckBox chk_anosfinais;
-		private System.Windows.Forms.CheckBox chk_anosiniciais;
-		private MyTextBox txt_bairro;
-		private System.Windows.Forms.DateTimePicker dtp_data_expedicao;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.BindingSource cargosBindingSource;
-		private siescDataSetTableAdapters.cargosTableAdapter cargosTableAdapter;
-		private MyComboBox cbo_cargoAtual;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.BindingSource cargos1BindingSource;
-		private siescDataSetTableAdapters.cargos1TableAdapter cargos1TableAdapter;
-		private System.Windows.Forms.Button btn_saberCep;
-		private System.Windows.Forms.Label lbl_idsolicitacao;
-		private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.Button btn_limpar;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btn_autorizar;
+        private System.Windows.Forms.GroupBox gpb_endereco;
+        private MyTextBox txt_complemento;
+        private System.Windows.Forms.Label lbl_complemento;
+        private System.Windows.Forms.Button btn_buscarcep;
+        private MyTextBox txt_numresid;
+        private MyTextBox txt_cidade;
+        private MyTextBox txt_logradouro;
+        private MyComboBox cbo_tipolograd;
+        private MyMaskedTextBox msk_cep;
+        private System.Windows.Forms.Label lbl_cidade;
+        private System.Windows.Forms.Label lbl_bairro;
+        private System.Windows.Forms.Label lbl_numresid;
+        private System.Windows.Forms.Label lbl_logradouro;
+        private System.Windows.Forms.Label lbl_tipolograd;
+        private System.Windows.Forms.Label lbl_cep;
+        private System.Windows.Forms.GroupBox gpb_dadospessoais;
+        private MyComboBox cbo_cargoOrigem;
+        private System.Windows.Forms.Label lbl_cargo;
+        private MyTextBox txt_email;
+        private System.Windows.Forms.Label lbl_email;
+        private MyMaskedPhoneBox msk_tel3;
+        private MyMaskedPhoneBox msk_tel2;
+        private MyMaskedPhoneBox msk_tel1;
+        private System.Windows.Forms.Label lbl_telefones;
+        private MyTextBox txt_cartident;
+        private System.Windows.Forms.Label lbl_cartident;
+        private MyMaskedTextBox msk_datanasc;
+        private System.Windows.Forms.Label lbl_datanasc;
+        private MyMaskedTextBox msk_cpf;
+        private MyTextBox txt_nome;
+        private System.Windows.Forms.GroupBox gpb_sexo;
+        private System.Windows.Forms.RadioButton rdb_feminino;
+        private System.Windows.Forms.RadioButton rdb_masculino;
+        private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.Label lbl_cpf;
+        private System.Windows.Forms.GroupBox gpb_autorizacao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private MyComboBox cbo_disciplina;
+        private MyComboBox cbo_tipoautoriz;
+        private MyComboBox cbo_instituicao;
+        private System.Windows.Forms.DateTimePicker dtp_datapossecargo;
+        private System.Windows.Forms.Label label4;
+        private MyComboBox cbo_nivelensino;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox gpb_documentos;
+        private MyTextBox txt_outrosdocs;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox chk_decreto;
+        private System.Windows.Forms.CheckBox chk_termoposse;
+        private System.Windows.Forms.CheckBox chk_certreservista;
+        private System.Windows.Forms.CheckBox chk_historicoescolar;
+        private System.Windows.Forms.CheckBox chk_diploma;
+        private System.Windows.Forms.CheckBox chk_comprovanteinscri;
+        private System.Windows.Forms.CheckBox chk_titeleitor;
+        private System.Windows.Forms.CheckBox chk_cartident;
+        private System.Windows.Forms.CheckBox chk_cpf;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_codigofunc;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_numautoriz;
+        private siescDataSet siescDataSet;
+        private System.Windows.Forms.BindingSource instituicoesBindingSource;
+        private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter;
+        private System.Windows.Forms.BindingSource disciplinasBindingSource;
+        private siescDataSetTableAdapters.disciplinasTableAdapter disciplinasTableAdapter;
+        private System.Windows.Forms.CheckBox chk_anosfinais;
+        private System.Windows.Forms.CheckBox chk_anosiniciais;
+        private MyTextBox txt_bairro;
+        private System.Windows.Forms.DateTimePicker dtp_data_expedicao;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource cargosBindingSource;
+        private siescDataSetTableAdapters.cargosTableAdapter cargosTableAdapter;
+        private MyComboBox cbo_cargoAtual;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.BindingSource cargos1BindingSource;
+        private siescDataSetTableAdapters.cargos1TableAdapter cargos1TableAdapter;
+        private System.Windows.Forms.Button btn_saberCep;
+        private System.Windows.Forms.Label lbl_idsolicitacao;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chk_possuiValidade;
     }
 }

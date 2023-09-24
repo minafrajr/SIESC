@@ -4448,7 +4448,6 @@ namespace SIESC.BD.DataSets {
                 this.columnnumeroAutorizacao.MaxLength = 10;
                 this.columndataExpedicao.AllowDBNull = false;
                 this.columndataExpedicao.Caption = "Data Expedição";
-                this.columndataValidadeAutorizacao.AllowDBNull = false;
                 this.columntipoAutorizacao.MaxLength = 15;
             }
             
@@ -12639,7 +12638,12 @@ namespace SIESC.BD.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dataValidadeAutorizacao {
                 get {
-                    return ((global::System.DateTime)(this[this.tableautorizacoes.dataValidadeAutorizacaoColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableautorizacoes.dataValidadeAutorizacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataValidadeAutorizacao\' na tabela \'autorizacoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableautorizacoes.dataValidadeAutorizacaoColumn] = value;
@@ -12842,6 +12846,18 @@ namespace SIESC.BD.DataSets {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_funcionarios_has_instituicoes_funcionarios1"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdataValidadeAutorizacaoNull() {
+                return this.IsNull(this.tableautorizacoes.dataValidadeAutorizacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdataValidadeAutorizacaoNull() {
+                this[this.tableautorizacoes.dataValidadeAutorizacaoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24183,7 +24199,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
         public virtual int Atualizar(
                     int idInstituicao, 
                     string numeroAutoriz, 
-                    System.DateTime dataValidadeAutoriz, 
+                    global::System.Nullable<global::System.DateTime> dataValidadeAutoriz, 
                     global::System.Nullable<global::System.DateTime> dataPosse, 
                     string tipoAutoriz, 
                     global::System.Nullable<int> disciplina, 
@@ -24205,7 +24221,12 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             else {
                 command.Parameters[1].Value = ((string)(numeroAutoriz));
             }
-            command.Parameters[2].Value = ((System.DateTime)(dataValidadeAutoriz));
+            if ((dataValidadeAutoriz.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(dataValidadeAutoriz.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((dataPosse.HasValue == true)) {
                 command.Parameters[3].Value = ((System.DateTime)(dataPosse.Value));
             }
@@ -24390,7 +24411,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
                     int IdInstituicao, 
                     string numeroAutorizacao, 
                     System.DateTime dataExpedicao, 
-                    System.DateTime dataValidadeAutorizacao, 
+                    global::System.Nullable<global::System.DateTime> dataValidadeAutorizacao, 
                     global::System.Nullable<global::System.DateTime> dataPosseCargo, 
                     string TipoAutorizacao, 
                     global::System.Nullable<int> Disciplina, 
@@ -24412,7 +24433,12 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
                 command.Parameters[2].Value = ((string)(numeroAutorizacao));
             }
             command.Parameters[3].Value = ((System.DateTime)(dataExpedicao));
-            command.Parameters[4].Value = ((System.DateTime)(dataValidadeAutorizacao));
+            if ((dataValidadeAutorizacao.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(dataValidadeAutorizacao.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((dataPosseCargo.HasValue == true)) {
                 command.Parameters[5].Value = ((System.DateTime)(dataPosseCargo.Value));
             }

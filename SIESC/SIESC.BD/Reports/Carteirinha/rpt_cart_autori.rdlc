@@ -576,7 +576,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 2 &amp; " / "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
+                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
                     <Style>
                       <FontFamily>times New Roman</FontFamily>
                     </Style>

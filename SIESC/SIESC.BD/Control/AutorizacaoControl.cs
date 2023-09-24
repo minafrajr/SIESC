@@ -261,7 +261,6 @@ namespace SIESC.BD.Control
                     IdInstituicao = (int)dt.Rows[0]["idInstituicao"],
                     numeroautorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
                     Dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
-                    Datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]),
                     anosdeensino = dt.Rows[0]["anosdeensino"].ToString(),
                     Datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
                     Documentos = new StringBuilder(dt.Rows[0]["documentos"].ToString()),
@@ -281,9 +280,12 @@ namespace SIESC.BD.Control
                 {
                     autoriz.possuiValidade = Convert.ToBoolean(dt.Rows[0]["possuiValidade"]);
                 }
+                if (dt.Rows[0]["dataValidadeAutorizacao"] != DBNull.Value)
+                {
+                    autoriz.Datavalidade = Convert.ToDateTime(dt.Rows[0]["dataValidadeAutorizacao"]);
+                }
 
-
-                switch (dt.Rows[0]["tipoAutorizacao"].ToString())
+                switch (dt.Rows[0]["tipoAutorizacao"].ToString().ToLower())
                 {
                     case "dirigir":
                         autoriz.Tipoautorizacao = Tipoautorizacao.Dirigir;
@@ -478,7 +480,7 @@ namespace SIESC.BD.Control
         /// Inativa a autorização no banco
         /// </summary>
         /// <param name="idfuncionario">o ID do funcionário</param>
-        /// <param name="idinstituicao">o ID da instituicao</param>
+        /// <param name="idautorizacao">o ID da autroização</param>
         /// <param name="numeroautorizacao">O número da Instituicao</param>
         /// <returns></returns>
         public bool InativaAutoricacao(int idfuncionario, int idautorizacao, string numeroautorizacao)
@@ -493,7 +495,13 @@ namespace SIESC.BD.Control
                 throw exception;
             }
         }
-
+        /// <summary>
+        /// Ativa a autorização
+        /// </summary>
+        /// <param name="idfuncionario">O ID do funcionário</param>
+        /// <param name="idautorizacao">O ID da autorização</param>
+        /// <param name="numeroautorizacao">O Número da Autorizacao</param>
+        /// <returns></returns>
         public bool AtivarAutoricacao(int idfuncionario, int idautorizacao, string numeroautorizacao)
         {
             try

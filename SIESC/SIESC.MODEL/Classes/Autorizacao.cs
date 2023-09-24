@@ -50,7 +50,7 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Tempo de validade da autorização
         /// </summary>
-        public DateTime Datavalidade { get; set; }
+        public DateTime? Datavalidade { get; set; }
         /// <summary>
         /// Data de posse do cargoOrigem
         /// </summary>
@@ -97,6 +97,9 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public DateTime datacriacao { get; set; }
 
+        /// <summary>
+        /// Se a autorização possui validade
+        /// </summary>
         public Boolean possuiValidade { get; set; }
 
         /// <summary>
@@ -108,37 +111,37 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Construtora da classe
         /// </summary>
-        /// <param name="idinstituicao">código da instituição</param>
-        /// <param name="codigorequerente">código do funcionário requerente</param>
+        /// <param name="idInstituicao">código da instituição</param>
+        /// <param name="idFuncionario">código do funcionário requerente</param>
         /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
         /// <param name="tipoAutoriz">O tipo de autorização</param>
-        public Autorizacao(int idinstituicao, int codigorequerente, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz)
+        /// <param name="possuiValidade">Se a autorizacao possui validade</param>
+        public Autorizacao(int idInstituicao, int idFuncionario, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
         {
-            IdInstituicao = idinstituicao;
-            Idfuncionario = codigorequerente;
+            IdInstituicao = idInstituicao;
+            Idfuncionario = idFuncionario;
             Dataexpedicao = dataExpedicao;
+            this.possuiValidade = possuiValidade;
             Documentos = new StringBuilder();
 
             GerardataValidade(tipoAutoriz);
         }
+
         /// <summary>
         /// Adiciona o prazo de validade da autorização de acordo com o cargoOrigem
         /// </summary>
         /// <returns>A data em que a autorização irá expirar</returns>
-        private DateTime GerardataValidade(Tipoautorizacao autoriz_tipo)
+        private void GerardataValidade(Tipoautorizacao autoriz_tipo)
         {
-            if (autoriz_tipo == Tipoautorizacao.Secretariar)
+            if (autoriz_tipo == Tipoautorizacao.Secretariar && possuiValidade)
             {
-                return Datavalidade = Dataexpedicao.AddYears(2);//secretariar 3 anos a partir da data de expedição
+                Datavalidade = Dataexpedicao.AddYears(1);//secretariar 1 anos a partir da data de expedição
             }
-            else if (possuiValidade && autoriz_tipo == Tipoautorizacao.Dirigir)//dirigir 2 anos a partir da data de expedição
+            else
             {
-                return Datavalidade = Dataexpedicao.AddYears(1);//dirigir
+                Datavalidade = null;
             }
-            else //se for solicitação para lecionar
-            {
-                return Datavalidade = new DateTime(Dataexpedicao.Year, 12, 31);//lecionar até o final do ano a partir
-            }
+
         }
     }
 }
