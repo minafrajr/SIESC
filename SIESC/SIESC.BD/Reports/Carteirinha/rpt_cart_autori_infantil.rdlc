@@ -202,7 +202,8 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO PARA DIRIGIR A TÍTULO PRECÁRIO",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","AUTORIZAÇÃO PARA SECRETARIAR A TÍTULO PRECÁRIO",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO PARA LECIONAR A TÍTULO PRECÁRIO")</Value>
+                    <Value>AUTORIZAÇÃO TEMPORÁRIA 
+PARA DIRIGIR</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -325,7 +326,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Autorização a título precário para exercer a função de DIRETOR(A)</Value>
+                    <Value>Autorização Temporária para Dirigir Unidade Educacional</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -445,7 +446,8 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Microsoft.VisualBasic.Interaction.Switch(First(Fields!Tipo.Value, "dsRelatorios") = "DIRIGIR", "AUTORIZAÇÃO PARA DIRIGIR A TÍTULO PRECÁRIO", First(Fields!Tipo.Value, "dsRelatorios") = "SECRETARIAR", "AUTORIZAÇÃO PARA SECRETARIAR A TÍTULO PRECÁRIO", First(Fields!Tipo.Value, "dsRelatorios") = "LECIONAR", "AUTORIZAÇÃO PARA LECIONAR A TÍTULO PRECÁRIO")</Value>
+                    <Value>AUTORIZAÇÃO TEMPORÁRIA 
+PARA DIRIGIR</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -540,7 +542,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Autorização a título precário para exercer a função de DIRETOR(A)</Value>
+                    <Value>Autorização Temporária para Dirigir Unidade Educacional</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -576,7 +578,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 2 &amp; " / "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
+                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
                     <Style>
                       <FontFamily>times New Roman</FontFamily>
                     </Style>
@@ -632,7 +634,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 2 &amp; " / "&amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
+                    <Value>=IIf(First(Fields!possuiValidade.Value, "dsRelatorios") = true,Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios") - 1 &amp; " / "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","Validade: "&amp;  Sum(Fields!Validade.Value, "dsRelatorios"),First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","Validade: " &amp; Sum(Fields!Validade.Value, "dsRelatorios")) ,"")</Value>
                     <Style>
                       <FontFamily>times New Roman</FontFamily>
                     </Style>
