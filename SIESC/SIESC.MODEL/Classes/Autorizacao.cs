@@ -135,7 +135,7 @@ namespace SIESC.MODEL.Classes
         {
             if (autoriz_tipo == Tipoautorizacao.Secretariar && possuiValidade)
             {
-                Datavalidade = Dataexpedicao.AddYears(1);//secretariar 1 anos a partir da data de expedição
+                Datavalidade = DateTime.Parse("31/12/" + Dataexpedicao.Year);
             }
             else
             {
