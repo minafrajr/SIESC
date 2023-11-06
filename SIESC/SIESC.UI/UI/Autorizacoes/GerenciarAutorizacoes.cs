@@ -77,6 +77,8 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <param name="e"></param>
         private void GerenciarAutorizacoes_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'siescDataSet1.periodo'. Você pode movê-la ou removê-la conforme necessário.
+            this.periodoTableAdapter.Fill(this.siescDataSet1.periodo);
             // esta linha de código carrega dados na tabela 'siescDataSet1.mantenedor'. Você pode movê-la ou removê-la conforme necessário.
             this.mantenedorTableAdapter.Fill(this.siescDataSet1.mantenedor);
             txt_nome.Focus();
@@ -812,6 +814,11 @@ namespace SIESC.UI.UI.Autorizacoes
             {
                 Mensageiro.MensagemErro(ex, principalUi);
             }
+        }
+
+        private void dgv_autorizacoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -32,7 +32,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btn_ativar = new System.Windows.Forms.Button();
             this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
@@ -84,6 +84,8 @@ namespace SIESC.UI.UI.Autorizacoes
             this.dgv_autorizacoes = new System.Windows.Forms.DataGridView();
             this.instituicoesTableAdapter1 = new SIESC.UI.siescDataSetTableAdapters.instituicoesTableAdapter();
             this.mantenedorTableAdapter = new SIESC.UI.siescDataSetTableAdapters.mantenedorTableAdapter();
+            this.periodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.periodoTableAdapter = new SIESC.UI.siescDataSetTableAdapters.periodoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -97,6 +99,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_opcoesbusca.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_autorizacoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -301,21 +304,15 @@ namespace SIESC.UI.UI.Autorizacoes
             // cbo_anoexpdicao
             // 
             this.cbo_anoexpdicao.BackColor = System.Drawing.Color.White;
+            this.cbo_anoexpdicao.DataSource = this.periodoBindingSource;
+            this.cbo_anoexpdicao.DisplayMember = "ano";
             this.cbo_anoexpdicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anoexpdicao.FormattingEnabled = true;
-            this.cbo_anoexpdicao.Items.AddRange(new object[] {
-            "2023",
-            "2022",
-            "2021",
-            "2020",
-            "2019",
-            "2018",
-            "2017",
-            "2016"});
             this.cbo_anoexpdicao.Location = new System.Drawing.Point(549, 82);
             this.cbo_anoexpdicao.Name = "cbo_anoexpdicao";
             this.cbo_anoexpdicao.Size = new System.Drawing.Size(94, 22);
             this.cbo_anoexpdicao.TabIndex = 66;
+            this.cbo_anoexpdicao.ValueMember = "ano";
             // 
             // label7
             // 
@@ -386,20 +383,16 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             // cbo_anovencimento
             // 
+            this.cbo_anovencimento.DataSource = this.periodoBindingSource;
+            this.cbo_anovencimento.DisplayMember = "ano";
             this.cbo_anovencimento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anovencimento.Enabled = false;
             this.cbo_anovencimento.FormattingEnabled = true;
-            this.cbo_anovencimento.Items.AddRange(new object[] {
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020"});
             this.cbo_anovencimento.Location = new System.Drawing.Point(511, 46);
             this.cbo_anovencimento.Name = "cbo_anovencimento";
             this.cbo_anovencimento.Size = new System.Drawing.Size(110, 22);
             this.cbo_anovencimento.TabIndex = 59;
+            this.cbo_anovencimento.ValueMember = "ano";
             // 
             // cbo_instituicoes
             // 
@@ -684,8 +677,8 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dgv_autorizacoes.AllowUserToAddRows = false;
             this.dgv_autorizacoes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_autorizacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_autorizacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_autorizacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -697,6 +690,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.dgv_autorizacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_autorizacoes.Size = new System.Drawing.Size(1295, 347);
             this.dgv_autorizacoes.TabIndex = 0;
+            this.dgv_autorizacoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_autorizacoes_CellContentClick);
             this.dgv_autorizacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_autorizacoes_CellMouseClick);
             this.dgv_autorizacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_autorizacoes_DataBindingComplete);
             this.dgv_autorizacoes.Sorted += new System.EventHandler(this.dgv_autorizacoes_Sorted);
@@ -708,6 +702,15 @@ namespace SIESC.UI.UI.Autorizacoes
             // mantenedorTableAdapter
             // 
             this.mantenedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // periodoBindingSource
+            // 
+            this.periodoBindingSource.DataMember = "periodo";
+            this.periodoBindingSource.DataSource = this.siescDataSet1;
+            // 
+            // periodoTableAdapter
+            // 
+            this.periodoTableAdapter.ClearBeforeFill = true;
             // 
             // GerenciarAutorizacoes
             // 
@@ -737,6 +740,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_autorizacoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -794,6 +798,8 @@ namespace SIESC.UI.UI.Autorizacoes
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
         private System.Windows.Forms.Button btn_ativar;
+        private System.Windows.Forms.BindingSource periodoBindingSource;
+        private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
 
         private enum Localizar
 		{
