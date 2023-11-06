@@ -357,6 +357,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (nome)
             {
                 txt_nome.Focus();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
@@ -367,6 +368,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (numautoriz)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.Focus();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
@@ -377,6 +379,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (datavenc)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.Focus();
                 cbo_instituicoes.SelectedIndex = -1;
@@ -387,6 +390,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (escola)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.Focus();
@@ -397,6 +401,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (cargo)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.ResetText();
@@ -407,6 +412,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (anoexpedicao)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
@@ -417,6 +423,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (tipoinstituicao)
             {
                 txt_nome.ResetText();
+                msk_cpf.ResetText();
                 txt_numautorizacao.ResetText();
                 cbo_anovencimento.SelectedIndex = -1;
                 cbo_instituicoes.SelectedIndex = -1;
@@ -543,7 +550,7 @@ namespace SIESC.UI.UI.Autorizacoes
                 cbo_instituicoes.Text = dgv_autorizacoes[5, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 cbo_anovencimento.Text = dgv_autorizacoes[6, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
                 msk_cpf.Text = dgv_autorizacoes[2, dgv_autorizacoes.CurrentCellAddress.Y].Value.ToString();
-                
+
             }
             catch (Exception ex)
             {

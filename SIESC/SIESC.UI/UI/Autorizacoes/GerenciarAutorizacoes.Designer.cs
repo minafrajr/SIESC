@@ -32,7 +32,7 @@ namespace SIESC.UI.UI.Autorizacoes
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btn_ativar = new System.Windows.Forms.Button();
             this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
@@ -304,6 +304,11 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_anoexpdicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_anoexpdicao.FormattingEnabled = true;
             this.cbo_anoexpdicao.Items.AddRange(new object[] {
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
             "2018",
             "2017",
             "2016"});
@@ -679,8 +684,8 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dgv_autorizacoes.AllowUserToAddRows = false;
             this.dgv_autorizacoes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv_autorizacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_autorizacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_autorizacoes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_autorizacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
