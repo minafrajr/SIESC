@@ -47,7 +47,7 @@ namespace SIESC.UI.UI.Zoneamento
         {
             InitializeComponent();
             msk_cep.Text = cep;
-            btn_buscarcep_Click(null,null);
+            btn_buscarcep_Click(null, null);
 
         }
 
@@ -56,7 +56,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_buscarcep_Click(object sender,EventArgs e)
+        private void btn_buscarcep_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
 
@@ -66,7 +66,7 @@ namespace SIESC.UI.UI.Zoneamento
                     throw new Exception("O CEP está vazio!");
 
                 LimpaGridView();
-                
+
                 txt_logradouro.ResetText();
                 txt_mumresidencia.ResetText();
                 txt_mumresidencia.Focus();
@@ -79,7 +79,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 var cep = new BuscaCep();
 
-                var endereco =   cep.buscadorCEP(msk_cep.Text, false);
+                var endereco = cep.buscadorCEP(msk_cep.Text, false);
 
                 txt_logradouro.Text = endereco[0].Logradouro;
                 cbo_bairro.Text = endereco[0].Bairro;
@@ -87,7 +87,7 @@ namespace SIESC.UI.UI.Zoneamento
 
                 coordenadas = new string[2];
 
-                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,"0"); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text, "0"); //Georreferencia o aluno pelo SISGEO
 
                 if (!coordenadas[0].Equals(string.Empty) && !coordenadas[0].Equals("0"))
                 {
@@ -100,7 +100,7 @@ namespace SIESC.UI.UI.Zoneamento
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
         }
 
@@ -109,23 +109,23 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_zonearAluno_Click(object sender,EventArgs e)
+        private void btn_zonearAluno_Click(object sender, EventArgs e)
         {
-           var t = CarregaProgressoThread();
+            var t = CarregaProgressoThread();
 
             try
             {
                 LimpaGridView();
 
-                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
                 lbl_aviso_coordenadas.Visible = true;
                 lbl_aviso_coordenadas.Text = $@"Coordenadas localizadas pelo SISGEO!";
                 lbl_aviso_coordenadas.ForeColor = Color.Navy;
 
-                if (coordenadas[0] == null || coordenadas[0].Equals("0"))
+                if (coordenadas[0] == null || coordenadas[0].Equals("0") || coordenadas[0].Equals(string.Empty))
                 {
                     //Georreferencia o aluno pelo GOOGLE
-                    coordenadas = Zoneador.Locate($"{txt_mumresidencia.Text}+{txt_logradouro.Text.Replace(" ","+")},+{cbo_bairro.Text.Replace(" ","+")},+betim,+brasil");
+                    coordenadas = Zoneador.Locate($"{txt_mumresidencia.Text}+{txt_logradouro.Text.Replace(" ", "+")},+{cbo_bairro.Text.Replace(" ", "+")},+betim,+brasil");
                     lbl_aviso_coordenadas.Text = @"Coordenadas localizadas pelo GOOGLE!";
                     lbl_aviso_coordenadas.ForeColor = Color.Firebrick;
                 }
@@ -137,29 +137,29 @@ namespace SIESC.UI.UI.Zoneamento
 
                 if (rdb_ens_fundamental.Checked)
                 {
-                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaEscolasEndereco(coordenadas[0],coordenadas[1],mantenedor: 1,raio: Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaEscolasEndereco(coordenadas[0], coordenadas[1], mantenedor: 1, raio: Convert.ToInt32(nud_raioBusca.Value));
                 }
                 else
                 {
-                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaCrechesEndereco(coordenadas[0],coordenadas[1],Convert.ToInt32(nud_raioBusca.Value));
+                    dgv_zoneamento.DataSource = zoneamentoControl.RetornaCrechesEndereco(coordenadas[0], coordenadas[1], Convert.ToInt32(nud_raioBusca.Value));
                 }
 
                 for (int i = 0; i < dgv_zoneamento.Rows.Count; i++)
                 {
-                    dgv_zoneamento["DistanciaCaminhando",i].Value = Metrics.CalculaDistanciaCaminhando(coordenadas[0],coordenadas[1],dgv_zoneamento["latitude",i].Value.ToString(),dgv_zoneamento["longitude",i].Value.ToString());
+                    dgv_zoneamento["DistanciaCaminhando", i].Value = Metrics.CalculaDistanciaCaminhando(coordenadas[0], coordenadas[1], dgv_zoneamento["latitude", i].Value.ToString(), dgv_zoneamento["longitude", i].Value.ToString());
                 }
 
-                dgv_zoneamento.Sort(dgv_zoneamento.Columns[4],ListSortDirection.Ascending);
+                dgv_zoneamento.Sort(dgv_zoneamento.Columns[4], ListSortDirection.Ascending);
 
             }
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
-               if (t.IsAlive) t.Abort();
+                if (t.IsAlive) t.Abort();
             }
         }
 
@@ -180,7 +180,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_maps_Click(object sender,EventArgs e)
+        private void btn_maps_Click(object sender, EventArgs e)
         {
             try
             {
@@ -188,7 +188,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -196,13 +196,13 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_imprimir_Click(object sender,EventArgs e)
+        private void btn_imprimir_Click(object sender, EventArgs e)
         {
             try
             {
                 CapturarForm();
                 PageSettings pg = new PageSettings();
-                pg.Margins = new Margins(160,0,160,0);
+                pg.Margins = new Margins(160, 0, 160, 0);
 
                 printDocument1.DefaultPageSettings.Landscape = true;//define a página como porta retrato
                 printDocument1.DefaultPageSettings.Margins = pg.Margins;
@@ -211,7 +211,7 @@ namespace SIESC.UI.UI.Zoneamento
             }
             catch (Exception ex)
             {
-                Mensageiro.MensagemErro(ex,this);
+                Mensageiro.MensagemErro(ex, this);
             }
         }
         /// <summary>
@@ -219,13 +219,13 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void printDocument1_PrintPage(object sender,PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             //var image = new Bitmap(this.Width, this.Height);
             //var graphics = Graphics.FromImage(image);
             //graphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
             //e.Graphics.DrawImage(captura, 20, 20);
-            e.Graphics.DrawImage(memoryImage,0,0);
+            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
         /// <summary>
         /// 
@@ -242,16 +242,16 @@ namespace SIESC.UI.UI.Zoneamento
 
             Graphics myGraphics = this.CreateGraphics();
             Size s = this.Size;
-            memoryImage = new Bitmap(s.Width,s.Height,myGraphics);
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-            memoryGraphics.CopyFromScreen(this.Location.X,this.Location.Y,0,0,s);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         }
         /// <summary>
         /// Localiza Latitude e Longitude
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_localizar_coord_Click(object sender,EventArgs e)
+        private void btn_localizar_coord_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
             try
@@ -264,7 +264,7 @@ namespace SIESC.UI.UI.Zoneamento
                 lbl_aviso_coordenadas.Visible = false;
 
                 coordenadas = new string[2];
-                coordenadas = Zoneador.Georreferenciar(msk_cep.Text,txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
+                coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text); //Georreferencia o aluno pelo SISGEO
 
                 lbl_latitude.Text = coordenadas[0];
                 lbl_longitude.Text = coordenadas[1];
@@ -273,7 +273,7 @@ namespace SIESC.UI.UI.Zoneamento
             catch (Exception exception)
             {
                 if (t.IsAlive) t.Abort();
-                Mensageiro.MensagemErro(exception,this);
+                Mensageiro.MensagemErro(exception, this);
             }
             finally
             {
@@ -286,7 +286,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_ed_infantil_CheckedChanged(object sender,EventArgs e)
+        private void rdb_ed_infantil_CheckedChanged(object sender, EventArgs e)
         {
             LimpaGridView();
         }
@@ -296,7 +296,7 @@ namespace SIESC.UI.UI.Zoneamento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void rdb_ens_fundamental_CheckedChanged(object sender,EventArgs e)
+        private void rdb_ens_fundamental_CheckedChanged(object sender, EventArgs e)
         {
             LimpaGridView();
         }
@@ -322,7 +322,7 @@ namespace SIESC.UI.UI.Zoneamento
         {
             Clipboard.SetText($"{lbl_latitude.Text},{lbl_longitude.Text}");
         }
-     
+
         /// <summary>
         /// Seleciona o texto quando se torna o controle ativo
         /// </summary>
