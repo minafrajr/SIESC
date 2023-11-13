@@ -205,17 +205,7 @@ namespace SIESC.WEB
             coordenada[0] = string.Empty;
             coordenada[1] = string.Empty;
 
-            String versao;
-
-            if (ApplicationDeployment.IsNetworkDeployed)
-            {
-                versao = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-
-            }
-            else
-            {
-                versao = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
+            String versao = ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString() : Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             try
             {
