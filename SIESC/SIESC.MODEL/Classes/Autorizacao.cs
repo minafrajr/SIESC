@@ -102,6 +102,7 @@ namespace SIESC.MODEL.Classes
         /// </summary>
         public Boolean possuiValidade { get; set; }
 
+
         /// <summary>
         /// Construtor vazio da classe
         /// </summary>

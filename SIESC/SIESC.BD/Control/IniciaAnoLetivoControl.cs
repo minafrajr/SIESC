@@ -7,28 +7,28 @@ using SIESC.BD.DataSets.ds_siescTableAdapters;
 
 namespace SIESC.BD.Control
 {
-	public class IniciaAnoLetivoControl
-	{
-		private IniciaAnoLetivoTableAdapter anoLetivo_TA;
-		private periodoTableAdapter periodo_TA;
+    public class IniciaAnoLetivoControl
+    {
+        private IniciaAnoLetivoTableAdapter anoLetivo_TA;
+        private periodoTableAdapter periodo_TA;
 
-		public bool IniciarAnoLetivo(int AnoLetivo)
-		{
-			periodo_TA = new periodoTableAdapter();
-			anoLetivo_TA = new IniciaAnoLetivoTableAdapter();
+        public bool IniciarAnoLetivo(int AnoLetivo)
+        {
+            periodo_TA = new periodoTableAdapter();
+            anoLetivo_TA = new IniciaAnoLetivoTableAdapter();
 
-			int ano = Convert.ToInt32(periodo_TA.MaximoAno()) + 1;
+            int ano = Convert.ToInt32(periodo_TA.MaximoAno()) + 1;
 
-			var idSolicitacao = ano * 10000;
+            var idSolicitacao = ano * 10000;
 
-			idSolicitacao++;
+            idSolicitacao++;
 
-			if (ano != AnoLetivo)
+            if (ano != AnoLetivo)
 
-				return false;
+                return false;
 
-			anoLetivo_TA.Inicia_AnoNovo(ano, idSolicitacao);
-			return true;
-		}
-	}
+            anoLetivo_TA.Inicia_AnoNovo(AnoLetivo, idSolicitacao);
+            return true;
+        }
+    }
 }
