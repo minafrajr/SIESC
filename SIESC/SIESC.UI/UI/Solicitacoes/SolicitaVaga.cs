@@ -9,6 +9,7 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Transactions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SIESC.BD.Control;
@@ -790,50 +791,54 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 var alunoCriado = CriarAluno();
 
-                if (string.IsNullOrEmpty(txt_codigoSolicitacao.Text)
-                ) //se não existe código para a solicitação nao existe no banco, ou seja se não existe a solicitação no banco
+                if (string.IsNullOrEmpty(txt_codigoSolicitacao.Text)) //se não existe código para a solicitação nao existe no banco, ou seja se não existe a solicitação no banco
                 {
-                    if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
+                    using (TransactionScope scope = new TransactionScope())
                     {
-                        controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
-                        alunoCriado.Id =
-                            controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
-                    }
-                    else
-                    {
-                        alunoCriado.Id = Convert.ToInt32(txt_codigoAluno.Text); //repassa o id do aluno ao objeto aluno
-                        controleAluno.Salvar(alunoCriado, false); //atualiza os dados do aluno no banco de dados 
-                    }
-
-                    codInstituicaoOrigem = CriaInstituicaoOrigem();
-
-                    solicitacao = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
-
-                    controleSolicitacao = new SolicitacaoControl();
-
-                    if (controleSolicitacao.Salvar(solicitacao))
-                    {
-                        solicitacao.Codigo =
-                            Convert.ToInt32(controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
-
-                        //Verifica se a solicitação já foi encaminhada
-                        //if (!solicitacao.InstituicaoEncaminhada.Equals(null) && encaminhou)
-                            //GravadistanciaAlunoEscola(solicitacao,aluno); //grava a distancia do aluno até escola encaminhada 
-
-                        frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
-                                solicitacao.Coordenadas[1], solicitacao.AnoEnsino, solicitacao.Codigo)
-                            {MdiParent = principalUi};
-
-                        if (t.IsAlive)
+                        if (string.IsNullOrEmpty(txt_codigoAluno.Text)) // se não existe o aluno no banco
                         {
-                            t.Abort();
+                            controleAluno.Salvar(alunoCriado, true); //salva o aluno no banco de dados 
+                            alunoCriado.Id =
+                                controleAluno.PesquisaId(alunoCriado); //busca o id do aluno recém salvo no banco de dados
+                        }
+                        else
+                        {
+                            alunoCriado.Id = Convert.ToInt32(txt_codigoAluno.Text); //repassa o id do aluno ao objeto aluno
+                            controleAluno.Salvar(alunoCriado, false); //atualiza os dados do aluno no banco de dados 
                         }
 
-                        frmSolicitacao.Show();
-                    }
-                    else
-                    {
-                        throw new Exception($"Não foi possível salvar a solicitação do aluno {aluno.Nome}!");
+                        codInstituicaoOrigem = CriaInstituicaoOrigem();
+
+                        solicitacao = CriarSolicitacao(alunoCriado, codInstituicaoOrigem);
+
+                        controleSolicitacao = new SolicitacaoControl();
+
+                        if (controleSolicitacao.Salvar(solicitacao))
+                        {
+                            solicitacao.Codigo =
+                                Convert.ToInt32(controleSolicitacao.PesquisaCodigoSolicitacao(alunoCriado.Id));
+
+                            //Verifica se a solicitação já foi encaminhada
+                            //if (!solicitacao.InstituicaoEncaminhada.Equals(null) && encaminhou)
+                            //GravadistanciaAlunoEscola(solicitacao,aluno); //grava a distancia do aluno até escola encaminhada 
+
+                            frm_ficha_solicitacao frmSolicitacao = new frm_ficha_solicitacao(solicitacao.Coordenadas[0],
+                                    solicitacao.Coordenadas[1], solicitacao.AnoEnsino, solicitacao.Codigo)
+                            { MdiParent = principalUi };
+
+                            if (t.IsAlive)
+                            {
+                                t.Abort();
+                            }
+
+                            frmSolicitacao.Show();
+                        }
+                        else
+                        {
+                            throw new Exception($"Não foi possível salvar a solicitação do aluno {aluno.Nome}!");
+                        }
+
+                        scope.Complete();
                     }
                 }
                 else //se já existe a solicitação
@@ -877,7 +882,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                 frm_ficha_solicitacao frmSolicitacao =
                                     new frm_ficha_solicitacao(solicitacao.Coordenadas[0], solicitacao.Coordenadas[1],
                                             solicitacao.AnoEnsino, solicitacao.Codigo)
-                                        {MdiParent = principalUi};
+                                    { MdiParent = principalUi };
 
                                 frmSolicitacao.Show();
                             }
@@ -898,7 +903,7 @@ namespace SIESC.UI.UI.Solicitacoes
                                     solicitacao.Coordenadas[1],
                                     solicitacao.AnoEnsino,
                                     solicitacao.Codigo)
-                                {MdiParent = principalUi};
+                            { MdiParent = principalUi };
 
                             frmSolicitacao.Show();
                         }
@@ -1036,11 +1041,11 @@ namespace SIESC.UI.UI.Solicitacoes
 
                 //Georreferencia o aluno pelo SISGEO - Prefeitura Betim
                 solicitacao.Coordenadas = Zoneador.Georreferenciar(msk_cep.Text, txt_mumresidencia.Text);
-                
+
                 //solicitacao.Coordenadas = new string[2];
                 //solicitacao.Coordenadas[0] = string.Empty;
                 //solicitacao.Coordenadas[1] = string.Empty;
-                
+
                 //caso o SISGEO não encontre as coordenadas do aluno seguir para o zoneamento do GOOGLE
                 if (string.IsNullOrEmpty(solicitacao.Coordenadas[0]) || solicitacao.Coordenadas[0].Equals("0"))
                 {
@@ -1171,7 +1176,7 @@ namespace SIESC.UI.UI.Solicitacoes
         private void btn_buscarcep_Click(object sender, EventArgs e)
         {
             var t = CarregaProgressoThread();
-            
+
             try
             {
                 bairrosTableAdapter.Fill(siescDataSet.bairros);
@@ -1367,7 +1372,7 @@ namespace SIESC.UI.UI.Solicitacoes
         {
             try
             {
-                if(!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
+                if (!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
                     listControlsObrigatorios.Add(cbo_instituicao_solicitada);
 
                 if (cbo_anosolicitado.SelectedValue == null)
@@ -1912,7 +1917,7 @@ namespace SIESC.UI.UI.Solicitacoes
                 coordenadasDestino[0], coordenadasDestino[1]);
             return distancia;
         }
-        
+
         /// <summary>
         /// Localiza a insituição mais proxima baseada no cep e nº da residência
         /// </summary>
@@ -1923,7 +1928,7 @@ namespace SIESC.UI.UI.Solicitacoes
             var t = CarregaProgressoThread();
             try
             {
-                if(!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
+                if (!listControlsObrigatorios.Contains(cbo_instituicao_solicitada))
                     listControlsObrigatorios.Add(cbo_instituicao_solicitada);
 
                 if (string.IsNullOrEmpty(msk_cep.Text) || string.IsNullOrEmpty(txt_mumresidencia.Text) ||
