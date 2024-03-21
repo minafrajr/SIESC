@@ -202,8 +202,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>AUTORIZAÇÃO TEMPORÁRIA 
-PARA DIRIGIR</Value>
+                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO TEMPORÁRIA PARA DIRIGIR",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","REGISTRO PARA SECRETARIAR",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO TEMPORÁRIA PARA LECIONAR")</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -266,7 +265,7 @@ PARA DIRIGIR</Value>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Base Legal: Lei Federal Nº 9394/96 e Parecer CEE. Nº 688/07</Value>
+                    <Value>Base legal: Resolução Nº 495/2023</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -326,7 +325,7 @@ PARA DIRIGIR</Value>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Autorização Temporária para Dirigir Unidade Educacional</Value>
+                    <Value>=Microsoft.VisualBasic.Interaction.Switch(First(Fields!Tipo.Value, "dsRelatorios") = "DIRIGIR", "Autorização Temporária para Dirigir Unidade Educacional", First(Fields!Tipo.Value, "dsRelatorios") = "SECRETARIAR", "Registro para Secretariar em Escola de Ensino Fundamental", First(Fields!Tipo.Value, "dsRelatorios") = "LECIONAR", "Autorização Temporária para Lecionar nos Anos Finais em Escola de Ensino Fundamental") &amp;  VbCRLF</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -446,8 +445,7 @@ PARA DIRIGIR</Value>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>AUTORIZAÇÃO TEMPORÁRIA 
-PARA DIRIGIR</Value>
+                    <Value>=Switch(First(Fields!Tipo.Value, "dsRelatorios")= "DIRIGIR","AUTORIZAÇÃO TEMPORÁRIA PARA DIRIGIR",First(Fields!Tipo.Value, "dsRelatorios")="SECRETARIAR","REGISTRO PARA SECRETARIAR",First(Fields!Tipo.Value, "dsRelatorios")="LECIONAR","AUTORIZAÇÃO TEMPORÁRIA PARA LECIONAR")</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -510,7 +508,7 @@ PARA DIRIGIR</Value>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Base Legal:  Lei Federal Nº 9394/96 e Parecer CEE. Nº 688/07</Value>
+                    <Value>Base legal: Resolução Nº 495/2023</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -542,7 +540,7 @@ PARA DIRIGIR</Value>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Autorização Temporária para Dirigir Unidade Educacional</Value>
+                    <Value>=Microsoft.VisualBasic.Interaction.Switch(First(Fields!Tipo.Value, "dsRelatorios") = "DIRIGIR", "Autorização Temporária para Dirigir Unidade Educacional", First(Fields!Tipo.Value, "dsRelatorios") = "SECRETARIAR", "Registro para Secretariar em Escola de Ensino Fundamental", First(Fields!Tipo.Value, "dsRelatorios") = "LECIONAR", "Autorização Temporária para Lecionar nos Anos Finais em Escola de Ensino Fundamental") &amp;  VbCRLF</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
