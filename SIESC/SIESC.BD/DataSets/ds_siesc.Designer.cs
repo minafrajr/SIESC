@@ -4445,7 +4445,7 @@ namespace SIESC.BD.DataSets {
                 this.columnidFuncionario.AllowDBNull = false;
                 this.columnidInstituicao.AllowDBNull = false;
                 this.columnnumeroAutorizacao.AllowDBNull = false;
-                this.columnnumeroAutorizacao.MaxLength = 10;
+                this.columnnumeroAutorizacao.MaxLength = 20;
                 this.columndataExpedicao.AllowDBNull = false;
                 this.columndataExpedicao.Caption = "Data Expedição";
                 this.columntipoAutorizacao.MaxLength = 15;
@@ -7513,7 +7513,7 @@ namespace SIESC.BD.DataSets {
                 this.columnFuncionario.MaxLength = 45;
                 this.columnTipo.MaxLength = 15;
                 this.columnAutorizacao.AllowDBNull = false;
-                this.columnAutorizacao.MaxLength = 10;
+                this.columnAutorizacao.MaxLength = 20;
                 this.columnInstituicao.AllowDBNull = false;
                 this.columnInstituicao.MaxLength = 80;
                 this.columnDataExpedicao.Caption = "Data Expedição";
