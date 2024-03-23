@@ -121,6 +121,9 @@ namespace SIESC.UI.UI.Autorizacoes
             this.disciplinasTableAdapter = new SIESC.UI.siescDataSetTableAdapters.disciplinasTableAdapter();
             this.cargosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargosTableAdapter();
             this.cargos1TableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargos1TableAdapter();
+            this.chk_habilitado = new System.Windows.Forms.CheckBox();
+            this.txt_numautoriz_habilitado = new SIESC.UI.Controles.MyTextBox();
+            this.lbl_numautoriz_habilitado = new System.Windows.Forms.Label();
             this.gpb_endereco.SuspendLayout();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cargos1BindingSource)).BeginInit();
@@ -744,6 +747,9 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             // gpb_autorizacao
             // 
+            this.gpb_autorizacao.Controls.Add(this.txt_numautoriz_habilitado);
+            this.gpb_autorizacao.Controls.Add(this.chk_habilitado);
+            this.gpb_autorizacao.Controls.Add(this.lbl_numautoriz_habilitado);
             this.gpb_autorizacao.Controls.Add(this.chk_possuiValidade);
             this.gpb_autorizacao.Controls.Add(this.dtp_data_expedicao);
             this.gpb_autorizacao.Controls.Add(this.label9);
@@ -1098,6 +1104,39 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.cargos1TableAdapter.ClearBeforeFill = true;
             // 
+            // chk_habilitado
+            // 
+            this.chk_habilitado.AutoSize = true;
+            this.chk_habilitado.Location = new System.Drawing.Point(339, 39);
+            this.chk_habilitado.Name = "chk_habilitado";
+            this.chk_habilitado.Size = new System.Drawing.Size(80, 18);
+            this.chk_habilitado.TabIndex = 12;
+            this.chk_habilitado.Text = "Habilitado";
+            this.chk_habilitado.UseVisualStyleBackColor = true;
+            this.chk_habilitado.Visible = false;
+            this.chk_habilitado.CheckedChanged += new System.EventHandler(this.chk_habilitado_CheckedChanged);
+            // 
+            // txt_numautoriz_habilitado
+            // 
+            this.txt_numautoriz_habilitado.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_numautoriz_habilitado.Location = new System.Drawing.Point(303, 13);
+            this.txt_numautoriz_habilitado.MaxLength = 20;
+            this.txt_numautoriz_habilitado.Name = "txt_numautoriz_habilitado";
+            this.txt_numautoriz_habilitado.Size = new System.Drawing.Size(112, 22);
+            this.txt_numautoriz_habilitado.TabIndex = 26;
+            this.txt_numautoriz_habilitado.Tag = "Nº Residência";
+            this.txt_numautoriz_habilitado.Visible = false;
+            // 
+            // lbl_numautoriz_habilitado
+            // 
+            this.lbl_numautoriz_habilitado.AutoSize = true;
+            this.lbl_numautoriz_habilitado.Location = new System.Drawing.Point(216, 16);
+            this.lbl_numautoriz_habilitado.Name = "lbl_numautoriz_habilitado";
+            this.lbl_numautoriz_habilitado.Size = new System.Drawing.Size(85, 14);
+            this.lbl_numautoriz_habilitado.TabIndex = 27;
+            this.lbl_numautoriz_habilitado.Text = "Autorização Nº:";
+            this.lbl_numautoriz_habilitado.Visible = false;
+            // 
             // SolicitarAutorizacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -1229,5 +1268,8 @@ namespace SIESC.UI.UI.Autorizacoes
         private System.Windows.Forms.Label lbl_idsolicitacao;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chk_possuiValidade;
+        private System.Windows.Forms.CheckBox chk_habilitado;
+        private MyTextBox txt_numautoriz_habilitado;
+        private System.Windows.Forms.Label lbl_numautoriz_habilitado;
     }
 }

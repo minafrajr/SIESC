@@ -38,11 +38,11 @@ namespace SIESC.MODEL.Classes
         /// codigo da autorização
         /// </summary>
         /// 
-        public int IdAutorizacao { get; set; }
+        public int idAutorizacao { get; set; }
         /// <summary>
         /// codigo da instituição
         /// </summary>
-        public int IdInstituicao { get; set; }
+        public int idInstituicao { get; set; }
         /// <summary>
         /// data em que a autorização expedida
         /// </summary>
@@ -58,15 +58,15 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// codigo do funcionario
         /// </summary>
-        public int Idfuncionario { get; set; }
+        public int idFuncionario { get; set; }
         /// <summary>
         /// Numero de autorização
         /// </summary>
-        public string numeroautorizacao;
+        public string numeroAutorizacao;
         /// <summary>
         /// tipo de autorização
         /// </summary>
-        public Tipoautorizacao Tipoautorizacao;
+        public Tipoautorizacao tipoAutorizacao;
         /// <summary>
         /// Codigo da disciplian
         /// </summary>
@@ -119,8 +119,8 @@ namespace SIESC.MODEL.Classes
         /// <param name="possuiValidade">Se a autorizacao possui validade</param>
         public Autorizacao(int idInstituicao, int idFuncionario, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
         {
-            IdInstituicao = idInstituicao;
-            Idfuncionario = idFuncionario;
+            this.idInstituicao = idInstituicao;
+            this.idFuncionario = idFuncionario;
             Dataexpedicao = dataExpedicao;
             this.possuiValidade = possuiValidade;
             Documentos = new StringBuilder();

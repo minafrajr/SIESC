@@ -4739,7 +4739,7 @@ namespace SIESC.BD.DataSets {
                 this.columnCPF.MaxLength = 14;
                 this.columncartident.MaxLength = 15;
                 this.columnAutorizacao.AllowDBNull = false;
-                this.columnAutorizacao.MaxLength = 10;
+                this.columnAutorizacao.MaxLength = 20;
                 this.columnAnosDeEnsino.MaxLength = 30;
                 this.columnInstituicao.AllowDBNull = false;
                 this.columnInstituicao.MaxLength = 80;

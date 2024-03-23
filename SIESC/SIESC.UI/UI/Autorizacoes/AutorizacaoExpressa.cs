@@ -133,7 +133,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
 				if (salvouAutorizacao && salvouFuncionario)
 				{
-					Mensageiro.MensagemAviso($"Salvo com sucesso!!!{Environment.NewLine}O número da autorização é: {autorizar.numeroautorizacao}", PrincipalUi);
+					Mensageiro.MensagemAviso($"Salvo com sucesso!!!{Environment.NewLine}O número da autorização é: {autorizar.numeroAutorizacao}", PrincipalUi);
 					LimpaCampos();
 					lbl_ultimaautoriz.Text = $@"0{controleAutorizacao.RetornaUltimaAutorizacao()}/{DateTime.Now.Year}";
 
@@ -162,12 +162,12 @@ namespace SIESC.UI.UI.Autorizacoes
 			controleFuncionario = new FuncionarioControl();
 			controleAutorizacao = new AutorizacaoControl();
 
-			autoriz.Tipoautorizacao = this.tipoAutoriz;
-			autoriz.Idfuncionario = (int)controleFuncionario.PesquisaID(cpf: msk_cpf.Text);
+			autoriz.tipoAutorizacao = this.tipoAutoriz;
+			autoriz.idFuncionario = (int)controleFuncionario.PesquisaID(cpf: msk_cpf.Text);
 
 			autoriz.nivelensino = this.cbo_nivelensino.Text.ToUpper();
 			autoriz.usuario = PrincipalUi.user.nomeusuario.ToUpper(); //Get nome do usuario
-			autoriz.IdInstituicao = (int)cbo_instituicao.SelectedValue;
+			autoriz.idInstituicao = (int)cbo_instituicao.SelectedValue;
 
 			if (cbo_disciplina.SelectedValue != null)
 				autoriz.Disciplina = Convert.ToInt16(value: this.cbo_disciplina.SelectedValue);
@@ -179,7 +179,7 @@ namespace SIESC.UI.UI.Autorizacoes
 			string num = controleAutorizacao.RetornaUltimaAutorizacao();
 			var data = DateTime.Now.Year.ToString();//get ano atual
 
-			autoriz.numeroautorizacao = $"0{num}/{data}"; //acrescenta o zero na frente do número da autorização
+			autoriz.numeroAutorizacao = $"0{num}/{data}"; //acrescenta o zero na frente do número da autorização
 
 			return autoriz;
 		}

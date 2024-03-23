@@ -2263,7 +2263,8 @@ WHERE        (Nome LIKE @nome)</CommandText>
               <DbSource ConnectionRef="siescConnectionString (Settings)" DbObjectName="siesc.vw_autorizacoes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Funcionario, CPF, Tipo, Autorizacao, Instituicao, Validade, DataExpedicao, Disciplina, Documentos, Nivel, Ano, OutrosDocs, `Codigo Funcionario`, `Codigo Autorizacao`, Status FROM vw_autorizacoes</CommandText>
+                    <CommandText>SELECT        Funcionario, CPF, Tipo, Autorizacao, Instituicao, Validade, DataExpedicao, Disciplina, Documentos, Nivel, Ano, OutrosDocs, `Codigo Funcionario`, `Codigo Autorizacao`, Status
+FROM            vw_autorizacoes</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

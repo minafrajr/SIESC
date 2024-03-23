@@ -23886,7 +23886,7 @@ WHERE        (numeroAutorizacao = @numeroAutorizacao) AND (idFuncionario = @idFu
             this._commandCollection[10].CommandText = @"INSERT INTO autorizacoes
                          (idFuncionario, idInstituicao, numeroAutorizacao, dataExpedicao, dataValidadeAutorizacao, dataPosseCargo, tipoAutorizacao, disciplina, outrosdocs, anosdeensino, nivelensino, documentos, usuario, datacriacao, 
                          statusAutorizacao, possuiValidade)
-VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedicao, @dataValidadeAutorizacao, @dataPosseCargo, @TipoAutorizacao, @Disciplina, @Outrosdocs, @anoensino, @nivelensino, @documentos, @usuario, 
+VALUES        (@idFuncionario, @idInstituicao, @numeroAutorizacao, @dataExpedicao, @dataValidadeAutorizacao, @dataPosseCargo, @TipoAutorizacao, @Disciplina, @Outrosdocs, @anoensino, @nivelensino, @documentos, @usuario, 
                          @datacriacao, @statusautorizacao, @possuiValidade)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -23898,7 +23898,7 @@ VALUES        (@idFuncionario, @IdInstituicao, @numeroAutorizacao, @dataExpedica
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[10].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IdInstituicao";
+            param.ParameterName = "@idInstituicao";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -29942,9 +29942,9 @@ WHERE        (Instituicao LIKE @instituicao)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[17];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Funcionario, CPF, Tipo, Autorizacao, Instituicao, Validade, DataExpedicao," +
-                " Disciplina, Documentos, Nivel, Ano, OutrosDocs, `Codigo Funcionario`, `Codigo A" +
-                "utorizacao`, Status FROM vw_autorizacoes";
+            this._commandCollection[0].CommandText = "SELECT        Funcionario, CPF, Tipo, Autorizacao, Instituicao, Validade, DataExp" +
+                "edicao, Disciplina, Documentos, Nivel, Ano, OutrosDocs, `Codigo Funcionario`, `C" +
+                "odigo Autorizacao`, Status\r\nFROM            vw_autorizacoes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;

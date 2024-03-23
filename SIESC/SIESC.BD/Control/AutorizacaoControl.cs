@@ -57,11 +57,11 @@ namespace SIESC.BD.Control
 
                 if (confirma)
                     return
-                        (autorizacoes_TA.Inserir(autorizacao.Idfuncionario, autorizacao.IdInstituicao, autorizacao.numeroautorizacao,
+                        (autorizacoes_TA.Inserir(autorizacao.idFuncionario, autorizacao.idInstituicao, autorizacao.numeroAutorizacao,
                             autorizacao.Dataexpedicao, autorizacao.Datavalidade, autorizacao.Datapossecargo,
-                            autorizacao.Tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true, autorizacao.possuiValidade) > 0);
+                            autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true, autorizacao.possuiValidade) > 0);
                 return
-                    (this.autorizacoes_TA.Atualizar(autorizacao.IdInstituicao, autorizacao.numeroautorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.Tipoautorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.possuiValidade, autorizacao.numeroautorizacao, autorizacao.Idfuncionario) > 0);
+                    (this.autorizacoes_TA.Atualizar(autorizacao.idInstituicao, autorizacao.numeroAutorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.possuiValidade, autorizacao.numeroAutorizacao, autorizacao.idFuncionario) > 0);
             }
             catch (SqlException exception)
             {
@@ -256,10 +256,10 @@ namespace SIESC.BD.Control
             {
                 Autorizacao autoriz = new Autorizacao
                 {
-                    Idfuncionario = (int)dt.Rows[0]["idFuncionario"],
-                    IdAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
-                    IdInstituicao = (int)dt.Rows[0]["idInstituicao"],
-                    numeroautorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
+                    idFuncionario = (int)dt.Rows[0]["idFuncionario"],
+                    idAutorizacao = (int)dt.Rows[0]["idAutorizacao"],
+                    idInstituicao = (int)dt.Rows[0]["idInstituicao"],
+                    numeroAutorizacao = dt.Rows[0]["numeroAutorizacao"].ToString(),
                     Dataexpedicao = Convert.ToDateTime(dt.Rows[0]["dataExpedicao"]),
                     anosdeensino = dt.Rows[0]["anosdeensino"].ToString(),
                     Datapossecargo = Convert.ToDateTime(dt.Rows[0]["dataPosseCargo"]),
@@ -288,13 +288,13 @@ namespace SIESC.BD.Control
                 switch (dt.Rows[0]["tipoAutorizacao"].ToString().ToLower())
                 {
                     case "dirigir":
-                        autoriz.Tipoautorizacao = Tipoautorizacao.Dirigir;
+                        autoriz.tipoAutorizacao = Tipoautorizacao.Dirigir;
                         break;
                     case "lecionar":
-                        autoriz.Tipoautorizacao = Tipoautorizacao.Lecionar;
+                        autoriz.tipoAutorizacao = Tipoautorizacao.Lecionar;
                         break;
                     case "secretariar":
-                        autoriz.Tipoautorizacao = Tipoautorizacao.Secretariar;
+                        autoriz.tipoAutorizacao = Tipoautorizacao.Secretariar;
                         break;
                 }
 
