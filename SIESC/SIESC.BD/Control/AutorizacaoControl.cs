@@ -59,9 +59,9 @@ namespace SIESC.BD.Control
                     return
                         (autorizacoes_TA.Inserir(autorizacao.idFuncionario, autorizacao.idInstituicao, autorizacao.numeroAutorizacao,
                             autorizacao.Dataexpedicao, autorizacao.Datavalidade, autorizacao.Datapossecargo,
-                            autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true, autorizacao.possuiValidade) > 0);
+                            autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.outrosdocs, autorizacao.anosdeensino, autorizacao.nivelensino, autorizacao.Documentos.ToString(), autorizacao.usuario, DateTime.Now, true, autorizacao.possuiValidade, autorizacao.habilitado) > 0);
                 return
-                    (this.autorizacoes_TA.Atualizar(autorizacao.idInstituicao, autorizacao.numeroAutorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.possuiValidade, autorizacao.numeroAutorizacao, autorizacao.idFuncionario) > 0);
+                    (autorizacoes_TA.Atualizar(autorizacao.idInstituicao, autorizacao.numeroAutorizacao, autorizacao.Datavalidade, autorizacao.Datapossecargo, autorizacao.tipoAutorizacao.ToString(), autorizacao.Disciplina, autorizacao.Documentos.ToString(), autorizacao.nivelensino, autorizacao.anosdeensino, autorizacao.outrosdocs, autorizacao.usuario, DateTime.Now, autorizacao.Dataexpedicao, autorizacao.possuiValidade, autorizacao.habilitado, autorizacao.idFuncionario, autorizacao.idAutorizacao) > 0);
             }
             catch (SqlException exception)
             {
@@ -279,6 +279,10 @@ namespace SIESC.BD.Control
                 if (dt.Rows[0]["possuiValidade"] != DBNull.Value)
                 {
                     autoriz.possuiValidade = Convert.ToBoolean(dt.Rows[0]["possuiValidade"]);
+                }
+                if (dt.Rows[0]["habilitado"] != DBNull.Value)
+                {
+                    autoriz.habilitado = Convert.ToBoolean(dt.Rows[0]["habilitado"]);
                 }
                 if (dt.Rows[0]["dataValidadeAutorizacao"] != DBNull.Value)
                 {

@@ -2,34 +2,34 @@
 
 namespace SIESC.UI.UI.Autorizacoes
 {
-	partial class GerenciarAutorizacoes
-	{
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class GerenciarAutorizacoes
+    {
+        /// <summary>
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Limpar os recursos que estão sendo usados.
-		/// </summary>
-		/// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">verdade se for necessário descartar os recursos gerenciados; caso contrário, falso.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Código gerado pelo Windows Form Designer
+        #region Código gerado pelo Windows Form Designer
 
-		/// <summary>
-		/// Método necessário para suporte do Designer - não modifique
-		/// o conteúdo deste método com o editor de código.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Método necessário para suporte do Designer - não modifique
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAutorizacoes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -690,7 +690,6 @@ namespace SIESC.UI.UI.Autorizacoes
             this.dgv_autorizacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_autorizacoes.Size = new System.Drawing.Size(1295, 347);
             this.dgv_autorizacoes.TabIndex = 0;
-            this.dgv_autorizacoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_autorizacoes_CellContentClick);
             this.dgv_autorizacoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_autorizacoes_CellMouseClick);
             this.dgv_autorizacoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_autorizacoes_DataBindingComplete);
             this.dgv_autorizacoes.Sorted += new System.EventHandler(this.dgv_autorizacoes_Sorted);
@@ -743,68 +742,68 @@ namespace SIESC.UI.UI.Autorizacoes
             ((System.ComponentModel.ISupportInitialize)(this.periodoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.Label lbl_titulo;
-		private System.Windows.Forms.Button btn_editarfuncionario;
-		private System.Windows.Forms.Button btn_excluir;
-		private System.Windows.Forms.Button btn_localizar;
-		private System.Windows.Forms.Button btn_novo;
-		private System.Windows.Forms.Button btn_editarAutorizacao;
-		private System.Windows.Forms.DataGridView dgv_autorizacoes;
-		private MyTextBox txt_nome;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private MyComboBox cbo_instituicoes;
-		private MyTextBox txt_numautorizacao;
-		private System.Windows.Forms.Label label3;
-		private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter1;
-		private siescDataSet siescDataSet1;
-		private System.Windows.Forms.GroupBox gpb_opcoesbusca;
-		private System.Windows.Forms.RadioButton rdb_instituicao;
-		private System.Windows.Forms.RadioButton rdb_datavencimento;
-		private System.Windows.Forms.RadioButton rdb_numautorizacao;
-		private System.Windows.Forms.RadioButton rdb_nome;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.ComboBox cbo_anovencimento;
-		private MyComboBox cbo_tipo_autorizacao;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.RadioButton rdb_cargo;
-		private System.Windows.Forms.Label label6;
-		private MyMaskedTextBox msk_cpf;
-		private System.Windows.Forms.Button btn_emitircarteirinha;
-		private MyComboBox cbo_anoexpdicao;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.RadioButton rdb_dataexpedicao;
-		private System.Windows.Forms.Button btn_inativar_autorizacao;
-		private System.Windows.Forms.RadioButton rdb_todasautoriz;
-		private System.Windows.Forms.RadioButton rdb_inativa;
-		private System.Windows.Forms.RadioButton rdb_ativas;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.BindingSource instituicoesBindingSource;
-		private MyComboBox cbo_mantenedor;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.RadioButton rdb_tipoInstituicao;
-		private System.Windows.Forms.BindingSource mantenedorBindingSource;
-		private siescDataSetTableAdapters.mantenedorTableAdapter mantenedorTableAdapter;
-		private System.Windows.Forms.StatusStrip statusStrip1;
-		private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.Button btn_editarfuncionario;
+        private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.Button btn_localizar;
+        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btn_editarAutorizacao;
+        private System.Windows.Forms.DataGridView dgv_autorizacoes;
+        private MyTextBox txt_nome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private MyComboBox cbo_instituicoes;
+        private MyTextBox txt_numautorizacao;
+        private System.Windows.Forms.Label label3;
+        private siescDataSetTableAdapters.instituicoesTableAdapter instituicoesTableAdapter1;
+        private siescDataSet siescDataSet1;
+        private System.Windows.Forms.GroupBox gpb_opcoesbusca;
+        private System.Windows.Forms.RadioButton rdb_instituicao;
+        private System.Windows.Forms.RadioButton rdb_datavencimento;
+        private System.Windows.Forms.RadioButton rdb_numautorizacao;
+        private System.Windows.Forms.RadioButton rdb_nome;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbo_anovencimento;
+        private MyComboBox cbo_tipo_autorizacao;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton rdb_cargo;
+        private System.Windows.Forms.Label label6;
+        private MyMaskedTextBox msk_cpf;
+        private System.Windows.Forms.Button btn_emitircarteirinha;
+        private MyComboBox cbo_anoexpdicao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rdb_dataexpedicao;
+        private System.Windows.Forms.Button btn_inativar_autorizacao;
+        private System.Windows.Forms.RadioButton rdb_todasautoriz;
+        private System.Windows.Forms.RadioButton rdb_inativa;
+        private System.Windows.Forms.RadioButton rdb_ativas;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource instituicoesBindingSource;
+        private MyComboBox cbo_mantenedor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton rdb_tipoInstituicao;
+        private System.Windows.Forms.BindingSource mantenedorBindingSource;
+        private siescDataSetTableAdapters.mantenedorTableAdapter mantenedorTableAdapter;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_num_registros;
         private System.Windows.Forms.Button btn_ativar;
         private System.Windows.Forms.BindingSource periodoBindingSource;
         private siescDataSetTableAdapters.periodoTableAdapter periodoTableAdapter;
 
         private enum Localizar
-		{
-			nome, autorizacao, datavenc, instituicao, aguardando, cargo, anoexpedicao,mantenedor
+        {
+            nome, autorizacao, datavenc, instituicao, aguardando, cargo, anoexpedicao, mantenedor
 
-		}
-	}
+        }
+    }
 }

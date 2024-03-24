@@ -60,7 +60,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.siescDataSet = new SIESC.UI.siescDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_idsolicitacao = new System.Windows.Forms.Label();
+            this.lbl_idAutorizacao = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_codigofunc = new System.Windows.Forms.Label();
@@ -475,7 +475,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbl_idsolicitacao);
+            this.panel2.Controls.Add(this.lbl_idAutorizacao);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lbl_codigofunc);
@@ -483,25 +483,25 @@ namespace SIESC.UI.UI.Autorizacoes
             this.panel2.Controls.Add(this.lbl_numautoriz);
             this.panel2.Location = new System.Drawing.Point(8, 21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(599, 30);
+            this.panel2.Size = new System.Drawing.Size(763, 30);
             this.panel2.TabIndex = 20;
             // 
-            // lbl_idsolicitacao
+            // lbl_idAutorizacao
             // 
-            this.lbl_idsolicitacao.AutoSize = true;
-            this.lbl_idsolicitacao.Font = new System.Drawing.Font("Candara", 14F);
-            this.lbl_idsolicitacao.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_idsolicitacao.Location = new System.Drawing.Point(459, 2);
-            this.lbl_idsolicitacao.Name = "lbl_idsolicitacao";
-            this.lbl_idsolicitacao.Size = new System.Drawing.Size(20, 23);
-            this.lbl_idsolicitacao.TabIndex = 20;
-            this.lbl_idsolicitacao.Text = "_";
-            this.lbl_idsolicitacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_idAutorizacao.AutoSize = true;
+            this.lbl_idAutorizacao.Font = new System.Drawing.Font("Candara", 14F);
+            this.lbl_idAutorizacao.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_idAutorizacao.Location = new System.Drawing.Point(531, 2);
+            this.lbl_idAutorizacao.Name = "lbl_idAutorizacao";
+            this.lbl_idAutorizacao.Size = new System.Drawing.Size(20, 23);
+            this.lbl_idAutorizacao.TabIndex = 20;
+            this.lbl_idAutorizacao.Text = "_";
+            this.lbl_idAutorizacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(351, 9);
+            this.label12.Location = new System.Drawing.Point(423, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(102, 14);
             this.label12.TabIndex = 19;
@@ -521,7 +521,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.lbl_codigofunc.AutoSize = true;
             this.lbl_codigofunc.Font = new System.Drawing.Font("Candara", 14F);
             this.lbl_codigofunc.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_codigofunc.Location = new System.Drawing.Point(307, 2);
+            this.lbl_codigofunc.Location = new System.Drawing.Point(379, 2);
             this.lbl_codigofunc.Name = "lbl_codigofunc";
             this.lbl_codigofunc.Size = new System.Drawing.Size(20, 23);
             this.lbl_codigofunc.TabIndex = 18;
@@ -531,7 +531,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(199, 9);
+            this.label8.Location = new System.Drawing.Point(271, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 14);
             this.label8.TabIndex = 16;
@@ -1265,7 +1265,7 @@ namespace SIESC.UI.UI.Autorizacoes
         private System.Windows.Forms.BindingSource cargos1BindingSource;
         private siescDataSetTableAdapters.cargos1TableAdapter cargos1TableAdapter;
         private System.Windows.Forms.Button btn_saberCep;
-        private System.Windows.Forms.Label lbl_idsolicitacao;
+        private System.Windows.Forms.Label lbl_idAutorizacao;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chk_possuiValidade;
         private System.Windows.Forms.CheckBox chk_habilitado;

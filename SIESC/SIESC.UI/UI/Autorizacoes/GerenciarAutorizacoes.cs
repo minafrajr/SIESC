@@ -815,10 +815,5 @@ namespace SIESC.UI.UI.Autorizacoes
                 Mensageiro.MensagemErro(ex, principalUi);
             }
         }
-
-        private void dgv_autorizacoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

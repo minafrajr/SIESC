@@ -100,8 +100,12 @@ namespace SIESC.MODEL.Classes
         /// <summary>
         /// Se a autorização possui validade
         /// </summary>
-        public Boolean possuiValidade { get; set; }
+        public bool possuiValidade { get; set; }
 
+        /// <summary>
+        /// Se a autorização possui validade
+        /// </summary>
+        public bool habilitado { get; set; }
 
         /// <summary>
         /// Construtor vazio da classe
@@ -120,6 +124,27 @@ namespace SIESC.MODEL.Classes
         public Autorizacao(int idInstituicao, int idFuncionario, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
         {
             this.idInstituicao = idInstituicao;
+            this.idFuncionario = idFuncionario;
+            Dataexpedicao = dataExpedicao;
+            this.possuiValidade = possuiValidade;
+            Documentos = new StringBuilder();
+
+            GerardataValidade(tipoAutoriz);
+        }
+
+        /// <summary>
+        /// Construtora da classe
+        /// </summary>
+        /// <param name="idInstituicao">código da instituição</param>
+        /// <param name="idFuncionario">código do funcionário requerente</param>
+        /// <param name="idAutorizacao">código da autorizacao</param>
+        /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
+        /// <param name="tipoAutoriz">O tipo de autorização</param>
+        /// <param name="possuiValidade">Se a autorizacao possui validade</param>
+        public Autorizacao(int idInstituicao, int idFuncionario, int idAutorizacao, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
+        {
+            this.idInstituicao = idInstituicao;
+            this.idAutorizacao = idAutorizacao;
             this.idFuncionario = idFuncionario;
             Dataexpedicao = dataExpedicao;
             this.possuiValidade = possuiValidade;

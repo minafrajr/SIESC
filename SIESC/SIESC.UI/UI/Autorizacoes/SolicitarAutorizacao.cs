@@ -151,29 +151,29 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <summary>
         /// Editar no formulário de autorização a partir da tela de funcionário
         /// </summary>
-        /// <param name="funcionario1"></param>
-        private void RepassaFuncionario(Funcionario funcionario1)
+        /// <param name="funcionario"></param>
+        private void RepassaFuncionario(Funcionario funcionario)
         {
-            txt_cartident.Text = funcionario1.CartIdentidade;
-            txt_cidade.Text = funcionario1.cidade;
-            txt_complemento.Text = funcionario1.Complemento;
-            txt_email.Text = funcionario1.email;
-            txt_logradouro.Text = funcionario1.Logradouro;
-            txt_nome.Text = funcionario1.Nome;
-            txt_numresid.Text = funcionario1.NumResidencia;
-            lbl_codigofunc.Text = funcionario1.idFuncionario.ToString();
-            msk_cpf.Text = funcionario1.CPF;
-            msk_tel1.Text = funcionario1.Tel1;
-            msk_tel2.Text = funcionario1.Tel2;
-            msk_tel3.Text = funcionario1.Tel3;
-            msk_cep.Text = funcionario1.Cep;
-            txt_bairro.Text = funcionario1.sBairro;
-            cbo_tipolograd.SelectedItem = funcionario1.TipoLogradouro;
+            txt_cartident.Text = funcionario.CartIdentidade;
+            txt_cidade.Text = funcionario.cidade;
+            txt_complemento.Text = funcionario.Complemento;
+            txt_email.Text = funcionario.email;
+            txt_logradouro.Text = funcionario.Logradouro;
+            txt_nome.Text = funcionario.Nome;
+            txt_numresid.Text = funcionario.NumResidencia;
+            lbl_codigofunc.Text = funcionario.idFuncionario.ToString();
+            msk_cpf.Text = funcionario.CPF;
+            msk_tel1.Text = funcionario.Tel1;
+            msk_tel2.Text = funcionario.Tel2;
+            msk_tel3.Text = funcionario.Tel3;
+            msk_cep.Text = funcionario.Cep;
+            txt_bairro.Text = funcionario.sBairro;
+            cbo_tipolograd.SelectedItem = funcionario.TipoLogradouro;
 
             //if (funcionario1.DataNascimento.CompareTo(msk_datanasc.MinDate) > 0)
-            msk_datanasc.Text = funcionario1.DataNascimento.ToShortDateString();
+            msk_datanasc.Text = funcionario.DataNascimento.ToShortDateString();
 
-            if (funcionario1.Sexo.Equals("F"))
+            if (funcionario.Sexo.Equals("F"))
             {
                 rdb_feminino.Checked = true;
             }
@@ -184,28 +184,28 @@ namespace SIESC.UI.UI.Autorizacoes
 
             foreach (DataRowView item in cbo_instituicao.Items)
             {
-                if (item["idInstituicoes"].ToString() == funcionario1.instituicao.ToString())
+                if (item["idInstituicoes"].ToString() == funcionario.instituicao.ToString())
                 {
                     cbo_instituicao.SelectedIndex = cbo_instituicao.Items.IndexOf(item);
                 }
             }
 
-            if (!funcionario1.cargoOrigem.Equals(null))
+            if (!funcionario.cargoOrigem.Equals(null))
             {
                 foreach (DataRowView item in cbo_cargoOrigem.Items)
                 {
-                    if (item["idcargos"].ToString() == funcionario1.cargoOrigem.ToString())
+                    if (item["idcargos"].ToString() == funcionario.cargoOrigem.ToString())
                     {
                         cbo_cargoOrigem.SelectedIndex = cbo_cargoOrigem.Items.IndexOf(item);
                     }
                 }
             }
 
-            if (!funcionario1.cargoAtual.Equals(null))
+            if (!funcionario.cargoAtual.Equals(null))
             {
                 foreach (DataRowView item in cbo_cargoAtual.Items)
                 {
-                    if (item["idcargos"].ToString() == funcionario1.cargoAtual.ToString())
+                    if (item["idcargos"].ToString() == funcionario.cargoAtual.ToString())
                     {
                         cbo_cargoAtual.SelectedIndex = cbo_cargoAtual.Items.IndexOf(item);
                     }
@@ -216,35 +216,43 @@ namespace SIESC.UI.UI.Autorizacoes
         /// <summary>
         /// Repassa aos controles os dados da autorização
         /// </summary>
-        /// <param name="autorizacao1"></param>
-        private void RepassaAutorizacao(Autorizacao autorizacao1)
+        /// <param name="autorizacao"></param>
+        private void RepassaAutorizacao(Autorizacao autorizacao)
         {
-            cbo_tipoautoriz.Text = autorizacao1.tipoAutorizacao.ToString().ToUpper();
-            cbo_nivelensino.Text = autorizacao1.nivelensino;
-            txt_outrosdocs.Text = autorizacao1.outrosdocs;
-            dtp_datapossecargo.Value = autorizacao1.Datapossecargo;
-            dtp_data_expedicao.Value = autorizacao1.Dataexpedicao;
-            lbl_numautoriz.Text = autorizacao1.numeroAutorizacao;
-            lbl_idsolicitacao.Text = autorizacao1.idAutorizacao.ToString();
-            chk_possuiValidade.Checked = autorizacao1.possuiValidade;
+            cbo_tipoautoriz.Text = autorizacao.tipoAutorizacao.ToString().ToUpper();
+            cbo_nivelensino.Text = autorizacao.nivelensino;
+            txt_outrosdocs.Text = autorizacao.outrosdocs;
+            dtp_datapossecargo.Value = autorizacao.Datapossecargo;
+            dtp_data_expedicao.Value = autorizacao.Dataexpedicao;
+            lbl_numautoriz.Text = autorizacao.numeroAutorizacao;
+            lbl_idAutorizacao.Text = autorizacao.idAutorizacao.ToString();
+            chk_possuiValidade.Checked = autorizacao.possuiValidade;
 
-            if (!string.IsNullOrEmpty(autorizacao1.Disciplina.ToString()))
+            if (autorizacao.habilitado)
+            {
+                chk_habilitado.Visible = true;
+                chk_habilitado.Checked = true;
+                txt_numautoriz_habilitado.Visible = true;
+                txt_numautoriz_habilitado.Text = autorizacao.numeroAutorizacao;
+            }
+
+            if (!string.IsNullOrEmpty(autorizacao.Disciplina.ToString()))
             {
                 foreach (DataRowView item in cbo_disciplina.Items)
                 {
-                    if (item["idDisciplinas"].ToString() == autorizacao1.Disciplina.ToString())
+                    if (item["idDisciplinas"].ToString() == autorizacao.Disciplina.ToString())
                     {
                         cbo_disciplina.SelectedIndex = cbo_disciplina.Items.IndexOf(item);
                     }
                 }
             }
 
-            if (autorizacao1.anosdeensino.Equals("Anos Iniciais e Anos Finais"))
+            if (autorizacao.anosdeensino.Equals("Anos Iniciais e Anos Finais"))
             {
                 chk_anosiniciais.Checked = true;
                 chk_anosfinais.Checked = true;
             }
-            if (autorizacao1.anosdeensino.Equals("Anos Iniciais"))
+            if (autorizacao.anosdeensino.Equals("Anos Iniciais"))
             {
                 chk_anosiniciais.Checked = true;
             }
@@ -253,9 +261,9 @@ namespace SIESC.UI.UI.Autorizacoes
                 chk_anosfinais.Checked = true;
             }
 
-            autorizacao1.Documentos.Replace(" ", string.Empty);//retira os espaços em branco
+            autorizacao.Documentos.Replace(" ", string.Empty);//retira os espaços em branco
 
-            List<String> listaDeDocumentos = autorizacao1.Documentos.ToString().Split(',').ToList();//cria uma lista de documentos
+            List<String> listaDeDocumentos = autorizacao.Documentos.ToString().Split(',').ToList();//cria uma lista de documentos
 
             foreach (string str in listaDeDocumentos)
             {
@@ -270,7 +278,7 @@ namespace SIESC.UI.UI.Autorizacoes
 
             foreach (DataRowView item in cbo_instituicao.Items)
             {
-                if (item["idInstituicoes"].ToString() == autorizacao1.idInstituicao.ToString())
+                if (item["idInstituicoes"].ToString() == autorizacao.idInstituicao.ToString())
                 {
                     cbo_instituicao.SelectedItem = item;
                 }
@@ -360,7 +368,7 @@ namespace SIESC.UI.UI.Autorizacoes
                     funcionarioControl.Salvar(funcionario, false); //false - atualiza o funcionario no banco
 
                     if (!string.IsNullOrEmpty(lbl_numautoriz.Text))//pega o número de autorização do funcionário
-                        tmpNumeroAutoriz = lbl_numautoriz.Text;
+                        tmpNumeroAutoriz = chk_habilitado.Checked ? txt_numautoriz_habilitado.Text : lbl_numautoriz.Text;
 
                     //tmp_numeroautoriz = autorizacaoControl.PesquisaAutorizacao((int)idfuncionario);
                 }
@@ -382,28 +390,28 @@ namespace SIESC.UI.UI.Autorizacoes
                 {
                     if (Mensageiro.MensagemPergunta($"Já existe a autorização no sistema para este funcionário!{Environment.NewLine}Deseja Atualizar?{Environment.NewLine}SIM - Atualiza {Environment.NewLine}NÃO - Grava uma nova autorização", PrincipalUi) == DialogResult.Yes)
                     {
-                        this.autorizacao.numeroAutorizacao = tmpNumeroAutoriz;
+                        autorizacao.numeroAutorizacao = tmpNumeroAutoriz;
 
-                        if (autorizacaoControl.Salvar(this.autorizacao, false)) //atualiza no banco
+                        if (autorizacaoControl.Salvar(autorizacao, false)) //atualiza no banco
                         {
                             Mensageiro.MensagemConfirmaAtualizacao(PrincipalUi);
                             ExibirCarteirinha();
                         }
                     }
-                    else if (autorizacaoControl.Salvar(this.autorizacao, true)) //salva no banco
+                    else if (autorizacaoControl.Salvar(autorizacao, true)) //salva no banco
                     {
                         Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
 
                         ExibirCarteirinha();
                     }
 
-                    this.LimpaControles();
+                    LimpaControles();
                 }
-                else if (autorizacaoControl.Salvar(this.autorizacao, true)) //salva no banco
+                else if (autorizacaoControl.Salvar(autorizacao, true)) //salva no banco
                 {
                     Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
                     ExibirCarteirinha();
-                    this.LimpaControles();
+                    LimpaControles();
 
                 }
             }
@@ -504,10 +512,10 @@ namespace SIESC.UI.UI.Autorizacoes
             {
                 case Navegando.Inserindo:
                 case Navegando.Editando:
-                    novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, funcionario.idFuncionario, dtp_data_expedicao.Value, this.tipoAutoriz, chk_possuiValidade.Checked);
+                    novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, funcionario.idFuncionario, Convert.ToInt32(lbl_idAutorizacao.Text), dtp_data_expedicao.Value, this.tipoAutoriz, chk_possuiValidade.Checked);
                     break;
                 case Navegando.Deletando:
-                    novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, Convert.ToInt32(lbl_codigofunc.Text), dtp_data_expedicao.Value, this.tipoAutoriz, false);
+                    novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, Convert.ToInt32(lbl_codigofunc.Text), Convert.ToInt32(lbl_idAutorizacao.Text), dtp_data_expedicao.Value, this.tipoAutoriz, false);
                     autorizacaoControl = new AutorizacaoControl();
                     break;
             }
@@ -549,6 +557,7 @@ namespace SIESC.UI.UI.Autorizacoes
             if (chk_habilitado.Checked)
             {
                 novaAutorizacao.numeroAutorizacao = txt_numautoriz_habilitado.Text;
+                novaAutorizacao.habilitado = true;
             }
             else
             {
@@ -603,7 +612,7 @@ namespace SIESC.UI.UI.Autorizacoes
         {
             //volta as labels como iniciais
             lbl_codigofunc.Text = @"_";
-            lbl_idsolicitacao.Text = @"_";
+            lbl_idAutorizacao.Text = @"_";
             lbl_numautoriz.Text = @"_";
 
             foreach (Control control in listaControls)
