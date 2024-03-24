@@ -347,50 +347,39 @@ namespace SIESC.UI.UI.Autorizacoes
                 if (!VerificaCampos(listaControlesObrigatorios, ref tag))
                     throw new Exception($"O campo {tag} está sem preencher!");
 
+                int? idfuncionario; //se o funcionário não existir o id continuará null
+
                 funcionario = this.CriaFuncionario();
                 funcionarioControl = new FuncionarioControl();
                 autorizacaoControl = new AutorizacaoControl();
 
-                int? idfuncionario; //se o funcionário não existir o id é null
 
-                if (!lbl_codigofunc.Text.Equals("_"))
-                    idfuncionario = Convert.ToInt32(lbl_codigofunc.Text); //pega o cod do funcionario pela label
-                else
-                    idfuncionario =
-                        funcionarioControl.PesquisaID(funcionario.DataNascimento,
-                            funcionario.Nome); //pega o codigo do funcionário pela pesquisa no banco.
+                //se a label for padrão, pega o codigo do funcionário pela pesquisa no banco. Senão pega o cod do funcionario pela label
+                idfuncionario = lbl_codigofunc.Text.Equals("_") ? funcionarioControl.PesquisaID(funcionario.DataNascimento, funcionario.Nome) : Convert.ToInt32(lbl_codigofunc.Text);
 
-                string tmpNumeroAutoriz = string.Empty;
 
                 if (idfuncionario > 0 || (idfuncionario != null))//se existe o funcionario no banco
                 {
                     funcionario.idFuncionario = (int)idfuncionario;
                     funcionarioControl.Salvar(funcionario, false); //false - atualiza o funcionario no banco
 
-                    if (!string.IsNullOrEmpty(lbl_numautoriz.Text))//pega o número de autorização do funcionário
-                        tmpNumeroAutoriz = chk_habilitado.Checked ? txt_numautoriz_habilitado.Text : lbl_numautoriz.Text;
-
                     //tmp_numeroautoriz = autorizacaoControl.PesquisaAutorizacao((int)idfuncionario);
                 }
-                else //o funcionário não existe no banco
+                else //se não existe o funcionário no banco
                 {
                     funcionarioControl.Salvar(funcionario, true); //salva o funcionário no banco
+
                     idfuncionario = funcionarioControl.PesquisaID(msk_cpf.Text);//localiza o id do funcionário recém salvo no banco
-                }
-
-                if (idfuncionario != null)
-                {
                     funcionario.idFuncionario = (int)idfuncionario; //determina o id do funcionário se for recém salvo
-                    autorizacao = CriaAutorizacao();
-
-                    autorizacao.idFuncionario = (int)idfuncionario;
                 }
+                autorizacao = CriaAutorizacao();
 
-                if (!string.IsNullOrEmpty(tmpNumeroAutoriz))
+                autorizacao.idFuncionario = (int)idfuncionario;
+
+                if (!lbl_idAutorizacao.Text.Equals("_"))
                 {
                     if (Mensageiro.MensagemPergunta($"Já existe a autorização no sistema para este funcionário!{Environment.NewLine}Deseja Atualizar?{Environment.NewLine}SIM - Atualiza {Environment.NewLine}NÃO - Grava uma nova autorização", PrincipalUi) == DialogResult.Yes)
                     {
-                        autorizacao.numeroAutorizacao = tmpNumeroAutoriz;
 
                         if (autorizacaoControl.Salvar(autorizacao, false)) //atualiza no banco
                         {
@@ -401,7 +390,6 @@ namespace SIESC.UI.UI.Autorizacoes
                     else if (autorizacaoControl.Salvar(autorizacao, true)) //salva no banco
                     {
                         Mensageiro.MensagemConfirmaGravacao(PrincipalUi);
-
                         ExibirCarteirinha();
                     }
 
@@ -511,12 +499,43 @@ namespace SIESC.UI.UI.Autorizacoes
             switch (navegacao)
             {
                 case Navegando.Inserindo:
+
+                    novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, funcionario.idFuncionario, dtp_data_expedicao.Value, this.tipoAutoriz, chk_possuiValidade.Checked);
+
+                    if (chk_habilitado.Checked)
+                    {
+                        novaAutorizacao.numeroAutorizacao = txt_numautoriz_habilitado.Text;
+                        novaAutorizacao.habilitado = true;
+                    }
+                    else
+                    {
+                        novaAutorizacao.numeroAutorizacao = NumeroAutorizacao();
+                    }
+
+                    break;
                 case Navegando.Editando:
+
                     novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, funcionario.idFuncionario, Convert.ToInt32(lbl_idAutorizacao.Text), dtp_data_expedicao.Value, this.tipoAutoriz, chk_possuiValidade.Checked);
+
+                    if (chk_habilitado.Checked)
+                    {
+                        novaAutorizacao.numeroAutorizacao = txt_numautoriz_habilitado.Text;
+                        novaAutorizacao.habilitado = true;
+                    }
+                    else
+                    {
+                        novaAutorizacao.habilitado = false;
+                        if (!string.IsNullOrEmpty(txt_numautoriz_habilitado.Text))
+                        {
+                            novaAutorizacao.numeroAutorizacao = NumeroAutorizacao();
+                            txt_numautoriz_habilitado.Text = string.Empty;
+                        }
+
+                    }
                     break;
                 case Navegando.Deletando:
                     novaAutorizacao = new Autorizacao((int)cbo_instituicao.SelectedValue, Convert.ToInt32(lbl_codigofunc.Text), Convert.ToInt32(lbl_idAutorizacao.Text), dtp_data_expedicao.Value, this.tipoAutoriz, false);
-                    autorizacaoControl = new AutorizacaoControl();
+                    //autorizacaoControl = new AutorizacaoControl();
                     break;
             }
 
@@ -554,25 +573,21 @@ namespace SIESC.UI.UI.Autorizacoes
             novaAutorizacao.Dataexpedicao = dtp_data_expedicao.Value;
             novaAutorizacao.Datapossecargo = dtp_datapossecargo.Value;
 
-            if (chk_habilitado.Checked)
-            {
-                novaAutorizacao.numeroAutorizacao = txt_numautoriz_habilitado.Text;
-                novaAutorizacao.habilitado = true;
-            }
-            else
-            {
-
-                string num = autorizacaoControl.RetornaUltimaAutorizacao();
-
-                var data = DateTime.Now.Year.ToString();//get ano atual
-
-                // ReSharper disable once PossiblyMistakenUseOfParamsMethod
-                string auttemporia = String.Concat($@"0{num}/{data}");//acrescenta o zero na frente do número da autorização
-
-                novaAutorizacao.numeroAutorizacao = auttemporia;
-            }
-
             return novaAutorizacao;
+        }
+
+
+        private string NumeroAutorizacao()
+        {
+            AutorizacaoControl autorizacaoControl = new AutorizacaoControl();
+            string num = autorizacaoControl.RetornaUltimaAutorizacao();
+
+            var data = DateTime.Now.Year.ToString();//get ano atual
+
+            // ReSharper disable once PossiblyMistakenUseOfParamsMethod
+            string auttemporia = String.Concat($@"0{num}/{data}");//acrescenta o zero na frente do número da autorização
+
+            return auttemporia;
         }
 
         /// <summary>
@@ -794,7 +809,6 @@ namespace SIESC.UI.UI.Autorizacoes
                 {
                     listaControlesObrigatorios.Add(txt_cartident);
                 }
-                txt_numautoriz_habilitado.Text = string.Empty;
             }
         }
     }

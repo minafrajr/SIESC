@@ -121,7 +121,7 @@ namespace SIESC.MODEL.Classes
         /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
         /// <param name="tipoAutoriz">O tipo de autorização</param>
         /// <param name="possuiValidade">Se a autorizacao possui validade</param>
-        public Autorizacao(int idInstituicao, int idFuncionario, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
+        public Autorizacao(int idInstituicao, int idFuncionario, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, bool possuiValidade)
         {
             this.idInstituicao = idInstituicao;
             this.idFuncionario = idFuncionario;
@@ -141,7 +141,7 @@ namespace SIESC.MODEL.Classes
         /// <param name="dataExpedicao">Data oficial da máquina servidora do banco</param>
         /// <param name="tipoAutoriz">O tipo de autorização</param>
         /// <param name="possuiValidade">Se a autorizacao possui validade</param>
-        public Autorizacao(int idInstituicao, int idFuncionario, int idAutorizacao, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, Boolean possuiValidade)
+        public Autorizacao(int idInstituicao, int idFuncionario, int idAutorizacao, DateTime dataExpedicao, Tipoautorizacao tipoAutoriz, bool possuiValidade)
         {
             this.idInstituicao = idInstituicao;
             this.idAutorizacao = idAutorizacao;

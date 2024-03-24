@@ -503,9 +503,9 @@ namespace SIESC.UI.UI.Autorizacoes
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(423, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 14);
+            this.label12.Size = new System.Drawing.Size(107, 14);
             this.label12.TabIndex = 19;
-            this.label12.Text = "Código Solicitação";
+            this.label12.Text = "Código Autorização";
             // 
             // label7
             // 
