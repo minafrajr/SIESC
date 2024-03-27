@@ -525,11 +525,9 @@ namespace SIESC.UI.UI.Autorizacoes
                     else
                     {
                         novaAutorizacao.habilitado = false;
-                        if (!string.IsNullOrEmpty(txt_numautoriz_habilitado.Text))
-                        {
-                            novaAutorizacao.numeroAutorizacao = NumeroAutorizacao();
-                            txt_numautoriz_habilitado.Text = string.Empty;
-                        }
+                        txt_numautoriz_habilitado.Text = string.Empty;
+
+                        novaAutorizacao.numeroAutorizacao = string.IsNullOrEmpty(lbl_numautoriz.Text) ? NumeroAutorizacao() : lbl_numautoriz.Text;
 
                     }
                     break;
