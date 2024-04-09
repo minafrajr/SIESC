@@ -87,6 +87,12 @@ namespace SIESC.UI.UI.Autorizacoes
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.gpb_autorizacao = new System.Windows.Forms.GroupBox();
+            this.cbo_mantenedor = new SIESC.UI.Controles.MyComboBox();
+            this.mantenedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_numautoriz_habilitado = new SIESC.UI.Controles.MyTextBox();
+            this.chk_habilitado = new System.Windows.Forms.CheckBox();
+            this.lbl_numautoriz_habilitado = new System.Windows.Forms.Label();
             this.chk_possuiValidade = new System.Windows.Forms.CheckBox();
             this.dtp_data_expedicao = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -121,9 +127,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.disciplinasTableAdapter = new SIESC.UI.siescDataSetTableAdapters.disciplinasTableAdapter();
             this.cargosTableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargosTableAdapter();
             this.cargos1TableAdapter = new SIESC.UI.siescDataSetTableAdapters.cargos1TableAdapter();
-            this.chk_habilitado = new System.Windows.Forms.CheckBox();
-            this.txt_numautoriz_habilitado = new SIESC.UI.Controles.MyTextBox();
-            this.lbl_numautoriz_habilitado = new System.Windows.Forms.Label();
+            this.mantenedorTableAdapter = new SIESC.UI.siescDataSetTableAdapters.mantenedorTableAdapter();
             this.gpb_endereco.SuspendLayout();
             this.gpb_dadospessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cargos1BindingSource)).BeginInit();
@@ -132,6 +136,7 @@ namespace SIESC.UI.UI.Autorizacoes
             ((System.ComponentModel.ISupportInitialize)(this.cargosBindingSource)).BeginInit();
             this.gpb_sexo.SuspendLayout();
             this.gpb_autorizacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenedorBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instituicoesBindingSource)).BeginInit();
@@ -142,7 +147,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Image = global::SIESC.UI.Properties.Resources.Trash;
-            this.btn_excluir.Location = new System.Drawing.Point(1005, 442);
+            this.btn_excluir.Location = new System.Drawing.Point(1028, 515);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(60, 59);
             this.btn_excluir.TabIndex = 8;
@@ -156,7 +161,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.btn_limpar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Image = global::SIESC.UI.Properties.Resources._1431669200_eraser;
-            this.btn_limpar.Location = new System.Drawing.Point(847, 442);
+            this.btn_limpar.Location = new System.Drawing.Point(870, 515);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(60, 59);
             this.btn_limpar.TabIndex = 6;
@@ -170,7 +175,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SIESC.UI.Properties.Resources.prohibit_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(939, 442);
+            this.btn_cancelar.Location = new System.Drawing.Point(962, 515);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(60, 59);
             this.btn_cancelar.TabIndex = 7;
@@ -184,7 +189,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.btn_novo.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_novo.Image = global::SIESC.UI.Properties.Resources._114;
-            this.btn_novo.Location = new System.Drawing.Point(716, 442);
+            this.btn_novo.Location = new System.Drawing.Point(739, 515);
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(60, 59);
             this.btn_novo.TabIndex = 5;
@@ -198,7 +203,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.btn_autorizar.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_autorizar.Image = global::SIESC.UI.Properties.Resources._1431675996_mypc_ok;
-            this.btn_autorizar.Location = new System.Drawing.Point(781, 442);
+            this.btn_autorizar.Location = new System.Drawing.Point(804, 515);
             this.btn_autorizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_autorizar.Name = "btn_autorizar";
             this.btn_autorizar.Size = new System.Drawing.Size(60, 59);
@@ -481,7 +486,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.panel2.Controls.Add(this.lbl_codigofunc);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lbl_numautoriz);
-            this.panel2.Location = new System.Drawing.Point(8, 21);
+            this.panel2.Location = new System.Drawing.Point(8, 16);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(763, 30);
             this.panel2.TabIndex = 20;
@@ -491,7 +496,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.lbl_idAutorizacao.AutoSize = true;
             this.lbl_idAutorizacao.Font = new System.Drawing.Font("Candara", 14F);
             this.lbl_idAutorizacao.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_idAutorizacao.Location = new System.Drawing.Point(531, 2);
+            this.lbl_idAutorizacao.Location = new System.Drawing.Point(591, 2);
             this.lbl_idAutorizacao.Name = "lbl_idAutorizacao";
             this.lbl_idAutorizacao.Size = new System.Drawing.Size(20, 23);
             this.lbl_idAutorizacao.TabIndex = 20;
@@ -501,7 +506,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(423, 9);
+            this.label12.Location = new System.Drawing.Point(483, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 14);
             this.label12.TabIndex = 19;
@@ -747,6 +752,8 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             // gpb_autorizacao
             // 
+            this.gpb_autorizacao.Controls.Add(this.cbo_mantenedor);
+            this.gpb_autorizacao.Controls.Add(this.label11);
             this.gpb_autorizacao.Controls.Add(this.txt_numautoriz_habilitado);
             this.gpb_autorizacao.Controls.Add(this.chk_habilitado);
             this.gpb_autorizacao.Controls.Add(this.lbl_numautoriz_habilitado);
@@ -766,15 +773,75 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_autorizacao.Controls.Add(this.label1);
             this.gpb_autorizacao.Location = new System.Drawing.Point(4, 298);
             this.gpb_autorizacao.Name = "gpb_autorizacao";
-            this.gpb_autorizacao.Size = new System.Drawing.Size(445, 203);
+            this.gpb_autorizacao.Size = new System.Drawing.Size(1079, 123);
             this.gpb_autorizacao.TabIndex = 2;
             this.gpb_autorizacao.TabStop = false;
             this.gpb_autorizacao.Text = "Autorização";
             // 
+            // cbo_mantenedor
+            // 
+            this.cbo_mantenedor.DataSource = this.mantenedorBindingSource;
+            this.cbo_mantenedor.DisplayMember = "tipo";
+            this.cbo_mantenedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_mantenedor.FormattingEnabled = true;
+            this.cbo_mantenedor.Location = new System.Drawing.Point(223, 86);
+            this.cbo_mantenedor.Name = "cbo_mantenedor";
+            this.cbo_mantenedor.Size = new System.Drawing.Size(230, 22);
+            this.cbo_mantenedor.TabIndex = 75;
+            this.cbo_mantenedor.ValueMember = "idMantenedor";
+            this.cbo_mantenedor.SelectedIndexChanged += new System.EventHandler(this.cbo_mantenedor_SelectedIndexChanged);
+            // 
+            // mantenedorBindingSource
+            // 
+            this.mantenedorBindingSource.DataMember = "mantenedor";
+            this.mantenedorBindingSource.DataSource = this.siescDataSet;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(220, 72);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 14);
+            this.label11.TabIndex = 74;
+            this.label11.Text = "Tipo de Instituição:";
+            // 
+            // txt_numautoriz_habilitado
+            // 
+            this.txt_numautoriz_habilitado.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_numautoriz_habilitado.Location = new System.Drawing.Point(341, 37);
+            this.txt_numautoriz_habilitado.MaxLength = 20;
+            this.txt_numautoriz_habilitado.Name = "txt_numautoriz_habilitado";
+            this.txt_numautoriz_habilitado.Size = new System.Drawing.Size(112, 22);
+            this.txt_numautoriz_habilitado.TabIndex = 26;
+            this.txt_numautoriz_habilitado.Tag = "Nº Residência";
+            this.txt_numautoriz_habilitado.Visible = false;
+            // 
+            // chk_habilitado
+            // 
+            this.chk_habilitado.AutoSize = true;
+            this.chk_habilitado.Location = new System.Drawing.Point(223, 41);
+            this.chk_habilitado.Name = "chk_habilitado";
+            this.chk_habilitado.Size = new System.Drawing.Size(80, 18);
+            this.chk_habilitado.TabIndex = 12;
+            this.chk_habilitado.Text = "Habilitado";
+            this.chk_habilitado.UseVisualStyleBackColor = true;
+            this.chk_habilitado.Visible = false;
+            this.chk_habilitado.CheckedChanged += new System.EventHandler(this.chk_habilitado_CheckedChanged);
+            // 
+            // lbl_numautoriz_habilitado
+            // 
+            this.lbl_numautoriz_habilitado.AutoSize = true;
+            this.lbl_numautoriz_habilitado.Location = new System.Drawing.Point(338, 20);
+            this.lbl_numautoriz_habilitado.Name = "lbl_numautoriz_habilitado";
+            this.lbl_numautoriz_habilitado.Size = new System.Drawing.Size(85, 14);
+            this.lbl_numautoriz_habilitado.TabIndex = 27;
+            this.lbl_numautoriz_habilitado.Text = "Autorização Nº:";
+            this.lbl_numautoriz_habilitado.Visible = false;
+            // 
             // chk_possuiValidade
             // 
             this.chk_possuiValidade.AutoSize = true;
-            this.chk_possuiValidade.Location = new System.Drawing.Point(231, 39);
+            this.chk_possuiValidade.Location = new System.Drawing.Point(223, 20);
             this.chk_possuiValidade.Name = "chk_possuiValidade";
             this.chk_possuiValidade.Size = new System.Drawing.Size(106, 18);
             this.chk_possuiValidade.TabIndex = 11;
@@ -786,7 +853,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dtp_data_expedicao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_data_expedicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_data_expedicao.Location = new System.Drawing.Point(332, 79);
+            this.dtp_data_expedicao.Location = new System.Drawing.Point(108, 86);
             this.dtp_data_expedicao.Name = "dtp_data_expedicao";
             this.dtp_data_expedicao.Size = new System.Drawing.Size(83, 23);
             this.dtp_data_expedicao.TabIndex = 10;
@@ -795,7 +862,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(231, 64);
+            this.label9.Location = new System.Drawing.Point(7, 73);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 14);
             this.label9.TabIndex = 9;
@@ -805,7 +872,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.panel1.Controls.Add(this.chk_anosfinais);
             this.panel1.Controls.Add(this.chk_anosiniciais);
-            this.panel1.Location = new System.Drawing.Point(225, 113);
+            this.panel1.Location = new System.Drawing.Point(882, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(190, 40);
             this.panel1.TabIndex = 3;
@@ -837,7 +904,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_nivelensino.Items.AddRange(new object[] {
             "EDUCAÇÃO INFANTIL",
             "ENSINO FUNDAMENTAL"});
-            this.cbo_nivelensino.Location = new System.Drawing.Point(9, 124);
+            this.cbo_nivelensino.Location = new System.Drawing.Point(671, 36);
             this.cbo_nivelensino.Name = "cbo_nivelensino";
             this.cbo_nivelensino.Size = new System.Drawing.Size(205, 22);
             this.cbo_nivelensino.TabIndex = 2;
@@ -847,7 +914,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 108);
+            this.label6.Location = new System.Drawing.Point(668, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 14);
             this.label6.TabIndex = 8;
@@ -859,7 +926,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_disciplina.DisplayMember = "nomeDisciplina";
             this.cbo_disciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_disciplina.FormattingEnabled = true;
-            this.cbo_disciplina.Location = new System.Drawing.Point(9, 80);
+            this.cbo_disciplina.Location = new System.Drawing.Point(460, 36);
             this.cbo_disciplina.Name = "cbo_disciplina";
             this.cbo_disciplina.Size = new System.Drawing.Size(203, 22);
             this.cbo_disciplina.TabIndex = 1;
@@ -892,12 +959,13 @@ namespace SIESC.UI.UI.Autorizacoes
             this.cbo_instituicao.DisplayMember = "nome";
             this.cbo_instituicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_instituicao.FormattingEnabled = true;
-            this.cbo_instituicao.Location = new System.Drawing.Point(9, 170);
+            this.cbo_instituicao.Location = new System.Drawing.Point(460, 87);
             this.cbo_instituicao.Name = "cbo_instituicao";
-            this.cbo_instituicao.Size = new System.Drawing.Size(429, 22);
+            this.cbo_instituicao.Size = new System.Drawing.Size(428, 22);
             this.cbo_instituicao.TabIndex = 5;
             this.cbo_instituicao.Tag = "Instituição";
             this.cbo_instituicao.ValueMember = "idInstituicoes";
+            this.cbo_instituicao.DropDown += new System.EventHandler(this.cbo_instituicao_DropDown);
             // 
             // instituicoesBindingSource
             // 
@@ -908,7 +976,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.dtp_datapossecargo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_datapossecargo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_datapossecargo.Location = new System.Drawing.Point(231, 78);
+            this.dtp_datapossecargo.Location = new System.Drawing.Point(7, 86);
             this.dtp_datapossecargo.Name = "dtp_datapossecargo";
             this.dtp_datapossecargo.Size = new System.Drawing.Size(83, 23);
             this.dtp_datapossecargo.TabIndex = 4;
@@ -917,7 +985,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 62);
+            this.label4.Location = new System.Drawing.Point(458, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 14);
             this.label4.TabIndex = 3;
@@ -935,7 +1003,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 153);
+            this.label2.Location = new System.Drawing.Point(458, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 14);
             this.label2.TabIndex = 1;
@@ -944,7 +1012,7 @@ namespace SIESC.UI.UI.Autorizacoes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 64);
+            this.label1.Location = new System.Drawing.Point(105, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 0;
@@ -963,9 +1031,9 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_documentos.Controls.Add(this.chk_titeleitor);
             this.gpb_documentos.Controls.Add(this.chk_cartident);
             this.gpb_documentos.Controls.Add(this.chk_cpf);
-            this.gpb_documentos.Location = new System.Drawing.Point(456, 298);
+            this.gpb_documentos.Location = new System.Drawing.Point(6, 434);
             this.gpb_documentos.Name = "gpb_documentos";
-            this.gpb_documentos.Size = new System.Drawing.Size(607, 140);
+            this.gpb_documentos.Size = new System.Drawing.Size(694, 140);
             this.gpb_documentos.TabIndex = 3;
             this.gpb_documentos.TabStop = false;
             this.gpb_documentos.Text = "Documentos";
@@ -1104,43 +1172,14 @@ namespace SIESC.UI.UI.Autorizacoes
             // 
             this.cargos1TableAdapter.ClearBeforeFill = true;
             // 
-            // chk_habilitado
+            // mantenedorTableAdapter
             // 
-            this.chk_habilitado.AutoSize = true;
-            this.chk_habilitado.Location = new System.Drawing.Point(339, 39);
-            this.chk_habilitado.Name = "chk_habilitado";
-            this.chk_habilitado.Size = new System.Drawing.Size(80, 18);
-            this.chk_habilitado.TabIndex = 12;
-            this.chk_habilitado.Text = "Habilitado";
-            this.chk_habilitado.UseVisualStyleBackColor = true;
-            this.chk_habilitado.Visible = false;
-            this.chk_habilitado.CheckedChanged += new System.EventHandler(this.chk_habilitado_CheckedChanged);
-            // 
-            // txt_numautoriz_habilitado
-            // 
-            this.txt_numautoriz_habilitado.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_numautoriz_habilitado.Location = new System.Drawing.Point(303, 13);
-            this.txt_numautoriz_habilitado.MaxLength = 20;
-            this.txt_numautoriz_habilitado.Name = "txt_numautoriz_habilitado";
-            this.txt_numautoriz_habilitado.Size = new System.Drawing.Size(112, 22);
-            this.txt_numautoriz_habilitado.TabIndex = 26;
-            this.txt_numautoriz_habilitado.Tag = "Nº Residência";
-            this.txt_numautoriz_habilitado.Visible = false;
-            // 
-            // lbl_numautoriz_habilitado
-            // 
-            this.lbl_numautoriz_habilitado.AutoSize = true;
-            this.lbl_numautoriz_habilitado.Location = new System.Drawing.Point(216, 16);
-            this.lbl_numautoriz_habilitado.Name = "lbl_numautoriz_habilitado";
-            this.lbl_numautoriz_habilitado.Size = new System.Drawing.Size(85, 14);
-            this.lbl_numautoriz_habilitado.TabIndex = 27;
-            this.lbl_numautoriz_habilitado.Text = "Autorização Nº:";
-            this.lbl_numautoriz_habilitado.Visible = false;
+            this.mantenedorTableAdapter.ClearBeforeFill = true;
             // 
             // SolicitarAutorizacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1069, 510);
+            this.ClientSize = new System.Drawing.Size(1093, 581);
             this.Controls.Add(this.gpb_documentos);
             this.Controls.Add(this.gpb_autorizacao);
             this.Controls.Add(this.btn_excluir);
@@ -1167,6 +1206,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.gpb_sexo.PerformLayout();
             this.gpb_autorizacao.ResumeLayout(false);
             this.gpb_autorizacao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mantenedorBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinasBindingSource)).EndInit();
@@ -1271,5 +1311,9 @@ namespace SIESC.UI.UI.Autorizacoes
         private System.Windows.Forms.CheckBox chk_habilitado;
         private MyTextBox txt_numautoriz_habilitado;
         private System.Windows.Forms.Label lbl_numautoriz_habilitado;
+        private MyComboBox cbo_mantenedor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource mantenedorBindingSource;
+        private siescDataSetTableAdapters.mantenedorTableAdapter mantenedorTableAdapter;
     }
 }

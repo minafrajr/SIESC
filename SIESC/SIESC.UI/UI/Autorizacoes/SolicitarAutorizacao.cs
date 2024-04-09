@@ -96,6 +96,8 @@ namespace SIESC.UI.UI.Autorizacoes
 
             navegacao = Navegando.Inserindo;
             PrincipalUi = principalUi;
+            this.mantenedorTableAdapter.Fill(this.siescDataSet.mantenedor);
+            cbo_mantenedor.SelectedIndex = -1;
             cbo_cargoOrigem.SelectedIndex = -1;
             cbo_cargoAtual.SelectedIndex = -1;
 
@@ -113,7 +115,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.PrincipalUi = principalUi;
             this.CamposObrigatorios();
             this.ListadeControles();
-
+            this.mantenedorTableAdapter.Fill(this.siescDataSet.mantenedor);
             this.instituicoesTableAdapter.FillByMunicipioCreche(this.siescDataSet.instituicoes);
 
             CarregaCombosCargos();
@@ -137,6 +139,7 @@ namespace SIESC.UI.UI.Autorizacoes
             this.CamposObrigatorios();
             this.ListadeControles();
 
+            this.mantenedorTableAdapter.Fill(this.siescDataSet.mantenedor);
             this.instituicoesTableAdapter.FillByMunicipioCreche(this.siescDataSet.instituicoes);
             this.disciplinasTableAdapter.Fill(this.siescDataSet.disciplinas);
 
@@ -737,7 +740,9 @@ namespace SIESC.UI.UI.Autorizacoes
         {
 
             if (cbo_tipoautoriz.Text.Equals("SECRETARIAR"))
+            {
                 chk_possuiValidade.Visible = true;
+            }
             else
             {
                 chk_possuiValidade.Visible = false;
@@ -752,10 +757,18 @@ namespace SIESC.UI.UI.Autorizacoes
             if (cbo_tipoautoriz.Text.Equals("DIRIGIR"))
             {
                 chk_habilitado.Visible = true;
-
+                lbl_numautoriz_habilitado.Visible = chk_habilitado.Checked;
+                txt_numautoriz_habilitado.Visible = chk_habilitado.Checked;
 
             }
-            else { chk_habilitado.Visible = false; }
+            else
+            {
+                chk_habilitado.Visible = false;
+                chk_habilitado.Checked = false;
+                txt_numautoriz_habilitado.Text = string.Empty;
+                lbl_numautoriz_habilitado.Visible = chk_habilitado.Checked;
+                txt_numautoriz_habilitado.Visible = chk_habilitado.Checked;
+            }
         }
         /// <summary>
         /// Evento do botão não sei o CEP
@@ -794,6 +807,7 @@ namespace SIESC.UI.UI.Autorizacoes
         private void chk_habilitado_CheckedChanged(object sender, EventArgs e)
         {
             txt_numautoriz_habilitado.Visible = chk_habilitado.Checked;
+            txt_numautoriz_habilitado.Text = string.Empty;
             lbl_numautoriz_habilitado.Visible = chk_habilitado.Checked;
             chk_diploma.Checked = chk_habilitado.Checked;
 
@@ -809,5 +823,19 @@ namespace SIESC.UI.UI.Autorizacoes
                 }
             }
         }
+
+        private void cbo_instituicao_DropDown(object sender, EventArgs e)
+        {
+            if (cbo_mantenedor.SelectedIndex >= 0)
+            {
+                instituicoesTableAdapter.FillByMantenedor(this.siescDataSet.instituicoes, (int)cbo_mantenedor.SelectedValue);
+            }
+        }
+
+        private void cbo_mantenedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbo_instituicao.SelectedIndex = -1;
+        }
+
     }
 }
